@@ -1,5 +1,5 @@
-# Silly Mac files
-.DS_Store
+# Ignore build files
+build.pdx
 
-# Don't commit build files
-/build
+# Ignore silly Mac files
+.DS_Store
