@@ -12,7 +12,7 @@ marble.velocity.y = 60
 -- Create some pegs for the marble to bounce off of
 local pegs = {}
 table.insert(pegs, Circle(160, 190, 30))
-pegs[1].isStatic = true
+pegs[1].mass = -1
 
 function playdate.update()
 	-- Update the marble

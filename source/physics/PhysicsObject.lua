@@ -10,7 +10,8 @@ function PhysicsObject:init(x, y)
 	self.position = playdate.geometry.vector2D.new(x, y)
 	self.velocity = playdate.geometry.vector2D.new(0, 0)
 	self.acceleration = playdate.geometry.vector2D.new(0, 0)
-	self.isStatic = false
+	self.mass = 1
+	self.restitution = 1
 end
 
 function PhysicsObject:update(dt)
@@ -33,4 +34,8 @@ function PhysicsObject:draw()
 	local x, y = self.position.x, self.position.y
 	playdate.graphics.drawLine(x - 5, y - 5, x + 5, y + 5)
 	playdate.graphics.drawLine(x - 5, y + 5, x + 5, y - 5)
+end
+
+function PhysicsObject:isMovable()
+	return self.mass > 0
 end

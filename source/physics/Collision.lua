@@ -10,23 +10,39 @@ function Collision:init(objectA, objectB, penetration, normalX, normalY)
 end
 
 function Collision:handle()
-	-- Figure out how much each object should be affected by the collision
-	local proportionA
-	if self.objectA.isStatic and not self.objectB.isStatic then
-		proportionA = 0.0
-	elseif not self.objectA.isStatic and self.objectB.isStatic then
-		proportionA = 1.0
-	else
-		proportionA = 0.5
-	end
-	local proportionB = 1.0 - proportionA
+	local a, b = self.objectA, self.objectB
+	local aPos, bPos = a.position, b.position
+	local aVel, bVel = a.velocity, b.velocity
 
 	-- Separate the objects
-	self.objectA.position.x -= self.penetration * proportionA * self.normal.x
-	self.objectA.position.y -= self.penetration * proportionA * self.normal.y
-	self.objectB.position.x += self.penetration * proportionB * self.normal.x
-	self.objectB.position.y += self.penetration * proportionB * self.normal.y
+	local proportionA
+	if not a:isMovable() and not b:isMovable() then
+		proportionA = 0.5
+	elseif not a:isMovable() then
+		proportionA = 0.0
+	elseif not b:isMovable() then
+		proportionA = 1.0
+	else
+		proportionA = b.mass / (a.mass + b.mass)
+	end
+	local proportionB = 1.0 - proportionA
+	aPos.x -= self.penetration * proportionA * self.normal.x
+	aPos.y -= self.penetration * proportionA * self.normal.y
+	bPos.x += self.penetration * proportionB * self.normal.x
+	bPos.y += self.penetration * proportionB * self.normal.y
 
 	-- Update their velocities
-	-- TODO
+	local relativeVelocity = playdate.geometry.vector2D.new(bVel.x - aVel.x, bVel.y - aVel.y)
+	local velocityAlongNormal = relativeVelocity:dotProduct(self.normal)
+	if velocityAlongNormal <= 0 then
+		local e = math.min(a.restitution, b.restitution)
+		local aInverseMass = (a.mass > 0) and (1 / a.mass) or 0
+		local bInverseMass = (b.mass > 0) and (1 / b.mass) or 0
+		local j = -(1 + e) * velocityAlongNormal / (aInverseMass + bInverseMass)
+	  local impulse = playdate.geometry.vector2D.new(j * self.normal.x, j * self.normal.y)
+	  aVel.x -= aInverseMass * impulse.x
+	  aVel.y -= aInverseMass * impulse.y
+	  bVel.x += bInverseMass * impulse.x
+	  bVel.y += bInverseMass * impulse.y
+	end
 end
