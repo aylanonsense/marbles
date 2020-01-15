@@ -2,10 +2,15 @@ import "CoreLibs/object"
 
 class("PhysicsObject").extends()
 
+PhysicsObject.Type = {
+	Circle = 1
+}
+
 function PhysicsObject:init(x, y)
 	self.position = playdate.geometry.vector2D.new(x, y)
 	self.velocity = playdate.geometry.vector2D.new(0, 0)
 	self.acceleration = playdate.geometry.vector2D.new(0, 0)
+	self.isStatic = false
 end
 
 function PhysicsObject:update(dt)
