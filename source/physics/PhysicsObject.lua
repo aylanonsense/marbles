@@ -10,8 +10,8 @@ function PhysicsObject:init(x, y)
 	self.position = playdate.geometry.vector2D.new(x, y)
 	self.velocity = playdate.geometry.vector2D.new(0, 0)
 	self.acceleration = playdate.geometry.vector2D.new(0, 0)
-	self.mass = 1
-	self.restitution = 1
+	self.mass = 1 -- 0 means immovable (infinite mass)
+	self.restitution = 1 -- i.e. bounciness (0 = no bounce, 1 = full bounce)
 end
 
 function PhysicsObject:update(dt)

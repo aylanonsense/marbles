@@ -3,7 +3,7 @@ function randomEx(lower, upper)
 	return math.min(math.random(lower, upper), (upper or lower or 1) - 0.0001)
 end
 
--- Inclusive on both ends
+-- Returns a random integer, inclusive on both ends
 function randomInt(lower, upper)
 	if not lower and not upper then
 		lower, upper = 0, 1
