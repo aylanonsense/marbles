@@ -1,7 +1,16 @@
+import "physics/Circle"
+
+-- Set initial state
+playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
+
+-- Create a circle
+local circle = Circle(10, 10, 10)
+circle.velocity.x = 10
+circle.acceleration.y = 10000
+
 function playdate.update()
-  playdate.graphics.setColor(playdate.graphics.kColorWhite)
-  playdate.graphics.fillRect(0, 0, playdate.display.getWidth(), playdate.display.getHeight())
-  playdate.graphics.setColor(playdate.graphics.kColorBlack)
-  playdate.drawFPS(10, 10)
-  playdate.graphics.drawLocalizedText("greeting", 10, 30)
+	playdate.graphics.clear()
+	playdate.graphics.setColor(playdate.graphics.kColorBlack)
+	circle:update(1 / 20)
+	circle:draw()
 end
