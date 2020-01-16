@@ -1,4 +1,5 @@
 import "physics/Circle"
+import "physics/Line"
 import "utility/math"
 import "CoreLibs/utilities/printer"
 
@@ -7,6 +8,7 @@ playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 -- Keep track of marbles + pegs
 local marbles = {}
 local pegs = {}
+local lines = {}
 
 -- Define some methods to add new marbles and pegs
 function addNewMarble(x, y)
@@ -19,18 +21,31 @@ end
 function addNewPeg(x, y)
 	local peg = Circle(x or randomInt(0, 400), y or randomInt(90, 240), 10)
 	peg.mass = 0
-	peg.drawFilled = true
 	table.insert(pegs, peg)
 	return peg
+end
+function addNewLine(x1, y1, x2, y2)
+	local line = Line(x1 or randomInt(0, 400), y1 or randomInt(90, 240), x2 or randomInt(0, 400), y2 or randomInt(90, 240))
+	line.mass = 0
+	table.insert(lines, line)
+	return line
 end
 
 -- Add one marble and ten pegs to start
 addNewMarble(200)
-for i = 1, 10 do
-	addNewPeg(400 * i / 11)
+-- for i = 1, 3 do
+-- 	addNewPeg(400 * i / 11)
+-- end
+addNewLine(0, 170, 400, 200)
+for i = 1, 3 do
+	-- addNewLine()
 end
 
 function playdate.update()
+	-- Clear the screen
+	playdate.graphics.clear()
+	playdate.graphics.setColor(playdate.graphics.kColorBlack)
+
 	-- Update the marbles
 	for i = 1, #marbles do
 		local marble = marbles[i]
@@ -69,9 +84,20 @@ function playdate.update()
 		end
 	end
 
-	-- Clear the screen
-	playdate.graphics.clear()
-	playdate.graphics.setColor(playdate.graphics.kColorBlack)
+	-- Handle collisions between marbles and lines
+	for i = 1, #marbles do
+		for j = 1, #lines do
+			local collision = marbles[i]:checkForCollision(lines[j])
+			if collision then
+				collision:handle()
+			end
+		end
+	end
+
+	-- Draw the lines
+	for i = 1, #lines do
+		lines[i]:draw()
+	end
 
 	-- Draw the pegs
 	for i = 1, #pegs do
@@ -96,5 +122,6 @@ end
 
 -- Whenever B is pressed, add a new peg to the game
 function playdate.BButtonDown()
-	addNewPeg()
+	-- addNewPeg()
+	addNewLine()
 end

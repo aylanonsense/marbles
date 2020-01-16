@@ -44,3 +44,8 @@ function Collision:handle()
 	  bVel.y += bInverseMass * impulse.y
 	end
 end
+
+function Collision:swap()
+	self.objectA, self.objectB = self.objectB, self.objectA
+	self.normal:scale(-1)
+end

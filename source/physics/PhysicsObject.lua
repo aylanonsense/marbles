@@ -1,9 +1,11 @@
 import "CoreLibs/object"
+import "physics/checkForCollision"
 
 class("PhysicsObject").extends()
 
 PhysicsObject.Type = {
-	Circle = 1
+	Circle = 1,
+	Line = 2
 }
 
 function PhysicsObject:init(x, y)
@@ -38,4 +40,8 @@ end
 
 function PhysicsObject:isMovable()
 	return self.mass > 0
+end
+
+function PhysicsObject:checkForCollision(other)
+	return checkForCollision(self, other)
 end
