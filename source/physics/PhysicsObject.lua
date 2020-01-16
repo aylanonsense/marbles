@@ -1,19 +1,13 @@
 import "CoreLibs/object"
-import "physics/checkForCollision"
+import "physics/physics"
 
 class("PhysicsObject").extends()
-
-PhysicsObject.Type = {
-	Circle = 1,
-	Line = 2,
-	Arc = 3
-}
 
 function PhysicsObject:init(x, y)
 	self.position = playdate.geometry.vector2D.new(x, y)
 	self.velocity = playdate.geometry.vector2D.new(0, 0)
 	self.acceleration = playdate.geometry.vector2D.new(0, 0)
-	self.mass = 1 -- 0 means immovable (infinite mass)
+	self.mass = 0 -- 0 means immovable (infinite mass)
 	self.restitution = 1 -- i.e. bounciness (0 = no bounce, 1 = full bounce)
 end
 
@@ -43,6 +37,8 @@ function PhysicsObject:isMovable()
 	return self.mass > 0
 end
 
-function PhysicsObject:checkForCollision(other)
-	return checkForCollision(self, other)
+function PhysicsObject:add()
+	table.insert(physics.objects, self)
 end
+
+function PhysicsObject:checkForCollisionWithBall(ball) end

@@ -1,144 +1,65 @@
+import "physics/physics"
+import "physics/Ball"
 import "physics/Circle"
 import "physics/Line"
 import "physics/Arc"
 import "utility/math"
-import "CoreLibs/utilities/printer"
 
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
--- Keep track of marbles + pegs
-local marbles = {}
-local pegs = {}
-local lines = {}
-local arcs = {}
-
--- Define some methods to add new marbles and pegs
-function addNewMarble(x, y)
-	local marble = Circle(x or randomInt(20, 380), y or 20, 10)
-	marble.restitution = 0.5
-	marble.acceleration.y = 10000
-	table.insert(marbles, marble)
-	return marble
+-- Define some methods to add physics objects to the game
+function addNewBall(x, y, radius)
+	local ball = Ball(x or randomInt(20, 380), y or 20, radius or randomInt(5, 20))
+	ball.restitution = 1.0
+	ball.acceleration.y = 10000
+	ball.mass = (ball.radius / 10) ^ 2
+	ball:add()
+	return ball
 end
-function addNewPeg(x, y)
-	local peg = Circle(x or randomInt(0, 400), y or randomInt(90, 240), 10)
-	peg.mass = 0
-	table.insert(pegs, peg)
-	return peg
+function addNewCircle(x, y, radius)
+	local circle = Circle(x or randomInt(0, 400), y or randomInt(90, 240), radius or randomInt(10, 30))
+	circle:add()
+	return circle
 end
 function addNewLine(x1, y1, x2, y2)
 	local line = Line(x1 or randomInt(0, 400), y1 or randomInt(90, 240), x2 or randomInt(0, 400), y2 or randomInt(90, 240))
-	line.mass = 0
-	table.insert(lines, line)
+	line:add()
 	return line
 end
 function addNewArc(x, y, radius, startAngle, endAngle)
-	local arc = Arc(x, y, radius, startAngle, endAngle)
-	arc.mass = 0
-	table.insert(arcs, arc)
+	local arc = Arc(x or randomInt(0, 400), y or randomInt(90, 240), radius or randomInt(40, 80), startAngle or randomInt(0, 360), endAngle  or randomInt(0, 360))
+	arc:add()
 	return arc
 end
 
--- Add one marble and ten pegs to start
-addNewMarble(200)
-addNewArc(250, 120, 70, 160, 260)
+-- Add a bunch of physics objects
+addNewBall(30, 30, 10)
+addNewCircle(27, 140, 10)
+addNewCircle(60, 100, 10)
+addNewLine(110, 160, 190, 80)
+addNewArc(70, 180, 45, 140, 270)
+addNewCircle(250, 185, 50)
+addNewArc(310, 70, 60, 350, 220)
 
 function playdate.update()
 	-- Clear the screen
 	playdate.graphics.clear()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
 
-	-- Update the marbles
-	for i = 1, #marbles do
-		local marble = marbles[i]
-		marble:update(1 / 20)
-		-- Add some friction
-		marble.velocity.x *= 0.96
-		marble.velocity.y *= 0.96
-		-- Wrap marbles around the screen
-		if marble.position.x > 400 + marble.radius then
-			marble.position.x = 0 - marble.radius
-		elseif marble.position.x < 0 - marble.radius then
-			marble.position.x = 400 + marble.radius
-		end
-		if marble.position.y > 240 + marble.radius then
-			marble.position.y = 0 - marble.radius
-		end
-	end
+	-- Update the physics engine
+	physics:update(1 / 20)
 
-	-- Check for collisions between marbles
-	for i = 1, #marbles do
-		for j = i + 1, #marbles do
-			local collision = marbles[i]:checkForCollision(marbles[j])
-			if collision then
-				collision:handle()
-			end
-		end
-	end
-
-	-- Handle collisions between marbles and pegs
-	for i = 1, #marbles do
-		for j = 1, #pegs do
-			local collision = marbles[i]:checkForCollision(pegs[j])
-			if collision then
-				collision:handle()
-			end
-		end
-	end
-
-	-- Handle collisions between marbles and lines
-	for i = 1, #marbles do
-		for j = 1, #lines do
-			local collision = marbles[i]:checkForCollision(lines[j])
-			if collision then
-				collision:handle()
-			end
-		end
-	end
-
-	-- Handle collisions between marbles and arcs
-	for i = 1, #marbles do
-		for j = 1, #arcs do
-			local collision = marbles[i]:checkForCollision(arcs[j])
-			if collision then
-				collision:handle()
-			end
-		end
-	end
-
-	-- Draw the lines
-	for i = 1, #lines do
-		lines[i]:draw()
-	end
-
-	-- Draw the pegs
-	for i = 1, #pegs do
-		pegs[i]:draw()
-	end
-
-	-- Draw the arcs
-	for i = 1, #arcs do
-		arcs[i]:draw()
-	end
-
-	-- Draw the marbles
-	for i = 1, #marbles do
-		marbles[i]:draw()
-	end
+	-- Draw all the physics objects
+	physics:draw()
 
 	-- Draw some debug info
   playdate.drawFPS(10, 10)
-  playdate.graphics.drawText(#marbles .. " marble" .. (#marbles == 1 and "" or "s"), 10, 30)
-  playdate.graphics.drawText(#pegs .. " peg" .. (#pegs == 1 and "" or "s"), 10, 50)
 end
 
--- Whenever A is pressed, add a new marble to the game
+-- Whenever A or B are pressed, add a new ball to the game
 function playdate.AButtonDown()
-	addNewMarble()
+	addNewBall()
 end
-
--- Whenever B is pressed, add a new peg to the game
 function playdate.BButtonDown()
-	-- addNewPeg()
-	addNewLine()
+	addNewBall()
 end
