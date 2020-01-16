@@ -1,5 +1,6 @@
 import "physics/Circle"
 import "physics/Line"
+import "physics/Arc"
 import "utility/math"
 import "CoreLibs/utilities/printer"
 
@@ -9,6 +10,7 @@ playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 local marbles = {}
 local pegs = {}
 local lines = {}
+local arcs = {}
 
 -- Define some methods to add new marbles and pegs
 function addNewMarble(x, y)
@@ -30,16 +32,16 @@ function addNewLine(x1, y1, x2, y2)
 	table.insert(lines, line)
 	return line
 end
+function addNewArc(x, y, radius, startAngle, endAngle)
+	local arc = Arc(x, y, radius, startAngle, endAngle)
+	arc.mass = 0
+	table.insert(arcs, arc)
+	return arc
+end
 
 -- Add one marble and ten pegs to start
 addNewMarble(200)
--- for i = 1, 3 do
--- 	addNewPeg(400 * i / 11)
--- end
-addNewLine(0, 170, 400, 200)
-for i = 1, 3 do
-	-- addNewLine()
-end
+addNewArc(250, 120, 70, 160, 260)
 
 function playdate.update()
 	-- Clear the screen
@@ -94,6 +96,16 @@ function playdate.update()
 		end
 	end
 
+	-- Handle collisions between marbles and arcs
+	for i = 1, #marbles do
+		for j = 1, #arcs do
+			local collision = marbles[i]:checkForCollision(arcs[j])
+			if collision then
+				collision:handle()
+			end
+		end
+	end
+
 	-- Draw the lines
 	for i = 1, #lines do
 		lines[i]:draw()
@@ -102,6 +114,11 @@ function playdate.update()
 	-- Draw the pegs
 	for i = 1, #pegs do
 		pegs[i]:draw()
+	end
+
+	-- Draw the arcs
+	for i = 1, #arcs do
+		arcs[i]:draw()
 	end
 
 	-- Draw the marbles

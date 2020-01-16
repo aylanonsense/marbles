@@ -5,7 +5,8 @@ class("PhysicsObject").extends()
 
 PhysicsObject.Type = {
 	Circle = 1,
-	Line = 2
+	Line = 2,
+	Arc = 3
 }
 
 function PhysicsObject:init(x, y)
