@@ -1,6 +1,8 @@
-import "CoreLibs/graphics"
+import "CoreLibs/object"
 import "physics/PhysicsObject"
 import "physics/Collision"
+import "utility/math"
+import "render/camera"
 
 class("Arc").extends(PhysicsObject)
 
@@ -20,7 +22,8 @@ function Arc:init(x, y, radius, startAngle, endAngle)
 end
 
 function Arc:draw()
-	playdate.graphics.drawArc(self.position.x, self.position.y, self.radius, self.radius, self.startAngle, self.endAngle)
+	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
+	playdate.graphics.drawArc(x, y, self.radius, self.radius, self.startAngle - camera.rotation, self.endAngle - camera.rotation)
 end
 
 function Arc:checkForCollisionWithBall(ball)

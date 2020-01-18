@@ -1,6 +1,8 @@
+import "CoreLibs/object"
 import "CoreLibs/graphics"
 import "physics/PhysicsObject"
 import "physics/Collision"
+import "render/camera"
 
 class("Circle").extends(PhysicsObject)
 
@@ -17,7 +19,8 @@ function Circle:init(x, y, radius)
 end
 
 function Circle:draw()
-	playdate.graphics.drawCircleAtPoint(self.position, self.radius)
+	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
+	playdate.graphics.drawCircleAtPoint(x, y, self.radius)
 end
 
 function Circle:checkForCollisionWithBall(ball)

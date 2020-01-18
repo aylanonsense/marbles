@@ -1,5 +1,7 @@
+import "CoreLibs/object"
 import "physics/PhysicsObject"
 import "physics/Collision"
+import "render/camera"
 
 class("Line").extends(PhysicsObject)
 
@@ -21,13 +23,16 @@ end
 
 function Line:draw()
 	local pos, segment, normal, length = self.position, self.segment, self.normal, self.length
-	local x1, y1, x2, y2 = pos.x, pos.y, pos.x + segment.x, pos.y + segment.y
+	local x1, y1 = camera.matrix:transformXY(pos.x, pos.y)
+	local x2, y2 = camera.matrix:transformXY(pos.x + segment.x, pos.y + segment.y)
 	-- Draw the line
 	playdate.graphics.drawLine(x1, y1, x2, y2)
 	-- Draw a hash mark on the back side of the line
 	if self.facing == Line.TopOnly then
-		local xMid, yMid = (x1 + x2) / 2, (y1 + y2) / 2
-		playdate.graphics.drawLine(xMid, yMid, xMid - 7 * self.normal.x, yMid - 7 * self.normal.y)
+		local xMid, yMid = (pos.x + pos.x + segment.x) / 2, (pos.y + pos.y + segment.y) / 2
+		local x3, y3 = camera.matrix:transformXY(xMid, yMid)
+		local x4, y4 = camera.matrix:transformXY(xMid - 7 * self.normal.x, yMid - 7 * self.normal.y)
+		playdate.graphics.drawLine(x3, y3, x4, y4)
 	end
 end
 

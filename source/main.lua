@@ -1,54 +1,62 @@
+import "render/camera"
 import "physics/physics"
 import "physics/Ball"
-import "physics/Circle"
 import "physics/Line"
 import "physics/Arc"
-import "utility/math"
+import "physics/Point"
+import "physics/Circle"
 
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
--- Define some methods to add physics objects to the game
-function addNewBall(x, y, radius)
-	local ball = Ball(x or randomInt(20, 380), y or 20, radius or randomInt(5, 20))
-	ball.restitution = 1.0
-	ball.acceleration.y = 10000
-	ball.mass = (ball.radius / 10) ^ 2
-	ball:add()
-	return ball
-end
-function addNewCircle(x, y, radius)
-	local circle = Circle(x or randomInt(0, 400), y or randomInt(90, 240), radius or randomInt(10, 30))
-	circle:add()
-	return circle
-end
-function addNewLine(x1, y1, x2, y2)
-	local line = Line(x1 or randomInt(0, 400), y1 or randomInt(90, 240), x2 or randomInt(0, 400), y2 or randomInt(90, 240))
-	line:add()
-	return line
-end
-function addNewArc(x, y, radius, startAngle, endAngle)
-	local arc = Arc(x or randomInt(0, 400), y or randomInt(90, 240), radius or randomInt(40, 80), startAngle or randomInt(0, 360), endAngle  or randomInt(0, 360))
-	arc.facing = Arc.Inwards
-	arc:add()
-	return arc
-end
+-- Create a level out of physics objects
+Arc(-10, 100, 40, 270, 90):add()
+Line(30, 100, 100, 80):add()
+Line(100, 80, 140, 90):add()
+Line(140, 90, 120, -20):add()
+Line(120, -20, 160, -30):add()
+Line(160, -30, 130, -90):add()
+Line(130, -90, 60, -100):add()
+Line(60, -100, -30, -90):add()
+Line(-30, -90, -40, -50):add()
+Line(-40, -50, -60, -50):add()
+Arc(-110, -50, 50, 270, 90):add().facing = Arc.Inwards
+Line(-160, -50, -140, -10):add()
+Line(-140, -10, -150, 60):add()
+Line(-150, 60, -90, 40):add()
+Line(-90, 40, -140, 80):add()
+Line(-140, 80, -110, 100):add()
+Line(-110, 100, -50, 100):add()
+Circle(40, 0, 20):add()
+Point(100, 80):add()
+Point(120, -20):add()
+Point(-40, -50):add()
+Point(-60, -50):add()
+Point(-140, -10):add()
+Point(-90, 40):add()
 
--- Add a bunch of physics objects
-addNewBall(30, 30, 10)
-addNewCircle(27, 140, 10)
-addNewCircle(60, 100, 10)
-addNewLine(110, 160, 190, 80)
-addNewArc(70, 180, 45, 140, 270)
-addNewCircle(250, 185, 50)
-addNewArc(310, 70, 60, 350, 220)
+-- Create a ball
+local ball = Ball(0, 0, 15):add()
+ball.restitution = 0.8
 
 function playdate.update()
 	-- Clear the screen
 	playdate.graphics.clear()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
 
-	-- Update the physics engine
+	-- Set the ball's gravity to be relative to the current perspective
+	for i = 1, #physics.balls do
+		physics.balls[i].acceleration.x, physics.balls[i].acceleration.y = -5000 * camera.up.x, -5000 * camera.up.y
+	end
+
+	-- Update the physics engine and do all collisions
 	physics:update(1 / 20)
+
+	-- Rotating the crank rotates the camera
+	camera.rotation = playdate.getCrankPosition()
+
+	-- Move the camera to be looking at the ball
+	camera.position.x, camera.position.y = ball.position.x, ball.position.y
+	camera:recalculatePerspective()
 
 	-- Draw all the physics objects
 	physics:draw()
@@ -57,10 +65,15 @@ function playdate.update()
   playdate.drawFPS(10, 10)
 end
 
--- Whenever A or B are pressed, add a new ball to the game
+-- Press A or B to add more balls to the scene
+function addAnotherBall()
+	local anotherBall = Ball(0, 0, 10):add()
+	anotherBall.mass = 0.5
+	anotherBall.restitution = 0.8
+end
 function playdate.AButtonDown()
-	addNewBall()
+	addAnotherBall()
 end
 function playdate.BButtonDown()
-	addNewBall()
+	addAnotherBall()
 end

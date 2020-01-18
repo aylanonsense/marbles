@@ -39,6 +39,7 @@ end
 
 function PhysicsObject:add()
 	table.insert(physics.objects, self)
+	return self
 end
 
 function PhysicsObject:checkForCollisionWithBall(ball) end

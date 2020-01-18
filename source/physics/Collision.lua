@@ -1,5 +1,4 @@
 import "CoreLibs/object"
-import "utility/Pool"
 
 class("Collision").extends()
 

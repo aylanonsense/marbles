@@ -1,4 +1,4 @@
-import "CoreLibs/graphics"
+import "CoreLibs/object"
 import "physics/physics"
 import "physics/Circle"
 
@@ -10,6 +10,6 @@ function Ball:init(x, y, radius)
 end
 
 function Ball:add()
-	Ball.super.add(self)
 	table.insert(physics.balls, self)
+	return Ball.super.add(self)
 end
