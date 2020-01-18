@@ -20,6 +20,7 @@ function physics:update(dt)
 				if collision then
 					-- There was a collision! Just handle is straight-away
 					collision:handle()
+					collision:discard()
 				end
 			end
 		end

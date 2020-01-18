@@ -28,6 +28,7 @@ function addNewLine(x1, y1, x2, y2)
 end
 function addNewArc(x, y, radius, startAngle, endAngle)
 	local arc = Arc(x or randomInt(0, 400), y or randomInt(90, 240), radius or randomInt(40, 80), startAngle or randomInt(0, 360), endAngle  or randomInt(0, 360))
+	arc.facing = Arc.Inwards
 	arc:add()
 	return arc
 end
