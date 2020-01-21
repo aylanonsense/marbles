@@ -7,7 +7,9 @@ physics = {
 function physics:update(dt)
 	-- Update all physics objects
 	for i = 1, #self.objects do
-		self.objects[i]:update(dt)
+		if self.objects[i].isEnabled then
+			self.objects[i]:update(dt)
+		end
 	end
 
 	-- Check for collisions between balls and objects
@@ -15,7 +17,7 @@ function physics:update(dt)
 		local ball = self.balls[i]
 		for j = 1, #self.objects do
 			local obj = self.objects[j]
-			if ball ~= obj then
+			if ball ~= obj and ball.isEnabled and obj.isEnabled then
 				local collision = obj:checkForCollisionWithBall(ball)
 				if collision then
 					-- There was a collision! Just handle is straight-away
@@ -30,6 +32,8 @@ end
 function physics:draw()
 	-- Just draw all the physics objects
 	for i = 1, #self.objects do
-		self.objects[i]:draw()
+		if self.objects[i].isEnabled then
+			self.objects[i]:draw()
+		end
 	end
 end

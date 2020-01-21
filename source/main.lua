@@ -8,37 +8,50 @@ import "physics/Circle"
 
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
+local timer = 0
+
 -- Create a level out of physics objects
+local movingPlatform = {}
 Arc(-10, 100, 40, 270, 90):add()
 Line(30, 100, 100, 80):add()
 Line(100, 80, 140, 90):add()
-Line(140, 90, 120, -20):add()
-Line(120, -20, 160, -30):add()
-Line(160, -30, 130, -90):add()
-Line(130, -90, 60, -100):add()
-Line(60, -100, -30, -90):add()
-Line(-30, -90, -40, -50):add()
-Line(-40, -50, -60, -50):add()
-Arc(-110, -50, 50, 270, 90):add().facing = Arc.Inwards
-Line(-160, -50, -140, -10):add()
-Line(-140, -10, -150, 60):add()
+Line(140, 90, 120, -70):add()
+Line(120, -70, 160, -80):add()
+Line(160, -80, 130, -140):add()
+Line(130, -140, 60, -150):add()
+Line(60, -150, -30, -140):add()
+Line(-30, -140, -40, -100):add()
+Line(-40, -100, -60, -100):add()
+Arc(-110, -100, 50, 270, 90):add().facing = Arc.Inwards
+Line(-160, -100, -140, -60):add()
+Line(-140, -60, -150, 60):add()
 Line(-150, 60, -90, 40):add()
 Line(-90, 40, -140, 80):add()
 Line(-140, 80, -110, 100):add()
 Line(-110, 100, -50, 100):add()
-Circle(40, 0, 20):add()
+table.insert(movingPlatform, Line(-40, -60, 40, -60):add())
+table.insert(movingPlatform, Line(40, -60, 60, -40):add())
+table.insert(movingPlatform, Line(60, -40, -40, -40):add())
+table.insert(movingPlatform, Line(-40, -40, -40, -60):add())
+local blinkingCircle = Circle(80, 40, 20):add()
 Point(100, 80):add()
-Point(120, -20):add()
-Point(-40, -50):add()
-Point(-60, -50):add()
-Point(-140, -10):add()
+Point(120, -70):add()
+Point(-40, -100):add()
+Point(-60, -100):add()
+Point(-140, -60):add()
 Point(-90, 40):add()
+table.insert(movingPlatform, Point(-40, -60):add())
+table.insert(movingPlatform, Point(40, -60):add())
+table.insert(movingPlatform, Point(60, -40):add())
+table.insert(movingPlatform, Point(-40, -40):add())
 
 -- Create a ball
 local ball = Ball(0, 0, 15):add()
 ball.restitution = 0.8
 
 function playdate.update()
+	timer += 1 / 20
+
 	-- Clear the screen
 	playdate.graphics.clear()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
@@ -47,6 +60,14 @@ function playdate.update()
 	for i = 1, #physics.balls do
 		physics.balls[i].acceleration.x, physics.balls[i].acceleration.y = -5000 * camera.up.x, -5000 * camera.up.y
 	end
+
+	-- Make the parts of the moving platform oscillate back and forth
+	for i = 1, #movingPlatform do
+		movingPlatform[i].velocity.x = 40 * math.cos(timer)
+	end
+
+	-- Make the blinking circle pop in and out of existence
+	blinkingCircle.isEnabled = timer % 4 < 2
 
 	-- Update the physics engine and do all collisions
 	physics:update(1 / 20)
