@@ -4,6 +4,11 @@ physics = {
 	objects = {}
 }
 
+function physics:reset()
+	self.balls = {}
+	self.objects = {}
+end
+
 function physics:update(dt)
 	-- Update all physics objects
 	for i = 1, #self.objects do

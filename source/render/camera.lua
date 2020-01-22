@@ -8,6 +8,12 @@ camera = {
 	up = playdate.geometry.vector2D.new(0, -1)
 }
 
+function camera:reset()
+	self.position.x, self.position.y = 0, 0
+	self.rotation = 0
+	self:recalculatePerspective()
+end
+
 -- Recalculates the matrix necessary for objects to quickly do perspective calculations
 function camera:recalculatePerspective()
 	-- Calculate the up vector
