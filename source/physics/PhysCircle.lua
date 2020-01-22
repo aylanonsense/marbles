@@ -1,29 +1,29 @@
 import "CoreLibs/object"
 import "CoreLibs/graphics"
-import "physics/PhysicsObject"
+import "physics/PhysObject"
 import "physics/Collision"
 import "render/camera"
 
-class("Circle").extends(PhysicsObject)
+class("PhysCircle").extends(PhysObject)
 
 -- Facing constants
-Circle.Outwards = 1
-Circle.Inwards = 2
-Circle.DoubleSided = 3
+PhysCircle.Outwards = 1
+PhysCircle.Inwards = 2
+PhysCircle.DoubleSided = 3
 
-function Circle:init(x, y, radius)
-	Circle.super.init(self, x, y)
+function PhysCircle:init(x, y, radius)
+	PhysCircle.super.init(self, x, y)
 	self.radius = radius
-	self.facing = Circle.Outwards
+	self.facing = PhysCircle.Outwards
 	self.ignoreReverseSideCollisions = false
 end
 
-function Circle:draw()
+function PhysCircle:draw()
 	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
 	playdate.graphics.drawCircleAtPoint(x, y, self.radius)
 end
 
-function Circle:checkForCollisionWithBall(ball)
+function PhysCircle:checkForCollisionWithBall(ball)
 	-- Check to see if the ball is touching (or inside) the circle
 	local dx, dy = ball.position.x - self.position.x, ball.position.y - self.position.y
 	local squareDist = dx * dx + dy * dy
@@ -31,17 +31,17 @@ function Circle:checkForCollisionWithBall(ball)
 	if squareDist < maxDist * maxDist then
 		-- The ball is touching (or inside) the circle!
 		local dist = math.sqrt(squareDist)
-		if self.facing == Circle.Outwards then
+		if self.facing == PhysCircle.Outwards then
 			if not self.ignoreReverseSideCollisions or dist > (self.radius - ball.radius) then
 				-- Bounce off the outside of the circle
 				return Collision.pool:withdraw(self, ball, self.radius + ball.radius - dist, dx / dist, dy / dist)
 			end
-		elseif self.facing == Circle.Inwards then
+		elseif self.facing == PhysCircle.Inwards then
 			if dist > (self.radius - ball.radius) and (not self.ignoreReverseSideCollisions or dist <= self.radius) then
 				-- Bounce off the inside of the circle
 				return Collision.pool:withdraw(self, ball, dist - (self.radius - ball.radius), -dx / dist, -dy / dist)
 			end
-		elseif self.facing == Circle.DoubleSided then
+		elseif self.facing == PhysCircle.DoubleSided then
 			if dist >= self.radius then
 				-- Bounce off the outside of the circle
 				return Collision.pool:withdraw(self, ball, self.radius + ball.radius - dist, dx / dist, dy / dist)

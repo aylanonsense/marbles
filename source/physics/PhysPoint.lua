@@ -1,21 +1,21 @@
 import "CoreLibs/object"
 import "CoreLibs/graphics"
-import "physics/PhysicsObject"
+import "physics/PhysObject"
 import "physics/Collision"
 import "render/camera"
 
-class("Point").extends(PhysicsObject)
+class("PhysPoint").extends(PhysObject)
 
-function Point:init(x, y)
-	Point.super.init(self, x, y)
+function PhysPoint:init(x, y)
+	PhysPoint.super.init(self, x, y)
 end
 
-function Point:draw()
+function PhysPoint:draw()
 	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
 	playdate.graphics.fillCircleAtPoint(x, y, 2)
 end
 
-function Point:checkForCollisionWithBall(ball)
+function PhysPoint:checkForCollisionWithBall(ball)
 	-- Check to see if they are overlapping
 	local dx, dy = ball.position.x - self.position.x, ball.position.y - self.position.y
 	local squareDist = dx * dx + dy * dy
