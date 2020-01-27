@@ -6,7 +6,8 @@ camera = {
 	rotation = 0,
 	scale = 1,
 	matrix = playdate.geometry.affineTransform.new(),
-	up = playdate.geometry.vector2D.new(0, -1)
+	up = playdate.geometry.vector2D.new(0, -1),
+	right = playdate.geometry.vector2D.new(1, 0)
 }
 
 function camera:reset()
@@ -22,6 +23,7 @@ function camera:recalculatePerspective()
 	self.matrix:reset()
 	self.matrix:rotate(self.rotation)
 	self.up.x, self.up.y = self.matrix:transformXY(0, -1)
+	self.right.x, self.right.y = -self.up.y, self.up.x
 	-- And now actually calculate the perspective matrix
 	self.matrix:reset()
 	self.matrix:translate(-self.position.x, -self.position.y)

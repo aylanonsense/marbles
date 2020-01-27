@@ -76,6 +76,6 @@ function CreatePolygonProcedure:canClosePolygon()
 		local dx = self.coordinates[1] - scene.cursor.position.x
 		local dy = self.coordinates[2] - scene.cursor.position.y
 		local squareDist = dx * dx + dy * dy
-		return squareDist < 15 * 15
+		return squareDist < 4 * 4
 	end
 end

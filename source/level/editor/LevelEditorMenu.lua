@@ -58,9 +58,9 @@ function LevelEditorMenu:draw(x, y)
 	end
 end
 
-function LevelEditorMenu:highlightPreviousOption()
+function LevelEditorMenu:highlightNextOption()
 	if self.childMenu then
-		self.childMenu:highlightPreviousOption()
+		self.childMenu:highlightNextOption()
 	else
 		self.highlightedOptionIndex += 1
 		if self.highlightedOptionIndex > #self.options then
@@ -69,9 +69,9 @@ function LevelEditorMenu:highlightPreviousOption()
 	end
 end
 
-function LevelEditorMenu:highlightNextOption()
+function LevelEditorMenu:highlightPreviousOption()
 	if self.childMenu then
-		self.childMenu:highlightNextOption()
+		self.childMenu:highlightPreviousOption()
 	else
 		self.highlightedOptionIndex -= 1
 		if self.highlightedOptionIndex < 1 then
@@ -86,11 +86,33 @@ function LevelEditorMenu:select()
 	else
 		local option = self.options[self.highlightedOptionIndex]
 		if option.selected then
-			option.selected()
+			option.selected(self, option)
 		end
 		if option.submenu then
 			self.childMenu = option.submenu
 			self.childMenu.parentMenu = self
+		end
+	end
+end
+
+function LevelEditorMenu:increase()
+	if self.childMenu then
+		self.childMenu:increase()
+	else
+		local option = self.options[self.highlightedOptionIndex]
+		if option.increase then
+			option.increase(self, option)
+		end
+	end
+end
+
+function LevelEditorMenu:decrease()
+	if self.childMenu then
+		self.childMenu:decrease()
+	else
+		local option = self.options[self.highlightedOptionIndex]
+		if option.decrease then
+			option.decrease(self, option)
 		end
 	end
 end

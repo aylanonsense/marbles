@@ -3,6 +3,11 @@ import "render/camera"
 
 perspectiveDrawing = {}
 
+function perspectiveDrawing.drawPixel(x, y)
+	x, y = camera.matrix:transformXY(x, y)
+	playdate.graphics.drawPixel(x, y)
+end
+
 function perspectiveDrawing.drawLine(x1, y1, x2, y2)
 	x1, y1 = camera.matrix:transformXY(x1, y1)
 	x2, y2 = camera.matrix:transformXY(x2, y2)
@@ -21,10 +26,10 @@ end
 
 function perspectiveDrawing.drawCircle(x, y, r)
 	x, y = camera.matrix:transformXY(x, y)
-	playdate.graphics.drawCircle(x, y, r)
+	playdate.graphics.drawCircle(x, y, r * camera.scale)
 end
 
 function perspectiveDrawing.fillCircle(x, y, r)
 	x, y = camera.matrix:transformXY(x, y)
-	playdate.graphics.fillCircleAtPoint(x, y, r)
+	playdate.graphics.fillCircleAtPoint(x, y, r * camera.scale)
 end
