@@ -10,6 +10,7 @@ class("CreatePolygonProcedure").extends(Procedure)
 function CreatePolygonProcedure:init()
 	CreatePolygonProcedure.super.init(self)
 	self.coordinates = {}
+	scene.cursor:startSnappingToGrid()
 end
 
 function CreatePolygonProcedure:draw()
@@ -63,6 +64,11 @@ function CreatePolygonProcedure:finish()
 	LevelLine(points[#points], points[1])
 	local polygon = LevelPolygon(points)
 	scene:addGeometry(polygon)
+	scene.cursor:stopSnappingToGrid()
+end
+
+function CreatePolygonProcedure:cancel()
+	scene.cursor:stopSnappingToGrid()
 end
 
 function CreatePolygonProcedure:back()

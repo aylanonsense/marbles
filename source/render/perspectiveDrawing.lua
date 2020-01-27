@@ -26,7 +26,7 @@ end
 
 function perspectiveDrawing.drawCircle(x, y, r)
 	x, y = camera.matrix:transformXY(x, y)
-	playdate.graphics.drawCircle(x, y, r * camera.scale)
+	playdate.graphics.drawCircleAtPoint(x, y, r * camera.scale)
 end
 
 function perspectiveDrawing.fillCircle(x, y, r)

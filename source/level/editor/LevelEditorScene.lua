@@ -5,6 +5,7 @@ import "render/perspectiveDrawing"
 import "level/editor/LevelEditorMenu"
 import "level/editor/LevelEditorCursor"
 import "level/editor/procedure/CreatePolygonProcedure"
+import "level/editor/procedure/EditProcedure"
 
 class("LevelEditorScene").extends(Scene)
 
@@ -36,12 +37,18 @@ function LevelEditorScene:init()
 							selected = function()
 								self.mode = LevelEditorScene.ProcedureMode
 								self.procedure = CreatePolygonProcedure()
-								self.cursor:startSnappingToGrid()
 							end
 						}
 					})
 				}
 			})
+		},
+		{
+			text = "Edit",
+			selected = function()
+				self.mode = LevelEditorScene.ProcedureMode
+				self.procedure = EditProcedure()
+			end
 		},
 		{
 			text = "Camera",
@@ -176,7 +183,6 @@ function LevelEditorScene:AButtonDown()
 		if isDone then
 			self.procedure:finish()
 			self.procedure = nil
-			self.cursor:stopSnappingToGrid()
 			self.mode = LevelEditorScene.MenuMode
 		end
 	end
@@ -190,7 +196,6 @@ function LevelEditorScene:BButtonDown()
 		if isDone then
 			self.procedure:cancel()
 			self.procedure = nil
-			self.cursor:stopSnappingToGrid()
 			self.mode = LevelEditorScene.MenuMode
 		end
 	elseif self.mode == LevelEditorScene.FreeLookMode then

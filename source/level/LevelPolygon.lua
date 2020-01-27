@@ -6,7 +6,7 @@ import "render/camera"
 class("LevelPolygon").extends("LevelGeometry")
 
 function LevelPolygon:init(points)
-	LevelPolygon.super.init(self)
+	LevelPolygon.super.init(self, LevelGeometry.Type.Polygon)
 	self.points = points
 end
 

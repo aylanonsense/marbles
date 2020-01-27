@@ -7,7 +7,7 @@ import "render/perspectiveDrawing"
 class("LevelPoint").extends("LevelGeometry")
 
 function LevelPoint:init(x, y)
-	LevelPoint.super.init(self)
+	LevelPoint.super.init(self, LevelGeometry.Type.Point)
 	self.x = x
 	self.y = y
 	self.incomingLine = nil
