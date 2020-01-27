@@ -5,13 +5,17 @@ import "render/perspectiveDrawing"
 import "level/editor/LevelEditorMenu"
 import "level/editor/LevelEditorCursor"
 import "level/editor/procedure/CreatePolygonProcedure"
-import "level/editor/procedure/EditProcedure"
+import "level/editor/procedure/SelectEditTargetProcedure"
+import "level/editor/geometry/LevelEditorPoint"
+import "level/editor/geometry/LevelEditorLine"
+import "level/editor/geometry/LevelEditorPolygon"
 
 class("LevelEditorScene").extends(Scene)
 
-LevelEditorScene.MenuMode = 1
+LevelEditorScene.MainMenuMode = 1
 LevelEditorScene.ProcedureMode = 2
 LevelEditorScene.FreeLookMode = 3
+LevelEditorScene.EditGeometryMenuMode = 4
 
 LevelEditorScene.CameraScales = { 0.05, 0.10, 0.25, 0.5, 1.0, 1.5, 2.0, 3.0 }
 LevelEditorScene.CursorGridSizes = { 480, 160, 80, 40, 20, 20, 10, 10 }
@@ -22,10 +26,22 @@ function LevelEditorScene:init()
 	self.cameraScaleIndex = 5
 	camera.scale = LevelEditorScene.CameraScales[self.cameraScaleIndex]
 	self.cursor = LevelEditorCursor(camera.position.x, camera.position.y)
-	self.mode = LevelEditorScene.MenuMode
+	self.mode = LevelEditorScene.MainMenuMode
 	self.procedure = nil
-	self.geometry = {}
-	self.menu = LevelEditorMenu("Level Editor", {
+	-- Create a piece of geometry as a starting point
+	local points = {
+		LevelEditorPoint(-40, -40),
+		LevelEditorPoint(40, -40),
+		LevelEditorPoint(40, 40),
+		LevelEditorPoint(-40, 40)
+	}
+	LevelEditorLine(points[1], points[2])
+	LevelEditorLine(points[2], points[3])
+	LevelEditorLine(points[3], points[4])
+	LevelEditorLine(points[4], points[1])
+	self.geometry = { LevelEditorPolygon(points) }
+	self.selectedGeometry = nil
+	self.mainMenu = LevelEditorMenu("Level Editor", {
 		{
 			text = "Create",
 			submenu = LevelEditorMenu("Create", {
@@ -47,7 +63,7 @@ function LevelEditorScene:init()
 			text = "Edit",
 			selected = function()
 				self.mode = LevelEditorScene.ProcedureMode
-				self.procedure = EditProcedure()
+				self.procedure = SelectEditTargetProcedure()
 			end
 		},
 		{
@@ -99,11 +115,22 @@ function LevelEditorScene:init()
 			})
 		}
 	})
+	self.editGeometryMenu = nil
+	self.editPointMenu = LevelEditorMenu("Edit Point", {
+		{
+			text = "Move"
+		},
+		{
+			text = "Delete"
+		}
+	})
 end
 
 function LevelEditorScene:update(dt)
-	if self.mode == LevelEditorScene.MenuMode then
-		self.menu:update(dt)
+	if self.mode == LevelEditorScene.MainMenuMode then
+		self.mainMenu:update(dt)
+	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+		self.editGeometryMenu:update(dt)
 	elseif self.mode == LevelEditorScene.ProcedureMode then
 		self.cursor:update(dt)
 		self.procedure:update(dt)
@@ -139,11 +166,81 @@ function LevelEditorScene:draw()
 		geom:draw()
 	end
 	-- Draw the current menu or procedure
-	if self.mode == LevelEditorScene.MenuMode then
-		self.menu:draw(10, 10)
+	if self.mode == LevelEditorScene.MainMenuMode then
+		self.mainMenu:draw(10, 10)
+	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+		self.editGeometryMenu:draw(10, 10)
 	elseif self.mode == LevelEditorScene.ProcedureMode then
 		self.procedure:draw()
 		self.cursor:draw()
+	end
+end
+
+function LevelEditorScene:upButtonDown()
+	if self.mode == LevelEditorScene.MainMenuMode then
+		self.mainMenu:highlightPreviousOption()
+	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+		self.editGeometryMenu:highlightPreviousOption()
+	end
+end
+
+function LevelEditorScene:downButtonDown()
+	if self.mode == LevelEditorScene.MainMenuMode then
+		self.mainMenu:highlightNextOption()
+	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+		self.editGeometryMenu:highlightNextOption()
+	end
+end
+
+function LevelEditorScene:leftButtonDown()
+	if self.mode == LevelEditorScene.MainMenuMode then
+		self.mainMenu:decrease()
+	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+		self.editGeometryMenu:decrease()
+	end
+end
+
+function LevelEditorScene:rightButtonDown()
+	if self.mode == LevelEditorScene.MainMenuMode then
+		self.mainMenu:increase()
+	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+		self.editGeometryMenu:increase()
+	end
+end
+
+function LevelEditorScene:AButtonDown()
+	if self.mode == LevelEditorScene.MainMenuMode then
+		self.mainMenu:select()
+	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+		self.editGeometryMenu:select()
+	elseif self.mode == LevelEditorScene.ProcedureMode then
+		local isDone = self.procedure:advance()
+		if isDone then
+			local procedure = self.procedure
+			self.mode = LevelEditorScene.MainMenuMode
+			self.procedure = nil
+			procedure:finish()
+		end
+	end
+end
+
+function LevelEditorScene:BButtonDown()
+	if self.mode == LevelEditorScene.MainMenuMode then
+		self.mainMenu:deselect()
+	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+		self.mode = LevelEditorScene.MainMenuMode
+		self.selectedGeometry = nil
+		self.editGeometryMenu = nil
+	elseif self.mode == LevelEditorScene.ProcedureMode then
+		local isDone = self.procedure:back()
+		if isDone then
+			local procedure = self.procedure
+			self.mode = LevelEditorScene.MainMenuMode
+			self.procedure = nil
+			procedure:cancel()
+		end
+	elseif self.mode == LevelEditorScene.FreeLookMode then
+		self.mode = LevelEditorScene.MainMenuMode
 	end
 end
 
@@ -151,54 +248,8 @@ function LevelEditorScene:addGeometry(geom)
 	table.insert(self.geometry, geom)
 end
 
-function LevelEditorScene:upButtonDown()
-	if self.mode == LevelEditorScene.MenuMode then
-		self.menu:highlightPreviousOption()
-	end
-end
-
-function LevelEditorScene:downButtonDown()
-	if self.mode == LevelEditorScene.MenuMode then
-		self.menu:highlightNextOption()
-	end
-end
-
-function LevelEditorScene:leftButtonDown()
-	if self.mode == LevelEditorScene.MenuMode then
-		self.menu:decrease()
-	end
-end
-
-function LevelEditorScene:rightButtonDown()
-	if self.mode == LevelEditorScene.MenuMode then
-		self.menu:increase()
-	end
-end
-
-function LevelEditorScene:AButtonDown()
-	if self.mode == LevelEditorScene.MenuMode then
-		self.menu:select()
-	elseif self.mode == LevelEditorScene.ProcedureMode then
-		local isDone = self.procedure:advance()
-		if isDone then
-			self.procedure:finish()
-			self.procedure = nil
-			self.mode = LevelEditorScene.MenuMode
-		end
-	end
-end
-
-function LevelEditorScene:BButtonDown()
-	if self.mode == LevelEditorScene.MenuMode then
-		self.menu:deselect()
-	elseif self.mode == LevelEditorScene.ProcedureMode then
-		local isDone = self.procedure:back()
-		if isDone then
-			self.procedure:cancel()
-			self.procedure = nil
-			self.mode = LevelEditorScene.MenuMode
-		end
-	elseif self.mode == LevelEditorScene.FreeLookMode then
-		self.mode = LevelEditorScene.MenuMode
-	end
+function LevelEditorScene:editGeometry(geom, target)
+	self.selectedGeometry = geom
+	self.editGeometryMenu = self.editPointMenu
+	self.mode = LevelEditorScene.EditGeometryMenuMode
 end

@@ -1,9 +1,9 @@
 import "CoreLibs/object"
 import "render/perspectiveDrawing"
 import "level/editor/procedure/Procedure"
-import "level/LevelPoint"
-import "level/LevelLine"
-import "level/LevelPolygon"
+import "level/editor/geometry/LevelEditorPoint"
+import "level/editor/geometry/LevelEditorLine"
+import "level/editor/geometry/LevelEditorPolygon"
 
 class("CreatePolygonProcedure").extends(Procedure)
 
@@ -54,15 +54,15 @@ function CreatePolygonProcedure:finish()
 	local prevPoint
 	for i = 1, #self.coordinates, 2 do
 		local x, y = self.coordinates[i], self.coordinates[i + 1]
-		local point = LevelPoint(x, y)
+		local point = LevelEditorPoint(x, y)
 		if prevPoint then
-			LevelLine(prevPoint, point)
+			LevelEditorLine(prevPoint, point)
 		end
 		table.insert(points, point)
 		prevPoint = point
 	end
-	LevelLine(points[#points], points[1])
-	local polygon = LevelPolygon(points)
+	LevelEditorLine(points[#points], points[1])
+	local polygon = LevelEditorPolygon(points)
 	scene:addGeometry(polygon)
 	scene.cursor:stopSnappingToGrid()
 end
