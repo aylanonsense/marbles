@@ -1,9 +1,12 @@
 import "level/editor/LevelEditorScene"
 
+-- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
-local scene = LevelEditorScene()
+-- Make a global scene variable
+scene = LevelEditorScene()
 
+-- Update the scene
 function playdate.update()
 	scene:update(1 / 20)
 	scene:draw()

@@ -1,5 +1,6 @@
 import "CoreLibs/object"
 
+
 class("Scene").extends()
 
 -- Define empty callbacks

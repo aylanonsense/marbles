@@ -4,6 +4,7 @@ camera = {
 	screenHeight = 240,
 	position = playdate.geometry.vector2D.new(0, 0),
 	rotation = 0,
+	scale = 1,
 	matrix = playdate.geometry.affineTransform.new(),
 	up = playdate.geometry.vector2D.new(0, -1)
 }
@@ -11,6 +12,7 @@ camera = {
 function camera:reset()
 	self.position.x, self.position.y = 0, 0
 	self.rotation = 0
+	self.scale = 1
 	self:recalculatePerspective()
 end
 
@@ -24,6 +26,7 @@ function camera:recalculatePerspective()
 	self.matrix:reset()
 	self.matrix:translate(-self.position.x, -self.position.y)
 	self.matrix:rotate(-self.rotation)
+	self.matrix:scale(self.scale)
 	self.matrix:translate(self.screenWidth / 2, self.screenHeight / 2)
 end
 

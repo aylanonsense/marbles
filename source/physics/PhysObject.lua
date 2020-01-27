@@ -30,7 +30,7 @@ end
 
 function PhysObject:draw()
 	-- Draw an X at the object's position
-	local x, y = self.position.x, self.position.y
+	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
 	playdate.graphics.drawLine(x - 5, y - 5, x + 5, y + 5)
 	playdate.graphics.drawLine(x - 5, y + 5, x + 5, y - 5)
 end
