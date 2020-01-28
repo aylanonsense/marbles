@@ -1,19 +1,19 @@
 import "CoreLibs/object"
 import "CoreLibs/graphics"
-import "level/editor/geometry/LevelEditorGeometry"
+import "level/editor/geometry/EditorGeometry"
 import "render/camera"
 
-class("LevelEditorPolygon").extends("LevelEditorGeometry")
+class("EditorPolygon").extends("EditorGeometry")
 
-function LevelEditorPolygon:init(points)
-	LevelEditorPolygon.super.init(self, LevelEditorGeometry.Type.Polygon)
+function EditorPolygon:init(points)
+	EditorPolygon.super.init(self, EditorGeometry.Type.Polygon)
 	self.points = points
 	for _, point in ipairs(self.points) do
 		point.polygon = self
 	end
 end
 
-function LevelEditorPolygon:draw()
+function EditorPolygon:draw()
 	local coordinates = {}
 	for i = 1, #self.points do
 		local x, y = camera.matrix:transformXY(self.points[i].x, self.points[i].y)
@@ -32,7 +32,7 @@ function LevelEditorPolygon:draw()
 	end
 end
 
-function LevelEditorPolygon:getEditTargets()
+function EditorPolygon:getEditTargets()
 	local minX, maxX, minY, maxY
 	for k, point in ipairs(self.points) do
 		minX = (minX == null or point.x < minX) and point.x or minX
@@ -52,4 +52,10 @@ function LevelEditorPolygon:getEditTargets()
 		end
 	end
 	return editTargets
+end
+
+function EditorLine:translate(x, y)
+	for _, point in all(self.points) do
+		point:translate(x, y)
+	end
 end

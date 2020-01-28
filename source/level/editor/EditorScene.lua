@@ -2,56 +2,56 @@ import "CoreLibs/object"
 import "scene/Scene"
 import "render/camera"
 import "render/perspectiveDrawing"
-import "level/editor/LevelEditorMenu"
-import "level/editor/LevelEditorCursor"
+import "level/editor/EditorMenu"
+import "level/editor/EditorCursor"
 import "level/editor/procedure/CreatePolygonProcedure"
 import "level/editor/procedure/SelectEditTargetProcedure"
-import "level/editor/geometry/LevelEditorPoint"
-import "level/editor/geometry/LevelEditorLine"
-import "level/editor/geometry/LevelEditorPolygon"
+import "level/editor/geometry/EditorPoint"
+import "level/editor/geometry/EditorLine"
+import "level/editor/geometry/EditorPolygon"
 
-class("LevelEditorScene").extends(Scene)
+class("EditorScene").extends(Scene)
 
-LevelEditorScene.MainMenuMode = 1
-LevelEditorScene.ProcedureMode = 2
-LevelEditorScene.FreeLookMode = 3
-LevelEditorScene.EditGeometryMenuMode = 4
+EditorScene.MainMenuMode = 1
+EditorScene.ProcedureMode = 2
+EditorScene.FreeLookMode = 3
+EditorScene.EditGeometryMenuMode = 4
 
-LevelEditorScene.CameraScales = { 0.05, 0.10, 0.25, 0.5, 1.0, 1.5, 2.0, 3.0 }
-LevelEditorScene.CursorGridSizes = { 480, 160, 80, 40, 20, 20, 10, 10 }
+EditorScene.CameraScales = { 0.05, 0.10, 0.25, 0.5, 1.0, 1.5, 2.0, 3.0 }
+EditorScene.CursorGridSizes = { 480, 160, 80, 40, 20, 20, 10, 10 }
 
-function LevelEditorScene:init()
-	LevelEditorScene.super.init(self)
+function EditorScene:init()
+	EditorScene.super.init(self)
 	camera:reset()
 	self.cameraScaleIndex = 5
-	camera.scale = LevelEditorScene.CameraScales[self.cameraScaleIndex]
-	self.cursor = LevelEditorCursor(camera.position.x, camera.position.y)
-	self.mode = LevelEditorScene.MainMenuMode
+	camera.scale = EditorScene.CameraScales[self.cameraScaleIndex]
+	self.cursor = EditorCursor(camera.position.x, camera.position.y)
+	self.mode = EditorScene.MainMenuMode
 	self.procedure = nil
 	-- Create a piece of geometry as a starting point
 	local points = {
-		LevelEditorPoint(-40, -40),
-		LevelEditorPoint(40, -40),
-		LevelEditorPoint(40, 40),
-		LevelEditorPoint(-40, 40)
+		EditorPoint(-40, -40),
+		EditorPoint(40, -40),
+		EditorPoint(40, 40),
+		EditorPoint(-40, 40)
 	}
-	LevelEditorLine(points[1], points[2])
-	LevelEditorLine(points[2], points[3])
-	LevelEditorLine(points[3], points[4])
-	LevelEditorLine(points[4], points[1])
-	self.geometry = { LevelEditorPolygon(points) }
+	EditorLine(points[1], points[2])
+	EditorLine(points[2], points[3])
+	EditorLine(points[3], points[4])
+	EditorLine(points[4], points[1])
+	self.geometry = { EditorPolygon(points) }
 	self.selectedGeometry = nil
-	self.mainMenu = LevelEditorMenu("Level Editor", {
+	self.mainMenu = EditorMenu("Level Editor", {
 		{
 			text = "Create",
-			submenu = LevelEditorMenu("Create", {
+			submenu = EditorMenu("Create", {
 				{
 					text = "Geometry",
-					submenu = LevelEditorMenu("Create Geometry", {
+					submenu = EditorMenu("Create Geometry", {
 						{
 							text = "Polygon",
 							selected = function()
-								self.mode = LevelEditorScene.ProcedureMode
+								self.mode = EditorScene.ProcedureMode
 								self.procedure = CreatePolygonProcedure()
 							end
 						}
@@ -62,35 +62,35 @@ function LevelEditorScene:init()
 		{
 			text = "Edit",
 			selected = function()
-				self.mode = LevelEditorScene.ProcedureMode
+				self.mode = EditorScene.ProcedureMode
 				self.procedure = SelectEditTargetProcedure()
 			end
 		},
 		{
 			text = "Camera",
-			submenu = LevelEditorMenu("Camera", {
+			submenu = EditorMenu("Camera", {
 				{
 					text = "Free Look",
 					selected = function()
-						self.mode = LevelEditorScene.FreeLookMode
+						self.mode = EditorScene.FreeLookMode
 						self.cursor.position.x, self.cursor.position.y = camera.position.x, camera.position.y
 					end
 				},
 				{
 					text = "Scale (" .. camera.scale .. "x)",
 					increase = function(menu, option)
-						if self.cameraScaleIndex < #LevelEditorScene.CameraScales then
+						if self.cameraScaleIndex < #EditorScene.CameraScales then
 							self.cameraScaleIndex += 1
-							camera.scale = LevelEditorScene.CameraScales[self.cameraScaleIndex]
-							self.cursor.gridSize = LevelEditorScene.CursorGridSizes[self.cameraScaleIndex]
+							camera.scale = EditorScene.CameraScales[self.cameraScaleIndex]
+							self.cursor.gridSize = EditorScene.CursorGridSizes[self.cameraScaleIndex]
 							option.text = "Scale (" .. camera.scale .. "x)"
 						end
 					end,
 					decrease = function(menu, option)
 						if self.cameraScaleIndex > 1 then
 							self.cameraScaleIndex -= 1
-							camera.scale = LevelEditorScene.CameraScales[self.cameraScaleIndex]
-							self.cursor.gridSize = LevelEditorScene.CursorGridSizes[self.cameraScaleIndex]
+							camera.scale = EditorScene.CameraScales[self.cameraScaleIndex]
+							self.cursor.gridSize = EditorScene.CursorGridSizes[self.cameraScaleIndex]
 							option.text = "Scale (" .. camera.scale .. "x)"
 						end
 					end
@@ -116,7 +116,7 @@ function LevelEditorScene:init()
 		}
 	})
 	self.editGeometryMenu = nil
-	self.editPointMenu = LevelEditorMenu("Edit Point", {
+	self.editPointMenu = EditorMenu("Edit Point", {
 		{
 			text = "Move"
 		},
@@ -126,16 +126,16 @@ function LevelEditorScene:init()
 	})
 end
 
-function LevelEditorScene:update(dt)
-	if self.mode == LevelEditorScene.MainMenuMode then
-		self.mainMenu:update(dt)
-	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
-		self.editGeometryMenu:update(dt)
-	elseif self.mode == LevelEditorScene.ProcedureMode then
-		self.cursor:update(dt)
-		self.procedure:update(dt)
-	elseif self.mode == LevelEditorScene.FreeLookMode then
-		self.cursor:update(dt)
+function EditorScene:update()
+	if self.mode == EditorScene.MainMenuMode then
+		self.mainMenu:update()
+	elseif self.mode == EditorScene.EditGeometryMenuMode then
+		self.editGeometryMenu:update()
+	elseif self.mode == EditorScene.ProcedureMode then
+		self.cursor:update()
+		self.procedure:update()
+	elseif self.mode == EditorScene.FreeLookMode then
+		self.cursor:update()
 		camera.position.x, camera.position.y = self.cursor.position.x, self.cursor.position.y
 	end
 	-- Loosely follow the camera
@@ -145,7 +145,7 @@ function LevelEditorScene:update(dt)
 	camera:recalculatePerspective()
 end
 
-function LevelEditorScene:draw()
+function EditorScene:draw()
 	-- Clear the screen
 	playdate.graphics.clear()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
@@ -166,90 +166,90 @@ function LevelEditorScene:draw()
 		geom:draw()
 	end
 	-- Draw the current menu or procedure
-	if self.mode == LevelEditorScene.MainMenuMode then
+	if self.mode == EditorScene.MainMenuMode then
 		self.mainMenu:draw(10, 10)
-	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+	elseif self.mode == EditorScene.EditGeometryMenuMode then
 		self.editGeometryMenu:draw(10, 10)
-	elseif self.mode == LevelEditorScene.ProcedureMode then
+	elseif self.mode == EditorScene.ProcedureMode then
 		self.procedure:draw()
 		self.cursor:draw()
 	end
 end
 
-function LevelEditorScene:upButtonDown()
-	if self.mode == LevelEditorScene.MainMenuMode then
+function EditorScene:upButtonDown()
+	if self.mode == EditorScene.MainMenuMode then
 		self.mainMenu:highlightPreviousOption()
-	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+	elseif self.mode == EditorScene.EditGeometryMenuMode then
 		self.editGeometryMenu:highlightPreviousOption()
 	end
 end
 
-function LevelEditorScene:downButtonDown()
-	if self.mode == LevelEditorScene.MainMenuMode then
+function EditorScene:downButtonDown()
+	if self.mode == EditorScene.MainMenuMode then
 		self.mainMenu:highlightNextOption()
-	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+	elseif self.mode == EditorScene.EditGeometryMenuMode then
 		self.editGeometryMenu:highlightNextOption()
 	end
 end
 
-function LevelEditorScene:leftButtonDown()
-	if self.mode == LevelEditorScene.MainMenuMode then
+function EditorScene:leftButtonDown()
+	if self.mode == EditorScene.MainMenuMode then
 		self.mainMenu:decrease()
-	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+	elseif self.mode == EditorScene.EditGeometryMenuMode then
 		self.editGeometryMenu:decrease()
 	end
 end
 
-function LevelEditorScene:rightButtonDown()
-	if self.mode == LevelEditorScene.MainMenuMode then
+function EditorScene:rightButtonDown()
+	if self.mode == EditorScene.MainMenuMode then
 		self.mainMenu:increase()
-	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+	elseif self.mode == EditorScene.EditGeometryMenuMode then
 		self.editGeometryMenu:increase()
 	end
 end
 
-function LevelEditorScene:AButtonDown()
-	if self.mode == LevelEditorScene.MainMenuMode then
+function EditorScene:AButtonDown()
+	if self.mode == EditorScene.MainMenuMode then
 		self.mainMenu:select()
-	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
+	elseif self.mode == EditorScene.EditGeometryMenuMode then
 		self.editGeometryMenu:select()
-	elseif self.mode == LevelEditorScene.ProcedureMode then
+	elseif self.mode == EditorScene.ProcedureMode then
 		local isDone = self.procedure:advance()
 		if isDone then
 			local procedure = self.procedure
-			self.mode = LevelEditorScene.MainMenuMode
+			self.mode = EditorScene.MainMenuMode
 			self.procedure = nil
 			procedure:finish()
 		end
 	end
 end
 
-function LevelEditorScene:BButtonDown()
-	if self.mode == LevelEditorScene.MainMenuMode then
+function EditorScene:BButtonDown()
+	if self.mode == EditorScene.MainMenuMode then
 		self.mainMenu:deselect()
-	elseif self.mode == LevelEditorScene.EditGeometryMenuMode then
-		self.mode = LevelEditorScene.MainMenuMode
+	elseif self.mode == EditorScene.EditGeometryMenuMode then
+		self.mode = EditorScene.MainMenuMode
 		self.selectedGeometry = nil
 		self.editGeometryMenu = nil
-	elseif self.mode == LevelEditorScene.ProcedureMode then
+	elseif self.mode == EditorScene.ProcedureMode then
 		local isDone = self.procedure:back()
 		if isDone then
 			local procedure = self.procedure
-			self.mode = LevelEditorScene.MainMenuMode
+			self.mode = EditorScene.MainMenuMode
 			self.procedure = nil
-			procedure:cancel()
+			procedure:terminate()
 		end
-	elseif self.mode == LevelEditorScene.FreeLookMode then
-		self.mode = LevelEditorScene.MainMenuMode
+	elseif self.mode == EditorScene.FreeLookMode then
+		self.mode = EditorScene.MainMenuMode
 	end
 end
 
-function LevelEditorScene:addGeometry(geom)
+function EditorScene:addGeometry(geom)
 	table.insert(self.geometry, geom)
 end
 
-function LevelEditorScene:editGeometry(geom, target)
+function EditorScene:editGeometry(geom, target)
 	self.selectedGeometry = geom
 	self.editGeometryMenu = self.editPointMenu
-	self.mode = LevelEditorScene.EditGeometryMenuMode
+	self.mode = EditorScene.EditGeometryMenuMode
 end

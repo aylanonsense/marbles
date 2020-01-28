@@ -1,17 +1,18 @@
 import "CoreLibs/object"
 import "render/camera"
 import "fonts/fonts"
+import "scene/time"
 
-class("LevelEditorCursor").extends()
+class("EditorCursor").extends()
 
-function LevelEditorCursor:init(x, y)
-	LevelEditorCursor.super.init(self)
+function EditorCursor:init(x, y)
+	EditorCursor.super.init(self)
 	self.position = playdate.geometry.vector2D.new(x, y)
 	self.snapToGrid = false
 	self.gridSize = 20
 end
 
-function LevelEditorCursor:update(dt)
+function EditorCursor:update()
 	if self.snapToGrid then
 		local horizontal = (playdate.buttonJustPressed(playdate.kButtonRight) and 1 or 0) - (playdate.buttonJustPressed(playdate.kButtonLeft) and 1 or 0)
 		local vertical = (playdate.buttonJustPressed(playdate.kButtonDown) and 1 or 0) - (playdate.buttonJustPressed(playdate.kButtonUp) and 1 or 0)
@@ -31,14 +32,14 @@ function LevelEditorCursor:update(dt)
 	else
 		local horizontal = (playdate.buttonIsPressed(playdate.kButtonRight) and 1 or 0) - (playdate.buttonIsPressed(playdate.kButtonLeft) and 1 or 0)
 		local vertical = (playdate.buttonIsPressed(playdate.kButtonDown) and 1 or 0) - (playdate.buttonIsPressed(playdate.kButtonUp) and 1 or 0)
-		local movement = 100 * dt / camera.scale
+		local movement = 100 * time.dt / camera.scale
 		local x, y = (horizontal * camera.right.x - vertical * camera.up.x), (horizontal * camera.right.y - vertical * camera.up.y)
 		self.position.x += movement * x
 		self.position.y += movement * y
 	end
 end
 
-function LevelEditorCursor:draw()
+function EditorCursor:draw()
 	-- Draw an X where the cursor is
 	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
 	playdate.graphics.setLineCapStyle(playdate.graphics.kLineCapStyleRound)
@@ -60,12 +61,12 @@ function LevelEditorCursor:draw()
 	playdate.graphics.drawText(text, x, y, playdate.graphics.kColorWhite)
 end
 
-function LevelEditorCursor:startSnappingToGrid()
+function EditorCursor:startSnappingToGrid()
 	self.snapToGrid = true
 	self.position.x = self.gridSize * math.floor(self.position.x / self.gridSize + 0.5)
 	self.position.y = self.gridSize * math.floor(self.position.y / self.gridSize + 0.5)
 end
 
-function LevelEditorCursor:stopSnappingToGrid()
+function EditorCursor:stopSnappingToGrid()
 	self.snapToGrid = false
 end

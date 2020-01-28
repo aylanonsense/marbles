@@ -1,18 +1,20 @@
-import "level/editor/LevelEditorScene"
+import "level/editor/EditorSceneRedux"
+import "scene/time"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
 -- Make a global scene variable
-scene = LevelEditorScene()
+scene = EditorSceneRedux()
 
 -- Update the scene
 function playdate.update()
-	scene:update(1 / 20)
+	time:advance(1 / 20)
+	scene:update()
 	scene:draw()
 end
 
--- Pass callbacks through to the scene (TODO switch over to pushing input handlers)
+-- Pass callbacks through to the scene
 function playdate.AButtonDown(...) scene:AButtonDown(...) end
 function playdate.AButtonHeld(...) scene:AButtonHeld(...) end
 function playdate.AButtonUp(...) scene:AButtonUp(...) end

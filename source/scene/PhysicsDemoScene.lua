@@ -58,8 +58,8 @@ function PhysicsDemoScene:init()
 	self.ball.restitution = 0.8
 end
 
-function PhysicsDemoScene:update(dt)
-	self.timer += dt
+function PhysicsDemoScene:update()
+	self.timer += time.dt
 
 	-- Clear the screen
 	playdate.graphics.clear()
@@ -79,7 +79,7 @@ function PhysicsDemoScene:update(dt)
 	self.blinkingCircle.isEnabled = self.timer % 4 < 2
 
 	-- Update the physics engine and do all collisions
-	physics:update(dt)
+	physics:update()
 
 	-- Rotating the crank rotates the camera
 	camera.rotation = playdate.getCrankPosition()

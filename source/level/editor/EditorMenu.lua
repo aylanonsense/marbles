@@ -1,12 +1,12 @@
 import "CoreLibs/object"
 import "fonts/fonts"
 
-class("LevelEditorMenu").extends()
+class("EditorMenu").extends()
 
-LevelEditorMenu.CursorImage = playdate.graphics.image.new("images/menu-cursor.png")
+EditorMenu.CursorImage = playdate.graphics.image.new("images/menu-cursor.png")
 
-function LevelEditorMenu:init(title, options)
-	LevelEditorMenu.super.init(self)
+function EditorMenu:init(title, options)
+	EditorMenu.super.init(self)
 	self.title = title
 	self.options = options
 	self.highlightedOptionIndex = 1
@@ -14,17 +14,17 @@ function LevelEditorMenu:init(title, options)
 	self.childMenu = nil
 end
 
-function LevelEditorMenu:update(dt)
+function EditorMenu:update()
 	if self.childMenu then
-		self.childMenu:update(dt)
+		self.childMenu:update()
 	end
 end
 
-function LevelEditorMenu:draw(x, y)
+function EditorMenu:draw(x, y)
 	if self.childMenu then
 		self.childMenu:draw(x, y)
 	else
-		local cursorWidth, cursorHeight = LevelEditorMenu.CursorImage:getSize()
+		local cursorWidth, cursorHeight = EditorMenu.CursorImage:getSize()
 		playdate.graphics.setFont(fonts.FullCircle)
 
 		-- Draw the menu title
@@ -50,7 +50,7 @@ function LevelEditorMenu:draw(x, y)
 
 			-- Draw the cursor next to the selected option
 			if i == self.highlightedOptionIndex then
-				LevelEditorMenu.CursorImage:drawAt(x, y - cursorHeight / 2 + textHeight / 2)
+				EditorMenu.CursorImage:drawAt(x, y - cursorHeight / 2 + textHeight / 2)
 			end
 
 			y += textHeight + 2
@@ -58,7 +58,7 @@ function LevelEditorMenu:draw(x, y)
 	end
 end
 
-function LevelEditorMenu:highlightNextOption()
+function EditorMenu:highlightNextOption()
 	if self.childMenu then
 		self.childMenu:highlightNextOption()
 	else
@@ -69,7 +69,7 @@ function LevelEditorMenu:highlightNextOption()
 	end
 end
 
-function LevelEditorMenu:highlightPreviousOption()
+function EditorMenu:highlightPreviousOption()
 	if self.childMenu then
 		self.childMenu:highlightPreviousOption()
 	else
@@ -80,7 +80,7 @@ function LevelEditorMenu:highlightPreviousOption()
 	end
 end
 
-function LevelEditorMenu:select()
+function EditorMenu:select()
 	if self.childMenu then
 		self.childMenu:select()
 	else
@@ -95,7 +95,7 @@ function LevelEditorMenu:select()
 	end
 end
 
-function LevelEditorMenu:increase()
+function EditorMenu:increase()
 	if self.childMenu then
 		self.childMenu:increase()
 	else
@@ -106,7 +106,7 @@ function LevelEditorMenu:increase()
 	end
 end
 
-function LevelEditorMenu:decrease()
+function EditorMenu:decrease()
 	if self.childMenu then
 		self.childMenu:decrease()
 	else
@@ -117,13 +117,13 @@ function LevelEditorMenu:decrease()
 	end
 end
 
-function LevelEditorMenu:deselect()
+function EditorMenu:deselect()
 	if self.childMenu then
 		self.childMenu:deselect()
-	else
-		if self.parentMenu then
-			self.parentMenu.childMenu = nil
-			self.parentMenu = nil
-		end
+		return true
+	elseif self.parentMenu then
+		self.parentMenu.childMenu = nil
+		self.parentMenu = nil
+		return true
 	end
 end

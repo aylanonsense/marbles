@@ -1,5 +1,6 @@
 import "CoreLibs/object"
 import "physics/physics"
+import "scene/time"
 
 class("PhysObject").extends()
 
@@ -13,19 +14,19 @@ function PhysObject:init(x, y)
 	self.isEnabled = true
 end
 
-function PhysObject:update(dt)
-	self:applyAcceleration(dt)
-	self:applyVelocity(dt)
+function PhysObject:update()
+	self:applyAcceleration()
+	self:applyVelocity()
 end
 
-function PhysObject:applyAcceleration(dt)
-	self.velocity.x += 0.5 * self.acceleration.x * dt * dt
-	self.velocity.y += 0.5 * self.acceleration.y * dt * dt
+function PhysObject:applyAcceleration()
+	self.velocity.x += 0.5 * self.acceleration.x * time.dt * time.dt
+	self.velocity.y += 0.5 * self.acceleration.y * time.dt * time.dt
 end
 
-function PhysObject:applyVelocity(dt)
-	self.position.x += self.velocity.x * dt
-	self.position.y += self.velocity.y * dt
+function PhysObject:applyVelocity()
+	self.position.x += self.velocity.x * time.dt
+	self.position.y += self.velocity.y * time.dt
 end
 
 function PhysObject:draw()

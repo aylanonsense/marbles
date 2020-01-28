@@ -1,13 +1,13 @@
 import "CoreLibs/object"
 import "CoreLibs/graphics"
-import "level/editor/geometry/LevelEditorGeometry"
+import "level/editor/geometry/EditorGeometry"
 import "render/camera"
 import "render/perspectiveDrawing"
 
-class("LevelEditorPoint").extends("LevelEditorGeometry")
+class("EditorPoint").extends("EditorGeometry")
 
-function LevelEditorPoint:init(x, y)
-	LevelEditorPoint.super.init(self, LevelEditorGeometry.Type.Point)
+function EditorPoint:init(x, y)
+	EditorPoint.super.init(self, EditorGeometry.Type.Point)
 	self.x = x
 	self.y = y
 	self.incomingLine = nil
@@ -15,11 +15,16 @@ function LevelEditorPoint:init(x, y)
 	self.polygon = nil
 end
 
-function LevelEditorPoint:draw()
+function EditorPoint:draw()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
 	perspectiveDrawing.fillCircle(self.x, self.y, math.min(2, 2 / camera.scale))
 end
 
-function LevelEditorPoint:getEditTargets()
+function EditorPoint:getEditTargets()
 	return { { x = self.x, y = self.y, size = 5, geom = self } }
+end
+
+function EditorPoint:translate(x, y)
+	self.x += x
+	self.y += y
 end

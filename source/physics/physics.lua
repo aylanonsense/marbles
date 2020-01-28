@@ -9,11 +9,11 @@ function physics:reset()
 	self.objects = {}
 end
 
-function physics:update(dt)
+function physics:update()
 	-- Update all physics objects
 	for i = 1, #self.objects do
 		if self.objects[i].isEnabled then
-			self.objects[i]:update(dt)
+			self.objects[i]:update()
 		end
 	end
 
