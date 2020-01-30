@@ -2,6 +2,7 @@ import "CoreLibs/object"
 import "CoreLibs/graphics"
 import "level/editor/geometry/EditorGeometry"
 import "render/camera"
+import "utility/table"
 
 class("EditorPolygon").extends("EditorGeometry")
 
@@ -33,14 +34,8 @@ function EditorPolygon:draw()
 end
 
 function EditorPolygon:getEditTargets()
-	local minX, maxX, minY, maxY
-	for k, point in ipairs(self.points) do
-		minX = (minX == null or point.x < minX) and point.x or minX
-		maxX = (maxX == null or point.x > maxX) and point.x or maxX
-		minY = (minY == null or point.y < minY) and point.y or minY
-		maxY = (maxY == null or point.y > maxY) and point.y or maxY
-	end
-	local editTargets = { { x = (minX + maxX) / 2, y = (minY + maxY) / 2, size = 5, geom = self } }
+	local midX, midY = self:getMidPoint()
+	local editTargets = { { x = midX, y = midY, size = 5, geom = self } }
 	for _, point in ipairs(self.points) do
 		local pointEditTargets = point:getEditTargets()
 		for _, target in ipairs(pointEditTargets) do
@@ -54,8 +49,30 @@ function EditorPolygon:getEditTargets()
 	return editTargets
 end
 
-function EditorLine:translate(x, y)
-	for _, point in all(self.points) do
+function EditorPolygon:getMidPoint()
+	local avgX, avgY = 0, 0
+	local minX, maxX, minY, maxY
+	for _, point in ipairs(self.points) do
+		avgX += point.x / #self.points
+		avgY += point.y / #self.points
+		minX = (minX == null or point.x < minX) and point.x or minX
+		maxX = (maxX == null or point.x > maxX) and point.x or maxX
+		minY = (minY == null or point.y < minY) and point.y or minY
+		maxY = (maxY == null or point.y > maxY) and point.y or maxY
+	end
+	return (minX + maxX + 2 * avgX) / 4, (minY + maxY + 2 * avgY) / 4
+end
+
+function EditorPolygon:getTranslationPoint()
+	return self.points[1].x, self.points[1].y
+end
+
+function EditorPolygon:translate(x, y)
+	for _, point in ipairs(self.points) do
 		point:translate(x, y)
 	end
+end
+
+function EditorPolygon:delete()
+	return removeItem(scene.geometry, self)
 end

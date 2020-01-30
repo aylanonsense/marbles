@@ -1,20 +1,20 @@
 import "render/camera"
 import "level/editor/EditorMenu"
-import "level/editor/process/EditorMenuProcess"
-import "level/editor/process/EditorFreeLook"
-
-class("EditorCameraMenu").extends("EditorMenuProcess")
+import "level/editor/screen/EditorMenuScreen"
+import "level/editor/screen/EditorFreeLookScreen"
 
 local CAMERA_SCALES = { 0.05, 0.10, 0.25, 0.5, 1.0, 1.5, 2.0, 3.0 }
 local CURSOR_GRID_SIZES = { 480, 240, 80, 40, 20, 20, 10, 10 }
 
-function EditorCameraMenu:init()
-	EditorCameraMenu.super.init(self,
+class("EditorCameraMenuScreen").extends("EditorMenuScreen")
+
+function EditorCameraMenuScreen:init()
+	EditorCameraMenuScreen.super.init(self,
 		EditorMenu("Camera", {
 			{
 				text = "Free Look",
 				selected = function()
-					self:spawnProcess(EditorFreeLook())
+					self:openAndShowSubScreen(EditorFreeLookScreen())
 				end
 			},
 			{

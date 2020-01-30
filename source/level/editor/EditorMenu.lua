@@ -20,7 +20,8 @@ function EditorMenu:update()
 	end
 end
 
-function EditorMenu:draw(x, y)
+function EditorMenu:draw()
+	local x, y = 10, 10
 	if self.childMenu then
 		self.childMenu:draw(x, y)
 	else

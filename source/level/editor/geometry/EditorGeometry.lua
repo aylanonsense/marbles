@@ -18,3 +18,11 @@ function EditorGeometry:draw() end
 function EditorGeometry:getEditTargets()
 	return {}
 end
+
+function EditorGeometry:getMidPoint() end
+
+function EditorGeometry:getTranslationPoint() end
+
+function EditorGeometry:translate(x, y) end
+
+function EditorGeometry:delete() end

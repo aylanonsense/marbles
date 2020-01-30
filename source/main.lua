@@ -1,11 +1,11 @@
-import "level/editor/EditorSceneRedux"
 import "scene/time"
+import "level/editor/EditorScene"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
 -- Make a global scene variable
-scene = EditorSceneRedux()
+scene = EditorScene()
 
 -- Update the scene
 function playdate.update()
