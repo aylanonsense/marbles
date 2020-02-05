@@ -3,7 +3,7 @@ import "level/editor/geometry/EditorPoint"
 import "level/editor/geometry/EditorLine"
 import "level/editor/geometry/EditorPolygon"
 
-function serializeLevelData()
+function serializeEditorLevelData()
 	local geometryData = {}
 	for _, geom in ipairs(scene.geometry) do
 		-- Serialize a polygon
@@ -24,11 +24,13 @@ function serializeLevelData()
 		end
 	end
 	return {
+		spawn = { x = scene.spawn.x, y = scene.spawn.y },
 		geometry = geometryData
 	}
 end
 
-function deserializeLevelData(levelData)
+function deserializeEditorLevelData(levelData)
+	scene.spawn = { x = levelData.spawn.x, y = levelData.spawn.y }
 	scene.geometry = {}
 	for _, geomData in ipairs(levelData.geometry) do
 		-- Deserialize a polygon
@@ -46,4 +48,50 @@ function deserializeLevelData(levelData)
 			table.insert(scene.geometry, polygon)
 		end
 	end
+end
+
+function serializePlayableLevelData(levelData)
+	local geometryData = {}
+	for _, geom in ipairs(scene.geometry) do
+		-- Serialize a polygon
+		if geom.type == EditorGeometry.Type.Polygon then
+			local polygonData = {
+				type = "Polygon",
+				render = {},
+				physics = {}
+			}
+			local isClockwise = geom:isClockwise()
+			for _, point in ipairs(geom.points) do
+				table.insert(polygonData.render, point.x)
+				table.insert(polygonData.render, point.y)
+				if isClockwise then
+					table.insert(polygonData.physics, {
+						type = "Line",
+						x1 = point.outgoingLine.startPoint.x,
+						y1 = point.outgoingLine.startPoint.y,
+						x2 = point.outgoingLine.endPoint.x,
+						y2 = point.outgoingLine.endPoint.y
+					})
+				else
+					table.insert(polygonData.physics, {
+						type = "Line",
+						x1 = point.outgoingLine.endPoint.x,
+						y1 = point.outgoingLine.endPoint.y,
+						x2 = point.outgoingLine.startPoint.x,
+						y2 = point.outgoingLine.startPoint.y
+					})
+				end
+				table.insert(polygonData.physics, {
+					type = "Point",
+					x = point.x,
+					y = point.y
+				})
+			end
+			table.insert(geometryData, polygonData)
+		end
+	end
+	return {
+		spawn = { x = scene.spawn.x, y = scene.spawn.y },
+		geometry = geometryData
+	}
 end

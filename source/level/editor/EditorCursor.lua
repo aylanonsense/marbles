@@ -52,6 +52,7 @@ function EditorCursor:draw()
 	playdate.graphics.drawLine(x - 6, y, x + 6, y)
 	playdate.graphics.drawLine(x, y - 6, x, y + 6)
 	-- Draw the cursor position in the lower right
+	playdate.graphics.setFont(fonts.FullCircle)
 	local text = "<" .. math.floor(self.position.x) .. "," .. math.floor(self.position.y) .. ">"
 	local textWidth, textHeight = playdate.graphics.getTextSize(text)
 	playdate.graphics.setColor(playdate.graphics.kColorWhite)

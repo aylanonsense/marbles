@@ -29,6 +29,16 @@ function perspectiveDrawing.drawCircle(x, y, r)
 	playdate.graphics.drawCircleAtPoint(x, y, r * camera.scale)
 end
 
+function perspectiveDrawing.drawDottedCircle(x, y, r, distanceBetweenDots)
+	x, y = camera.matrix:transformXY(x, y)
+	local circumference = 2 * math.pi * r
+	local numDots = math.ceil(circumference / distanceBetweenDots)
+	for i = 1, numDots do
+		local x2, y2 = x + r * camera.scale * math.cos(2 * math.pi * i / numDots), y + r * camera.scale * math.sin(2 * math.pi * i / numDots)
+		playdate.graphics.drawPixel(x2, y2)
+	end
+end
+
 function perspectiveDrawing.fillCircle(x, y, r)
 	x, y = camera.matrix:transformXY(x, y)
 	playdate.graphics.fillCircleAtPoint(x, y, r * camera.scale)

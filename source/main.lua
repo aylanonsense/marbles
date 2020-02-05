@@ -6,7 +6,7 @@ import "CoreLibs/keyboard"
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
 -- Make a global scene variable
-scene = EditorScene()
+Scene.setScene(EditorScene())
 
 -- Update the scene
 function playdate.update()

@@ -2,6 +2,7 @@ import "CoreLibs/object"
 import "level/editor/geometry/EditorGeometry"
 import "level/editor/geometry/EditorPoint"
 import "render/perspectiveDrawing"
+import "physics/PhysLine"
 
 class("EditorLine").extends("EditorGeometry")
 

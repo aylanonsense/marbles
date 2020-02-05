@@ -8,7 +8,9 @@ import "level/editor/EditorCursor"
 import "level/editor/geometry/EditorPoint"
 import "level/editor/geometry/EditorLine"
 import "level/editor/geometry/EditorPolygon"
+import "level/editor/TestLevelScene"
 import "level/levelIO"
+import "level/Level"
 
 class("EditorScene").extends(Scene)
 
@@ -16,13 +18,13 @@ function EditorScene:init()
 	EditorScene.super.init(self)
 	camera:reset()
 	camera:recalculatePerspective()
+	self.spawn = { x = 0, y = 0 }
 	self.geometry = {}
 	-- Create a cursor that child processes will use
 	self.cursor = EditorCursor(camera.position.x, camera.position.y)
 	-- Create the main menu process
 	self.screen = EditorSelectLevelScreen():openAndShow()
-	self.levelInfo = nil
-	self.levelData = nil
+	self.level = nil
 end
 
 function EditorScene:update()
@@ -48,6 +50,11 @@ function EditorScene:draw()
 	for y = yMid - 10 * gridSize, yMid + 10 * gridSize, gridSize do
 		perspectiveDrawing.drawDottedLine(camera.position.x - 10 * gridSize, y, camera.position.x + 10 * gridSize, y, 5)
 	end
+	-- Draw a cross at the origin
+	perspectiveDrawing.drawLine(-7 / camera.scale, 0, 7 / camera.scale, 0)
+	perspectiveDrawing.drawLine(0, -7 / camera.scale, 0, 7 / camera.scale)
+	-- Draw the spawn point
+	perspectiveDrawing.drawDottedCircle(self.spawn.x, self.spawn.y, 15, 2)
 	-- Draw all the level geometry
 	for k, geom in pairs(self.geometry) do
 		geom:draw()
@@ -61,11 +68,17 @@ function EditorScene:handleCallback(callbackName, ...)
 	screen[callbackName](screen, ...)
 end
 
-function EditorScene:loadLevel(levelInfo, levelData)
-	deserializeLevelData(levelData)
+function EditorScene:loadLevel(levelInfo, editorLevelData)
+	deserializeEditorLevelData(editorLevelData)
 end
 
 function EditorScene:saveLevel(levelInfo)
-	local levelData = serializeLevelData()
-	saveLevelData(levelInfo, levelData)
+	local playableLevelData = serializePlayableLevelData()
+	local editorLevelData = serializeEditorLevelData()
+	saveLevelData(levelInfo, playableLevelData, editorLevelData)
+end
+
+function EditorScene:saveAndTestLevel(levelInfo)
+	self:saveLevel(levelInfo)
+	Scene.setScene(TestLevelScene(levelInfo, self))
 end

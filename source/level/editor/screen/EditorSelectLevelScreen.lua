@@ -32,7 +32,7 @@ function EditorSelectLevelScreen:show()
 		table.insert(options, {
 			text = levelInfo.name .. (levelInfo.isUserCreated and (levelInfo.overwrittenLevelName and " (user-modified)" or " (user-created)") or ""),
 			selected = function()
-				local levelData = loadLevelData(levelInfo)
+				local levelData = loadEditorLevelData(levelInfo)
 				if levelData then
 					scene:loadLevel(levelInfo, levelData)
 					self:openAndShowSubScreen(EditorEditLevelScreen(), levelInfo)

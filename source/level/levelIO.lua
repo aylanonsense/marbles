@@ -6,7 +6,7 @@ function loadLevelList()
 	if userLevels then
 		print("  Found " .. #userLevels.levels .. " " .. (#userLevels.levels == 1 and "level" or "levels") .. " in user-levels.json in the user's datastore")
 		for _, levelInfo in ipairs(userLevels.levels) do
-			print("    " .. levelInfo.name .. " (" .. levelInfo.file .. ")" .. (levelInfo.overwrittenLevelName and (" [masks level " .. levelInfo.overwrittenLevelName .. "]") or ""))
+			print("    " .. levelInfo.name .. " (" .. levelInfo.editFile .. ")" .. (levelInfo.overwrittenLevelName and (" [masks level " .. levelInfo.overwrittenLevelName .. "]") or ""))
 			levelInfo.isUserCreated = true
 			table.insert(collatedLevelList, levelInfo)
 		end
@@ -27,7 +27,7 @@ function loadLevelList()
 				end
 			end
 		end
-		print("    " .. levelInfo.name .. " (" .. levelInfo.file .. ")" .. (isMasked and (" [masked by user-created level]") or ""))
+		print("    " .. levelInfo.name .. " (" .. levelInfo.editFile .. ")" .. (isMasked and (" [masked by user-created level]") or ""))
 		if not isMasked then
 			levelInfo.isUserCreated = false
 			table.insert(collatedLevelList, levelInfo)
@@ -37,30 +37,44 @@ function loadLevelList()
 	return collatedLevelList
 end
 
-function loadLevelData(levelInfo)
+function loadEditorLevelData(levelInfo)
 	if levelInfo.isUserCreated then
 		-- Load from the datastore
-		print("Loading user-created level " .. levelInfo.name .. " from " .. levelInfo.file .. " in the user's datastore")
-		return playdate.datastore.read(string.sub(levelInfo.file, 1, -6))
+		print("Loading user-created level " .. levelInfo.name .. " from " .. levelInfo.editFile .. " in the user's datastore")
+		return playdate.datastore.read(string.sub(levelInfo.editFile, 1, -6))
 	else
 		-- Load from the game's files
-		print("Loading level " .. levelInfo.name .. " from " .. levelInfo.file .. " in the game's files")
-		return json.decodeFile("/data/levels/" .. levelInfo.file)
+		print("Loading level " .. levelInfo.name .. " from " .. levelInfo.editFile .. " in the game's files")
+		return json.decodeFile("/data/levels/" .. levelInfo.editFile)
 	end
 end
 
-function saveLevelData(levelInfo, levelData)
+function loadPlayableLevelData(levelInfo)
 	if levelInfo.isUserCreated then
-		print("Saving user-created level " .. levelInfo.name .. " to " .. levelInfo.file)
+		-- Load from the datastore
+		print("Loading user-created level " .. levelInfo.name .. " from " .. levelInfo.playFile .. " in the user's datastore")
+		return playdate.datastore.read(string.sub(levelInfo.playFile, 1, -6))
+	else
+		-- Load from the game's files
+		print("Loading level " .. levelInfo.name .. " from " .. levelInfo.playFile .. " in the game's files")
+		return json.decodeFile("/data/levels/" .. levelInfo.playFile)
+	end
+end
+
+function saveLevelData(levelInfo, playableLevelData, editorLevelData)
+	if levelInfo.isUserCreated then
 		-- If this is a user-created level, save the level to the datastore
-		playdate.datastore.write(levelData, string.sub(levelInfo.file, 1, -6), true)
+		print("Saving user-created level " .. levelInfo.name .. " to " .. levelInfo.playFile .. " and " .. levelInfo.editFile .. " in he user's datastore")
+		playdate.datastore.write(playableLevelData, string.sub(levelInfo.playFile, 1, -6), true)
+		playdate.datastore.write(editorLevelData, string.sub(levelInfo.editFile, 1, -6), true)
 	else
 		-- The user edited a level that exists in the game data.
 		--   We can't overwrite that file, so save a copy to the
 		--  datastore which'll mask that level from now on
 		local levelInfoToSave = {
 			name = levelInfo.name,
-			file = "user-" .. levelInfo.file,
+			playFile = "user-" .. levelInfo.playFile,
+			editFile = "user-" .. levelInfo.editFile,
 			overwrittenLevelName = levelInfo.name
 		}
 		local isFirstTimeOverwritingLevel = true
@@ -72,8 +86,9 @@ function saveLevelData(levelInfo, levelData)
 				break
 			end
 		end
-		print("Saving changes to level " .. levelInfo.name .. " to " .. levelInfoToSave.file .. " in the user's datastore")
-		playdate.datastore.write(levelData, string.sub(levelInfoToSave.file, 1, -6), true)
+		print("Saving changes to level " .. levelInfo.name .. " to " .. levelInfoToSave.playFile .. " and " .. levelInfoToSave.editFile .. " in the user's datastore")
+		playdate.datastore.write(playableLevelData, string.sub(levelInfoToSave.playFile, 1, -6), true)
+		playdate.datastore.write(editorLevelData, string.sub(levelInfoToSave.editFile, 1, -6), true)
 		if isFirstTimeOverwritingLevel then
 			print("  First time overwriting level " .. levelInfo.name .. ", adding to user-levels.json in the user's datastore")
 			table.insert(userLevels.levels, levelInfoToSave)
@@ -96,18 +111,21 @@ function createNewLevel(name)
 			file = file .. string.lower(c)
 		end
 	end
-	file = file .. ".json"
+	local playFile = file .. "-play.json"
+	local editFile = file .. "-edit.json"
 	local levelInfo = {
 		name = name,
-		file = file
+		playFile = playFile,
+		editFile = editFile
 	}
 	local levelData = {
 		name = name,
+		spawn = { x = 0, y = 0 },
 		geometry = {}
 	}
 	table.insert(userLevels.levels, levelInfo)
-	print("  Saving new level " .. name .. " to " .. file .. " in the user's datastore")
-	playdate.datastore.write(levelData, string.sub(file, 1, -6), true)
+	print("  Saving new level " .. name .. " to " .. editFile .. " in the user's datastore")
+	playdate.datastore.write(levelData, string.sub(editFile, 1, -6), true)
 	print("  Adding new level " .. name .. " to user-levels.json in the user's datastore")
 	playdate.datastore.write(userLevels, "user-levels", true)
 	levelInfo.isUserCreated = true

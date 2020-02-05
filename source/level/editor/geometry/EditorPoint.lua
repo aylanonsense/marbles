@@ -4,6 +4,7 @@ import "level/editor/geometry/EditorGeometry"
 import "render/camera"
 import "render/perspectiveDrawing"
 import "utility/table"
+import "physics/PhysPoint"
 
 class("EditorPoint").extends("EditorGeometry")
 

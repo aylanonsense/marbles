@@ -76,3 +76,12 @@ end
 function EditorPolygon:delete()
 	return removeItem(scene.geometry, self)
 end
+
+function EditorPolygon:isClockwise()
+	local sum = 0
+	for i, point in ipairs(self.points) do
+		local point2 = self.points[(i == #self.points) and 1 or (i + 1)]
+		sum += (point2.x - point.x) * (point2.y + point.y)
+	end
+	return sum < 0
+end

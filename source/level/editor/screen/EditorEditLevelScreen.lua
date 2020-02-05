@@ -59,6 +59,12 @@ function EditorEditLevelScreen:init()
 				end
 			},
 			{
+				text = "Test level",
+				selected = function()
+					scene:saveAndTestLevel(self.levelInfo)
+				end
+			},
+			{
 				text = "Close",
 				selected = function()
 					self:close()
