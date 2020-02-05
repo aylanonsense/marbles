@@ -9,11 +9,12 @@ import "level/editor/screen/EditorPolygonMenuScreen"
 import "level/editor/screen/EditorCameraMenuScreen"
 import "level/editor/geometry/EditorGeometry"
 
-class("EditorMainMenuScreen").extends("EditorMenuScreen")
+class("EditorEditLevelScreen").extends("EditorMenuScreen")
 
-function EditorMainMenuScreen:init()
-	EditorMainMenuScreen.super.init(self,
-		EditorMenu("Level Editor", {
+function EditorEditLevelScreen:init()
+	self.levelInfo = nil
+	EditorEditLevelScreen.super.init(self,
+		EditorMenu("Level", {
 			{
 				text = "Create",
 				submenu = EditorMenu("Create", {
@@ -50,6 +51,23 @@ function EditorMainMenuScreen:init()
 				selected = function()
 					self:openAndShowSubScreen(EditorCameraMenuScreen())
 				end
+			},
+			{
+				text = "Save",
+				selected = function()
+					scene:saveLevel(self.levelInfo)
+				end
+			},
+			{
+				text = "Close",
+				selected = function()
+					self:close()
+				end
 			}
 		}), false)
+end
+
+function EditorEditLevelScreen:open(levelInfo)
+	self.levelInfo = levelInfo
+	self.menu.title = "Level: " .. levelInfo.name
 end

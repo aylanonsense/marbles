@@ -2,11 +2,13 @@ import "CoreLibs/object"
 import "scene/Scene"
 import "render/camera"
 import "render/perspectiveDrawing"
-import "level/editor/screen/EditorMainMenuScreen"
+import "level/editor/serialize"
+import "level/editor/screen/EditorSelectLevelScreen"
 import "level/editor/EditorCursor"
 import "level/editor/geometry/EditorPoint"
 import "level/editor/geometry/EditorLine"
 import "level/editor/geometry/EditorPolygon"
+import "level/levelIO"
 
 class("EditorScene").extends(Scene)
 
@@ -14,22 +16,13 @@ function EditorScene:init()
 	EditorScene.super.init(self)
 	camera:reset()
 	camera:recalculatePerspective()
-	-- Create some basic geometry
-	local points = {
-		EditorPoint(-40, -40),
-		EditorPoint(40, -40),
-		EditorPoint(40, 40),
-		EditorPoint(-40, 40)
-	}
-	EditorLine(points[1], points[2])
-	EditorLine(points[2], points[3])
-	EditorLine(points[3], points[4])
-	EditorLine(points[4], points[1])
-	self.geometry = { EditorPolygon(points) }
+	self.geometry = {}
 	-- Create a cursor that child processes will use
 	self.cursor = EditorCursor(camera.position.x, camera.position.y)
 	-- Create the main menu process
-	self.screen = EditorMainMenuScreen():openAndShow()
+	self.screen = EditorSelectLevelScreen():openAndShow()
+	self.levelInfo = nil
+	self.levelData = nil
 end
 
 function EditorScene:update()
@@ -66,4 +59,13 @@ end
 function EditorScene:handleCallback(callbackName, ...)
 	local screen = self.screen:getOpenScreen()
 	screen[callbackName](screen, ...)
+end
+
+function EditorScene:loadLevel(levelInfo, levelData)
+	-- TODO
+end
+
+function EditorScene:saveLevel(levelInfo)
+	-- TODO
+	-- saveLevelData(levelInfo, {})
 end

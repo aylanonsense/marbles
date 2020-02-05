@@ -92,3 +92,23 @@ end
 function CallbackHandler:debugDraw(...)
 	self:handleCallback("debugDraw", ...)
 end
+
+function CallbackHandler:keyboardDidShowCallback(...)
+	self:handleCallback("keyboardDidShowCallback", ...)
+end
+
+function CallbackHandler:keyboardDidHideCallback(...)
+	self:handleCallback("keyboardDidHideCallback", ...)
+end
+
+function CallbackHandler:keyboardWillHideCallback(...)
+	self:handleCallback("keyboardWillHideCallback", ...)
+end
+
+function CallbackHandler:keyboardAnimatingCallback(...)
+	self:handleCallback("keyboardAnimatingCallback", ...)
+end
+
+function CallbackHandler:keyboardTextChangedCallback(...)
+	self:handleCallback("keyboardTextChangedCallback", ...)
+end

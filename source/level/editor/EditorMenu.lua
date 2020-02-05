@@ -59,6 +59,11 @@ function EditorMenu:draw()
 	end
 end
 
+function EditorMenu:setOptions(options)
+	self.options = options
+	self.highlightedOptionIndex = 1
+end
+
 function EditorMenu:highlightNextOption()
 	if self.childMenu then
 		self.childMenu:highlightNextOption()

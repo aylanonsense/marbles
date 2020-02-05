@@ -1,5 +1,6 @@
 import "scene/time"
 import "level/editor/EditorScene"
+import "CoreLibs/keyboard"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
@@ -37,3 +38,8 @@ function playdate.cranked(...) scene:cranked(...) end
 function playdate.keyPressed(...) scene:keyPressed(...) end
 function playdate.keyReleased(...) scene:keyReleased(...) end
 function playdate.debugDraw(...) scene:debugDraw(...) end
+function playdate.keyboard.keyboardDidShowCallback(...) scene:keyboardDidShowCallback(...) end
+function playdate.keyboard.keyboardDidHideCallback(...) scene:keyboardDidHideCallback(...) end
+function playdate.keyboard.keyboardWillHideCallback(...) scene:keyboardWillHideCallback(...) end
+function playdate.keyboard.keyboardAnimatingCallback(...) scene:keyboardAnimatingCallback(...) end
+function playdate.keyboard.textChangedCallback(...) scene:keyboardTextChangedCallback(...) end

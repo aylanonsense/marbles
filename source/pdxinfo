@@ -1,4 +1,5 @@
 name=Lose Your Marbles
 author=Sweet Baby Inc.
 description=Rip the lid off of your dome and play for all the marbles!
+bundleID=com.sweetbabyinc.marbles
 imagePath=images/launcher

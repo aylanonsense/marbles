@@ -1,0 +1,12 @@
+{
+	"levels": [
+		{
+			"name": "Test 1",
+			"file": "test1.json"
+		},
+		{
+			"name": "Test 2",
+			"file": "test2.json"
+		}
+	]
+}
