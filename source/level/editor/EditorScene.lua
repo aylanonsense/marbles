@@ -62,10 +62,10 @@ function EditorScene:handleCallback(callbackName, ...)
 end
 
 function EditorScene:loadLevel(levelInfo, levelData)
-	-- TODO
+	deserializeLevelData(levelData)
 end
 
 function EditorScene:saveLevel(levelInfo)
-	-- TODO
-	-- saveLevelData(levelInfo, {})
+	local levelData = serializeLevelData()
+	saveLevelData(levelInfo, levelData)
 end
