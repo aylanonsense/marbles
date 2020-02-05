@@ -5,7 +5,8 @@ class("EditorGeometry").extends()
 EditorGeometry.Type = {
 	Point = 1,
 	Line = 2,
-	Polygon = 3
+	Polygon = 3,
+	Circle = 4
 }
 
 function EditorGeometry:init(type)

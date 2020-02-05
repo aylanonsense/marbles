@@ -5,11 +5,12 @@ import "physics/physics"
 import "physics/PhysBall"
 import "physics/PhysPoint"
 import "physics/PhysLine"
+import "physics/PhysCircle"
 
-class("TestLevelScene").extends(Scene)
+class("EditorTestLevelScene").extends(Scene)
 
-function TestLevelScene:init(levelInfo, nextScene)
-	TestLevelScene.super.init(self)
+function EditorTestLevelScene:init(levelInfo, nextScene)
+	EditorTestLevelScene.super.init(self)
 	self.nextScene = nextScene
 	self.initialCameraSettings = {
 		x = camera.position.x,
@@ -35,11 +36,13 @@ function TestLevelScene:init(levelInfo, nextScene)
 					PhysPoint(obj.x, obj.y):add()
 				end
 			end
+		elseif geom.type == "Circle" then
+			PhysCircle(geom.physics[1].x, geom.physics[1].y, geom.physics[1].radius):add()
 		end
 	end
 end
 
-function TestLevelScene:update()
+function EditorTestLevelScene:update()
 	-- Clear the screen
 	playdate.graphics.clear()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
@@ -60,7 +63,7 @@ function TestLevelScene:update()
 	camera:recalculatePerspective()
 end
 
-function TestLevelScene:draw()
+function EditorTestLevelScene:draw()
 	-- Clear the screen
 	playdate.graphics.clear()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
@@ -69,7 +72,7 @@ function TestLevelScene:draw()
 	physics:draw()
 end
 
-function TestLevelScene:BButtonDown()
+function EditorTestLevelScene:BButtonDown()
 	-- Progress to the next scene
 	if self.nextScene then
 		camera.position.x, camera.position.y = self.initialCameraSettings.x, self.initialCameraSettings.y

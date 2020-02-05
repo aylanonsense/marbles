@@ -2,10 +2,12 @@ import "render/camera"
 import "level/editor/EditorMenu"
 import "level/editor/screen/EditorMenuScreen"
 import "level/editor/screen/EditorCreatePolygonScreen"
+import "level/editor/screen/EditorCreateCircleScreen"
 import "level/editor/screen/EditorSelectGeometryScreen"
 import "level/editor/screen/EditorPointMenuScreen"
 import "level/editor/screen/EditorLineMenuScreen"
 import "level/editor/screen/EditorPolygonMenuScreen"
+import "level/editor/screen/EditorCircleMenuScreen"
 import "level/editor/screen/EditorCameraMenuScreen"
 import "level/editor/geometry/EditorGeometry"
 
@@ -26,6 +28,12 @@ function EditorEditLevelScreen:init()
 								selected = function()
 									self:openAndShowSubScreen(EditorCreatePolygonScreen())
 								end
+							},
+							{
+								text = "Circle",
+								selected = function()
+									self:openAndShowSubScreen(EditorCreateCircleScreen())
+								end
 							}
 						})
 					}
@@ -42,6 +50,8 @@ function EditorEditLevelScreen:init()
 							self:openAndShowSubScreen(EditorLineMenuScreen(), geometry)
 						elseif geometry.type == EditorGeometry.Type.Polygon then
 							self:openAndShowSubScreen(EditorPolygonMenuScreen(), geometry)
+						elseif geometry.type == EditorGeometry.Type.Circle then
+							self:openAndShowSubScreen(EditorCircleMenuScreen(), geometry)
 						end
 					end)
 				end
@@ -59,7 +69,7 @@ function EditorEditLevelScreen:init()
 				end
 			},
 			{
-				text = "Test level",
+				text = "Save & run",
 				selected = function()
 					scene:saveAndTestLevel(self.levelInfo)
 				end

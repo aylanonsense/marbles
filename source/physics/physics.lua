@@ -35,6 +35,9 @@ function physics:update()
 end
 
 function physics:draw()
+	playdate.graphics.setColor(playdate.graphics.kColorBlack)
+	playdate.graphics.setLineWidth(1)
+	playdate.graphics.setLineCapStyle(playdate.graphics.kLineCapStyleRound)
 	-- Just draw all the physics objects
 	for i = 1, #self.objects do
 		if self.objects[i].isEnabled then

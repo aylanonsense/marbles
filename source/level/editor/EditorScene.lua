@@ -8,7 +8,7 @@ import "level/editor/EditorCursor"
 import "level/editor/geometry/EditorPoint"
 import "level/editor/geometry/EditorLine"
 import "level/editor/geometry/EditorPolygon"
-import "level/editor/TestLevelScene"
+import "level/editor/EditorTestLevelScene"
 import "level/levelIO"
 import "level/Level"
 
@@ -80,5 +80,5 @@ end
 
 function EditorScene:saveAndTestLevel(levelInfo)
 	self:saveLevel(levelInfo)
-	Scene.setScene(TestLevelScene(levelInfo, self))
+	Scene.setScene(EditorTestLevelScene(levelInfo, self))
 end

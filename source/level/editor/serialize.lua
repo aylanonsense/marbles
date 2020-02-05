@@ -2,6 +2,7 @@ import "level/editor/geometry/EditorGeometry"
 import "level/editor/geometry/EditorPoint"
 import "level/editor/geometry/EditorLine"
 import "level/editor/geometry/EditorPolygon"
+import "level/editor/geometry/EditorCircle"
 
 function serializeEditorLevelData()
 	local geometryData = {}
@@ -21,6 +22,15 @@ function serializeEditorLevelData()
 				table.insert(polygonData.lines, {})
 			end
 			table.insert(geometryData, polygonData)
+		-- Serialize a circle
+		elseif geom.type == EditorGeometry.Type.Circle then
+			local circleData = {
+				type = "Circle",
+				x = geom.x,
+				y = geom.y,
+				radius = geom.radius
+			}
+			table.insert(geometryData, circleData)
 		end
 	end
 	return {
@@ -46,6 +56,9 @@ function deserializeEditorLevelData(levelData)
 			end
 			local polygon = EditorPolygon(points)
 			table.insert(scene.geometry, polygon)
+		-- Deserialize a polygon
+		elseif geomData.type == "Circle" then
+			table.insert(scene.geometry, EditorCircle(geomData.x, geomData.y, geomData.radius))
 		end
 	end
 end
@@ -88,6 +101,20 @@ function serializePlayableLevelData(levelData)
 				})
 			end
 			table.insert(geometryData, polygonData)
+		-- Serialize a circle
+		elseif geom.type == EditorGeometry.Type.Circle then
+			local circleData = {
+				type = "Circle",
+				physics = {
+					{
+						type = "Circle",
+						x = geom.x,
+						y = geom.y,
+						radius = geom.radius
+					}
+				}
+			}
+			table.insert(geometryData, circleData)
 		end
 	end
 	return {
