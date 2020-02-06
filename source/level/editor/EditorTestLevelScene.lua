@@ -2,10 +2,8 @@ import "render/camera"
 import "scene/Scene"
 import "level/levelIO"
 import "physics/physics"
-import "physics/PhysBall"
-import "physics/PhysPoint"
-import "physics/PhysLine"
-import "physics/PhysCircle"
+import "level/object/levelObjectByType"
+import "level/object/Marble"
 
 class("EditorTestLevelScene").extends(Scene)
 
@@ -18,6 +16,9 @@ function EditorTestLevelScene:init(levelInfo, nextScene)
 		scale = camera.scale,
 		rotation = camera.rotation
 	}
+	self.objects = {}
+	self.worldBoundary = nil
+	self.marble = nil
 
 	-- Reset everything
 	camera:reset()
@@ -26,50 +27,56 @@ function EditorTestLevelScene:init(levelInfo, nextScene)
 
 	-- Load the level
 	local levelData = loadPlayableLevelData(levelInfo)
-	self.ball = PhysBall(levelData.spawn.x, levelData.spawn.y, 15):add()
-	for _, geom in ipairs(levelData.geometry) do
-		if geom.type == "Polygon" then
-			for _, obj in ipairs(geom.physics) do
-				if obj.type == "Line" then
-					PhysLine(obj.x1, obj.y1, obj.x2, obj.y2):add()
-				elseif obj.type == "Point" then
-					PhysPoint(obj.x, obj.y):add()
-				end
-			end
-		elseif geom.type == "Circle" then
-			PhysCircle(geom.physics[1].x, geom.physics[1].y, geom.physics[1].radius):add()
+	for _, objectData in ipairs(levelData.objects) do
+		local obj = levelObjectByType[objectData.type].deserialize(objectData)
+		if obj.type == LevelObject.Type.WorldBoundary then
+			self.worldBoundary = obj
+		else
+			table.insert(self.objects, obj)
 		end
 	end
+	self.marble = Marble(levelData.spawn.x, levelData.spawn.y)
+	table.insert(self.objects, self.marble)
 end
 
 function EditorTestLevelScene:update()
-	-- Clear the screen
-	playdate.graphics.clear()
-	playdate.graphics.setColor(playdate.graphics.kColorBlack)
-
-	-- Set the balls' gravity to be relative to the current perspective
-	for i = 1, #physics.balls do
-		physics.balls[i].acceleration.x, physics.balls[i].acceleration.y = -5000 * camera.up.x, -5000 * camera.up.y
-	end
-
-	-- Update the physics engine and do all collisions
+	-- Update the physics engine
 	physics:update()
+
+	-- Update all level objects
+	if self.worldBoundary then
+		self.worldBoundary:update()
+	end
+	for _, obj in ipairs(self.objects) do
+		obj:update()
+	end
 
 	-- Rotating the crank rotates the camera
 	camera.rotation = playdate.getCrankPosition()
 
 	-- Move the camera to be looking at the ball
-	camera.position.x, camera.position.y = self.ball.position.x, self.ball.position.y
+	camera.position.x, camera.position.y = self.marble:getPosition()
 	camera:recalculatePerspective()
 end
 
 function EditorTestLevelScene:draw()
 	-- Clear the screen
 	playdate.graphics.clear()
-	playdate.graphics.setColor(playdate.graphics.kColorBlack)
 
-	-- Draw all physics objects
-	physics:draw()
+	-- If there's a world boundary, render a bit differently
+	if self.worldBoundary then
+		-- Fill the whole screen with checkerboard
+		playdate.graphics.setPattern(patterns.Checkerboard)
+		playdate.graphics.fillRect(-10, -10, camera.screenWidth + 20, camera.screenHeight + 20)
+
+		-- Draw the WorldBoundary, which'll cut out a white area
+		self.worldBoundary:draw()
+	end
+
+	-- Draw all level objects
+	for _, obj in ipairs(self.objects) do
+		obj:draw()
+	end
 end
 
 function EditorTestLevelScene:BButtonDown()

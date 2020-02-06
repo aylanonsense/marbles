@@ -15,6 +15,23 @@ function EditorPolygonMenuScreen:init()
 				end
 			},
 			{
+				text = "Set as world boundary",
+				selected = function(menu, option)
+					if self.polygon.isWorldBoundary then
+						self.polygon.isWorldBoundary = false
+						scene.worldBoundary = nil
+						option.text = "Set as world boundary"
+					else
+						if scene.worldBoundary then
+							scene.worldBoundary.isWorldBoundary = false
+						end
+						scene.worldBoundary = self.polygon
+						self.polygon.isWorldBoundary = true
+						option.text = "Convert to polygon"
+					end
+				end
+			},
+			{
 				text = "Delete",
 				selected = function()
 					if self.polygon:delete() then
@@ -27,6 +44,7 @@ end
 
 function EditorPolygonMenuScreen:open(polygon)
 	self.polygon = polygon
+	self.menu.options[2].text = polygon.isWorldBoundary and "Convert to polygon" or "Set as world boundary"
 end
 
 function EditorPolygonMenuScreen:show()

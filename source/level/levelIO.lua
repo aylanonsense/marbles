@@ -121,6 +121,7 @@ function createNewLevel(name)
 	local levelData = {
 		name = name,
 		spawn = { x = 0, y = 0 },
+		objects = {},
 		geometry = {}
 	}
 	table.insert(userLevels.levels, levelInfo)

@@ -3,6 +3,7 @@ import "level/editor/EditorMenu"
 import "level/editor/screen/EditorMenuScreen"
 import "level/editor/screen/EditorCreatePolygonScreen"
 import "level/editor/screen/EditorCreateCircleScreen"
+import "level/editor/screen/EditorCreateObjectScreen"
 import "level/editor/screen/EditorSelectGeometryScreen"
 import "level/editor/screen/EditorPointMenuScreen"
 import "level/editor/screen/EditorLineMenuScreen"
@@ -10,6 +11,7 @@ import "level/editor/screen/EditorPolygonMenuScreen"
 import "level/editor/screen/EditorCircleMenuScreen"
 import "level/editor/screen/EditorCameraMenuScreen"
 import "level/editor/geometry/EditorGeometry"
+import "level/object/Coin"
 
 class("EditorEditLevelScreen").extends("EditorMenuScreen")
 
@@ -34,6 +36,27 @@ function EditorEditLevelScreen:init()
 								selected = function()
 									self:openAndShowSubScreen(EditorCreateCircleScreen())
 								end
+							}
+						})
+					},
+					{
+						text = "Object",
+						submenu = EditorMenu("Create Object", {
+							{
+								text = "Coin",
+								selected = function()
+									local coin = Coin(scene.cursor.position.x, scene.cursor.position.y)
+									self:openAndShowSubScreen(EditorCreateObjectScreen(), coin)
+								end
+							},
+							{
+								text = "Gravity Well"
+							},
+							{
+								text = "Marble"
+							},
+							{
+								text = "Spring Pad"
 							}
 						})
 					}

@@ -3,7 +3,7 @@ import "fonts/fonts"
 
 class("EditorMenu").extends()
 
-EditorMenu.CursorImage = playdate.graphics.image.new("images/menu-cursor.png")
+EditorMenu.CursorImage = playdate.graphics.image.new("images/editor/menu-cursor.png")
 
 function EditorMenu:init(title, options)
 	EditorMenu.super.init(self)

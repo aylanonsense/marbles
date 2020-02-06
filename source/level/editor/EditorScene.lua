@@ -10,7 +10,6 @@ import "level/editor/geometry/EditorLine"
 import "level/editor/geometry/EditorPolygon"
 import "level/editor/EditorTestLevelScene"
 import "level/levelIO"
-import "level/Level"
 
 class("EditorScene").extends(Scene)
 
@@ -20,11 +19,13 @@ function EditorScene:init()
 	camera:recalculatePerspective()
 	self.spawn = { x = 0, y = 0 }
 	self.geometry = {}
-	-- Create a cursor that child processes will use
+	self.objects = {}
+	-- Create a cursor that child screens will use
 	self.cursor = EditorCursor(camera.position.x, camera.position.y)
-	-- Create the main menu process
+	-- Create the main screen
 	self.screen = EditorSelectLevelScreen():openAndShow()
 	self.level = nil
+	self.worldBoundary = nil
 end
 
 function EditorScene:update()
@@ -40,6 +41,8 @@ function EditorScene:draw()
 	-- Clear the screen
 	playdate.graphics.clear()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
+	playdate.graphics.setLineWidth(1)
+	playdate.graphics.setLineCapStyle(playdate.graphics.kLineCapStyleRound)
 	-- Draw grid lines
 	local gridSize = (camera.scale >= 0.5) and 40 or 480
 	local xMid = gridSize * math.floor(camera.position.x / gridSize + 0.5)
@@ -56,8 +59,12 @@ function EditorScene:draw()
 	-- Draw the spawn point
 	perspectiveDrawing.drawDottedCircle(self.spawn.x, self.spawn.y, 15, 2)
 	-- Draw all the level geometry
-	for k, geom in pairs(self.geometry) do
+	for _, geom in pairs(self.geometry) do
 		geom:draw()
+	end
+	-- Draw all the objects
+	for _, obj in pairs(self.objects) do
+		obj:draw()
 	end
 	-- Draw the current screen
 	self.screen:getOpenScreen():draw()

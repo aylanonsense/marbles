@@ -12,7 +12,7 @@ PhysCircle.Inwards = 2
 PhysCircle.DoubleSided = 3
 
 function PhysCircle:init(x, y, radius)
-	PhysCircle.super.init(self, x, y)
+	PhysCircle.super.init(self, PhysObject.Type.PhysCircle, x, y)
 	self.radius = radius
 	self.facing = PhysCircle.Outwards
 	self.ignoreReverseSideCollisions = false
@@ -51,4 +51,14 @@ function PhysCircle:checkForCollisionWithBall(ball)
 			end
 		end
 	end
+end
+
+function PhysCircle:serialize()
+	local data = PhysCircle.super.serialize(self)
+	data.radius = self.radius
+	return data
+end
+
+function PhysCircle.deserialize(data)
+	return PhysCircle(data.x1, data.y1, data.x2, data.y2)
 end

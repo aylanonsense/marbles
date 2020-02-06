@@ -1,11 +1,21 @@
 import "CoreLibs/object"
 import "physics/physics"
 import "scene/time"
+import "utility/table"
 
 class("PhysObject").extends()
 
-function PhysObject:init(x, y)
+PhysObject.Type = {
+	PhysArc = "PhysArc",
+	PhysBall = "PhysBall",
+	PhysCircle = "PhysCircle",
+	PhysLine = "PhysLine",
+	PhysPoint = "PhysPoint"
+}
+
+function PhysObject:init(type, x, y)
 	PhysObject.super.init(self)
+	self.type = type
 	self.position = playdate.geometry.vector2D.new(x, y)
 	self.velocity = playdate.geometry.vector2D.new(0, 0)
 	self.acceleration = playdate.geometry.vector2D.new(0, 0)
@@ -45,4 +55,17 @@ function PhysObject:add()
 	return self
 end
 
+function PhysObject:remove()
+	removeItem(physics.objects, self)
+	return self
+end
+
 function PhysObject:checkForCollisionWithBall(ball) end
+
+function PhysObject:serialize()
+	return {
+		type = self.type,
+		x = self.position.x,
+		y = self.position.y
+	}
+end

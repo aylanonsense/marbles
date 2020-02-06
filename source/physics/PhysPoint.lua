@@ -7,7 +7,7 @@ import "render/camera"
 class("PhysPoint").extends(PhysObject)
 
 function PhysPoint:init(x, y)
-	PhysPoint.super.init(self, x, y)
+	PhysPoint.super.init(self, PhysObject.Type.PhysPoint, x, y)
 end
 
 function PhysPoint:draw()
@@ -25,4 +25,8 @@ function PhysPoint:checkForCollisionWithBall(ball)
 		local dist = math.sqrt(squareDist)
 		return Collision.pool:withdraw(self, ball, ball.radius - dist, dx / dist, dy / dist)
 	end
+end
+
+function PhysPoint.deserialize(data)
+	return PhysPoint(data.x, data.y)
 end

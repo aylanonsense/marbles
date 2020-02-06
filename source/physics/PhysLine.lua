@@ -10,7 +10,7 @@ PhysLine.TopOnly = 1
 PhysLine.DoubleSided = 2
 
 function PhysLine:init(x1, y1, x2, y2)
-	PhysLine.super.init(self, x1, y1)
+	PhysLine.super.init(self, PhysObject.Type.PhysLine, x1, y1)
 	local dx, dy = x2 - x1, y2 - y1
 	self.segment = playdate.geometry.vector2D.new(dx, dy)
 	self.facing = PhysLine.TopOnly
@@ -66,4 +66,15 @@ function PhysLine:checkForCollisionWithBall(ball)
 			end
 		end
 	end
+end
+
+function PhysLine:serialize()
+	local data = PhysLine.super.serialize(self)
+	data.x2 = self.position.x + self.segment.x
+	data.y2 = self.position.y + self.segment.y
+	return data
+end
+
+function PhysLine.deserialize(data)
+	return PhysLine(data.x, data.y, data.x2, data.y2)
 end

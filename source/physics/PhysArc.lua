@@ -12,7 +12,7 @@ PhysArc.Inwards = 2
 PhysArc.DoubleSided = 3
 
 function PhysArc:init(x, y, radius, startAngle, endAngle)
-	PhysArc.super.init(self, x, y)
+	PhysArc.super.init(self, PhysObject.Type.PhysArc, x, y)
 	self.radius = radius
 	self.facing = PhysArc.Outwards
 	self.ignoreReverseSideCollisions = false
@@ -63,4 +63,16 @@ function PhysArc:checkForCollisionWithBall(ball)
 			end
 		end
 	end
+end
+
+function PhysArc:serialize()
+	local data = PhysArc.super.serialize(self)
+	data.radius = self.radius
+	data.startAngle = self.startAngle
+	data.endAngle = self.endAngle
+	return data
+end
+
+function PhysArc.deserialize(data)
+	return PhysArc(data.x, data.y, data.radius, data.startAngle, data.endAngle)
 end

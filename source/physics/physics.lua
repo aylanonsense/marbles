@@ -18,10 +18,8 @@ function physics:update()
 	end
 
 	-- Check for collisions between balls and objects
-	for i = 1, #self.balls do
-		local ball = self.balls[i]
-		for j = 1, #self.objects do
-			local obj = self.objects[j]
+	for _, ball in ipairs(self.balls) do
+		for _, obj in ipairs(self.objects) do
 			if ball ~= obj and ball.isEnabled and obj.isEnabled then
 				local collision = obj:checkForCollisionWithBall(ball)
 				if collision then
