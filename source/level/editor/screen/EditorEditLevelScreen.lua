@@ -4,11 +4,12 @@ import "level/editor/screen/EditorMenuScreen"
 import "level/editor/screen/EditorCreatePolygonScreen"
 import "level/editor/screen/EditorCreateCircleScreen"
 import "level/editor/screen/EditorCreateObjectScreen"
-import "level/editor/screen/EditorSelectGeometryScreen"
+import "level/editor/screen/EditorSelectGeometryOrObjectScreen"
 import "level/editor/screen/EditorPointMenuScreen"
 import "level/editor/screen/EditorLineMenuScreen"
 import "level/editor/screen/EditorPolygonMenuScreen"
 import "level/editor/screen/EditorCircleMenuScreen"
+import "level/editor/screen/EditorObjectMenuScreen"
 import "level/editor/screen/EditorCameraMenuScreen"
 import "level/editor/geometry/EditorGeometry"
 import "level/object/Coin"
@@ -48,15 +49,6 @@ function EditorEditLevelScreen:init()
 									local coin = Coin(scene.cursor.position.x, scene.cursor.position.y)
 									self:openAndShowSubScreen(EditorCreateObjectScreen(), coin)
 								end
-							},
-							{
-								text = "Gravity Well"
-							},
-							{
-								text = "Marble"
-							},
-							{
-								text = "Spring Pad"
 							}
 						})
 					}
@@ -65,15 +57,19 @@ function EditorEditLevelScreen:init()
 			{
 				text = "Edit",
 				selected = function()
-					self:openAndShowSubScreen(EditorSelectGeometryScreen(), function(screen, geometry)
-						if geometry.type == EditorGeometry.Type.Point then
-							screen:openAndShowSubScreen(EditorPointMenuScreen(), geometry)
-						elseif geometry.type == EditorGeometry.Type.Line then
-							screen:openAndShowSubScreen(EditorLineMenuScreen(), geometry)
-						elseif geometry.type == EditorGeometry.Type.Polygon then
-							screen:openAndShowSubScreen(EditorPolygonMenuScreen(), geometry)
-						elseif geometry.type == EditorGeometry.Type.Circle then
-							screen:openAndShowSubScreen(EditorCircleMenuScreen(), geometry)
+					self:openAndShowSubScreen(EditorSelectGeometryOrObjectScreen(), function(screen, item, isGeometry)
+						if isGeometry then
+							if item.type == EditorGeometry.Type.Point then
+								screen:openAndShowSubScreen(EditorPointMenuScreen(), item)
+							elseif item.type == EditorGeometry.Type.Line then
+								screen:openAndShowSubScreen(EditorLineMenuScreen(), item)
+							elseif item.type == EditorGeometry.Type.Polygon then
+								screen:openAndShowSubScreen(EditorPolygonMenuScreen(), item)
+							elseif item.type == EditorGeometry.Type.Circle then
+								screen:openAndShowSubScreen(EditorCircleMenuScreen(), item)
+							end
+						else
+							screen:openAndShowSubScreen(EditorObjectMenuScreen(), item)
 						end
 					end)
 				end

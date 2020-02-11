@@ -1,20 +1,20 @@
 import "level/editor/screen/EditorScreen"
 import "level/editor/geometry/EditorGeometry"
 
-class("EditorSelectGeometryScreen").extends(EditorScreen)
+class("EditorSelectGeometryOrObjectScreen").extends(EditorScreen)
 
-function EditorSelectGeometryScreen:init()
-	EditorSelectGeometryScreen.super.init(self)
+function EditorSelectGeometryOrObjectScreen:init()
+	EditorSelectGeometryOrObjectScreen.super.init(self)
 	self.highlightedEditTarget = nil
 	self.onSelectCallback = nil
 	self.editTargets = {}
 end
 
-function EditorSelectGeometryScreen:open(callback)
+function EditorSelectGeometryOrObjectScreen:open(callback)
 	self.onSelectCallback = callback
 end
 
-function EditorSelectGeometryScreen:show()
+function EditorSelectGeometryOrObjectScreen:show()
 	self.highlightedEditTarget = nil
 	self.editTargets = {}
 	for _, geom in ipairs(scene.geometry) do
@@ -23,9 +23,13 @@ function EditorSelectGeometryScreen:show()
 			table.insert(self.editTargets, target)
 		end
 	end
+	for _, obj in ipairs(scene.objects) do
+		local x, y = obj:getPosition()
+		table.insert(self.editTargets, { x = x, y = y, size = 5, obj = obj })
+	end
 end
 
-function EditorSelectGeometryScreen:update()
+function EditorSelectGeometryOrObjectScreen:update()
 	scene.cursor:update()
 	-- Figure out if the cursor is highlighting an edit target
 	self.highlightedEditTarget = nil
@@ -40,7 +44,7 @@ function EditorSelectGeometryScreen:update()
 	end
 end
 
-function EditorSelectGeometryScreen:draw()
+function EditorSelectGeometryOrObjectScreen:draw()
 	-- Draw all edit targets
 	for _, target in ipairs(self.editTargets) do
 		playdate.graphics.setColor(playdate.graphics.kColorWhite)
@@ -55,12 +59,16 @@ function EditorSelectGeometryScreen:draw()
 	scene.cursor:draw()
 end
 
-function EditorSelectGeometryScreen:AButtonDown()
+function EditorSelectGeometryOrObjectScreen:AButtonDown()
 	if self.highlightedEditTarget and self.onSelectCallback then
-		self.onSelectCallback(self, self.highlightedEditTarget.geom)
+		if self.highlightedEditTarget.geom then
+			self.onSelectCallback(self, self.highlightedEditTarget.geom, true)
+		else
+			self.onSelectCallback(self, self.highlightedEditTarget.obj, false)
+		end
 	end
 end
 
-function EditorSelectGeometryScreen:BButtonDown()
+function EditorSelectGeometryOrObjectScreen:BButtonDown()
 	self:close()
 end

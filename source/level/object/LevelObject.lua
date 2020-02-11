@@ -60,6 +60,12 @@ function LevelObject:setPosition(x, y)
 	return dx, dy
 end
 
+function LevelObject:translate(dx, dy)
+	local x, y = self:getPosition()
+	self:setPosition(x + dx, y + dy)
+	return x + dx, y + dy
+end
+
 function LevelObject:serialize()
 	local x, y = self:getPosition()
 	return {
