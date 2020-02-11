@@ -24,7 +24,8 @@ function EditorLineMenuScreen:init()
 			{
 				text = "Extrude",
 				selected = function()
-					-- TODO
+					self.line:extrude()
+					self:openAndShowSubScreen(EditorMoveGeometryScreen(), self.line)
 				end
 			},
 			{

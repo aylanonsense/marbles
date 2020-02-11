@@ -88,6 +88,37 @@ function EditorLine:split()
 	end
 end
 
+function EditorLine:extrude()
+	local polygon = self.startPoint.polygon
+	if polygon then
+		local beforeStartPoint = EditorPoint(self.startPoint.x, self.startPoint.y)
+		local afterEndPoint = EditorPoint(self.endPoint.x, self.endPoint.y)
+		-- Add a point before the start point
+		for i = 1, #polygon.points do
+			if polygon.points[i] == self.startPoint then
+				table.insert(polygon.points, i, beforeStartPoint)
+				beforeStartPoint.polygon = polygon
+				break
+			end
+		end
+		-- Add a point after the end point
+		for i = 1, #polygon.points do
+			if polygon.points[i] == self.endPoint then
+				table.insert(polygon.points, i + 1, afterEndPoint)
+				afterEndPoint.polygon = polygon
+				break
+			end
+		end
+		-- Connect them with lines
+		beforeStartPoint.incomingLine = self.startPoint.incomingLine
+		self.startPoint.incomingLine.endPoint = beforeStartPoint
+		afterEndPoint.outgoingLine = self.endPoint.outgoingLine
+		self.endPoint.outgoingLine.startPoint = afterEndPoint
+		EditorLine(beforeStartPoint, self.startPoint)
+		EditorLine(self.endPoint, afterEndPoint)
+	end
+end
+
 function EditorLine:delete()
 	local polygon = self.startPoint.polygon
 	if polygon then
