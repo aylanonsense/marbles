@@ -13,8 +13,11 @@ function randomInt(lower, upper)
 	return math.floor(randomEx(lower, upper + 1))
 end
 
--- atan2 that plays well with Playdate's angle paradigm
-function atan2(y, x)
-	local angle = 90 + math.atan2(y, x) * 180 / math.pi
-	return (angle < 0) and (angle + 360) or angle
+function drawableAngleToTrigAngle(angle)
+	return (angle - 90) * math.pi / 180
+end
+
+function trigAngleToDrawableAngle(angle)
+	local drawableAngle = 90 + angle * 180 / math.pi
+	return (drawableAngle < 0) and (drawableAngle + 360) or drawableAngle
 end

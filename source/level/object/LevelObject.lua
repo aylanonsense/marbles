@@ -3,6 +3,7 @@ import "CoreLibs/object"
 class("LevelObject").extends()
 
 LevelObject.Type = {
+	Booster = "Booster",
 	Circle = "Circle",
 	Coin = "Coin",
 	Marble = "Marble",
@@ -66,6 +67,10 @@ function LevelObject:translate(dx, dy)
 	return x + dx, y + dy
 end
 
+function LevelObject:getEditableFields()
+	return {}
+end
+
 function LevelObject:serialize()
 	local x, y = self:getPosition()
 	return {
@@ -73,6 +78,13 @@ function LevelObject:serialize()
 		x = x,
 		y = y
 	}
+end
+
+function LevelObject:setVelocity(x, y)
+	for _, physObj in ipairs(self.physObjects) do
+		physObj.velocity.x = x
+		physObj.velocity.y = y
+	end
 end
 
 function LevelObject:addPhysicsObject(physObj)

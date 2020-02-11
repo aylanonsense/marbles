@@ -12,6 +12,7 @@ import "level/editor/screen/EditorCircleMenuScreen"
 import "level/editor/screen/EditorObjectMenuScreen"
 import "level/editor/screen/EditorCameraMenuScreen"
 import "level/editor/geometry/EditorGeometry"
+import "level/object/Booster"
 import "level/object/Coin"
 
 class("EditorEditLevelScreen").extends("EditorMenuScreen")
@@ -44,10 +45,15 @@ function EditorEditLevelScreen:init()
 						text = "Object",
 						submenu = EditorMenu("Create Object", {
 							{
+								text = "Booster",
+								selected = function()
+									self:openAndShowSubScreen(EditorCreateObjectScreen(), Booster(scene.cursor.position.x, scene.cursor.position.y, 0))
+								end
+							},
+							{
 								text = "Coin",
 								selected = function()
-									local coin = Coin(scene.cursor.position.x, scene.cursor.position.y)
-									self:openAndShowSubScreen(EditorCreateObjectScreen(), coin)
+									self:openAndShowSubScreen(EditorCreateObjectScreen(), Coin(scene.cursor.position.x, scene.cursor.position.y))
 								end
 							}
 						})

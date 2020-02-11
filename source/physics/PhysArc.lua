@@ -34,7 +34,7 @@ function PhysArc:checkForCollisionWithBall(ball)
 	local maxDist = ball.radius + self.radius
 	if squareDist < maxDist * maxDist then
 		-- The ball is touching (or inside) the arc!
-		local angle = atan2(dy, dx)
+		local angle = trigAngleToDrawableAngle(math.atan2(dy, dx))
 		local isOnArc
 		if self.startAngle > self.endAngle then
 			isOnArc = self.startAngle <= angle or angle <= self.endAngle

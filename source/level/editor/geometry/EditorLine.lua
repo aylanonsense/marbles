@@ -43,8 +43,8 @@ function EditorLine:getArcProps()
 		local h = math.sqrt(r1 * r1 - a * a) * ((self.radius > 0) and -1 or 1)
 		local intersectX = midX + h * (y2 - y1) / dist
 		local intersectY = midY - h * (x2 - x1) / dist
-		local angle1 = atan2(self.startPoint.y - intersectY, self.startPoint.x - intersectX)
-		local angle2 = atan2(self.endPoint.y - intersectY, self.endPoint.x - intersectX)
+		local angle1 = trigAngleToDrawableAngle(math.atan2(self.startPoint.y - intersectY, self.startPoint.x - intersectX))
+		local angle2 = trigAngleToDrawableAngle(math.atan2(self.endPoint.y - intersectY, self.endPoint.x - intersectX))
 		if self.radius > 0 then
 			return intersectX, intersectY, radius, angle1, angle2
 		else
