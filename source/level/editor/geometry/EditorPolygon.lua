@@ -19,9 +19,7 @@ function EditorPolygon:draw()
 	if not self.isWorldBoundary then
 		local coordinates = {}
 		for i = 1, #self.points do
-			local x, y = camera.matrix:transformXY(self.points[i].x, self.points[i].y)
-			table.insert(coordinates, x)
-			table.insert(coordinates, y)
+			self:addRenderCoordinatesToList(coordinates, self.points[i])
 		end
 		playdate.graphics.setColor(playdate.graphics.kColorBlack)
 		playdate.graphics.setPattern({ 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55 })
@@ -38,14 +36,10 @@ function EditorPolygon:draw()
 		end
 		local coordinates = {}
 		for i = leftmostPointIndex, #self.points do
-			local x, y = camera.matrix:transformXY(self.points[i].x, self.points[i].y)
-			table.insert(coordinates, x)
-			table.insert(coordinates, y)
+			self:addRenderCoordinatesToList(coordinates, self.points[i])
 		end
 		for i = 1, leftmostPointIndex - 1 do
-			local x, y = camera.matrix:transformXY(self.points[i].x, self.points[i].y)
-			table.insert(coordinates, x)
-			table.insert(coordinates, y)
+			self:addRenderCoordinatesToList(coordinates, self.points[i])
 		end
 		local isClockwise = self:isClockwise()
 		local x2, y2 = camera.matrix:transformXY(leftmostPoint.x, leftmostPoint.y)
@@ -76,6 +70,43 @@ function EditorPolygon:draw()
 		local point = self.points[i]
 		point:draw()
 		point.outgoingLine:draw()
+	end
+end
+
+function EditorPolygon:addRenderCoordinatesToList(list, point)
+	local arcX, arcY, radius, startAngle, endAngle
+	if point.outgoingLine.radius ~= 0 then
+		arcX, arcY, radius, startAngle, endAngle = point.outgoingLine:getArcProps()
+	end
+	if arcX and arcY then
+		local circumference = 2 * math.pi * radius
+		local degrees = endAngle - startAngle
+		if degrees < 0 then
+			degrees += 360
+		end
+		local arcLength = circumference * degrees / 360
+		local numPoints = math.ceil(arcLength / 10)
+		for i = 1, numPoints do
+			local angle
+			if point.outgoingLine.radius > 0 then
+				angle = startAngle + (i - 1) * degrees / numPoints
+			else
+				angle = startAngle + (numPoints - i + 1) * degrees / numPoints
+			end
+			if angle > 360 then
+				angle -= 360
+			end
+			local actualAngle = (angle - 90) * math.pi / 180
+			local c = math.cos(actualAngle)
+			local s = math.sin(actualAngle)
+			local x, y = camera.matrix:transformXY(arcX + radius * c, arcY + radius * s)
+			table.insert(list, x)
+			table.insert(list, y)
+		end
+	else
+		local x, y = camera.matrix:transformXY(point.x, point.y)
+		table.insert(list, x)
+		table.insert(list, y)
 	end
 end
 

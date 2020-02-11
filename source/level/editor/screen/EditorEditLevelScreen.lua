@@ -66,15 +66,14 @@ function EditorEditLevelScreen:init()
 				text = "Edit",
 				selected = function()
 					self:openAndShowSubScreen(EditorSelectGeometryScreen(), function(screen, geometry)
-						screen:close()
 						if geometry.type == EditorGeometry.Type.Point then
-							self:openAndShowSubScreen(EditorPointMenuScreen(), geometry)
+							screen:openAndShowSubScreen(EditorPointMenuScreen(), geometry)
 						elseif geometry.type == EditorGeometry.Type.Line then
-							self:openAndShowSubScreen(EditorLineMenuScreen(), geometry)
+							screen:openAndShowSubScreen(EditorLineMenuScreen(), geometry)
 						elseif geometry.type == EditorGeometry.Type.Polygon then
-							self:openAndShowSubScreen(EditorPolygonMenuScreen(), geometry)
+							screen:openAndShowSubScreen(EditorPolygonMenuScreen(), geometry)
 						elseif geometry.type == EditorGeometry.Type.Circle then
-							self:openAndShowSubScreen(EditorCircleMenuScreen(), geometry)
+							screen:openAndShowSubScreen(EditorCircleMenuScreen(), geometry)
 						end
 					end)
 				end

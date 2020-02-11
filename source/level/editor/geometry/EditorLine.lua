@@ -3,6 +3,7 @@ import "level/editor/geometry/EditorGeometry"
 import "level/editor/geometry/EditorPoint"
 import "render/perspectiveDrawing"
 import "physics/PhysLine"
+import "utility/math"
 
 class("EditorLine").extends("EditorGeometry")
 
@@ -12,13 +13,44 @@ function EditorLine:init(startPoint, endPoint)
 	self.endPoint = endPoint
 	self.startPoint.outgoingLine = self
 	self.endPoint.incomingLine = self
+	self.radius = 0
 end
 
 function EditorLine:draw()
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
 	playdate.graphics.setLineWidth(1)
 	playdate.graphics.setLineCapStyle(playdate.graphics.kLineCapStyleRound)
-	perspectiveDrawing.drawLine(self.startPoint.x, self.startPoint.y, self.endPoint.x, self.endPoint.y)
+	if self.radius == 0 then
+		perspectiveDrawing.drawLine(self.startPoint.x, self.startPoint.y, self.endPoint.x, self.endPoint.y)
+	else
+		local arcX, arcY, radius, startAngle, endAngle = self:getArcProps()
+		if arcX and arcY then
+			perspectiveDrawing.drawArc(arcX, arcY, radius, startAngle, endAngle)
+		end
+	end
+end
+
+function EditorLine:getArcProps()
+	-- Treat the endpoints as circles and test for their intersection
+	local radius = math.abs(self.radius)
+	local x1, y1, r1 = self.startPoint.x, self.startPoint.y, radius
+	local x2, y2, r2 = self.endPoint.x, self.endPoint.y, radius
+	local midX, midY = (x1 + x2) / 2, (y1 + y2) / 2
+	local dx, dy = x2 - x1, y2 - y1
+	local dist = math.sqrt(dx * dx + dy * dy)
+	if math.abs(r2 - r1) <= dist and dist <= r1 + r2 then
+		local a = (r1 * r1 - r2 * r2 + dist * dist) / (2 * dist)
+		local h = math.sqrt(r1 * r1 - a * a) * ((self.radius > 0) and -1 or 1)
+		local intersectX = midX + h * (y2 - y1) / dist
+		local intersectY = midY - h * (x2 - x1) / dist
+		local angle1 = atan2(self.startPoint.y - intersectY, self.startPoint.x - intersectX)
+		local angle2 = atan2(self.endPoint.y - intersectY, self.endPoint.x - intersectX)
+		if self.radius > 0 then
+			return intersectX, intersectY, radius, angle1, angle2
+		else
+			return intersectX, intersectY, radius, angle2, angle1
+		end
+	end
 end
 
 function EditorLine:getEditTargets()

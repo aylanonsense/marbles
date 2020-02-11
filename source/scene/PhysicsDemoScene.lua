@@ -30,7 +30,7 @@ function PhysicsDemoScene:init()
 	PhysLine(60, -150, -30, -140):add()
 	PhysLine(-30, -140, -40, -100):add()
 	PhysLine(-40, -100, -60, -100):add()
-	PhysArc(-110, -100, 50, 270, 90):add().facing = PhysArc.Inwards
+	PhysArc(-110, -100, 50, 270, 90):add().facing = PhysArc.Facing.Inwards
 	PhysLine(-160, -100, -140, -60):add()
 	PhysLine(-140, -60, -150, 60):add()
 	PhysLine(-150, 60, -90, 40):add()

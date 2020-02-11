@@ -24,6 +24,11 @@ function perspectiveDrawing.drawDottedLine(x1, y1, x2, y2, distanceBetweenDots)
 	end
 end
 
+function perspectiveDrawing.drawArc(x, y, r, startAngle, endAngle)
+	x, y = camera.matrix:transformXY(x, y)
+	playdate.graphics.drawArc(x, y, r * camera.scale, r * camera.scale, startAngle - camera.rotation, endAngle - camera.rotation)
+end
+
 function perspectiveDrawing.drawCircle(x, y, r)
 	x, y = camera.matrix:transformXY(x, y)
 	playdate.graphics.drawCircleAtPoint(x, y, r * camera.scale)

@@ -5,15 +5,16 @@ import "render/camera"
 
 class("PhysLine").extends(PhysObject)
 
--- Facing constants
-PhysLine.TopOnly = 1
-PhysLine.DoubleSided = 2
+PhysLine.Facing = {
+	TopOnly = 1,
+	DoubleSided = 2
+}
 
 function PhysLine:init(x1, y1, x2, y2)
 	PhysLine.super.init(self, PhysObject.Type.PhysLine, x1, y1)
 	local dx, dy = x2 - x1, y2 - y1
 	self.segment = playdate.geometry.vector2D.new(dx, dy)
-	self.facing = PhysLine.TopOnly
+	self.facing = PhysLine.Facing.TopOnly
 	self.ignoreReverseSideCollisions = false
 	-- Cache some information about the line that's useful for physics calculations
 	self.segmentNormalized = self.segment:normalized()
@@ -28,7 +29,7 @@ function PhysLine:draw()
 	-- Draw the line
 	playdate.graphics.drawLine(x1, y1, x2, y2)
 	-- Draw a hash mark on the back side of the line
-	if self.facing == PhysLine.TopOnly then
+	if self.facing == PhysLine.Facing.TopOnly then
 		local xMid, yMid = (pos.x + pos.x + segment.x) / 2, (pos.y + pos.y + segment.y) / 2
 		local x3, y3 = camera.matrix:transformXY(xMid, yMid)
 		local x4, y4 = camera.matrix:transformXY(xMid - 7 * self.normal.x, yMid - 7 * self.normal.y)
@@ -50,7 +51,7 @@ function PhysLine:checkForCollisionWithBall(ball)
 			local dist = math.sqrt(squareDist)
 			if dot2 < 0 then
 				-- The ball is overlapping the line from below
-				if self.facing == PhysLine.DoubleSided then
+				if self.facing == PhysLine.Facing.DoubleSided then
 					-- Bounce off the underside
 					local overlap = ball.radius - dist
 					return Collision.pool:withdraw(self, ball, overlap, -self.normal.x, -self.normal.y)
@@ -72,9 +73,16 @@ function PhysLine:serialize()
 	local data = PhysLine.super.serialize(self)
 	data.x2 = self.position.x + self.segment.x
 	data.y2 = self.position.y + self.segment.y
+	if self.facing ~= PhysLine.Facing.TopOnly then
+		data.facing = self.facing
+	end
 	return data
 end
 
 function PhysLine.deserialize(data)
-	return PhysLine(data.x, data.y, data.x2, data.y2)
+	local line = PhysLine(data.x, data.y, data.x2, data.y2)
+	if data.facing then
+		line.facing = data.facing
+	end
+	return line
 end

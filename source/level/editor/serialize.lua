@@ -9,6 +9,7 @@ import "level/object/Polygon"
 import "level/object/WorldBoundary"
 import "physics/PhysPoint"
 import "physics/PhysLine"
+import "physics/PhysArc"
 
 function serializeEditorLevelData()
 	local objectData = {}
@@ -32,7 +33,9 @@ function serializeEditorLevelData()
 					x = point.x,
 					y = point.y
 				})
-				table.insert(polygonData.lines, {})
+				table.insert(polygonData.lines, {
+					radius = point.outgoingLine.radius
+				})
 			end
 			table.insert(geometryData, polygonData)
 		-- Serialize a circle
@@ -70,7 +73,8 @@ function deserializeEditorLevelData(levelData)
 			for i, lineData in ipairs(geomData.lines) do
 				local startPoint = points[i]
 				local endPoint = points[(i == #points) and 1 or (i + 1)]
-				EditorLine(startPoint, endPoint)
+				local line = EditorLine(startPoint, endPoint)
+				line.radius = lineData.radius or 0
 			end
 			local polygon = EditorPolygon(points)
 			if geomData.isWorldBoundary then
@@ -99,13 +103,60 @@ function serializePlayableLevelData(levelData)
 			local renderCoordinates = {}
 			for _, point in ipairs(geom.points) do
 				table.insert(physPoints, PhysPoint(point.x, point.y))
-				if isClockwise ~= geom.isWorldBoundary then
-					table.insert(physLinesAndArcs, PhysLine(point.outgoingLine.startPoint.x, point.outgoingLine.startPoint.y, point.outgoingLine.endPoint.x, point.outgoingLine.endPoint.y))
+				local line = point.outgoingLine
+				if line.radius == 0 then
+					if isClockwise ~= geom.isWorldBoundary then
+						table.insert(physLinesAndArcs, PhysLine(line.startPoint.x, line.startPoint.y, line.endPoint.x, line.endPoint.y))
+					else
+						table.insert(physLinesAndArcs, PhysLine(line.endPoint.x, line.endPoint.y, line.startPoint.x, line.startPoint.y))
+					end
+					table.insert(renderCoordinates, point.x)
+					table.insert(renderCoordinates, point.y)
 				else
-					table.insert(physLinesAndArcs, PhysLine(point.outgoingLine.endPoint.x, point.outgoingLine.endPoint.y, point.outgoingLine.startPoint.x, point.outgoingLine.startPoint.y))
+					local arcX, arcY, radius, startAngle, endAngle = line:getArcProps()
+					local facingInwards = (line.radius > 0) == geom.isWorldBoundary
+					if arcX and arcY then
+						local arc = PhysArc(arcX, arcY, radius, startAngle, endAngle)
+						if facingInwards then
+							arc.facing = PhysArc.Facing.Inwards
+						else
+							arc.facing = PhysArc.Facing.Outwards
+						end
+						table.insert(physLinesAndArcs, arc)
+						-- Generate render coordinates for the arc
+						local circumference = 2 * math.pi * radius
+						local degrees = endAngle - startAngle
+						if degrees < 0 then
+							degrees += 360
+						end
+						local arcLength = circumference * degrees / 360
+						local numPoints = math.ceil(arcLength / 5)
+						for i = 1, numPoints do
+							local angle
+							if line.radius > 0 then
+								angle = startAngle + (i - 1) * degrees / numPoints
+							else
+								angle = startAngle + (numPoints - i + 1) * degrees / numPoints
+							end
+							if angle > 360 then
+								angle -= 360
+							end
+							local actualAngle = (angle - 90) * math.pi / 180
+							local c = math.cos(actualAngle)
+							local s = math.sin(actualAngle)
+							table.insert(renderCoordinates, arcX + radius * c)
+							table.insert(renderCoordinates, arcY + radius * s)
+						end
+					else
+						if isClockwise ~= geom.isWorldBoundary then
+							table.insert(physLinesAndArcs, PhysLine(line.startPoint.x, line.startPoint.y, line.endPoint.x, line.endPoint.y))
+						else
+							table.insert(physLinesAndArcs, PhysLine(line.endPoint.x, line.endPoint.y, line.startPoint.x, line.startPoint.y))
+						end
+						table.insert(renderCoordinates, point.x)
+						table.insert(renderCoordinates, point.y)
+					end
 				end
-				table.insert(renderCoordinates, point.x)
-				table.insert(renderCoordinates, point.y)
 			end
 			if geom.isWorldBoundary then
 				local worldBoundary = WorldBoundary(physPoints, physLinesAndArcs, renderCoordinates)

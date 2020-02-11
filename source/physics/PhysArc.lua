@@ -6,15 +6,16 @@ import "render/camera"
 
 class("PhysArc").extends(PhysObject)
 
--- Facing constants
-PhysArc.Outwards = 1
-PhysArc.Inwards = 2
-PhysArc.DoubleSided = 3
+PhysArc.Facing = {
+	Outwards = 1,
+	Inwards = 2,
+	DoubleSided = 3
+}
 
 function PhysArc:init(x, y, radius, startAngle, endAngle)
 	PhysArc.super.init(self, PhysObject.Type.PhysArc, x, y)
 	self.radius = radius
-	self.facing = PhysArc.Outwards
+	self.facing = PhysArc.Facing.Outwards
 	self.ignoreReverseSideCollisions = false
 	-- Angles are in degrees, with 0 at the top and 90 at the right
 	self.startAngle = startAngle
@@ -42,17 +43,17 @@ function PhysArc:checkForCollisionWithBall(ball)
 		end
 		if isOnArc then
 			local dist = math.sqrt(squareDist)
-			if self.facing == PhysArc.Outwards then
+			if self.facing == PhysArc.Facing.Outwards then
 				if not self.ignoreReverseSideCollisions or dist > (self.radius - ball.radius) then
 					-- Bounce off the outside of the arc
 					return Collision.pool:withdraw(self, ball, self.radius + ball.radius - dist, dx / dist, dy / dist)
 				end
-			elseif self.facing == PhysArc.Inwards then
+			elseif self.facing == PhysArc.Facing.Inwards then
 				if dist > (self.radius - ball.radius) and (not self.ignoreReverseSideCollisions or dist <= self.radius) then
 					-- Bounce off the inside of the arc
 					return Collision.pool:withdraw(self, ball, dist - (self.radius - ball.radius), -dx / dist, -dy / dist)
 				end
-			elseif self.facing == PhysArc.DoubleSided then
+			elseif self.facing == PhysArc.Facing.DoubleSided then
 				if dist >= self.radius then
 					-- Bounce off the outside of the arc
 					return Collision.pool:withdraw(self, ball, self.radius + ball.radius - dist, dx / dist, dy / dist)
@@ -70,9 +71,16 @@ function PhysArc:serialize()
 	data.radius = self.radius
 	data.startAngle = self.startAngle
 	data.endAngle = self.endAngle
+	if self.facing ~= PhysArc.Facing.Outwards then
+		data.facing = self.facing
+	end
 	return data
 end
 
 function PhysArc.deserialize(data)
-	return PhysArc(data.x, data.y, data.radius, data.startAngle, data.endAngle)
+	local arc = PhysArc(data.x, data.y, data.radius, data.startAngle, data.endAngle)
+	if data.facing then
+		arc.facing = data.facing
+	end
+	return arc
 end
