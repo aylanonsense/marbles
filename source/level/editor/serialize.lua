@@ -117,7 +117,7 @@ function serializePlayableLevelData(levelData)
 					local facingInwards = (line.radius > 0) == geom.isWorldBoundary
 					if arcX and arcY then
 						local arc = PhysArc(arcX, arcY, radius, startAngle, endAngle)
-						if facingInwards then
+						if facingInwards == isClockwise then
 							arc.facing = PhysArc.Facing.Inwards
 						else
 							arc.facing = PhysArc.Facing.Outwards
