@@ -1,12 +1,14 @@
 -- This object represents the physics engine
 physics = {
 	balls = {},
-	objects = {}
+	objects = {},
+	onCollideCallback = nil
 }
 
 function physics:reset()
 	self.balls = {}
 	self.objects = {}
+	self.onCollideCallback = nil
 end
 
 function physics:update()
@@ -23,8 +25,12 @@ function physics:update()
 			if ball ~= obj and ball.isEnabled and obj.isEnabled then
 				local collision = obj:checkForCollisionWithBall(ball)
 				if collision then
-					-- There was a collision! Just handle is straight-away
-					collision:handle()
+					-- There was a collision!
+					if physics.onCollideCallback then
+						physics.onCollideCallback(collision)
+					else
+						collision:handle()
+					end
 					collision:discard()
 				end
 			end
@@ -42,4 +48,8 @@ function physics:draw()
 			self.objects[i]:draw()
 		end
 	end
+end
+
+function physics:onCollide(callback)
+	self.onCollideCallback = callback
 end

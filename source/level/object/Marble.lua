@@ -12,7 +12,7 @@ local imageWidth, imageHeight = image:getSize()
 
 function Marble:init(x, y)
 	Marble.super.init(self, LevelObject.Type.Marble)
-	self.physObj = PhysBall(x, y, 16):add()
+	self.physObj = self:addPhysicsObject(PhysBall(x, y, 16))
 	self.physObj.restitution = RESTITUTION
 end
 
@@ -28,12 +28,8 @@ function Marble:draw()
 	image:drawScaled(x - scale * imageWidth / 2, y - scale * imageHeight / 2, scale)
 end
 
-function Marble:getPosition()
-	return self.physObj.position.x, self.physObj.position.y
-end
-
-function Marble:setPosition(x, y)
-	self.physObj.position.x, self.physObj.position.y = x, y
+function Marble:serialize()
+	return Marble.super.serialize(self)
 end
 
 function Marble.deserialize(data)

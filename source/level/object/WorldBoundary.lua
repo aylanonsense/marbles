@@ -8,7 +8,13 @@ class("WorldBoundary").extends("LevelObject")
 function WorldBoundary:init(physPoints, physLinesAndArcs, renderCoordinates)
 	WorldBoundary.super.init(self, LevelObject.Type.WorldBoundary)
 	self.physPoints = physPoints
+	for _, point in ipairs(self.physPoints) do
+		self:addPhysicsObject(point)
+	end
 	self.physLinesAndArcs = physLinesAndArcs
+	for _, lineOrArc in ipairs(self.physLinesAndArcs) do
+		self:addPhysicsObject(lineOrArc)
+	end
 	self.renderCoordinates = renderCoordinates
 	self.perspectiveRenderCoordinates = {}
 end
@@ -31,30 +37,8 @@ function WorldBoundary:draw()
 	playdate.graphics.drawPolygon(table.unpack(self.perspectiveRenderCoordinates))
 end
 
-function WorldBoundary:getPosition()
-	-- Find the center point
-	local minX, maxX, minY, maxY
-	for _, point in ipairs(self.physPoints) do
-		minX = (minX == nil or point.position.x < minX) and point.position.x or minX
-		maxX = (maxX == nil or point.position.x > maxX) and point.position.x or maxX
-		minY = (minY == nil or point.position.y < minY) and point.position.y or minY
-		maxY = (maxY == nil or point.position.y > maxY) and point.position.y or maxY
-	end
-	return (minX + maxX) / 2, (minY + maxY) / 2
-end
-
 function WorldBoundary:setPosition(x, y)
-	-- Translate all children to achieve the move
-	local x2, y2 = self:getPosition()
-	local dx, dy = x - x2, y - y2
-	for _, point in ipairs(self.physPoints) do
-		point.position.x += dx
-		point.position.y += dy
-	end
-	for _, physObj in ipairs(self.physLinesAndArcs) do
-		physObj.position.x += dx
-		physObj.position.y += dy
-	end
+	local dx, dy = WorldBoundary.super.setPosition(self, x, y)
 	for i = 1, #self.renderCoordinates, 2 do
 		self.renderCoordinates[i] += dx
 		self.renderCoordinates[i + 1] += dy
@@ -82,10 +66,10 @@ function WorldBoundary.deserialize(data)
 	local physLinesAndArcs = {}
 	local renderCoordinates = data.renderCoordinates
 	for _, physData in ipairs(data.points) do
-		table.insert(physPoints, physObjectByType[physData.type].deserialize(physData):add())
+		table.insert(physPoints, physObjectByType[physData.type].deserialize(physData))
 	end
 	for _, physData in ipairs(data.linesAndArcs) do
-		table.insert(physLinesAndArcs, physObjectByType[physData.type].deserialize(physData):add())
+		table.insert(physLinesAndArcs, physObjectByType[physData.type].deserialize(physData))
 	end
 	return WorldBoundary(physPoints, physLinesAndArcs, renderCoordinates)
 end

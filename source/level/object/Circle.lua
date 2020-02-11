@@ -7,13 +7,13 @@ class("Circle").extends("LevelObject")
 
 function Circle:init(x, y, radius)
 	Circle.super.init(self, LevelObject.Type.Circle)
-	self.physObj = PhysCircle(x, y, radius):add()
+	self.physCircle = self:addPhysicsObject(PhysCircle(x, y, radius))
 end
 
 function Circle:draw()
 	local x, y = self:getPosition()
 	x, y = camera.matrix:transformXY(x, y)
-	local radius = self.physObj.radius * camera.scale
+	local radius = self.physCircle.radius * camera.scale
 	-- Fill circle
   playdate.graphics.setPattern(patterns.Checkerboard)
   playdate.graphics.fillCircleAtPoint(x, y, radius)
@@ -23,17 +23,9 @@ function Circle:draw()
 	playdate.graphics.drawCircleAtPoint(x, y, radius)
 end
 
-function Circle:getPosition()
-	return self.physObj.position.x, self.physObj.position.y
-end
-
-function Circle:setPosition(x, y)
-	self.physObj.position.x, self.physObj.position.y = x, y
-end
-
 function Circle:serialize()
 	local data = Circle.super.serialize(self)
-	data.radius = self.physObj.radius
+	data.radius = self.physCircle.radius
 	return data
 end
 

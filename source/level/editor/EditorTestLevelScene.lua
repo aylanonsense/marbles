@@ -19,11 +19,17 @@ function EditorTestLevelScene:init(levelInfo, nextScene)
 	self.objects = {}
 	self.worldBoundary = nil
 	self.marble = nil
+	self.score = 0
 
 	-- Reset everything
 	camera:reset()
 	camera:recalculatePerspective()
 	physics:reset()
+
+	-- Add a physics callback
+	physics:onCollide(function(collision)
+		self:onCollide(collision)
+	end)
 
 	-- Load the level
 	local levelData = loadPlayableLevelData(levelInfo)
@@ -51,6 +57,14 @@ function EditorTestLevelScene:update()
 		obj:update()
 	end
 
+	-- Remove despawned objects
+	for i = #self.objects, 1, -1 do
+		if self.objects[i].waitingToDespawn then
+			table.remove(self.objects, i)
+			self.objects[i]:onDespawn()
+		end
+	end
+
 	-- Rotating the crank rotates the camera
 	camera.rotation = playdate.getCrankPosition()
 
@@ -76,6 +90,26 @@ function EditorTestLevelScene:draw()
 	-- Draw all level objects
 	for _, obj in ipairs(self.objects) do
 		obj:draw()
+	end
+
+	-- Draw the score
+	local text = self.score .. ""
+	local textWidth, textHeight = playdate.graphics.getTextSize(text)
+	playdate.graphics.setColor(playdate.graphics.kColorWhite)
+	playdate.graphics.fillRect(camera.screenWidth - textWidth - 6, 2, textWidth + 4, textHeight + 2)
+	playdate.graphics.setColor(playdate.graphics.kColorBlack)
+	playdate.graphics.drawText(text, camera.screenWidth - textWidth - 4, 2)
+end
+
+function EditorTestLevelScene:onCollide(collision)
+	local levelObjA = collision.objectA:getParent()
+	local levelObjB = collision.objectB:getParent()
+	local shouldContinueA = levelObjA:preCollide(levelObjB, collision, true)
+	local shouldContinueB = levelObjB:preCollide(levelObjA, collision, false)
+	if shouldContinueA ~= false and shouldContinueB ~= false then
+		collision:handle()
+		levelObjA:onCollide(levelObjB, collision, true)
+		levelObjB:onCollide(levelObjA, collision, false)
 	end
 end
 

@@ -9,7 +9,7 @@ local imageWidth, imageHeight = image:getSize()
 
 function Coin:init(x, y)
 	Coin.super.init(self, LevelObject.Type.Coin)
-	self.physObj = PhysCircle(x, y, 10):add()
+	self.physCircle = self:addPhysicsObject(PhysCircle(x, y, 10))
 end
 
 function Coin:draw()
@@ -19,12 +19,14 @@ function Coin:draw()
 	image:drawScaled(x - scale * imageWidth / 2, y - scale * imageHeight / 2, scale)
 end
 
-function Coin:getPosition()
-	return self.physObj.position.x, self.physObj.position.y
+function Coin:preCollide(other, collision)
+	scene.score += 150
+	self:despawn()
+	return false
 end
 
-function Coin:setPosition(x, y)
-	self.physObj.position.x, self.physObj.position.y = x, y
+function Coin:serialize()
+	return Coin.super.serialize(self)
 end
 
 function Coin.deserialize(data)

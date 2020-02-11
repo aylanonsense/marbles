@@ -17,8 +17,13 @@ function Collision:reset(objectA, objectB, overlap, normalX, normalY)
 end
 
 function Collision:handle()
+	self:separateObjects()
+	self:updateVelocities()
+end
+
+function Collision:separateObjects()
 	local a, b = self.objectA, self.objectB
-	local aPos, bPos, aVel, bVel = a.position, b.position, a.velocity, b.velocity
+	local aPos, bPos = a.position, b.position
 	-- Separate the objects
 	local proportionA
 	if not a:isMovable() and not b:isMovable() then
@@ -34,6 +39,11 @@ function Collision:handle()
 	aPos.y -= self.overlap * proportionA * self.normal.y
 	bPos.x += self.overlap * (1 - proportionA) * self.normal.x
 	bPos.y += self.overlap * (1 - proportionA) * self.normal.y
+end
+
+function Collision:updateVelocities()
+	local a, b = self.objectA, self.objectB
+	local aVel, bVel = a.velocity, b.velocity
 	-- Update the objects' velocities
 	local relativeVelX, relativeVelY = bVel.x - aVel.x, bVel.y - aVel.y
 	local velocityAlongNormal = relativeVelX * self.normal.x + relativeVelY * self.normal.y
@@ -42,10 +52,10 @@ function Collision:handle()
 		local aInverseMass = (a.mass > 0) and (1 / a.mass) or 0
 		local bInverseMass = (b.mass > 0) and (1 / b.mass) or 0
 		local j = -(1 + e) * velocityAlongNormal / (aInverseMass + bInverseMass)
-	  aVel.x -= j * self.normal.x * aInverseMass
-	  aVel.y -= j * self.normal.y * aInverseMass
-	  bVel.x += j * self.normal.x * bInverseMass
-	  bVel.y += j * self.normal.y * bInverseMass
+		aVel.x -= j * self.normal.x * aInverseMass
+		aVel.y -= j * self.normal.y * aInverseMass
+		bVel.x += j * self.normal.x * bInverseMass
+		bVel.y += j * self.normal.y * bInverseMass
 	end
 end
 

@@ -22,6 +22,7 @@ function PhysObject:init(type, x, y)
 	self.mass = 0 -- 0 means immovable (infinite mass)
 	self.restitution = 1 -- i.e. bounciness (0 = no bounce, 1 = full bounce)
 	self.isEnabled = true
+	self.parent = nil
 end
 
 function PhysObject:update()
@@ -57,6 +58,15 @@ end
 
 function PhysObject:remove()
 	removeItem(physics.objects, self)
+	return self
+end
+
+function PhysObject:getParent()
+	return self.parent
+end
+
+function PhysObject:setParent(parent)
+	self.parent = parent
 	return self
 end
 
