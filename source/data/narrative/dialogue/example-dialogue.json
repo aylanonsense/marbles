@@ -1,27 +1,24 @@
 {
   "location": "Bestos House",
-  "left": {
-    "actor": "Prota",
-    "expression": "happy"
-  },
-  "right": {
-    "actor": "Besto",
-    "expression": "busy"
-  },
+  "actors": [
+    { "actor": "Prota", "expression": "happy", "side": "left" },
+    { "actor": "Besto", "expression": "busy", "side": "right" },
+    { "actor": "Extra", "expression": "nervous" }
+  ],
   "script": [
-    { "actor": "Prota", "line": "Hello!" },
+    { "actor": "Prota", "line": "Hello! (This is some longer text so Ayla can test line-breaking behavior. Does it work? We'll see! Blah blah blah blah blah blah...)" },
     { "actor": "Besto", "line": "Prota, what are you doing here?", "expression": "surprised" },
     { "actor": "Besto", "line": "Shouldn't you be at the concert?" },
     { "actor": "Prota", "line": "Let's go together!", "expression": "excited" },
-    { "location": "Concert Hall", "transition": "fade to black" },
+    { "action": "change-location", "location": "Concert Hall" },
     { "actor": "Prota", "line": "Besto, I wanted to introduce you to someone...", "expression": "happy" },
-    { "actor": "Extra", "line": "H- Hello!", "expression": "nervous", "side": "left" },
-    { "actor": "Extra", "line": "My name's Extra, p- pleasure to meet you!", "textEffect": "wobbly" },
+    { "actor": "Extra", "line": "H- Hello!", "side": "left" },
+    { "actor": "Extra", "line": "My name's Extra, p- pleasure to meet you!" },
     {
       "if": "bestoKnowsExtra",
       "then": [
         { "actor": "Besto", "line": "Oh yeah, we've met." },
-        { "actor": "Prota", "line": "You have?!?", "expression": "surprised", "effect": "screen shake" }
+        { "actor": "Prota", "line": "You have?!?", "expression": "surprised" }
       ],
       "else": [
         { "actor": "Besto", "line": "Pleasure to meet you Extra!", "expression": "kind" }
@@ -33,14 +30,18 @@
         "arguments": [ 3 ]
       },
       "then": [
-        { "objectOnDisplay": "Hot Dog" },
+        { "action": "show-object", "object": "Hot Dog" },
         { "actor": "Extra", "line": "I'm going to go eat this hot dog!" },
-        { "objectOnDisplay": "none" }
+        { "action": "show-object", "object": "none" }
       ]
     },
     {
+      "method": "sayCoolSimilie",
+      "arguments": [ "rose", "skinny cactus" ]
+    },
+    {
       "actor": "Prota",
-      "line": "That was a good concert!",
+      "line": { "method": "getConcertConvoFinishingText" },
       "expression": {
         "if": "protaIsTired",
         "then": "tired",
