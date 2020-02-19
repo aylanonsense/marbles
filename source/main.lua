@@ -1,12 +1,13 @@
 import "scene/time"
-import "level/editor/EditorScene"
+import "narrative/DialogueScene"
 import "CoreLibs/keyboard"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
 -- Make a global scene variable
-Scene.setScene(EditorScene())
+local dialogueData = json.decodeFile("/data/narrative/dialogue/example-dialogue.json")
+Scene.setScene(DialogueScene(dialogueData))
 
 -- Update the scene
 function playdate.update()

@@ -1,0 +1,51 @@
+{
+  "location": "Bestos House",
+  "left": {
+    "actor": "Prota",
+    "expression": "happy"
+  },
+  "right": {
+    "actor": "Besto",
+    "expression": "busy"
+  },
+  "script": [
+    { "actor": "Prota", "line": "Hello!" },
+    { "actor": "Besto", "line": "Prota, what are you doing here?", "expression": "surprised" },
+    { "actor": "Besto", "line": "Shouldn't you be at the concert?" },
+    { "actor": "Prota", "line": "Let's go together!", "expression": "excited" },
+    { "location": "Concert Hall", "transition": "fade to black" },
+    { "actor": "Prota", "line": "Besto, I wanted to introduce you to someone...", "expression": "happy" },
+    { "actor": "Extra", "line": "H- Hello!", "expression": "nervous", "side": "left" },
+    { "actor": "Extra", "line": "My name's Extra, p- pleasure to meet you!", "textEffect": "wobbly" },
+    {
+      "if": "bestoKnowsExtra",
+      "then": [
+        { "actor": "Besto", "line": "Oh yeah, we've met." },
+        { "actor": "Prota", "line": "You have?!?", "expression": "surprised", "effect": "screen shake" }
+      ],
+      "else": [
+        { "actor": "Besto", "line": "Pleasure to meet you Extra!", "expression": "kind" }
+      ]
+    },
+    {
+      "if": {
+        "method": "extraIsHungry",
+        "arguments": [ 3 ]
+      },
+      "then": [
+        { "objectOnDisplay": "Hot Dog" },
+        { "actor": "Extra", "line": "I'm going to go eat this hot dog!" },
+        { "objectOnDisplay": "none" }
+      ]
+    },
+    {
+      "actor": "Prota",
+      "line": "That was a good concert!",
+      "expression": {
+        "if": "protaIsTired",
+        "then": "tired",
+        "else": "happy"
+      }
+    }
+  ]
+}

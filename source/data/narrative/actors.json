@@ -1,0 +1,29 @@
+{
+  "Prota": {
+    "name": "Prota",
+    "image": "/images/actors/prota.png",
+    "expressions": {
+      "excited": { "frame": 1 },
+      "happy": { "frame": 2 },
+      "surprised": { "frame": 3 },
+      "tired": { "frame": 4 }
+    }
+  },
+  "Besto": {
+    "name": "Besto",
+    "image": "/images/actors/besto.png",
+    "expressions": {
+      "happy": { "frame": 1 },
+      "kind": { "frame": 2 },
+      "busy": { "frame": 1 },
+      "surprised": { "frame": 3 }
+    }
+  },
+  "Extra": {
+    "name": "Extra",
+    "image": "/images/actors/extra.png",
+    "expressions": {
+      "nervous": { "frame": 4 }
+    }
+  }
+}
