@@ -1,4 +1,7 @@
 import "CoreLibs/object"
+import "CoreLibs/sprites"
+import "CoreLibs/animator"
+import "CoreLibs/easing"
 
 local actorsData = json.decodeFile("/data/narrative/actors.json")
 
@@ -6,6 +9,7 @@ class("Actor").extends()
 
 function Actor:init(id, expression)
   self.id = id
+  self.name = actorsData[self.id].name
   local imagePath = actorsData[self.id].image
   self.imageTable = playdate.graphics.imagetable.new(imagePath)
   self.sprite = playdate.graphics.sprite.new()
@@ -24,8 +28,12 @@ function Actor:draw()
 end
 
 function Actor:slideOnStage(side)
-  self.sprite:moveTo(200 + ((side == 'left') and -100 or 100), 180)
-  self.sprite:setImageFlip(side == 'left' and playdate.graphics.kImageUnflipped or playdate.graphics.kImageFlippedX)
+  local startX = 200 + 300 * ((side == 'left') and -1 or 1)
+  local endX = 200 + 100 * ((side == 'left') and -1 or 1)
+  local y = 180
+  local path = playdate.geometry.lineSegment.new(startX, y, endX, y)
+  local animator = playdate.graphics.animator.new(1500, path, playdate.easingFunctions.outCubic)
+  self.sprite:setAnimator(animator)
 end
 
 function Actor:setExpression(expression)

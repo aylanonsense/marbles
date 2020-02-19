@@ -20,6 +20,9 @@ function DialogueScene:init(convoData)
     self.rightActor = self:addActor(convoData.right.actor, convoData.right.expression)
     self.rightActor:slideOnStage('right')
   end
+  self.script = convoData.script
+  self.scriptIndex = 1
+  self:processScriptAction(self.script[self.scriptIndex])
 end
 
 function DialogueScene:update()
@@ -44,4 +47,12 @@ function DialogueScene:addActor(id, expression)
     self.actors[id] = Actor(id, expression)
   end
   return self.actors[id]
+end
+
+function DialogueScene:processScriptAction(action)
+  if action.line then
+    local text = action.line
+    local actor = self.actors[action.actor]
+    self.dialogueBox:showDialogue(actor.name, action.line)
+  end
 end
