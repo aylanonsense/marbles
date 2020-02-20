@@ -2,6 +2,7 @@ import "scene/Scene"
 import "narrative/Actor"
 import "narrative/DialogueBox"
 import "narrative/Location"
+import "narrative/ShownObject"
 import "narrative/dialogueMethods"
 import "scene/time"
 
@@ -11,6 +12,7 @@ function DialogueScene:init(convoData)
   DialogueScene.super.init(self)
   self.dialogueBox = DialogueBox()
   self.location = Location(self:evalDialogueField(convoData.location))
+  self.shownObject = nil
   -- Create the actors and slide them onto stage
   self.actorLookup = {}
   self.actorsOnStage = { left = nil, right = nil }
@@ -55,18 +57,28 @@ function DialogueScene:update()
       end
     end
   end
-  self.location:update()
+  if self.location then
+    self.location:update()
+  end
   for _, actor in ipairs(self.actorLookup) do
     actor:update()
+  end
+  if self.shownObject then
+    self.shownObject:update()
   end
   self.dialogueBox:update()
 end
 
 function DialogueScene:draw()
   playdate.graphics.clear()
-  self.location:draw()
+  if self.location then
+    self.location:draw()
+  end
   for _, actor in pairs(self.actorLookup) do
     actor:draw()
+  end
+  if self.shownObject then
+    self.shownObject:update()
   end
   self.dialogueBox:draw()
 end
@@ -95,7 +107,6 @@ function DialogueScene:processNextDialogueAction()
     local index = self.scriptIndexes[#self.scriptIndexes]
     if not self:processDialogueAction(script[index]) then
       -- If we weren't able to process the action, just try the next one immediately
-      print('doing again')
       self:processNextDialogueAction()
     end
   end
@@ -110,9 +121,6 @@ function DialogueScene:processDialogueAction(action)
   if #action > 0 then
     table.insert(self.scripts, action)
     table.insert(self.scriptIndexes, 0)
-    print(json.encode(self.scriptIndexes))
-    print(#self.scripts)
-    print('bewping')
     return false
   -- Say a dialogue line
   elseif action.line then
@@ -131,16 +139,31 @@ function DialogueScene:processDialogueAction(action)
     self.waitingFor = "dialogue-box"
   -- Change the location
   elseif action.action == "change-location" then
-    self.location:setLocation(action.location)
+    if self.location then
+      self.location:remove()
+    end
+    self.location = Location(self:evalDialogueField(action.location))
     self.waitingFor = "time"
     self.waitTime = 1.00
   -- Show an object
-  -- elseif action.action == "show-object" then
+  elseif action.action == "show-object" then
+    if self.shownObject then
+      self.shownObject:remove()
+    end
+    self.shownObject = ShownObject(self:evalDialogueField(action.object))
+    self.shownObject:slideIntoView()
+    self.waitingFor = "time"
+    self.waitTime = 1.00
+  -- Hide the shown object
+  elseif action.action == "hide-object" then
+    self.shownObject:slideOutOfView()
+    self.waitingFor = "time"
+    self.waitTime = 1.00
   -- Unknown action, return false to indicate we weren't able to process it
   else
     return false
   end
-  -- Retunr true to indicate we were able to process the action
+  -- Return true to indicate we were able to process the action
   return true
 end
 

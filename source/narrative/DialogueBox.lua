@@ -5,8 +5,8 @@ import "scene/time"
 
 class("DialogueBox").extends()
 
-local dialogueBoxImage = playdate.graphics.nineSlice.new("/images/dialogue-box.png", 27, 27, 3, 3)
-local speakerBoxImage = playdate.graphics.nineSlice.new("/images/speaker-box.png", 10, 10, 1, 1)
+local dialogueBoxImage = playdate.graphics.nineSlice.new("/images/narrative/dialogue-box.png", 27, 27, 3, 3)
+local speakerBoxImage = playdate.graphics.nineSlice.new("/images/narrative/speaker-box.png", 10, 10, 1, 1)
 local dialogueBoxFont = fonts.FullCircle
 
 function DialogueBox:init()

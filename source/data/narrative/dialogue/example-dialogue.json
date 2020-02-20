@@ -5,6 +5,9 @@
     { "actor": "Besto", "expression": "busy", "side": "right" },
     { "actor": "Extra", "expression": "nervous" }
   ],
+  "objects": [
+    "Hot Dog"
+  ],
   "script": [
     { "actor": "Prota", "line": "Hello! (This is some longer text so Ayla can test line-breaking behavior. Does it work? We'll see! Blah blah blah blah blah blah...)" },
     { "actor": "Besto", "line": "Prota, what are you doing here?", "expression": "surprised" },
@@ -31,8 +34,8 @@
       },
       "then": [
         { "action": "show-object", "object": "Hot Dog" },
-        { "actor": "Extra", "line": "I'm going to go eat this hot dog!" },
-        { "action": "show-object", "object": "none" }
+        { "actor": "Extra", "line": "I'm going to go eat this tasty veggie Hot dog!" },
+        { "action": "hide-object" }
       ]
     },
     {

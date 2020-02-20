@@ -1,8 +1,8 @@
 {
   "Concert Hall": {
-    "image": "/images/locations/concert-hall.png"
+    "image": "/images/narrative/locations/concert-hall.png"
   },
   "Bestos House": {
-    "image": "/images/locations/bestos-house.png"
+    "image": "/images/narrative/locations/bestos-house.png"
   }
 }
