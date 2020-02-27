@@ -4,15 +4,15 @@ import "render/camera"
 
 class("Marble").extends("LevelObject")
 
-local RESTITUTION = 0.5
-local GRAVITY = 7000
+local RESTITUTION = 0.25
+local GRAVITY = 10000
 
 local image = playdate.graphics.image.new("images/marble.png")
 local imageWidth, imageHeight = image:getSize()
 
 function Marble:init(x, y)
 	Marble.super.init(self, LevelObject.Type.Marble)
-	self.physObj = self:addPhysicsObject(PhysBall(x, y, 16))
+	self.physObj = self:addPhysicsObject(PhysBall(x, y, 9))
 	self.physObj.restitution = RESTITUTION
 end
 
