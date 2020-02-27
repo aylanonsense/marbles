@@ -1,0 +1,9 @@
+{
+  "scenes": [
+    { "dialogue": "starting-convo" },
+    { "level": "Zig Zag" },
+    { "dialogue": "intermediate-convo" },
+    { "level": "Ramp" },
+    { "dialogue": "finishing-convo" }
+  ]
+}

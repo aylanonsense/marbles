@@ -7,7 +7,7 @@ import "level/object/Marble"
 
 class("EditorTestLevelScene").extends(Scene)
 
-function EditorTestLevelScene:init(levelInfo, nextScene)
+function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 	EditorTestLevelScene.super.init(self)
 	self.nextScene = nextScene
 	self.initialCameraSettings = {
@@ -43,6 +43,7 @@ function EditorTestLevelScene:init(levelInfo, nextScene)
 	end
 	self.marble = Marble(levelData.spawn.x, levelData.spawn.y)
 	table.insert(self.objects, self.marble)
+	self.storyline = storyline
 end
 
 function EditorTestLevelScene:update()

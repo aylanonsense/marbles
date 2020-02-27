@@ -8,8 +8,9 @@ import "scene/time"
 
 class("DialogueScene").extends(Scene)
 
-function DialogueScene:init(convoData)
+function DialogueScene:init(convoData, storyline)
   DialogueScene.super.init(self)
+  self.storyline = storyline
   self.dialogueBox = DialogueBox()
   self.location = Location(self:evalDialogueField(convoData.location))
   self.shownObject = nil
@@ -101,6 +102,7 @@ function DialogueScene:processNextDialogueAction()
       self:processNextDialogueAction()
     else
       self.waitingFor = nil
+      self:advanceToNextScene()
     end
   else
     local script = self.scripts[#self.scripts]
@@ -194,3 +196,18 @@ function DialogueScene:evalDialogueField(fieldData)
     return fieldData
   end
 end
+
+function DialogueScene:advanceToNextScene()
+  if self.storyline then
+    self.dialogueBox:remove()
+    self.location:remove()
+    if self.shownObject then
+      self.shownObject:remove()
+    end
+    for _, actor in pairs(self.actorLookup) do
+      actor:remove()
+    end
+    self.storyline:advance()
+  end
+end
+

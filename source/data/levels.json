@@ -1,3 +1,14 @@
 {
-	"levels": []
+	"levels": [
+		 {
+			"editFile":"zig-zag-edit.json",
+			"name":"Zig Zag",
+			"playFile":"zig-zag-play.json"
+		},
+		 {
+			"editFile":"ramp-edit.json",
+			"name":"Ramp",
+			"playFile":"ramp-play.json"
+		}
+	]
 }

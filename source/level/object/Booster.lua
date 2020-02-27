@@ -43,16 +43,12 @@ function Booster:getEditableFields()
 		{
 			label = "Rotation",
 			field = "rotation",
-			increase = function()
-				self.rotation += 15
-				if self.rotation >= 360 then
-					self.rotation -= 360
-				end
-			end,
-			decrease = function()
-				self.rotation -= 15
+			change = function(dir)
+				self.rotation += dir * 15
 				if self.rotation < 0 then
 					self.rotation += 360
+				elseif self.rotation >= 360 then
+					self.rotation -= 360
 				end
 			end
 		}

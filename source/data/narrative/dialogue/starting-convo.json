@@ -1,0 +1,11 @@
+{
+  "location": "Bestos House",
+  "actors": [
+    { "actor": "Prota", "expression": "happy", "side": "left" },
+    { "actor": "Besto", "expression": "happy", "side": "right" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Let's load the zig zag level!" },
+    { "actor": "Besto", "line": "Okay let's go!!" }
+  ]
+}

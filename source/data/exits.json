@@ -1,0 +1,21 @@
+{
+  "exits": [
+    {
+      "id": "tortilla-corn",
+      "label": "Corn"
+    },
+    {
+      "id": "tortilla-wheat",
+      "label": "Wheat"
+    },
+
+    {
+      "id": "indentation-tabs",
+      "label": "Tabs"
+    },
+    {
+      "id": "indentation-spaces",
+      "label": "Spaces"
+    }
+  ]
+}

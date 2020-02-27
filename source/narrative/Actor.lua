@@ -29,6 +29,10 @@ function Actor:draw()
   self.sprite:update()
 end
 
+function Actor:remove()
+  self.sprite:remove()
+end
+
 function Actor:slideOnStage(side)
   local startX = 200 + 300 * ((side == "left") and -1 or 1)
   local endX = 200 + 100 * ((side == "left") and -1 or 1)

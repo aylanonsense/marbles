@@ -24,14 +24,14 @@ function EditorObjectMenuScreen:open(obj)
 		local option = {
 			text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field],
 			increase = function(menu, option)
-				if fieldData.increase then
-					fieldData.increase()
+				if fieldData.change then
+					fieldData.change(1)
 				end
 				option.text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
 			end,
 			decrease = function(menu, option)
-				if fieldData.decrease then
-					fieldData.decrease()
+				if fieldData.change then
+					fieldData.change(-1)
 				end
 				option.text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
 			end

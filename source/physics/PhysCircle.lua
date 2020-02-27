@@ -21,7 +21,7 @@ end
 
 function PhysCircle:draw()
 	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
-	playdate.graphics.drawCircleAtPoint(x, y, self.radius)
+	playdate.graphics.drawCircleAtPoint(x, y, self.radius * camera.scale)
 end
 
 function PhysCircle:checkForCollisionWithBall(ball)

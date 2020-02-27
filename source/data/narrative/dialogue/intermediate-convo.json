@@ -1,0 +1,11 @@
+{
+  "location": "Bestos House",
+  "actors": [
+    { "actor": "Prota", "expression": "happy", "side": "left" },
+    { "actor": "Besto", "expression": "happy", "side": "right" }
+  ],
+  "script": [
+    { "actor": "Besto", "line": "That was fun!" },
+    { "actor": "Besto", "line": "But let's move on to the next level." }
+  ]
+}

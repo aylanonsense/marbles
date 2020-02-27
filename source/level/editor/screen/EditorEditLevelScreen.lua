@@ -14,6 +14,7 @@ import "level/editor/screen/EditorCameraMenuScreen"
 import "level/editor/geometry/EditorGeometry"
 import "level/object/Booster"
 import "level/object/Coin"
+import "level/object/Exit"
 
 class("EditorEditLevelScreen").extends("EditorMenuScreen")
 
@@ -54,6 +55,12 @@ function EditorEditLevelScreen:init()
 								text = "Coin",
 								selected = function()
 									self:openAndShowSubScreen(EditorCreateObjectScreen(), Coin(scene.cursor.position.x, scene.cursor.position.y))
+								end
+							},
+							{
+								text = "Exit",
+								selected = function()
+									self:openAndShowSubScreen(EditorCreateObjectScreen(), Exit(scene.cursor.position.x, scene.cursor.position.y))
 								end
 							}
 						})

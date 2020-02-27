@@ -126,3 +126,5 @@ end
 function DialogueBox:isDoneShowingDialogue()
   return true
 end
+
+function DialogueBox:remove() end
