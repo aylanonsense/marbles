@@ -9,6 +9,31 @@
 			"editFile":"ramp-edit.json",
 			"name":"Ramp",
 			"playFile":"ramp-play.json"
+		},
+		{
+			"editFile":"user-sandwhichshop1-edit.json",
+			"name":"Sandwhichshop1",
+			"playFile":"user-sandwhichshop1-play.json"
+		},
+		 {
+			"editFile":"user-sandwhichshop2-edit.json",
+			"name":"Sandwhichshop2",
+			"playFile":"user-sandwhichshop2-play.json"
+		},
+		 {
+			"editFile":"user-sandwhichshop3-edit.json",
+			"name":"Sandwhichshop3",
+			"playFile":"user-sandwhichshop3-play.json"
+		},
+		{
+			"editFile":"user-sandwhichshop4-edit.json",
+			"name":"Sandwhichshop4",
+			"playFile":"user-sandwhichshop4-play.json"
+		},
+		{
+			"editFile":"user-sandwhichshop5-edit.json",
+			"name":"Sandwhichshop5",
+			"playFile":"user-sandwhichshop5-play.json"
 		}
 	]
 }

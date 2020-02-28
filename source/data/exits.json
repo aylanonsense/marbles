@@ -16,6 +16,66 @@
     {
       "id": "indentation-spaces",
       "label": "Spaces"
+    },
+    {
+      "id": "sandwich1-wrap",
+      "label": "Wrap"
+    },
+    {
+      "id": "sandwich1-lettucewrap",
+      "label": "Lettuce"
+    },
+    {
+      "id": "sandwich1-baguette",
+      "label": "Baguette"
+    },
+    {
+      "id": "sandwich2-powder",
+      "label": "Powder"
+    },
+    {
+      "id": "sandwich2-ostrich",
+      "label": "Ostrich"
+    },
+    {
+      "id": "sandwich2-ham",
+      "label": "Ham"
+    },
+    {
+      "id": "sandwich3-paper",
+      "label": "Paper"
+    },
+    {
+      "id": "sandwich3-goat",
+      "label": "Goat"
+    },
+    {
+      "id": "sandwich3-swiss",
+      "label": "Swiss"
+    },
+    {
+      "id": "sandwich4-cactus",
+      "label": "Cactus"
+    },
+    {
+      "id": "sandwich4-cauliflower",
+      "label": "Cauliflower"
+    },
+    {
+      "id": "sandwich4-lettuce",
+      "label": "Lettuc"
+    },
+    {
+      "id": "sandwich5-wax",
+      "label": "Wax"
+    },
+    {
+      "id": "sandwich5-guava",
+      "label": "Guava"
+    },
+    {
+      "id": "sandwich5-mayo",
+      "label": "Mayo"
     }
   ]
 }
