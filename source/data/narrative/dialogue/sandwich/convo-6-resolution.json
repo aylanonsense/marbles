@@ -6,9 +6,9 @@
     { "actor": "Minty", "expression": "neutral"}
   ],
   "objects": [
-    "Minty"
-    "Fail Sandwich"
-    "Normal Sandwich"
+    "Minty",
+    "Fail Sandwich",
+    "Normal Sandwich",
     "Special Sandwich"
   ],
   "script": [
@@ -16,18 +16,18 @@
     { "actor": "Doc", "line": "Here's your...uh...", "expression": "happy" },
     { "actor": "Doc", "line": "I guess I would call this...", "expression": "confused" },
     {
-      "if": { "method": "isSandwichScore", "arguments": [ "Fail" ] },
+      "if": { "method": "isSandwichQuality", "arguments": [ "Fail" ] },
       "then": { "action": "show-object", "object": "Fail Sandwich" }
     },
     {
-      "if": { "method": "isSandwichScore", "arguments": [ "Normal" ] },
+      "if": { "method": "isSandwichQuality", "arguments": [ "Normal" ] },
       "then": { "action": "show-object", "object": "Normal Sandwich" }
     },
     {
-      "if": { "method": "isSandwichScore", "arguments": [ "Special" ] },
+      "if": { "method": "isSandwichQuality", "arguments": [ "Special" ] },
       "then": { "action": "show-object", "object": "Special Sandwich" }
     },
-    { "actor": "Doc", "line": { "method": "getFinalSandwichLine" } },
+    { "actor": "Doc", "line": { "method": "getSandwichNameLine" } },
     { "actor": "Prota", "line": "!!! ", "expression": "shocked" },
     { "actor": "Doc", "line": "...", "expression": "neutral" },
     { "action": "hide-object" },
@@ -36,7 +36,7 @@
     { "actor": "Prota", "line": "Minty!", "expression": "shocked" },
     { "actor": "Doc", "line": "Hey, here's that hot dog! Want that 'wich, Minty?", "expression": "happy" },
     {
-      "if": { "method": "isSandwichScore", "arguments": [ "Fail" ] },
+      "if": { "method": "isSandwichQuality", "arguments": [ "Fail" ] },
       "then": [
         { "action": "hide-object" },
         { "actor": "Doc", "line": "Wait, she grabbed it!", "expression": "happy" },
@@ -48,7 +48,7 @@
       ]
     },
     {
-     "if": { "method": "isSandwichScore", "arguments": [ "Normal" ] },
+     "if": { "method": "isSandwichQuality", "arguments": [ "Normal" ] },
      "then": [
         { "action": "hide-object" },
         { "actor": "Doc", "line": "Hey! Minty! Where ya going? You forgot your 'wich!", "expression": "shocked" },
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "if": { "method": "isSandwichScore", "arguments": [ "Special" ] },
+      "if": { "method": "isSandwichQuality", "arguments": [ "Special" ] },
       "then": [
         { "actor": "Doc", "line": "WOAH! She gulped it down in one bite!!", "expression": "shocked" },
         { "actor": "Prota", "line": "That's my Minty! Come here, Minty. Let me bring you back home.", "expression": "happy" },
@@ -72,12 +72,12 @@
         { "actor": "Prota", "line": "Of course! Unlimited mozzarella sticks! Minty, I'm coming to get you!", "expression": "happy" }
       ]
     },
-    { "action": "change-location", "location": "BlackScreen" }
+    { "action": "change-location", "location": "Black Screen" },
     { "line": "So. What did you think?" },
     { "line": "Will Prota find Minty?" },
     { "line": "Has Doc found the next big sandwich? " },
     { "line": "Find out next time on LOSE YOUR MARBLES." },
     { "line": "In the meantime, try playing again for different dialogue options! " },
-    { "line": "Thanks for playing!" },
+    { "line": "Thanks for playing!" }
   ]
 }

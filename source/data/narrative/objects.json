@@ -1,14 +1,14 @@
 {
-  "Minty"{
+  "Minty": {
     "image": "/images/narrative/objects/minty.png"
   },
-  "Fail Sandwich"{
+  "Fail Sandwich": {
     "image": "/images/narrative/objects/sandwich-fail.png"
   },
-  "Normal Sandwich"{
+  "Normal Sandwich": {
     "image": "/images/narrative/objects/sandwich-normal.png"
   },
-  "Special Sandwich"{
-    "image": "/images/narrative/objects/sandwich-specil.png"
+  "Special Sandwich": {
+    "image": "/images/narrative/objects/sandwich-special.png"
   }
 }

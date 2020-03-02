@@ -15,6 +15,7 @@ function Storyline:init(storylineName)
   local storylineData = json.decodeFile("/data/narrative/storylines/" .. storylineName .. ".json")
   self.scenes = storylineData.scenes
   self.sceneIndex = 1
+  self.exitsTaken = {}
 end
 
 function Storyline:start()
@@ -40,4 +41,8 @@ function Storyline:createScene(sceneData)
     local levelData = loadPlayableLevelData(levelInfo)
     return EditorTestLevelScene(levelInfo, levelData, self)
   end
+end
+
+function Storyline:recordExitTaken(exitData)
+  table.insert(self.exitsTaken, exitData)
 end

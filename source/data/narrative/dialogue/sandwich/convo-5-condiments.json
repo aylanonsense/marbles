@@ -26,7 +26,7 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "sandwich-condiments-mayo" ] },
       "then": [
-        { "actor": "Prota", "line": "I say-o, gimme that mayo! Minty’s gonna love it!", "expression": "happy" },
+        { "actor": "Prota", "line": "I say-o, gimme that mayo! Minty's gonna love it!", "expression": "happy" },
         { "actor": "Doc", "line": "I bet! Let's see what we've got.", "expression": "neutral" }
       ]
     }

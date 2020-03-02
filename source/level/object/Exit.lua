@@ -59,6 +59,7 @@ function Exit:preCollide(other, collision)
     self.cooldown = 0.25
     if self.health <= 0 then
       if scene.storyline then
+        scene.storyline:recordExitTaken(exitLookup[self.exitId])
         scene.storyline:advance()
       end
       self:despawn()

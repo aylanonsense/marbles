@@ -115,12 +115,15 @@ function DialogueScene:processNextDialogueAction()
 end
 
 function DialogueScene:processDialogueAction(action)
+  if not action or action.skip then
+    return false
+  end
   -- The action is a conditional, evaluate the conditional before processing the action
   while action["if"] or action.method do
-    if action.skip then
+    action = self:evalDialogueField(action)
+    if not action or action.skip then
       return false
     end
-    action = self:evalDialogueField(action)
   end
   -- We're skipping the action
   if action.skip then

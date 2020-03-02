@@ -1,84 +1,98 @@
 {
   "exits": [
     {
-      "id": "sandwich1-wrap",
-      "label": "Wrap"
+      "id": "sandwich-bread-lettuce-wrap",
+      "label": "Lettuce Wrap",
+      "sandwichText": "lettuce wrap",
+      "sandwichScore": 1
     },
     {
-      "id": "sandwich1-lettucewrap",
-      "label": "Lettuce"
+      "id": "sandwich-bread-wrap",
+      "label": "Wrap",
+      "sandwichText": "wrap",
+      "sandwichScore": 3
     },
     {
-      "id": "sandwich1-baguette",
-      "label": "Baguette"
-    },
-    {
-      "id": "sandwich2-powder",
-      "label": "Powder"
-    },
-    {
-      "id": "sandwich2-ostrich",
-      "label": "Ostrich"
-    },
-    {
-      "id": "sandwich2-ham",
-      "label": "Ham"
-    },
-    {
-      "id": "sandwich3-paper",
-      "label": "Paper"
-    },
-    {
-      "id": "sandwich3-goat",
-      "label": "Goat"
-    },
-    {
-      "id": "sandwich3-swiss",
-      "label": "Swiss"
-    },
-    {
-      "id": "sandwich4-cactus",
-      "label": "Cactus"
-    },
-    {
-      "id": "sandwich4-cauliflower",
-      "label": "Cauliflower"
-    },
-    {
-      "id": "sandwich4-lettuce",
-      "label": "Lettuc"
-    },
-    {
-      "id": "sandwich5-wax",
-      "label": "Wax"
-    },
-    {
-      "id": "sandwich5-guava",
-      "label": "Guava"
-    },
-    {
-      "id": "sandwich5-mayo",
-      "label": "Mayo"
+      "id": "sandwich-bread-baguette",
+      "label": "Baguette",
+      "sandwichText": "Parisian baguette",
+      "sandwichScore": 5
     },
 
-    { "id": "sandwich-bread-wrap", "label": "Wrap" },
-    { "id": "sandwich-bread-lettuce-wrap", "label": "Lettuce Wrap" },
-    { "id": "sandwich-bread-baguette", "label": "Baguette" },
+    {
+      "id": "sandwich-protein-powder",
+      "label": "Protein Powder",
+      "sandwichText": "muscle-builder",
+      "sandwichScore": 1
+    },
+    {
+      "id": "sandwich-protein-ostrich",
+      "label": "Ostrich",
+      "sandwichText": "big birdy",
+      "sandwichScore": 3
+    },
+    {
+      "id": "sandwich-protein-ham",
+      "label": "Ham",
+      "sandwichText": "ham",
+      "sandwichScore": 5
+    },
 
-    { "id": "sandwich-protein-powder", "label": "Protein Powder" },
-    { "id": "sandwich-protein-ostrich", "label": "Ostrich" },
-    { "id": "sandwich-protein-ham", "label": "Ham" },
+    {
+      "id": "sandwich-cheese-paper",
+      "label": "Paper",
+      "sandwichText": "A writerly",
+      "sandwichScore": 1
+    },
+    {
+      "id": "sandwich-cheese-goat",
+      "label": "Goat Cheese",
+      "sandwichText": "An extra horny",
+      "sandwichScore": 3
+    },
+    {
+      "id": "sandwich-cheese-swiss",
+      "label": "Swiss Cheese",
+      "sandwichText": "A hole-y",
+      "sandwichScore": 5
+    },
 
-    { "id": "sandwich-cheese-paper", "label": "Paper" },
-    { "id": "sandwich-cheese-goat", "label": "Goat Cheese" },
-    { "id": "sandwich-cheese-swiss", "label": "Swiss Cheese" },
+    {
+      "id": "sandwich-veggies-cactus",
+      "label": "Cactus",
+      "sandwichText": "pointy",
+      "sandwichScore": 1
+    },
+    {
+      "id": "sandwich-veggies-cauliflower",
+      "label": "Cauliflower",
+      "sandwichText": "crunchy",
+      "sandwichScore": 3
+    },
+    {
+      "id": "sandwich-veggies-lettuce",
+      "label": "Lettuce",
+      "sandwichText": "green",
+      "sandwichScore": 5
+    },
 
-    { "id": "sandwich-veggies-cactus", "label": "Cactus" },
-    { "id": "sandwich-veggies-cauliflower", "label": "Cauliflower" },
-    { "id": "sandwich-veggies-lettuce", "label": "Lettuce" },
-
-    { "id": "sandwich-condiments-hot-wax", "label": "Hot Wax" },
-    { "id": "sandwich-condiments-guava-jelly", "label": "Guava Jelly" },
-    { "id": "sandwich-condiments-mayo", "label": "Mayo" }
+    {
+      "id": "sandwich-condiments-hot-wax",
+      "label": "Hot Wax",
+      "sandwichText": ", candle-style",
+      "sandwichScore": 1
+    },
+    {
+      "id": "sandwich-condiments-guava-jelly",
+      "label": "Guava Jelly",
+      "sandwichText": "on island time",
+      "sandwichScore": 3
+    },
+    {
+      "id": "sandwich-condiments-mayo",
+      "label": "Mayo",
+      "sandwichText": "with mayo",
+      "sandwichScore": 5
+    }
   ]
 }

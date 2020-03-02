@@ -7,7 +7,7 @@ import "level/editor/EditorScene"
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
-local storyline = Storyline("sandwich")
+local storyline = Storyline("sandwich-story")
 storyline:start()
 -- Scene.setScene(EditorScene())
 
@@ -16,6 +16,7 @@ function playdate.update()
 	time:advance(1 / 20)
 	scene:update()
 	scene:draw()
+  playdate.drawFPS(10, 10)
 end
 
 -- Pass callbacks through to the scene

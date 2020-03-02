@@ -1,6 +1,5 @@
 import "CoreLibs/object"
 import "physics/physics"
-import "scene/time"
 import "utility/table"
 
 class("PhysObject").extends()
@@ -23,21 +22,26 @@ function PhysObject:init(type, x, y)
 	self.restitution = 1 -- i.e. bounciness (0 = no bounce, 1 = full bounce)
 	self.isEnabled = true
 	self.parent = nil
+	self.maxSpeed = nil
 end
 
-function PhysObject:update()
-	self:applyAcceleration()
-	self:applyVelocity()
+function PhysObject:applyAcceleration(dt)
+	self.velocity.x += 0.5 * self.acceleration.x * dt * dt
+	self.velocity.y += 0.5 * self.acceleration.y * dt * dt
 end
 
-function PhysObject:applyAcceleration()
-	self.velocity.x += 0.5 * self.acceleration.x * time.dt * time.dt
-	self.velocity.y += 0.5 * self.acceleration.y * time.dt * time.dt
+function PhysObject:applyVelocity(dt)
+	self.position.x += self.velocity.x * dt
+	self.position.y += self.velocity.y * dt
 end
 
-function PhysObject:applyVelocity()
-	self.position.x += self.velocity.x * time.dt
-	self.position.y += self.velocity.y * time.dt
+function PhysObject:enforceMaxSpeed()
+	if self.maxSpeed then
+		if self.velocity:magnitudeSquared() > self.maxSpeed * self.maxSpeed then
+			self.velocity:normalize()
+			self.velocity:scale(self.maxSpeed)
+		end
+	end
 end
 
 function PhysObject:draw()
