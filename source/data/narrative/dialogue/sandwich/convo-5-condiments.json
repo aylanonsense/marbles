@@ -1,0 +1,34 @@
+{
+  "location": "Sub-tle",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Doc", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "sandwich-condiments-hot-wax" ] },
+      "then": [
+        { "actor": "Prota", "line": "Hot wax should seal this sandwich up right!",  "expression": "confused" },
+        { "actor": "Doc", "line": "Submarines do need to be waterproof! Let's do it.", "expression": "happy" },
+        { "actor": "Prota", "line": "Yesss! That's everything, right?", "expression": "happy" },
+        { "actor": "Doc", "line": "Yep! Let's see what we've got.", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "sandwich-condiments-guava-jelly" ] },
+      "then": [
+        { "actor": "Prota", "line": "Guava! A taste of the islands for Minty!", "expression": "thinking" },
+        { "actor": "Doc", "line": "Ha! Jamaican me hungry!", "expression": "happy" },
+        { "actor": "Prota", "line": "That's everything, right?", "expression": "happy" },
+        { "actor": "Doc", "line": "Yep! Let's see what we've got.", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "sandwich-condiments-mayo" ] },
+      "then": [
+        { "actor": "Prota", "line": "I say-o, gimme that mayo! Minty’s gonna love it!", "expression": "happy" },
+        { "actor": "Doc", "line": "I bet! Let's see what we've got.", "expression": "neutral" }
+      ]
+    }
+  ]
+}

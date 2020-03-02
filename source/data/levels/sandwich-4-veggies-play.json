@@ -1,19 +1,19 @@
 {
 	"objects": [
 		 {
-			"exitId":"sandwich4-cauliflower",
+			"exitId":"sandwich-veggies-cauliflower",
 			"type":"Exit",
 			"x":0,
 			"y":160
 		},
 		 {
-			"exitId":"sandwich4-cactus",
+			"exitId":"sandwich-veggies-cactus",
 			"type":"Exit",
 			"x":0,
 			"y":290
 		},
 		 {
-			"exitId":"sandwich4-lettuce",
+			"exitId":"sandwich-veggies-lettuce",
 			"type":"Exit",
 			"x":0,
 			"y":30

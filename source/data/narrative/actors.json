@@ -3,27 +3,29 @@
     "name": "Prota",
     "image": "/images/narrative/actors/prota.png",
     "expressions": {
-      "excited": { "frame": 1 },
-      "happy": { "frame": 2 },
-      "surprised": { "frame": 3 },
-      "tired": { "frame": 4 }
+      "neutral": { "frame": 6 },
+      "happy": { "frame": 4 },
+      "thinking": { "frame": 2 },
+      "confused": { "frame": 9 },
+      "shocked": { "frame": 7 }
     }
   },
-  "Besto": {
-    "name": "Besto",
-    "image": "/images/narrative/actors/besto.png",
+  "Doc": {
+    "name": "Doc",
+    "image": "/images/narrative/actors/doc.png",
     "expressions": {
+      "neutral": { "frame": 1 },
       "happy": { "frame": 1 },
-      "kind": { "frame": 2 },
-      "busy": { "frame": 1 },
-      "surprised": { "frame": 3 }
+      "thinking": { "frame": 1 },
+      "confused": { "frame": 1 },
+      "shocked": { "frame": 1 }
     }
   },
-  "Extra": {
-    "name": "Extra",
-    "image": "/images/narrative/actors/extra.png",
+  "Minty": {
+    "name": "Minty",
+    "image": "/images/narrative/actors/minty.png",
     "expressions": {
-      "nervous": { "frame": 4 }
+      "neutral": { "frame": 1 }
     }
   }
 }

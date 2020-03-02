@@ -1,7 +1,7 @@
 {
 	"objects": [
 		 {
-			"exitId":"sandwich1-wrap",
+			"exitId":"sandwich-bread-wrap",
 			"type":"Exit",
 			"x":-89,
 			"y":-124
@@ -49,7 +49,7 @@
 			"y":-59
 		},
 		 {
-			"exitId":"sandwich1-baguette",
+			"exitId":"sandwich-bread-baguette",
 			"type":"Exit",
 			"x":0,
 			"y":-174
@@ -91,7 +91,7 @@
 			"y":200
 		},
 		 {
-			"exitId":"sandwich1-lettucewrap",
+			"exitId":"sandwich-bread-lettuce-wrap",
 			"type":"Exit",
 			"x":90,
 			"y":-124

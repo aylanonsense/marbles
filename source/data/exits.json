@@ -1,23 +1,6 @@
 {
   "exits": [
     {
-      "id": "tortilla-corn",
-      "label": "Corn"
-    },
-    {
-      "id": "tortilla-wheat",
-      "label": "Wheat"
-    },
-
-    {
-      "id": "indentation-tabs",
-      "label": "Tabs"
-    },
-    {
-      "id": "indentation-spaces",
-      "label": "Spaces"
-    },
-    {
       "id": "sandwich1-wrap",
       "label": "Wrap"
     },
@@ -76,6 +59,26 @@
     {
       "id": "sandwich5-mayo",
       "label": "Mayo"
-    }
+    },
+
+    { "id": "sandwich-bread-wrap", "label": "Wrap" },
+    { "id": "sandwich-bread-lettuce-wrap", "label": "Lettuce Wrap" },
+    { "id": "sandwich-bread-baguette", "label": "Baguette" },
+
+    { "id": "sandwich-protein-powder", "label": "Protein Powder" },
+    { "id": "sandwich-protein-ostrich", "label": "Ostrich" },
+    { "id": "sandwich-protein-ham", "label": "Ham" },
+
+    { "id": "sandwich-cheese-paper", "label": "Paper" },
+    { "id": "sandwich-cheese-goat", "label": "Goat Cheese" },
+    { "id": "sandwich-cheese-swiss", "label": "Swiss Cheese" },
+
+    { "id": "sandwich-veggies-cactus", "label": "Cactus" },
+    { "id": "sandwich-veggies-cauliflower", "label": "Cauliflower" },
+    { "id": "sandwich-veggies-lettuce", "label": "Lettuce" },
+
+    { "id": "sandwich-condiments-hot-wax", "label": "Hot Wax" },
+    { "id": "sandwich-condiments-guava-jelly", "label": "Guava Jelly" },
+    { "id": "sandwich-condiments-mayo", "label": "Mayo" }
   ]
 }

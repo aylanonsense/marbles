@@ -117,27 +117,38 @@ end
 function DialogueScene:processDialogueAction(action)
   -- The action is a conditional, evaluate the conditional before processing the action
   while action["if"] or action.method do
+    if action.skip then
+      return false
+    end
     action = self:evalDialogueField(action)
   end
+  -- We're skipping the action
+  if action.skip then
+    return false
   -- The action represents a subscript, push it onto the script stack
-  if #action > 0 then
+  elseif #action > 0 then
     table.insert(self.scripts, action)
     table.insert(self.scriptIndexes, 0)
     return false
   -- Say a dialogue line
   elseif action.line then
     local line = self:evalDialogueField(action.line)
-    local actor = self:addOrFindActor(self:evalDialogueField(action.actor))
-    local side = self:evalDialogueField(action.side) or actor.side or actor.preferredSide
-    actor:setExpression(self:evalDialogueField(action.expression))
-    if self.actorsOnStage[side] ~= actor then
-      if self.actorsOnStage[side] then
-        self.actorsOnStage[side]:slideOffStage()
+    local actorName = self:evalDialogueField(action.actor)
+    if not actorName or actorName == "Narrator" then
+      self.dialogueBox:showDialogue(null, line, null)
+    else
+      local actor = self:addOrFindActor(actorName)
+      local side = self:evalDialogueField(action.side) or actor.side or actor.preferredSide
+      actor:setExpression(self:evalDialogueField(action.expression))
+      if self.actorsOnStage[side] ~= actor then
+        if self.actorsOnStage[side] then
+          self.actorsOnStage[side]:slideOffStage()
+        end
+        self.actorsOnStage[side] = actor
+        actor:slideOnStage(side)
       end
-      self.actorsOnStage[side] = actor
-      actor:slideOnStage(side)
+      self.dialogueBox:showDialogue(actor.name, line, actor.side)
     end
-    self.dialogueBox:showDialogue(actor.name, line, actor.side)
     self.waitingFor = "dialogue-box"
   -- Change the location
   elseif action.action == "change-location" then

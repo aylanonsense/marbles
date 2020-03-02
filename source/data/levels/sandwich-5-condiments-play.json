@@ -1,19 +1,19 @@
 {
 	"objects": [
 		 {
-			"exitId":"sandwich5-wax",
+			"exitId":"sandwich-condiments-hot-wax",
 			"type":"Exit",
 			"x":0,
 			"y":280
 		},
 		 {
-			"exitId":"sandwich5-mayo",
+			"exitId":"sandwich-condiments-mayo",
 			"type":"Exit",
 			"x":80,
 			"y":300
 		},
 		 {
-			"exitId":"sandwich5-guava",
+			"exitId":"sandwich-condiments-guava-jelly",
 			"type":"Exit",
 			"x":-79,
 			"y":300

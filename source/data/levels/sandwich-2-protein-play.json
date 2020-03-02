@@ -1,19 +1,19 @@
 {
 	"objects": [
 		 {
-			"exitId":"sandwich2-ham",
+			"exitId":"sandwich-protein-ham",
 			"type":"Exit",
 			"x":265,
 			"y":55
 		},
 		 {
-			"exitId":"sandwich2-powder",
+			"exitId":"sandwich-protein-powder",
 			"type":"Exit",
 			"x":65,
 			"y":335
 		},
 		 {
-			"exitId":"sandwich2-ostrich",
+			"exitId":"sandwich-protein-ostrich",
 			"type":"Exit",
 			"x":-134,
 			"y":55

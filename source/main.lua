@@ -7,7 +7,7 @@ import "level/editor/EditorScene"
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
-local storyline = Storyline("example-storyline")
+local storyline = Storyline("sandwich")
 storyline:start()
 -- Scene.setScene(EditorScene())
 

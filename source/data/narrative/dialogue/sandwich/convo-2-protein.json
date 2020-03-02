@@ -1,0 +1,38 @@
+{
+  "location": "Sub-tle",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Doc", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "sandwich-protein-powder" ] },
+      "then": [
+        { "actor": "Prota", "line": "Protein powder! Minty Muscles we call her.",  "expression": "confused" },
+        { "actor": "Doc", "line": "Does she work out?", "expression": "shocked" },
+        { "actor": "Prota", "line": "Well, she's doing a lot of running today.", "expression": "neutral" },
+        { "actor": "Doc", "line": "Hm. Wonder which cheese is best for working out. Gorgon-Swole-a?", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "sandwich-protein-ostrich" ] },
+      "then": [
+        { "actor": "Prota", "line": "Ostrich. Minty will have no birds but the biggest.", "expression": "thinking" },
+        { "actor": "Doc", "line": "You know what they say! It's not the size of the bird...", "expression": "neutral" },
+        { "actor": "Prota", "line": "It's how you eat it!", "expression": "happy" },
+        { "actor": "Doc", "line": "Now let's see if we can't get her a big cheese.", "expression": "neutral" }
+      ]
+    },
+    {
+     "if": { "method": "lastExitWas", "arguments": [ "sandwich-protein-ham" ] },
+      "then": [
+        { "actor": "Prota", "line": "Ham! She can't get enough of the classics.", "expression": "happy" },
+        { "actor": "Doc", "line": "Oh, sorry, we don't carry Ham Classic anymore. We've only got New Ham.", "expression": "thinking" },
+        { "actor": "Doc", "line": "And Ham Zero.", "expression": "happy" },
+        { "actor": "Prota", "line": "... Is this a joke?", "expression": "confused" },
+        { "actor": "Doc", "line": "I guess not much of one.", "expression": "neutral" },
+        { "actor": "Doc", "line": "What was her favorite cheese again?", "expression": "neutral" }
+      ]
+    }
+  ]
+}

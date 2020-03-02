@@ -31,6 +31,9 @@ end
 function Storyline:createScene(sceneData)
   if sceneData.dialogue then
     local dialogueData = json.decodeFile("/data/narrative/dialogue/" .. sceneData.dialogue .. ".json")
+    if not dialogueData then
+      print("Failed to load dialogue data at /data/narrative/dialogue/" .. sceneData.dialogue .. ".json: the file may not exist or may contain invalid JSON")
+    end
     return DialogueScene(dialogueData, self)
   elseif sceneData.level then
     local levelInfo = levelLookup[sceneData.level]

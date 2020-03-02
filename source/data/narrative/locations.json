@@ -1,8 +1,8 @@
 {
-  "Concert Hall": {
-    "image": "/images/narrative/locations/concert-hall.png"
+  "Black Screen": {
+    "image": "/images/narrative/locations/black-screen.png"
   },
-  "Bestos House": {
-    "image": "/images/narrative/locations/bestos-house.png"
+  "Sub-tle": {
+    "image": "/images/narrative/locations/sub-tle.png"
   }
 }

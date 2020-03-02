@@ -1,19 +1,19 @@
 {
 	"objects": [
 		 {
-			"exitId":"sandwich3-goat",
+			"exitId":"sandwich-cheese-goat",
 			"type":"Exit",
 			"x":-59,
 			"y":220
 		},
 		 {
-			"exitId":"sandwich3-paper",
+			"exitId":"sandwich-cheese-paper",
 			"type":"Exit",
 			"x":60,
 			"y":220
 		},
 		 {
-			"exitId":"sandwich3-swiss",
+			"exitId":"sandwich-cheese-swiss",
 			"type":"Exit",
 			"x":0,
 			"y":50

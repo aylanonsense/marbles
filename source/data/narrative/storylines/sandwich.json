@@ -1,0 +1,22 @@
+{
+  "scenes": [
+    { "dialogue": "sandwich/convo-0-intro" },
+
+    { "level": "Sandwich 1 - Bread" },
+    { "dialogue": "sandwich/convo-1-bread" },
+
+    { "level": "Sandwich 2 - Protein" },
+    { "dialogue": "sandwich/convo-2-protein" },
+
+    { "level": "Sandwich 3 - Cheese" },
+    { "dialogue": "sandwich/convo-3-cheese" },
+
+    { "level": "Sandwich 4 - Veggies" },
+    { "dialogue": "sandwich/convo-4-veggies" },
+
+    { "level": "Sandwich 5 - Condiments" },
+    { "dialogue": "sandwich/convo-5-condiments" },
+
+    { "dialogue": "sandwich/convo-6-resolution" }
+  ]
+}

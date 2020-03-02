@@ -50,13 +50,15 @@ function DialogueBox:draw()
     dialogueBoxImage:drawInRect(boxX, boxY, self.width, self.height)
     local speakerBoxWidth, speakerBoxHeight = 63, 25
     local speakerBoxX, speakerBoxY = boxX + ((self.speakerSide == "left") and 10 or (self.width - speakerBoxWidth - 10)), boxY - 10
-    speakerBoxImage:drawInRect(speakerBoxX, speakerBoxY, speakerBoxWidth, speakerBoxHeight)
+    local speakerNameX, speakerNameY = speakerBoxX + 10, speakerBoxY + 4
+    if self.speakerName then
+      speakerBoxImage:drawInRect(speakerBoxX, speakerBoxY, speakerBoxWidth, speakerBoxHeight)
+    end
     -- Invert colors to draw white text from here on out
     playdate.graphics.setImageDrawMode(playdate.graphics.kDrawModeInverted)
     playdate.graphics.setFont(dialogueBoxFont)
     -- Draw the speaker's name
     if self.speakerName then
-      local speakerNameX, speakerNameY = speakerBoxX + 10, speakerBoxY + 4
       playdate.graphics.drawText(self.speakerName, speakerNameX, speakerNameY)
     end
     -- Draw the lines of dialogue

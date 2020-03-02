@@ -1,0 +1,83 @@
+{
+  "location": "Sub-tle",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Doc", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "expression": "neutral"}
+  ],
+  "objects": [
+    "Minty"
+    "Fail Sandwich"
+    "Normal Sandwich"
+    "Special Sandwich"
+  ],
+  "script": [
+    { "actor": "Doc", "line": "Okay!", "expression": "happy" },
+    { "actor": "Doc", "line": "Here's your...uh...", "expression": "happy" },
+    { "actor": "Doc", "line": "I guess I would call this...", "expression": "confused" },
+    {
+      "if": { "method": "isSandwichScore", "arguments": [ "Fail" ] },
+      "then": { "action": "show-object", "object": "Fail Sandwich" }
+    },
+    {
+      "if": { "method": "isSandwichScore", "arguments": [ "Normal" ] },
+      "then": { "action": "show-object", "object": "Normal Sandwich" }
+    },
+    {
+      "if": { "method": "isSandwichScore", "arguments": [ "Special" ] },
+      "then": { "action": "show-object", "object": "Special Sandwich" }
+    },
+    { "actor": "Doc", "line": { "method": "getFinalSandwichLine" } },
+    { "actor": "Prota", "line": "!!! ", "expression": "shocked" },
+    { "actor": "Doc", "line": "...", "expression": "neutral" },
+    { "action": "hide-object" },
+    { "action": "show-object", "object": "Minty" },
+    { "actor": "Minty", "line": "Woof!" },
+    { "actor": "Prota", "line": "Minty!", "expression": "shocked" },
+    { "actor": "Doc", "line": "Hey, here's that hot dog! Want that 'wich, Minty?", "expression": "happy" },
+    {
+      "if": { "method": "isSandwichScore", "arguments": [ "Fail" ] },
+      "then": [
+        { "action": "hide-object" },
+        { "actor": "Doc", "line": "Wait, she grabbed it!", "expression": "happy" },
+        { "actor": "Doc", "line": "But... why is she headed towards the landfill??", "expression": "shocked" },
+        { "actor": "Prota", "line": "You don't think...?!", "expression": "shocked" },
+        { "actor": "Doc", "line": "Yes. There's only one reason she would go there...", "expression": "thinking" },
+        { "actor": "Doc", "line": "She's going to bury this sandwich where it belongs. In the trash.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Nooo! Minty! Wait for me!", "expression": "shocked" }
+      ]
+    },
+    {
+     "if": { "method": "isSandwichScore", "arguments": [ "Normal" ] },
+     "then": [
+        { "action": "hide-object" },
+        { "actor": "Doc", "line": "Hey! Minty! Where ya going? You forgot your 'wich!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Darn it! But it looked delicious!", "expression": "shocked" },
+        { "actor": "Doc", "line": "...sure, kid.", "expression": "neutral" },
+        { "actor": "Prota", "line": "But she's gotta be hungry. Where could she be going?", "expression": "thinking" },
+        { "actor": "Doc", "line": "Only other place in the village you can get lunch at brunch hour is the Pickle Yard.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Of course! Unlimited mozzarella sticks! Minty, I'm coming to get you!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "isSandwichScore", "arguments": [ "Special" ] },
+      "then": [
+        { "actor": "Doc", "line": "WOAH! She gulped it down in one bite!!", "expression": "shocked" },
+        { "actor": "Prota", "line": "That's my Minty! Come here, Minty. Let me bring you back home.", "expression": "happy" },
+        { "action": "hide-object" },
+        { "actor": "Prota", "line": "No! Minty! Where are you going!?", "expression": "shocked" },
+        { "actor": "Doc", "line": "There she goes again. Such independence. Inspiring.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Where could she be going?", "expression": "thinking" },
+        { "actor": "Doc", "line": "If it were me, I'd be headed to the Pickle Yard for some dessert.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Of course! Unlimited mozzarella sticks! Minty, I'm coming to get you!", "expression": "happy" }
+      ]
+    },
+    { "action": "change-location", "location": "BlackScreen" }
+    { "line": "So. What did you think?" },
+    { "line": "Will Prota find Minty?" },
+    { "line": "Has Doc found the next big sandwich? " },
+    { "line": "Find out next time on LOSE YOUR MARBLES." },
+    { "line": "In the meantime, try playing again for different dialogue options! " },
+    { "line": "Thanks for playing!" },
+  ]
+}

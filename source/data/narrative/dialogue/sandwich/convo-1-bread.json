@@ -1,0 +1,35 @@
+{
+  "location": "Sub-tle",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Doc", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "sandwich-bread-lettuce" ] },
+      "then": [
+        { "actor": "Prota", "line": "Lettuce wrap! Minty's weird about carbs.",  "expression": "confused" },
+        { "actor": "Doc", "line": "She's always on-trend, that one.", "expression": "happy" },
+        { "actor": "Doc", "line": "Let's see if we can get her a trendy protein. What should we get?", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "sandwich-bread-wrap" ] },
+      "then": [
+        { "actor": "Prota", "line": "Give me the wrap. Minty loves a cylinder.", "expression": "neutral" },
+        { "actor": "Doc", "line": "Ha! Totally tubular. Get it?", "expression": "happy" },
+        { "actor": "Prota", "line": "Uh... haha for sure.", "expression": "confused" },
+        { "actor": "Doc", "line": "What shape does she like for her protein?", "expression": "neutral" }
+      ]
+    },
+    {
+     "if": { "method": "lastExitWas", "arguments": [ "sandwich-bread-baguette" ] },
+      "then": [
+        { "actor": "Prota", "line": "Baguette, s'il vous plait! Menthé les aimes bien.", "expression": "happy" },
+        { "actor": "Doc", "line": "Uh...", "expression": "confused" },
+        { "actor": "Doc", "line": "I caught baguette.", "expression": "happy" },
+        { "actor": "Doc", "line": "Now what kind of protéine do you want, madame?", "expression": "neutral" }
+      ]
+    }
+  ]
+}
