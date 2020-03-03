@@ -67,7 +67,8 @@ function EditorTestLevelScene:update()
 	end
 
 	-- Rotating the crank rotates the camera
-	camera.rotation = playdate.getCrankPosition()
+	local crankChange = playdate.getCrankChange()
+	camera.rotation = math.min(math.max(-45, camera.rotation + crankChange / 2), 45)
 
 	-- Move the camera to be looking at the ball
 	camera.position.x, camera.position.y = self.marble:getPosition()

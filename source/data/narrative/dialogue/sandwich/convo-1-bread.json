@@ -6,7 +6,7 @@
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "sandwich-bread-lettuce" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "sandwich-bread-lettuce-wrap" ] },
       "then": [
         { "actor": "Prota", "line": "Lettuce wrap! Minty's weird about carbs.",  "expression": "confused" },
         { "actor": "Doc", "line": "She's always on-trend, that one.", "expression": "happy" },
@@ -25,10 +25,10 @@
     {
      "if": { "method": "lastExitWas", "arguments": [ "sandwich-bread-baguette" ] },
       "then": [
-        { "actor": "Prota", "line": "Baguette, s'il vous plait! Menthé les aimes bien.", "expression": "happy" },
+        { "actor": "Prota", "line": "Baguette, s'il vous plait! Menthe les aimes bien.", "expression": "happy" },
         { "actor": "Doc", "line": "Uh...", "expression": "confused" },
         { "actor": "Doc", "line": "I caught baguette.", "expression": "happy" },
-        { "actor": "Doc", "line": "Now what kind of protéine do you want, madame?", "expression": "neutral" }
+        { "actor": "Doc", "line": "Now what kind of protein do you want, madame?", "expression": "neutral" }
       ]
     }
   ]

@@ -2,8 +2,7 @@
   "location": "Sub-tle",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Doc", "expression": "neutral", "side": "right" },
-    { "actor": "Minty", "expression": "neutral"}
+    { "actor": "Doc", "expression": "neutral", "side": "right" }
   ],
   "objects": [
     "Minty",
@@ -32,7 +31,6 @@
     { "actor": "Doc", "line": "...", "expression": "neutral" },
     { "action": "hide-object" },
     { "action": "show-object", "object": "Minty" },
-    { "actor": "Minty", "line": "Woof!" },
     { "actor": "Prota", "line": "Minty!", "expression": "shocked" },
     { "actor": "Doc", "line": "Hey, here's that hot dog! Want that 'wich, Minty?", "expression": "happy" },
     {

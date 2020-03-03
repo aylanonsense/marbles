@@ -14,18 +14,11 @@
     "name": "Doc",
     "image": "/images/narrative/actors/doc.png",
     "expressions": {
-      "neutral": { "frame": 1 },
-      "happy": { "frame": 1 },
-      "thinking": { "frame": 1 },
-      "confused": { "frame": 1 },
+      "neutral": { "frame": 2 },
+      "happy": { "frame": 2 },
+      "thinking": { "frame": 4 },
+      "confused": { "frame": 3 },
       "shocked": { "frame": 1 }
-    }
-  },
-  "Minty": {
-    "name": "Minty",
-    "image": "/images/narrative/actors/minty.png",
-    "expressions": {
-      "neutral": { "frame": 1 }
     }
   }
 }

@@ -32,7 +32,7 @@ function physics:update()
 	end
 
 	-- Calculate the number of physics steps we need to perform
-	local numSteps = math.max(1, math.ceil(maxBallSpeed / MAX_MOVEMENT_PER_FRAME))
+	local numSteps = math.max(1, math.ceil((maxBallSpeed * time.dt) / MAX_MOVEMENT_PER_FRAME))
 	local dt = time.dt / numSteps
 	for step = 1, numSteps do
 		-- Move all physics objects

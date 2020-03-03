@@ -33,7 +33,7 @@ end
 function Booster:preCollide(other, collision)
 	if self.cooldown <= 0 then
 		self.cooldown = 0.25
-		other:setVelocity(350 * self.launchX, 350 * self.launchY)
+		other:setVelocity(375 * self.launchX, 375 * self.launchY)
 	end
 	return false
 end
