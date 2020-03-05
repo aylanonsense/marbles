@@ -2,16 +2,17 @@
 camera = {
 	screenWidth = 400,
 	screenHeight = 240,
-	position = playdate.geometry.vector2D.new(0, 0),
+	x = 0,
+	y = 0,
 	rotation = 0,
 	scale = 1,
 	matrix = playdate.geometry.affineTransform.new(),
-	up = playdate.geometry.vector2D.new(0, -1),
-	right = playdate.geometry.vector2D.new(1, 0)
+	up = { x = 0, y = -1 },
+	right = { x = 1, y = 0 }
 }
 
 function camera:reset()
-	self.position.x, self.position.y = 0, 0
+	self.x, self.y = 0, 0
 	self.rotation = 0
 	self.scale = 1
 	self:recalculatePerspective()
@@ -26,7 +27,7 @@ function camera:recalculatePerspective()
 	self.right.x, self.right.y = -self.up.y, self.up.x
 	-- And now actually calculate the perspective matrix
 	self.matrix:reset()
-	self.matrix:translate(-self.position.x, -self.position.y)
+	self.matrix:translate(-self.x, -self.y)
 	self.matrix:rotate(-self.rotation)
 	self.matrix:scale(self.scale)
 	self.matrix:translate(self.screenWidth / 2, self.screenHeight / 2)

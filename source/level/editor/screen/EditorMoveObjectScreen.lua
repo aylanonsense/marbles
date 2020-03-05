@@ -14,9 +14,9 @@ end
 
 function EditorMoveObjectScreen:show()
 	local x, y = self.obj:getPosition()
-	scene.cursor.position.x, scene.cursor.position.y = x, y
+	scene.cursor.x, scene.cursor.y = x, y
 	scene.cursor:startSnappingToGrid()
-	local dx, dy = scene.cursor.position.x - x, scene.cursor.position.y - y
+	local dx, dy = scene.cursor.x - x, scene.cursor.y - y
 	self.obj:translate(dx, dy)
 	self.translationX, self.translationY = dx, dy
 end
@@ -26,9 +26,9 @@ function EditorMoveObjectScreen:hide()
 end
 
 function EditorMoveObjectScreen:update()
-	local x, y = scene.cursor.position.x, scene.cursor.position.y
+	local x, y = scene.cursor.x, scene.cursor.y
 	scene.cursor:update()
-	local dx, dy = scene.cursor.position.x - x, scene.cursor.position.y - y
+	local dx, dy = scene.cursor.x - x, scene.cursor.y - y
 	self.obj:translate(dx, dy)
 	self.translationX += dx
 	self.translationY += dy

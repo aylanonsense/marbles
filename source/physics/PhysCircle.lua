@@ -20,13 +20,13 @@ function PhysCircle:init(x, y, radius)
 end
 
 function PhysCircle:draw()
-	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
+	local x, y = camera.matrix:transformXY(self.x, self.y)
 	playdate.graphics.drawCircleAtPoint(x, y, self.radius * camera.scale)
 end
 
 function PhysCircle:checkForCollisionWithBall(ball)
 	-- Check to see if the ball is touching (or inside) the circle
-	local dx, dy = ball.position.x - self.position.x, ball.position.y - self.position.y
+	local dx, dy = ball.x - self.x, ball.y - self.y
 	local squareDist = dx * dx + dy * dy
 	local maxDist = self.radius + ball.radius
 	if squareDist < maxDist * maxDist then

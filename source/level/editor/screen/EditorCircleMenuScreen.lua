@@ -43,7 +43,7 @@ function EditorCircleMenuScreen:open(circle)
 end
 
 function EditorCircleMenuScreen:show()
-	scene.cursor.position.x, scene.cursor.position.y = self.circle:getMidPoint()
+	scene.cursor.x, scene.cursor.y = self.circle:getMidPoint()
 end
 
 function EditorCircleMenuScreen:draw()

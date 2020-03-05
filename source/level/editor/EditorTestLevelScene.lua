@@ -11,8 +11,8 @@ function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 	EditorTestLevelScene.super.init(self)
 	self.nextScene = nextScene
 	self.initialCameraSettings = {
-		x = camera.position.x,
-		y = camera.position.y,
+		x = camera.x,
+		y = camera.y,
 		scale = camera.scale,
 		rotation = camera.rotation
 	}
@@ -71,7 +71,7 @@ function EditorTestLevelScene:update()
 	camera.rotation = math.min(math.max(-45, camera.rotation + crankChange / 2), 45)
 
 	-- Move the camera to be looking at the ball
-	camera.position.x, camera.position.y = self.marble:getPosition()
+	camera.x, camera.y = self.marble:getPosition()
 	camera:recalculatePerspective()
 end
 
@@ -118,7 +118,7 @@ end
 function EditorTestLevelScene:BButtonDown()
 	-- Progress to the next scene
 	if self.nextScene then
-		camera.position.x, camera.position.y = self.initialCameraSettings.x, self.initialCameraSettings.y
+		camera.x, camera.y = self.initialCameraSettings.x, self.initialCameraSettings.y
 		camera.scale = self.initialCameraSettings.scale
 		camera.rotation = self.initialCameraSettings.rotation
 		camera:recalculatePerspective()

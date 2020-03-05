@@ -49,7 +49,7 @@ function EditorCreateCircleScreen:AButtonDown()
 		table.insert(scene.geometry, circle)
 		self:close()
 	else
-		self.centerPoint = { x = scene.cursor.position.x, y = scene.cursor.position.y }
+		self.centerPoint = { x = scene.cursor.x, y = scene.cursor.y }
 		self.radius = 10
 	end
 end

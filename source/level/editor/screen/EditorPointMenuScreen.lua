@@ -30,7 +30,7 @@ function EditorPointMenuScreen:open(point)
 end
 
 function EditorPointMenuScreen:show()
-	scene.cursor.position.x, scene.cursor.position.y = self.point:getMidPoint()
+	scene.cursor.x, scene.cursor.y = self.point:getMidPoint()
 end
 
 function EditorPointMenuScreen:draw()

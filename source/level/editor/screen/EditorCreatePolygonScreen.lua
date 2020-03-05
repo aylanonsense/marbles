@@ -37,7 +37,7 @@ function EditorCreatePolygonScreen:draw()
 		if self:canClosePolygon() then
 			perspectiveDrawing.drawDottedLine(prevX, prevY, self.coordinates[1], self.coordinates[2])
 		else
-			perspectiveDrawing.drawDottedLine(prevX, prevY, scene.cursor.position.x, scene.cursor.position.y)
+			perspectiveDrawing.drawDottedLine(prevX, prevY, scene.cursor.x, scene.cursor.y)
 		end
 	end
 	scene.cursor:draw()
@@ -69,7 +69,7 @@ function EditorCreatePolygonScreen:AButtonDown()
 		table.insert(scene.geometry, polygon)
 		self:close()
 	else
-		local x, y = scene.cursor.position.x, scene.cursor.position.y
+		local x, y = scene.cursor.x, scene.cursor.y
 		if #self.coordinates < 2 or x ~= self.coordinates[#self.coordinates - 1] or y ~= self.coordinates[#self.coordinates] then
 			table.insert(self.coordinates, x)
 			table.insert(self.coordinates, y)
@@ -88,8 +88,8 @@ end
 
 function EditorCreatePolygonScreen:canClosePolygon()
 	if #self.coordinates / 2 > 1 then
-		local dx = self.coordinates[1] - scene.cursor.position.x
-		local dy = self.coordinates[2] - scene.cursor.position.y
+		local dx = self.coordinates[1] - scene.cursor.x
+		local dy = self.coordinates[2] - scene.cursor.y
 		local squareDist = dx * dx + dy * dy
 		return squareDist < 4 * 4
 	end

@@ -11,13 +11,13 @@ function PhysPoint:init(x, y)
 end
 
 function PhysPoint:draw()
-	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
+	local x, y = camera.matrix:transformXY(self.x, self.y)
 	playdate.graphics.fillCircleAtPoint(x, y, 2)
 end
 
 function PhysPoint:checkForCollisionWithBall(ball)
 	-- Check to see if they are overlapping
-	local dx, dy = ball.position.x - self.position.x, ball.position.y - self.position.y
+	local dx, dy = ball.x - self.x, ball.y - self.y
 	local squareDist = dx * dx + dy * dy
 	local minDist, maxDist = 0, ball.radius
 	if minDist * minDist < squareDist and squareDist < maxDist * maxDist then

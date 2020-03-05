@@ -81,7 +81,7 @@ function EditorLineMenuScreen:open(line)
 end
 
 function EditorLineMenuScreen:show()
-	scene.cursor.position.x, scene.cursor.position.y = self.line:getMidPoint()
+	scene.cursor.x, scene.cursor.y = self.line:getMidPoint()
 	self.menu.options[4].text = "Radius: " .. self.line.radius
 end
 

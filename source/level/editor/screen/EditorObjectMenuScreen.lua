@@ -50,7 +50,7 @@ function EditorObjectMenuScreen:open(obj)
 end
 
 function EditorObjectMenuScreen:show()
-	scene.cursor.position.x, scene.cursor.position.y = self.obj:getPosition()
+	scene.cursor.x, scene.cursor.y = self.obj:getPosition()
 end
 
 function EditorObjectMenuScreen:draw()

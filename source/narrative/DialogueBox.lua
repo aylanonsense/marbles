@@ -10,7 +10,8 @@ local speakerBoxImage = playdate.graphics.nineSlice.new("/images/narrative/speak
 local dialogueBoxFont = fonts.FullCircle
 
 function DialogueBox:init()
-  self.position = playdate.geometry.vector2D.new(200, 194)
+  self.x = 200
+  self.y = 194
   self.width = 388 -- should be 3n + 1
   self.height = 79 -- should be 3n + 1
   self.maxTextWidth = self.width - 40
@@ -46,7 +47,7 @@ end
 
 function DialogueBox:draw()
   if self.isVisible then
-    local boxX, boxY = math.floor(self.position.x - self.width / 2), math.floor(self.position.y - self.height / 2)
+    local boxX, boxY = math.floor(self.x - self.width / 2), math.floor(self.y - self.height / 2)
     dialogueBoxImage:drawInRect(boxX, boxY, self.width, self.height)
     local speakerBoxWidth, speakerBoxHeight = 63, 25
     local speakerBoxX, speakerBoxY = boxX + ((self.speakerSide == "left") and 10 or (self.width - speakerBoxWidth - 10)), boxY - 10

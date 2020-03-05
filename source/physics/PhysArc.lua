@@ -23,13 +23,13 @@ function PhysArc:init(x, y, radius, startAngle, endAngle)
 end
 
 function PhysArc:draw()
-	local x, y = camera.matrix:transformXY(self.position.x, self.position.y)
+	local x, y = camera.matrix:transformXY(self.x, self.y)
 	playdate.graphics.drawArc(x, y, self.radius, self.radius, self.startAngle - camera.rotation, self.endAngle - camera.rotation)
 end
 
 function PhysArc:checkForCollisionWithBall(ball)
 	-- Check to see if the ball is touching (or inside) the arc
-	local dx, dy = ball.position.x - self.position.x, ball.position.y - self.position.y
+	local dx, dy = ball.x - self.x, ball.y - self.y
 	local squareDist = dx * dx + dy * dy
 	local maxDist = ball.radius + self.radius
 	if squareDist < maxDist * maxDist then

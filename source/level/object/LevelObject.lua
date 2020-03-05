@@ -43,10 +43,10 @@ function LevelObject:getPosition()
 	else
 		local minX, maxX, minY, maxY
 		for _, physObj in ipairs(self.physObjects) do
-			minX = (minX == nil or physObj.position.x < minX) and physObj.position.x or minX
-			maxX = (maxX == nil or physObj.position.x > maxX) and physObj.position.x or maxX
-			minY = (minY == nil or physObj.position.y < minY) and physObj.position.y or minY
-			maxY = (maxY == nil or physObj.position.y > maxY) and physObj.position.y or maxY
+			minX = (minX == nil or physObj.x < minX) and physObj.x or minX
+			maxX = (maxX == nil or physObj.x > maxX) and physObj.x or maxX
+			minY = (minY == nil or physObj.y < minY) and physObj.y or minY
+			maxY = (maxY == nil or physObj.y > maxY) and physObj.y or maxY
 		end
 		return (minX + maxX) / 2, (minY + maxY) / 2
 	end
@@ -56,8 +56,8 @@ function LevelObject:setPosition(x, y)
 	local currX, currY = self:getPosition()
 	local dx, dy = x - currX, y - currY
 	for _, physObj in ipairs(self.physObjects) do
-		physObj.position.x += dx
-		physObj.position.y += dy
+		physObj.x += dx
+		physObj.y += dy
 	end
 	return dx, dy
 end
@@ -83,8 +83,8 @@ end
 
 function LevelObject:setVelocity(x, y)
 	for _, physObj in ipairs(self.physObjects) do
-		physObj.velocity.x = x
-		physObj.velocity.y = y
+		physObj.velX = x
+		physObj.velY = y
 	end
 end
 

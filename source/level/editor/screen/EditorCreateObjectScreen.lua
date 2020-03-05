@@ -21,7 +21,7 @@ end
 
 function EditorCreateObjectScreen:update()
 	scene.cursor:update()
-	self.object:setPosition(scene.cursor.position.x, scene.cursor.position.y)
+	self.object:setPosition(scene.cursor.x, scene.cursor.y)
 end
 
 function EditorCreateObjectScreen:draw()

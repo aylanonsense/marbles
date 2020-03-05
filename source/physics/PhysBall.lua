@@ -10,6 +10,7 @@ function PhysBall:init(x, y, radius)
 	self.type = PhysObject.Type.PhysBall
 	self.mass = 1
   self.maxSpeed = 400
+  self.isStatic = false
 end
 
 function PhysBall:add()

@@ -17,8 +17,7 @@ function Marble:init(x, y)
 end
 
 function Marble:update()
-	-- Set the ball's gravity to be relative to the current perspective
-	self.physObj.acceleration.x, self.physObj.acceleration.y = -GRAVITY * camera.up.x, -GRAVITY * camera.up.y
+	self.physObj.accX, self.physObj.accY = -GRAVITY * camera.up.x, -GRAVITY * camera.up.y
 end
 
 function Marble:draw()

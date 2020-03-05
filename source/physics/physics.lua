@@ -19,14 +19,14 @@ function physics:update()
 	-- Figure out the max ball speed
 	local maxBallSpeedSquared = 0
 	for _, ball in ipairs(self.balls) do
-		local speedSquared = ball.velocity.x * ball.velocity.x + ball.velocity.y * ball.velocity.y
+		local speedSquared = ball.velX * ball.velX + ball.velY * ball.velY
 		maxBallSpeedSquared = math.max(maxBallSpeedSquared, speedSquared)
 	end
 	local maxBallSpeed = math.sqrt(maxBallSpeedSquared)
 
-	-- Accelerate all physics objects
+	-- Accelerate all dynamic physics objects
 	for _, obj in ipairs(self.objects) do
-		if obj.isEnabled then
+		if obj.isEnabled and not obj.isStatic then
 			obj:applyAcceleration(time.dt)
 		end
 	end
@@ -35,9 +35,9 @@ function physics:update()
 	local numSteps = math.max(1, math.ceil((maxBallSpeed * time.dt) / MAX_MOVEMENT_PER_FRAME))
 	local dt = time.dt / numSteps
 	for step = 1, numSteps do
-		-- Move all physics objects
+		-- Move all dynamic physics objects
 		for _, obj in ipairs(self.objects) do
-			if obj.isEnabled then
+			if obj.isEnabled and not obj.isStatic then
 				obj:enforceMaxSpeed()
 				obj:applyVelocity(dt)
 			end
@@ -46,7 +46,6 @@ function physics:update()
 		-- Check for collisions between balls and objects
 		for _, ball in ipairs(self.balls) do
 			for _, obj in ipairs(self.objects) do
-				-- Do a pass for points second, since other physics objects should take priority
 				if ball ~= obj and ball.isEnabled and obj.isEnabled then
 					local collision = obj:checkForCollisionWithBall(ball)
 					if collision then

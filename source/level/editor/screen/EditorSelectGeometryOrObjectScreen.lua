@@ -35,7 +35,7 @@ function EditorSelectGeometryOrObjectScreen:update()
 	self.highlightedEditTarget = nil
 	local closestSquareDist
 	for _, target in ipairs(self.editTargets) do
-		local dx, dy = target.x - scene.cursor.position.x, target.y - scene.cursor.position.y
+		local dx, dy = target.x - scene.cursor.x, target.y - scene.cursor.y
 		local squareDist = dx * dx + dy * dy
 		if (closestSquareDist == nil or squareDist < closestSquareDist) and squareDist < (20 / camera.scale) ^ 2 then
 			closestSquareDist = squareDist

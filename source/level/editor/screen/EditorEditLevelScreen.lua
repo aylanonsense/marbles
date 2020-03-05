@@ -48,19 +48,19 @@ function EditorEditLevelScreen:init()
 							{
 								text = "Booster",
 								selected = function()
-									self:openAndShowSubScreen(EditorCreateObjectScreen(), Booster(scene.cursor.position.x, scene.cursor.position.y, 0))
+									self:openAndShowSubScreen(EditorCreateObjectScreen(), Booster(scene.cursor.x, scene.cursor.y, 0))
 								end
 							},
 							{
 								text = "Coin",
 								selected = function()
-									self:openAndShowSubScreen(EditorCreateObjectScreen(), Coin(scene.cursor.position.x, scene.cursor.position.y))
+									self:openAndShowSubScreen(EditorCreateObjectScreen(), Coin(scene.cursor.x, scene.cursor.y))
 								end
 							},
 							{
 								text = "Exit",
 								selected = function()
-									self:openAndShowSubScreen(EditorCreateObjectScreen(), Exit(scene.cursor.position.x, scene.cursor.position.y))
+									self:openAndShowSubScreen(EditorCreateObjectScreen(), Exit(scene.cursor.x, scene.cursor.y))
 								end
 							}
 						})

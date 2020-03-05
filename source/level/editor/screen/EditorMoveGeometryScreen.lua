@@ -14,12 +14,12 @@ end
 
 function EditorMoveGeometryScreen:show()
 	local x, y = self.geometry:getTranslationPoint()
-	scene.cursor.position.x, scene.cursor.position.y = x, y
+	scene.cursor.x, scene.cursor.y = x, y
 	scene.cursor:startSnappingToGrid()
-	local dx, dy = scene.cursor.position.x - x, scene.cursor.position.y - y
+	local dx, dy = scene.cursor.x - x, scene.cursor.y - y
 	self.geometry:translate(dx, dy)
 	self.translationX, self.translationY = dx, dy
-	scene.cursor.position.x, scene.cursor.position.y = self.geometry:getMidPoint()
+	scene.cursor.x, scene.cursor.y = self.geometry:getMidPoint()
 end
 
 function EditorMoveGeometryScreen:hide()
@@ -27,14 +27,14 @@ function EditorMoveGeometryScreen:hide()
 end
 
 function EditorMoveGeometryScreen:update()
-	scene.cursor.position.x, scene.cursor.position.y = self.geometry:getTranslationPoint()
-	local x, y = scene.cursor.position.x, scene.cursor.position.y
+	scene.cursor.x, scene.cursor.y = self.geometry:getTranslationPoint()
+	local x, y = scene.cursor.x, scene.cursor.y
 	scene.cursor:update()
-	local dx, dy = scene.cursor.position.x - x, scene.cursor.position.y - y
+	local dx, dy = scene.cursor.x - x, scene.cursor.y - y
 	self.geometry:translate(dx, dy)
 	self.translationX += dx
 	self.translationY += dy
-	scene.cursor.position.x, scene.cursor.position.y = self.geometry:getMidPoint()
+	scene.cursor.x, scene.cursor.y = self.geometry:getMidPoint()
 end
 
 function EditorMoveGeometryScreen:draw()

@@ -26,7 +26,7 @@ function WorldBoundary:draw()
 		self.perspectiveRenderCoordinates[i + 1] = y
 	end
 
-	-- -- Fill in the WorldBoundary
+	-- Fill in the WorldBoundary
 	playdate.graphics.setColor(playdate.graphics.kColorWhite)
 	playdate.graphics.fillPolygon(table.unpack(self.perspectiveRenderCoordinates))
 

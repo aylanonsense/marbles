@@ -48,7 +48,7 @@ function EditorPolygonMenuScreen:open(polygon)
 end
 
 function EditorPolygonMenuScreen:show()
-	scene.cursor.position.x, scene.cursor.position.y = self.polygon:getMidPoint()
+	scene.cursor.x, scene.cursor.y = self.polygon:getMidPoint()
 end
 
 function EditorPolygonMenuScreen:draw()
