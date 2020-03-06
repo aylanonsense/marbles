@@ -16,7 +16,7 @@ class("Exit").extends("LevelObject")
 
 function Exit:init(x, y, exitId)
   Exit.super.init(self, LevelObject.Type.Exit)
-  self.physCircle = self:addPhysicsObject(PhysCircle(x, y, 10))
+  self.physCircle = self:addPhysicsObject(PhysCircle(x, y, 14))
   self.health = 3
   if exitLookup[exitId] then
     self.exitId = exitId
@@ -45,7 +45,7 @@ function Exit:draw()
   if self.health < 3 then
     playdate.graphics.setFont(fonts.FullCircle)
     local labelWidth, labelHeight = playdate.graphics.getTextSize(self.label)
-    local labelX, labelY = x - labelWidth / 2, y + 23 * scale
+    local labelX, labelY = x - labelWidth / 2, y + 30 * scale
     playdate.graphics.setColor(playdate.graphics.kColorWhite)
     playdate.graphics.fillRect(labelX - 2, labelY - 1, labelWidth + 4, labelHeight + 2)
     playdate.graphics.setColor(playdate.graphics.kColorBlack)
