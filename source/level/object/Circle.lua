@@ -15,9 +15,9 @@ function Circle:draw()
 	x, y = camera.matrix:transformXY(x, y)
 	local radius = self.physCircle.radius * camera.scale
 	-- Fill circle
-  playdate.graphics.setPattern(patterns.Checkerboard)
-  playdate.graphics.fillCircleAtPoint(x, y, radius)
-  -- Draw outline
+	playdate.graphics.setPattern(patterns.Checkerboard)
+	playdate.graphics.fillCircleAtPoint(x, y, radius)
+	-- Draw outline
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
 	playdate.graphics.setLineWidth(1)
 	playdate.graphics.drawCircleAtPoint(x, y, radius)

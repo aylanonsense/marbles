@@ -1,5 +1,6 @@
 import "CoreLibs/object"
 import "CoreLibs/graphics"
+import "physics/physics"
 import "physics/PhysObject"
 import "physics/Collision"
 import "render/camera"
@@ -27,6 +28,25 @@ function PhysPoint:checkForCollisionWithBall(ball)
 	end
 end
 
+function PhysPoint:calculateSectors()
+	local sectorMinX = math.floor((self.x - physics.SECTOR_OVERLAP) / physics.SECTOR_SIZE)
+	local sectorMaxX = math.floor(self.x / physics.SECTOR_SIZE)
+	local sectorMinY = math.floor((self.y - physics.SECTOR_OVERLAP) / physics.SECTOR_SIZE)
+	local sectorMaxY = math.floor(self.y / physics.SECTOR_SIZE)
+	local sectors = {}
+	for x = sectorMinX, sectorMaxX do
+		for y = sectorMinY, sectorMaxY do
+			table.insert(sectors, x)
+			table.insert(sectors, y)
+		end
+	end
+	return sectors
+end
+
 function PhysPoint.deserialize(data)
-	return PhysPoint(data.x, data.y)
+	local point = PhysPoint(data.x, data.y)
+	if data.sectors then
+		point.sectors = data.sectors
+	end
+	return point
 end

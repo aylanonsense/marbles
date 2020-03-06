@@ -1,4 +1,5 @@
 import "CoreLibs/object"
+import "physics/physics"
 import "physics/PhysObject"
 import "physics/Collision"
 import "render/camera"
@@ -70,6 +71,23 @@ function PhysLine:checkForCollisionWithBall(ball)
 	end
 end
 
+function PhysLine:calculateSectors()
+	local x1, y1 = self.x, self.y
+	local x2, y2 = self.x + self.segment.x, self.y + self.segment.y
+	local sectorMinX = math.floor((math.min(x1, x2) - physics.SECTOR_OVERLAP) / physics.SECTOR_SIZE)
+	local sectorMaxX = math.floor(math.max(x1, x2) / physics.SECTOR_SIZE)
+	local sectorMinY = math.floor((math.min(y1, y2) - physics.SECTOR_OVERLAP) / physics.SECTOR_SIZE)
+	local sectorMaxY = math.floor(math.max(y1, y2) / physics.SECTOR_SIZE)
+	local sectors = {}
+	for x = sectorMinX, sectorMaxX do
+		for y = sectorMinY, sectorMaxY do
+			table.insert(sectors, x)
+			table.insert(sectors, y)
+		end
+	end
+	return sectors
+end
+
 function PhysLine:serialize()
 	local data = PhysLine.super.serialize(self)
 	data.x2 = self.x + self.segment.x
@@ -84,6 +102,9 @@ function PhysLine.deserialize(data)
 	local line = PhysLine(data.x, data.y, data.x2, data.y2)
 	if data.facing then
 		line.facing = data.facing
+	end
+	if data.sectors then
+		line.sectors = data.sectors
 	end
 	return line
 end

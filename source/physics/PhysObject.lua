@@ -62,12 +62,12 @@ function PhysObject:isMovable()
 end
 
 function PhysObject:add()
-	table.insert(physics.objects, self)
+	physics:addStaticObject(self)
 	return self
 end
 
 function PhysObject:remove()
-	removeItem(physics.objects, self)
+	physics:removeStaticObject(self)
 	return self
 end
 
@@ -82,10 +82,15 @@ end
 
 function PhysObject:checkForCollisionWithBall(ball) end
 
+function PhysObject:calculateSectors()
+	return {}
+end
+
 function PhysObject:serialize()
 	return {
 		type = self.type,
 		x = self.x,
-		y = self.y
+		y = self.y,
+		sectors = self:calculateSectors()
 	}
 end

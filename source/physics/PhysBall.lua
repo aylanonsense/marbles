@@ -9,11 +9,16 @@ function PhysBall:init(x, y, radius)
 	PhysBall.super.init(self, x, y, radius)
 	self.type = PhysObject.Type.PhysBall
 	self.mass = 1
-  self.maxSpeed = 400
-  self.isStatic = false
+	self.maxSpeed = 400
+	self.isStatic = false
 end
 
 function PhysBall:add()
-	table.insert(physics.balls, self)
-	return PhysBall.super.add(self)
+  physics:addBall(self)
+	return self
+end
+
+function PhysBall:remove()
+  physics:removeBall(self)
+  return self
 end

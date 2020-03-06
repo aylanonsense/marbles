@@ -1,4 +1,5 @@
 import "CoreLibs/object"
+import "physics/physics"
 import "physics/PhysObject"
 import "physics/Collision"
 import "utility/math"
@@ -66,6 +67,21 @@ function PhysArc:checkForCollisionWithBall(ball)
 	end
 end
 
+function PhysArc:calculateSectors()
+	local sectorMinX = math.floor((self.x - self.radius - physics.SECTOR_OVERLAP) / physics.SECTOR_SIZE)
+	local sectorMaxX = math.floor((self.x + self.radius) / physics.SECTOR_SIZE)
+	local sectorMinY = math.floor((self.y - self.radius - physics.SECTOR_OVERLAP) / physics.SECTOR_SIZE)
+	local sectorMaxY = math.floor((self.y + self.radius) / physics.SECTOR_SIZE)
+	local sectors = {}
+	for x = sectorMinX, sectorMaxX do
+		for y = sectorMinY, sectorMaxY do
+			table.insert(sectors, x)
+			table.insert(sectors, y)
+		end
+	end
+	return sectors
+end
+
 function PhysArc:serialize()
 	local data = PhysArc.super.serialize(self)
 	data.radius = self.radius
@@ -81,6 +97,9 @@ function PhysArc.deserialize(data)
 	local arc = PhysArc(data.x, data.y, data.radius, data.startAngle, data.endAngle)
 	if data.facing then
 		arc.facing = data.facing
+	end
+	if data.sectors then
+		arc.sectors = data.sectors
 	end
 	return arc
 end

@@ -1,5 +1,6 @@
 import "CoreLibs/object"
 import "CoreLibs/graphics"
+import "physics/physics"
 import "physics/PhysObject"
 import "physics/Collision"
 import "render/camera"
@@ -54,6 +55,21 @@ function PhysCircle:checkForCollisionWithBall(ball)
 	end
 end
 
+function PhysCircle:calculateSectors()
+	local sectorMinX = math.floor((self.x - self.radius - physics.SECTOR_OVERLAP) / physics.SECTOR_SIZE)
+	local sectorMaxX = math.floor((self.x + self.radius) / physics.SECTOR_SIZE)
+	local sectorMinY = math.floor((self.y - self.radius - physics.SECTOR_OVERLAP) / physics.SECTOR_SIZE)
+	local sectorMaxY = math.floor((self.y + self.radius) / physics.SECTOR_SIZE)
+	local sectors = {}
+	for x = sectorMinX, sectorMaxX do
+		for y = sectorMinY, sectorMaxY do
+			table.insert(sectors, x)
+			table.insert(sectors, y)
+		end
+	end
+	return sectors
+end
+
 function PhysCircle:serialize()
 	local data = PhysCircle.super.serialize(self)
 	data.radius = self.radius
@@ -67,6 +83,9 @@ function PhysCircle.deserialize(data)
 	local circle = PhysCircle(data.x1, data.y1, data.x2, data.y2)
 	if data.facing then
 		circle.facing = data.facing
+	end
+	if data.sectors then
+		circle.sectors = data.sectors
 	end
 	return circle
 end

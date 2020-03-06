@@ -90,6 +90,9 @@ end
 
 function LevelObject:addPhysicsObject(physObj)
 	table.insert(self.physObjects, physObj)
+	if not physObj.sectors then
+		physObj.sectors = physObj:calculateSectors()
+	end
 	physObj:setParent(self)
 	physObj:add()
 	return physObj
