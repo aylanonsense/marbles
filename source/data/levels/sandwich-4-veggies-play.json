@@ -2,21 +2,24 @@
 	"objects": [
 		 {
 			"exitId":"sandwich-veggies-cauliflower",
+			"icon":"Good",
 			"type":"Exit",
 			"x":0,
 			"y":160
 		},
 		 {
 			"exitId":"sandwich-veggies-cactus",
+			"icon":"Bad",
 			"type":"Exit",
 			"x":0,
 			"y":290
 		},
 		 {
 			"exitId":"sandwich-veggies-lettuce",
+			"icon":"Special",
 			"type":"Exit",
 			"x":0,
-			"y":30
+			"y":40
 		},
 		 {
 			"rotation":0,

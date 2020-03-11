@@ -1,22 +1,25 @@
 {
 	"objects": [
 		 {
-			"exitId":"sandwich-cheese-goat",
+			"exitId":"sandwich-cheese-swiss",
+			"icon":"Special",
 			"type":"Exit",
-			"x":-59,
-			"y":220
+			"x":0,
+			"y":50
 		},
 		 {
 			"exitId":"sandwich-cheese-paper",
+			"icon":"Bad",
 			"type":"Exit",
 			"x":60,
 			"y":220
 		},
 		 {
-			"exitId":"sandwich-cheese-swiss",
+			"exitId":"sandwich-cheese-goat",
+			"icon":"Good",
 			"type":"Exit",
-			"x":0,
-			"y":50
+			"x":-59,
+			"y":220
 		},
 		 {
 			"rotation":0,

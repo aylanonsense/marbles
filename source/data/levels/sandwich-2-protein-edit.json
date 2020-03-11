@@ -1,419 +1,472 @@
 {
-	"geometry": [
-		 {
-			"isWorldBoundary":true,
-			"lines": [
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"x":400,
-					"y":-79
-				},
-				 {
-					"x":400,
-					"y":530
-				},
-				 {
-					"x":100,
-					"y":530
-				},
-				 {
-					"x":100,
-					"y":420
-				},
-				 {
-					"x":65,
-					"y":390
-				},
-				 {
-					"x":30,
-					"y":420
-				},
-				 {
-					"x":30,
-					"y":530
-				},
-				 {
-					"x":-269,
-					"y":530
-				},
-				 {
-					"x":-269,
-					"y":-79
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"lines": [
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"x":-139,
-					"y":10
-				},
-				 {
-					"x":-169,
-					"y":40
-				},
-				 {
-					"x":-169,
-					"y":100
-				},
-				 {
-					"x":-219,
-					"y":100
-				},
-				 {
-					"x":-219,
-					"y":-29
-				},
-				 {
-					"x":350,
-					"y":-29
-				},
-				 {
-					"x":350,
-					"y":100
-				},
-				 {
-					"x":300,
-					"y":100
-				},
-				 {
-					"x":300,
-					"y":40
-				},
-				 {
-					"x":270,
-					"y":10
-				},
-				 {
-					"x":100,
-					"y":10
-				},
-				 {
-					"x":65,
-					"y":35
-				},
-				 {
-					"x":30,
-					"y":10
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"lines": [
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"x":210,
-					"y":100
-				},
-				 {
-					"x":210,
-					"y":370
-				},
-				 {
-					"x":150,
-					"y":420
-				},
-				 {
-					"x":150,
-					"y":480
-				},
-				 {
-					"x":350,
-					"y":480
-				},
-				 {
-					"x":350,
-					"y":150
-				},
-				 {
-					"x":250,
-					"y":150
-				},
-				 {
-					"x":250,
-					"y":100
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"lines": [
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				},
-				 {
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"x":-79,
-					"y":100
-				},
-				 {
-					"x":-79,
-					"y":370
-				},
-				 {
-					"x":-19,
-					"y":420
-				},
-				 {
-					"x":-19,
-					"y":480
-				},
-				 {
-					"x":-219,
-					"y":480
-				},
-				 {
-					"x":-219,
-					"y":150
-				},
-				 {
-					"x":-119,
-					"y":150
-				},
-				 {
-					"x":-119,
-					"y":100
-				}
-			],
-			"type":"Polygon"
-		}
-	],
-	"objects": [
-		 {
-			"exitId":"sandwich-protein-ham",
-			"type":"Exit",
-			"x":265,
-			"y":55
-		},
-		 {
-			"exitId":"sandwich-protein-powder",
-			"type":"Exit",
-			"x":65,
-			"y":335
-		},
-		 {
-			"exitId":"sandwich-protein-ostrich",
-			"type":"Exit",
-			"x":-134,
-			"y":55
-		},
-		 {
-			"rotation":45,
-			"type":"Booster",
-			"x":-24,
-			"y":245
-		},
-		 {
-			"rotation":-44,
-			"type":"Booster",
-			"x":155,
-			"y":245
-		},
-		 {
-			"rotation":-44,
-			"type":"Booster",
-			"x":185,
-			"y":135
-		},
-		 {
-			"rotation":-90,
-			"type":"Booster",
-			"x":375,
-			"y":505
-		},
-		 {
-			"rotation":-90,
-			"type":"Booster",
-			"x":25,
-			"y":35
-		},
-		 {
-			"rotation":-90,
-			"type":"Booster",
-			"x":-144,
-			"y":125
-		},
-		 {
-			"rotation":0,
-			"type":"Booster",
-			"x":5,
-			"y":505
-		},
-		 {
-			"rotation":90,
-			"type":"Booster",
-			"x":105,
-			"y":35
-		},
-		 {
-			"rotation":180,
-			"type":"Booster",
-			"x":-244,
-			"y":125
-		},
-		 {
-			"rotation":45,
-			"type":"Booster",
-			"x":-54,
-			"y":135
-		},
-		 {
-			"rotation":0,
-			"type":"Booster",
-			"x":125,
-			"y":505
-		},
-		 {
-			"rotation":90,
-			"type":"Booster",
-			"x":275,
-			"y":125
-		},
-		 {
-			"rotation":-44,
-			"type":"Booster",
-			"x":185,
-			"y":365
-		},
-		 {
-			"rotation":90,
-			"type":"Booster",
-			"x":-244,
-			"y":505
-		},
-		 {
-			"rotation":180,
-			"type":"Booster",
-			"x":375,
-			"y":125
-		},
-		 {
-			"rotation":45,
-			"type":"Booster",
-			"x":-54,
-			"y":365
-		}
-	],
-	"spawn": {
-		"x":65,
-		"y":-54
-	}
+    "geometry": [
+        {
+            "isWorldBoundary": true,
+            "lines": [
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                }
+            ],
+            "points": [
+                {
+                    "x": 400,
+                    "y": -79
+                },
+                {
+                    "x": 400,
+                    "y": 530
+                },
+                {
+                    "x": 100,
+                    "y": 530
+                },
+                {
+                    "x": 100,
+                    "y": 420
+                },
+                {
+                    "x": 65,
+                    "y": 390
+                },
+                {
+                    "x": 30,
+                    "y": 420
+                },
+                {
+                    "x": 30,
+                    "y": 530
+                },
+                {
+                    "x": -269,
+                    "y": 530
+                },
+                {
+                    "x": -269,
+                    "y": -79
+                }
+            ],
+            "radius": 0.0,
+            "type": "Polygon",
+            "x": 0,
+            "y": 0
+        },
+        {
+            "isWorldBoundary": false,
+            "lines": [
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                }
+            ],
+            "points": [
+                {
+                    "x": -139,
+                    "y": 10
+                },
+                {
+                    "x": -169,
+                    "y": 40
+                },
+                {
+                    "x": -169,
+                    "y": 100
+                },
+                {
+                    "x": -219,
+                    "y": 100
+                },
+                {
+                    "x": -219,
+                    "y": -29
+                },
+                {
+                    "x": 350,
+                    "y": -29
+                },
+                {
+                    "x": 350,
+                    "y": 100
+                },
+                {
+                    "x": 300,
+                    "y": 100
+                },
+                {
+                    "x": 300,
+                    "y": 40
+                },
+                {
+                    "x": 270,
+                    "y": 10
+                },
+                {
+                    "x": 100,
+                    "y": 10
+                },
+                {
+                    "x": 65,
+                    "y": 35
+                },
+                {
+                    "x": 30,
+                    "y": 10
+                }
+            ],
+            "radius": 0.0,
+            "type": "Polygon",
+            "x": 0,
+            "y": 0
+        },
+        {
+            "isWorldBoundary": false,
+            "lines": [
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                }
+            ],
+            "points": [
+                {
+                    "x": 210,
+                    "y": 100
+                },
+                {
+                    "x": 210,
+                    "y": 370
+                },
+                {
+                    "x": 150,
+                    "y": 420
+                },
+                {
+                    "x": 150,
+                    "y": 480
+                },
+                {
+                    "x": 350,
+                    "y": 480
+                },
+                {
+                    "x": 350,
+                    "y": 150
+                },
+                {
+                    "x": 250,
+                    "y": 150
+                },
+                {
+                    "x": 250,
+                    "y": 100
+                }
+            ],
+            "radius": 0.0,
+            "type": "Polygon",
+            "x": 0,
+            "y": 0
+        },
+        {
+            "isWorldBoundary": false,
+            "lines": [
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                },
+                {
+                    "radius": 0.0
+                }
+            ],
+            "points": [
+                {
+                    "x": -79,
+                    "y": 100
+                },
+                {
+                    "x": -79,
+                    "y": 370
+                },
+                {
+                    "x": -19,
+                    "y": 420
+                },
+                {
+                    "x": -19,
+                    "y": 480
+                },
+                {
+                    "x": -219,
+                    "y": 480
+                },
+                {
+                    "x": -219,
+                    "y": 150
+                },
+                {
+                    "x": -119,
+                    "y": 150
+                },
+                {
+                    "x": -119,
+                    "y": 100
+                }
+            ],
+            "radius": 0.0,
+            "type": "Polygon",
+            "x": 0,
+            "y": 0
+        }
+    ],
+    "objects": [
+        {
+            "exitId": "sandwich-protein-powder",
+            "rotation": 180,
+            "type": "Exit",
+            "icon": "Bad",
+            "x": 65,
+            "y": 335
+        },
+        {
+            "exitId": "sandwich-protein-ham",
+            "rotation": 180,
+            "type": "Exit",
+            "icon": "Special",
+            "x": -134,
+            "y": 55
+        },
+        {
+            "exitId": "sandwich-protein-ostrich",
+            "rotation": 180,
+            "type": "Exit",
+            "icon": "Good",
+            "x": 265,
+            "y": 55
+        },
+        {
+            "exitId": "",
+            "rotation": 45,
+            "type": "Booster",
+            "icon": "",
+            "x": -24,
+            "y": 245
+        },
+        {
+            "exitId": "",
+            "rotation": -44,
+            "type": "Booster",
+            "icon": "",
+            "x": 155,
+            "y": 245
+        },
+        {
+            "exitId": "",
+            "rotation": -44,
+            "type": "Booster",
+            "icon": "",
+            "x": 185,
+            "y": 135
+        },
+        {
+            "exitId": "",
+            "rotation": -90,
+            "type": "Booster",
+            "icon": "",
+            "x": 375,
+            "y": 505
+        },
+        {
+            "exitId": "",
+            "rotation": -90,
+            "type": "Booster",
+            "icon": "",
+            "x": 25,
+            "y": 35
+        },
+        {
+            "exitId": "",
+            "rotation": -90,
+            "type": "Booster",
+            "icon": "",
+            "x": -144,
+            "y": 125
+        },
+        {
+            "exitId": "",
+            "rotation": 0,
+            "type": "Booster",
+            "icon": "",
+            "x": 5,
+            "y": 505
+        },
+        {
+            "exitId": "",
+            "rotation": 90,
+            "type": "Booster",
+            "icon": "",
+            "x": 105,
+            "y": 35
+        },
+        {
+            "exitId": "",
+            "rotation": 180,
+            "type": "Booster",
+            "icon": "",
+            "x": -244,
+            "y": 125
+        },
+        {
+            "exitId": "",
+            "rotation": 45,
+            "type": "Booster",
+            "icon": "",
+            "x": -54,
+            "y": 135
+        },
+        {
+            "exitId": "",
+            "rotation": 0,
+            "type": "Booster",
+            "icon": "",
+            "x": 125,
+            "y": 505
+        },
+        {
+            "exitId": "",
+            "rotation": 90,
+            "type": "Booster",
+            "icon": "",
+            "x": 275,
+            "y": 125
+        },
+        {
+            "exitId": "",
+            "rotation": -44,
+            "type": "Booster",
+            "icon": "",
+            "x": 185,
+            "y": 365
+        },
+        {
+            "exitId": "",
+            "rotation": 90,
+            "type": "Booster",
+            "icon": "",
+            "x": -244,
+            "y": 505
+        },
+        {
+            "exitId": "",
+            "rotation": 180,
+            "type": "Booster",
+            "icon": "",
+            "x": 375,
+            "y": 125
+        },
+        {
+            "exitId": "",
+            "rotation": 45,
+            "type": "Booster",
+            "icon": "",
+            "x": -54,
+            "y": 365
+        }
+    ],
+    "spawn": {
+        "x": 65,
+        "y": -54
+    }
 }

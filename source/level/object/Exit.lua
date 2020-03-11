@@ -10,14 +10,17 @@ for _, exitData in ipairs(exitsData) do
   exitLookup[exitData.id] = exitData
 end
 
-local imageTable = playdate.graphics.imagetable.new("images/lightbulb.png")
+local imageTable = playdate.graphics.imagetable.new("images/lightbulbspecial.png")
+local imageTableBad = playdate.graphics.imagetable.new("images/lightbulbbad.png")
+local imageTableGood = playdate.graphics.imagetable.new("images/lightbulbgood.png")
 
 class("Exit").extends("LevelObject")
 
-function Exit:init(x, y, exitId)
+function Exit:init(x, y, exitId, icon)
   Exit.super.init(self, LevelObject.Type.Exit)
   self.physCircle = self:addPhysicsObject(PhysCircle(x, y, 14))
   self.health = 3
+  self.icon = icon
   if exitLookup[exitId] then
     self.exitId = exitId
   else
@@ -38,6 +41,12 @@ function Exit:draw()
 
   -- Draw the lightbulb
   local image = imageTable[4 - self.health]
+  if self.icon == "Bad" then
+    image = imageTableBad[4 - self.health]
+  end
+  if self.icon == "Good" then
+    image = imageTableGood[4 - self.health]
+  end
   local imageWidth, imageHeight = image:getSize()
   image:drawScaled(x - scale * imageWidth / 2, y - scale * imageHeight / 2 + scale * 5, scale)
 
@@ -96,9 +105,10 @@ end
 function Exit:serialize()
   local data = Exit.super.serialize(self)
   data.exitId = self.exitId
+  data.icon = self.icon
   return data
 end
 
 function Exit.deserialize(data)
-  return Exit(data.x, data.y, data.exitId)
+  return Exit(data.x, data.y, data.exitId, data.icon)
 end
