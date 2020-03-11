@@ -17,13 +17,24 @@ function EditorCircleMenuScreen:init()
 			},
 			{
 				text = "Radius",
-				increase = function()
-					self.radius += 5
+				change = function(dir, menu, option)
+					self.radius += dir * 5
 					self.circle.radius = math.abs(self.radius)
-				end,
-				decrease = function()
-					self.radius -= 5
-					self.circle.radius = math.abs(self.radius)
+					option.text = "Radius: " .. self.circle.radius
+				end
+			},
+			{
+				text = "Solid",
+				change = function(dir, menu, option)
+					self.circle.isSolid = not self.circle.isSolid
+					option.text = "Solid: " .. (self.circle.isSolid and "true" or "false")
+				end
+			},
+			{
+				text = "Visible",
+				change = function(dir, menu, option)
+					self.circle.isVisible = not self.circle.isVisible
+					option.text = "Visible: " .. (self.circle.isVisible and "true" or "false")
 				end
 			},
 			{
@@ -40,6 +51,9 @@ end
 function EditorCircleMenuScreen:open(circle)
 	self.circle = circle
 	self.radius = self.circle.radius
+	self.menu.options[2].text	= "Radius: " .. self.circle.radius
+	self.menu.options[3].text	= "Solid: " .. (self.circle.isSolid and "true" or "false")
+	self.menu.options[4].text	= "Visible: " .. (self.circle.isVisible and "true" or "false")
 end
 
 function EditorCircleMenuScreen:show()

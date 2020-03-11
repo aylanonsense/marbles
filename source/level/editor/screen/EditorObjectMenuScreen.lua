@@ -23,15 +23,9 @@ function EditorObjectMenuScreen:open(obj)
 	for _, fieldData in ipairs(self.obj:getEditableFields()) do
 		local option = {
 			text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field],
-			increase = function(menu, option)
+			change = function(dir, menu, option)
 				if fieldData.change then
-					fieldData.change(1)
-				end
-				option.text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
-			end,
-			decrease = function(menu, option)
-				if fieldData.change then
-					fieldData.change(-1)
+					fieldData.change(dir)
 				end
 				option.text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
 			end

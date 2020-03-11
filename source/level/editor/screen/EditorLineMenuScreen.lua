@@ -30,39 +30,49 @@ function EditorLineMenuScreen:init()
 			},
 			{
 				text = "Radius",
-				increase = function(screen, option)
+				change = function(dir, screen, option)
 					local prevRadius = self.line.radius
 					local dx = self.line.endPoint.x - self.line.startPoint.x
 					local dy = self.line.endPoint.y - self.line.startPoint.y
 					local smallestRadius = math.sqrt(dx * dx + dy * dy) / 2
-					if self.line.radius == 0 then
-						self.line.radius = smallestRadius
+					if dir > 0 then
+						if self.line.radius == 0 then
+							self.line.radius = smallestRadius
+						else
+							self.line.radius = 5 * math.floor(self.line.radius / 5) + ((self.line.radius >= 100 or self.line.radius <= -110) and 10 or 5)
+						end
+						if prevRadius < -smallestRadius and self.line.radius > -smallestRadius then
+							self.line.radius = -smallestRadius
+						elseif -smallestRadius < self.line.radius and self.line.radius < smallestRadius then
+							self.line.radius = 0
+						end
 					else
-						self.line.radius = 5 * math.floor(self.line.radius / 5) + ((self.line.radius >= 100 or self.line.radius <= -110) and 10 or 5)
-					end
-					if prevRadius < -smallestRadius and self.line.radius > -smallestRadius then
-						self.line.radius = -smallestRadius
-					elseif -smallestRadius < self.line.radius and self.line.radius < smallestRadius then
-						self.line.radius = 0
+						if self.line.radius == 0 then
+							self.line.radius = -smallestRadius
+						else
+							self.line.radius = 5 * math.ceil(self.line.radius / 5) - ((self.line.radius <= -100 or self.line.radius >= 110) and 10 or 5)
+						end
+						if prevRadius > smallestRadius and self.line.radius < smallestRadius then
+							self.line.radius = smallestRadius
+						elseif -smallestRadius < self.line.radius and self.line.radius < smallestRadius then
+							self.line.radius = 0
+						end
 					end
 					option.text = "Radius: " .. self.line.radius
-				end,
-				decrease = function(screen, option)
-					local prevRadius = self.line.radius
-					local dx = self.line.endPoint.x - self.line.startPoint.x
-					local dy = self.line.endPoint.y - self.line.startPoint.y
-					local smallestRadius = math.sqrt(dx * dx + dy * dy) / 2
-					if self.line.radius == 0 then
-						self.line.radius = -smallestRadius
-					else
-						self.line.radius = 5 * math.ceil(self.line.radius / 5) - ((self.line.radius <= -100 or self.line.radius >= 110) and 10 or 5)
-					end
-					if prevRadius > smallestRadius and self.line.radius < smallestRadius then
-						self.line.radius = smallestRadius
-					elseif -smallestRadius < self.line.radius and self.line.radius < smallestRadius then
-						self.line.radius = 0
-					end
-					option.text = "Radius: " .. self.line.radius
+				end
+			},
+			{
+				text = "Solid",
+				change = function(dir, menu, option)
+					self.line.isSolid = not self.line.isSolid
+					option.text = "Solid: " .. (self.line.isSolid and "true" or "false")
+				end
+			},
+			{
+				text = "Visible",
+				change = function(dir, menu, option)
+					self.line.isVisible = not self.line.isVisible
+					option.text = "Visible: " .. (self.line.isVisible and "true" or "false")
 				end
 			},
 			{
@@ -83,6 +93,8 @@ end
 function EditorLineMenuScreen:show()
 	scene.cursor.x, scene.cursor.y = self.line:getMidPoint()
 	self.menu.options[4].text = "Radius: " .. self.line.radius
+	self.menu.options[5].text	= "Solid: " .. (self.line.isSolid and "true" or "false")
+	self.menu.options[6].text	= "Visible: " .. (self.line.isVisible and "true" or "false")
 end
 
 function EditorLineMenuScreen:draw()

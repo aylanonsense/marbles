@@ -18,43 +18,40 @@ function EditorCameraMenuScreen:init()
 				end
 			},
 			{
-				text = "Scale (" .. camera.scale .. "x)",
-				increase = function(menu, option)
-					for i = 1, #CAMERA_SCALES do
-						if CAMERA_SCALES[i] > camera.scale then
-							camera.scale = CAMERA_SCALES[i]
-							scene.cursor.gridSize = CURSOR_GRID_SIZES[i]
-							option.text = "Scale (" .. camera.scale .. "x)"
-							break
+				text = "Scale: " .. camera.scale,
+				change = function(dir, menu, option)
+					if dir > 0 then
+						for i = 1, #CAMERA_SCALES do
+							if CAMERA_SCALES[i] > camera.scale then
+								camera.scale = CAMERA_SCALES[i]
+								scene.cursor.gridSize = CURSOR_GRID_SIZES[i]
+								option.text = "Scale: " .. camera.scale
+								break
+							end
 						end
-					end
-				end,
-				decrease = function(menu, option)
-					for i = #CAMERA_SCALES, 1, -1 do
-						if CAMERA_SCALES[i] < camera.scale then
-							camera.scale = CAMERA_SCALES[i]
-							scene.cursor.gridSize = CURSOR_GRID_SIZES[i]
-							option.text = "Scale (" .. camera.scale .. "x)"
-							break
+					else
+						for i = #CAMERA_SCALES, 1, -1 do
+							if CAMERA_SCALES[i] < camera.scale then
+								camera.scale = CAMERA_SCALES[i]
+								scene.cursor.gridSize = CURSOR_GRID_SIZES[i]
+								option.text = "Scale: " .. camera.scale
+								break
+							end
 						end
 					end
 				end
 			},
 			{
-				text = "Rotation (" .. camera.rotation .. ")",
-				increase = function(menu, option)
-					camera.rotation += 15
-					if camera.rotation >= 360 then
-						camera.rotation -= 360
-					end
-					option.text = "Rotation (" .. camera.rotation .. ")"
-				end,
-				decrease = function(menu, option)
-					camera.rotation -= 15
+				text = "Rotation: " .. camera.rotation,
+				change = function(dir, menu, option)
+					camera.rotation += dir * 15
 					if camera.rotation < 0 then
 						camera.rotation += 360
 					end
-					option.text = "Rotation (" .. camera.rotation .. ")"
+					if camera.rotation >= 360 then
+						camera.rotation -= 360
+					end
+					option.text = "Rotation: " .. camera.rotation
 				end
 			}
 		}), true)

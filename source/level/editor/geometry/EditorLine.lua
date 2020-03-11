@@ -21,11 +21,19 @@ function EditorLine:draw()
 	playdate.graphics.setLineWidth(1)
 	playdate.graphics.setLineCapStyle(playdate.graphics.kLineCapStyleRound)
 	if self.radius == 0 then
-		perspectiveDrawing.drawLine(self.startPoint.x, self.startPoint.y, self.endPoint.x, self.endPoint.y)
+		if self.isVisible then
+			perspectiveDrawing.drawLine(self.startPoint.x, self.startPoint.y, self.endPoint.x, self.endPoint.y)
+		else
+			perspectiveDrawing.drawDottedLine(self.startPoint.x, self.startPoint.y, self.endPoint.x, self.endPoint.y)
+		end
 	else
 		local arcX, arcY, radius, startAngle, endAngle = self:getArcProps()
 		if arcX and arcY then
-			perspectiveDrawing.drawArc(arcX, arcY, radius, startAngle, endAngle)
+			if self.isVisible then
+				perspectiveDrawing.drawArc(arcX, arcY, radius, startAngle, endAngle)
+			else
+				perspectiveDrawing.drawDottedArc(arcX, arcY, radius, startAngle, endAngle)
+			end
 		end
 	end
 end
@@ -77,7 +85,10 @@ function EditorLine:split()
 			if polygon.points[i] == self.startPoint then
 				local x, y = self:getMidPoint()
 				local midPoint = EditorPoint(x, y)
-				EditorLine(midPoint, self.endPoint)
+				midPoint.isSolid = self.isSolid
+				local line = EditorLine(midPoint, self.endPoint)
+				line.isSolid = self.isSolid
+				line.isVisible = self.isVisible
 				self.endPoint = midPoint
 				self.endPoint.incomingLine = self
 				table.insert(polygon.points, i + 1, midPoint)
@@ -92,7 +103,9 @@ function EditorLine:extrude()
 	local polygon = self.startPoint.polygon
 	if polygon then
 		local beforeStartPoint = EditorPoint(self.startPoint.x, self.startPoint.y)
+		beforeStartPoint.isSolid = self.isSolid
 		local afterEndPoint = EditorPoint(self.endPoint.x, self.endPoint.y)
+		afterEndPoint.isSolid = self.isSolid
 		-- Add a point before the start point
 		for i = 1, #polygon.points do
 			if polygon.points[i] == self.startPoint then
@@ -114,8 +127,12 @@ function EditorLine:extrude()
 		self.startPoint.incomingLine.endPoint = beforeStartPoint
 		afterEndPoint.outgoingLine = self.endPoint.outgoingLine
 		self.endPoint.outgoingLine.startPoint = afterEndPoint
-		EditorLine(beforeStartPoint, self.startPoint)
-		EditorLine(self.endPoint, afterEndPoint)
+		local line1 = EditorLine(beforeStartPoint, self.startPoint)
+		line1.isSolid = self.isSolid
+		line1.isVisible = self.isVisible
+		local line2 = EditorLine(self.endPoint, afterEndPoint)
+		line2.isSolid = self.isSolid
+		line2.isVisible = self.isVisible
 	end
 end
 

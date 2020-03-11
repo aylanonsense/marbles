@@ -16,53 +16,55 @@ function EditorPolygon:init(points)
 end
 
 function EditorPolygon:draw()
-	if not self.isWorldBoundary then
-		local coordinates = {}
-		for i = 1, #self.points do
-			self:addRenderCoordinatesToList(coordinates, self.points[i])
-		end
-		playdate.graphics.setColor(playdate.graphics.kColorBlack)
-		playdate.graphics.setPattern({ 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55 })
-		playdate.graphics.fillPolygon(table.unpack(coordinates))
-		playdate.graphics.setColor(playdate.graphics.kColorBlack)
-	else
-		-- Draw inverted polygon
-		local leftmostPoint, leftmostPointIndex
-		for i, point in ipairs(self.points) do
-			if not leftmostPoint or point.x < leftmostPoint.x then
-				leftmostPoint = point
-				leftmostPointIndex = i
+	if self.isVisible then
+		if not self.isWorldBoundary then
+			local coordinates = {}
+			for i = 1, #self.points do
+				self:addRenderCoordinatesToList(coordinates, self.points[i])
 			end
+			playdate.graphics.setColor(playdate.graphics.kColorBlack)
+			playdate.graphics.setPattern({ 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55 })
+			playdate.graphics.fillPolygon(table.unpack(coordinates))
+			playdate.graphics.setColor(playdate.graphics.kColorBlack)
+		else
+			-- Draw inverted polygon
+			local leftmostPoint, leftmostPointIndex
+			for i, point in ipairs(self.points) do
+				if not leftmostPoint or point.x < leftmostPoint.x then
+					leftmostPoint = point
+					leftmostPointIndex = i
+				end
+			end
+			local coordinates = {}
+			for i = leftmostPointIndex, #self.points do
+				self:addRenderCoordinatesToList(coordinates, self.points[i])
+			end
+			for i = 1, leftmostPointIndex - 1 do
+				self:addRenderCoordinatesToList(coordinates, self.points[i])
+			end
+			local isClockwise = self:isClockwise()
+			local x2, y2 = camera.matrix:transformXY(leftmostPoint.x, leftmostPoint.y)
+			table.insert(coordinates, x2)
+			table.insert(coordinates, y2)
+			x2, y2 = camera.matrix:transformXY(leftmostPoint.x - 9999, leftmostPoint.y)
+			table.insert(coordinates, x2)
+			table.insert(coordinates, y2)
+			x2, y2 = camera.matrix:transformXY(leftmostPoint.x, leftmostPoint.y + (isClockwise and 9999 or -9999))
+			table.insert(coordinates, x2)
+			table.insert(coordinates, y2)
+			x2, y2 = camera.matrix:transformXY(leftmostPoint.x + 9999, leftmostPoint.y)
+			table.insert(coordinates, x2)
+			table.insert(coordinates, y2)
+			x2, y2 = camera.matrix:transformXY(leftmostPoint.x, leftmostPoint.y + (isClockwise and -9999 or 9999))
+			table.insert(coordinates, x2)
+			table.insert(coordinates, y2)
+			x2, y2 = camera.matrix:transformXY(leftmostPoint.x - 9999, leftmostPoint.y)
+			table.insert(coordinates, x2)
+			table.insert(coordinates, y2)
+			playdate.graphics.setColor(playdate.graphics.kColorBlack)
+			playdate.graphics.setPattern({ 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55 })
+			playdate.graphics.fillPolygon(table.unpack(coordinates))
 		end
-		local coordinates = {}
-		for i = leftmostPointIndex, #self.points do
-			self:addRenderCoordinatesToList(coordinates, self.points[i])
-		end
-		for i = 1, leftmostPointIndex - 1 do
-			self:addRenderCoordinatesToList(coordinates, self.points[i])
-		end
-		local isClockwise = self:isClockwise()
-		local x2, y2 = camera.matrix:transformXY(leftmostPoint.x, leftmostPoint.y)
-		table.insert(coordinates, x2)
-		table.insert(coordinates, y2)
-		x2, y2 = camera.matrix:transformXY(leftmostPoint.x - 9999, leftmostPoint.y)
-		table.insert(coordinates, x2)
-		table.insert(coordinates, y2)
-		x2, y2 = camera.matrix:transformXY(leftmostPoint.x, leftmostPoint.y + (isClockwise and 9999 or -9999))
-		table.insert(coordinates, x2)
-		table.insert(coordinates, y2)
-		x2, y2 = camera.matrix:transformXY(leftmostPoint.x + 9999, leftmostPoint.y)
-		table.insert(coordinates, x2)
-		table.insert(coordinates, y2)
-		x2, y2 = camera.matrix:transformXY(leftmostPoint.x, leftmostPoint.y + (isClockwise and -9999 or 9999))
-		table.insert(coordinates, x2)
-		table.insert(coordinates, y2)
-		x2, y2 = camera.matrix:transformXY(leftmostPoint.x - 9999, leftmostPoint.y)
-		table.insert(coordinates, x2)
-		table.insert(coordinates, y2)
-		playdate.graphics.setColor(playdate.graphics.kColorBlack)
-		playdate.graphics.setPattern({ 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55 })
-		playdate.graphics.fillPolygon(table.unpack(coordinates))
 	end
 	-- Draw lines
 	playdate.graphics.setPattern({})

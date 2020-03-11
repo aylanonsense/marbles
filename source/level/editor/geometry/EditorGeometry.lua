@@ -12,6 +12,8 @@ EditorGeometry.Type = {
 function EditorGeometry:init(type)
 	EditorGeometry.super.init(self)
 	self.type = type
+  self.isSolid = true
+  self.isVisible = true
 end
 
 function EditorGeometry:draw() end

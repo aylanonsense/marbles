@@ -13,13 +13,18 @@ function EditorCircle:init(x, y, radius)
 end
 
 function EditorCircle:draw()
-	playdate.graphics.setColor(playdate.graphics.kColorBlack)
-	playdate.graphics.setPattern({ 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55 })
-	perspectiveDrawing.fillCircle(self.x, self.y, self.radius)
-	playdate.graphics.setPattern({})
-	playdate.graphics.setColor(playdate.graphics.kColorBlack)
-	playdate.graphics.setLineWidth(1)
-	perspectiveDrawing.drawCircle(self.x, self.y, self.radius)
+	if self.isVisible then
+		playdate.graphics.setColor(playdate.graphics.kColorBlack)
+		playdate.graphics.setPattern({ 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55, 0xaa, 0x55 })
+		perspectiveDrawing.fillCircle(self.x, self.y, self.radius)
+		playdate.graphics.setPattern({})
+		playdate.graphics.setColor(playdate.graphics.kColorBlack)
+		playdate.graphics.setLineWidth(1)
+		perspectiveDrawing.drawCircle(self.x, self.y, self.radius)
+	else
+		playdate.graphics.setColor(playdate.graphics.kColorBlack)
+		perspectiveDrawing.drawDottedCircle(self.x, self.y, self.radius)
+	end
 end
 
 function EditorCircle:getEditTargets()

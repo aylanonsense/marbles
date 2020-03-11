@@ -101,24 +101,13 @@ function EditorMenu:select()
 	end
 end
 
-function EditorMenu:increase()
+function EditorMenu:change(dir)
 	if self.childMenu then
-		self.childMenu:increase()
+		self.childMenu:change()
 	else
 		local option = self.options[self.highlightedOptionIndex]
-		if option.increase then
-			option.increase(self, option)
-		end
-	end
-end
-
-function EditorMenu:decrease()
-	if self.childMenu then
-		self.childMenu:decrease()
-	else
-		local option = self.options[self.highlightedOptionIndex]
-		if option.decrease then
-			option.decrease(self, option)
+		if option.change then
+			option.change(dir, self, option)
 		end
 	end
 end

@@ -32,6 +32,32 @@ function EditorPolygonMenuScreen:init()
 				end
 			},
 			{
+				text = "Solid",
+				change = function(dir, menu, option)
+					self.polygon.isSolid = not self.polygon.isSolid
+					for _, point in ipairs(self.polygon.points) do
+						point.isSolid = self.polygon.isSolid
+						if point.outgoingLine then
+							point.outgoingLine.isSolid = self.polygon.isSolid
+						end
+					end
+					option.text = "Solid: " .. (self.polygon.isSolid and "true" or "false")
+				end
+			},
+			{
+				text = "Visible",
+				change = function(dir, menu, option)
+					self.polygon.isVisible = not self.polygon.isVisible
+					for _, point in ipairs(self.polygon.points) do
+						point.isVisible = self.polygon.isVisible
+						if point.outgoingLine then
+							point.outgoingLine.isVisible = self.polygon.isVisible
+						end
+					end
+					option.text = "Visible: " .. (self.polygon.isVisible and "true" or "false")
+				end
+			},
+			{
 				text = "Delete",
 				selected = function()
 					if self.polygon:delete() then
@@ -45,6 +71,8 @@ end
 function EditorPolygonMenuScreen:open(polygon)
 	self.polygon = polygon
 	self.menu.options[2].text = polygon.isWorldBoundary and "Convert to polygon" or "Set as world boundary"
+	self.menu.options[3].text	= "Solid: " .. (self.polygon.isSolid and "true" or "false")
+	self.menu.options[4].text	= "Visible: " .. (self.polygon.isVisible and "true" or "false")
 end
 
 function EditorPolygonMenuScreen:show()

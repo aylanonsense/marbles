@@ -25,7 +25,7 @@ end
 
 function PhysArc:draw()
 	local x, y = camera.matrix:transformXY(self.x, self.y)
-	playdate.graphics.drawArc(x, y, self.radius, self.radius, self.startAngle - camera.rotation, self.endAngle - camera.rotation)
+	playdate.graphics.drawArc(x, y, self.radius, self.startAngle - camera.rotation, self.endAngle - camera.rotation)
 end
 
 function PhysArc:checkForCollisionWithBall(ball)

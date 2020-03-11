@@ -15,6 +15,13 @@ function EditorPointMenuScreen:init()
 				end
 			},
 			{
+				text = "Solid",
+				change = function(dir, menu, option)
+					self.point.isSolid = not self.point.isSolid
+					option.text = "Solid: " .. (self.point.isSolid and "true" or "false")
+				end
+			},
+			{
 				text = "Delete",
 				selected = function()
 					if self.point:delete() then
@@ -27,6 +34,7 @@ end
 
 function EditorPointMenuScreen:open(point)
 	self.point = point
+	self.menu.options[2].text	= "Solid: " .. (self.point.isSolid and "true" or "false")
 end
 
 function EditorPointMenuScreen:show()

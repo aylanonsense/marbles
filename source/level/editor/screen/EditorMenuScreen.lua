@@ -37,9 +37,9 @@ function EditorMenuScreen:downButtonDown()
 end
 
 function EditorMenuScreen:leftButtonDown()
-	self.menu:decrease()
+	self.menu:change(-1)
 end
 
 function EditorMenuScreen:rightButtonDown()
-	self.menu:increase()
+	self.menu:change(1)
 end

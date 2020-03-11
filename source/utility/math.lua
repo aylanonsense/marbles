@@ -18,6 +18,5 @@ function drawableAngleToTrigAngle(angle)
 end
 
 function trigAngleToDrawableAngle(angle)
-	local drawableAngle = 90 + angle * 180 / math.pi
-	return (drawableAngle < 0) and (drawableAngle + 360) or drawableAngle
+	return (((90 + angle * 180 / math.pi) % 360) + 360) % 360
 end
