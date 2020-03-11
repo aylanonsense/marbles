@@ -24,6 +24,46 @@
       "name": "Sandwich 5 - Condiments",
       "editFile": "sandwich-5-condiments-edit.json",
       "playFile": "sandwich-5-condiments-play.json"
-    }
+    },
+    {
+			"name": "Pickle - Cups",
+			"editFile": "pickle-cups-edit.json",
+			"playFile": "pickle-cups-play.json"
+		},
+		{
+		  "name": "Pickle - Star",
+		  "editFile": "pickle-star-edit.json",
+		  "playFile": "pickle-star-play.json"
+		},
+		{
+		  "name": "Pickle - Tower",
+		  "editFile": "pickle-tower-edit.json",
+		  "playFile": "pickle-tower-play.json"
+		},
+		{
+		  "name": "Pickle - Death",
+		  "editFile": "pickle-death-edit.json",
+		  "playFile": "pickle-death-play.json"
+		},
+		{
+		  "name": "Viper - Processor",
+		  "editFile": "viper-processor-edit.json",
+		  "playFile": "viper-processor-play.json"
+		},
+		{
+		  "name": "Viper - Torso",
+		  "editFile": "viper-torso-edit.json",
+		  "playFile": "viper-torso-play.json"
+		},
+		{
+		  "name": "Viper - Legs",
+		  "editFile": "viper-legs-edit.json",
+		  "playFile": "viper-legs-play.json"
+		},
+		{
+		  "name": "Viper - Head",
+		  "editFile": "viper-head-edit.json",
+		  "playFile": "viper-head-play.json"
+		}
   ]
 }

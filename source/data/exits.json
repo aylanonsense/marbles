@@ -93,6 +93,150 @@
       "label": "Mayo",
       "sandwichText": "with mayo",
       "sandwichScore": 5
+    },
+    {
+      "id": "pickle-cups-good",
+      "label": "Good",
+      "sandwichText": "good",
+      "sandwichScore": 3
+    },
+    {
+      "id": "pickle-cups-bad",
+      "label": "Bad",
+      "sandwichText": "bad",
+      "sandwichScore": 1
+    },
+    {
+      "id": "pickle-cups-special",
+      "label": "Special",
+      "sandwichText": "special",
+      "sandwichScore": 5
+    },
+    {
+      "id": "pickle-star-good",
+      "label": "Good",
+      "sandwichText": "good",
+      "sandwichScore": 3
+    },
+    {
+      "id": "pickle-star-bad",
+      "label": "Bad",
+      "sandwichText": "bad",
+      "sandwichScore": 1
+    },
+    {
+      "id": "pickle-star-special",
+      "label": "Special",
+      "sandwichText": "special",
+      "sandwichScore": 5
+    },
+    {
+      "id": "pickle-tower-good",
+      "label": "Good",
+      "sandwichText": "good",
+      "sandwichScore": 3
+    },
+    {
+      "id": "pickle-tower-bad",
+      "label": "Bad",
+      "sandwichText": "bad",
+      "sandwichScore": 1
+    },
+    {
+      "id": "pickle-tower-special",
+      "label": "Special",
+      "sandwichText": "special",
+      "sandwichScore": 5
+    },
+    {
+      "id": "pickle-death-good",
+      "label": "Good",
+      "sandwichText": "good",
+      "sandwichScore": 3
+    },
+    {
+      "id": "pickle-death-bad",
+      "label": "Bad",
+      "sandwichText": "bad",
+      "sandwichScore": 1
+    },
+    {
+      "id": "pickle-death-special",
+      "label": "Special",
+      "sandwichText": "special",
+      "sandwichScore": 5
+    },
+    {
+      "id": "viper-processor-good",
+      "label": "Good",
+      "sandwichText": "good",
+      "sandwichScore": 3
+    },
+    {
+      "id": "viper-processor-bad",
+      "label": "Bad",
+      "sandwichText": "bad",
+      "sandwichScore": 1
+    },
+    {
+      "id": "viper-processor-special",
+      "label": "Special",
+      "sandwichText": "special",
+      "sandwichScore": 5
+    },
+    {
+      "id": "viper-torso-good",
+      "label": "Good",
+      "sandwichText": "good",
+      "sandwichScore": 3
+    },
+    {
+      "id": "viper-torso-bad",
+      "label": "Bad",
+      "sandwichText": "bad",
+      "sandwichScore": 1
+    },
+    {
+      "id": "viper-torso-special",
+      "label": "Special",
+      "sandwichText": "special",
+      "sandwichScore": 5
+    },
+    {
+      "id": "viper-legs-good",
+      "label": "Good",
+      "sandwichText": "good",
+      "sandwichScore": 3
+    },
+    {
+      "id": "viper-legs-bad",
+      "label": "Bad",
+      "sandwichText": "bad",
+      "sandwichScore": 1
+    },
+    {
+      "id": "viper-legs-special",
+      "label": "Special",
+      "sandwichText": "special",
+      "sandwichScore": 5
+    },
+    {
+      "id": "viper-head-good",
+      "label": "Good",
+      "sandwichText": "good",
+      "sandwichScore": 3
+    },
+    {
+      "id": "viper-head-bad",
+      "label": "Bad",
+      "sandwichText": "bad",
+      "sandwichScore": 1
+    },
+    {
+      "id": "viper-head-special",
+      "label": "Special",
+      "sandwichText": "special",
+      "sandwichScore": 5
     }
   ]
 }
