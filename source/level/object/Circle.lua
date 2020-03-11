@@ -9,6 +9,7 @@ function Circle:init(x, y, radius)
 	Circle.super.init(self, LevelObject.Type.Circle)
 	self.physCircle = self:addPhysicsObject(PhysCircle(x, y, radius))
 	self.isVisible = true
+	self.fillPattern = 'Grey'
 end
 
 function Circle:draw()
@@ -16,9 +17,11 @@ function Circle:draw()
 		local x, y = self:getPosition()
 		x, y = camera.matrix:transformXY(x, y)
 		local radius = self.physCircle.radius * camera.scale
-		-- Fill circle
-		playdate.graphics.setPattern(patterns.Checkerboard)
-		playdate.graphics.fillCircleAtPoint(x, y, radius)
+		if self.fillPattern ~= 'Transparent' then
+			-- Fill circle
+			playdate.graphics.setPattern(patterns[self.fillPattern])
+			playdate.graphics.fillCircleAtPoint(x, y, radius)
+		end
 		-- Draw outline
 		playdate.graphics.setColor(playdate.graphics.kColorBlack)
 		playdate.graphics.setLineWidth(1)
@@ -35,6 +38,9 @@ function Circle:serialize()
 	if not self.isVisible then
 		data.isVisible = false
 	end
+	if self.fillPattern ~= 'Grey' then
+		data.fillPattern = self.fillPattern
+	end
 	return data
 end
 
@@ -45,6 +51,9 @@ function Circle.deserialize(data)
 	end
 	if data.isVisible == false then
 		circle.isVisible = false
+	end
+	if data.fillPattern then
+		circle.fillPattern = data.fillPattern
 	end
 	return circle
 end

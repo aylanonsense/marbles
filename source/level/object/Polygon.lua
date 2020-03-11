@@ -18,6 +18,7 @@ function Polygon:init(physPoints, physLinesAndArcs, fillCoordinates, lineCoordin
 	self.fillCoordinates = fillCoordinates
 	self.lineCoordinates = lineCoordinates
 	self.perspectiveFillCoordinates = {}
+	self.fillPattern = 'Grey'
 end
 
 function Polygon:draw()
@@ -27,9 +28,11 @@ function Polygon:draw()
 			self.perspectiveFillCoordinates[i] = x
 			self.perspectiveFillCoordinates[i + 1] = y
 		end
-		-- Fill in the polygon
-		playdate.graphics.setPattern(patterns.Checkerboard)
-		playdate.graphics.fillPolygon(table.unpack(self.perspectiveFillCoordinates))
+		if self.fillPattern ~= 'Transparent' then
+			-- Fill in the polygon
+			playdate.graphics.setPattern(patterns[self.fillPattern])
+			playdate.graphics.fillPolygon(table.unpack(self.perspectiveFillCoordinates))
+		end
 	end
 
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
@@ -78,6 +81,9 @@ function Polygon:serialize()
 	for _, physObj in ipairs(self.physLinesAndArcs) do
 		table.insert(data.linesAndArcs, physObj:serialize())
 	end
+	if self.fillPattern ~= 'Grey' then
+		data.fillPattern = self.fillPattern
+	end
 	return data
 end
 
@@ -92,5 +98,9 @@ function Polygon.deserialize(data)
 	for _, physData in ipairs(data.linesAndArcs) do
 		table.insert(physLinesAndArcs, physObjectByType[physData.type].deserialize(physData))
 	end
-	return Polygon(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
+	local polygon = Polygon(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
+	if data.fillPattern then
+		polygon.fillPattern = data.fillPattern
+	end
+	return polygon
 end

@@ -50,5 +50,9 @@ function WorldBoundary.deserialize(data)
 	for _, physData in ipairs(data.linesAndArcs) do
 		table.insert(physLinesAndArcs, physObjectByType[physData.type].deserialize(physData))
 	end
-	return WorldBoundary(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
+	local worldBoundary = WorldBoundary(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
+	if data.fillPattern then
+		worldBoundary.fillPattern = data.fillPattern
+	end
+	return worldBoundary
 end

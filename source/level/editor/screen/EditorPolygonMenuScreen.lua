@@ -1,8 +1,10 @@
 import "level/editor/EditorMenu"
 import "level/editor/screen/EditorMenuScreen"
 import "level/editor/screen/EditorMoveGeometryScreen"
+import "render/patterns"
 
 class("EditorPolygonMenuScreen").extends("EditorMenuScreen")
+
 
 function EditorPolygonMenuScreen:init()
 	self.polygon = nil
@@ -58,6 +60,26 @@ function EditorPolygonMenuScreen:init()
 				end
 			},
 			{
+				text = "Pattern",
+				change = function(dir, menu, option)
+					local patternIndex
+					for i, patternName in ipairs(patternNames) do
+						if self.polygon.fillPattern == patternName then
+							patternIndex = i
+							break
+						end
+					end
+					patternIndex += dir
+					if patternIndex < 1 then
+						patternIndex = #patternNames
+					elseif patternIndex > #patternNames then
+						patternIndex = 1
+					end
+					self.polygon.fillPattern = patternNames[patternIndex]
+					option.text = "Pattern: " .. self.polygon.fillPattern
+				end
+			},
+			{
 				text = "Delete",
 				selected = function()
 					if self.polygon:delete() then
@@ -73,6 +95,7 @@ function EditorPolygonMenuScreen:open(polygon)
 	self.menu.options[2].text = polygon.isWorldBoundary and "Convert to polygon" or "Set as world boundary"
 	self.menu.options[3].text	= "Solid: " .. (self.polygon.isSolid and "true" or "false")
 	self.menu.options[4].text	= "Visible: " .. (self.polygon.isVisible and "true" or "false")
+	self.menu.options[5].text	= "Pattern: " .. self.polygon.fillPattern
 end
 
 function EditorPolygonMenuScreen:show()

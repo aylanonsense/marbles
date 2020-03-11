@@ -81,9 +81,11 @@ function EditorTestLevelScene:draw()
 
 	-- If there's a world boundary, render a bit differently
 	if self.worldBoundary then
-		-- Fill the whole screen with checkerboard
-		playdate.graphics.setPattern(patterns.Checkerboard)
-		playdate.graphics.fillRect(-10, -10, camera.screenWidth + 20, camera.screenHeight + 20)
+		if self.worldBoundary.fillPattern ~= 'Transparent' then
+			-- Fill the whole screen
+			playdate.graphics.setPattern(patterns[self.worldBoundary.fillPattern])
+			playdate.graphics.fillRect(-10, -10, camera.screenWidth + 20, camera.screenHeight + 20)
+		end
 
 		-- Draw the WorldBoundary, which'll cut out a white area
 		self.worldBoundary:draw()

@@ -27,6 +27,9 @@ function serializeEditorLevelData()
 				isSolid = geom.isSolid,
 				isVisible = geom.isVisible
 			}
+			if geom.fillPattern ~= 'Grey' then
+				polygonData.fillPattern = geom.fillPattern
+			end
 			if geom.isWorldBoundary then
 				polygonData.isWorldBoundary = true
 			end
@@ -53,6 +56,9 @@ function serializeEditorLevelData()
 				isSolid = geom.isSolid,
 				isVisible = geom.isVisible
 			}
+			if geom.fillPattern ~= 'Grey' then
+				circleData.fillPattern = geom.fillPattern
+			end
 			table.insert(geometryData, circleData)
 		end
 	end
@@ -100,6 +106,9 @@ function deserializeEditorLevelData(levelData)
 			if geomData.isVisible == false then
 				polygon.isVisible = false
 			end
+			if geomData.fillPattern then
+				polygon.fillPattern = geomData.fillPattern
+			end
 			if geomData.isWorldBoundary then
 				polygon.isWorldBoundary = true
 				scene.worldBoundary = polygon
@@ -113,6 +122,9 @@ function deserializeEditorLevelData(levelData)
 			end
 			if geomData.isVisible == false then
 				circle.isVisible = false
+			end
+			if geomData.fillPattern then
+				circle.fillPattern = geomData.fillPattern
 			end
 			table.insert(scene.geometry, circle)
 		end
@@ -248,9 +260,15 @@ function serializePlayableLevelData(levelData)
 			end
 			if geom.isWorldBoundary then
 				local worldBoundary = WorldBoundary(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
+				if geom.fillpattern ~= 'Grey' then
+					worldBoundary.fillPattern = geom.fillPattern
+				end
 				table.insert(objectData, worldBoundary:serialize())
 			else
 				local polygon = Polygon(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
+				if geom.fillpattern ~= 'Grey' then
+					polygon.fillPattern = geom.fillPattern
+				end
 				table.insert(objectData, polygon:serialize())
 			end
 		-- Serialize circles as objects
@@ -261,6 +279,9 @@ function serializePlayableLevelData(levelData)
 			end
 			if not geom.isSolid then
 				circle.physCircle.isEnabled = false
+			end
+			if geom.fillpattern ~= 'Grey' then
+				circle.fillPattern = geom.fillPattern
 			end
 			table.insert(objectData, circle:serialize())
 		end
