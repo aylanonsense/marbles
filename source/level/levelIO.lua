@@ -73,8 +73,8 @@ function saveLevelData(levelInfo, playableLevelData, editorLevelData)
 		--  datastore which'll mask that level from now on
 		local levelInfoToSave = {
 			name = levelInfo.name,
-			playFile = "user-" .. levelInfo.playFile,
-			editFile = "user-" .. levelInfo.editFile,
+			playFile = levelInfo.playFile,
+			editFile = levelInfo.editFile,
 			overwrittenLevelName = levelInfo.name
 		}
 		local isFirstTimeOverwritingLevel = true
@@ -102,7 +102,7 @@ function createNewLevel(name)
 	print("Creating a new level named " .. name)
 	local userLevels = playdate.datastore.read("user-levels") or { levels = {} }
 	print("  " .. #userLevels.levels .. " user-created " .. (#userLevels.levels == 1 and "level" or "levels") .. " exist already")
-	local file = "user-"
+	local file = ""
 	for i = 1, #name do
 		local c = string.sub(name, i, i)
 		if c == " " or c == "_" then
