@@ -41,6 +41,9 @@ function Circle:serialize()
 	if self.fillPattern ~= 'Grey' then
 		data.fillPattern = self.fillPattern
 	end
+	if self.layer ~= 0 then
+		data.layer = self.layer
+	end
 	return data
 end
 
@@ -54,6 +57,9 @@ function Circle.deserialize(data)
 	end
 	if data.fillPattern then
 		circle.fillPattern = data.fillPattern
+	end
+	if data.layer then
+		circle.layer = data.layer
 	end
 	return circle
 end

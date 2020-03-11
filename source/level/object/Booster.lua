@@ -62,5 +62,9 @@ function Booster:serialize()
 end
 
 function Booster.deserialize(data)
-	return Booster(data.x, data.y, data.rotation)
+	local booster = Booster(data.x, data.y, data.rotation)
+	if data.layer then
+		booster.layer = data.layer
+	end
+	return booster
 end

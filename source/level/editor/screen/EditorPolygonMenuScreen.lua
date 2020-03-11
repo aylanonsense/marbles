@@ -80,6 +80,14 @@ function EditorPolygonMenuScreen:init()
 				end
 			},
 			{
+				text = "Layer",
+				change = function(dir, menu, option)
+					self.polygon.layer += dir
+					option.text = "Layer: " .. self.polygon.layer
+					scene:sortGeometryAndObjects()
+				end
+			},
+			{
 				text = "Delete",
 				selected = function()
 					if self.polygon:delete() then
@@ -96,6 +104,7 @@ function EditorPolygonMenuScreen:open(polygon)
 	self.menu.options[3].text	= "Solid: " .. (self.polygon.isSolid and "true" or "false")
 	self.menu.options[4].text	= "Visible: " .. (self.polygon.isVisible and "true" or "false")
 	self.menu.options[5].text	= "Pattern: " .. self.polygon.fillPattern
+	self.menu.options[6].text	= "Layer: " .. self.polygon.layer
 end
 
 function EditorPolygonMenuScreen:show()

@@ -33,6 +33,9 @@ function serializeEditorLevelData()
 			if geom.isWorldBoundary then
 				polygonData.isWorldBoundary = true
 			end
+			if geom.layer ~= 0 then
+				polygonData.layer = geom.layer
+			end
 			for _, point in ipairs(geom.points) do
 				table.insert(polygonData.points, {
 					x = point.x,
@@ -58,6 +61,9 @@ function serializeEditorLevelData()
 			}
 			if geom.fillPattern ~= 'Grey' then
 				circleData.fillPattern = geom.fillPattern
+			end
+			if geom.layer ~= 0 then
+				circleData.layer = geom.layer
 			end
 			table.insert(geometryData, circleData)
 		end
@@ -109,6 +115,9 @@ function deserializeEditorLevelData(levelData)
 			if geomData.fillPattern then
 				polygon.fillPattern = geomData.fillPattern
 			end
+			if geomData.layer then
+				polygon.layer = geomData.layer
+			end
 			if geomData.isWorldBoundary then
 				polygon.isWorldBoundary = true
 				scene.worldBoundary = polygon
@@ -126,9 +135,13 @@ function deserializeEditorLevelData(levelData)
 			if geomData.fillPattern then
 				circle.fillPattern = geomData.fillPattern
 			end
+			if geomData.layer then
+				circle.layer = geomData.layer
+			end
 			table.insert(scene.geometry, circle)
 		end
 	end
+	scene:sortGeometryAndObjects()
 end
 
 function serializePlayableLevelData(levelData)
@@ -266,6 +279,7 @@ function serializePlayableLevelData(levelData)
 				table.insert(objectData, worldBoundary:serialize())
 			else
 				local polygon = Polygon(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
+				polygon.layer = geom.layer
 				if geom.fillpattern ~= 'Grey' then
 					polygon.fillPattern = geom.fillPattern
 				end
@@ -274,6 +288,7 @@ function serializePlayableLevelData(levelData)
 		-- Serialize circles as objects
 		elseif geom.type == EditorGeometry.Type.Circle then
 			local circle = Circle(geom.x, geom.y, geom.radius)
+			circle.layer = geom.layer
 			if not geom.isVisible then
 				circle.isVisible = false
 			end

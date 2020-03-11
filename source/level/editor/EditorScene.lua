@@ -89,3 +89,12 @@ function EditorScene:saveAndTestLevel(levelInfo)
 	self:saveLevel(levelInfo)
 	Scene.setScene(EditorTestLevelScene(levelInfo, self))
 end
+
+function EditorScene:sortGeometryAndObjects()
+	table.sort(self.geometry, function(a, b)
+		return (a.isWorldBoundary and -999 or a.layer) < (b.isWorldBoundary and -999 or b.layer)
+	end)
+	table.sort(self.objects, function(a, b)
+		return a.layer < b.layer
+	end)
+end

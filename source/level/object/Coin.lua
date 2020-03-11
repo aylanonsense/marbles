@@ -30,5 +30,9 @@ function Coin:serialize()
 end
 
 function Coin.deserialize(data)
-	return Coin(data.x, data.y)
+	local coin = Coin(data.x, data.y)
+	if data.layer then
+		coin.layer = data.layer
+	end
+	return coin
 end

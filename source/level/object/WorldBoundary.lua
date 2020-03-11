@@ -54,5 +54,8 @@ function WorldBoundary.deserialize(data)
 	if data.fillPattern then
 		worldBoundary.fillPattern = data.fillPattern
 	end
+	if data.layer then
+		worldBoundary.layer = data.layer
+	end
 	return worldBoundary
 end

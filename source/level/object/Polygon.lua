@@ -75,6 +75,9 @@ function Polygon:serialize()
 		fillCoordinates = self.fillCoordinates,
 		lineCoordinates = self.lineCoordinates
 	}
+	if self.layer ~= 0 then
+		data.layer = self.layer
+	end
 	for _, point in ipairs(self.physPoints) do
 		table.insert(data.points, point:serialize())
 	end
@@ -101,6 +104,9 @@ function Polygon.deserialize(data)
 	local polygon = Polygon(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
 	if data.fillPattern then
 		polygon.fillPattern = data.fillPattern
+	end
+	if data.layer then
+		polygon.layer = data.layer
 	end
 	return polygon
 end

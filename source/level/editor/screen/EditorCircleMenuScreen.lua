@@ -38,6 +38,14 @@ function EditorCircleMenuScreen:init()
 				end
 			},
 			{
+				text = "Layer",
+				change = function(dir, menu, option)
+					self.circle.layer += dir
+					option.text = "Layer: " .. self.circle.layer
+					scene:sortGeometryAndObjects()
+				end
+			},
+			{
 				text = "Delete",
 				selected = function()
 					if self.circle:delete() then
@@ -54,6 +62,7 @@ function EditorCircleMenuScreen:open(circle)
 	self.menu.options[2].text	= "Radius: " .. self.circle.radius
 	self.menu.options[3].text	= "Solid: " .. (self.circle.isSolid and "true" or "false")
 	self.menu.options[4].text	= "Visible: " .. (self.circle.isVisible and "true" or "false")
+	self.menu.options[5].text	= "Layer: " .. self.circle.layer
 end
 
 function EditorCircleMenuScreen:show()

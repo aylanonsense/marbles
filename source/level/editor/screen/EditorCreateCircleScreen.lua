@@ -47,6 +47,7 @@ function EditorCreateCircleScreen:AButtonDown()
 	if self.centerPoint then
 		local circle = EditorCircle(self.centerPoint.x, self.centerPoint.y, math.abs(self.radius))
 		table.insert(scene.geometry, circle)
+		scene:sortGeometryAndObjects()
 		self:close()
 	else
 		self.centerPoint = { x = scene.cursor.x, y = scene.cursor.y }

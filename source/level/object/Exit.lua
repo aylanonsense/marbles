@@ -110,5 +110,9 @@ function Exit:serialize()
 end
 
 function Exit.deserialize(data)
-  return Exit(data.x, data.y, data.exitId, data.icon)
+  local exit = Exit(data.x, data.y, data.exitId, data.icon)
+  if data.layer then
+    exit.layer = data.layer
+  end
+  return exit
 end

@@ -10,6 +10,7 @@ function EditorCircle:init(x, y, radius)
 	self.x = x
 	self.y = y
 	self.radius = radius
+  self.layer = 0
 end
 
 function EditorCircle:draw()

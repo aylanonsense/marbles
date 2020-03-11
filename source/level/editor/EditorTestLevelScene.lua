@@ -44,6 +44,11 @@ function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 	self.marble = Marble(levelData.spawn.x, levelData.spawn.y)
 	table.insert(self.objects, self.marble)
 	self.storyline = storyline
+
+	-- Sort objects according to their layer
+	table.sort(self.objects, function(a, b)
+		return a.layer < b.layer
+	end)
 end
 
 function EditorTestLevelScene:update()

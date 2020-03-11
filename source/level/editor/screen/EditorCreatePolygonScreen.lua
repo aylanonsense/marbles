@@ -67,6 +67,7 @@ function EditorCreatePolygonScreen:AButtonDown()
 		EditorLine(points[#points], points[1])
 		local polygon = EditorPolygon(points)
 		table.insert(scene.geometry, polygon)
+		scene:sortGeometryAndObjects()
 		self:close()
 	else
 		local x, y = scene.cursor.x, scene.cursor.y

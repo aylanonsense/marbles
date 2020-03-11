@@ -17,6 +17,7 @@ function LevelObject:init(type)
 	self.type = type
 	self.physObjects = {}
 	self.waitingToDespawn = false
+	self.layer = 0
 end
 
 function LevelObject:update() end
@@ -74,11 +75,15 @@ end
 
 function LevelObject:serialize()
 	local x, y = self:getPosition()
-	return {
+	local data = {
 		type = self.type,
 		x = x,
 		y = y
 	}
+	if self.layer ~= 0 then
+		data.layer = self.layer
+	end
+	return data
 end
 
 function LevelObject:setVelocity(x, y)

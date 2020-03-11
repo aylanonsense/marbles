@@ -20,6 +20,13 @@ function EditorObjectMenuScreen:open(obj)
 			self:openAndShowSubScreen(EditorMoveObjectScreen(), self.obj)
 		end
 	})
+	table.insert(options, {
+		text = "Layer: " .. self.obj.layer,
+		change = function(dir, menu, option)
+			self.obj.layer += dir
+			option.text = "Layer: " .. self.obj.layer
+		end
+	})
 	for _, fieldData in ipairs(self.obj:getEditableFields()) do
 		local option = {
 			text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field],

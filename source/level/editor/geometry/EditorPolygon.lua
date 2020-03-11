@@ -15,6 +15,7 @@ function EditorPolygon:init(points)
 	for _, point in ipairs(self.points) do
 		point.polygon = self
 	end
+  self.layer = 0
 end
 
 function EditorPolygon:draw()

@@ -26,11 +26,3 @@ function Marble:draw()
 	local scale = camera.scale
 	image:drawScaled(x - scale * imageWidth / 2, y - scale * imageHeight / 2, scale)
 end
-
-function Marble:serialize()
-	return Marble.super.serialize(self)
-end
-
-function Marble.deserialize(data)
-	return Marble(data.x, data.y)
-end
