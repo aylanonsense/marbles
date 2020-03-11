@@ -41,7 +41,9 @@ function EditorMenu:draw()
 		end
 
 		-- Draw the menu options
-		for i = 1, #self.options do
+		local startIndex = math.max(1, self.highlightedOptionIndex - 9)
+		local endIndex = math.min(startIndex + 11, #self.options)
+		for i = startIndex, endIndex do
 			local text = self.options[i].text
 			local textWidth, textHeight = playdate.graphics.getTextSize(text)
 			playdate.graphics.setColor(playdate.graphics.kColorWhite)
