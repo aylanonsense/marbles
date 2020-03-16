@@ -20,7 +20,6 @@ function Coin:draw()
 end
 
 function Coin:preCollide(other, collision)
-	scene.score += 150
 	self:despawn()
 	return false
 end

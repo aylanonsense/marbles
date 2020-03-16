@@ -301,6 +301,9 @@ function serializePlayableLevelData(levelData)
 			table.insert(objectData, circle:serialize())
 		end
 	end
+	table.sort(objectData, function(a, b)
+    return (a.layer or 0) < (b.layer or 0)
+  end)
 	return {
 		spawn = { x = scene.spawn.x, y = scene.spawn.y },
 		objects = objectData

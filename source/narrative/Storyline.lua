@@ -1,13 +1,6 @@
 import "scene/Scene"
 import "narrative/DialogueScene"
-import "level/levelIO"
-import "level/editor/EditorTestLevelScene"
-
-local levels = loadLevelList()
-local levelLookup = {}
-for _, levelData in ipairs(levels) do
-  levelLookup[levelData.name] = levelData
-end
+import "level/MazeScene"
 
 class("Storyline").extends()
 
@@ -36,10 +29,12 @@ function Storyline:createScene(sceneData)
       print("Failed to load dialogue data at /data/narrative/dialogue/" .. sceneData.dialogue .. ".json: the file may not exist or may contain invalid JSON")
     end
     return DialogueScene(dialogueData, self)
-  elseif sceneData.level then
-    local levelInfo = levelLookup[sceneData.level]
-    local levelData = loadPlayableLevelData(levelInfo)
-    return EditorTestLevelScene(levelInfo, levelData, self)
+  elseif sceneData.maze then
+    local levelData = json.decodeFile("/data/levels/" .. sceneData.maze .. "-play.json")
+    if not levelData then
+      print("Failed to load maze data at /data/levels/" .. sceneData.maze .. "-play.json: the file may not exist or may contain invalid JSON")
+    end
+    return MazeScene(levelData, self)
   end
 end
 

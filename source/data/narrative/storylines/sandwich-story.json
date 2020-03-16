@@ -2,19 +2,19 @@
   "scenes": [
     { "dialogue": "sandwich/convo-0-intro" },
 
-    { "level": "Sandwich 1 - Bread" },
+    { "maze": "sandwich-1-bread" },
     { "dialogue": "sandwich/convo-1-bread" },
 
-    { "level": "Sandwich 2 - Protein" },
+    { "maze": "sandwich-2-protein" },
     { "dialogue": "sandwich/convo-2-protein" },
 
-    { "level": "Sandwich 3 - Cheese" },
+    { "maze": "sandwich-3-cheese" },
     { "dialogue": "sandwich/convo-3-cheese" },
 
-    { "level": "Sandwich 4 - Veggies" },
+    { "maze": "sandwich-4-veggies" },
     { "dialogue": "sandwich/convo-4-veggies" },
 
-    { "level": "Sandwich 5 - Condiments" },
+    { "maze": "sandwich-5-condiments" },
     { "dialogue": "sandwich/convo-5-condiments" },
 
     { "dialogue": "sandwich/convo-6-resolution" }

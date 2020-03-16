@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    { "maze": "sandwich-1-bread" },
+    { "maze": "sandwich-2-protein" },
+    { "maze": "sandwich-3-cheese" },
+    { "maze": "sandwich-4-veggies" },
+    { "maze": "sandwich-5-condiments" },
+    { "maze": "pickle-cups" },
+    { "maze": "pickle-star" },
+    { "maze": "pickle-tower" },
+    { "maze": "pickle-death" },
+    { "maze": "viper-processor" },
+    { "maze": "viper-torso" },
+    { "maze": "viper-legs" },
+    { "maze": "viper-head" }
+  ]
+}

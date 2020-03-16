@@ -19,7 +19,6 @@ function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 	self.objects = {}
 	self.worldBoundary = nil
 	self.marble = nil
-	self.score = 0
 
 	-- Reset everything
 	camera:reset()
@@ -44,11 +43,6 @@ function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 	self.marble = Marble(levelData.spawn.x, levelData.spawn.y)
 	table.insert(self.objects, self.marble)
 	self.storyline = storyline
-
-	-- Sort objects according to their layer
-	table.sort(self.objects, function(a, b)
-		return a.layer < b.layer
-	end)
 end
 
 function EditorTestLevelScene:update()
@@ -100,14 +94,6 @@ function EditorTestLevelScene:draw()
 	for _, obj in ipairs(self.objects) do
 		obj:draw()
 	end
-
-	-- Draw the score
-	local text = self.score .. ""
-	local textWidth, textHeight = playdate.graphics.getTextSize(text)
-	playdate.graphics.setColor(playdate.graphics.kColorWhite)
-	playdate.graphics.fillRect(camera.screenWidth - textWidth - 6, 2, textWidth + 4, textHeight + 2)
-	playdate.graphics.setColor(playdate.graphics.kColorBlack)
-	playdate.graphics.drawText(text, camera.screenWidth - textWidth - 4, 2)
 end
 
 function EditorTestLevelScene:onCollide(collision)
