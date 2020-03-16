@@ -28,13 +28,25 @@ function EditorObjectMenuScreen:open(obj)
 		end
 	})
 	for _, fieldData in ipairs(self.obj:getEditableFields()) do
+		local label
+		if fieldData.field then
+			label = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
+		else
+			label = fieldData.label
+		end
 		local option = {
-			text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field],
+			text = label,
 			change = function(dir, menu, option)
+				local label
 				if fieldData.change then
-					fieldData.change(dir)
+					label = fieldData.change(dir)
 				end
-				option.text = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
+				if not label and fieldData.field then
+					label = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
+				end
+				if label then
+					option.text = label
+				end
 			end
 		}
 		table.insert(options, option)

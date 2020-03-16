@@ -15,6 +15,7 @@ import "level/editor/geometry/EditorGeometry"
 import "level/object/Booster"
 import "level/object/Coin"
 import "level/object/Exit"
+import "level/object/Decoration"
 
 class("EditorEditLevelScreen").extends("EditorMenuScreen")
 
@@ -61,6 +62,12 @@ function EditorEditLevelScreen:init()
 								text = "Exit",
 								selected = function()
 									self:openAndShowSubScreen(EditorCreateObjectScreen(), Exit(scene.cursor.x, scene.cursor.y))
+								end
+							},
+							{
+								text = "Decoration",
+								selected = function()
+									self:openAndShowSubScreen(EditorCreateObjectScreen(), Decoration(scene.cursor.x, scene.cursor.y, "yield-sign"))
 								end
 							}
 						})
