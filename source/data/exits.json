@@ -237,6 +237,114 @@
       "label": "Special",
       "sandwichText": "special",
       "sandwichScore": 5
-    }
+    },
+    {
+      "id": "skatepark-halfpipe-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "skatepark-halfpipe-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "skatepark-halfpipe-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+  {
+      "id": "skatepark-tour-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "skatepark-tour-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "skatepark-tour-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+  {
+      "id": "skatepark-jump-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "skatepark-jump-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "skatepark-jump-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+  {
+      "id": "library-1-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "library-1-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "library-1-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+  {
+      "id": "library-2-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "library-2-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "library-2-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+  {
+      "id": "library-3-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "library-3-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "library-3-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  }
   ]
 }

@@ -64,6 +64,36 @@
 		  "name": "Viper - Head",
 		  "editFile": "viper-head-edit.json",
 		  "playFile": "viper-head-play.json"
+		},
+		{
+			"editFile":"skatepark-halfpipe-edit.json",
+			"name":"Skatepark - Halfpipe",
+			"playFile":"skatepark-halfpipe-play.json"
+		},
+		 {
+			"editFile":"skatepark-tour-edit.json",
+			"name":"Skatepark - Tour",
+			"playFile":"skatepark-tour-play.json"
+		},
+		 {
+			"editFile":"skatepark-jump-edit.json",
+			"name":"Skatepark - Jump",
+			"playFile":"skatepark-jump-play.json"
+		},
+		 {
+			"editFile":"library-1-edit.json",
+			"name":"Library - 1",
+			"playFile":"library-1-play.json"
+		},
+		 {
+			"editFile":"library-2-edit.json",
+			"name":"Library - 2",
+			"playFile":"library-2-play.json"
+		},
+		 {
+			"editFile":"library-3-edit.json",
+			"name":"Library - 3",
+			"playFile":"library-3-play.json"
 		}
   ]
 }
