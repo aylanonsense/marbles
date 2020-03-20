@@ -3,14 +3,17 @@ imageCache = {
 }
 
 function imageCache.loadImage(path)
-  if allowCaching then
-    if not imageCache.cache[path] then
-      imageCache.cache[path] = playdate.graphics.image.new(path)
-    end
-    return imageCache.cache[path]
-  else
-    return playdate.graphics.image.new(path)
+  if not imageCache.cache[path] then
+    imageCache.cache[path] = playdate.graphics.image.new(path)
   end
+  return imageCache.cache[path]
+end
+
+function imageCache.loadImageTable(path)
+  if not imageCache.cache[path] then
+    imageCache.cache[path] = playdate.graphics.imagetable.new(path)
+  end
+  return imageCache.cache[path]
 end
 
 function imageCache.clearCache()

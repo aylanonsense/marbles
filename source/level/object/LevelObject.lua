@@ -6,6 +6,7 @@ LevelObject.Type = {
 	Booster = "Booster",
 	Circle = "Circle",
 	Coin = "Coin",
+	CrumblingPlatform = "CrumblingPlatform",
 	Decoration = "Decoration",
 	Exit = "Exit",
 	Marble = "Marble",
