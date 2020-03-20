@@ -142,6 +142,14 @@ function DialogueScene:processDialogueAction(action)
     else
       local actor = self:addOrFindActor(actorName)
       local side = self:evalDialogueField(action.side) or actor.side or actor.preferredSide
+      local replacements = self:evalDialogueField(action.replacements)
+      if replacements then
+        for key, value in pairs(replacements) do
+          local textBefore = "${" .. key .. "}"
+          local textAfter = self:evalDialogueField(value)
+          line = string.gsub(line, textBefore, textAfter)
+        end
+      end
       actor:setExpression(self:evalDialogueField(action.expression))
       if self.actorsOnStage[side] ~= actor then
         if self.actorsOnStage[side] then
