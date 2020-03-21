@@ -30,7 +30,13 @@ function EditorObjectMenuScreen:open(obj)
 	for _, fieldData in ipairs(self.obj:getEditableFields()) do
 		local label
 		if fieldData.field then
-			label = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
+			local value = self.obj[fieldData.field]
+			if value == true then
+				value = "true"
+			elseif value == false then
+				value = "false"
+			end
+			label = (fieldData.label or fieldData.field) .. ": " .. value
 		else
 			label = fieldData.label
 		end
@@ -42,7 +48,13 @@ function EditorObjectMenuScreen:open(obj)
 					label = fieldData.change(dir)
 				end
 				if not label and fieldData.field then
-					label = (fieldData.label or fieldData.field) .. ": " .. self.obj[fieldData.field]
+					local value = self.obj[fieldData.field]
+					if value == true then
+						value = "true"
+					elseif value == false then
+						value = "false"
+					end
+					label = (fieldData.label or fieldData.field) .. ": " .. value
 				end
 				if label then
 					option.text = label

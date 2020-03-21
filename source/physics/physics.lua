@@ -86,6 +86,25 @@ function physics:draw()
 	end
 end
 
+local function sortSector(a, b)
+	-- Sort sectors in this order:
+	-- 1. non-points
+	-- 2. low priority non-points
+	-- 3. points
+	-- 4. low priority points
+	local priorityA = (a.lowPriority and 0 or 50) + ((a.type == "PhysPoint") and 0 or 100)
+	local priorityB = (b.lowPriority and 0 or 50) + ((b.type == "PhysPoint") and 0 or 100)
+	return priorityA > priorityB
+end
+
+function physics:sortSectors()
+	for _, sectorX in pairs(self.staticObjectsBySector) do
+		for _, sectorXY in pairs(sectorX) do
+			table.sort(sectorXY, sortSector)
+		end
+	end
+end
+
 function physics:onCollide(callback)
 	self.onCollideCallback = callback
 end

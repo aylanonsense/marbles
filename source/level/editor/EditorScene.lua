@@ -57,7 +57,7 @@ function EditorScene:draw()
 	perspectiveDrawing.drawLine(-7 / camera.scale, 0, 7 / camera.scale, 0)
 	perspectiveDrawing.drawLine(0, -7 / camera.scale, 0, 7 / camera.scale)
 	-- Draw the spawn point
-	perspectiveDrawing.drawDottedCircle(self.spawn.x, self.spawn.y, 15, 2)
+	perspectiveDrawing.drawDottedCircle(self.spawn.x, self.spawn.y, 9, 2)
 	-- Draw all the level geometry
 	for _, geom in pairs(self.geometry) do
 		geom:draw()

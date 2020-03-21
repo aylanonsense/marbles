@@ -5,12 +5,14 @@ class("LevelObject").extends()
 LevelObject.Type = {
 	Booster = "Booster",
 	Circle = "Circle",
+	CircleBumper = "CircleBumper",
 	Coin = "Coin",
 	CrumblingPlatform = "CrumblingPlatform",
 	Decoration = "Decoration",
 	Exit = "Exit",
 	Marble = "Marble",
 	Polygon = "Polygon",
+	TriangleBumper = "TriangleBumper",
 	WorldBoundary = "WorldBoundary"
 }
 
@@ -92,6 +94,13 @@ function LevelObject:setVelocity(x, y)
 	for _, physObj in ipairs(self.physObjects) do
 		physObj.velX = x
 		physObj.velY = y
+	end
+end
+
+function LevelObject:scaleVelocity(n)
+	for _, physObj in ipairs(self.physObjects) do
+		physObj.velX *= n
+		physObj.velY *= n
 	end
 end
 

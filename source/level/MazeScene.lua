@@ -41,10 +41,13 @@ function MazeScene:partialLoad()
       else
         table.insert(self.objects, obj)
       end
-    else
-      -- Finish loading by creating a marble
+    elseif not self.marble then
+      -- Create the marble
       self.marble = Marble(self.levelData.spawn.x, self.levelData.spawn.y)
       table.insert(self.objects, self.marble)
+    else
+      -- And finally sort the physics sectors
+      physics:sortSectors()
       self.isLoaded = true
     end
   end

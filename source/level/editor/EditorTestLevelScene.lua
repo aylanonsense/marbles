@@ -43,6 +43,7 @@ function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 	self.marble = Marble(levelData.spawn.x, levelData.spawn.y)
 	table.insert(self.objects, self.marble)
 	self.storyline = storyline
+	physics:sortSectors()
 end
 
 function EditorTestLevelScene:update()

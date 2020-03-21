@@ -1,10 +1,11 @@
 import "level/editor/screen/EditorCreateObjectScreen"
 import "level/object/Booster"
+import "level/object/CircleBumper"
 import "level/object/Coin"
 import "level/object/CrumblingPlatform"
 import "level/object/Exit"
 import "level/object/Decoration"
-
+import "level/object/TriangleBumper"
 
 class("EditorChooseObjectMenuScreen").extends("EditorMenuScreen")
 
@@ -24,7 +25,7 @@ function EditorChooseObjectMenuScreen:init()
         end
       },
       {
-        text = "CrumblingPlatform",
+        text = "Crumbling Platform",
         selected = function()
           self:openAndShowSubScreen(EditorCreateObjectScreen(), CrumblingPlatform(scene.cursor.x, scene.cursor.y))
         end
@@ -39,6 +40,18 @@ function EditorChooseObjectMenuScreen:init()
         text = "Decoration",
         selected = function()
           self:openAndShowSubScreen(EditorCreateObjectScreen(), Decoration(scene.cursor.x, scene.cursor.y, "yield-sign"))
+        end
+      },
+      {
+        text = "Triangle Bumper",
+        selected = function()
+          self:openAndShowSubScreen(EditorCreateObjectScreen(), TriangleBumper(scene.cursor.x, scene.cursor.y, false, false))
+        end
+      },
+      {
+        text = "Circle Bumper",
+        selected = function()
+          self:openAndShowSubScreen(EditorCreateObjectScreen(), CircleBumper(scene.cursor.x, scene.cursor.y))
         end
       }
     }))

@@ -22,7 +22,7 @@ function PhysObject:init(type, x, y)
 	self.accX = 0
 	self.accY = 0
 	self.mass = 0 -- 0 means immovable (infinite mass)
-	self.restitution = 1 -- i.e. bounciness (0 = no bounce, 1 = full bounce)
+	self.restitution = 0.25 -- i.e. bounciness (0 = no bounce, 1 = full bounce)
 	self.isEnabled = true
 	self.parent = nil
 	self.maxSpeed = nil

@@ -16,7 +16,7 @@ function playdate.update()
 	time:advance(1 / 20)
 	scene:update()
 	scene:draw()
-  playdate.drawFPS(10, 10)
+  playdate.drawFPS(380, 10)
 end
 
 -- Pass callbacks through to the scene
