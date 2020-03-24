@@ -6,7 +6,8 @@ class("Decoration").extends("LevelObject")
 
 local DECO_IMAGE_NAMES = {
   'yield-sign',
-  'sandwich-sign'
+  'sandwich-sign',
+  'big-questionmark'
 }
 
 function Decoration:init(x, y, imageName, rotation)

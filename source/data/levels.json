@@ -94,6 +94,36 @@
 			"editFile":"library-3-edit.json",
 			"name":"Library - 3",
 			"playFile":"library-3-play.json"
+		},
+		{
+			"editFile":"daycare-1-edit.json",
+			"name":"Daycare - 1",
+			"playFile":"daycare-1-play.json"
+		},
+		 {
+			"editFile":"daycare-2-edit.json",
+			"name":"Daycare - 2",
+			"playFile":"daycare-2-play.json"
+		},
+		 {
+			"editFile":"daycare-3-edit.json",
+			"name":"Daycare - 3",
+			"playFile":"daycare-3-play.json"
+		},
+		 {
+			"editFile":"safetytown-1-edit.json",
+			"name":"Safetytown - 1",
+			"playFile":"safetytown-1-play.json"
+		},
+		 {
+			"editFile":"safetytown-2-edit.json",
+			"name":"Safetytown - 2",
+			"playFile":"safetytown-2-play.json"
+		},
+		 {
+			"editFile":"safetytown-3-edit.json",
+			"name":"Safetytown - 3",
+			"playFile":"safetytown-3-play.json"
 		}
   ]
 }

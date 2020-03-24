@@ -345,6 +345,114 @@
       "label": "Special",
       "sandwichText": "",
       "sandwichScore": 5
-  }
+  },
+  {
+    "id": "daycare-1-bad",
+    "label": "Bad",
+    "sandwichText": "",
+    "sandwichScore": 1
+},
+{
+    "id": "daycare-1-good",
+    "label": "Good",
+    "sandwichText": "",
+    "sandwichScore": 3
+},
+{
+    "id": "daycare-1-special",
+    "label": "Special",
+    "sandwichText": "",
+    "sandwichScore": 5
+},
+{
+    "id": "daycare-2-bad",
+    "label": "Bad",
+    "sandwichText": "",
+    "sandwichScore": 1
+},
+{
+    "id": "daycare-2-good",
+    "label": "Good",
+    "sandwichText": "",
+    "sandwichScore": 3
+},
+{
+    "id": "daycare-2-special",
+    "label": "Special",
+    "sandwichText": "",
+    "sandwichScore": 5
+},
+{
+    "id": "daycare-3-bad",
+    "label": "Bad",
+    "sandwichText": "",
+    "sandwichScore": 1
+},
+{
+    "id": "daycare-3-good",
+    "label": "Good",
+    "sandwichText": "",
+    "sandwichScore": 3
+},
+{
+    "id": "daycare-3-special",
+    "label": "Special",
+    "sandwichText": "",
+    "sandwichScore": 5
+},
+{
+    "id": "safetytown-1-bad",
+    "label": "Bad",
+    "sandwichText": "",
+    "sandwichScore": 1
+},
+{
+    "id": "safetytown-1-good",
+    "label": "Good",
+    "sandwichText": "",
+    "sandwichScore": 3
+},
+{
+    "id": "safetytown-1-special",
+    "label": "Special",
+    "sandwichText": "",
+    "sandwichScore": 5
+},
+{
+    "id": "safetytown-2-bad",
+    "label": "Bad",
+    "sandwichText": "",
+    "sandwichScore": 1
+},
+{
+    "id": "safetytown-2-good",
+    "label": "Good",
+    "sandwichText": "",
+    "sandwichScore": 3
+},
+{
+    "id": "safetytown-2-special",
+    "label": "Special",
+    "sandwichText": "",
+    "sandwichScore": 5
+},
+{
+    "id": "safetytown-3-bad",
+    "label": "Bad",
+    "sandwichText": "",
+    "sandwichScore": 1
+},
+{
+    "id": "safetytown-3-good",
+    "label": "Good",
+    "sandwichText": "",
+    "sandwichScore": 3
+},
+{
+    "id": "safetytown-3-special",
+    "label": "Special",
+    "sandwichText": "",
+    "sandwichScore": 5
+}
   ]
 }
