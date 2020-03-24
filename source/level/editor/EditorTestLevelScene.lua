@@ -40,8 +40,18 @@ function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 			table.insert(self.objects, obj)
 		end
 	end
-	self.marble = Marble(levelData.spawn.x, levelData.spawn.y)
-	table.insert(self.objects, self.marble)
+  local wasInserted = false
+  self.marble = Marble(levelData.spawn.x, levelData.spawn.y)
+  for i = 1, #self.objects do
+    if self.objects[i].layer > self.marble.layer then
+      table.insert(self.objects, i, self.marble)
+      wasInserted = true
+      break
+    end
+  end
+  if not wasInserted then
+    table.insert(self.objects, self.marble)
+  end
 	self.storyline = storyline
 	physics:sortSectors()
 end
