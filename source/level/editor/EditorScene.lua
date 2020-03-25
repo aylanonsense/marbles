@@ -10,11 +10,13 @@ import "level/editor/geometry/EditorLine"
 import "level/editor/geometry/EditorPolygon"
 import "level/editor/EditorTestLevelScene"
 import "level/levelIO"
+import "utility/soundCache"
 
 class("EditorScene").extends(Scene)
 
 function EditorScene:init()
 	EditorScene.super.init(self)
+	soundCache.stopAll()
 	camera:reset()
 	camera:recalculatePerspective()
 	self.spawn = { x = 0, y = 0 }

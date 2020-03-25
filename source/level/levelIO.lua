@@ -64,7 +64,7 @@ end
 function saveLevelData(levelInfo, playableLevelData, editorLevelData)
 	if levelInfo.isUserCreated then
 		-- If this is a user-created level, save the level to the datastore
-		print("Saving user-created level " .. levelInfo.name .. " to " .. levelInfo.playFile .. " and " .. levelInfo.editFile .. " in he user's datastore")
+		print("Saving user-created level " .. levelInfo.name .. " to " .. levelInfo.playFile .. " and " .. levelInfo.editFile .. " in the user's datastore")
 		playdate.datastore.write(playableLevelData, string.sub(levelInfo.playFile, 1, -6), true)
 		playdate.datastore.write(editorLevelData, string.sub(levelInfo.editFile, 1, -6), true)
 	else

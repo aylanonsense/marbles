@@ -4,11 +4,13 @@ import "level/levelIO"
 import "physics/physics"
 import "level/object/levelObjectByType"
 import "level/object/Marble"
+import "utility/soundCache"
 
 class("EditorTestLevelScene").extends(Scene)
 
 function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 	EditorTestLevelScene.super.init(self)
+	soundCache.stopAll()
 	self.nextScene = nextScene
 	self.initialCameraSettings = {
 		x = camera.x,
@@ -126,6 +128,7 @@ function EditorTestLevelScene:BButtonDown()
 		camera.scale = self.initialCameraSettings.scale
 		camera.rotation = self.initialCameraSettings.rotation
 		camera:recalculatePerspective()
+		soundCache.stopAll()
 		Scene.setScene(self.nextScene)
 	end
 end
