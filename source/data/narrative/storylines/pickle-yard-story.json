@@ -1,0 +1,16 @@
+{
+  "scenes": [
+    { "dialogue": "pickle-yard/PickleYard_Intro" },
+
+    { "maze": "pickle-star" },
+    { "dialogue": "pickle-yard/PickleYard_1_Star" },
+
+    { "maze": "pickle-death" },
+    { "dialogue": "pickle-yard/PickleYard_2_Death" },
+
+    { "maze": "pickle-tower" },
+    { "dialogue": "pickle-yard/PickleYard_3_Tower" },
+
+    { "dialogue": "pickle-yard/PickleYard_Resolution" }
+  ]
+}

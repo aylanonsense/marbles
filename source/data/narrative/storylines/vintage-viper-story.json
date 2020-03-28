@@ -1,0 +1,16 @@
+{
+  "scenes": [
+    { "dialogue": "vintage-viper/VintageViper_Intro" },
+
+    { "maze": "viper-head" },
+    { "dialogue": "vintage-viper/VintageViper_1_Head" },
+
+    { "maze": "viper-torso" },
+    { "dialogue": "vintage-viper/VintageViper_2_Torso" },
+
+    { "maze": "viper-legs" },
+    { "dialogue": "vintage-viper/VintageViper_3_Legs" },
+
+    { "dialogue": "vintage-viper/VintageViper_Resolution" }
+  ]
+}

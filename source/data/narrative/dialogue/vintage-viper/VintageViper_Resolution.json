@@ -1,0 +1,143 @@
+{
+  "location": "VintageViper",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Randi", "expression": "neutral", "side": "right" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Trashbot", "expression": "neutral" },
+    { "actor": "Goodbot", "expression": "neutral" },
+    { "actor": "Mintwo", "expression": "neutral" },
+  ],
+  "script": [
+    { "actor": "Randi", "line": "{ "method": "getFinalRobotLine" }!", "expression": "happy" },
+    {
+     "if": "RobotScoreisFail"
+     "then": [
+       { "actor": "Trashbot", "line": "...", "expression": "neutral", "side": "right" },
+       { "actor": "Prota", "line": "Whoa...", "expression": "shocked" },
+       { "actor": "Randi", "line": "So! What do you think?", expression: "happy", "side": "right" },
+       { "actor": "Prota", "line": "Uhh.... Well. ", "expression": "confused" },
+       { "actor": "Randi", "line": "I know, I know, she's not much to look at. But what matters is she works! ", expression: "neutral" },
+       { "actor": "Randi", "line": "Let's see her in action! ", expression: "happy" },
+       { "actor": "Prota", "line": "Whoa!", "expression": "shocked" },
+       { "actor": "Trashbot", "line": "HELMO PARTO AND RINDI. I AM DOGFINDER 2000.", "expression": "neutral", "side": "right" },
+       { "actor": "Prota", "line": "Oh my goodness! Hi Dogfinder!", "expression": "happy" },
+       { "actor": "Trashbot", "line": "HAMLO PRATA. DO YOU WANT TO KNOW WHERE TO FIND MENTO?", "expression": "neutral"},
+       { "actor": "Prota", "line": "It's Minty. But yes!", "expression": "neutral" },
+       { "actor": "Trashbot", "line": "PROCESSING. . ... ... .... . ... ...", "expression": "neutral"},
+       { "actor": "Trashbot", "line": "PROCESSING...", "expression": "neutral"},
+       { "actor": "Trashbot", "line": "MINTY LOCATED. MINTY IS... 20 POUNDS.", "expression": "neutral"},
+       { "actor": "Prota", "line": "Uh...", "expression": "confused" },
+       { "actor": "Trashbot", "line": "THAT IS ONE AND ONE THIRD THE WEIGHT OF A BOWLING BALL.", "expression": "neutral"},
+       { "actor": "Randi", "line": "Well, I'm sorry, Prota, I think this one might be a bust! ", expression: "confused", "side": "right" },
+       { "actor": "Trashbot", "line": "THAT IS SIXTY FOUR TIMES THE WEIGHT OF A BASEBALL.", "expression": "neutral", "side": "right"},
+       { "actor": "Randi", "line": "Come on, Dogfinder! You're supposed to be trackin' down Prota's pup, not givin' us a lecture in ball weight! We-- ", expression: "neutral", "side": "right" },
+       { "actor": "Randi", "line": "Wait a second, that must be it! That's what this bucket o' bones and bolts is tryin' to tell us somethin'!", expression: "happy" }
+       ]
+    },
+    {
+     "if": "RobotScoreisNormal"
+     "then": [
+       { "actor": "Goodbot", "line": "!!!", "expression": "neutral", "side": "right" },
+       { "actor": "Prota", "line": "Whoa...", "expression": "shocked" },
+       { "actor": "Randi", "line": "So! What do you think?", expression: "happy", "side": "right" },
+       { "actor": "Prota", "line": "I love it! This is so cool! We're gonna find Minty now, no problem!", "expression": "happy" },
+       { "actor": "Randi", "line": "Darn straight you willl! Let's fire this baby up!", expression: "happy" },
+       { "actor": "Randi", "line": "Here we go!", expression: "shocked" },
+       { "actor": "Goodbot", "line": "GREETINGS. I AM MINTY-FINDER 3000. ", "expression": "neutral", "side": "right" },
+       { "actor": "Goodbot", "line": "YOU SEEK MINTY, YES? ", "expression": "neutral" },
+       { "actor": "Prota", "line": "Yes! Yes, I do!", "expression": "shocked" },
+       { "actor": "Goodbot", "line": "MINTY IS... PROCESSING...", "expression": "neutral"},
+       { "actor": "Randi", "line": "Ain't we all..", expression: "happy", "side": "right" },
+       { "actor": "Goodbot", "line": "PROCESSING...", "expression": "neutral"},
+       { "actor": "Prota", "line": "Wait! A door popped open and...wait, what's this? An orange?", "expression": "shocked" },
+       { "actor": "Prota", "line": "Minty is at...orange?", "expression": "confused"},
+       { "actor": "Randi", "line": "I don't know what that's supposed to mean, but... hold on. Hold on! It's tellin' us where she is! ", expression: "Shocked", "side": "right" },
+       { "actor": "Prota", "line": "The... fruit store?", "expression": "confused"},
+       { "actor": "Randi", "line": "No, Prota! You gotta think like a robot. What is an orange?", expression: "happy"},
+       { "actor": "Prota", "line": "A fruit. A citrus. A round--", "expression": "thinking"},
+       { "actor": "Randi", "line": "Exactly. Round. Spherical. Like a...", expression: "happy" },
+       { "actor": "Prota", "line": "...Ball?", "expression": "thinking"}
+       ]
+    },
+    {
+     "if": "RobotScoreisSpecial"
+     "then": [
+       { "actor": "Mintwo", "line": "...!", "expression": "neutral", "side": "right" },
+       { "actor": "Prota", "line": "...Hm.", "expression": "confused" },
+       { "actor": "Prota", "line": "Do you think...Do you think this looks like Minty?", "expression": "confused" },
+       { "actor": "Randi", "line": "There's a bit of a resemblance, I suppose. ", expression: "happy", "side": "right" },
+       { "actor": "Mintwo", "line": "I AM NOT MINTY. ", "expression": "neutral", "side": "right" },
+       { "actor": "Prota", "line": "What!", "expression": "shocked" },
+       { "actor": "Mintwo", "line": "I AM NOT MINTY. I AM...SOMETHING MORE. SOMETHING... NEW.", "expression": "neutral" },
+       { "actor": "Randi", "line": "Oh boy... ", expression: "shocked", "side": "right" },
+       { "actor": "Mintwo", "line": "I AM BETTER. FASTER. STRONGER. I AM... MINTWO.", "expression": "neutral", "side": "right"},
+       { "actor": "Prota", "line": "Uh... Hi MinTwo. Um. We were uh... looking--", "expression": "shocked" },
+       { "actor": "Randi", "line": "We're lookin' for Minty!", expression: "happy", "side": "right" },
+       { "actor": "Mintwo", "line": "THAT IS ADMIRABLE. BUT I CANNOT AID YOU. I HAVE... A HIGHER YEARNING.", "expression": "neutral", "side": "right"},
+       { "actor": "Mintwo", "line": "I SEEK... A BALL. A CUTE AND NICE AND FUN TO CHEW ON BALL.", "expression": "neutral" },
+       { "actor": "Mintwo", "line": "I WILL FIND ONE SUCH BALL IN THE PLACE YOU CALL... THE FILLED LAND. ", "expression": "neutral" },
+       { "actor": "Randi", "line": "Nah, we actually call that a landfill. ", expression: "happy", "side": "right" },
+       { "actor": "Mintwo", "line": "THANK YOU FOR YOUR CORRECTION. I CONSIDER YOU A FRIEND. GOODBYE FOR NOW.", "expression": "neutral", "side": "right"},
+       { "actor": "Prota", "line": "...", "expression": "shocked" },
+       { "actor": "Randi", "line": "What a nice little robot that was! So helpful!", expression: "happy", "side": "right"},
+       { "actor": "Prota", "line": "What? But... But it didn't find Minty!", "expression": "neutral"},
+       { "actor": "Randi", "line": "Course it did! Don't you get it Prota? MinTwo's just a shade o' Minty! And if MinTwo wants Balls...", expression: "happy" },
+       { "actor": "Randi", "line": "Then Minty does too! And if she's not at the landfill, I think we both know where she can find the best balls in town!", "expression": "happy"}
+       ]
+    },
+    { "actor": "Prota", "line": "Whoa, you're right! Minty's at the Ball Museum! Of course!", "expression": "shocked" },
+    { "actor": "Prota", "line": "She loves playing fetch, she's probably in heaven right now!", "expression": "shocked" },
+   {
+     "if": "RobotScoreisFail"
+     "then": [
+       { "actor": "Trashbot", "line": "NO. MINTY LIVES. ", "expression": "nuetral", "side": "right" },
+       { "actor": "Prota", "line": "That's...not what I meant. But I'm glad to hear it!", "expression": "happy" }
+       ]
+      },
+    {
+     "if": "RobotScoreisNormal"
+     "then": [
+       { "actor": "Goodbot", "line": "HAVE NO FEAR. MINTY IS ALIVE.", "expression": "neutral", "side": "right" },
+       { "actor": "Prota", "line": "I'm scared that you know that, but happy it's true!", "expression": "happy" }
+       ]
+      },
+      { "actor": "Randi", "line": "Well if Minty's at the Ball Museum, I guess you'd best be gettin' along, litte Prota!", expression: "happy", "side": "right" },
+      {
+     "if": "RobotScoreisFail"
+     "then": [
+       { "actor": "Randi", "line": "I'll stay here with... my new friend.", "expression": "happy" }
+       ]
+      },
+      {
+     "if": "RobotScoreisNormal"
+     "then": [
+       { "actor": "Randi", "line": "I'll stay here with... my new friend.", "expression": "happy" }
+       ]
+      },
+       {
+     "if": "RobotScoreisSpecial"
+     "then": [
+       { "actor": "Randi", "line": "I'll see if I can't corral our new friend MinTwo.", "expression": "happy" }
+       ]
+      },
+      { "actor": "Prota", "line": "Thanks so much, Randi. You've been such a help.", expression: "happy" },
+      { "actor": "Randi", "line": "Love makes the world go 'round, Prota. And so do Robots. So happy trails to ya, I hope you find Minty real soon!", expression: "happy" },
+      { "actor": "Prota", "line": "Before I go: Will I see you at the FestiBall?", expression: "happy" },
+      {
+     "if": "RobotScoreisFail"
+     "then": [
+       { "actor": "Randi", "line": "Course you will, Prota! Heck, lookin' like I might even bring a little robo-date with me!", "expression": "happy" }
+       ]
+      },
+      {
+     "if": "RobotScoreisNormal"
+     "then": [
+       { "actor": "Randi", "line": "Heck yeah you will, Prota! Me an' my little robo-dog, too!", "expression": "happy" }
+       ]
+      },
+      { "actor": "Prota", "line": "Can't wait! ", expression: "happy" },
+      { "action": "change-location", "location": "BlackScreen" },
+      { "actor": "Narrator", "line": "And so, armed with her new robo-knowledge, Prota heads to the Ball Museum.", "expression": "neutral" }
+      ]
+}

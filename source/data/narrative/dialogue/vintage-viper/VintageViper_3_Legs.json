@@ -1,0 +1,54 @@
+{
+  "location": "VintageViper",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Randi", "expression": "neutral", "side": "right" }
+    { "actor": "Narrator", "expression": "neutral" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "viper-legs-oldboot" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Well... I'm not sure what you had in mind for legs, but... I hope this'll do.",  "expression": "neutral" },
+        { "actor": "Randi", "line": "Hm. I'll say it's not exactly what I had in mind...", "expression": "confused" },
+        { "actor": "Randi", "line": "But it's better than a kick in the pants!", "expression": "happy" },
+        { "actor": "Prota", "line": "Perfect! That's the last piece then, right?", "expression": "neutral" },
+        { "actor": "Randi", "line": "Yup! For better or for worse, I guess. Just gimme a little time to work my magic...", "expression": "happy" },
+        { "action": "change-location", "location": "BlackScreen" }
+        { "actor": "Narrator", "line": "Several minutes later...", "expression": "neutral" },
+        { "action": "change-location", "location": "VintageViper" }
+        { "actor": "Randi", "line": "All right! Let's meet our new friend. I present to you...", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "viper-legs-golfcart" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "I think you're really gonna like what I found!",  "expression": "neutral" },
+        { "actor": "Randi", "line": "Wow! Prota! Great idea! ", "expression": "happy" },
+        { "actor": "Randi", "line": "If this baby's on wheels, we're not just gonna see Minty, we're gonna chase her down!", "expression": "thinking },
+        { "actor": "Prota", "line": "Oooh, I'm so excited! It's been such a long day, I just want to get her back home.", "expression": "happy" },
+        { "actor": "Randi", "line": "Well hold on to your hat, Prota. I just need a little bit of time and I'll get this thing workin'!", "expression": "happy" },
+        { "action": "change-location", "location": "BlackScreen" }
+        { "actor": "Narrator", "line": "Several minutes later...", "expression": "neutral" },
+        { "action": "change-location", "location": "VintageViper" }
+        { "actor": "Randi", "line": "All right, Prota. It's time to unveil....", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "viper-legs-golfcart" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Here you go, Randi! Think you can work with this?",  "expression": "happy" },
+        { "actor": "Randi", "line": "Whoa!", "expression": "shocked" },
+        { "actor": "Prota", "line": "What?", "expression": "thinking },
+        { "actor": "Randi", "line": "You got Minty on the brain, dontcha?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Why do you say that?", "expression": "confused" },
+        { "actor": "Randi", "line": "I mean...", "expression": "thinking" },
+        { "actor": "Randi", "line": "Oh, it's fine! Let's just get this thing made. I'll need a couple minutes to get 'er goin, but just hang tight.", "expression": "happy" },
+        { "action": "change-location", "location": "BlackScreen" }
+        { "actor": "Narrator", "line": "Several minutes later...", "expression": "neutral" },
+        { "action": "change-location", "location": "VintageViper" }
+        { "actor": "Randi", "line": "All right! Pleased to announce she's ready for action! I give you...", "expression": "happy" }
+      ]
+    },
+  ]
+}
