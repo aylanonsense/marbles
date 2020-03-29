@@ -213,7 +213,7 @@ function serializePlayableLevelData(levelData)
 							degrees += 360
 						end
 						local arcLength = circumference * degrees / 360
-						local numPoints = math.ceil(arcLength / 5)
+						local numPoints = math.ceil(arcLength / 18)
 						for i = 1, numPoints do
 							local angle
 							if line.radius > 0 then
