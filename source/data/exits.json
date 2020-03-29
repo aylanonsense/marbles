@@ -4,355 +4,487 @@
       "id": "sandwich-bread-lettuce-wrap",
       "label": "Lettuce Wrap",
       "sandwichText": "lettuce wrap",
-      "sandwichScore": 1
+      "score": 1
     },
     {
       "id": "sandwich-bread-wrap",
       "label": "Wrap",
       "sandwichText": "wrap",
-      "sandwichScore": 3
+      "score": 3
     },
     {
       "id": "sandwich-bread-baguette",
       "label": "Baguette",
       "sandwichText": "Parisian baguette",
-      "sandwichScore": 5
+      "score": 5
     },
+
+
 
     {
       "id": "sandwich-protein-powder",
       "label": "Protein Powder",
       "sandwichText": "muscle-builder",
-      "sandwichScore": 1
+      "score": 1
     },
     {
       "id": "sandwich-protein-ostrich",
       "label": "Ostrich",
       "sandwichText": "big birdy",
-      "sandwichScore": 3
+      "score": 3
     },
     {
       "id": "sandwich-protein-ham",
       "label": "Ham",
       "sandwichText": "ham",
-      "sandwichScore": 5
+      "score": 5
     },
+
+
 
     {
       "id": "sandwich-cheese-paper",
       "label": "Paper",
       "sandwichText": "A writerly",
-      "sandwichScore": 1
+      "score": 1
     },
     {
       "id": "sandwich-cheese-goat",
       "label": "Goat Cheese",
       "sandwichText": "An extra horny",
-      "sandwichScore": 3
+      "score": 3
     },
     {
       "id": "sandwich-cheese-swiss",
       "label": "Swiss Cheese",
       "sandwichText": "A hole-y",
-      "sandwichScore": 5
+      "score": 5
     },
+
+
 
     {
       "id": "sandwich-veggies-cactus",
       "label": "Cactus",
       "sandwichText": "pointy",
-      "sandwichScore": 1
+      "score": 1
     },
     {
       "id": "sandwich-veggies-cauliflower",
       "label": "Cauliflower",
       "sandwichText": "crunchy",
-      "sandwichScore": 3
+      "score": 3
     },
     {
       "id": "sandwich-veggies-lettuce",
       "label": "Lettuce",
       "sandwichText": "green",
-      "sandwichScore": 5
+      "score": 5
     },
+
+
 
     {
       "id": "sandwich-condiments-hot-wax",
       "label": "Hot Wax",
       "sandwichText": ", candle-style",
-      "sandwichScore": 1
+      "score": 1
     },
     {
       "id": "sandwich-condiments-guava-jelly",
       "label": "Guava Jelly",
       "sandwichText": "on island time",
-      "sandwichScore": 3
+      "score": 3
     },
     {
       "id": "sandwich-condiments-mayo",
       "label": "Mayo",
       "sandwichText": "with mayo",
-      "sandwichScore": 5
+      "score": 5
     },
+
+
 
     {
       "id": "pickle-cups-good",
-      "label": "Good"
+      "label": "Good",
+      "score": 3,
+      "tarotText": "???"
     },
     {
       "id": "pickle-cups-bad",
-      "label": "Bad"
+      "label": "Bad",
+      "score": 1,
+      "tarotText": "???"
     },
     {
       "id": "pickle-cups-special",
-      "label": "Special"
+      "label": "Special",
+      "score": 5,
+      "tarotText": "???"
     },
+
+
 
     {
       "id": "pickle-star-good",
-      "label": "Good"
+      "label": "Starfish",
+      "score": 3,
+      "tarotText": "STARFISH"
     },
     {
       "id": "pickle-star-bad",
-      "label": "Bad"
+      "label": "Supernova",
+      "score": 1,
+      "tarotText": "SUPERNOVA"
     },
     {
       "id": "pickle-star-special",
-      "label": "Special"
+      "label": "Superstar",
+      "score": 5,
+      "tarotText": "SUPERSTAR"
     },
+
+
 
     {
       "id": "pickle-tower-good",
-      "label": "Good"
+      "label": "Hungry",
+      "score": 3,
+      "tarotText": "HUNGRY"
     },
     {
       "id": "pickle-tower-bad",
-      "label": "Bad"
+      "label": "Watchful",
+      "score": 1,
+      "tarotText": "WATCHFUL"
     },
     {
       "id": "pickle-tower-special",
-      "label": "Special"
+      "label": "Superstar",
+      "score": 5,
+      "tarotText": "SUPERSTAR"
     },
+
+
 
     {
       "id": "pickle-death-good",
-      "label": "Good"
+      "label": "Death-dealing",
+      "score": 3,
+      "tarotText": "DEATH-DEALING"
     },
     {
       "id": "pickle-death-bad",
-      "label": "Bad"
+      "label": "Death-defying",
+      "score": 1,
+      "tarotText": "DEATH-DEFYING"
     },
     {
       "id": "pickle-death-special",
-      "label": "Special"
+      "label": "Death-proof",
+      "score": 5,
+      "tarotText": "DEATH-PROOF"
     },
+
+
 
     {
       "id": "viper-processor-good",
-      "label": "Good"
+      "label": "Good",
+      "score": 3,
+      "robotText": "???"
     },
     {
       "id": "viper-processor-bad",
-      "label": "Bad"
+      "label": "Bad",
+      "score": 1,
+      "robotText": "???"
     },
     {
       "id": "viper-processor-special",
-      "label": "Special"
+      "label": "Special",
+      "score": 5,
+      "robotText": "???"
     },
+
+
 
     {
       "id": "viper-torso-good",
-      "label": "Good"
+      "label": "Fridge",
+      "score": 3,
+      "robotText": "FRIDGE"
     },
     {
       "id": "viper-torso-bad",
-      "label": "Bad"
+      "label": "Fish bones",
+      "score": 1,
+      "robotText": "BONES"
     },
     {
       "id": "viper-torso-special",
-      "label": "Special"
+      "label": "Toy dog torso",
+      "score": 5,
+      "robotText": "DOGGY"
     },
+
+
 
     {
       "id": "viper-legs-good",
-      "label": "Good"
+      "label": "Golf cart",
+      "score": 3,
+      "robotText": "GOLF CART"
     },
     {
       "id": "viper-legs-bad",
-      "label": "Bad"
+      "label": "Old boot",
+      "score": 1,
+      "robotText": "BOOT"
     },
     {
       "id": "viper-legs-special",
-      "label": "Special"
+      "label": "Toy dog legs",
+      "score": 5,
+      "robotText": "DOGGO"
     },
+
+
 
     {
       "id": "viper-head-good",
-      "label": "Good"
+      "label": "LDC screen",
+      "score": 3,
+      "robotText": "SMART"
     },
     {
       "id": "viper-head-bad",
-      "label": "Bad"
+      "label": "Tin can",
+      "score": 1,
+      "robotText": "TIN"
     },
     {
       "id": "viper-head-special",
-      "label": "Special"
+      "label": "Toy dog head",
+      "score": 5,
+      "robotText": "DOG"
     },
+
+
 
     {
       "id": "skatepark-halfpipe-bad",
-      "label": "Bad"
+      "label": "Bad",
+      "score": 1
     },
     {
-        "id": "skatepark-halfpipe-good",
-        "label": "Good"
+      "id": "skatepark-halfpipe-good",
+      "label": "Good",
+      "score": 3
     },
     {
-        "id": "skatepark-halfpipe-special",
-        "label": "Special"
+      "id": "skatepark-halfpipe-special",
+      "label": "Special",
+      "score": 5
     },
 
-    {
-        "id": "skatepark-tour-bad",
-        "label": "Bad"
-    },
-    {
-        "id": "skatepark-tour-good",
-        "label": "Good"
-    },
-    {
-        "id": "skatepark-tour-special",
-        "label": "Special"
-    },
+
 
     {
-        "id": "skatepark-jump-bad",
-        "label": "Bad"
+      "id": "skatepark-tour-bad",
+      "label": "Bad",
+      "score": 1
     },
     {
-        "id": "skatepark-jump-good",
-        "label": "Good"
+      "id": "skatepark-tour-good",
+      "label": "Good",
+      "score": 3
     },
     {
-        "id": "skatepark-jump-special",
-        "label": "Special"
+      "id": "skatepark-tour-special",
+      "label": "Special",
+      "score": 5
     },
 
-    {
-        "id": "library-1-bad",
-        "label": "Bad"
-    },
-    {
-        "id": "library-1-good",
-        "label": "Good"
-    },
-    {
-        "id": "library-1-special",
-        "label": "Special"
-    },
+
 
     {
-        "id": "library-2-bad",
-        "label": "Bad"
+      "id": "skatepark-jump-bad",
+      "label": "Bad",
+      "score": 1
     },
     {
-        "id": "library-2-good",
-        "label": "Good"
+      "id": "skatepark-jump-good",
+      "label": "Good",
+      "score": 3
     },
     {
-        "id": "library-2-special",
-        "label": "Special"
+      "id": "skatepark-jump-special",
+      "label": "Special",
+      "score": 5
     },
 
+
+
     {
-        "id": "library-3-bad",
-        "label": "Bad"
+      "id": "library-1-bad",
+      "label": "Bad",
+      "score": 1
     },
     {
-        "id": "library-3-good",
-        "label": "Good"
+      "id": "library-1-good",
+      "label": "Good",
+      "score": 3
     },
     {
-        "id": "library-3-special",
-        "label": "Special"
+      "id": "library-1-special",
+      "label": "Special",
+      "score": 5
     },
+
+
+
+    {
+      "id": "library-2-bad",
+      "label": "Bad",
+      "score": 1
+    },
+    {
+      "id": "library-2-good",
+      "label": "Good",
+      "score": 3
+    },
+    {
+      "id": "library-2-special",
+      "label": "Special",
+      "score": 5
+    },
+
+
+
+    {
+      "id": "library-3-bad",
+      "label": "Bad",
+      "score": 1
+    },
+    {
+      "id": "library-3-good",
+      "label": "Good",
+      "score": 3
+    },
+    {
+      "id": "library-3-special",
+      "label": "Special",
+      "score": 5
+    },
+
+
 
     {
       "id": "daycare-1-bad",
-      "label": "Bad"
+      "label": "Bad",
+      "score": 1
     },
     {
-        "id": "daycare-1-good",
-        "label": "Good"
+      "id": "daycare-1-good",
+      "label": "Good",
+      "score": 3
     },
     {
-        "id": "daycare-1-special",
-        "label": "Special"
-    },
-
-    {
-        "id": "daycare-2-bad",
-        "label": "Bad"
-    },
-    {
-        "id": "daycare-2-good",
-        "label": "Good"
-    },
-    {
-        "id": "daycare-2-special",
-        "label": "Special"
+      "id": "daycare-1-special",
+      "label": "Special",
+      "score": 5
     },
 
-    {
-        "id": "daycare-3-bad",
-        "label": "Bad"
-    },
-    {
-        "id": "daycare-3-good",
-        "label": "Good"
-    },
-    {
-        "id": "daycare-3-special",
-        "label": "Special"
-    },
+
 
     {
-        "id": "safetytown-1-bad",
-        "label": "Bad"
+      "id": "daycare-2-bad",
+      "label": "Bad",
+      "score": 1
     },
     {
-        "id": "safetytown-1-good",
-        "label": "Good"
+      "id": "daycare-2-good",
+      "label": "Good",
+      "score": 3
     },
     {
-        "id": "safetytown-1-special",
-        "label": "Special"
-    },
-
-    {
-        "id": "safetytown-2-bad",
-        "label": "Bad"
-    },
-    {
-        "id": "safetytown-2-good",
-        "label": "Good"
-    },
-    {
-        "id": "safetytown-2-special",
-        "label": "Special"
+      "id": "daycare-2-special",
+      "label": "Special",
+      "score": 5
     },
 
+
+
     {
-        "id": "safetytown-3-bad",
-        "label": "Bad"
+      "id": "daycare-3-bad",
+      "label": "Bad",
+      "score": 1
     },
     {
-        "id": "safetytown-3-good",
-        "label": "Good"
+      "id": "daycare-3-good",
+      "label": "Good",
+      "score": 3
     },
     {
-        "id": "safetytown-3-special",
-        "label": "Special"
+      "id": "daycare-3-special",
+      "label": "Special",
+      "score": 5
+    },
+
+
+
+    {
+      "id": "safetytown-1-bad",
+      "label": "Bad",
+      "score": 1
+    },
+    {
+      "id": "safetytown-1-good",
+      "label": "Good",
+      "score": 3
+    },
+    {
+      "id": "safetytown-1-special",
+      "label": "Special",
+      "score": 5
+    },
+
+
+
+    {
+      "id": "safetytown-2-bad",
+      "label": "Bad",
+      "score": 1
+    },
+    {
+      "id": "safetytown-2-good",
+      "label": "Good",
+      "score": 3
+    },
+    {
+      "id": "safetytown-2-special",
+      "label": "Special",
+      "score": 5
+    },
+
+
+
+    {
+      "id": "safetytown-3-bad",
+      "label": "Bad",
+      "score": 1
+    },
+    {
+      "id": "safetytown-3-good",
+      "label": "Good",
+      "score": 3
+    },
+    {
+      "id": "safetytown-3-special",
+      "label": "Special",
+      "score": 5
     }
   ]
 }

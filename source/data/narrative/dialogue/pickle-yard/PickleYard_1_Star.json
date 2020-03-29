@@ -2,17 +2,17 @@
   "location": "PickleYard",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "SpikyJon", "expression": "neutral", "side": "right" }
+    { "actor": "SpikyJon", "expression": "neutral", "side": "right" },
     { "actor": "Narrator", "expression": "neutral" }
   ],
   "objects": [
-    "TarotDeck"
-    "MozzStack"
+    "TarotDeck",
+    "MozzStack",
     "Pamphlet"
     ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "pickleyard-star-cataclysm" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "pickle-star-bad" ] },
       "then": [ 
         { "actor": "Prota", "line": "Oh no!",  "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Oh no?!", "expression": "shocked" },
@@ -20,7 +20,7 @@
         { "actor": "SpikyJon", "line": "Cataclysm? Oh no is right! I don't know how I feel about that. Hopefully the next card's a little brighter.", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "How about you draw this one for me? I think I've got bad luck.", "expression": "neutral" },
         { "action": "show-object", "object": "TarotDeck" },
-        { "actor": "Prota", "line": "Okay...", "expression": "neutral" }
+        { "actor": "Prota", "line": "Okay...", "expression": "neutral" },
         { "actor": "SpikyJon", "line": "...", "expression": "thinking" },
         { "action": "hide-object" },
         { "actor": "Prota", "line": "Uh oh.", "expression": "shocked" },
@@ -30,12 +30,12 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "pickleyard-star-sea" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "pickle-star-good" ] },
       "then": [
        { "actor": "Prota", "line": "Oh! Star. Like....Starfish. I think this means you were born...at sea.",  "expression": "thinking" },
         { "actor": "SpikyJon", "line": "What--Prota.... How did you know?!", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "My parents love to tell the story of how I was born a couple weeks early, on a cruise ship!", "expression": "shocked" },
-        { "actor": "SpikyJon", "line": "Apparently they already had my named picked out and ready... "Smooth Phil!" ", "expression": "thinking" },
+        { "actor": "SpikyJon", "line": "Apparently they already had my named picked out and ready... \"Smooth Phil!\"", "expression": "thinking" },
         { "actor": "Prota", "line": "But...", "expression": "confused" },
         { "actor": "SpikyJon", "line": "But then they looked into the water and there... was a sea urchin. Hence, my name.", "expression": "happy" },
         { "actor": "Prota", "line": "That's why you're called Spiky Jon?", "expression": "confused" },
@@ -48,18 +48,18 @@
       ]
     },
    {
-     "if": { "method": "lastExitWas", "arguments": [ "pickleyard-star-star" ] },
+     "if": { "method": "lastExitWas", "arguments": [ "pickle-star-special" ] },
       "then": [ 
         { "actor": "Prota", "line": "It means you were born to be a star!",  "expression": "happy" },
         { "actor": "SpikyJon", "line": "A star?! Me?!", "expression": "shocked" },
         { "actor": "Prota", "line": "Yep! What else would it mean? You're destined for fame, Spiky Jon!", "expression": "happy" },
         { "actor": "SpikyJon", "line": "Hmmm... But then...", "expression": "thinking" },
-        { "actor": "Prota", "line": "What's up?", "expression": "confused" }
+        { "actor": "Prota", "line": "What's up?", "expression": "confused" },
         { "actor": "SpikyJon", "line": "Well, I was just thinking. We're asking about my past, but you're telling me I'm destined for something in the future.", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "Which means that the outcome of my life is fixed, decided by the circumstances of my birth.", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "And that suggests a kind of... almost biological form or pre-determinism that, if true, undermines every notion of free will!", "expression": "thinking" },
         { "actor": "Prota", "line": "Uh... oops?", "expression": "confused" },
-        { "actor": "SpikyJon", "line": "I picked a fine day to come to the Pickle Yard, huh? Or... did I pick it at all?  ", "expression": "neutral" },
+        { "actor": "SpikyJon", "line": "I picked a fine day to come to the Pickle Yard, huh? Or... did I pick it at all?", "expression": "neutral" },
         { "action": "show-object", "object": "TarotDeck" },
         { "actor": "Prota", "line": "Speaking of picking, I picked you a new card! It's...", "expression": "neutral" },
         { "action": "hide-object" },

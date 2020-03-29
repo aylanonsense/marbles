@@ -2,13 +2,22 @@
   "Minty": {
     "image": "/images/narrative/objects/minty.png"
   },
-  "Fail Sandwich": {
+  "FailSandwich": {
     "image": "/images/narrative/objects/sandwich-fail.png"
   },
-  "Normal Sandwich": {
+  "NormalSandwich": {
     "image": "/images/narrative/objects/sandwich-normal.png"
   },
-  "Special Sandwich": {
+  "SpecialSandwich": {
     "image": "/images/narrative/objects/sandwich-special.png"
+  },
+  "TarotDeck": {
+    "image": "/images/narrative/objects/tarot-deck.png"
+  },
+  "MozzStack": {
+    "image": "/images/narrative/objects/mozz-stack.png"
+  },
+  "Pamphlet": {
+    "image": "/images/narrative/objects/pamphlet.png"
   }
 }

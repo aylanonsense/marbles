@@ -1,8 +1,14 @@
 {
-  "Black Screen": {
+  "BlackScreen": {
     "image": "/images/narrative/locations/black-screen.png"
   },
-  "Sub-tle": {
-    "image": "/images/narrative/locations/sub-tle.png"
+  "DrSandwich": {
+    "image": "/images/narrative/locations/dr-sandwich.png"
+  },
+  "PickleYard": {
+    "image": "/images/narrative/locations/pickle-yard.png"
+  },
+  "VintageViper": {
+    "image": "/images/narrative/locations/vintage-viper.png"
   }
 }

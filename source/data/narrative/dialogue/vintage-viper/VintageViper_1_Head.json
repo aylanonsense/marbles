@@ -2,24 +2,24 @@
   "location": "VintageViper",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Randi", "expression": "neutral", "side": "right" }
+    { "actor": "Randi", "expression": "neutral", "side": "right" },
     { "actor": "Narrator", "expression": "neutral" }
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "viper-head-tincan" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "viper-head-bad" ] },
       "then": [ 
         { "actor": "Randi", "line": "Okay, Prota, let's see what you brought me!",  "expression": "happy" },
         { "actor": "Prota", "line": "Here you go!", "expression": "happy" },
         { "actor": "Randi", "line": "Uh.... this is a tin can.", "expression": "confused" },
         { "actor": "Prota", "line": "That's right! A tin CAN be a robot's head, if you use it right! ...Right?", "expression": "happy" },
-        { "actor": "Randi", "line": "You know what, Prota, I like your ingenuity. Reminds me of a young me. ", "expression": "happy" },
+        { "actor": "Randi", "line": "You know what, Prota, I like your ingenuity. Reminds me of a young me.", "expression": "happy" },
         { "actor": "Randi", "line": "I'll see what magic I can work with this. In the mean time, you should get back out there and see what you can find for the torso.", "expression": "neutral" },
         { "actor": "Prota", "line": "I'm on it, Randi!", "expression": "neutral" }
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "viper-head-lcd" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "viper-head-good" ] },
       "then": [
        { "actor": "Randi", "line": "What did you find out there, Prota?",  "expression": "happy" },
         { "actor": "Prota", "line": "You'll see! Or should I say... you'll C?", "expression": "happy" },
@@ -34,11 +34,11 @@
       ]
     },
    {
-     "if": { "method": "lastExitWas", "arguments": [ "viper-head-dog" ] },
+     "if": { "method": "lastExitWas", "arguments": [ "viper-head-special" ] },
       "then": [ 
         { "actor": "Randi", "line": "Back already? What'd you find?",  "expression": "happy" },
         { "actor": "Prota", "line": "I think I found the perfect head to sniff out Minty's location!", "expression": "happy" },
-        { "actor": "Prota", "line": "Here you go!", "expression": "happy" }
+        { "actor": "Prota", "line": "Here you go!", "expression": "happy" },
         { "actor": "Randi", "line": "....You don't think it looks a little...familar, do you?", "expression": "confused" },
         { "actor": "Prota", "line": "Familiar? What do you mean?", "expression": "confused" },
         { "actor": "Randi", "line": "Oh, it's probably nothin'! Let's keep on building this thing, shall we?", "expression": "happy" },

@@ -2,23 +2,85 @@
   "Prota": {
     "name": "Prota",
     "image": "/images/narrative/actors/prota.png",
+    "facing": "right",
     "expressions": {
-      "neutral": { "frame": 6 },
-      "happy": { "frame": 4 },
-      "thinking": { "frame": 2 },
-      "confused": { "frame": 9 },
-      "shocked": { "frame": 7 }
+      "neutral": { "frame": 5 },
+      "happy": { "frame": 3 },
+      "thinking": { "frame": 1 },
+      "confused": { "frame": 8 },
+      "shocked": { "frame": 6 }
     }
   },
   "Doc": {
     "name": "Doc",
     "image": "/images/narrative/actors/doc.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 },
+      "happy": { "frame": 1 },
+      "thinking": { "frame": 4 },
+      "confused": { "frame": 5 },
+      "shocked": { "frame": 3 }
+    }
+  },
+  "Randi": {
+    "name": "Randi",
+    "image": "/images/narrative/actors/randi.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 3 },
+      "happy": { "frame": 4 },
+      "thinking": { "frame": 1 },
+      "confused": { "frame": 1 },
+      "shocked": { "frame": 2 }
+    }
+  },
+  "SpikyJon": {
+    "name": "Spiky Jon",
+    "image": "/images/narrative/actors/spiky-jon.png",
+    "facing": "left",
     "expressions": {
       "neutral": { "frame": 2 },
+      "happy": { "frame": 1 },
+      "thinking": { "frame": 3 },
+      "confused": { "frame": 4 },
+      "shocked": { "frame": 4 }
+    }
+  },
+  "Minty": {
+    "name": "Minty",
+    "image": "/images/narrative/actors/minty.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 },
       "happy": { "frame": 2 },
-      "thinking": { "frame": 4 },
-      "confused": { "frame": 3 },
-      "shocked": { "frame": 1 }
+      "thinking": { "frame": 2 },
+      "confused": { "frame": 1 },
+      "shocked": { "frame": 2 }
+    }
+  },
+  "Trashbot": {
+    "name": "Trashbot",
+    "image": "/images/narrative/actors/trashbot.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 }
+    }
+  },
+  "Goodbot": {
+    "name": "Goodbot",
+    "image": "/images/narrative/actors/goodbot.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 }
+    }
+  },
+  "Mintwo": {
+    "name": "Mintwo",
+    "image": "/images/narrative/actors/mintwo.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 }
     }
   }
 }

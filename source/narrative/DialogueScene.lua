@@ -5,6 +5,7 @@ import "narrative/Location"
 import "narrative/ShownObject"
 import "narrative/dialogueMethods"
 import "scene/time"
+import "CoreLibs/utilities/printer"
 
 class("DialogueScene").extends(Scene)
 
@@ -17,18 +18,25 @@ function DialogueScene:init(convoData)
   self.actorLookup = {}
   self.actorsOnStage = { left = nil, right = nil }
   for _, actorData in ipairs(self:evalDialogueField(convoData.actors)) do
-    local actor = self:addOrFindActor(self:evalDialogueField(actorData.actor))
-    local expression = self:evalDialogueField(actorData.expression)
-    if expression then
-      actor:setExpression(expression)
-    end
-    local side = self:evalDialogueField(actorData.side)
-    if side then
-      if self.actorsOnStage[side] then
-        self.actorsOnStage[side]:slideOffStage()
+    local actorId = self:evalDialogueField(actorData.actor)
+    if actorId ~= "Narrator" then
+      if not actorId then
+        print("Falsey actor id while evaluating dialogue actors")
+        printT(actorData)
       end
-      actor:slideOnStage(side)
-      self.actorsOnStage[side] = actor
+      local actor = self:addOrFindActor(actorId)
+      local expression = self:evalDialogueField(actorData.expression)
+      if expression then
+        actor:setExpression(expression)
+      end
+      local side = self:evalDialogueField(actorData.side)
+      if side then
+        if self.actorsOnStage[side] then
+          self.actorsOnStage[side]:slideOffStage()
+        end
+        actor:slideOnStage(side)
+        self.actorsOnStage[side] = actor
+      end
     end
   end
   -- Prep the script

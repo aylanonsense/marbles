@@ -2,27 +2,27 @@
   "location": "PickleYard",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "SpikyJon", "expression": "neutral", "side": "right" }
+    { "actor": "SpikyJon", "expression": "neutral", "side": "right" },
     { "actor": "Narrator", "expression": "neutral" }
   ],
    "objects": [
-    "TarotDeck"
-    "MozzStack"
+    "TarotDeck",
+    "MozzStack",
     "Pamphlet"
     ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "pickleyard-death-fear" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "pickle-death-bad" ] },
       "then": [ 
-        { "actor": "Prota", "line": "I think this means you're not afraid of death. You live for the moment. ",  "expression": "neutral" },
+        { "actor": "Prota", "line": "I think this means you're not afraid of death. You live for the moment.",  "expression": "neutral" },
         { "actor": "SpikyJon", "line": "Interesting. That suggests I'm maybe reactive... instead of proactive.", "expression": "thinking" },
         { "actor": "Prota", "line": "Sure!", "expression": "happy" },
         { "actor": "SpikyJon", "line": "It could also mean that I'm a risk-taker. And that I should be bold, even in the face of impossible odds.", "expression": "thinking" },
         { "actor": "Prota", "line": "Okay!", "expression": "happy" },
-        { "actor": "SpikyJon", "line": "Wow, Prota. This is really giving me a lot to think about. ", "expression": "shocked" },
-        { "actor": "SpikyJon", "line": "Let's do the next card. If the STAR was my past and DEATH is my present, this is... the big one, right? ", "expression": "shocked" },
+        { "actor": "SpikyJon", "line": "Wow, Prota. This is really giving me a lot to think about.", "expression": "shocked" },
+        { "actor": "SpikyJon", "line": "Let's do the next card. If the STAR was my past and DEATH is my present, this is... the big one, right?", "expression": "shocked" },
         { "action": "show-object", "object": "TarotDeck" },
-        { "actor": "Prota", "line": "It's definitely something.", "expression": "happy" }
+        { "actor": "Prota", "line": "It's definitely something.", "expression": "happy" },
         { "actor": "SpikyJon", "line": "Okay... I'll choose this one. But I can't look. Tell me what I got.", "expression": "shocked" },
         { "action": "hide-object" },
         { "actor": "Prota", "line": "It's...", "expression": "neutral" },
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "pickleyard-death-end" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "pickle-death-good" ] },
       "then": [
        { "actor": "Prota", "line": "I think this card means that...this is a time of endings. And new beginnings.",  "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Wow! Prota! Are you psychic?!", "expression": "shocked" },
@@ -46,11 +46,11 @@
         { "action": "hide-object" },
         { "actor": "Prota", "line": "It's... the TOWER!", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Interesting. Guess you should tell me what it means.", "expression": "thinking" },
-         { "actor": "Prota", "line": "I guess I should.", "expression": "thinking" },
+         { "actor": "Prota", "line": "I guess I should.", "expression": "thinking" }
       ]
     },
    {
-     "if": { "method": "lastExitWas", "arguments": [ "pickleyard-death-outlive" ] },
+     "if": { "method": "lastExitWas", "arguments": [ "pickle-death-special" ] },
       "then": [ 
         { "actor": "Prota", "line": "I think it means you strive for immortaility. For your achievements to outlive you.",  "expression": "thinking" },
         { "actor": "SpikyJon", "line": "Huh! Wow. That's... really interesting.", "expression": "shocked" },
@@ -59,7 +59,7 @@
         { "actor": "SpikyJon", "line": "I mean, it could mean that I want to be in architecture, creating buildings that last for centuries...", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "But you know what lasts even longer than that?! Competitive eating records!", "expression": "shocked" },
         { "actor": "Prota", "line": "...Do they?", "expression": "confused" },
-        { "actor": "SpikyJon", "line": "Uhhh, how about you ask Hogarth Panzanella, who ate no fewer than 3 plates of nachos in 1879? ", "expression": "neutral" },
+        { "actor": "SpikyJon", "line": "Uhhh, how about you ask Hogarth Panzanella, who ate no fewer than 3 plates of nachos in 1879?", "expression": "neutral" },
         { "actor": "Prota", "line": "What? Even I could eat three plates of nachos if you gave me a whole year.", "expression": "confused" },
         { "actor": "SpikyJon", "line": "He did it in TWO MINUTES. And his record has stood strong ever since!", "expression": "Happy" },
         { "action": "show-object", "object": "TarotDeck" },

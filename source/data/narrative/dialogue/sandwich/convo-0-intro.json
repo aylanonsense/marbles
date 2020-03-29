@@ -1,5 +1,5 @@
 {
-  "location": "Black Screen",
+  "location": "BlackScreen",
   "actors": [
     { "actor": "Prota", "expression": "confused" },
     { "actor": "Doc", "expression": "neutral" }
@@ -10,12 +10,12 @@
     { "line": "Earlier in the story, Prota got a little mixed up thanks to the Marble-izer 2000. " },
     { "line": "It'll be up to YOU to navigate the maze of her brain to trigger dialog choices. " },
     { "line": "Have fun and don't worry about making mistakes! They're part of what makes life interesting." },
-    { "action": "change-location", "location": "Sub-tle" },
+    { "action": "change-location", "location": "DrSandwich" },
     { "actor": "Doc", "line": "Morning, Prota! You look like you're in a hurry…", "side": "right" },
     { "actor": "Doc", "line": "And you're covered in...pollen?", "expression": "confused" },
     { "actor": "Prota", "line": "It's a long story. I'm looking for Minty, have you seen her around?", "side": "left" },
     { "actor": "Doc", "line": "Fraid not. I've only ever seen her with you when you come in for lunch?" },
-    { "actor": "Prota", "line": "Wait - that's it! ", "expression": "shocked" },
+    { "actor": "Prota", "line": "Wait - that's it!", "expression": "shocked" },
     { "actor": "Prota", "line": "Her favorite sandwich! Maybe if I make her one, she'll come back to me!", "expression": "happy" },
     { "actor": "Doc", "line": "Great idea. What does she like it on?", "expression": "neutral" },
     { "actor": "Prota", "line": "Uhhhhh...", "expression": "confused" },

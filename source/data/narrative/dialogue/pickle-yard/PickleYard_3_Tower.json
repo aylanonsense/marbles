@@ -2,17 +2,17 @@
   "location": "PickleYard",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "SpikyJon", "expression": "neutral", "side": "right" }
+    { "actor": "SpikyJon", "expression": "neutral", "side": "right" },
     { "actor": "Narrator", "expression": "neutral" }
   ],
     "objects": [
-    "TarotDeck"
-    "MozzStack"
+    "TarotDeck",
+    "MozzStack",
     "Pamphlet"
     ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "pickleyard-tower-stand" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "pickle-tower-bad" ] },
       "then": [ 
         { "actor": "Prota", "line": "I think this one means... that you're going to stand atop a tower.",  "expression": "confused" },
         { "actor": "SpikyJon", "line": "Me? Stand?", "expression": "thinking" },
@@ -20,7 +20,7 @@
         { "actor": "SpikyJon", "line": "OH MY GOD!", "expression": "shocked" },
         { "actor": "Prota", "line": "What?!", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "I... have no idea what that means!", "expression": "happy" },
-        { "actor": "Prota", "line": "Maybe just that... that you're going to spend a lot of time on a tower. ", "expression": "shocked" },
+        { "actor": "Prota", "line": "Maybe just that... that you're going to spend a lot of time on a tower.", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Hmm. I wonder what kind of tower. There aren't a lot of towers in town, except...", "expression": "thinking" },
         { "actor": "Prota", "line": "Except what?", "expression": "confused" },
         { "actor": "SpikyJon", "line": "Nah. Nothing. I'm sure it's not about that. I wonder if it's a figurative tower.", "expression": "thinking" },
@@ -28,13 +28,13 @@
         { "actor": "Prota", "line": "I would say so!", "expression": "happy" },
         { "actor": "SpikyJon", "line": "So maybe the card's trying to tell me to look inwards. To search my innermost desires...", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "And become what I've always known I was meant to be.", "expression": "shocked" },
-        { "actor": "SpikyJon", "line": "But I guess it's all about what the cards mean together, right?", "expression": "thinking" }
+        { "actor": "SpikyJon", "line": "But I guess it's all about what the cards mean together, right?", "expression": "thinking" },
         { "actor": "Prota", "line": "Probably.", "expression": "confused" },
         { "actor": "Prota", "line": "So in that case...", "expression": "thinking" }
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "pickleyard-tower-destroy" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "pickle-tower-good" ] },
       "then": [
        { "actor": "Prota", "line": "I think it means you'll spend your days destroying great towers!",  "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Oh no! That's a terrible future for an architect!", "expression": "shocked" },
@@ -50,9 +50,9 @@
       ]
     },
    {
-     "if": { "method": "lastExitWas", "arguments": [ "pickleyard-tower-build" ] },
+     "if": { "method": "lastExitWas", "arguments": [ "pickle-tower-special" ] },
       "then": [ 
-        { "actor": "Prota", "line": "This means you'll spend your days building great towers! ",  "expression": "neutral" },
+        { "actor": "Prota", "line": "This means you'll spend your days building great towers!",  "expression": "neutral" },
         { "actor": "SpikyJon", "line": "Hm! That definitely sounds like architecture to me...", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "But I suppose we've gotta look at how all the pieces fit together right?", "expression": "neutral" },
         { "actor": "Prota", "line": "Uh...right! Which means...", "expression": "thinking" }

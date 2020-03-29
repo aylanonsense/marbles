@@ -11,8 +11,12 @@ end
 class("Actor").extends()
 
 function Actor:init(id)
+  if not actorsData[id] then
+    print("No actor data defined for actor " .. (id or "nil"))
+  end
   self.id = id
   self.name = actorsData[self.id].name
+  self.facing = actorsData[self.id].facing
   self.side = nil
   self.preferredSide = "left"
   self.expression = nil
@@ -43,13 +47,14 @@ end
 
 function Actor:slideOnStage(side)
   if self.sprite then
+    local flipped = (side == self.facing)
     local startX = 200 + 300 * ((side == "left") and -1 or 1)
     local endX = 200 + 100 * ((side == "left") and -1 or 1)
     local y = 154
     local path = playdate.geometry.lineSegment.new(startX, y, endX, y)
     local animator = playdate.graphics.animator.new(1000, path, playdate.easingFunctions.outCubic)
     self.sprite:setAnimator(animator)
-    self.sprite:setImageFlip((side == "right") and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped)
+    self.sprite:setImageFlip(flipped and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped)
     self.side = side
     self.preferredSide = side
   end
@@ -71,9 +76,14 @@ function Actor:setExpression(expression)
   if expression and expression ~= self.expression then
     self.expression = expression
     if self.sprite then
-      local frame = actorsData[self.id].expressions[expression].frame
-      local image = self.imageTable:getImage(frame)
-      self.sprite:setImage(image, ((self.side or self.preferredSide) == "right") and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped)
+      if actorsData[self.id].expressions[expression] then
+        local frame = actorsData[self.id].expressions[expression].frame
+        local image = self.imageTable:getImage(frame)
+        local flipped = ((self.side or self.preferredSide) == self.facing)
+        self.sprite:setImage(image, (flipped and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped))
+      else
+        print("Actor " .. (self.name or "nil") .. " does not have a " .. (expression or "nil") .. " expression")
+      end
     end
   end
 end

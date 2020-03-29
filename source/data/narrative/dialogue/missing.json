@@ -1,5 +1,5 @@
 {
-  "location": "Black Screen",
+  "location": "BlackScreen",
   "actors": [
     { "actor": "Prota", "expression": "thinking", "side": "left" },
     { "actor": "Doc", "expression": "neutral", "side": "right" }
