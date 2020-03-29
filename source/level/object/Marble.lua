@@ -17,9 +17,9 @@ function Marble:init(x, y)
   self.recentImpulses = { 0, 0, 0 }
   self.isGrounded = false
   self.rollSoundState = nil
-  self.rollStartSound = soundCache.createPlayer("sound/sfx/Marble_Roll_Start_01")
-  self.rollLoopSound = soundCache.createPlayer("sound/sfx/Marble_Roll_Loop_01")
-  self.rollEndSound = soundCache.createPlayer("sound/sfx/Marble_Roll_End_01")
+  self.rollStartSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-start")
+  self.rollLoopSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-loop")
+  self.rollEndSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-end")
   self.rollStartSound:setFinishCallback(function()
     if self.rollSoundState == 'start' then
       self.rollSoundState = 'loop'

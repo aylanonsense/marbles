@@ -16,7 +16,7 @@ class("EditorScene").extends(Scene)
 
 function EditorScene:init()
 	EditorScene.super.init(self)
-	soundCache.stopAll()
+	soundCache.stopAllSoundEffects()
 	camera:reset()
 	camera:recalculatePerspective()
 	self.spawn = { x = 0, y = 0 }

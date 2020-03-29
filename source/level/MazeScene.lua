@@ -141,6 +141,6 @@ function MazeScene:triggerExitTaken(exit)
       obj.isInvincible = true
     end
   end
-  soundCache:stopAll()
+  soundCache:stopAllSoundEffects()
   self:endScene(exit)
 end

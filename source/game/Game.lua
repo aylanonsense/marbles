@@ -4,6 +4,8 @@ import "narrative/DialogueScene"
 import "level/MazeScene"
 import "narrative/StorylineSimulationScene"
 import "narrative/MazeSimulationScene"
+import "render/imageCache"
+import "utility/soundCache"
 
 class("Game").extends()
 
@@ -58,17 +60,19 @@ function Game:resumeCurrentStoryline()
 end
 
 function Game:advanceCurrentStoryline()
+  soundCache.stopAllSoundEffects()
+  soundCache.stopAllMusic()
   self.playthrough.storyline.stage += 1
   self:playNextStorylineScene()
 end
 
 function Game:playNextStorylineScene()
   local sceneData = self.storylineData.scenes[self.playthrough.storyline.stage]
-  local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
-  if scene then
+  if sceneData then
     if SHOW_DEBUG_SCREENS and sceneData.maze then
       Scene.setScene(MazeSimulationScene(sceneData.maze, sceneData.exits), function(shouldPlayMaze, exit)
         if shouldPlayMaze then
+          local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
           Scene.setScene(scene, function(exit)
             if exit then
               self:recordExitTaken(exit)
@@ -83,6 +87,7 @@ function Game:playNextStorylineScene()
         end
       end)
     else
+      local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
       Scene.setScene(scene, function(exit)
         if exit then
           self:recordExitTaken(exit)
@@ -106,6 +111,12 @@ function Game:finishCurrentStoryline(result)
     result = result
   })
 
+  -- Stop all sounds and clear all caches
+  soundCache.stopAllSoundEffects()
+  soundCache.stopAllMusic()
+  soundCache.clearCache()
+  imageCache.clearCache()
+
   -- Figure out what the next storyline is
   local storylineData = self.playthroughData.storylines[storyline.name]
   return storylineData[result] or storylineData.next or storylineData.normal
@@ -126,10 +137,18 @@ function Game:createStorylineScene(storylineData, stage)
   if sceneData then
     if sceneData.dialogue then
       local dialogueData = loadJsonFile("/data/narrative/dialogue/" .. sceneData.dialogue .. ".json")
+      if sceneData.music then
+        local musicPlayer = soundCache.createMusicPlayer("sound/music/" .. sceneData.music)
+        musicPlayer:play()
+      end
       return DialogueScene(dialogueData)
     elseif sceneData.maze then
-      local levelData = loadJsonFile("/data/levels/" .. sceneData.maze .. "-play.json")
-      return MazeScene(levelData)
+      local mazeData = loadJsonFile("/data/levels/" .. sceneData.maze .. "-play.json")
+      if sceneData.music then
+        local musicPlayer = soundCache.createMusicPlayer("sound/music/" .. sceneData.music)
+        musicPlayer:play()
+      end
+      return MazeScene(mazeData)
     end
   end
 end

@@ -1,6 +1,7 @@
 soundCache = {
   samples = {},
-  players = {}
+  soundEffectPlayers = {},
+  musicPlayers = {}
 }
 
 function soundCache.loadSample(path)
@@ -10,19 +11,33 @@ function soundCache.loadSample(path)
   return soundCache.samples[path]
 end
 
-function soundCache.createPlayer(path)
+function soundCache.createSoundEffectPlayer(path)
   local player = playdate.sound.sampleplayer.new(soundCache.loadSample(path))
-  table.insert(soundCache.players, player)
+  table.insert(soundCache.soundEffectPlayers, player)
   return player
 end
 
-function soundCache.stopAll()
-  for _, player in ipairs(soundCache.players) do
+function soundCache.createMusicPlayer(path)
+  if not soundCache.musicPlayers[path] then
+    soundCache.musicPlayers[path] = playdate.sound.fileplayer.new(path)
+  end
+  return soundCache.musicPlayers[path]
+end
+
+function soundCache.stopAllSoundEffects()
+  for _, player in ipairs(soundCache.soundEffectPlayers) do
+    player:stop()
+  end
+end
+
+function soundCache.stopAllMusic()
+  for _, player in pairs(soundCache.musicPlayers) do
     player:stop()
   end
 end
 
 function soundCache.clearCache()
   soundCache.samples = {}
-  soundCache.players = {}
+  soundCache.soundEffectPlayers = {}
+  soundCache.musicPlayers = {}
 end
