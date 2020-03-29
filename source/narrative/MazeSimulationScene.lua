@@ -16,18 +16,27 @@ function MazeSimulationScene:init(mazeName, exits)
       end
     }
   }
-  for _, exitId in ipairs(exits) do
-    for _, exitData in ipairs(exitsData.exits) do
-      if exitData.id == exitId then
-        table.insert(options, {
-          text = "Skip with " .. exitData.label .. " (" .. (exitData.score < 2 and "fail" or (exitData.score > 4 and "special" or "normal")) .. ")",
-          selected = function()
-            self:endScene(false, exitData)
-          end
-        })
-        break
+  if exits then
+    for _, exitId in ipairs(exits) do
+      for _, exitData in ipairs(exitsData.exits) do
+        if exitData.id == exitId then
+          table.insert(options, {
+            text = "Skip with " .. exitData.label .. " (" .. (exitData.score < 2 and "fail" or (exitData.score > 4 and "special" or "normal")) .. ")",
+            selected = function()
+              self:endScene(false, exitData)
+            end
+          })
+          break
+        end
       end
     end
+  else
+    table.insert(options, {
+      text = "Skip",
+      selected = function()
+        self:endScene(false, nil)
+      end
+    })
   end
   self.menu = DebugMenu("Maze: " .. mazeName, options)
 end

@@ -73,8 +73,8 @@ function EditorTestLevelScene:update()
 	-- Remove despawned objects
 	for i = #self.objects, 1, -1 do
 		if self.objects[i].waitingToDespawn then
-			table.remove(self.objects, i)
 			self.objects[i]:onDespawn()
+			table.remove(self.objects, i)
 		end
 	end
 

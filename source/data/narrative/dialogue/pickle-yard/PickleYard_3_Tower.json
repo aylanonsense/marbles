@@ -5,7 +5,7 @@
     { "actor": "SpikyJon", "expression": "neutral", "side": "right" },
     { "actor": "Narrator", "expression": "neutral" }
   ],
-    "objects": [
+  "objects": [
     "TarotDeck",
     "MozzStack",
     "Pamphlet"

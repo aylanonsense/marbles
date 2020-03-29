@@ -1,0 +1,35 @@
+{
+  "scenes": [
+    { "maze": "library-1" },
+    { "maze": "library-2" },
+    { "maze": "library-3" },
+
+    { "maze": "daycare-1" },
+    { "maze": "daycare-2" },
+    { "maze": "daycare-3" },
+
+    { "maze": "safetytown-1" },
+    { "maze": "safetytown-2" },
+    { "maze": "safetytown-3" },
+
+    { "maze": "skatepark-halfpipe" },
+    { "maze": "skatepark-jump" },
+    { "maze": "skatepark-tour" },
+
+    { "maze": "pickle-cups" },
+    { "maze": "pickle-death" },
+    { "maze": "pickle-star" },
+    { "maze": "pickle-tower" },
+
+    { "maze": "viper-head" },
+    { "maze": "viper-legs" },
+    { "maze": "viper-processor" },
+    { "maze": "viper-torso" },
+
+    { "maze": "sandwich-1-bread" },
+    { "maze": "sandwich-2-protein" },
+    { "maze": "sandwich-3-cheese" },
+    { "maze": "sandwich-4-veggies" },
+    { "maze": "sandwich-5-condiments" }
+  ]
+}
