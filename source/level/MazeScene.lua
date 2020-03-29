@@ -3,14 +3,14 @@ import "scene/Scene"
 import "physics/physics"
 import "level/object/levelObjectByType"
 import "level/object/Marble"
+import "utility/soundCache"
 
 class("MazeScene").extends(Scene)
 
-function MazeScene:init(levelData, storyline)
+function MazeScene:init(levelData)
   MazeScene.super.init(self)
 
   self.levelData = levelData
-  self.storyline = storyline
   self.objects = {}
   self.worldBoundary = nil
   self.marble = nil
@@ -133,4 +133,14 @@ function MazeScene:onCollide(collision)
     levelObjA:onCollide(levelObjB, collision, true)
     levelObjB:onCollide(levelObjA, collision, false)
   end
+end
+
+function MazeScene:triggerExitTaken(exit)
+  for _, obj in ipairs(self.objects) do
+    if obj.type == LevelObject.Type.Exit then
+      obj.isInvincible = true
+    end
+  end
+  soundCache:stopAll()
+  self:endScene(exit)
 end

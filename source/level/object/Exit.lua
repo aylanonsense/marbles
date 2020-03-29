@@ -28,6 +28,7 @@ function Exit:init(x, y, exitId, icon)
   end
   self.label = exitLookup[self.exitId].label
   self.cooldown = 0
+  self.isInvincible = false
 end
 
 function Exit:update()
@@ -63,13 +64,12 @@ function Exit:draw()
 end
 
 function Exit:preCollide(other, collision)
-  if self.health > 0 and self.cooldown <= 0 then
+  if self.health > 0 and self.cooldown <= 0 and not self.isInvincible then
     self.health -= 1
     self.cooldown = 0.25
     if self.health <= 0 then
-      if scene.storyline then
-        scene.storyline:recordExitTaken(exitLookup[self.exitId])
-        scene.storyline:advance()
+      if scene.triggerExitTaken then
+        scene:triggerExitTaken(exitLookup[self.exitId])
       end
       self:despawn()
     end

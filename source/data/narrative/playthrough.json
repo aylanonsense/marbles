@@ -1,0 +1,93 @@
+{
+  "start": "protas-home",
+  "storylines": {
+    "protas-home": {
+      "symbol": "1",
+      "label": "Prota's Home",
+      "isMissing": true,
+      "next": "marbels-lab"
+    },
+
+    "marbels-lab": {
+      "symbol": "2",
+      "label": "Marbel's Lab",
+      "isMissing": true,
+      "next": "library"
+    },
+
+    "library": {
+      "symbol": "3",
+      "label": "Library",
+      "isMissing": true,
+      "special": "skate-park",
+      "normal": "sandwich-shop",
+      "fail": "daycare"
+    },
+
+    "skate-park": {
+      "symbol": "4A",
+      "label": "Skate Park",
+      "isMissing": true,
+      "special": "safety-town",
+      "normal": "pickle-yard",
+      "fail": "vintage-viper"
+    },
+    "sandwich-shop": {
+      "symbol": "4B",
+      "label": "Sandwich Shop",
+      "special": "safety-town",
+      "normal": "pickle-yard",
+      "fail": "vintage-viper"
+    },
+    "daycare": {
+      "symbol": "4C",
+      "label": "Daycare",
+      "isMissing": true,
+      "special": "safety-town",
+      "normal": "pickle-yard",
+      "fail": "vintage-viper"
+    },
+
+    "safety-town": {
+      "symbol": "5A",
+      "label": "Safety Town",
+      "isMissing": true,
+      "next": "ball-of-yarn-museum"
+    },
+    "pickle-yard": {
+      "symbol": "5B",
+      "label": "Pickle Yard",
+      "next": "ball-of-yarn-museum"
+    },
+    "vintage-viper": {
+      "symbol": "5C",
+      "label": "Vintage Viper / Landfill",
+      "next": "ball-of-yarn-museum"
+    },
+
+    "ball-of-yarn-museum": {
+      "symbol": "6",
+      "label": "Ball of Yarn Museum",
+      "isMissing": true,
+      "special": "special-ending",
+      "normal": "normal-ending",
+      "fail": "fail-ending"
+    },
+
+    "special-ending": {
+      "symbol": "7A",
+      "label": "Special Ending",
+      "isMissing": true
+    },
+    "normal-ending": {
+      "symbol": "7B",
+      "label": "Normal Ending",
+      "isMissing": true
+    },
+    "fail-ending": {
+      "symbol": "7C",
+      "label": "Fail Ending",
+      "isMissing": true
+    }
+  }
+}

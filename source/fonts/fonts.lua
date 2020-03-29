@@ -1,3 +1,3 @@
 fonts = {
-	FullCircle = playdate.graphics.loadFont("fonts/Full Circle/font-full-circle")
+	FullCircle = playdate.graphics.font.new("fonts/Full Circle/font-full-circle")
 }

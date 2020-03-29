@@ -1,21 +1,28 @@
 import "scene/time"
 import "scene/Scene"
 import "CoreLibs/keyboard"
-import "narrative/Storyline"
+import "game/Game"
 import "level/editor/EditorScene"
+
+local LAUNCH_LEVEL_EDITOR = false
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
--- local storyline = Storyline("test-story")
--- storyline:start()
-Scene.setScene(EditorScene())
+-- Set up the gane (globally accessible)
+if LAUNCH_LEVEL_EDITOR then
+  Scene.setScene(EditorScene())
+else
+  game = Game()
+end
 
 -- Update the scene
 function playdate.update()
 	time:advance(1 / 20)
-	scene:update()
-	scene:draw()
+  if scene then
+  	scene:update()
+  	scene:draw()
+  end
   playdate.drawFPS(380, 10)
 end
 

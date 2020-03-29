@@ -4,11 +4,12 @@ import "level/MazeScene"
 
 class("Storyline").extends()
 
-function Storyline:init(storylineName)
+function Storyline:init(storylineName, onFinish)
   local storylineData = json.decodeFile("/data/narrative/storylines/" .. storylineName .. ".json")
   self.scenes = storylineData.scenes
   self.sceneIndex = 1
   self.exitsTaken = {}
+  self.onFinish = onFinish
 end
 
 function Storyline:start()
@@ -19,6 +20,8 @@ function Storyline:advance()
   if self.sceneIndex < #self.scenes then
     self.sceneIndex += 1
     Scene.setScene(self:createScene(self.scenes[self.sceneIndex]))
+  elseif self.onFinish then
+    self:onFinish()
   end
 end
 

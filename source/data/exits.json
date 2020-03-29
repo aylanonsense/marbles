@@ -94,365 +94,265 @@
       "sandwichText": "with mayo",
       "sandwichScore": 5
     },
+
     {
       "id": "pickle-cups-good",
-      "label": "Good",
-      "sandwichText": "good",
-      "sandwichScore": 3
+      "label": "Good"
     },
     {
       "id": "pickle-cups-bad",
-      "label": "Bad",
-      "sandwichText": "bad",
-      "sandwichScore": 1
+      "label": "Bad"
     },
     {
       "id": "pickle-cups-special",
-      "label": "Special",
-      "sandwichText": "special",
-      "sandwichScore": 5
+      "label": "Special"
     },
+
     {
       "id": "pickle-star-good",
-      "label": "Good",
-      "sandwichText": "good",
-      "sandwichScore": 3
+      "label": "Good"
     },
     {
       "id": "pickle-star-bad",
-      "label": "Bad",
-      "sandwichText": "bad",
-      "sandwichScore": 1
+      "label": "Bad"
     },
     {
       "id": "pickle-star-special",
-      "label": "Special",
-      "sandwichText": "special",
-      "sandwichScore": 5
+      "label": "Special"
     },
+
     {
       "id": "pickle-tower-good",
-      "label": "Good",
-      "sandwichText": "good",
-      "sandwichScore": 3
+      "label": "Good"
     },
     {
       "id": "pickle-tower-bad",
-      "label": "Bad",
-      "sandwichText": "bad",
-      "sandwichScore": 1
+      "label": "Bad"
     },
     {
       "id": "pickle-tower-special",
-      "label": "Special",
-      "sandwichText": "special",
-      "sandwichScore": 5
+      "label": "Special"
     },
+
     {
       "id": "pickle-death-good",
-      "label": "Good",
-      "sandwichText": "good",
-      "sandwichScore": 3
+      "label": "Good"
     },
     {
       "id": "pickle-death-bad",
-      "label": "Bad",
-      "sandwichText": "bad",
-      "sandwichScore": 1
+      "label": "Bad"
     },
     {
       "id": "pickle-death-special",
-      "label": "Special",
-      "sandwichText": "special",
-      "sandwichScore": 5
+      "label": "Special"
     },
+
     {
       "id": "viper-processor-good",
-      "label": "Good",
-      "sandwichText": "good",
-      "sandwichScore": 3
+      "label": "Good"
     },
     {
       "id": "viper-processor-bad",
-      "label": "Bad",
-      "sandwichText": "bad",
-      "sandwichScore": 1
+      "label": "Bad"
     },
     {
       "id": "viper-processor-special",
-      "label": "Special",
-      "sandwichText": "special",
-      "sandwichScore": 5
+      "label": "Special"
     },
+
     {
       "id": "viper-torso-good",
-      "label": "Good",
-      "sandwichText": "good",
-      "sandwichScore": 3
+      "label": "Good"
     },
     {
       "id": "viper-torso-bad",
-      "label": "Bad",
-      "sandwichText": "bad",
-      "sandwichScore": 1
+      "label": "Bad"
     },
     {
       "id": "viper-torso-special",
-      "label": "Special",
-      "sandwichText": "special",
-      "sandwichScore": 5
+      "label": "Special"
     },
+
     {
       "id": "viper-legs-good",
-      "label": "Good",
-      "sandwichText": "good",
-      "sandwichScore": 3
+      "label": "Good"
     },
     {
       "id": "viper-legs-bad",
-      "label": "Bad",
-      "sandwichText": "bad",
-      "sandwichScore": 1
+      "label": "Bad"
     },
     {
       "id": "viper-legs-special",
-      "label": "Special",
-      "sandwichText": "special",
-      "sandwichScore": 5
+      "label": "Special"
     },
+
     {
       "id": "viper-head-good",
-      "label": "Good",
-      "sandwichText": "good",
-      "sandwichScore": 3
+      "label": "Good"
     },
     {
       "id": "viper-head-bad",
-      "label": "Bad",
-      "sandwichText": "bad",
-      "sandwichScore": 1
+      "label": "Bad"
     },
     {
       "id": "viper-head-special",
-      "label": "Special",
-      "sandwichText": "special",
-      "sandwichScore": 5
+      "label": "Special"
     },
+
     {
       "id": "skatepark-halfpipe-bad",
-      "label": "Bad",
-      "sandwichText": "",
-      "sandwichScore": 1
-  },
-  {
-      "id": "skatepark-halfpipe-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-  {
-      "id": "skatepark-halfpipe-special",
-      "label": "Special",
-      "sandwichText": "",
-      "sandwichScore": 5
-  },
-  {
-      "id": "skatepark-tour-bad",
-      "label": "Bad",
-      "sandwichText": "",
-      "sandwichScore": 1
-  },
-  {
-      "id": "skatepark-tour-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-  {
-      "id": "skatepark-tour-special",
-      "label": "Special",
-      "sandwichText": "",
-      "sandwichScore": 5
-  },
-  {
-      "id": "skatepark-jump-bad",
-      "label": "Bad",
-      "sandwichText": "",
-      "sandwichScore": 1
-  },
-  {
-      "id": "skatepark-jump-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-  {
-      "id": "skatepark-jump-special",
-      "label": "Special",
-      "sandwichText": "",
-      "sandwichScore": 5
-  },
-  {
-      "id": "library-1-bad",
-      "label": "Bad",
-      "sandwichText": "",
-      "sandwichScore": 1
-  },
-  {
-      "id": "library-1-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-  {
-      "id": "library-1-special",
-      "label": "Special",
-      "sandwichText": "",
-      "sandwichScore": 5
-  },
-  {
-      "id": "library-2-bad",
-      "label": "Bad",
-      "sandwichText": "",
-      "sandwichScore": 1
-  },
-  {
-      "id": "library-2-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-  {
-      "id": "library-2-special",
-      "label": "Special",
-      "sandwichText": "",
-      "sandwichScore": 5
-  },
-  {
-      "id": "library-3-bad",
-      "label": "Bad",
-      "sandwichText": "",
-      "sandwichScore": 1
-  },
-  {
-      "id": "library-3-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-  {
-      "id": "library-3-special",
-      "label": "Special",
-      "sandwichText": "",
-      "sandwichScore": 5
-  },
-  {
-    "id": "daycare-1-bad",
-    "label": "Bad",
-    "sandwichText": "",
-    "sandwichScore": 1
-},
-{
-    "id": "daycare-1-good",
-    "label": "Good",
-    "sandwichText": "",
-    "sandwichScore": 3
-},
-{
-    "id": "daycare-1-special",
-    "label": "Special",
-    "sandwichText": "",
-    "sandwichScore": 5
-},
-{
-    "id": "daycare-2-bad",
-    "label": "Bad",
-    "sandwichText": "",
-    "sandwichScore": 1
-},
-{
-    "id": "daycare-2-good",
-    "label": "Good",
-    "sandwichText": "",
-    "sandwichScore": 3
-},
-{
-    "id": "daycare-2-special",
-    "label": "Special",
-    "sandwichText": "",
-    "sandwichScore": 5
-},
-{
-    "id": "daycare-3-bad",
-    "label": "Bad",
-    "sandwichText": "",
-    "sandwichScore": 1
-},
-{
-    "id": "daycare-3-good",
-    "label": "Good",
-    "sandwichText": "",
-    "sandwichScore": 3
-},
-{
-    "id": "daycare-3-special",
-    "label": "Special",
-    "sandwichText": "",
-    "sandwichScore": 5
-},
-{
-    "id": "safetytown-1-bad",
-    "label": "Bad",
-    "sandwichText": "",
-    "sandwichScore": 1
-},
-{
-    "id": "safetytown-1-good",
-    "label": "Good",
-    "sandwichText": "",
-    "sandwichScore": 3
-},
-{
-    "id": "safetytown-1-special",
-    "label": "Special",
-    "sandwichText": "",
-    "sandwichScore": 5
-},
-{
-    "id": "safetytown-2-bad",
-    "label": "Bad",
-    "sandwichText": "",
-    "sandwichScore": 1
-},
-{
-    "id": "safetytown-2-good",
-    "label": "Good",
-    "sandwichText": "",
-    "sandwichScore": 3
-},
-{
-    "id": "safetytown-2-special",
-    "label": "Special",
-    "sandwichText": "",
-    "sandwichScore": 5
-},
-{
-    "id": "safetytown-3-bad",
-    "label": "Bad",
-    "sandwichText": "",
-    "sandwichScore": 1
-},
-{
-    "id": "safetytown-3-good",
-    "label": "Good",
-    "sandwichText": "",
-    "sandwichScore": 3
-},
-{
-    "id": "safetytown-3-special",
-    "label": "Special",
-    "sandwichText": "",
-    "sandwichScore": 5
-}
+      "label": "Bad"
+    },
+    {
+        "id": "skatepark-halfpipe-good",
+        "label": "Good"
+    },
+    {
+        "id": "skatepark-halfpipe-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "skatepark-tour-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "skatepark-tour-good",
+        "label": "Good"
+    },
+    {
+        "id": "skatepark-tour-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "skatepark-jump-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "skatepark-jump-good",
+        "label": "Good"
+    },
+    {
+        "id": "skatepark-jump-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "library-1-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "library-1-good",
+        "label": "Good"
+    },
+    {
+        "id": "library-1-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "library-2-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "library-2-good",
+        "label": "Good"
+    },
+    {
+        "id": "library-2-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "library-3-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "library-3-good",
+        "label": "Good"
+    },
+    {
+        "id": "library-3-special",
+        "label": "Special"
+    },
+
+    {
+      "id": "daycare-1-bad",
+      "label": "Bad"
+    },
+    {
+        "id": "daycare-1-good",
+        "label": "Good"
+    },
+    {
+        "id": "daycare-1-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "daycare-2-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "daycare-2-good",
+        "label": "Good"
+    },
+    {
+        "id": "daycare-2-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "daycare-3-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "daycare-3-good",
+        "label": "Good"
+    },
+    {
+        "id": "daycare-3-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "safetytown-1-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "safetytown-1-good",
+        "label": "Good"
+    },
+    {
+        "id": "safetytown-1-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "safetytown-2-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "safetytown-2-good",
+        "label": "Good"
+    },
+    {
+        "id": "safetytown-2-special",
+        "label": "Special"
+    },
+
+    {
+        "id": "safetytown-3-bad",
+        "label": "Bad"
+    },
+    {
+        "id": "safetytown-3-good",
+        "label": "Good"
+    },
+    {
+        "id": "safetytown-3-special",
+        "label": "Special"
+    }
   ]
 }
