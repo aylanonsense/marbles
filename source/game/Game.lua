@@ -3,10 +3,11 @@ import "utility/file"
 import "narrative/DialogueScene"
 import "level/MazeScene"
 import "narrative/StorylineSimulationScene"
+import "narrative/MazeSimulationScene"
 
 class("Game").extends()
 
-local SHOW_STORYLINE_SIMULATOR = true
+local SHOW_DEBUG_SCREENS = true
 
 function Game:init()
   -- Load game files
@@ -43,7 +44,7 @@ function Game:resumeCurrentStoryline()
   end
 
   -- Play the first storyline scene, unless we choose to skip it and simulate the results instead
-  if SHOW_STORYLINE_SIMULATOR then
+  if SHOW_DEBUG_SCREENS then
     Scene.setScene(StorylineSimulationScene(branchingData, self.playthroughData), function(shouldPlayStoryline, result)
       if shouldPlayStoryline then
         self:playNextStorylineScene()
@@ -62,15 +63,33 @@ function Game:advanceCurrentStoryline()
 end
 
 function Game:playNextStorylineScene()
+  local sceneData = self.storylineData.scenes[self.playthrough.storyline.stage]
   local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
   if scene then
-    -- Play the scene
-    Scene.setScene(scene, function(exit)
-      if exit then
-        self:recordExitTaken(exit)
-      end
-      self:advanceCurrentStoryline()
-    end)
+    if SHOW_DEBUG_SCREENS and sceneData.maze then
+      Scene.setScene(MazeSimulationScene(sceneData.maze, sceneData.exits), function(shouldPlayMaze, exit)
+        if shouldPlayMaze then
+          Scene.setScene(scene, function(exit)
+            if exit then
+              self:recordExitTaken(exit)
+            end
+            self:advanceCurrentStoryline()
+          end)
+        else
+          if exit then
+            self:recordExitTaken(exit)
+          end
+          self:advanceCurrentStoryline()
+        end
+      end)
+    else
+      Scene.setScene(scene, function(exit)
+        if exit then
+          self:recordExitTaken(exit)
+        end
+        self:advanceCurrentStoryline()
+      end)
+    end
   else
     -- There are no more scenes in the current storyline
     -- TODO decide result

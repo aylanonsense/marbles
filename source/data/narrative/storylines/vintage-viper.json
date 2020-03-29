@@ -2,13 +2,13 @@
   "scenes": [
     { "dialogue": "vintage-viper/VintageViper_Intro" },
 
-    { "maze": "viper-head" },
+    { "maze": "viper-head", "exits": [ "viper-head-special", "viper-head-good", "viper-head-bad" ] },
     { "dialogue": "vintage-viper/VintageViper_1_Head" },
 
-    { "maze": "viper-torso" },
+    { "maze": "viper-torso", "exits": [ "viper-torso-special", "viper-torso-good", "viper-torso-bad" ] },
     { "dialogue": "vintage-viper/VintageViper_2_Torso" },
 
-    { "maze": "viper-legs" },
+    { "maze": "viper-legs", "exits": [ "viper-legs-special", "viper-legs-good", "viper-legs-bad" ] },
     { "dialogue": "vintage-viper/VintageViper_3_Legs" },
 
     { "dialogue": "vintage-viper/VintageViper_Resolution" }

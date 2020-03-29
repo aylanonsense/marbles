@@ -2,13 +2,13 @@
   "scenes": [
     { "dialogue": "pickle-yard/PickleYard_Intro" },
 
-    { "maze": "pickle-star" },
+    { "maze": "pickle-star", "exits": [ "pickle-star-special", "pickle-star-good", "pickle-star-bad" ] },
     { "dialogue": "pickle-yard/PickleYard_1_Star" },
 
-    { "maze": "pickle-death" },
+    { "maze": "pickle-death", "exits": [ "pickle-death-special", "pickle-death-good", "pickle-death-bad" ] },
     { "dialogue": "pickle-yard/PickleYard_2_Death" },
 
-    { "maze": "pickle-tower" },
+    { "maze": "pickle-tower", "exits": [ "pickle-tower-special", "pickle-tower-good", "pickle-tower-bad" ] },
     { "dialogue": "pickle-yard/PickleYard_3_Tower" },
 
     { "dialogue": "pickle-yard/PickleYard_Resolution" }

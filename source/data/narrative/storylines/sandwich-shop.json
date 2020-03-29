@@ -2,19 +2,19 @@
   "scenes": [
     { "dialogue": "sandwich/convo-0-intro" },
 
-    { "maze": "sandwich-1-bread" },
+    { "maze": "sandwich-1-bread", "exits": [ "sandwich-bread-lettuce-wrap", "sandwich-bread-wrap", "sandwich-bread-baguette" ] },
     { "dialogue": "sandwich/convo-1-bread" },
 
-    { "maze": "sandwich-2-protein" },
+    { "maze": "sandwich-2-protein", "exits": [ "sandwich-protein-powder", "sandwich-protein-ostrich", "sandwich-protein-ham" ] },
     { "dialogue": "sandwich/convo-2-protein" },
 
-    { "maze": "sandwich-3-cheese" },
+    { "maze": "sandwich-3-cheese", "exits": [ "sandwich-cheese-paper", "sandwich-cheese-goat", "sandwich-cheese-swiss" ] },
     { "dialogue": "sandwich/convo-3-cheese" },
 
-    { "maze": "sandwich-4-veggies" },
+    { "maze": "sandwich-4-veggies", "exits": [ "sandwich-veggies-cactus", "sandwich-veggies-cauliflower", "sandwich-veggies-lettuce" ] },
     { "dialogue": "sandwich/convo-4-veggies" },
 
-    { "maze": "sandwich-5-condiments" },
+    { "maze": "sandwich-5-condiments", "exits": [ "sandwich-condiments-hot-wax", "sandwich-condiments-guava-jelly", "sandwich-condiments-mayo" ] },
     { "dialogue": "sandwich/convo-5-condiments" },
 
     { "dialogue": "sandwich/convo-6-resolution" }
