@@ -9,30 +9,18 @@ function dialogueMethods.lastStorylineWas(storylineName)
 end
 
 function dialogueMethods.failResult()
-  local averageScore = 0
-  for _, exit in ipairs(game.playthrough.storyline.exits) do
-    averageScore += (exit.score or 3) / #game.playthrough.storyline.exits
-  end
-  return averageScore < 1.9
+  return game:getStorylineResult() == "fail"
 end
 
 function dialogueMethods.normalResult()
-  local averageScore = 0
-  for _, exit in ipairs(game.playthrough.storyline.exits) do
-    averageScore += (exit.score or 3) / #game.playthrough.storyline.exits
-  end
-  return 1.9 <= averageScore and averageScore < 3.9
+  return game:getStorylineResult() == "normal"
 end
 
 function dialogueMethods.specialResult()
-  local averageScore = 0
-  for _, exit in ipairs(game.playthrough.storyline.exits) do
-    averageScore += (exit.score or 3) / #game.playthrough.storyline.exits
-  end
-  return 3.9 <= averageScore
+  return game:getStorylineResult() == "special"
 end
 
-function dialogueMethods.getSandwichNameLine()
+function dialogueMethods.getFinalSandwichLine()
   return
     game.playthrough.storyline.exits[3].sandwichText .. " " .. -- cheese, e.g. "An extra horny"
     game.playthrough.storyline.exits[4].sandwichText .. " " .. -- veggies, e.g. "green"

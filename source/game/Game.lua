@@ -92,8 +92,7 @@ function Game:playNextStorylineScene()
     end
   else
     -- There are no more scenes in the current storyline
-    -- TODO decide result
-    self:finishCurrentStorylineAndStartNextOne()
+    self:finishCurrentStorylineAndStartNextOne(self:getStorylineResult())
   end
 end
 
@@ -137,4 +136,18 @@ end
 
 function Game:recordExitTaken(exit)
   table.insert(self.playthrough.storyline.exits, exit)
+end
+
+function Game:getStorylineResult()
+  local averageScore = 0
+  for _, exit in ipairs(game.playthrough.storyline.exits) do
+    averageScore += (exit.score or 3) / #game.playthrough.storyline.exits
+  end
+  if averageScore < 1.9 then
+    return "fail"
+  elseif averageScore < 3.9 then
+    return "normal"
+  else
+    return "special"
+  end
 end
