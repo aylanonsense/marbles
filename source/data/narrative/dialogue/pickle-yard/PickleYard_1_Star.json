@@ -9,7 +9,7 @@
     "TarotDeck",
     "MozzStack",
     "Pamphlet"
-    ],
+  ],
   "script": [
     {
       "if": { "method": "lastExitWas", "arguments": [ "pickle-star-bad" ] },
@@ -32,7 +32,7 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "pickle-star-good" ] },
       "then": [
-       { "actor": "Prota", "line": "Oh! Star. Like....Starfish. I think this means you were born...at sea.",  "expression": "thinking" },
+        { "actor": "Prota", "line": "Oh! Star. Like....Starfish. I think this means you were born...at sea.",  "expression": "thinking" },
         { "actor": "SpikyJon", "line": "What--Prota.... How did you know?!", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "My parents love to tell the story of how I was born a couple weeks early, on a cruise ship!", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Apparently they already had my named picked out and ready... \"Smooth Phil!\"", "expression": "thinking" },
@@ -47,8 +47,8 @@
         { "actor": "SpikyJon", "line": "Uh oh is right! What's that supposed to mean?!", "expression": "shocked" }
       ]
     },
-   {
-     "if": { "method": "lastExitWas", "arguments": [ "pickle-star-special" ] },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "pickle-star-special" ] },
       "then": [ 
         { "actor": "Prota", "line": "It means you were born to be a star!",  "expression": "happy" },
         { "actor": "SpikyJon", "line": "A star?! Me?!", "expression": "shocked" },

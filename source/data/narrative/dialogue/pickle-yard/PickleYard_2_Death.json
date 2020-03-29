@@ -5,11 +5,11 @@
     { "actor": "SpikyJon", "expression": "neutral", "side": "right" },
     { "actor": "Narrator", "expression": "neutral" }
   ],
-   "objects": [
+  "objects": [
     "TarotDeck",
     "MozzStack",
     "Pamphlet"
-    ],
+  ],
   "script": [
     {
       "if": { "method": "lastExitWas", "arguments": [ "pickle-death-bad" ] },
@@ -33,7 +33,7 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "pickle-death-good" ] },
       "then": [
-       { "actor": "Prota", "line": "I think this card means that...this is a time of endings. And new beginnings.",  "expression": "shocked" },
+        { "actor": "Prota", "line": "I think this card means that...this is a time of endings. And new beginnings.",  "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Wow! Prota! Are you psychic?!", "expression": "shocked" },
         { "actor": "Prota", "line": "No, I'm just using the cards.", "expression": "neutral" },
         { "actor": "SpikyJon", "line": "Yeah, but Prota! Think about it! Engings and new beginnings?", "expression": "shocked" },
@@ -46,11 +46,11 @@
         { "action": "hide-object" },
         { "actor": "Prota", "line": "It's... the TOWER!", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Interesting. Guess you should tell me what it means.", "expression": "thinking" },
-         { "actor": "Prota", "line": "I guess I should.", "expression": "thinking" }
+        { "actor": "Prota", "line": "I guess I should.", "expression": "thinking" }
       ]
     },
-   {
-     "if": { "method": "lastExitWas", "arguments": [ "pickle-death-special" ] },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "pickle-death-special" ] },
       "then": [ 
         { "actor": "Prota", "line": "I think it means you strive for immortaility. For your achievements to outlive you.",  "expression": "thinking" },
         { "actor": "SpikyJon", "line": "Huh! Wow. That's... really interesting.", "expression": "shocked" },

@@ -5,11 +5,11 @@
     { "actor": "SpikyJon", "expression": "neutral", "side": "right" },
     { "actor": "Narrator", "expression": "neutral" }
   ],
-"objects": [
+  "objects": [
     "TarotDeck",
     "MozzStack",
     "Pamphlet"
-    ],
+  ],
   "script": [
     { "actor": "Prota", "line": "If we put the STAR, DEATH and TOWER cards together... you're a...", "expression": "happy" },
     { "actor": "Prota", "line": { "method": "getFinalTarotLine" }, "expression": "happy" },
@@ -17,46 +17,46 @@
     { "actor": "Prota", "line": "...", "expression": "neutral" },
     { "actor": "Prota", "line": "AND I LOVE IT!", "expression": "happy" },
     {
-     "if": "failResult",
-     "then": [
-       { "actor": "SpikyJon", "line": "This whole time I've been thinking that there were only two options...", "expression": "thinking" },
-       { "actor": "SpikyJon", "line": "Architect or competitive eater!", "expression": "thinking" },
-       { "actor": "SpikyJon", "line": "Competitive eater or architect!", "expression": "thinking" },
-       { "actor": "SpikyJon", "line": "But there's something else... a calling I've always felt, since I was nothing more than a sprout...", "expression": "shocked" },
-       { "actor": "Prota", "line": "What is it?", "expression": "confused" },
-       { "actor": "SpikyJon", "line": "I... can't say. It's a secret. But you'll see, Prota...", "expression": "neutral" },
-       { "actor": "Doc", "line": "Or, if all goes to plan, you won't see. Hahaha! (wink)", "expression": "neutral" },
-       { "actor": "Prota", "line": "...", "expression": "confused" }
-       ]
+      "if": "failResult",
+      "then": [
+        { "actor": "SpikyJon", "line": "This whole time I've been thinking that there were only two options...", "expression": "thinking" },
+        { "actor": "SpikyJon", "line": "Architect or competitive eater!", "expression": "thinking" },
+        { "actor": "SpikyJon", "line": "Competitive eater or architect!", "expression": "thinking" },
+        { "actor": "SpikyJon", "line": "But there's something else... a calling I've always felt, since I was nothing more than a sprout...", "expression": "shocked" },
+        { "actor": "Prota", "line": "What is it?", "expression": "confused" },
+        { "actor": "SpikyJon", "line": "I... can't say. It's a secret. But you'll see, Prota...", "expression": "neutral" },
+        { "actor": "Doc", "line": "Or, if all goes to plan, you won't see. Hahaha! (wink)", "expression": "neutral" },
+        { "actor": "Prota", "line": "...", "expression": "confused" }
+      ]
     },
     {
-     "if": "normalResult",
-     "then": [
-       { "actor": "SpikyJon", "line": "I knew that eating was my superpower and now I'll be able to do it for a living!", "expression": "happy" },
-       { "actor": "SpikyJon", "line": "All I've gotta do is start training.", "expression": "happy" },
-       { "action": "show-object", "object": "MozzStack" },
-       { "actor": "Prota", "line": "How many mozzarella sticks have you eaten so far, Jon?", "expression": "happy" },
-       { "actor": "SpikyJon", "line": "Nine!", "expression": "happy" },
-       { "actor": "Prota", "line": "Wow, that IS a lot. Sounds like you've got this figured out.", "expression": "happy" },
-       { "action": "hide-object" },
-       { "actor": "SpikyJon", "line": "For now. But the journey is a long one, Prota. Competitive eating isn't just about consuming food.", "expression": "thinking" },
-       { "actor": "SpikyJon", "line": "It's also about dipping everything in water so it slides down your throat easier!", "expression": "happy" },
-       { "actor": "Prota", "line": "Hmm. Sounds... mushy?", "expression": "neutral" },
-       { "actor": "Prota", "line": "It is the life we choose when we take our vows. And I'm ready.", "expression": "neutral" },
+      "if": "normalResult",
+      "then": [
+        { "actor": "SpikyJon", "line": "I knew that eating was my superpower and now I'll be able to do it for a living!", "expression": "happy" },
+        { "actor": "SpikyJon", "line": "All I've gotta do is start training.", "expression": "happy" },
+        { "action": "show-object", "object": "MozzStack" },
+        { "actor": "Prota", "line": "How many mozzarella sticks have you eaten so far, Jon?", "expression": "happy" },
+        { "actor": "SpikyJon", "line": "Nine!", "expression": "happy" },
+        { "actor": "Prota", "line": "Wow, that IS a lot. Sounds like you've got this figured out.", "expression": "happy" },
+        { "action": "hide-object" },
+        { "actor": "SpikyJon", "line": "For now. But the journey is a long one, Prota. Competitive eating isn't just about consuming food.", "expression": "thinking" },
+        { "actor": "SpikyJon", "line": "It's also about dipping everything in water so it slides down your throat easier!", "expression": "happy" },
+        { "actor": "Prota", "line": "Hmm. Sounds... mushy?", "expression": "neutral" },
+        { "actor": "Prota", "line": "It is the life we choose when we take our vows. And I'm ready.", "expression": "neutral" },
         { "actor": "Prota", "line": "Okay...", "expression": "neutral" }
-       ]
+      ]
     },
     {
-     "if": "specialResult",
-     "then": [
-       { "actor": "SpikyJon", "line": "I've been feeling like my degree didn't mean anything. Who needs another architect, you know? People ask.", "expression": "neutral" },
-       { "actor": "Prota", "line": "People ask that?", "expression": "confused" },
-       { "actor": "SpikyJon", "line": "But it's always been my passion. No matter how silly a degree it is, it's what I love.", "expression": "happy" },
-       { "actor": "SpikyJon", "line": "And today, you've helped me turn my guilty pleasure... into a destiny I can't wait to fulfill.", "expression": "happy" },
-       { "actor": "Prota", "line": "Do people not like architects?", "expression": "confused" },
-       { "actor": "SpikyJon", "line": "Ha! You've got a lot to learn about the world, Prota.", "expression": "happy" },
-       { "actor": "Prota", "line": "...Okay.", "expression": "confused" }
-       ]
+      "if": "specialResult",
+      "then": [
+        { "actor": "SpikyJon", "line": "I've been feeling like my degree didn't mean anything. Who needs another architect, you know? People ask.", "expression": "neutral" },
+        { "actor": "Prota", "line": "People ask that?", "expression": "confused" },
+        { "actor": "SpikyJon", "line": "But it's always been my passion. No matter how silly a degree it is, it's what I love.", "expression": "happy" },
+        { "actor": "SpikyJon", "line": "And today, you've helped me turn my guilty pleasure... into a destiny I can't wait to fulfill.", "expression": "happy" },
+        { "actor": "Prota", "line": "Do people not like architects?", "expression": "confused" },
+        { "actor": "SpikyJon", "line": "Ha! You've got a lot to learn about the world, Prota.", "expression": "happy" },
+        { "actor": "Prota", "line": "...Okay.", "expression": "confused" }
+      ]
     },
     { "actor": "Prota", "line": "Well, I'd better go find Minty. Although I'm not sure where to go. Kind of at a dead end here.", "expression": "neutral" },
     { "actor": "SpikyJon", "line": "Why don't we ask the cards?", "expression": "happy" },
@@ -74,24 +74,24 @@
     { "actor": "Prota", "line": "She LOVES museums!", "expression": "happy" },
     { "actor": "Prota", "line": "Thanks, Spiky Jon! This has been really fun! Enjoy the rest of your mozzarella sticks!", "expression": "happy" },
     {
-     "if": "failResult",
-     "then": [
-       { "actor": "SpikyJon", "line": "Thanks, but I won't be finishing these. Let's just say in my new life... I'll be eating a lot healthier.", "expression": "happy" }
-       ]
-      },
-    {
-     "if": "normalResult",
-     "then": [
-       { "actor": "SpikyJon", "line": "Thanks! This is just my first order. Get ready, world! Spiky Jon's gonna eat you up!", "expression": "happy" }
-       ]
-      },
-      {
-     "if": "specialResult",
-     "then": [
-       { "actor": "SpikyJon", "line": "Thanks! Maybe I'll try to build something with 'em.", "expression": "happy" }
-       ]
-      },
-      { "actor": "Prota", "line": "Follow your destiny!", "expression": "happy" }
+      "if": "failResult",
+      "then": [
+        { "actor": "SpikyJon", "line": "Thanks, but I won't be finishing these. Let's just say in my new life... I'll be eating a lot healthier.", "expression": "happy" }
       ]
+    },
+    {
+      "if": "normalResult",
+      "then": [
+        { "actor": "SpikyJon", "line": "Thanks! This is just my first order. Get ready, world! Spiky Jon's gonna eat you up!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "specialResult",
+      "then": [
+        { "actor": "SpikyJon", "line": "Thanks! Maybe I'll try to build something with 'em.", "expression": "happy" }
+      ]
+    },
+    { "actor": "Prota", "line": "Follow your destiny!", "expression": "happy" }
+  ]
 }
 

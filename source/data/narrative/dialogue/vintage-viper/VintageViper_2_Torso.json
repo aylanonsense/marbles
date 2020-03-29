@@ -24,7 +24,7 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "viper-torso-good" ] },
       "then": [
-       { "actor": "Prota", "line": "I think I found just the thing!",  "expression": "happy" },
+        { "actor": "Prota", "line": "I think I found just the thing!",  "expression": "happy" },
         { "actor": "Randi", "line": "Well I'll be darned! That's a nice lookin' fridge you found there.", "expression": "happy" },
         { "actor": "Randi", "line": "Smooth, sleek, stainless steel. And probably full of electronics I can repurpose.", "expression": "thinking" },
         { "actor": "Prota", "line": "So it'll work?", "expression": "happy" },
@@ -37,8 +37,8 @@
         { "actor": "Randi", "line": "Okay, Randi! I'll see what I can find out there.", "expression": "happy" }
       ]
     },
-   {
-     "if": { "method": "lastExitWas", "arguments": [ "viper-torso-special" ] },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "viper-torso-special" ] },
       "then": [ 
         { "actor": "Randi", "line": "What the-- where'd you find that?",  "expression": "shocked" },
         { "actor": "Prota", "line": "Oh, do you like it?", "expression": "happy" },

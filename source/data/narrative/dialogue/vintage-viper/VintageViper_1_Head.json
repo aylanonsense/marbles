@@ -21,7 +21,7 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "viper-head-good" ] },
       "then": [
-       { "actor": "Randi", "line": "What did you find out there, Prota?",  "expression": "happy" },
+        { "actor": "Randi", "line": "What did you find out there, Prota?",  "expression": "happy" },
         { "actor": "Prota", "line": "You'll see! Or should I say... you'll C?", "expression": "happy" },
         { "actor": "Randi", "line": "I think that's what you said the first time!", "expression": "shocked" },
         { "actor": "Prota", "line": "Not quite! You'll LETTER C, this LCD screen I found! Almost as good as new.", "expression": "happy" },
@@ -33,8 +33,8 @@
         { "actor": "Prota", "line": "I'm on it!", "expression": "happy" }
       ]
     },
-   {
-     "if": { "method": "lastExitWas", "arguments": [ "viper-head-special" ] },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "viper-head-special" ] },
       "then": [ 
         { "actor": "Randi", "line": "Back already? What'd you find?",  "expression": "happy" },
         { "actor": "Prota", "line": "I think I found the perfect head to sniff out Minty's location!", "expression": "happy" },
