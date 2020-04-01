@@ -124,6 +124,36 @@
 			"editFile":"safetytown-3-edit.json",
 			"name":"Safetytown - 3",
 			"playFile":"safetytown-3-play.json"
-		}
+		},
+		{
+            "editFile": "ballmuseum-skeeball-edit.json",
+            "name": "Ballmuseum - Skeeball",
+            "playFile": "ballmuseum-skeeball-play.json"
+        },
+        {
+            "editFile": "ballmuseum-pinball-edit.json",
+            "name": "Ballmuseum - Pinball",
+            "playFile": "ballmuseum-pinball-play.json"
+        },
+        {
+            "editFile": "ballmuseum-pool-edit.json",
+            "name": "Ballmuseum - Pool",
+            "playFile": "ballmuseum-pool-play.json"
+        },
+        {
+            "editFile": "lab-1-edit.json",
+            "name": "Lab - 1",
+            "playFile": "lab-1-play.json"
+        },
+        {
+            "editFile": "lab-2-edit.json",
+            "name": "Lab - 2",
+            "playFile": "lab-2-play.json"
+        },
+        {
+            "editFile": "lab-3-edit.json",
+            "name": "Lab - 3",
+            "playFile": "lab-3-play.json"
+        }
   ]
 }

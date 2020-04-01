@@ -485,6 +485,132 @@
       "id": "safetytown-3-special",
       "label": "Special",
       "score": 5
-    }
+    },
+
+
+    
+    {
+      "id": "ballmuseum-skeeball-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "ballmuseum-skeeball-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "ballmuseum-skeeball-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+
+
+
+  {
+      "id": "ballmuseum-pinball-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "ballmuseum-pinball-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "ballmuseum-pinball-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+
+
+
+  {
+      "id": "ballmuseum-pool-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "ballmuseum-pool-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "ballmuseum-pool-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+
+
+
+  {
+      "id": "lab-1-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "lab-1-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "lab-1-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+
+
+
+  {
+      "id": "lab-2-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "lab-2-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "lab-2-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  },
+
+
+  
+  {
+      "id": "lab-3-bad",
+      "label": "Bad",
+      "sandwichText": "",
+      "sandwichScore": 1
+  },
+  {
+      "id": "lab-3-good",
+      "label": "Good",
+      "sandwichText": "",
+      "sandwichScore": 3
+  },
+  {
+      "id": "lab-3-special",
+      "label": "Special",
+      "sandwichText": "",
+      "sandwichScore": 5
+  }
   ]
 }
