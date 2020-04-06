@@ -8,7 +8,7 @@ class("SmallBall").extends("LevelObject")
 function SmallBall:init(x, y)
 	SmallBall.super.init(self, LevelObject.Type.SmallBall)
   self.physObj = self:addPhysicsObject(PhysBall(x, y, 9))
-  self.physObj.mass = 0.25
+  self.physObj.mass = 1
 	self.physObj.restitution = 1.0
   self.image = imageCache.loadImage("images/level/objects/small-ball.png")
   self.imageWidth, self.imageHeight = self.image:getSize()

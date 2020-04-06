@@ -38,7 +38,7 @@ function Polygon:update()
 	if self.moveX ~= 0 or self.moveY ~= 0 then
 		-- Change platform movement
 		self.moveTimer = self.moveTimer + time.dt
-		if self.moveState == 'still' and self.moveTimer >= 1.0 then
+		if self.moveState == 'still' and self.moveTimer >= 1.5 then
 			self.moveState = 'moving'
 			self.moveTimer = 0
 			self:setVelocity(self.moveVelX, self.moveVelY)
@@ -46,7 +46,7 @@ function Polygon:update()
 			self.moveState = 'still-reverse'
 			self.moveTimer = 0
 			self:setVelocity(0, 0)
-		elseif self.moveState == 'still-reverse' and self.moveTimer >= 1.0 then
+		elseif self.moveState == 'still-reverse' and self.moveTimer >= 1.5 then
 			self.moveState = 'moving-reverse'
 			self.moveTimer = 0
 			self:setVelocity(-self.moveVelX, -self.moveVelY)
