@@ -1,0 +1,32 @@
+{
+  "location": "Library",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Besto", "expression": "neutral", "side": "right" },
+    { "actor": "Narrator", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Besto", "line": "Okay, this is gonna be fine. We're at the best possible place to figure this out.", "expression": "neutral" },
+    { "actor": "Prota", "line": "The library? Minty can't even read! Or... I don't think she can read.", "expression": "thinking" },
+    { "actor": "Besto", "line": "Minty doesn't need to read. It's everybody else. Sheesh, Prota. You never lost a dog before?", "expression": "shocked" },
+    { "actor": "Besto", "line": "All we gotta do is put up signs and someone will return Minty to you!", "expression": "happy" },
+    { "actor": "Prota", "line": "So then... why are we at the library?", "expression": "happy" },
+    { "actor": "Besto", "line": "Because we need to make a hundred copies of our lost dog posters and this is the best place to do it!", "expression": "neutral" },
+    { "actor": "Prota", "line": "Couldn't we just go to Paperclips? They're the biggest office supply in town.", "expression": "thinking" },
+    { "actor": "Besto", "line": "You know I can't go back to Paperclips. ", "expression": "neutral" },
+    { "actor": "Prota", "line": "Right... But I can't remember why.", "expression": "thinking" },
+    { "actor": "Besto", "line": "They remember why. That's all that matters.", "expression": "thinking" },
+    { "actor": "Prota", "line": "Haha oh right! You wiped out in the printer aisle in front of all the new trainees! And you had-- was it a milkshake in your hand?", "expression": "happy" },
+    { "actor": "Besto", "line": "...We can't do this right now. ", "expression": "neutral" },
+    { "actor": "Prota", "line": "Fine, right, okay. So what should we do?", "expression": "happy" },
+    { "actor": "Besto", "line": "YOU should get some paper, pick a great picture of Minty, and decide what to write on it.", "expression": "neutral" },
+    { "actor": "Besto", "line": "And I'll stand over here eating this bag of Drifties.", "expression": "happy" },
+    { "actor": "Prota", "line": "You're not gonna help me?", "expression": "shocked" },
+    { "actor": "Besto", "line": "I'll supervise. You know Minty better than me anyway.", "expression": "neutral" },
+    { "actor": "Besto", "line": "And let's be honest... you've got the superior people skills.", "expression": "neutral" },
+    { "actor": "Prota", "line": "I guess I am widely loved...", "expression": "thinking" },
+    { "actor": "Prota", "line": "Okay! Let's do this. I guess I'll have to pick the paper?", "expression": "happy" },
+    { "actor": "Besto", "line": "*munch munch munch*)", "expression": "happy" },
+    { "actor": "Besto", "line": "Sorry, yes. Paper first!", "expression": "happy" }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "location": "Library",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Besto", "expression": "neutral", "side": "right" },
+    { "actor": "Narrator", "expression": "neutral" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-words-bad" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Okay, here! Done.",  "expression": "happy" },
+        { "actor": "Besto", "line": "... \"HELP!!\" ?", "expression": "thinking" },
+        { "actor": "Prota", "line": "Yeah! That's what we need!", "expression": "happy" },
+        { "actor": "Besto", "line": "You don't think it's a little vague?", "expression": "thinking" },
+        { "actor": "Prota", "line": "It gets right to the point! HELP!!", "expression": "happy" },
+        { "actor": "Besto", "line": "Fair enough. HELP!! it is. ", "expression": "neutral" },
+        { "actor": "Besto", "line": "Now all we need to do is pair it with the perfect picture.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I've got plenty of Minty pics on my phone. She's kinda my favourite subject.", "expression": "happy" },
+        { "actor": "Besto", "line": "Then it shouldn't be hard to pick the best one!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-words-good" ] },
+      "then": [
+        { "actor": "Prota", "line": "Done! What do you think?",  "expression": "happy" },
+        { "actor": "Besto", "line": "\"IS THIS YOU?\"", "expression": "thinking" },
+        { "actor": "Prota", "line": "Yep!", "expression": "happy" },
+        { "actor": "Besto", "line": "Prota how do you think Lost Dog signs work?", "expression": "neutral" },
+        { "actor": "Prota", "line": "You put them up everywhere and hopefully the right person or dog sees them.", "expression": "confused" },
+        { "actor": "Besto", "line": "Hm. Well. ", "expression": "neutral" },
+        { "actor": "Besto", "line": "I'm sure people will get the point if we pick a good picture of Minty!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh I've got plenty of those. Minty is one Photogenic pup!", "expression": "neutral" },
+        { "actor": "Besto", "line": "Well, which one should we use?", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-paper-special" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Here we go!",  "expression": "happy" },
+        { "actor": "Besto", "line": "\"HAVE YOU SEEN THIS DOG!\"", "expression": "neutral" },
+        { "actor": "Besto", "line": "I'm not sure the punctuation is quite right on this.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Oops!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Here. This should work better...", "expression": "neutral" },
+        { "actor": "Besto", "line": "\"HAVE YOU SEEN THIS DOG?!?!?!\"", "expression": "neutral" },
+        { "actor": "Besto", "line": "It's a little intense.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I'm pretty intense about finding Minty.", "expression": "neutral" },
+        { "actor": "Besto", "line": "Okay...Well then I guess you're good to go!", "expression": "neutral" },
+        { "actor": "Besto", "line": "But which picture of Minty do you wanna use?", "expression": "thinking" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "location": "Library",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Besto", "expression": "neutral", "side": "right" },
+    { "actor": "Narrator", "expression": "neutral" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-picture-bad" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "This one's perfect!",  "expression": "happy" },
+        { "actor": "Besto", "line": "...", "expression": "neutral" },
+        { "actor": "Prota", "line": "...", "expression": "happy" },
+        { "actor": "Besto", "line": "You sure this is Minty's best angle?", "expression": "confused" },
+        { "actor": "Prota", "line": "All of Minty's angles are her best.", "expression": "happy" },
+        { "actor": "Besto", "line": "...", "expression": "neutral" },
+        { "actor": "Besto", "line": "Yeah, this is her butt though.", "expression": "neutral" },
+        { "actor": "Prota", "line": "And what a butt it is!", "expression": "shocked" },
+        { "actor": "Besto", "line": "Okay, well... Time to print! Let's do this.", "expression": "thinking" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-picture-good" ] },
+      "then": [
+        { "actor": "Prota", "line": "Here we go! Minty's ready for her close-up!",  "expression": "happy" },
+        { "actor": "Besto", "line": "Hmm.", "expression": "thinking" },
+        { "actor": "Besto", "line": "That IS pretty close up... Are you sure you don't want to show more of her?", "expression": "thinking" },
+        { "actor": "Prota", "line": "I've always felt that Minty's eyes do all the talking.", "expression": "happy" },
+        { "actor": "Prota", "line": "She's unmistakeable.", "expression": "happy" },
+        { "actor": "Besto", "line": "Well, if you think it's best...", "expression": "neutral" },
+        { "actor": "Prota", "line": "Trust me, Besto. The second anyone sees these posters, they'll know those baby browns anywhere.", "expression": "happy" },
+        { "actor": "Besto", "line": "You're probably right! She's quite a looker.", "expression": "happy" },
+        { "actor": "Prota", "line": "So what's next?", "expression": "thinking" },
+        { "actor": "Besto", "line": "Nothing! All we gotta do is print!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-picture-special" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Feast your eyes, Besto!",  "expression": "happy" },
+        { "actor": "Besto", "line": "Whoa...", "expression": "shocked" },
+        { "actor": "Besto", "line": "She looks amazing! ", "expression": "shocked" },
+        { "actor": "Prota", "line": "That's my Minty! I love her so much!", "expression": "happy" },
+        { "actor": "Besto", "line": "Who wouldn't? I mean, she's...", "expression": "happy" },
+        { "actor": "Besto", "line": "Oh no.", "expression": "shocked" },
+        { "actor": "Prota", "line": "What?", "expression": "confused" },
+        { "actor": "Besto", "line": "She's your Minty, but now she's out in the world! Who wouldn't want a dog like her?", "expression": "shocked" },
+        { "actor": "Prota", "line": "Everyone would! She's-- ", "expression": "happy" },
+        { "actor": "Prota", "line": "Oh no! You don't think someone would steal her?", "expression": "shocked" },
+        { "actor": "Besto", "line": "She's gorgeous! The prize money she would rake in at any dog show could turn anyone into a thief!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Oh no! I didn't even think about dognapping! We gotta hurry.", "expression": "shocked" },
+        { "actor": "Besto", "line": "Definitely. Let's print it!", "expression": "shocked" }
+      ]
+    }
+  ]
+}

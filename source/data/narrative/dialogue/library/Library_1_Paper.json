@@ -1,0 +1,55 @@
+{
+  "location": "Library",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Besto", "expression": "neutral", "side": "right" },
+    { "actor": "Narrator", "expression": "neutral" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-paper-bad" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "I found...this.",  "expression": "confused" },
+        { "actor": "Besto", "line": "Whoa. This looks ancient.", "expression": "confused" },
+        { "actor": "Prota", "line": "Yeah, well finding paper would be a lot easier at Paperclips!!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Plus: it's really going to stand out! Ye Olde Minty has gone Ye Olde Missing!", "expression": "neutral" },
+        { "actor": "Besto", "line": "Hm. I just hope this stuff holds up in the photocopier!", "expression": "neutral" },
+        { "actor": "Besto", "line": "Anyhow, we'll work with what we've got...I guess.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Perfect!", "expression": "happy" },
+        { "actor": "Besto", "line": "...", "expression": "thinking" },
+        { "actor": "Prota", "line": "What?", "expression": "neutral" },
+        { "actor": "Besto", "line": "It looks like it's supposed to be read by a town crier. Or like it contains a spell.", "expression": "neutral" },
+        { "actor": "Prota", "line": "... Are you gonna be stuck on this?", "expression": "neutral" },
+        { "actor": "Besto", "line": "No. No, it's fine. Let's move on to the message. What do you want to write on it?", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-paper-good" ] },
+      "then": [
+        { "actor": "Prota", "line": "Well... I... found this?",  "expression": "neutral" },
+        { "actor": "Besto", "line": "Is that... an old sandwich wrapper? ", "expression": "confused" },
+        { "actor": "Prota", "line": "Yep! From our very own Doc Sandwich! Doc Sandwich: Eat!", "expression": "happy" },
+        { "actor": "Besto", "line": "I love that slogan.", "expression": "neutral" },
+        { "actor": "Besto", "line": "But I'm not sure I love the wrapper. It's...kinda greasy.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Hmmm...", "expression": "thinking" },
+        { "actor": "Prota", "line": "Maybe the grease will catch the light? And the spots will really make it stand out!", "expression": "happy" },
+        { "actor": "Besto", "line": "...I don't know...", "expression": "thinking" },
+        { "actor": "Prota", "line": "Well this would have been a lot easier if we just went to Paperclips!", "expression": "neutral" },
+        { "actor": "Besto", "line": "Okay, okay. We'll use it. But what do you want to write on it?", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "library-paper-special" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Besto! Check out this paper I found. Feel how smooth it is!",  "expression": "happy" },
+        { "actor": "Besto", "line": "Oh wow... This is really good stuff.", "expression": "shocked" },
+        { "actor": "Prota", "line": "Yeah I kinda just want to keep touching it.", "expression": "happy" },
+        { "actor": "Besto", "line": "Same. Is this ASMR?", "expression": "thinking" },
+        { "actor": "Prota", "line": "Uh, if you mean \"A Sure-fire Minty Rescuer!\" then yeah, it's definitely ASMR.", "expression": "happy" },
+        { "actor": "Besto", "line": "Hm.", "expression": "neutral" },
+        { "actor": "Besto", "line": "Anyway, I dig it. Great paper to find a great dog.", "expression": "happy" },
+        { "actor": "Besto", "line": "But the real question is: what do you want to write on it?", "expression": "happy" }
+      ]
+    }
+  ]
+}
