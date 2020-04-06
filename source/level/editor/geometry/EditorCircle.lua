@@ -10,7 +10,9 @@ function EditorCircle:init(x, y, radius)
 	self.x = x
 	self.y = y
 	self.radius = radius
-  self.layer = 0
+	self.layer = 0
+	self.moveX = 0
+	self.moveY = 0
 end
 
 function EditorCircle:draw()
@@ -25,6 +27,10 @@ function EditorCircle:draw()
 	else
 		playdate.graphics.setColor(playdate.graphics.kColorBlack)
 		perspectiveDrawing.drawDottedCircle(self.x, self.y, self.radius)
+	end
+	-- Draw move trajectory
+	if self.moveX ~= 0 or self.moveY ~= 0 then
+		perspectiveDrawing.drawDottedLine(self.x, self.y, self.x + self.moveX, self.y + self.moveY)
 	end
 end
 

@@ -27,6 +27,12 @@ function serializeEditorLevelData()
 				isSolid = geom.isSolid,
 				isVisible = geom.isVisible
 			}
+			if geom.moveX ~= 0 then
+				polygonData.moveX = geom.moveX
+			end
+			if geom.moveY ~= 0 then
+				polygonData.moveY = geom.moveY
+			end
 			if geom.fillPattern ~= 'Grey' then
 				polygonData.fillPattern = geom.fillPattern
 			end
@@ -59,6 +65,12 @@ function serializeEditorLevelData()
 				isSolid = geom.isSolid,
 				isVisible = geom.isVisible
 			}
+			if geom.moveX ~= 0 then
+				circleData.moveX = geom.moveX
+			end
+			if geom.moveY ~= 0 then
+				circleData.moveY = geom.moveY
+			end
 			if geom.fillPattern ~= 'Grey' then
 				circleData.fillPattern = geom.fillPattern
 			end
@@ -106,6 +118,8 @@ function deserializeEditorLevelData(levelData)
 				line.radius = lineData.radius or 0
 			end
 			local polygon = EditorPolygon(points)
+			polygon.moveX = geomData.moveX or 0
+			polygon.moveY = geomData.moveY or 0
 			if geomData.isSolid == false then
 				polygon.isSolid = false
 			end
@@ -126,6 +140,8 @@ function deserializeEditorLevelData(levelData)
 		-- Deserialize a polygon
 		elseif geomData.type == "Circle" then
 			local circle = EditorCircle(geomData.x, geomData.y, geomData.radius)
+			circle.moveX = geomData.moveX or 0
+			circle.moveY = geomData.moveY or 0
 			if geomData.isSolid == false then
 				circle.isSolid = false
 			end
@@ -278,7 +294,7 @@ function serializePlayableLevelData(levelData)
 				end
 				table.insert(objectData, worldBoundary:serialize())
 			else
-				local polygon = Polygon(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates)
+				local polygon = Polygon(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates, geom.moveX or 0, geom.moveY or 0)
 				polygon.layer = geom.layer
 				if geom.fillpattern ~= 'Grey' then
 					polygon.fillPattern = geom.fillPattern
@@ -287,7 +303,7 @@ function serializePlayableLevelData(levelData)
 			end
 		-- Serialize circles as objects
 		elseif geom.type == EditorGeometry.Type.Circle then
-			local circle = Circle(geom.x, geom.y, geom.radius)
+			local circle = Circle(geom.x, geom.y, geom.radius, geom.moveX or 0, geom.moveY or 0)
 			circle.layer = geom.layer
 			if not geom.isVisible then
 				circle.isVisible = false

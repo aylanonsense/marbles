@@ -4,6 +4,7 @@ import "level/editor/geometry/EditorGeometry"
 import "render/camera"
 import "utility/table"
 import "render/patterns"
+import "render/perspectiveDrawing"
 
 class("EditorPolygon").extends("EditorGeometry")
 
@@ -15,7 +16,9 @@ function EditorPolygon:init(points)
 	for _, point in ipairs(self.points) do
 		point.polygon = self
 	end
-  self.layer = 0
+	self.layer = 0
+	self.moveX = 0
+	self.moveY = 0
 end
 
 function EditorPolygon:draw()
@@ -77,6 +80,11 @@ function EditorPolygon:draw()
 		local point = self.points[i]
 		point:draw()
 		point.outgoingLine:draw()
+	end
+	-- Draw move trajectory
+	if self.moveX ~= 0 or self.moveY ~= 0 then
+		local x, y = self:getMidPoint()
+		perspectiveDrawing.drawDottedLine(x, y, x + self.moveX, y + self.moveY)
 	end
 end
 

@@ -46,6 +46,20 @@ function EditorCircleMenuScreen:init()
 				end
 			},
 			{
+				text = "Move X",
+				change = function(dir, menu, option)
+					self.circle.moveX += 20 * dir
+					option.text = "Move X: " .. self.circle.moveX
+				end
+			},
+			{
+				text = "Move Y",
+				change = function(dir, menu, option)
+					self.circle.moveY += 20 * dir
+					option.text = "Move Y: " .. self.circle.moveY
+				end
+			},
+			{
 				text = "Delete",
 				selected = function()
 					if self.circle:delete() then
@@ -63,6 +77,8 @@ function EditorCircleMenuScreen:open(circle)
 	self.menu.options[3].text	= "Solid: " .. (self.circle.isSolid and "true" or "false")
 	self.menu.options[4].text	= "Visible: " .. (self.circle.isVisible and "true" or "false")
 	self.menu.options[5].text	= "Layer: " .. self.circle.layer
+	self.menu.options[6].text = "Move X: " .. self.circle.moveX
+	self.menu.options[7].text = "Move Y: " .. self.circle.moveY
 end
 
 function EditorCircleMenuScreen:show()

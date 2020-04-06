@@ -88,6 +88,20 @@ function EditorPolygonMenuScreen:init()
 				end
 			},
 			{
+				text = "Move X",
+				change = function(dir, menu, option)
+					self.polygon.moveX += 20 * dir
+					option.text = "Move X: " .. self.polygon.moveX
+				end
+			},
+			{
+				text = "Move Y",
+				change = function(dir, menu, option)
+					self.polygon.moveY += 20 * dir
+					option.text = "Move Y: " .. self.polygon.moveY
+				end
+			},
+			{
 				text = "Delete",
 				selected = function()
 					if self.polygon:delete() then
@@ -105,6 +119,8 @@ function EditorPolygonMenuScreen:open(polygon)
 	self.menu.options[4].text	= "Visible: " .. (self.polygon.isVisible and "true" or "false")
 	self.menu.options[5].text	= "Pattern: " .. self.polygon.fillPattern
 	self.menu.options[6].text	= "Layer: " .. self.polygon.layer
+	self.menu.options[7].text = "Move X: " .. self.polygon.moveX
+	self.menu.options[8].text = "Move Y: " .. self.polygon.moveY
 end
 
 function EditorPolygonMenuScreen:show()

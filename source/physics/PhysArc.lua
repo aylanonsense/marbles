@@ -101,5 +101,8 @@ function PhysArc.deserialize(data)
 	if data.sectors then
 		arc.sectors = data.sectors
 	end
+	if data.isStatic == false then
+		arc.isStatic = false
+	end
 	return arc
 end

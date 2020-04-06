@@ -87,5 +87,8 @@ function PhysCircle.deserialize(data)
 	if data.sectors then
 		circle.sectors = data.sectors
 	end
+	if data.isStatic == false then
+		circle.isStatic = false
+	end
 	return circle
 end

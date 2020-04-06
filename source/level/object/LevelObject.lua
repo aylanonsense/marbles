@@ -106,7 +106,7 @@ end
 
 function LevelObject:addPhysicsObject(physObj)
 	table.insert(self.physObjects, physObj)
-	if not physObj.sectors then
+	if physObj.isStatic and not physObj.sectors then
 		physObj.sectors = physObj:calculateSectors()
 	end
 	physObj:setParent(self)

@@ -8,6 +8,7 @@ physics = {
 	SECTOR_SIZE = 50,
 	SECTOR_OVERLAP = 20,
 	balls = {},
+	dynamicObjects = {},
 	staticObjects = {},
 	staticObjectsBySector = {},
 	onCollideCallback = nil
@@ -15,6 +16,7 @@ physics = {
 
 function physics:reset()
 	self.balls = {}
+	self.dynamicObjects = {}
 	self.staticObjects = {}
 	self.staticObjectsBySector = {}
 	self.onCollideCallback = nil
@@ -28,8 +30,14 @@ function physics:update()
 		maxBallSpeedSquared = math.max(maxBallSpeedSquared, speedSquared)
 	end
 	local maxBallSpeed = math.sqrt(maxBallSpeedSquared)
+	local maxSpeed = maxBallSpeed + (#self.dynamicObjects > 0 and 50 or 0)
 
-	-- Accelerate all dynamic physics objects
+	-- Accelerate all dynamic physics objects and balls
+	for _, obj in ipairs(self.dynamicObjects) do
+		if obj.isEnabled then
+			obj:applyAcceleration(time.dt)
+		end
+	end
 	for _, ball in ipairs(self.balls) do
 		if ball.isEnabled then
 			ball:applyAcceleration(time.dt)
@@ -37,10 +45,15 @@ function physics:update()
 	end
 
 	-- Calculate the number of physics steps we need to perform
-	local numSteps = math.max(1, math.ceil((maxBallSpeed * time.dt) / MAX_MOVEMENT_PER_FRAME))
+	local numSteps = math.max(1, math.ceil((maxSpeed * time.dt) / MAX_MOVEMENT_PER_FRAME))
 	local dt = time.dt / numSteps
 	for step = 1, numSteps do
-		-- Move all balls
+		-- Move all dynamic physics objects and balls
+		for _, obj in ipairs(self.dynamicObjects) do
+			if obj.isEnabled then
+				obj:applyVelocity(dt)
+			end
+		end
 		for _, ball in ipairs(self.balls) do
 			if ball.isEnabled then
 				ball:enforceMaxSpeed()
@@ -51,6 +64,22 @@ function physics:update()
 		-- Check for collisions between balls and objects
 		for _, ball in ipairs(self.balls) do
 			if ball.isEnabled then
+				-- Check against dynamic objects
+				for _, obj in ipairs(self.dynamicObjects) do
+					if obj.isEnabled then
+						local collision = obj:checkForCollisionWithBall(ball)
+						if collision then
+							-- There was a collision!
+							if self.onCollideCallback then
+								self.onCollideCallback(collision)
+							else
+								collision:handle()
+							end
+							collision:discard()
+						end
+					end
+				end
+				-- Check against static objects
 				local sectorX = math.floor((ball.x - self.SECTOR_OVERLAP / 2) / self.SECTOR_SIZE)
 				local sectorY = math.floor((ball.y - self.SECTOR_OVERLAP / 2) / self.SECTOR_SIZE)
 				if self.staticObjectsBySector[sectorX] and self.staticObjectsBySector[sectorX][sectorY] then
@@ -115,6 +144,14 @@ end
 
 function physics:removeBall(ball)
 	removeItem(self.balls, ball)
+end
+
+function physics:addDynamicObject(obj)
+	table.insert(self.dynamicObjects, obj)
+end
+
+function physics:removeDynamicObject(obj)
+	removeItem(self.dynamicObjects, obj)
 end
 
 function physics:addStaticObject(obj)

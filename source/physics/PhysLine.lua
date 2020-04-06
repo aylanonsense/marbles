@@ -106,5 +106,8 @@ function PhysLine.deserialize(data)
 	if data.sectors then
 		line.sectors = data.sectors
 	end
+	if data.isStatic == false then
+		line.isStatic = false
+	end
 	return line
 end

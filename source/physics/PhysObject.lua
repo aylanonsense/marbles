@@ -62,12 +62,20 @@ function PhysObject:isMovable()
 end
 
 function PhysObject:add()
-	physics:addStaticObject(self)
+	if self.isStatic then
+		physics:addStaticObject(self)
+	else
+		physics:addDynamicObject(self)
+	end
 	return self
 end
 
 function PhysObject:remove()
-	physics:removeStaticObject(self)
+	if self.isStatic then
+		physics:removeStaticObject(self)
+	else
+		physics:removeDynamicObject(self)
+	end
 	return self
 end
 

@@ -48,5 +48,8 @@ function PhysPoint.deserialize(data)
 	if data.sectors then
 		point.sectors = data.sectors
 	end
+	if data.isStatic == false then
+		point.isStatic = false
+	end
 	return point
 end
