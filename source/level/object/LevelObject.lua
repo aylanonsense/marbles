@@ -3,6 +3,7 @@ import "CoreLibs/object"
 class("LevelObject").extends()
 
 LevelObject.Type = {
+	BigBall = "BigBall",
 	Booster = "Booster",
 	Circle = "Circle",
 	CircleBumper = "CircleBumper",
@@ -12,6 +13,7 @@ LevelObject.Type = {
 	Exit = "Exit",
 	Marble = "Marble",
 	Polygon = "Polygon",
+	SmallBall = "SmallBall",
 	TriangleBumper = "TriangleBumper",
 	WorldBoundary = "WorldBoundary"
 }

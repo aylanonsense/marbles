@@ -1,10 +1,12 @@
 import "level/editor/screen/EditorCreateObjectScreen"
+import "level/object/BigBall"
 import "level/object/Booster"
 import "level/object/CircleBumper"
 import "level/object/Coin"
 import "level/object/CrumblingPlatform"
 import "level/object/Exit"
 import "level/object/Decoration"
+import "level/object/SmallBall"
 import "level/object/TriangleBumper"
 
 class("EditorChooseObjectMenuScreen").extends("EditorMenuScreen")
@@ -52,6 +54,18 @@ function EditorChooseObjectMenuScreen:init()
         text = "Circle Bumper",
         selected = function()
           self:openAndShowSubScreen(EditorCreateObjectScreen(), CircleBumper(scene.cursor.x, scene.cursor.y))
+        end
+      },
+      {
+        text = "Big Ball",
+        selected = function()
+          self:openAndShowSubScreen(EditorCreateObjectScreen(), BigBall(scene.cursor.x, scene.cursor.y))
+        end
+      },
+      {
+        text = "Small Ball",
+        selected = function()
+          self:openAndShowSubScreen(EditorCreateObjectScreen(), SmallBall(scene.cursor.x, scene.cursor.y))
         end
       }
     }))

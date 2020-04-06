@@ -7,6 +7,7 @@ local MAX_MOVEMENT_PER_FRAME = 8.9
 physics = {
 	SECTOR_SIZE = 50,
 	SECTOR_OVERLAP = 20,
+	GRAVITY = 10000,
 	balls = {},
 	dynamicObjects = {},
 	staticObjects = {},
@@ -80,21 +81,61 @@ function physics:update()
 					end
 				end
 				-- Check against static objects
-				local sectorX = math.floor((ball.x - self.SECTOR_OVERLAP / 2) / self.SECTOR_SIZE)
-				local sectorY = math.floor((ball.y - self.SECTOR_OVERLAP / 2) / self.SECTOR_SIZE)
-				if self.staticObjectsBySector[sectorX] and self.staticObjectsBySector[sectorX][sectorY] then
-					for _, obj in ipairs(self.staticObjectsBySector[sectorX][sectorY]) do
-						if obj.isEnabled then
-							local collision = obj:checkForCollisionWithBall(ball)
-							if collision then
-								-- There was a collision!
-								if self.onCollideCallback then
-									self.onCollideCallback(collision)
-								else
-									collision:handle()
+				local minSectorX, maxSectorX, minSectorY, maxSectorY
+				if ball.radius < 10 then
+					minSectorX = math.floor((ball.x - self.SECTOR_OVERLAP / 2) / self.SECTOR_SIZE)
+					maxSectorX = minSectorX
+					minSectorY = math.floor((ball.y - self.SECTOR_OVERLAP / 2) / self.SECTOR_SIZE)
+					maxSectorY = minSectorY
+				else
+					minSectorX = math.floor((ball.x - ball.radius) / self.SECTOR_SIZE)
+					maxSectorX = math.floor((ball.x + ball.radius) / self.SECTOR_SIZE)
+					minSectorY = math.floor((ball.y - ball.radius) / self.SECTOR_SIZE)
+					maxSectorY = math.floor((ball.y + ball.radius) / self.SECTOR_SIZE)
+				end
+				-- local sectorX = math.floor((ball.x - self.SECTOR_OVERLAP / 2) / self.SECTOR_SIZE)
+				-- local sectorY = math.floor((ball.y - self.SECTOR_OVERLAP / 2) / self.SECTOR_SIZE)
+				for sectorX = minSectorX, maxSectorX do
+					if self.staticObjectsBySector[sectorX] then
+						for sectorY = minSectorY, maxSectorY do
+							if self.staticObjectsBySector[sectorX][sectorY] then
+								for _, obj in ipairs(self.staticObjectsBySector[sectorX][sectorY]) do
+									if obj.isEnabled then
+										local collision = obj:checkForCollisionWithBall(ball)
+										if collision then
+											-- There was a collision!
+											if self.onCollideCallback then
+												self.onCollideCallback(collision)
+											else
+												collision:handle()
+											end
+											collision:discard()
+										end
+									end
 								end
-								collision:discard()
 							end
+						end
+					end
+				end
+			end
+		end
+
+		-- Check for collisions between balls
+		for i = 1, #self.balls do
+			local ball1 = self.balls[i]
+			if ball1.isEnabled then
+				for j = i + 1, #self.balls do
+					local ball2 = self.balls[j]
+					if ball2.isEnabled then
+						local collision = ball1:checkForCollisionWithBall(ball2)
+						if collision then
+							-- There was a collision!
+							if self.onCollideCallback then
+								self.onCollideCallback(collision)
+							else
+								collision:handle()
+							end
+							collision:discard()
 						end
 					end
 				end

@@ -3,10 +3,9 @@ import "physics/PhysBall"
 import "render/camera"
 import "render/imageCache"
 import "utility/soundCache"
+import "physics/physics"
 
 class("Marble").extends("LevelObject")
-
-local GRAVITY = 10000
 
 function Marble:init(x, y)
 	Marble.super.init(self, LevelObject.Type.Marble)
@@ -34,7 +33,7 @@ function Marble:init(x, y)
 end
 
 function Marble:update()
-	self.physObj.accX, self.physObj.accY = -GRAVITY * camera.up.x, -GRAVITY * camera.up.y
+	self.physObj.accX, self.physObj.accY = -physics.GRAVITY * camera.up.x, -physics.GRAVITY * camera.up.y
   if self.recentImpulses[1] > 80 and self.recentImpulses[2] <= 0 and self.recentImpulses[3] <= 0 then
     -- Trigger a bump sound effect
   end
@@ -74,4 +73,16 @@ end
 
 function Marble:onCollide(other, collision, isObjectA)
   self.recentImpulses[1] = math.max(self.recentImpulses[1], collision.impulse)
+end
+
+function Marble:serialize()
+  return Marble.super.serialize(self)
+end
+
+function Marble.deserialize(data)
+  local marble = Marble(data.x, data.y)
+  if data.layer then
+    marble.layer = data.layer
+  end
+  return marble
 end
