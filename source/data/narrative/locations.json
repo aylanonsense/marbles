@@ -10,5 +10,8 @@
   },
   "VintageViper": {
     "image": "/images/narrative/locations/vintage-viper.png"
+  },
+  "Library": {
+    "image": "/images/narrative/locations/library.png"
   }
 }

@@ -26,7 +26,7 @@
     { "actor": "Besto", "line": "And let's be honest... you've got the superior people skills.", "expression": "neutral" },
     { "actor": "Prota", "line": "I guess I am widely loved...", "expression": "thinking" },
     { "actor": "Prota", "line": "Okay! Let's do this. I guess I'll have to pick the paper?", "expression": "happy" },
-    { "actor": "Besto", "line": "*munch munch munch*)", "expression": "happy" },
+    { "actor": "Besto", "line": "(*munch munch munch*)", "expression": "happy" },
     { "actor": "Besto", "line": "Sorry, yes. Paper first!", "expression": "happy" }
   ]
 }

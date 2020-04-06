@@ -7,7 +7,7 @@
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-paper-bad" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-1-bad" ] },
       "then": [ 
         { "actor": "Prota", "line": "I found...this.",  "expression": "confused" },
         { "actor": "Besto", "line": "Whoa. This looks ancient.", "expression": "confused" },
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-paper-good" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-1-good" ] },
       "then": [
         { "actor": "Prota", "line": "Well... I... found this?",  "expression": "neutral" },
         { "actor": "Besto", "line": "Is that... an old sandwich wrapper? ", "expression": "confused" },
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-paper-special" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-1-special" ] },
       "then": [ 
         { "actor": "Prota", "line": "Besto! Check out this paper I found. Feel how smooth it is!",  "expression": "happy" },
         { "actor": "Besto", "line": "Oh wow... This is really good stuff.", "expression": "shocked" },

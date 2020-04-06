@@ -7,7 +7,7 @@
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-words-bad" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-2-bad" ] },
       "then": [ 
         { "actor": "Prota", "line": "Okay, here! Done.",  "expression": "happy" },
         { "actor": "Besto", "line": "... \"HELP!!\" ?", "expression": "thinking" },
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-words-good" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-2-good" ] },
       "then": [
         { "actor": "Prota", "line": "Done! What do you think?",  "expression": "happy" },
         { "actor": "Besto", "line": "\"IS THIS YOU?\"", "expression": "thinking" },
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-paper-special" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-2-special" ] },
       "then": [ 
         { "actor": "Prota", "line": "Here we go!",  "expression": "happy" },
         { "actor": "Besto", "line": "\"HAVE YOU SEEN THIS DOG!\"", "expression": "neutral" },

@@ -6,24 +6,25 @@
     { "actor": "Narrator", "expression": "neutral" }
   ],
   "objects": [
-    "BadPoster"
-    "GoodPoster"
+    "BadPoster",
+    "GoodPoster",
     "SpecialPoster"
-    ],
+  ],
  "script": [
-    { "actor": "Besto", "line": "Aaaaand... here we go! ", "expression": "neutral" },
+    { "actor": "Besto", "line": "Aaaaand... here we go!", "expression": "neutral" },
     {
-     "if": "failResult"
-     "then": { "action": "show-object", "object": "BadPoster" }
+      "if": "failResult",
+      "then": { "action": "show-object", "object": "BadPoster" }
     },
     {
-     "if": "PosterScoreisNormal"
-     "then": { "action": "show-object", "object": "GoodPoster" }
+      "if": "normalResult",
+      "then": { "action": "show-object", "object": "GoodPoster" }
     },
     {
-     "if": "PosterScoreisSpecial"
-     "then": { "action": "show-object", "object": "SpecialPoster" }
+      "if": "specialResult",
+      "then": { "action": "show-object", "object": "SpecialPoster" }
     },
+    { "actor": "Besto", "line": { "method": "getFinalLibraryPosterLine" }, "expression": "neutral" },
     { "actor": "Besto", "line": "What do you think?", "expression": "happy" },
     { "actor": "Prota", "line": "I think it's gonna get me my dog back!", "expression": "happy" },
     { "actor": "Besto", "line": "Me too, Prota. Where should we start putting them up?", "expression": "happy" },
@@ -31,50 +32,50 @@
     {
       "if": "failResult",
       "then": [
-        { "actor": "Prota", "line": "Hmmm... I'm not sure. ", "expression": "thinking" },
-         { "actor": "Prota", "line": "What do you think?", "expression": "thinking" },
-         { "actor": "Besto", "line": "Hmm. Well. The poster...kind of looks like something a kid would make.", "expression": "thinking" },
-         { "actor": "Besto", "line": "So maybe your best bet is to show it to some kids.", "expression": "thinking" },
-          { "actor": "Prota", "line": "Kids?", "expression": "confused" },
-         { "actor": "Besto", "line": "Yeah! Sure! You know kids. They're always pointing at dogs... Saying \"DOG!\"", "expression": "happy" },
-         { "actor": "Besto", "line": "Or \"DOGGY!\" or \"DOGGO\" or \"PUP\" or \"PUPPER!\" You know kids.", "expression": "happy" },
-          { "actor": "Prota", "line": "You're right!", "expression": "shocked" },
-         { "actor": "Prota", "line": "If anybody's gonna spot Minty, it's the youthful eyes of our cutest generation.", "expression": "shocked" },
-          { "actor": "Besto", "line": "Exactly! ", "expression": "happy" },
-         { "actor": "Prota", "line": "Plus, if I go to the daycare, I can ask my Dad if he's seen her too.", "expression": "happy" },
-          { "actor": "Besto", "line": "Oh, right! Yeah! Two birds, one stone. ", "expression": "happy" }
-        ]
+        { "actor": "Prota", "line": "Hmmm... I'm not sure.", "expression": "thinking" },
+        { "actor": "Prota", "line": "What do you think?", "expression": "thinking" },
+        { "actor": "Besto", "line": "Hmm. Well. The poster...kind of looks like something a kid would make.", "expression": "thinking" },
+        { "actor": "Besto", "line": "So maybe your best bet is to show it to some kids.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Kids?", "expression": "confused" },
+        { "actor": "Besto", "line": "Yeah! Sure! You know kids. They're always pointing at dogs... Saying \"DOG!\"", "expression": "happy" },
+        { "actor": "Besto", "line": "Or \"DOGGY!\" or \"DOGGO\" or \"PUP\" or \"PUPPER!\" You know kids.", "expression": "happy" },
+        { "actor": "Prota", "line": "You're right!", "expression": "shocked" },
+        { "actor": "Prota", "line": "If anybody's gonna spot Minty, it's the youthful eyes of our cutest generation.", "expression": "shocked" },
+        { "actor": "Besto", "line": "Exactly!", "expression": "happy" },
+        { "actor": "Prota", "line": "Plus, if I go to the daycare, I can ask my Dad if he's seen her too.", "expression": "happy" },
+        { "actor": "Besto", "line": "Oh, right! Yeah! Two birds, one stone.", "expression": "happy" }
+      ]
     },
     {
       "if": "normalResult",
       "then": [
-        { "actor": "Prota", "line": "Hmmm... I'm not sure. ", "expression": "thinking" },
-         { "actor": "Prota", "line": "How about Doc Sandwich? Minty's a big fan.", "expression": "happy" },
-         { "actor": "Besto", "line": "And all the foot traffic means more eyes on the posters. I like it.", "expression": "thinking" },
-         { "actor": "Prota", "line": "Perfect!", "expression": "happy" }
-        ]
+        { "actor": "Prota", "line": "Hmmm... I'm not sure.", "expression": "thinking" },
+        { "actor": "Prota", "line": "How about Doc Sandwich? Minty's a big fan.", "expression": "happy" },
+        { "actor": "Besto", "line": "And all the foot traffic means more eyes on the posters. I like it.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Perfect!", "expression": "happy" }
+      ]
     },
     {
-      "if": "failResult",
+      "if": "specialResult",
       "then": [
         { "actor": "Besto", "line": "Although if I'm being honest, I don't even want to put this thing up.", "expression": "thinking" },
-         { "actor": "Prota", "line": "What? You don't like it?!", "expression": "shocked" },
-         { "actor": "Besto", "line": "Oh no, it's not that!", "expression": "shocked" },
-         { "actor": "Besto", "line": "I just like it so much I feel like we're papering the town with free art! ", "expression": "neutral" },
-          { "actor": "Besto", "line": "Not to mention that anybody who sees this might start hunting for Minty themselves!", "expression": "thinking" },
-         { "actor": "Prota", "line": "You don't seriously think someone would steal Minty, do you?", "expression": "shocked" },
-         { "actor": "Besto", "line": "This dog could turn anybody into a multi-millionaire! Huge influencer potential. ", "expression": "neutral" },
-          { "actor": "Besto", "line": "If monetized correctly.", "expression": "thinking" },
-         { "actor": "Prota", "line": "Who would monetize Minty?!", "expression": "confused" },
-          { "actor": "Besto", "line": "Only the most savvy, cunning, and well-connected folks in town...", "expression": "neutral" },
-         { "actor": "Prota", "line": "You don't mean...", "expression": "shocked" },
-          { "actor": "Besto", "line": "THE TEENS.", "expression": "neutral" },
-          { "actor": "Prota", "line": "(Gasp!) But they're so cool!", "expression": "shocked" },
-         { "actor": "Besto", "line": "\"All the better to monetize you with, my dear.\"", "expression": "normal" },
-          { "actor": "Prota", "line": "Oh no, you're right. Okay. What if I get to them first? So they know she's mine.", "expression": "neutral" },
-         { "actor": "Prota", "line": "I'll go to the skate park and get them on my side. That way, they're friends, not foes. Or potential thieves.", "expression": "neutral" },
-          { "actor": "Besto", "line": "Yeah! Yeah, that could work!", "expression": "neutral" },
-        ]
+        { "actor": "Prota", "line": "What? You don't like it?!", "expression": "shocked" },
+        { "actor": "Besto", "line": "Oh no, it's not that!", "expression": "shocked" },
+        { "actor": "Besto", "line": "I just like it so much I feel like we're papering the town with free art!", "expression": "neutral" },
+        { "actor": "Besto", "line": "Not to mention that anybody who sees this might start hunting for Minty themselves!", "expression": "thinking" },
+        { "actor": "Prota", "line": "You don't seriously think someone would steal Minty, do you?", "expression": "shocked" },
+        { "actor": "Besto", "line": "This dog could turn anybody into a multi-millionaire! Huge influencer potential.", "expression": "neutral" },
+        { "actor": "Besto", "line": "If monetized correctly.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Who would monetize Minty?!", "expression": "confused" },
+        { "actor": "Besto", "line": "Only the most savvy, cunning, and well-connected folks in town...", "expression": "neutral" },
+        { "actor": "Prota", "line": "You don't mean...", "expression": "shocked" },
+        { "actor": "Besto", "line": "THE TEENS.", "expression": "neutral" },
+        { "actor": "Prota", "line": "(Gasp!) But they're so cool!", "expression": "shocked" },
+        { "actor": "Besto", "line": "\"All the better to monetize you with, my dear.\"", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh no, you're right. Okay. What if I get to them first? So they know she's mine.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I'll go to the skate park and get them on my side. That way, they're friends, not foes. Or potential thieves.", "expression": "neutral" },
+        { "actor": "Besto", "line": "Yeah! Yeah, that could work!", "expression": "neutral" }
+      ]
     },
     { "actor": "Besto", "line": "Maybe we can split up. I'll put these up elsewhere and you head out! We'll cover more ground that way.", "expression": "neutral" },
     { "actor": "Prota", "line": "Perfect! We'll circle back on this later. See you, Besto!", "expression": "happy" },
@@ -86,8 +87,8 @@
     { "actor": "Prota", "line": "That was a joke! I'm right as rain and I'm good to go alone.", "expression": "happy" },
     { "actor": "Prota", "line": "Plus, you should probably get back to Marbels' lab as soon as you can.", "expression": "happy" },
     { "actor": "Prota", "line": "I'm sure he could really use your help getting ready for tonight.", "expression": "neutral" },
-    { "actor": "Besto", "line": "As long as you're going to be okay. ", "expression": "neutral" },
+    { "actor": "Besto", "line": "As long as you're going to be okay.", "expression": "neutral" },
     { "actor": "Besto", "line": "Good luck, Prota. I'm sure you'll find her soon.", "expression": "neutral" },
     { "actor": "Prota", "line": "Thanks to your help, I'm sure I will too. See you later, Besto!", "expression": "happy" }
-    ]
+  ]
 }

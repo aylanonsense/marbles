@@ -7,7 +7,7 @@
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-picture-bad" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-3-bad" ] },
       "then": [ 
         { "actor": "Prota", "line": "This one's perfect!",  "expression": "happy" },
         { "actor": "Besto", "line": "...", "expression": "neutral" },
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-picture-good" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-3-good" ] },
       "then": [
         { "actor": "Prota", "line": "Here we go! Minty's ready for her close-up!",  "expression": "happy" },
         { "actor": "Besto", "line": "Hmm.", "expression": "thinking" },
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "library-picture-special" ] },
+      "if": { "method": "lastExitWas", "arguments": [ "library-3-special" ] },
       "then": [ 
         { "actor": "Prota", "line": "Feast your eyes, Besto!",  "expression": "happy" },
         { "actor": "Besto", "line": "Whoa...", "expression": "shocked" },

@@ -1,0 +1,16 @@
+{
+  "scenes": [
+    { "dialogue": "library/Library_Intro" },
+
+    { "maze": "library-1", "exits": [ "library-1-bad", "library-1-good", "library-1-special" ] },
+    { "dialogue": "library/Library_1_Paper" },
+
+    { "maze": "library-2", "exits": [ "library-2-bad", "library-2-good", "library-2-special" ] },
+    { "dialogue": "library/Library_2_Words" },
+
+    { "maze": "library-3", "exits": [ "library-3-bad", "library-3-good", "library-3-special" ] },
+    { "dialogue": "library/Library_3_Picture" },
+
+    { "dialogue": "library/Library_Resolution" }
+  ]
+}

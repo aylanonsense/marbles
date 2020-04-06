@@ -18,7 +18,6 @@
     "library": {
       "symbol": "3",
       "label": "Library",
-      "isMissing": true,
       "special": "skate-park",
       "normal": "sandwich-shop",
       "fail": "daycare"

@@ -329,54 +329,63 @@
 
     {
       "id": "library-1-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "Parchment",
+      "score": 1,
+      "posterText": "OLD-TIMEY"
     },
     {
       "id": "library-1-good",
-      "label": "Good",
-      "score": 3
+      "label": "Doc Sandwich Wrapper",
+      "score": 3,
+      "posterText": "GREASY"
     },
     {
       "id": "library-1-special",
-      "label": "Special",
-      "score": 5
+      "label": "Thick Stock Paper",
+      "score": 5,
+      "posterText": "PERFECTLY THICK"
     },
 
 
 
     {
       "id": "library-2-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "Help!",
+      "score": 1,
+      "posterText": "SIMPLE"
     },
     {
       "id": "library-2-good",
-      "label": "Good",
-      "score": 3
+      "label": "Is this you?",
+      "score": 3,
+      "posterText": "FOCUSED"
     },
     {
       "id": "library-2-special",
-      "label": "Special",
-      "score": 5
+      "label": "Have you seen this dog",
+      "score": 5,
+      "posterText": "LOUD"
     },
 
 
 
     {
       "id": "library-3-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "Butt",
+      "score": 1,
+      "posterText": "SOME DOG'S BUTT"
     },
     {
       "id": "library-3-good",
-      "label": "Good",
-      "score": 3
+      "label": "Zoomed in",
+      "score": 3,
+      "posterText": "SOME DOG'S EYES"
     },
     {
       "id": "library-3-special",
-      "label": "Special",
-      "score": 5
+      "label": "Perfect",
+      "score": 5,
+      "posterText": "A PERFECT PUP"
     },
 
 

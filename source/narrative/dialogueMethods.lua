@@ -43,6 +43,14 @@ function dialogueMethods.getFinalTarotLine()
     game.playthrough.storyline.exits[1].tarotText .. "!" -- star, e.g. "STARFISH!"
 end
 
+function dialogueMethods.getFinalLibraryPosterLine()
+  return
+    "A " ..
+    game.playthrough.storyline.exits[2].posterText .. " " .. -- words, e.g. "SIMPLE"
+    game.playthrough.storyline.exits[1].posterText .. " POSTER OF " .. -- paper, e.g. "GREASY POSTER OF"
+    game.playthrough.storyline.exits[3].posterText .. "!" -- picture, e.g. "SOME DOG'S BUTT!"
+end
+
 function dialogueMethods.getStorylineName()
   return game.playthroughData.storylines[game.playthrough.storyline.name].label
 end

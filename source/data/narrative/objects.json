@@ -19,5 +19,14 @@
   },
   "Pamphlet": {
     "image": "/images/narrative/objects/pamphlet.png"
+  },
+  "BadPoster": {
+    "image": "/images/narrative/objects/bad-poster.png"
+  },
+  "GoodPoster": {
+    "image": "/images/narrative/objects/good-poster.png"
+  },
+  "SpecialPoster": {
+    "image": "/images/narrative/objects/special-poster.png"
   }
 }
