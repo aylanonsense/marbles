@@ -620,6 +620,69 @@
       "label": "Special",
       "sandwichText": "",
       "sandwichScore": 5
-  }
+  },
+
+
+
+  {
+    "id": "sandwichshop-condiments-bad",
+    "label": "Bad",
+    "sandwichText": "",
+    "sandwichScore": 1
+},
+{
+    "id": "sandwichshop-condiments-good",
+    "label": "Good",
+    "sandwichText": "",
+    "sandwichScore": 3
+},
+{
+    "id": "sandwichshop-condiments-special",
+    "label": "Special",
+    "sandwichText": "",
+    "sandwichScore": 5
+},
+
+
+
+{
+  "id": "sandwichshop-protein-bad",
+  "label": "Bad",
+  "sandwichText": "",
+  "sandwichScore": 1
+},
+{
+  "id": "sandwichshop-protein-good",
+  "label": "Good",
+  "sandwichText": "",
+  "sandwichScore": 3
+},
+{
+  "id": "sandwichshop-protein-special",
+  "label": "Special",
+  "sandwichText": "",
+  "sandwichScore": 5
+},
+
+
+
+{
+    "id": "sandwichshop-toppings-bad",
+    "label": "Bad",
+    "sandwichText": "",
+    "sandwichScore": 1
+},
+{
+    "id": "sandwichshop-toppings-good",
+    "label": "Good",
+    "sandwichText": "",
+    "sandwichScore": 3
+},
+{
+    "id": "sandwichshop-toppings-special",
+    "label": "Special",
+    "sandwichText": "",
+    "sandwichScore": 5
+}
   ]
 }

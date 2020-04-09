@@ -154,6 +154,21 @@
             "editFile": "lab-3-edit.json",
             "name": "Lab - 3",
             "playFile": "lab-3-play.json"
+		},
+		{
+            "editFile": "sandwichshop-condiments-edit.json",
+            "name": "Sandwichshop - Condiments",
+            "playFile": "sandwichshop-condiments-play.json"
+        },
+        {
+            "editFile": "sandwichshop-protein-edit.json",
+            "name": "Sandwichshop - Protein",
+            "playFile": "sandwichshop-protein-play.json"
+        },
+        {
+            "editFile": "sandwichshop-toppings-edit.json",
+            "name": "Sandwichshop - Toppings",
+            "playFile": "sandwichshop-toppings-play.json"
         }
   ]
 }
