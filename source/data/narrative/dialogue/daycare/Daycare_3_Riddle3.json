@@ -1,0 +1,47 @@
+{
+  "location": "Daycare",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Dad", "expression": "neutral" },
+    { "actor": "YS", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle3-bad" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Okay this one I definitely know.",  "expression": "happy" },
+        { "actor": "Prota", "line": "It's butts!",  "expression": "happy" },
+        { "actor": "YS", "line": "For the third piece of your prophecy, you have chosen to submit...", "expression": "neutral" },
+        { "actor": "YS", "line": "Butts.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yeah, you finally gave me a riddle I can understand!", "expression": "happy" },
+        { "actor": "YS", "line": "...Very well. If this is your final answer, the work is done.", "expression": "neutral" },
+        { "actor": "YS", "line": "Your prophecy is...", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oooh, I can't wait!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle3-good" ] },
+      "then": [
+        { "actor": "Prota", "line": "Okay this one must be...",  "expression": "thinking" },
+        { "actor": "Prota", "line": "I know! A newborn baby! Full of warm and potential and chubby little elbows and knees.", "expression": "happy" },
+        { "actor": "Prota", "line": "No edges on a baby!", "expression": "happy" },
+        { "actor": "YS", "line": "Your answer of \"A newborn baby\" has been acknowledged.", "expression": "neutral" },
+        { "actor": "YS", "line": "The prophecy is complete. Are you ready to hear it?", "expression": "neutral" },
+        { "actor": "Prota", "line": "I've never been more ready! Minty here I come!", "expression": "happy" },
+        { "actor": "YS", "line": "The prophecy is...", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle3-special" ] },
+      "then": [
+        { "actor": "Prota", "line": "Get ready, pal! I've got this one...on LOCK.",  "expression": "happy" },
+        { "actor": "Prota", "line": "Because the answer is celestial bodies locked in their endless dance! Boom!", "expression": "happy" },
+        { "actor": "Prota", "line": "Just call me Queen Riddle!", "expression": "neutral" },
+        { "actor": "YS", "line": "I will not call you by this name.", "expression": "neutral" },
+        { "actor": "YS", "line": "But I will acknowledge your response. And allow it to complete the prophecy.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yesss! It's Minty-findin' time!", "expression": "happy" },
+        { "actor": "YS", "line": "Your prophecy is...", "expression": "neutral" }
+      ]
+    },
+  ]
+}

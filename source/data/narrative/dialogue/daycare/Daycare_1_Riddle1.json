@@ -1,0 +1,58 @@
+{
+  "location": "Daycare",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Dad", "expression": "neutral" },
+    { "actor": "YS", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle1-bad" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Old string cheese..?",  "expression": "confused" },
+        { "actor": "YS", "line": "Old string cheese.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yeah! It's...short side to side and tall up and down. And it's the oldest of them all!", "expression": "happy" },
+        { "actor": "YS", "line": "You believe the answer to my ancient riddle is \"old string cheese\".", "expression": "neutral" },
+        { "actor": "Prota", "line": "Is it not?", "expression": "neutral" },
+        { "actor": "YS", "line": "Your answer is acknowledged. It will form the basis of your prophecy.", "expression": "shocked" },
+        { "actor": "Prota", "line": "Prophecy? Is... it a prophecy about where Minty is?", "expression": "confused" },
+        { "actor": "YS", "line": "...", "expression": "neutral" },
+        { "actor": "YS", "line": "Yes.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Well, okay... What's the next part?", "expression": "neutral" },
+        { "actor": "YS", "line": "With no light, I shine bright. Squint your eyes before my might.", "expression": "neutral" },
+        { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle1-good" ] },
+      "then": [
+        { "actor": "Prota", "line": "A tree planted by a happy child!",  "expression": "happy" },
+        { "actor": "Prota", "line": "First it's small, then it's tall... and it's... ", "expression": "happy" },
+        { "actor": "YS", "line": "How is it the oldest of them all?", "expression": "happy" },
+        { "actor": "Prota", "line": "Hmmm.", "expression": "confused" },
+        { "actor": "Prota", "line": "The kid is a caveman?", "expression": "thinking" },
+        { "actor": "YS", "line": "...Very well. Your answer is acknowledged. It will form the basis of your prophecy.", "expression": "neutral" },
+        { "actor": "Prota", "line": "So I was right?", "expression": "shocked" },
+        { "actor": "YS", "line": "You gave the answer as your spirit bade you. ", "expression": "neutral" },
+        { "actor": "Prota", "line": "Okay...So then what's the next part of my prophecy?", "expression": "confused" },
+        { "actor": "YS", "line": "With no light, I shine bright. Squint your eyes before my might.", "expression": "neutral" },
+        { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle1-special" ] },
+      "then": [
+        { "actor": "Prota", "line": "I think.... you're the threads of fate. As short as a life well-lived.... as long as eternity...",  "expression": "thinking" },
+        { "actor": "Prota", "line": "And as old as the first flicker of conscious thought.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Is that it?", "expression": "happy" },
+        { "actor": "YS", "line": "There is no \"it\". There is only what you believe.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh cool! So I'm right no matter what!", "expression": "happy" },
+        { "actor": "YS", "line": "Your answer is acknowledged. And it will form the basis of your prophecy.", "expression": "shocked" },
+        { "actor": "Prota", "line": "Ooh, I get a prophecy?", "expression": "happy" },
+        { "actor": "YS", "line": "One that will guide you to the location of the minted one. Now answer this:", "expression": "neutral" },
+        { "actor": "YS", "line": "With no light, I shine bright. Squint your eyes before my might.", "expression": "neutral" },
+        { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
+      ]
+    },
+  ]
+}

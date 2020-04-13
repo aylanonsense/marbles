@@ -1,0 +1,57 @@
+{
+  "location": "Daycare",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Dad", "expression": "neutral" },
+    { "actor": "YS", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle2-bad" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "I know! You're a flashlight!",  "expression": "happy" },
+        { "actor": "YS", "line": "I think you will find that I said \"With no light...\"", "expression": "neutral" },
+        { "actor": "Prota", "line": "Exactly! That's when you need a flash light the most! When there's no light.", "expression": "happy" },
+        { "actor": "Prota", "line": "...Right?", "expression": "neutral" },
+        { "actor": "YS", "line": "Hmm.", "expression": "neutral" },
+        { "actor": "YS", "line": "I acknowledge your answer. The prophecy grows clearer.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Can you just tell me where Minty is?", "expression": "neutral" },
+        { "actor": "YS", "line": "We are nearly at our end. ", "expression": "neutral" },
+        { "actor": "Prota", "line": "Fine okay.", "expression": "neutral" },
+        { "actor": "YS", "line": "The roundness of my shape...is only equalled by the smoothness of my edges.", "expression": "neutral" },
+        { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle2-good" ] },
+      "then": [
+        { "actor": "Prota", "line": "You must be...",  "expression": "thinking" },
+        { "actor": "Prota", "line": "The eyes of a parent looking lovingly at their child?", "expression": "thinking" },
+        { "actor": "YS", "line": "You think the eyes of a parent shine bright with no light...", "expression": "neutral" },
+        { "actor": "YS", "line": "And that you must squint your eyes before their might?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Maybe? Yung Sphinx, I really need to find Minty.", "expression": "neutral" },
+        { "actor": "YS", "line": "Your answer is acknowledged. The prophecy grows.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Okay...", "expression": "neutral" },
+        { "actor": "YS", "line": "The roundness of my shape...is only equalled by the smoothness of my edges. ", "expression": "neutral" },
+        { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle2-special" ] },
+      "then": [
+        { "actor": "Prota", "line": "Oh, I know this one!",  "expression": "thinking" },
+        { "actor": "Prota", "line": "You're the colours of an ancient rainbow, reverberating through time and space!", "expression": "happy" },
+        { "actor": "YS", "line": "...", "expression": "neutral" },
+        { "actor": "Prota", "line": "I got it didn't I?", "expression": "happy" },
+        { "actor": "YS", "line": "Your answer is acknowledged. Another layer to the prophecy has been--", "expression": "neutral" },
+        { "actor": "Prota", "line": "No, but wait. I got it right, right?", "expression": "neutral" },
+        { "actor": "YS", "line": "You submitted a response and it has been accepted into--", "expression": "neutral" },
+        { "actor": "Prota", "line": "No, but I'm RIGHT. LIke that was the right answer?", "expression": "neutral" },
+        { "actor": "YS", "line": "It is an answer.", "expression": "neutral" },
+        { "actor": "Prota", "line": "But--", "expression": "neutral" },
+        { "actor": "YS", "line": "The roundness of my shape...is only equalled by the smoothness of my edges.", "expression": "neutral" },
+        { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
+      ]
+    },
+  ]
+}

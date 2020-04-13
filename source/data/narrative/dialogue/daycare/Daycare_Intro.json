@@ -1,0 +1,61 @@
+{
+  "location": "Daycare",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Dad", "expression": "neutral", "side": "right" },
+    { "actor": "YS", "expression": "neutral" }
+  ],
+    "objects": [
+    "BadPoster",
+    "GoodPoster",
+    "SpecialPoster"
+    ],
+  "script": [
+    { "actor": "Dad", "line": "Prota?! What are you doing here?", "expression": "shocked" },
+    { "actor": "Prota", "line": "No time! I need to get these flyers into the hands of the toddlers.", "expression": "neutral" },
+    { "actor": "Dad", "line": "Aren't you supposed to be with Professor Marbels today? You--", "expression": "confused" },
+    { "actor": "Prota", "line": "Where are the kids?", "expression": "neutral" },
+    { "actor": "Dad", "line": "...So, these flyers seem to indicate you lost the family dog.", "expression": "thinking" },
+    { "actor": "Prota", "line": "I didn't lose her, exactly... She kinda... lost herself?", "expression": "neutral" },
+    { "actor": "Dad", "line": "What's that mean?", "expression": "thinking" },
+    { "actor": "Prota", "line": "She ran away! It was a whole thing. ", "expression": "neutral" },
+    { "actor": "Dad", "line": "And you want me to help you find her?", "expression": "thinking" },
+    { "actor": "Prota", "line": "Close! I want your eagle-eyed class of dog-loving kiddos to help me find her.", "expression": "happy" },
+    { "actor": "Dad", "line": "Can I ask about the logic behind that, Prota?", "expression": "neutral" },
+    { "actor": "Prota", "line": "No--", "expression": "neutral" },
+    { "actor": "Dad", "line": "Oh beans! I forgot! ", "expression": "shocked" },
+    { "actor": "Prota", "line": "What's going on?", "expression": "neutral" },
+    { "actor": "Dad", "line": "Refried beans! It's Burrito Day for lunchtime and I've got the refritos on the stovetop! ", "expression": "shocked" },
+    { "actor": "Dad", "line": "Can you watch the kids while I go take care of it? ", "expression": "shocked" },
+    { "actor": "Prota", "line": "Can I ask them about Minty?", "expression": "neutral" },
+    { "actor": "Dad", "line": "...Use your judgment, Prota. I'll be back in five!", "expression": "neutral" },
+    { "action": "dismiss-actor", "side": "right"},
+    { "actor": "Prota", "line": "Okay!", "expression": "happy" },
+    { "actor": "Prota", "line": "Sounds like a yes to me. Hey kids! Have you seen this dog?", "expression": "happy" },
+    {
+     "if": "failResult-Library"
+     "then": { "action": "show-object", "object": "BadPoster" }
+    },
+    {
+     "if": "normalResult-Library"
+     "then": { "action": "show-object", "object": "GoodPoster" }
+    },
+    {
+     "if": "specialResult-Library"
+     "then": { "action": "show-object", "object": "SpecialPoster" }
+    },
+    { "actor": "Prota", "line": "...Anyone?", "expression": "neutral" },
+    { "action": "hide-object" },
+    { "actor": "YS", "line": "I know where the minted one is.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Hi there little guy! Who are you?", "expression": "happy" },
+    { "actor": "YA", "line": "I am the Young Sphinx. You may call me...Yung Sphinx.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Okay Yung Sphinx! Where's Minty?", "expression": "happy" },
+    { "actor": "YA", "line": "I will tell you.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Okay!", "expression": "neutral" },
+    { "actor": "YA", "line": "In a riddle.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Oh! Uh... sure! I love riddles!", "expression": "happy" },
+    { "actor": "YS", "line": ".Then you will love this.", "expression": "neutral" },
+    { "actor": "YS", "line": "I am short and I am tall. I am the oldest of them all.", "expression": "neutral" },
+    { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
+  ]
+}

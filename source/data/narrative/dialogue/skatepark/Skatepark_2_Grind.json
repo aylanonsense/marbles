@@ -1,0 +1,55 @@
+{
+  "location": "Skatepark",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Teens", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick2-bad" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "...What did you think?", "expression": "neutral" },
+        { "actor": "Teens", "line": "It sucked. ", "expression": "neutral" },
+        { "actor": "Teens", "line": "Yeah that 5-0 butt grind was trash.", "expression": "confused" },
+        { "actor": "Teens", "line": "It was so bad I recorded it and put it on Tiktox.", "expression": "happy" },
+        { "actor": "Prota", "line": "Tiktox? Don't you mean--", "expression": "confused" },
+        { "actor": "Teens", "line": "No. This one is for videos so bad they could be considered toxic.", "expression": "neutral" },
+        { "actor": "Teens", "line": "The caption is \"Cool moves-- Not\".", "expression": "happy" },
+       { "actor": "Prota", "line": "That's not very nice.", "expression": "neutral" },
+        { "actor": "Teens", "line": "It has a hundred likes.", "expression": "happy" },
+        { "actor": "Prota", "line": "...Well it's not getting a hundred and one!", "expression": "neutral" },
+        { "actor": "Teens", "line": "Two came in as you said that.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I'm just gonna show you another one. Hold on to your hats, teens!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick2-good" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "Ow ow ow!", "expression": "neutral" },
+        { "actor": "Teens", "line": "Huh. What do you call that one?", "expression": "neutral" },
+        { "actor": "Prota", "line": "I call that one the Wagging Tailslide.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Okay. Well...", "expression": "confused" },
+        { "actor": "Teens", "line": "That was actually good.", "expression": "happy" },
+        { "actor": "Prota", "line": "Yesss! Okay, well, will you tell me about Minty then?", "expression": "happy" },
+        { "actor": "Teens", "line": "We need to see one more. Then we'll decide.", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick2-special" ] },
+      "then": [ 
+        { "actor": "Prota", "line": "And that's how it's done!", "expression": "happy" },
+        { "actor": "Teens", "line": "...", "expression": "neutral" },
+        { "actor": "Teens", "line": "...", "expression": "confused" },
+        { "actor": "Teens", "line": "That was...awesome.", "expression": "happy" },
+        { "actor": "Prota", "line": "What? It's just your run-of-the-mill Corkscrew Phoenix Grind.", "expression": "happy" },
+        { "actor": "Prota", "line": "All us cool kids know about it.", "expression": "neutral" },
+        { "actor": "Teens", "line": "I've never seen anything like it.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Yeah. Even Skater Gator couldn't have pulled it off. And he's like... a really good skater.", "expression": "confused" },
+        { "actor": "Prota", "line": "Hmm! Interesting! Almost like I...trained under Skater Gator.", "expression": "happy" },
+        { "actor": "Teens", "line": "Whoa, you did? ", "expression": "neutral" },
+        { "actor": "Prota", "line": "Nah, I've never heard of him 'til you said that. But from the sounds of it he's good at skating.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Show us one last trick. Let's see what you've really got. ", "expression": "confused" }
+      ]
+    }
+  ]
+}
