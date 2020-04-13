@@ -1,12 +1,12 @@
 {
-  "location": "Skatepark",
+  "location": "SkatePark",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
     { "actor": "Teens", "expression": "neutral", "side": "right" }
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick2-bad" ] },
+      "if": "failExit",
       "then": [ 
         { "actor": "Prota", "line": "...What did you think?", "expression": "neutral" },
         { "actor": "Teens", "line": "It sucked. ", "expression": "neutral" },
@@ -15,7 +15,7 @@
         { "actor": "Prota", "line": "Tiktox? Don't you mean--", "expression": "confused" },
         { "actor": "Teens", "line": "No. This one is for videos so bad they could be considered toxic.", "expression": "neutral" },
         { "actor": "Teens", "line": "The caption is \"Cool moves-- Not\".", "expression": "happy" },
-       { "actor": "Prota", "line": "That's not very nice.", "expression": "neutral" },
+        { "actor": "Prota", "line": "That's not very nice.", "expression": "neutral" },
         { "actor": "Teens", "line": "It has a hundred likes.", "expression": "happy" },
         { "actor": "Prota", "line": "...Well it's not getting a hundred and one!", "expression": "neutral" },
         { "actor": "Teens", "line": "Two came in as you said that.", "expression": "neutral" },
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick2-good" ] },
+      "if": "normalExit",
       "then": [ 
         { "actor": "Prota", "line": "Ow ow ow!", "expression": "neutral" },
         { "actor": "Teens", "line": "Huh. What do you call that one?", "expression": "neutral" },
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick2-special" ] },
+      "if": "specialExit",
       "then": [ 
         { "actor": "Prota", "line": "And that's how it's done!", "expression": "happy" },
         { "actor": "Teens", "line": "...", "expression": "neutral" },

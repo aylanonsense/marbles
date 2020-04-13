@@ -214,8 +214,14 @@ function DialogueScene:evalDialogueField(fieldData)
     if type(condition) == "table" then
       local method = self:evalDialogueField(condition.method)
       local args = self:evalDialogueField(condition.arguments) or {}
+      if not dialogueMethods[method] then
+        print("Dialogue method " .. method .. " does not exist")
+      end
       conditionIsTrue = dialogueMethods[method](table.unpack(args))
     else
+      if not dialogueMethods[condition] then
+        print("Dialogue method " .. condition .. " does not exist")
+      end
       conditionIsTrue = dialogueMethods[condition]()
     end
     if conditionIsTrue then

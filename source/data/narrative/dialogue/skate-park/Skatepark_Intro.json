@@ -1,5 +1,5 @@
 {
-  "location": "Skatepark",
+  "location": "SkatePark",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
     { "actor": "Teens", "expression": "neutral", "side": "right" }

@@ -3,6 +3,7 @@ import "utility/file"
 import "narrative/DialogueScene"
 import "level/MazeScene"
 import "narrative/StorylineSimulationScene"
+import "narrative/DialogueSimulationScene"
 import "narrative/MazeSimulationScene"
 import "render/imageCache"
 import "utility/soundCache"
@@ -67,33 +68,35 @@ function Game:advanceCurrentStoryline()
 end
 
 function Game:playNextStorylineScene()
+  local advance = function(exit)
+    if exit then
+      self:recordExitTaken(exit)
+    end
+    self:advanceCurrentStoryline()
+  end
   local sceneData = self.storylineData.scenes[self.playthrough.storyline.stage]
   if sceneData then
     if SHOW_DEBUG_SCREENS and sceneData.maze then
       Scene.setScene(MazeSimulationScene(sceneData.maze, sceneData.exits), function(shouldPlayMaze, exit)
         if shouldPlayMaze then
           local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
-          Scene.setScene(scene, function(exit)
-            if exit then
-              self:recordExitTaken(exit)
-            end
-            self:advanceCurrentStoryline()
-          end)
+          Scene.setScene(scene, advance)
         else
-          if exit then
-            self:recordExitTaken(exit)
-          end
-          self:advanceCurrentStoryline()
+          advance(exit)
+        end
+      end)
+    elseif SHOW_DEBUG_SCREENS and sceneData.dialogue then
+      Scene.setScene(DialogueSimulationScene(sceneData.dialogue), function(shouldPlayDialogue)
+        if shouldPlayDialogue then
+          local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
+          Scene.setScene(scene, advance)
+        else
+          advance()
         end
       end)
     else
       local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
-      Scene.setScene(scene, function(exit)
-        if exit then
-          self:recordExitTaken(exit)
-        end
-        self:advanceCurrentStoryline()
-      end)
+      Scene.setScene(scene, advance)
     end
   else
     -- There are no more scenes in the current storyline

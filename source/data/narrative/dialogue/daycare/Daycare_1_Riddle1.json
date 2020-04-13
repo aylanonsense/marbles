@@ -7,7 +7,7 @@
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle1-bad" ] },
+      "if": "failExit",
       "then": [ 
         { "actor": "Prota", "line": "Old string cheese..?",  "expression": "confused" },
         { "actor": "YS", "line": "Old string cheese.", "expression": "neutral" },
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle1-good" ] },
+      "if": "normalExit",
       "then": [
         { "actor": "Prota", "line": "A tree planted by a happy child!",  "expression": "happy" },
         { "actor": "Prota", "line": "First it's small, then it's tall... and it's... ", "expression": "happy" },
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle1-special" ] },
+      "if": "specialExit",
       "then": [
         { "actor": "Prota", "line": "I think.... you're the threads of fate. As short as a life well-lived.... as long as eternity...",  "expression": "thinking" },
         { "actor": "Prota", "line": "And as old as the first flicker of conscious thought.", "expression": "thinking" },
@@ -53,6 +53,6 @@
         { "actor": "YS", "line": "With no light, I shine bright. Squint your eyes before my might.", "expression": "neutral" },
         { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
       ]
-    },
+    }
   ]
 }

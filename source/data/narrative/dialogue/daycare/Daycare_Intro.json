@@ -5,11 +5,11 @@
     { "actor": "Dad", "expression": "neutral", "side": "right" },
     { "actor": "YS", "expression": "neutral" }
   ],
-    "objects": [
+  "objects": [
     "BadPoster",
     "GoodPoster",
     "SpecialPoster"
-    ],
+  ],
   "script": [
     { "actor": "Dad", "line": "Prota?! What are you doing here?", "expression": "shocked" },
     { "actor": "Prota", "line": "No time! I need to get these flyers into the hands of the toddlers.", "expression": "neutral" },
@@ -33,28 +33,28 @@
     { "actor": "Prota", "line": "Okay!", "expression": "happy" },
     { "actor": "Prota", "line": "Sounds like a yes to me. Hey kids! Have you seen this dog?", "expression": "happy" },
     {
-     "if": "failResult-Library"
-     "then": { "action": "show-object", "object": "BadPoster" }
+      "if": { "method": "failResultInPreviousStoryline", "arguments": [ "library" ] },
+      "then": { "action": "show-object", "object": "BadPoster" }
     },
     {
-     "if": "normalResult-Library"
-     "then": { "action": "show-object", "object": "GoodPoster" }
+      "if": { "method": "normalResultInPreviousStoryline", "arguments": [ "library" ] },
+      "then": { "action": "show-object", "object": "GoodPoster" }
     },
     {
-     "if": "specialResult-Library"
-     "then": { "action": "show-object", "object": "SpecialPoster" }
+      "if": { "method": "specialResultInPreviousStoryline", "arguments": [ "library" ] },
+      "then": { "action": "show-object", "object": "SpecialPoster" }
     },
     { "actor": "Prota", "line": "...Anyone?", "expression": "neutral" },
     { "action": "hide-object" },
     { "actor": "YS", "line": "I know where the minted one is.", "expression": "neutral", "side": "right" },
     { "actor": "Prota", "line": "Hi there little guy! Who are you?", "expression": "happy" },
-    { "actor": "YA", "line": "I am the Young Sphinx. You may call me...Yung Sphinx.", "expression": "neutral" },
+    { "actor": "YS", "line": "I am the Young Sphinx. You may call me...Yung Sphinx.", "expression": "neutral" },
     { "actor": "Prota", "line": "Okay Yung Sphinx! Where's Minty?", "expression": "happy" },
-    { "actor": "YA", "line": "I will tell you.", "expression": "neutral" },
+    { "actor": "YS", "line": "I will tell you.", "expression": "neutral" },
     { "actor": "Prota", "line": "Okay!", "expression": "neutral" },
-    { "actor": "YA", "line": "In a riddle.", "expression": "neutral" },
+    { "actor": "YS", "line": "In a riddle.", "expression": "neutral" },
     { "actor": "Prota", "line": "Oh! Uh... sure! I love riddles!", "expression": "happy" },
-    { "actor": "YS", "line": ".Then you will love this.", "expression": "neutral" },
+    { "actor": "YS", "line": "Then you will love this.", "expression": "neutral" },
     { "actor": "YS", "line": "I am short and I am tall. I am the oldest of them all.", "expression": "neutral" },
     { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
   ]

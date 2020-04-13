@@ -1,0 +1,112 @@
+{
+  "location": "SkatePark",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Teens", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "My...rating?", "expression": "confused" },
+    { "actor": "Teens", "line": "Yeah. Your Cool Rating.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Is it like, something out of ten?", "expression": "neutral" },
+    { "actor": "Teens", "line": "This isn't school, nerd. It's out of emojis.", "expression": "happy" },
+    { "actor": "Prota", "line": "...So then what do you give me?", "expression": "confused" },
+    { "actor": "Teens", "line": "What do we give her?", "expression": "neutral" },
+    { "actor": "Teens", "line": "(whisper, whisper)", "expression": "confused" },
+    { "actor": "Teens", "line": "(whisper, whisper)", "expression": "happy" },
+    { "actor": "Teens", "line": "Okay. We got it. Your Cool Rating is...", "expression": "neutral" },
+    { "actor": "Teens", "line": { "method": "getFinalSkateParkEmojiLine" }, "expression": "happy" },
+    { "actor": "Prota", "line": "Oh. Well. That sounds...", "expression": "confused" },
+    {
+      "if": "failResult",
+      "then": [
+        { "actor": "Prota", "line": "Kinda bad.", "expression": "thinking" },
+        { "actor": "Teens", "line": "Nah. You're not kinda bad. You're really bad.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Yeah, some real bad tricks in there. ", "expression": "happy" },
+        { "actor": "Prota", "line": "So I guess I have to go without finding out where Minty is, huh?", "expression": "neutral" },
+        { "actor": "Teens", "line": "Price of being uncool.", "expression": "happy" },
+        { "actor": "Teens", "line": "But you know what?", "expression": "neutral" },
+        { "actor": "Prota", "line": "What?", "expression": "neutral" },
+        { "actor": "Teens", "line": "Nerd like you doesn't belong at the skatepark.", "expression": "neutral" },
+        { "actor": "Teens", "line": "You'd probably fit in better in a museum.", "expression": "neutral" },
+        { "actor": "Prota", "line": "You're really not--", "expression": "neutral" },
+        { "actor": "Prota", "line": "The museum! You're trying to tell me to go to the museum!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Looks like you're pretty nice after all!", "expression": "happy" },
+        { "actor": "Teens", "line": "What? No, we just think you should leave, nerd. Go learn something.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh, I hear you. Loud and clear! I'll just take my nerdy self over to the museum!", "expression": "happy" },
+        { "actor": "Teens", "line": "Good, that's what we want.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Right! You want ME to go to the MUSEUM. ", "expression": "happy" },
+        { "actor": "Teens", "line": "Yeah. That's what we said.", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "normalResult",
+      "then": [
+        { "actor": "Prota", "line": "Pretty good?", "expression": "happy" },
+        { "actor": "Teens", "line": "Yeah. You kinda showed up for this one. Guessy you're... kinda cool.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I knew it! I knew I was cool!", "expression": "happy" },
+        { "actor": "Prota", "line": "So where's Minty?", "expression": "neutral" },
+        { "actor": "Teens", "line": "You should check...the museum. ", "expression": "confused" },
+        { "actor": "Prota", "line": "The museum? Huh... I guess that makes sense. Minty does love balls. I guess you saw her over there?", "expression": "confused" },
+        { "actor": "Teens", "line": "Sure, yeah. Totally.", "expression": "happy" },
+        { "actor": "Prota", "line": "Perfect! Thank you so so so so much, teens! Guess you're pretty nice after all!", "expression": "happy" },
+        { "actor": "Teens", "line": "Sure, whatever. But before you go... You named your moves after your dog, right?", "expression": "neutral" },
+        { "actor": "Prota", "line": "I name a lot of things after my dog. ", "expression": "neutral" },
+        { "actor": "Teens", "line": "Must be a pretty cool dog. What does she look like, exactly?", "expression": "confused" },
+        { "actor": "Prota", "line": "Cute! Small! Curly tail! Perfect shining eyes, golden coat, white tummy, perfect brows.", "expression": "happy" },
+        { "actor": "Teens", "line": "And she answers to \"Minty?\"", "expression": "confused" },
+        { "actor": "Prota", "line": "Most of the time!", "expression": "happy" },
+        { "actor": "Prota", "line": "But... you must already know that. Because you saw her.", "expression": "thinking" },
+        { "actor": "Teens", "line": "For sure, for sure.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yeah, for sure. Just go to the museum. She's definitely there.", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "specialResult",
+      "then": [
+        { "actor": "Prota", "line": "Amazing!", "expression": "happy" },
+        { "actor": "Teens", "line": "Look, don't get too excited, okay?", "expression": "neutral" },
+        { "actor": "Teens", "line": "Coolness fades the more excited you are about it.", "expression": "confused" },
+        { "actor": "Prota", "line": "Oh. Well. Whatever.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Nice.", "expression": "neutral" },
+        { "actor": "Prota", "line": "So... like, where should I look for Minty? You know, if I feel like it.", "expression": "neutral" },
+        { "actor": "Teens", "line": "I don't know. Guess you could go to like... the museum or something.", "expression": "confused" },
+        { "actor": "Teens", "line": "It's mostly for nerds, but... maybe you could check it out.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Okay. Well. Maybe.", "expression": "neutral" },
+        { "actor": "Teens", "line": "You're really good at this. ", "expression": "happy" },
+        { "actor": "Prota", "line": "Maybe.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Cool.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Yeah.", "expression": "confused" },
+        { "actor": "Prota", "line": "All right, well. You said museum, right? I don't even remember. I wasn't listening.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Ball Museum, yeah.", "expression": "confused" },
+        { "actor": "Teens", "line": "Mm.", "expression": "neutral" }
+      ]
+    },
+    { "actor": "Prota", "line": "Haha, okay perfect! See you later, Teens! Thanks so much!", "expression": "happy" },
+    { "actor": "Prota", "line": "I've had a really... SKATE time hanging out!", "expression": "happy" },
+    { "actor": "Teens", "line": "...Okay bye.", "expression": "confused" },
+    { "action": "dismiss-actor", "side": "left"},
+    { "actor": "Teens", "line": "...", "expression": "confused" },
+    {
+      "if": "failResult",
+      "then": [
+        { "actor": "Teens", "line": "That was not a cool person.", "expression": "neutral" },
+        { "actor": "Teens", "line": "And yet... Kinda great, right?", "expression": "confused" },
+        { "actor": "Teens", "line": "May she never know.", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "normalResult",
+      "then": [
+        { "actor": "Teens", "line": "We're gonna steal that dog, right?", "expression": "happy" },
+        { "actor": "Teens", "line": "Obviously.", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "specialResult",
+      "then": [
+        { "actor": "Teens", "line": "Okay she was like, wildly cool, right?", "expression": "neutral" },
+        { "actor": "Teens", "line": "I would protect her with my life.", "expression": "confused" }
+      ]
+    }
+  ]
+}

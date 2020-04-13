@@ -7,7 +7,7 @@
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle2-bad" ] },
+      "if": "failExit",
       "then": [ 
         { "actor": "Prota", "line": "I know! You're a flashlight!",  "expression": "happy" },
         { "actor": "YS", "line": "I think you will find that I said \"With no light...\"", "expression": "neutral" },
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle2-good" ] },
+      "if": "normalExit",
       "then": [
         { "actor": "Prota", "line": "You must be...",  "expression": "thinking" },
         { "actor": "Prota", "line": "The eyes of a parent looking lovingly at their child?", "expression": "thinking" },
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "daycare-riddle2-special" ] },
+      "if": "specialExit",
       "then": [
         { "actor": "Prota", "line": "Oh, I know this one!",  "expression": "thinking" },
         { "actor": "Prota", "line": "You're the colours of an ancient rainbow, reverberating through time and space!", "expression": "happy" },
@@ -52,6 +52,6 @@
         { "actor": "YS", "line": "The roundness of my shape...is only equalled by the smoothness of my edges.", "expression": "neutral" },
         { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
       ]
-    },
+    }
   ]
 }

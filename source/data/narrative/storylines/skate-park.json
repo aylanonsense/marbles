@@ -1,0 +1,16 @@
+{
+  "scenes": [
+    { "dialogue": "skate-park/Skatepark_Intro" },
+
+    { "maze": "skatepark-jump", "exits": [ "skatepark-jump-special", "skatepark-jump-good", "skatepark-jump-bad" ] },
+    { "dialogue": "skate-park/Skatepark_1_Flip" },
+
+    { "maze": "skatepark-halfpipe", "exits": [ "skatepark-halfpipe-special", "skatepark-halfpipe-good", "skatepark-halfpipe-bad" ] },
+    { "dialogue": "skate-park/Skatepark_2_Grind" },
+
+    { "maze": "skatepark-tour", "exits": [ "skatepark-tour-special", "skatepark-tour-good", "skatepark-tour-bad" ] },
+    { "dialogue": "skate-park/Skatepark_3_Grab" },
+
+    { "dialogue": "skate-park/Skatepark_Resolution" }
+  ]
+}

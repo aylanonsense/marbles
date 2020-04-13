@@ -94,5 +94,41 @@
     "expressions": {
       "neutral": { "frame": 1 }
     }
+  },
+  "Dad": {
+    "name": "Dad",
+    "image": "/images/narrative/actors/dad.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 },
+      "happy": { "frame": 1 },
+      "thinking": { "frame": 1 },
+      "confused": { "frame": 1 },
+      "shocked": { "frame": 1 }
+    }
+  },
+  "YS": {
+    "name": "YS",
+    "image": "/images/narrative/actors/ys.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 },
+      "happy": { "frame": 1 },
+      "thinking": { "frame": 1 },
+      "confused": { "frame": 1 },
+      "shocked": { "frame": 1 }
+    }
+  },
+  "Teens": {
+    "name": "Teens",
+    "image": "/images/narrative/actors/teens.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 },
+      "happy": { "frame": 1 },
+      "thinking": { "frame": 1 },
+      "confused": { "frame": 1 },
+      "shocked": { "frame": 1 }
+    }
   }
 }

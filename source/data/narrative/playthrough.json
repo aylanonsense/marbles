@@ -26,7 +26,6 @@
     "skate-park": {
       "symbol": "4A",
       "label": "Skate Park",
-      "isMissing": true,
       "special": "safety-town",
       "normal": "pickle-yard",
       "fail": "vintage-viper"
@@ -41,7 +40,6 @@
     "daycare": {
       "symbol": "4C",
       "label": "Daycare",
-      "isMissing": true,
       "special": "safety-town",
       "normal": "pickle-yard",
       "fail": "vintage-viper"

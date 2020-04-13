@@ -1,12 +1,12 @@
 {
-  "location": "Skatepark",
+  "location": "SkatePark",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
     { "actor": "Teens", "expression": "neutral", "side": "right" }
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick3-bad" ] },
+      "if": "failExit",
       "then": [ 
         { "actor": "Prota", "line": "Uh...oops?", "expression": "confused" },
         { "actor": "Teens", "line": "Did you just break your board in mid-air?", "expression": "neutral" },
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick3-good" ] },
+      "if": "normalExit",
       "then": [ 
         { "actor": "Prota", "line": "And I call that one the Puppyhana! ", "expression": "happy" },
         { "actor": "Teens", "line": "It's a decent move.", "expression": "confused" },
@@ -31,11 +31,11 @@
         { "actor": "Prota", "line": "So if you can just tell me...", "expression": "neutral" },
         { "actor": "Teens", "line": "Not yet.", "expression": "neutral" },
         { "actor": "Prota", "line": "But I did all the tricks!", "expression": "confused" },
-        { "actor": "Teens", "line": "Yeah, but we still haven't give you your rating.", "expression": "neutral" },
+        { "actor": "Teens", "line": "Yeah, but we still haven't give you your rating.", "expression": "neutral" }
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick3-special" ] },
+      "if": "specialExit",
       "then": [ 
         { "actor": "Teens", "line": "Wait... did you... slow down your fall...", "expression": "neutral" },
         { "actor": "Teens", "line": "By using your board as a parachute?", "expression": "neutral" },

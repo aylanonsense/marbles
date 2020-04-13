@@ -1,12 +1,12 @@
 {
-  "location": "Skatepark",
+  "location": "SkatePark",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
     { "actor": "Teens", "expression": "neutral", "side": "right" }
   ],
   "script": [
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick1-bad" ] },
+      "if": "failExit",
       "then": [ 
         { "actor": "Prota", "line": "...Ow.", "expression": "neutral" },
         { "actor": "Teens", "line": "What do you call that one, nerd?", "expression": "confused" },
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick1-good" ] },
+      "if": "normalExit",
       "then": [ 
         { "actor": "Prota", "line": "Ha! I call that one the Pup Shove-It!", "expression": "happy" },
         { "actor": "Teens", "line": "Nice. ", "expression": "happy" },
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "if": { "method": "lastExitWas", "arguments": [ "skatepark-trick1-special" ] },
+      "if": "specialExit",
       "then": [ 
         { "actor": "Prota", "line": "Oof! How was...that?", "expression": "neutral" },
         { "actor": "Teens", "line": "Was that a varial neckflip?", "expression": "neutral" },

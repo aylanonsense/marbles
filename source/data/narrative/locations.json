@@ -16,5 +16,11 @@
   },
   "Daycare": {
     "image": "/images/narrative/locations/daycare.png"
+  },
+  "SkatePark": {
+    "image": "/images/narrative/locations/skate-park.png"
+  },
+  "SafetyTown": {
+    "image": "/images/narrative/locations/safety-town.png"
   }
 }

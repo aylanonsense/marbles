@@ -1,11 +1,15 @@
 import "CoreLibs/object"
+import "utility/file"
 
-local locationsData = json.decodeFile("/data/narrative/locations.json")
+local locationsData = loadJsonFile("/data/narrative/locations.json")
 
 class("Location").extends()
 
 function Location:init(id)
   self.id = id
+  if not locationsData[self.id] or not locationsData[self.id].image then
+    print('No such location ' .. self.id .. ' found in locations.json')
+  end
   local imagePath = locationsData[self.id].image
   if imagePath then
     local image = playdate.graphics.image.new(imagePath)

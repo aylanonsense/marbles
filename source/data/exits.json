@@ -275,54 +275,63 @@
 
     {
       "id": "skatepark-halfpipe-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "5-0 butt grind",
+      "score": 1,
+      "finalText": "VOMIT FACE EMOJI"
     },
     {
       "id": "skatepark-halfpipe-good",
-      "label": "Good",
-      "score": 3
+      "label": "Wagging Tailslide",
+      "score": 3,
+      "finalText": "BABY EMOJI"
     },
     {
       "id": "skatepark-halfpipe-special",
-      "label": "Special",
-      "score": 5
+      "label": "Corkscrew phoenix grind",
+      "score": 5,
+      "finalText": "COOL SHADES EMOJI"
     },
 
 
 
     {
       "id": "skatepark-tour-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "Armbar deckbreaker",
+      "score": 1,
+      "finalText": "PERSON PUTTING THINGS IN TRASH EMOJI"
     },
     {
       "id": "skatepark-tour-good",
-      "label": "Good",
-      "score": 3
+      "label": "Puppyhana",
+      "score": 3,
+      "finalText": "MINTY EMOJI"
     },
     {
       "id": "skatepark-tour-special",
-      "label": "Special",
-      "score": 5
+      "label": "Parachute drop",
+      "score": 5,
+      "finalText": "CRYSTAL BALL EMOJI"
     },
 
 
 
     {
       "id": "skatepark-jump-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "No-board 360 faceplant",
+      "score": 1,
+      "finalText": "THUMBS DOWN EMOJI"
     },
     {
       "id": "skatepark-jump-good",
-      "label": "Good",
-      "score": 3
+      "label": "Pup shove-it",
+      "score": 3,
+      "finalText": "THUMBS UP EMOJI"
     },
     {
       "id": "skatepark-jump-special",
-      "label": "Special",
-      "score": 5
+      "label": "Varial neckflip ",
+      "score": 5,
+      "finalText": "OK HAND EMOJI"
     },
 
 
@@ -392,54 +401,63 @@
 
     {
       "id": "daycare-1-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "Aged string cheese",
+      "score": 1,
+      "finalText": "A FEAST"
     },
     {
       "id": "daycare-1-good",
-      "label": "Good",
-      "score": 3
+      "label": "A tree planted by a happy child",
+      "score": 3,
+      "finalText": "YOUR ROOTS"
     },
     {
       "id": "daycare-1-special",
-      "label": "Special",
-      "score": 5
+      "label": "The threads of fate",
+      "score": 5,
+      "finalText": "THE THREADS OF FATE"
     },
 
 
 
     {
       "id": "daycare-2-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "A flashlight",
+      "score": 1,
+      "finalText": "THE LIGHT"
     },
     {
       "id": "daycare-2-good",
-      "label": "Good",
-      "score": 3
+      "label": "The eyes of a parent looking at their child",
+      "score": 3,
+      "finalText": "YOUR LOVED ONES"
     },
     {
       "id": "daycare-2-special",
-      "label": "Special",
-      "score": 5
+      "label": "The colors of an ancient rainbow reverberating through time and space",
+      "score": 5,
+      "finalText": "THE COLORS OF THE ANCIENT RAINBOW"
     },
 
 
 
     {
       "id": "daycare-3-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "Butts",
+      "score": 1,
+      "finalText": "BUTTS"
     },
     {
       "id": "daycare-3-good",
-      "label": "Good",
-      "score": 3
+      "label": "A newborn baby full of warmth and potential",
+      "score": 3,
+      "finalText": "NEW LIFE"
     },
     {
       "id": "daycare-3-special",
-      "label": "Special",
-      "score": 5
+      "label": "Celestial bodies locked in an endless dance",
+      "score": 5,
+      "finalText": "THE ETERNAL DANCE OF CELESTIAL BODIES"
     },
 
 
