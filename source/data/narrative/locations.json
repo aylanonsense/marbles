@@ -13,5 +13,8 @@
   },
   "Library": {
     "image": "/images/narrative/locations/library.png"
+  },
+  "Daycare": {
+    "image": "/images/narrative/locations/daycare.png"
   }
 }

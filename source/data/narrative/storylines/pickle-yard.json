@@ -1,16 +1,43 @@
 {
   "scenes": [
-    { "dialogue": "pickle-yard/PickleYard_Intro" },
+    {
+      "dialogue": "pickle-yard/PickleYard_Intro",
+      "music": "pickle-yard"
+    },
 
-    { "maze": "pickle-star", "exits": [ "pickle-star-special", "pickle-star-good", "pickle-star-bad" ] },
-    { "dialogue": "pickle-yard/PickleYard_1_Star" },
+    {
+      "maze": "pickle-star",
+      "exits": [ "pickle-star-special", "pickle-star-good", "pickle-star-bad" ],
+      "music": "pickle-yard"
+    },
+    {
+      "dialogue": "pickle-yard/PickleYard_1_Star",
+      "music": "pickle-yard"
+    },
 
-    { "maze": "pickle-death", "exits": [ "pickle-death-special", "pickle-death-good", "pickle-death-bad" ] },
-    { "dialogue": "pickle-yard/PickleYard_2_Death" },
+    {
+      "maze": "pickle-death",
+      "exits": [ "pickle-death-special", "pickle-death-good", "pickle-death-bad" ],
+      "music": "pickle-yard"
+    },
+    {
+      "dialogue": "pickle-yard/PickleYard_2_Death",
+      "music": "pickle-yard"
+    },
 
-    { "maze": "pickle-tower", "exits": [ "pickle-tower-special", "pickle-tower-good", "pickle-tower-bad" ] },
-    { "dialogue": "pickle-yard/PickleYard_3_Tower" },
+    {
+      "maze": "pickle-tower",
+      "exits": [ "pickle-tower-special", "pickle-tower-good", "pickle-tower-bad" ],
+      "music": "pickle-yard"
+    },
+    {
+      "dialogue": "pickle-yard/PickleYard_3_Tower",
+      "music": "pickle-yard"
+    },
 
-    { "dialogue": "pickle-yard/PickleYard_Resolution" }
+    {
+      "dialogue": "pickle-yard/PickleYard_Resolution",
+      "music": "pickle-yard"
+    }
   ]
 }

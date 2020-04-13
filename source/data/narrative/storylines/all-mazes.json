@@ -1,5 +1,13 @@
 {
   "scenes": [
+    { "maze": "lab-1" },
+    { "maze": "lab-2" },
+    { "maze": "lab-3" },
+
+    { "maze": "ballmuseum-pinball" },
+    { "maze": "ballmuseum-pool" },
+    { "maze": "ballmuseum-skeeball" },
+
     { "maze": "library-1" },
     { "maze": "library-2" },
     { "maze": "library-3" },

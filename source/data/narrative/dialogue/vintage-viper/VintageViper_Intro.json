@@ -1,5 +1,5 @@
 {
-  "location": "PickleYard",
+  "location": "VintageViper",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
     { "actor": "Randi", "expression": "neutral", "side": "right" },
