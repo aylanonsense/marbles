@@ -5,6 +5,7 @@ import "narrative/Location"
 import "narrative/ShownObject"
 import "narrative/dialogueMethods"
 import "scene/time"
+import "scene/sceneTransition"
 import "CoreLibs/utilities/printer"
 
 class("DialogueScene").extends(Scene)
@@ -29,22 +30,17 @@ function DialogueScene:init(convoData)
       if expression then
         actor:setExpression(expression)
       end
-      local side = self:evalDialogueField(actorData.side)
-      if side then
-        if self.actorsOnStage[side] then
-          self.actorsOnStage[side]:slideOffStage()
-        end
-        actor:slideOnStage(side)
-        self.actorsOnStage[side] = actor
-      end
+      actor.startingSide = self:evalDialogueField(actorData.side)
     end
   end
+  self.hasBegunScene = false
   -- Prep the script
   self.scripts = { convoData.script }
   self.scriptIndexes = { 0 }
   -- Wait for a bit before beginning the script
   self.waitingFor = "time"
-  self.waitTime = 1.25
+  self.waitTime = sceneTransition.TRANSITION_IN_TIME + 0.75
+  sceneTransition:transitionIn()
 end
 
 function DialogueScene:update()
@@ -53,7 +49,24 @@ function DialogueScene:update()
     self.waitTime -= time.dt
     if self.waitTime <= 0 then
       self.waitingFor = nil
-      self:processNextDialogueAction()
+      if self.hasBegunScene then
+        self:processNextDialogueAction()
+      else
+        self.hasBegunScene = true
+        self.waitingFor = "time"
+        self.waitTime = 1.5
+        for _, actor in pairs(self.actorLookup) do
+          if actor.startingSide then
+            if self.actorsOnStage[actor.startingSide] then
+              self.actorsOnStage[actor.startingSide]:slideOffStage()
+            end
+            actor:slideOnStage(actor.startingSide)
+            self.actorsOnStage[actor.startingSide] = actor
+            actor.startingSide = nil
+          end
+        end
+        self.dialogueBox:show()
+      end
     end
   -- Wait for the dialogue box text to crawl and then for the player to press a button
   elseif self.waitingFor == "dialogue-box" then
@@ -75,6 +88,7 @@ function DialogueScene:update()
     self.shownObject:update()
   end
   self.dialogueBox:update()
+  sceneTransition:update()
 end
 
 function DialogueScene:draw()
@@ -89,6 +103,7 @@ function DialogueScene:draw()
     self.shownObject:update()
   end
   self.dialogueBox:draw()
+  sceneTransition:draw()
 end
 
 function DialogueScene:addOrFindActor(id)
@@ -109,15 +124,17 @@ function DialogueScene:processNextDialogueAction()
       self:processNextDialogueAction()
     else
       self.waitingFor = nil
-      for _, actor in pairs(self.actorLookup) do
-        actor:remove()
-      end
-      self.dialogueBox:remove()
-      self.location:remove()
-      if self.shownObject then
-        self.shownObject:remove()
-      end
-      self:endScene()
+      sceneTransition:transitionOut(function()
+        for _, actor in pairs(self.actorLookup) do
+          actor:remove()
+        end
+        self.dialogueBox:remove()
+        self.location:remove()
+        if self.shownObject then
+          self.shownObject:remove()
+        end
+        self:endScene()
+      end)
     end
   else
     local script = self.scripts[#self.scripts]

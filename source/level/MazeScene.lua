@@ -1,5 +1,6 @@
 import "render/camera"
 import "scene/Scene"
+import "scene/sceneTransition"
 import "physics/physics"
 import "level/object/levelObjectByType"
 import "level/object/Marble"
@@ -27,6 +28,7 @@ function MazeScene:init(levelData)
   physics:onCollide(function(collision)
     self:onCollide(collision)
   end)
+  sceneTransition:hold()
 end
 
 function MazeScene:partialLoad()
@@ -59,6 +61,7 @@ function MazeScene:partialLoad()
       -- And finally sort the physics sectors
       physics:sortSectors()
       self.isLoaded = true
+      sceneTransition:transitionIn()
     end
   end
 end
@@ -97,6 +100,7 @@ function MazeScene:update()
     camera.x, camera.y = self.marble:getPosition()
     camera:recalculatePerspective()
   end
+  sceneTransition:update()
 end
 
 function MazeScene:draw()
@@ -121,6 +125,7 @@ function MazeScene:draw()
       obj:draw()
     end
   end
+  sceneTransition:draw()
 end
 
 function MazeScene:onCollide(collision)
@@ -141,6 +146,8 @@ function MazeScene:triggerExitTaken(exit)
       obj.isInvincible = true
     end
   end
-  soundCache:stopAllSoundEffects()
-  self:endScene(exit)
+  sceneTransition:transitionOut(function()
+    soundCache:stopAllSoundEffects()
+    self:endScene(exit)
+  end)
 end

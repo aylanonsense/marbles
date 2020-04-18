@@ -82,6 +82,10 @@ function DialogueBox:draw()
   end
 end
 
+function DialogueBox:show()
+  self.isVisible = true;
+end
+
 function DialogueBox:showDialogue(name, text, side)
   self.text = text
   self.framesUntilNextCharacterShown = 0
