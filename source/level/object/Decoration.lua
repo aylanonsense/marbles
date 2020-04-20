@@ -9,7 +9,10 @@ local DECO_IMAGE_NAMES = {
   'sandwich-sign',
   'big-questionmark',
   'fluffy-cloud',
-  'prota-head'
+  'small-x',
+  'signpost',
+  'basic-arrow',
+  'double-arrow'
 }
 
 function Decoration:init(x, y, imageName, rotation)
