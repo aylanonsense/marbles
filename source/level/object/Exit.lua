@@ -4,6 +4,8 @@ import "render/camera"
 import "fonts/fonts"
 import "scene/time"
 
+local MIN_IMPULSE_TO_TRIGGER = 100
+
 local exitsData = json.decodeFile("/data/exits.json").exits
 local exitLookup = {}
 for _, exitData in ipairs(exitsData) do
@@ -27,12 +29,16 @@ function Exit:init(x, y, exitId, icon)
     self.exitId = exitsData[1].id
   end
   self.label = exitLookup[self.exitId].label
-  self.cooldown = 0
   self.isInvincible = false
+  self.impulseFreezeTimer = 0.0
+  self.impulseToTrigger = MIN_IMPULSE_TO_TRIGGER
 end
 
 function Exit:update()
-  self.cooldown = math.max(0, self.cooldown - time.dt)
+  self.impulseFreezeTimer = math.max(0, self.impulseFreezeTimer - time.dt)
+  if self.impulseFreezeTimer <= 0 then
+    self.impulseToTrigger = math.max(MIN_IMPULSE_TO_TRIGGER, self.impulseToTrigger - 100 * time.dt)
+  end
 end
 
 function Exit:draw()
@@ -64,12 +70,17 @@ function Exit:draw()
 end
 
 function Exit:preCollide(other, collision)
-  if self.health > 0 and self.cooldown <= 0 and not self.isInvincible then
+  self.impulseFreezeTimer = 0.50
+  if self.health > 0 and not self.isInvincible and collision.impulse >= self.impulseToTrigger then
+    self.impulseToTrigger = collision.impulse + 200
+    collision.impulse += 100
     self.health -= 1
-    self.cooldown = 0.25
+    if scene.triggerExitHit then
+      scene:triggerExitHit(exitLookup[self.exitId], self)
+    end
     if self.health <= 0 then
       if scene.triggerExitTaken then
-        scene:triggerExitTaken(exitLookup[self.exitId])
+        scene:triggerExitTaken(exitLookup[self.exitId], self)
       end
       self:despawn()
     end

@@ -140,7 +140,10 @@ function MazeScene:onCollide(collision)
   end
 end
 
-function MazeScene:triggerExitTaken(exit)
+function MazeScene:triggerExitHit(exitData, exit)
+end
+
+function MazeScene:triggerExitTaken(exitData, exit)
   for _, obj in ipairs(self.objects) do
     if obj.type == LevelObject.Type.Exit then
       obj.isInvincible = true
@@ -148,6 +151,6 @@ function MazeScene:triggerExitTaken(exit)
   end
   sceneTransition:transitionOut(function()
     soundCache:stopAllSoundEffects()
-    self:endScene(exit)
+    self:endScene(exitData)
   end)
 end
