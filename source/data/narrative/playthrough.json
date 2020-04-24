@@ -49,23 +49,22 @@
       "symbol": "5A",
       "label": "Safety Town",
       "isMissing": true,
-      "next": "ball-of-yarn-museum"
+      "next": "ball-museum"
     },
     "pickle-yard": {
       "symbol": "5B",
       "label": "Pickle Yard",
-      "next": "ball-of-yarn-museum"
+      "next": "ball-museum"
     },
     "vintage-viper": {
       "symbol": "5C",
       "label": "Vintage Viper / Landfill",
-      "next": "ball-of-yarn-museum"
+      "next": "ball-museum"
     },
 
-    "ball-of-yarn-museum": {
+    "ball-museum": {
       "symbol": "6",
-      "label": "Ball of Yarn Museum",
-      "isMissing": true,
+      "label": "Ball Museum",
       "special": "special-ending",
       "normal": "normal-ending",
       "fail": "fail-ending"

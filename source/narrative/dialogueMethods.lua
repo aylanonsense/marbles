@@ -102,9 +102,17 @@ end
 
 function dialogueMethods.getFinalSkateParkEmojiLine()
   return
-    game.playthrough.storyline.exits[1].finalText .. " / " .. -- emoji, e.g. "THUMBS UP EMOJI /"
-    game.playthrough.storyline.exits[2].finalText .. " / " .. -- emoji, e.g. "BABY EMOJI /"
-    game.playthrough.storyline.exits[3].finalText -- emoji, e.g. "MINTY EMOJI"
+    game.playthrough.storyline.exits[1].finalText .. " / " .. -- e.g. "THUMBS UP EMOJI /"
+    game.playthrough.storyline.exits[2].finalText .. " / " .. -- e.g. "BABY EMOJI /"
+    game.playthrough.storyline.exits[3].finalText -- e.g. "MINTY EMOJI"
+end
+
+function dialogueMethods.getFinalBallMuseumLine()
+  return
+    "COME AND SEE " ..
+    game.playthrough.storyline.exits[1].finalText .. ", " .. -- e.g. "AN 8-BALL,"
+    game.playthrough.storyline.exits[2].finalText .. ", AND " .. -- e.g. "A POMEGRANATE, AND"
+    game.playthrough.storyline.exits[3].finalText .. "!" -- e.g. "THE MOON!"
 end
 
 function dialogueMethods.getFinalDaycareRiddleLine1()

@@ -1,0 +1,63 @@
+{
+  "location": "Museum",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Croco", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": "failExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Okay. Hear me out:", "expression": "neutral" },
+        { "actor": "Prota", "line": "The Moon!", "expression": "neutral" },
+        { "actor": "Croco", "line": "The moon?", "expression": "confused" },
+        { "actor": "Prota", "line": "It's definitely a good ball.", "expression": "neutral" },
+        { "actor": "Croco", "line": "So like...what, we would put a papier mache moon in the window?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Hmm...", "expression": "thinking" },
+        { "actor": "Prota", "line": "What about a mirror pointed at the night sky?", "expression": "thinking" },
+        { "actor": "Croco", "line": "So you want balls... and then next to those, just a mirror? ", "expression": "thinking" },
+        { "actor": "Prota", "line": "True. Maybe it would help if the mirror were also a ball?", "expression": "thinking" },
+        { "actor": "Croco", "line": "Like a disco ball?", "expression": "confused" },
+        { "actor": "Prota", "line": "Perfect! Do you have one of those?", "expression": "happy" },
+        { "actor": "Croco", "line": "I mean, obviously. It's a Ball Museum. I'm just... not sure that counts as a nature ball.", "expression": "neutral" },
+        { "actor": "Prota", "line": "It does if it reflects the moon!", "expression": "happy" },
+        { "actor": "Croco", "line": "...What are you picturing?", "expression": "shocked" },
+        { "actor": "Croco", "line": "Actually no, don't tell me. Let's just try this out.", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "normalExit",
+      "then": [ 
+        { "actor": "Prota", "line": "I've got a really really good one. Are you ready?", "expression": "happy" },
+        { "actor": "Croco", "line": "I'm ready.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Puffer fish. Nature's spikiest ball.", "expression": "happy" },
+        { "actor": "Croco", "line": "I think I'm starting to lose the plot here.", "expression": "shocked" },
+        { "actor": "Prota", "line": "How do you mean?", "expression": "happy" },
+        { "actor": "Croco", "line": "You're trying to create a window that's going to appeal to Minty AND the general public.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yes.", "expression": "neutral" },
+        { "actor": "Croco", "line": "Okay. But surely Minty won't want to grab a puffer fish?", "expression": "neutral" },
+        { "actor": "Prota", "line": "No, but she WILL want to admire the beauty of the ocean and its creatures.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Croco, I don't want to sound rude, but have you never owned a dog?", "expression": "neutral" },
+        { "actor": "Croco", "line": "You know what, I haven't.", "expression": "thinking" },
+        { "actor": "Croco", "line": "So I guess you probably know best! Let's do this thing!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "specialExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Wait...", "expression": "neutral" },
+        { "actor": "Prota", "line": "I think I just got a brainwave.", "expression": "shocked" },
+        { "actor": "Croco", "line": "Oooh! I'm excited!", "expression": "happy" },
+        { "actor": "Prota", "line": "The cutest ball of all: a curled-up cat!", "expression": "happy" },
+        { "actor": "Croco", "line": "A cat?! In a window?", "expression": "confused" },
+        { "actor": "Prota", "line": "Have you ever passed a cat in a window without stopping to say hi?", "expression": "happy" },
+        { "actor": "Croco", "line": "...", "expression": "thinking" },
+        { "actor": "Croco", "line": "You're a genius!", "expression": "shocked" },
+        { "actor": "Prota", "line": "It's impossible to resist! And I have absolutely no doubt that Minty will agree.", "expression": "happy" },
+        { "actor": "Croco", "line": "You're really thinking on a new level today, Prota. And I like it.", "expression": "happy" },
+        { "actor": "Prota", "line": "Thanks, Croco!", "expression": "happy" },
+        { "actor": "Croco", "line": "Now let's see what we've got!", "expression": "happy" }
+      ]
+    }
+  ]
+}

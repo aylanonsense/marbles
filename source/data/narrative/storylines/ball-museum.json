@@ -1,0 +1,16 @@
+{
+  "scenes": [
+    { "dialogue": "ball-museum/Museum_Intro" },
+
+    { "maze": "ballmuseum-skeeball", "exits": [ "ballmuseum-skeeball-special", "ballmuseum-skeeball-good", "ballmuseum-skeeball-bad" ] },
+    { "dialogue": "ball-museum/Museum_1_Sports" },
+
+    { "maze": "ballmuseum-pinball", "exits": [ "ballmuseum-pinball-special", "ballmuseum-pinball-good", "ballmuseum-pinball-bad" ] },
+    { "dialogue": "ball-museum/Museum_2_Food" },
+
+    { "maze": "ballmuseum-pool", "exits": [ "ballmuseum-pool-special", "ballmuseum-pool-good", "ballmuseum-pool-bad" ] },
+    { "dialogue": "ball-museum/Museum_3_Nature" },
+
+    { "dialogue": "ball-museum/Museum_Resolution" }
+  ]
+}

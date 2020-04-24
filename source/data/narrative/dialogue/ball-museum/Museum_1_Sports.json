@@ -1,0 +1,60 @@
+{
+  "location": "Museum",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Croco", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": "failExit",
+      "then": [ 
+        { "actor": "Prota", "line": "How about...", "expression": "thinking" },
+        { "actor": "Prota", "line": "A hockey ball!", "expression": "happy" },
+        { "actor": "Croco", "line": "That works! I used to play ball hockey with my brothers and sisters.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Ball hockey?", "expression": "confused" },
+        { "actor": "Croco", "line": "Yeah.", "expression": "neutral" },
+        { "actor": "Prota", "line": "On ice?", "expression": "confused" },
+        { "actor": "Croco", "line": "On ice? No, just... on the floor. With a ball. Ice hockey uses a puck.", "expression": "confused" },
+        { "actor": "Croco", "line": "Again, that's a puck.", "expression": "confused" },
+        { "actor": "Prota", "line": "Pretty sure it's a hockey ball.", "expression": "thinking" },
+        { "actor": "Croco", "line": "It is not.", "expression": "neutral" },
+        { "actor": "Prota", "line": "How about we go with my thing?", "expression": "neutral" },
+        { "actor": "Croco", "line": "You think we should put a puck in the window display at the World's Most Colourful Ball of Yarn and BALL MUSEUM.", "expression": "confused" },
+        { "actor": "Prota", "line": "A hockey ball, yeah!", "expression": "neutral" },
+        { "actor": "Croco", "line": "...", "expression": "neutral" },
+        { "actor": "Croco", "line": "You're the boss! Next up: Food balls! What'll make Minty's mouth water?", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "normalExit",
+      "then": [ 
+        { "actor": "Prota", "line": "How about...", "expression": "neutral" },
+        { "actor": "Prota", "line": "An 8-ball!", "expression": "happy" },
+        { "actor": "Croco", "line": "All signs point to yes!", "expression": "happy" },
+        { "actor": "Prota", "line": "Perfect!", "expression": "happy" },
+        { "actor": "Croco", "line": "You don't think it's a little bit... firm for Minty's little mouth?", "expression": "thinking" },
+        { "actor": "Prota", "line": "Mouth? You don't play pool with your mouth, Croco. Hahaha!", "expression": "neutral" },
+        { "actor": "Croco", "line": "Oh. Well, uh...", "expression": "confused" },
+        { "actor": "Croco", "line": "I guess you're right! ", "expression": "happy" },
+        { "actor": "Prota", "line": "Next up: Let's get the food ball! What would Minty find most compelling?", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "specialExit",
+      "then": [ 
+        { "actor": "Prota", "line": "How about...", "expression": "neutral" },
+        { "actor": "Prota", "line": "...a Hamster Ball!", "expression": "happy" },
+        { "actor": "Croco", "line": "A hamster ball?", "expression": "confused" },
+        { "actor": "Prota", "line": "Yeah! Nice clear plastic ball, furry little round boy inside.", "expression": "happy" },
+        { "actor": "Croco", "line": "Is a hamster ball for sports?", "expression": "thinking" },
+        { "actor": "Prota", "line": "It's for hamster sports.", "expression": "neutral" },
+        { "actor": "Croco", "line": "Hmmm.", "expression": "thinking" },
+        { "actor": "Croco", "line": "I've never thought of it that way! ", "expression": "shocked" },
+        { "actor": "Croco", "line": "Plus, I bet Minty would love to chase a hamster ball!", "expression": "happy" },
+        { "actor": "Prota", "line": "And the hamster would get a great workout! It's win-win!", "expression": "happy" },
+        { "actor": "Croco", "line": "Perfect. I love it. This'll attract the crowds AND Minty.", "expression": "happy" },
+        { "actor": "Croco", "line": "Let's do the food ball next!", "expression": "happy" }
+      ]
+    }
+  ]
+}

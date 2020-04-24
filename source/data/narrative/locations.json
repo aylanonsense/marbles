@@ -20,7 +20,22 @@
   "SkatePark": {
     "image": "/images/narrative/locations/skate-park.png"
   },
+  "Museum": {
+    "image": "/images/narrative/locations/debug.png"
+  },
   "SafetyTown": {
     "image": "/images/narrative/locations/safety-town.png"
+  },
+  "Festiball": {
+    "image": "/images/narrative/locations/festiball.png"
+  },
+  "MarbelsLab": {
+    "image": "/images/narrative/locations/marbels-lab.png"
+  },
+  "ProtasHome": {
+    "image": "/images/narrative/locations/protas-home.png"
+  },
+  "SecurityCity": {
+    "image": "/images/narrative/locations/security-city.png"
   }
 }

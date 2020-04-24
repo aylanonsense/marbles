@@ -1,0 +1,41 @@
+{
+  "location": "Museum",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Croco", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    { "actor": "Croco", "line": "Hi there! Welcome to the World's Most Colourful Ball of Yarn and Ball Museum! I'm Croco and-- Oh hey, Prota.", "expression": "happy" },
+    { "actor": "Prota", "line": "Hey Croco! Wow, so the Ball Museum has a new name, huh?", "expression": "happy" },
+    { "actor": "Croco", "line": "Yep! Management's really going all in on the new attraction. It's the star of the show!", "expression": "happy" },
+    { "actor": "Croco", "line": "\"The World's Most Colourful Ball of Yarn\" is gonna be the talk of the town.", "expression": "happy" },
+    { "actor": "Prota", "line": "How colourful is it? Can you give me a little sneak peek before the Festi-Ball?", "expression": "thinking" },
+    { "actor": "Croco", "line": "Oh no! Heck, I haven't even seen it myself. But I'm pretty excited for the unveiling.", "expression": "shocked" },
+    { "actor": "Croco", "line": "Plus they gave us these great shirts!", "expression": "happy" },
+    { "actor": "Prota", "line": "I was wondering about that. \"Boy Boy?\"", "expression": "thinking" },
+    { "actor": "Croco", "line": "\"Ball Of Yarn\" Boy.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Huh. I like it.", "expression": "happy" },
+    { "actor": "Croco", "line": "Thanks! But I'm sure you didn't just come here to compliment my t-shirt... Can I help you with something?", "expression": "happy" },
+    { "actor": "Prota", "line": "I hope so! I'm looking for Minty.", "expression": "neutral" },
+    { "actor": "Croco", "line": "That's your dog, right?", "expression": "neutral" },
+    { "actor": "Prota", "line": "Yep! I was supposed to be spending the day with Professor Marbels in his lab...", "expression": "neutral" },
+    { "actor": "Prota", "line": "He planned to unveil his new invention tonight. But there was a bit of an... incident. And Minty ran away.", "expression": "neutral" },
+    { "actor": "Croco", "line": "And you still haven't found her?", "expression": "shocked" },
+    { "actor": "Prota", "line": "Not yet. But I have it on good authority that this is a good place to look! And it makes sense.", "expression": "neutral" },
+    { "actor": "Croco", "line": "Definitely. You know what they say: Balls are a dog's best friend!", "expression": "happy" },
+    { "actor": "Prota", "line": "I don't know if people really say that.", "expression": "happy" },
+    { "actor": "Croco", "line": "Oh, I know. I was quoting our lowest-selling shirt: \"You know what they say: Balls are a dog's best friend!\"", "expression": "neutral" },
+    { "actor": "Croco", "line": "They can't all be winners.", "expression": "neutral" },
+    { "actor": "Prota", "line": "So I guess you haven't seen Minty then, huh?", "expression": "neutral" },
+    { "actor": "Croco", "line": "Fraid not, bud. I've just been working on--hmmm.", "expression": "neutral" },
+    { "actor": "Croco", "line": "HMMMM.", "expression": "thinking" },
+    { "actor": "Prota", "line": "Hm?", "expression": "confused" },
+    { "actor": "Croco", "line": "Well, I was just about to say I've been working on the window display for the Festi-Ball!", "expression": "thinking" },
+    { "actor": "Croco", "line": "A showcase of the best and brightest balls in our museum! Something to draw folks in.", "expression": "happy" },
+    { "actor": "Croco", "line": "I wasn't sure which balls to use, but maybe if we pick some of Minty's faves, she'll be enticed?", "expression": "happy" },
+    { "actor": "Prota", "line": "Huh. Not a bad idea, Croco! I like it. Let's set the perfect Minty trap.", "expression": "happy" },
+    { "actor": "Croco", "line": "Great! Management says I should use one SPORTS ball, one FOOD ball and one NATURE ball.", "expression": "happy" },
+    { "actor": "Croco", "line": "Let's start with sports! Which ball do you think Minty would like best?", "expression": "happy" },
+    { "actor": "Prota", "line": "Hmmm...", "expression": "thinking" }
+  ]
+}

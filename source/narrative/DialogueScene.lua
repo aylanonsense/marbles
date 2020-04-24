@@ -216,6 +216,21 @@ function DialogueScene:processDialogueAction(action)
     self.waitingFor = "time"
     self.waitTime = 1.00
   -- Unknown action, return false to indicate we weren't able to process it
+  elseif action.action == "dismiss-actor" then
+    if action.side == "left" or action.side == "both" then
+      if self.actorsOnStage.left then
+        self.actorsOnStage.left:slideOffStage()
+      end
+      self.actorsOnStage.left = nil
+    end
+    if action.side == "right" or action.side == "both" then
+      if self.actorsOnStage.right then
+        self.actorsOnStage.right:slideOffStage()
+      end
+      self.actorsOnStage.right = nil
+    end
+    self.waitingFor = "time"
+    self.waitTime = 1.00
   else
     return false
   end

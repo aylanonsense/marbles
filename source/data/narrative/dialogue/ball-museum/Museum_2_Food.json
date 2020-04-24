@@ -1,0 +1,63 @@
+{
+  "location": "Museum",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Croco", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": "failExit",
+      "then": [ 
+        { "actor": "Prota", "line": "How about a delicious ball of ice cream?", "expression": "happy" },
+        { "actor": "Croco", "line": "I love it! I think it's...", "expression": "happy" },
+        { "actor": "Croco", "line": "Hmmm. Wait. I don't know how long an ice cream ball will last in the window.", "expression": "thinking" },
+        { "actor": "Prota", "line": "They always have them in the window display at the Ice Creamatorium!", "expression": "neutral" },
+        { "actor": "Croco", "line": "That place is refrigerated!", "expression": "thinking" },
+        { "actor": "Prota", "line": "Interesting. But it also makes you think, right?", "expression": "thinking" },
+        { "actor": "Prota", "line": "But, I mean... if you think about it...", "expression": "thinking" },
+        { "actor": "Prota", "line": "Once a ball, always a ball.", "expression": "thinking" },
+        { "actor": "Croco", "line": "How do you mean?", "expression": "confused" },
+        { "actor": "Prota", "line": "If an ice cream ball melts... does it cease to be a ball? Or it it just...", "expression": "thinking" },
+        { "actor": "Prota", "line": "A melted ball? And is a melted ball still a ball?", "expression": "thinking" },
+        { "actor": "Croco", "line": "We can't possibly do this right now.", "expression": "neutral" },
+        { "actor": "Croco", "line": "Let's move on to Nature Balls.", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "normalExit",
+      "then": [ 
+        { "actor": "Prota", "line": "I've got the best one. Get ready.", "expression": "neutral" },
+        { "actor": "Croco", "line": "I hatched ready.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Pomegranate.", "expression": "happy" },
+        { "actor": "Croco", "line": "Pomegranate!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Our town's namesake!", "expression": "happy" },
+        { "actor": "Prota", "line": "And the only fruit where you eat the bones!", "expression": "happy" },
+        { "actor": "Croco", "line": "What?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Haven't you had a pomegranate before? ", "expression": "confused" },
+        { "actor": "Prota", "line": "You just open it up and crunch through all the bones. ", "expression": "confused" },
+        { "actor": "Croco", "line": "...You think those are bones?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Fruit bones.", "expression": "happy" },
+        { "actor": "Croco", "line": "I'm extremely excited to hear your answer for Nature Ball.", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "specialExit",
+      "then": [ 
+        { "actor": "Prota", "line": "I've got it!", "expression": "neutral" },
+        { "actor": "Prota", "line": "What are those balls made of pizza?", "expression": "happy" },
+        { "actor": "Croco", "line": "You mean dough?", "expression": "neutral" },
+        { "actor": "Prota", "line": "No, you know. You take a pizza and you fold it up?", "expression": "shocked" },
+        { "actor": "Croco", "line": "Like a calzone?", "expression": "thinking" },
+        { "actor": "Prota", "line": "Yes! I think that's Italian for \"pizza ball\".", "expression": "neutral" },
+        { "actor": "Croco", "line": "It is?", "expression": "happy" },
+        { "actor": "Prota", "line": "I think so. My Italian isn't the best.", "expression": "thinking" },
+        { "actor": "Croco", "line": "Well...I guess we could make sure it's shaped into a ball.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I mean, think about it: Minty's gonna think it's delicious. Plus...", "expression": "neutral" },
+        { "actor": "Prota", "line": "What better way to attract customers than with pizza innovation?", "expression": "happy" },
+        { "actor": "Prota", "line": "\"Also available in gluten-free! Only at the Festi-Ball!\"", "expression": "neutral" },
+        { "actor": "Croco", "line": "Hmmm...", "expression": "thinking" },
+        { "actor": "Croco", "line": "I love it! Everyone's gonna want a pizza this action! Let's go on to Nature Ball!", "expression": "happy" }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,7 @@
   },
   "Besto": {
     "name": "Besto",
-    "image": "/images/narrative/actors/besto.png",
+    "image": "/images/narrative/actors/debug.png",
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },
@@ -114,14 +114,50 @@
     "expressions": {
       "neutral": { "frame": 1 },
       "happy": { "frame": 1 },
-      "thinking": { "frame": 1 },
-      "confused": { "frame": 1 },
-      "shocked": { "frame": 1 }
+      "thinking": { "frame": 2 },
+      "confused": { "frame": 2 },
+      "shocked": { "frame": 2 }
     }
   },
   "Teens": {
     "name": "Teens",
     "image": "/images/narrative/actors/teens.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 },
+      "happy": { "frame": 4 },
+      "thinking": { "frame": 2 },
+      "confused": { "frame": 3 },
+      "shocked": { "frame": 3 }
+    }
+  },
+  "Croco": {
+    "name": "Croco",
+    "image": "/images/narrative/actors/debug.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 },
+      "happy": { "frame": 1 },
+      "thinking": { "frame": 1 },
+      "confused": { "frame": 1 },
+      "shocked": { "frame": 1 }
+    }
+  },
+  "Mayoress": {
+    "name": "Mayoress",
+    "image": "/images/narrative/actors/debug.png",
+    "facing": "left",
+    "expressions": {
+      "neutral": { "frame": 1 },
+      "happy": { "frame": 1 },
+      "thinking": { "frame": 1 },
+      "confused": { "frame": 1 },
+      "shocked": { "frame": 1 }
+    }
+  },
+  "ProfMarbels": {
+    "name": "Prof. Marbels",
+    "image": "/images/narrative/actors/marbels.png",
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },

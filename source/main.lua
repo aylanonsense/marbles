@@ -4,7 +4,7 @@ import "CoreLibs/keyboard"
 import "game/Game"
 import "level/editor/EditorScene"
 
-local LAUNCH_LEVEL_EDITOR = true
+local LAUNCH_LEVEL_EDITOR = false
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
