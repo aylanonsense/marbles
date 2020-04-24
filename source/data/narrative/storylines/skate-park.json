@@ -1,16 +1,39 @@
 {
   "scenes": [
-    { "dialogue": "skate-park/Skatepark_Intro" },
-
-    { "maze": "skatepark-jump", "exits": [ "skatepark-jump-special", "skatepark-jump-good", "skatepark-jump-bad" ] },
-    { "dialogue": "skate-park/Skatepark_1_Flip" },
-
-    { "maze": "skatepark-halfpipe", "exits": [ "skatepark-halfpipe-special", "skatepark-halfpipe-good", "skatepark-halfpipe-bad" ] },
-    { "dialogue": "skate-park/Skatepark_2_Grind" },
-
-    { "maze": "skatepark-tour", "exits": [ "skatepark-tour-special", "skatepark-tour-good", "skatepark-tour-bad" ] },
-    { "dialogue": "skate-park/Skatepark_3_Grab" },
-
-    { "dialogue": "skate-park/Skatepark_Resolution" }
+    {
+      "dialogue": "skate-park/Skatepark_Intro",
+      "music": "skate-park"
+    },
+    {
+      "maze": "skatepark-jump",
+      "exits": [ "skatepark-jump-special", "skatepark-jump-good", "skatepark-jump-bad" ],
+      "music": "skate-park"
+    },
+    {
+      "dialogue": "skate-park/Skatepark_1_Flip",
+      "music": "skate-park"
+    },
+    {
+      "maze": "skatepark-halfpipe",
+      "exits": [ "skatepark-halfpipe-special", "skatepark-halfpipe-good", "skatepark-halfpipe-bad" ],
+      "music": "skate-park"
+    },
+    {
+      "dialogue": "skate-park/Skatepark_2_Grind",
+      "music": "skate-park"
+    },
+    {
+      "maze": "skatepark-tour",
+      "exits": [ "skatepark-tour-special", "skatepark-tour-good", "skatepark-tour-bad" ],
+      "music": "skate-park"
+    },
+    {
+      "dialogue": "skate-park/Skatepark_3_Grab",
+      "music": "skate-park"
+    },
+    {
+      "dialogue": "skate-park/Skatepark_Resolution",
+      "music": "skate-park"
+    }
   ]
 }

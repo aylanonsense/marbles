@@ -1,57 +1,57 @@
 {
   "scenes": [
     {
-        "dialogue": "sandwich/convo-0-intro",
-        "music": "sandwich-dialogue"
+      "dialogue": "sandwich/convo-0-intro",
+      "music": "sandwich-dialogue"
     },
     {
-        "maze": "sandwich-1-bread",
-        "exits": [ "sandwich-bread-baguette", "sandwich-bread-wrap", "sandwich-bread-lettuce-wrap" ],
-        "music": "sandwich-maze"
+      "maze": "sandwich-1-bread",
+      "exits": [ "sandwich-bread-baguette", "sandwich-bread-wrap", "sandwich-bread-lettuce-wrap" ],
+      "music": "sandwich-maze"
     },
     {
-        "dialogue": "sandwich/convo-1-bread",
-        "music": "sandwich-dialogue"
+      "dialogue": "sandwich/convo-1-bread",
+      "music": "sandwich-dialogue"
     },
     {
-        "maze": "sandwich-2-protein",
-        "exits": [ "sandwich-protein-ham", "sandwich-protein-ostrich", "sandwich-protein-powder" ],
-        "music": "sandwich-maze"
+      "maze": "sandwich-2-protein",
+      "exits": [ "sandwich-protein-ham", "sandwich-protein-ostrich", "sandwich-protein-powder" ],
+      "music": "sandwich-maze"
     },
     {
-        "dialogue": "sandwich/convo-2-protein",
-        "music": "sandwich-dialogue"
+      "dialogue": "sandwich/convo-2-protein",
+      "music": "sandwich-dialogue"
     },
     {
-        "maze": "sandwich-3-cheese",
-        "exits": [ "sandwich-cheese-swiss", "sandwich-cheese-goat", "sandwich-cheese-paper" ],
-        "music": "sandwich-maze"
+      "maze": "sandwich-3-cheese",
+      "exits": [ "sandwich-cheese-swiss", "sandwich-cheese-goat", "sandwich-cheese-paper" ],
+      "music": "sandwich-maze"
     },
     {
-        "dialogue": "sandwich/convo-3-cheese",
-        "music": "sandwich-dialogue"
+      "dialogue": "sandwich/convo-3-cheese",
+      "music": "sandwich-dialogue"
     },
     {
-        "maze": "sandwich-4-veggies",
-        "exits": [ "sandwich-veggies-lettuce", "sandwich-veggies-cauliflower", "sandwich-veggies-cactus" ],
-        "music": "sandwich-maze"
+      "maze": "sandwich-4-veggies",
+      "exits": [ "sandwich-veggies-lettuce", "sandwich-veggies-cauliflower", "sandwich-veggies-cactus" ],
+      "music": "sandwich-maze"
     },
     {
-        "dialogue": "sandwich/convo-4-veggies",
-        "music": "sandwich-dialogue"
+      "dialogue": "sandwich/convo-4-veggies",
+      "music": "sandwich-dialogue"
     },
     {
-        "maze": "sandwich-5-condiments",
-        "exits": [ "sandwich-condiments-mayo", "sandwich-condiments-guava-jelly", "sandwich-condiments-hot-wax" ],
-        "music": "sandwich-maze"
+      "maze": "sandwich-5-condiments",
+      "exits": [ "sandwich-condiments-mayo", "sandwich-condiments-guava-jelly", "sandwich-condiments-hot-wax" ],
+      "music": "sandwich-maze"
     },
     {
-        "dialogue": "sandwich/convo-5-condiments",
-        "music": "sandwich-dialogue"
+      "dialogue": "sandwich/convo-5-condiments",
+      "music": "sandwich-dialogue"
     },
     {
-        "dialogue": "sandwich/convo-6-resolution",
-        "music": "sandwich-dialogue"
+      "dialogue": "sandwich/convo-6-resolution",
+      "music": "sandwich-dialogue"
     }
   ]
 }
