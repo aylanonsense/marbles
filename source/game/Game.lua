@@ -142,14 +142,14 @@ function Game:createStorylineScene(storylineData, stage)
       local dialogueData = loadJsonFile("/data/narrative/dialogue/" .. sceneData.dialogue .. ".json")
       if sceneData.music then
         local musicPlayer = soundCache.createMusicPlayer("sound/music/" .. sceneData.music)
-        musicPlayer:play()
+        musicPlayer:play(0)
       end
       return DialogueScene(dialogueData)
     elseif sceneData.maze then
       local mazeData = loadJsonFile("/data/levels/" .. sceneData.maze .. "-play.json")
       if sceneData.music then
         local musicPlayer = soundCache.createMusicPlayer("sound/music/" .. sceneData.music)
-        musicPlayer:play()
+        musicPlayer:play(0)
       end
       return MazeScene(mazeData)
     end
