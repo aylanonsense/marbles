@@ -3,19 +3,19 @@
     {
       "id": "sandwich-bread-lettuce-wrap",
       "label": "Lettuce Wrap",
-      "sandwichText": "lettuce wrap",
+      "finalText": "lettuce wrap",
       "score": 1
     },
     {
       "id": "sandwich-bread-wrap",
       "label": "Wrap",
-      "sandwichText": "wrap",
+      "finalText": "wrap",
       "score": 3
     },
     {
       "id": "sandwich-bread-baguette",
       "label": "Baguette",
-      "sandwichText": "Parisian baguette",
+      "finalText": "Parisian baguette",
       "score": 5
     },
 
@@ -24,19 +24,19 @@
     {
       "id": "sandwich-protein-powder",
       "label": "Protein Powder",
-      "sandwichText": "muscle-builder",
+      "finalText": "muscle-builder",
       "score": 1
     },
     {
       "id": "sandwich-protein-ostrich",
       "label": "Ostrich",
-      "sandwichText": "big birdy",
+      "finalText": "big birdy",
       "score": 3
     },
     {
       "id": "sandwich-protein-ham",
       "label": "Ham",
-      "sandwichText": "ham",
+      "finalText": "ham",
       "score": 5
     },
 
@@ -45,19 +45,19 @@
     {
       "id": "sandwich-cheese-paper",
       "label": "Paper",
-      "sandwichText": "A writerly",
+      "finalText": "A writerly",
       "score": 1
     },
     {
       "id": "sandwich-cheese-goat",
       "label": "Goat Cheese",
-      "sandwichText": "An extra horny",
+      "finalText": "An extra horny",
       "score": 3
     },
     {
       "id": "sandwich-cheese-swiss",
       "label": "Swiss Cheese",
-      "sandwichText": "A hole-y",
+      "finalText": "A hole-y",
       "score": 5
     },
 
@@ -66,19 +66,19 @@
     {
       "id": "sandwich-veggies-cactus",
       "label": "Cactus",
-      "sandwichText": "pointy",
+      "finalText": "pointy",
       "score": 1
     },
     {
       "id": "sandwich-veggies-cauliflower",
       "label": "Cauliflower",
-      "sandwichText": "crunchy",
+      "finalText": "crunchy",
       "score": 3
     },
     {
       "id": "sandwich-veggies-lettuce",
       "label": "Lettuce",
-      "sandwichText": "green",
+      "finalText": "green",
       "score": 5
     },
 
@@ -87,19 +87,19 @@
     {
       "id": "sandwich-condiments-hot-wax",
       "label": "Hot Wax",
-      "sandwichText": ", candle-style",
+      "finalText": ", candle-style",
       "score": 1
     },
     {
       "id": "sandwich-condiments-guava-jelly",
       "label": "Guava Jelly",
-      "sandwichText": "on island time",
+      "finalText": "on island time",
       "score": 3
     },
     {
       "id": "sandwich-condiments-mayo",
       "label": "Mayo",
-      "sandwichText": "with mayo",
+      "finalText": "with mayo",
       "score": 5
     },
 
@@ -582,19 +582,19 @@
     {
         "id": "lab-1-bad",
         "label": "Bad",
-        "sandwichText": "",
+        "finalText": "",
         "score": 1
     },
     {
         "id": "lab-1-good",
         "label": "Good",
-        "sandwichText": "",
+        "finalText": "",
         "score": 3
     },
     {
         "id": "lab-1-special",
         "label": "Special",
-        "sandwichText": "",
+        "finalText": "",
         "score": 5
     },
 
@@ -603,19 +603,19 @@
     {
         "id": "lab-2-bad",
         "label": "Bad",
-        "sandwichText": "",
+        "finalText": "",
         "score": 1
     },
     {
         "id": "lab-2-good",
         "label": "Good",
-        "sandwichText": "",
+        "finalText": "",
         "score": 3
     },
     {
         "id": "lab-2-special",
         "label": "Special",
-        "sandwichText": "",
+        "finalText": "",
         "score": 5
     },
 
@@ -624,19 +624,19 @@
     {
         "id": "lab-3-bad",
         "label": "Bad",
-        "sandwichText": "",
+        "finalText": "",
         "score": 1
     },
     {
         "id": "lab-3-good",
         "label": "Good",
-        "sandwichText": "",
+        "finalText": "",
         "score": 3
     },
     {
         "id": "lab-3-special",
         "label": "Special",
-        "sandwichText": "",
+        "finalText": "",
         "score": 5
     },
 
@@ -644,63 +644,63 @@
 
     {
       "id": "sandwichshop-condiments-bad",
-      "label": "Bad",
-      "sandwichText": "",
+      "label": "Hot wax",
+      "finalText": "CANDLE-STYLE",
       "score": 1
     },
     {
-        "id": "sandwichshop-condiments-good",
-        "label": "Good",
-        "sandwichText": "",
-        "score": 3
-    },
-    {
-        "id": "sandwichshop-condiments-special",
-        "label": "Special",
-        "sandwichText": "",
-        "score": 5
-    },
-
-
-
-    {
-      "id": "sandwichshop-protein-bad",
-      "label": "Bad",
-      "sandwichText": "",
-      "score": 1
-    },
-    {
-      "id": "sandwichshop-protein-good",
-      "label": "Good",
-      "sandwichText": "",
+      "id": "sandwichshop-condiments-good",
+      "label": "Guava jelly",
+      "finalText": "ON ISLAND TIME",
       "score": 3
     },
     {
-      "id": "sandwichshop-protein-special",
-      "label": "Special",
-      "sandwichText": "",
+      "id": "sandwichshop-condiments-special",
+      "label": "Mayo",
+      "finalText": "WITH MAYO",
       "score": 5
     },
 
 
 
     {
-        "id": "sandwichshop-toppings-bad",
-        "label": "Bad",
-        "sandwichText": "",
-        "score": 1
+      "id": "sandwichshop-protein-bad",
+      "label": "Protein powder",
+      "finalText": "MUSCLE-BUILDER",
+      "score": 1
     },
     {
-        "id": "sandwichshop-toppings-good",
-        "label": "Good",
-        "sandwichText": "",
-        "score": 3
+      "id": "sandwichshop-protein-good",
+      "label": "Ostrich",
+      "finalText": "BIG-BIRDY",
+      "score": 3
     },
     {
-        "id": "sandwichshop-toppings-special",
-        "label": "Special",
-        "sandwichText": "",
-        "score": 5
+      "id": "sandwichshop-protein-special",
+      "label": "Ham",
+      "finalText": "HAM SANDWICH",
+      "score": 5
+    },
+
+
+
+    {
+      "id": "sandwichshop-toppings-bad",
+      "label": "Cactus",
+      "finalText": "A POINTY",
+      "score": 1
+    },
+    {
+      "id": "sandwichshop-toppings-good",
+      "label": "Cauliflour",
+      "finalText": "A CRUNCHY",
+      "score": 3
+    },
+    {
+      "id": "sandwichshop-toppings-special",
+      "label": "Lettuce",
+      "finalText": "A GREEN",
+      "score": 5
     }
   ]
 }

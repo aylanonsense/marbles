@@ -1,0 +1,44 @@
+{
+  "location": "DocSandwich",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Doc", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": "failExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Minty likes a challenge. Gimme the cactus.",  "expression": "confused" },
+        { "actor": "Doc", "line": "Really? I mean, this cactus is kinda just a plant I got, it's not really meant for sandwiches...", "expression": "confused" },
+        { "actor": "Prota", "line": "No, I think it's what she usually gets.", "expression": "thinking" },
+        { "actor": "Doc", "line": "I mean, if you say so! Guess it'll help her stay sharp!", "expression": "happy" },
+        { "actor": "Prota", "line": "Ha! Definitely! It's a perfectly good thing to put in this sandwich.", "expression": "happy" },
+        { "actor": "Doc", "line": "Co-signed!", "expression": "happy" },
+        { "actor": "Doc", "line": "But she'll need a nice smooth condiment to balance out the spikes. What'll it be?", "expression": "thinking" }
+      ]
+    },
+    {
+      "if": "normalExit",
+      "then": [ 
+        { "actor": "Prota", "line": "One order of cauli-flower to give my border collie power!", "expression": "happy" },
+        { "actor": "Doc", "line": "Wait, is Minty a border collie? Maybe I been picturin' the wrong dog...", "expression": "shocked" },
+        { "actor": "Prota", "line": "Oh, uh... no. No, it just-- cauli-flower was the best rhyme.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I like word games a lot! ", "expression": "happy" },
+        { "actor": "Doc", "line": "Ha! Me too, Prota. Me too. ", "expression": "happy" },
+        { "actor": "Doc", "line": "So I guess all I need now is your choice of condi-minty!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yaaaay!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "specialExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Hmmmm...Lettuce!", "expression": "thinking" },
+        { "actor": "Prota", "line": "Lettuce LETS US make the best sandwiches for Minty!", "expression": "happy" },
+        { "actor": "Doc", "line": "Whoa! Lettuce DOES sound a lot like \"let us\".", "expression": "shocked" },
+        { "actor": "Doc", "line": "I tell ya. They don't teach you stuff like this in med school! You're a real gem.", "expression": "happy" },
+        { "actor": "Prota", "line": "Thanks, Doc!", "expression": "happy" },
+        { "actor": "Doc", "line": "Now... Lettuce finish this sandwich with some condiments!", "expression": "happy" }
+      ]
+    }
+  ]
+}

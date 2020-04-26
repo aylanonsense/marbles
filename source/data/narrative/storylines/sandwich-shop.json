@@ -1,56 +1,38 @@
 {
   "scenes": [
     {
-      "dialogue": "sandwich/convo-0-intro",
+      "dialogue": "sandwich-shop/DocSandwich_Intro",
       "music": "sandwich-dialogue"
     },
     {
-      "maze": "sandwich-1-bread",
-      "exits": [ "sandwich-bread-baguette", "sandwich-bread-wrap", "sandwich-bread-lettuce-wrap" ],
+      "maze": "sandwichshop-protein",
+      "exits": [ "sandwichshop-protein-special", "sandwichshop-protein-good", "sandwichshop-protein-bad" ],
       "music": "sandwich-maze"
     },
     {
-      "dialogue": "sandwich/convo-1-bread",
+      "dialogue": "sandwich-shop/DocSandwich_1_Protein",
       "music": "sandwich-dialogue"
     },
     {
-      "maze": "sandwich-2-protein",
-      "exits": [ "sandwich-protein-ham", "sandwich-protein-ostrich", "sandwich-protein-powder" ],
+      "maze": "sandwichshop-toppings",
+      "exits": [ "sandwichshop-toppings-special", "sandwichshop-toppings-good", "sandwichshop-toppings-bad" ],
       "music": "sandwich-maze"
     },
     {
-      "dialogue": "sandwich/convo-2-protein",
+      "dialogue": "sandwich-shop/DocSandwich_2_Veggie",
       "music": "sandwich-dialogue"
     },
     {
-      "maze": "sandwich-3-cheese",
-      "exits": [ "sandwich-cheese-swiss", "sandwich-cheese-goat", "sandwich-cheese-paper" ],
+      "maze": "sandwichshop-condiments",
+      "exits": [ "sandwichshop-condiments-special", "sandwichshop-condiments-good", "sandwichshop-condiments-bad" ],
       "music": "sandwich-maze"
     },
     {
-      "dialogue": "sandwich/convo-3-cheese",
+      "dialogue": "sandwich-shop/DocSandwich_3_Condiment",
       "music": "sandwich-dialogue"
     },
     {
-      "maze": "sandwich-4-veggies",
-      "exits": [ "sandwich-veggies-lettuce", "sandwich-veggies-cauliflower", "sandwich-veggies-cactus" ],
-      "music": "sandwich-maze"
-    },
-    {
-      "dialogue": "sandwich/convo-4-veggies",
-      "music": "sandwich-dialogue"
-    },
-    {
-      "maze": "sandwich-5-condiments",
-      "exits": [ "sandwich-condiments-mayo", "sandwich-condiments-guava-jelly", "sandwich-condiments-hot-wax" ],
-      "music": "sandwich-maze"
-    },
-    {
-      "dialogue": "sandwich/convo-5-condiments",
-      "music": "sandwich-dialogue"
-    },
-    {
-      "dialogue": "sandwich/convo-6-resolution",
+      "dialogue": "sandwich-shop/DocSandwich_Resolution",
       "music": "sandwich-dialogue"
     }
   ]

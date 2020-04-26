@@ -1,0 +1,40 @@
+{
+  "location": "DocSandwich",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Doc", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    { "actor": "Doc", "line": "Good morning! Welcome to Doc Sandwich!", "expression": "happy" },
+    { "actor": "Prota", "line": "Hi Doc! How's it going?", "expression": "happy" },
+    { "actor": "Doc", "line": "Ehh, pretty okay. You know how it is. ", "expression": "neutral" },
+    { "actor": "Prota", "line": "I don't! That's why I asked!", "expression": "happy" },
+    { "actor": "Doc", "line": "Well, it's busy. I been spendin' all day thinkin' about tonight.", "expression": "neutral" },
+    { "actor": "Doc", "line": "I gotta make somethin' real special for the Festi-Ball and if I'm bein' honest, I'm kinda stumped!", "expression": "thinking" },
+    { "actor": "Prota", "line": "Well, if it's any help, I really loved the Sub-tle Sub-marine you made last year.", "expression": "neutral" },
+    { "actor": "Doc", "line": "I know! Folks kept comin' in afterwards tellin' me \"I barely noticed how flavourful it was\"!", "expression": "neutral" },
+    { "actor": "Doc", "line": "It's a real tough one to top. Anyways, you probably didn't come here to ask me about sandwiches!", "expression": "thinking" },
+    { "actor": "Prota", "line": "...You don't think I came here to ask you about sandwiches? How could you tell?", "expression": "confused" },
+    { "actor": "Doc", "line": "Eh, you know. I got a feelin' for these kinds a'things.", "expression": "neutral" },
+    { "actor": "Doc", "line": "Ha! Maybe I shoulda gotten a degree in psych instead of medicine, huh?", "expression": "neutral" },
+    { "actor": "Prota", "line": "I bet you could've! Because you're right. I'm here about my dog, Minty.", "expression": "neutral" },
+    { "actor": "Doc", "line": "Minty! How is the little pup? ", "expression": "neutral" },
+    { "actor": "Prota", "line": "Missing!", "expression": "neutral" },
+    { "actor": "Doc", "line": "Missing?!", "expression": "shocked" },
+    { "actor": "Prota", "line": "Missing!", "expression": "neutral" },
+    { "actor": "Doc", "line": "Missing. Huh.", "expression": "neutral" },
+    { "actor": "Doc", "line": "That's a heck of a thing. I'm sorry to hear it. And I'm afraid I haven't seen her, if that's what you're askin'!", "expression": "neutral" },
+    { "actor": "Doc", "line": "But... Hey, I mean, I don't know much about dog-catchin', bein' just a doctor and a sandwich guy an' all, but...", "expression": "neutral" },
+    { "actor": "Doc", "line": "What if you made Minty's favourite sandwich... and used it as a kind of bait?", "expression": "confused" },
+    { "actor": "Prota", "line": "Bait?", "expression": "thinking" },
+    { "actor": "Doc", "line": "Yeah, you know. You always come in here with her an' get her a nice sandwich.", "expression": "happy" },
+    { "actor": "Doc", "line": "So maybe if you do that now, it'll remind her of the comforts of her normal life! And she'll come runnin'!", "expression": "happy" },
+    { "actor": "Prota", "line": "Interesting...", "expression": "thinking" },
+    { "actor": "Doc", "line": "Heck, I'd be happy to throw it together on the house! ", "expression": "confused" },
+    { "actor": "Prota", "line": "Really? Doc, that would be amazing!", "expression": "shocked" },
+    { "actor": "Doc", "line": "For a kid as nice as you, it'd be my pleasure. 'Cept I don't exactly remember her order. Do you?", "expression": "neutral" },
+    { "actor": "Prota", "line": "Hmmm... I think so.", "expression": "thinking" },
+    { "actor": "Doc", "line": "Perfect! I'll start it out on our classic Doc Sandwich bread...", "expression": "happy" },
+    { "happy": "Doc", "line": "And now let's throw on some protein. What do you think Minty'll go for?", "expression": "happy" }
+  ]
+}

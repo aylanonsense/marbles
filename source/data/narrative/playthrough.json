@@ -73,25 +73,17 @@
     "special-ending": {
       "symbol": "7A",
       "label": "Special Ending",
-      "isMissing": true,
-      "next": "all-mazes"
+      "isMissing": true
     },
     "normal-ending": {
       "symbol": "7B",
       "label": "Normal Ending",
-      "isMissing": true,
-      "next": "all-mazes"
+      "isMissing": true
     },
     "fail-ending": {
       "symbol": "7C",
       "label": "Fail Ending",
-      "isMissing": true,
-      "next": "all-mazes"
-    },
-
-    "all-mazes": {
-      "symbol": "8",
-      "label": "All Mazes (DEBUG)"
+      "isMissing": true
     }
   }
 }

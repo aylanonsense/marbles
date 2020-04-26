@@ -71,11 +71,9 @@ end
 
 function dialogueMethods.getFinalSandwichLine()
   return
-    game.playthrough.storyline.exits[3].sandwichText .. " " .. -- cheese, e.g. "An extra horny"
-    game.playthrough.storyline.exits[4].sandwichText .. " " .. -- veggies, e.g. "green"
-    game.playthrough.storyline.exits[2].sandwichText .. " " .. -- protien, e.g. "muscle-builder"
-    game.playthrough.storyline.exits[1].sandwichText .. " " .. -- bread, e.g. "wrap"
-    game.playthrough.storyline.exits[5].sandwichText .. "!" -- condiments, e.g. "with mayo!"
+    game.playthrough.storyline.exits[2].finalText .. " " .. -- topping, e.g. "A CRUNCHY"
+    game.playthrough.storyline.exits[1].finalText .. " " .. -- protein, e.g. "HAM SANDWICH"
+    game.playthrough.storyline.exits[3].finalText .. "!" -- condiment, e.g. "ON ISLAND TIME!"
 end
 
 function dialogueMethods.getFinalRobotLine()

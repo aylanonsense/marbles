@@ -1,0 +1,109 @@
+{
+  "location": "DocSandwich",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Doc", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "expression": "neutral"}
+  ],
+  "objects": [
+    "FailSandwich",
+    "NormalSandwich",
+    "SpecialSandwich"
+  ],
+  "script": [
+    { "actor": "Doc", "line": "Okay!", "expression": "happy" },
+    { "actor": "Doc", "line": "Here's your...uh...", "expression": "happy" },
+    { "actor": "Doc", "line": "I guess I would call this...", "expression": "confused" },
+    {
+     "if": "failResult",
+     "then": { "action": "show-object", "object": "FailSandwich" }
+    },
+    {
+     "if": "normalResult",
+     "then": { "action": "show-object", "object": "NormalSandwich" }
+    },
+    {
+     "if": "specialResult",
+     "then": { "action": "show-object", "object": "SpecialSandwich" }
+    },
+    { "actor": "Doc", "line": { "method": "getFinalSandwichLine" }, "expression": "shocked" },
+    { "actor": "Prota", "line": "Oooooh!", "expression": "shocked" },
+    { "actor": "Doc", "line": "Yeah! Not, uh... not bad. But I guess I'm not the judge, right?", "expression": "happy" },
+    { "actor": "Prota", "line": "Nope. This one's all Minty. I guess I'll just take it and--", "expression": "happy" },
+    { "actor": "Doc", "line": "Prota! Look over there! The door!", "expression": "shocked" },
+    { "actor": "Prota", "line": "What's--! Minty?! Minty, it's you!", "expression": "happy" },
+    { "actor": "Minty", "line": "Woof!", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Minty, I'm so glad to see you! Come here, girl! I've got a sandwich for--", "expression": "happy" },
+    { "actor": "Minty", "line": "(MUNCH)", "expression": "happy" },
+    { "action": "hide-object" },
+    { "action": "dimsiss-actor", "side": "right" },
+    { "actor": "Prota", "line": "Aaaah! She took the sandwich!", "expression": "shocked" },
+    { "actor": "Doc", "line": "Quick! Grab her before she's....", "expression": "shocked" },
+    { "actor": "Doc", "line": "...gone.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Noooo!", "expression": "shocked" },
+    { "actor": "Doc", "line": "Wow! That's the fastest I ever seen a dog move!", "expression": "shocked" },
+    {
+     "if": "failResult",
+     "then": [
+        { "actor": "Prota", "line": "...And she dropped the sandwich.", "expression": "neutral" },
+        { "actor": "Doc", "line": "Right next to the trash can. ", "expression": "neutral" },
+        { "actor": "Doc", "line": "Guess she thinks that's where it belongs. ", "expression": "thinking" },
+        { "actor": "Prota", "line": "Ugh! This is terrible. She hated the sandwich AND she's gone!", "expression": "neutral" },
+        { "actor": "Prota", "line": "I've messed up again...", "expression": "neutral" },
+        { "actor": "Doc", "line": "Eh, you didn't mess up. Sandwiches are subjective.", "expression": "neutral" },
+        { "actor": "Doc", "line": "Sub-jective. Huh. Could be a good name for my Festi-Ball project.", "expression": "thinking" },
+        { "actor": "Prota", "line": "I've really gotta get after her. You didn't happen to see which way she went, did you Doc?", "expression": "neutral" },
+        { "actor": "Doc", "line": "Hm. I know she went left, but... That's about all I got. ", "expression": "neutral" },
+        { "actor": "Doc", "line": "Maybe you head over that way and see if you can't track her down?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yeah... I guess that's all I can do.", "expression": "neutral" },
+        { "actor": "Doc", "line": "You know. Maybe this is a little ridiculous, but... that's the same direction as the Ball Museum.", "expression": "thinking" },
+        { "actor": "Doc", "line": "She didn't like your sandwich, but I don't know a single dog who doesn't like a ball!", "expression": "thinking" },
+        { "actor": "Prota", "line": "Hm. Interesting.", "expression": "thinking" }
+       ]
+    },
+    {
+     "if": "normalResult",
+     "then": [
+        { "actor": "Prota", "line": "Minty! Come back!", "expression": "shocked" },
+        { "actor": "Doc", "line": "She seems to like the sandwich at least! I'll take that.", "expression": "neutral" },
+        { "actor": "Prota", "line": "But now she's gone again! What am I gonna do without bait?!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Maybe-- maybe we could make another sandwich? A... dessert sandwich?", "expression": "neutral" },
+        { "actor": "Doc", "line": "First of all, dessert sandwich? Amazing idea. You're a little genius.", "expression": "neutral" },
+        { "actor": "Doc", "line": "But second? Maybe you need a different kind of bait.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Like what?", "expression": "thinking" },
+        { "actor": "Doc", "line": "Hmmm...  ", "expression": "thinking" },
+        { "actor": "Doc", "line": "Well, uh, dogs like balls, right?", "expression": "thinking" },
+        { "actor": "Prota", "line": "Minty certainly does!", "expression": "neutral" },
+        { "actor": "Doc", "line": "Then how about the Ball Museum? ", "expression": "neutral" },
+        { "actor": "Prota", "line": "Hmmm. Interesting...", "expression": "thinking" }
+       ]
+    },
+    {
+     "if": "specialResult",
+     "then": [
+        { "actor": "Doc", "line": "But she took that classic sandwich down in one bite! I'm impressed.", "expression": "shocked" },
+        { "actor": "Doc", "line": "Guess the bait worked.", "expression": "neutral" },
+        { "actor": "Prota", "line": "But now she's gone again!", "expression": "shocked" },
+        { "actor": "Doc", "line": "I mean, after downing a sandwich like that, she probably wants to get a little exercise in!", "expression": "thinking" },
+        { "actor": "Prota", "line": "Exercise?", "expression": "confused" },
+        { "actor": "Doc", "line": "Yeah, you know. Like, uh... cardio. For dogs. Fetch or whatever. Listen I'm a medical doctor not a vet.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh! Right! Yeah, she does love fetch... she's playing it with my heart right now!", "expression": "neutral" },
+        { "actor": "Doc", "line": "Much better to play with a ball if you ask me! But-- hey!", "expression": "neutral" },
+        { "actor": "Prota", "line": "What?", "expression": "thinking" },
+        { "actor": "Doc", "line": "Maybe Minty's off to play fetch with some new balls! ", "expression": "neutral" },
+        { "actor": "Prota", "line": "The Ball Museum!", "expression": "shocked" },
+        { "actor": "Doc", "line": "Exactly! That's the direction she was headed in too!", "expression": "happy" },
+        { "actor": "Prota", "line": "Oh!", "expression": "shocked" }
+       ]
+    },
+    { "actor": "Prota", "line": "Okay! I'm gonna go and check the Ball Museum!", "expression": "happy" },
+    { "actor": "Doc", "line": "Watch out, though, I think it might be closed 'til tonight!", "expression": "neutral" },
+    { "actor": "Prota", "line": "Don't worry! I've got a friend who works there. I'm sure it'll be okay.", "expression": "happy" },
+    { "actor": "Doc", "line": "Ha! Seems you got friends all over town, huh?", "expression": "happy" },
+    { "actor": "Prota", "line": "I do! Which reminds me: thanks a lot for your help. And the free sandwich.", "expression": "happy" },
+    { "actor": "Doc", "line": "Eh, don't worry about it, Prota! You're a swell kid and I'm happy to help.", "expression": "happy" },
+    { "actor": "Doc", "line": "Plus, you gave me some great ideas for my sandwich tonight! It's win-win!", "expression": "happy" },
+    { "actor": "Prota", "line": "I'm glad! Now I gotta run! I'll see you at the Festi-Ball!", "expression": "happy" },
+    { "actor": "Doc", "line": "Take care, Prota!", "expression": "neutral" }
+  ]
+}

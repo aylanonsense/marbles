@@ -1,0 +1,50 @@
+{
+  "location": "DocSandwich",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Doc", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": "failExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Hmmm... ",  "expression": "thinking" },
+        { "actor": "Prota", "line": "Hot wax should seal this sandwich up right!",  "expression": "happy" },
+        { "actor": "Doc", "line": "Hot wax, huh? Welll...", "expression": "thinking" },
+        { "actor": "Doc", "line": "Submarines do need to be waterproof! Let's do it.", "expression": "happy" },
+        { "actor": "Prota", "line": "Yesss! That's everything, right?", "expression": "happy" },
+        { "actor": "Doc", "line": "Yep! Lemme just drip this right on and.... Okay!", "expression": "neutral" },
+        { "actor": "Doc", "line": "Let's see what we've got!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "normalExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Let's have guava jelly! A taste of the islands for Minty!", "expression": "happy" },
+        { "actor": "Doc", "line": "Ha! Jamaican me hungry with your condiment selection!", "expression": "happy" },
+        { "actor": "Doc", "line": "You get it? Jamaica's an island. ", "expression": "happy" },
+        { "actor": "Doc", "line": "So. Figured that might be a fun joke to make. ", "expression": "neutral" },
+        { "actor": "Prota", "line": "It was! I liked it.", "expression": "happy" },
+        { "actor": "Doc", "line": "Great! So I guess we're wrappin' up this sandwich, huh? ", "expression": "neutral" },
+        { "actor": "Doc", "line": "Let's see what we got.", "expression": "thinking" }
+      ]
+    },
+    {
+      "if": "specialExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Hmmm...", "expression": "thinking" },
+        { "actor": "Prota", "line": "I say-o, gimme that mayo! Minty's gonna love it!", "expression": "happy" },
+        { "actor": "Doc", "line": "She's got good taste, that little dog! I love mayo. It's so versatile!", "expression": "happy" },
+        { "actor": "Prota", "line": "What else can you use it for?", "expression": "happy" },
+        { "actor": "Doc", "line": "Well, let's see... ", "expression": "thinking" },
+        { "actor": "Doc", "line": "You got sandwiches. You can dip fries in it. Goes great on elote!", "expression": "thinking" },
+        { "actor": "Doc", "line": "There's deviled eggs. Potato salad. Spread it on the outside of a grilled cheese...", "expression": "thinking" },
+        { "actor": "Prota", "line": "Wow! Those are a lot of uses.", "expression": "confused" },
+        { "actor": "Doc", "line": "Yeah! There's lots you can do with mayo. It's, uh, not particularly funny, but...", "expression": "neutral" },
+        { "actor": "Doc", "line": "Sometimes it's just about conveyin' information, you know?", "expression": "happy" },
+        { "actor": "Prota", "line": "I do! Thanks, Doc! ", "expression": "happy" },
+        { "actor": "Doc", "line": "No problem! Let's take a look at your sandwich!", "expression": "happy" }
+      ]
+    }
+  ]
+}
