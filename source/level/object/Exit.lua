@@ -3,6 +3,7 @@ import "physics/PhysCircle"
 import "render/camera"
 import "fonts/fonts"
 import "scene/time"
+import "utility/soundCache"
 
 local MIN_IMPULSE_TO_TRIGGER = 100
 
@@ -32,6 +33,7 @@ function Exit:init(x, y, exitId, icon)
   self.isInvincible = false
   self.impulseFreezeTimer = 0.0
   self.impulseToTrigger = MIN_IMPULSE_TO_TRIGGER
+  self.hitSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-exit-hit")
 end
 
 function Exit:update()
@@ -74,7 +76,9 @@ function Exit:preCollide(other, collision)
   if self.health > 0 and not self.isInvincible and collision.impulse >= self.impulseToTrigger then
     self.impulseToTrigger = collision.impulse + 200
     collision.impulse += 100
+    collision.tag = 'exit-trigger'
     self.health -= 1
+    self.hitSound:play(1)
     if scene.triggerExitHit then
       scene:triggerExitHit(exitLookup[self.exitId], self)
     end

@@ -2,6 +2,7 @@ import "CoreLibs/object"
 import "CoreLibs/nineslice"
 import "fonts/fonts"
 import "scene/time"
+import "utility/soundCache"
 
 class("DialogueBox").extends()
 
@@ -26,6 +27,7 @@ function DialogueBox:init()
   playdate.graphics.setFont(dialogueBoxFont)
   local lineWidth, lineHeight = playdate.graphics.getTextSize("ABC")
   self.lineHeight = lineHeight
+  self.textScrollSound = soundCache.createSoundEffectPlayer("sound/sfx/dialogue-loop")
 end
 
 function DialogueBox:update()
@@ -42,6 +44,8 @@ function DialogueBox:update()
         self.numCharactersShown += 1
       end
     end
+  elseif self.textScrollSound:isPlaying() then
+    self.textScrollSound:stop()
   end
 end
 
@@ -83,7 +87,7 @@ function DialogueBox:draw()
 end
 
 function DialogueBox:show()
-  self.isVisible = true;
+  self.isVisible = true
 end
 
 function DialogueBox:showDialogue(name, text, side)
@@ -120,6 +124,7 @@ function DialogueBox:showDialogue(name, text, side)
   if #line > 0 then
     table.insert(self.textLines, line)
   end
+  self.textScrollSound:play(0)
 end
 
 function DialogueBox:canSkipTextCrawl()
@@ -127,6 +132,7 @@ function DialogueBox:canSkipTextCrawl()
 end
 
 function DialogueBox:skipTextCrawl()
+  self.textScrollSound:stop()
   self.numCharactersShown = #self.text
 end
 

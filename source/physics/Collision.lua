@@ -12,6 +12,7 @@ function Collision:reset(objectA, objectB, overlap, normalX, normalY)
 	self.overlap = overlap
 	self.normalX = normalX
 	self.normalY = normalY
+	self.tag = nil
 	-- Calculate impulse
 	local a, b = self.objectA, self.objectB
 	local relativeVelX, relativeVelY = b.velX - a.velX, b.velY - a.velY
