@@ -4,6 +4,7 @@ import "render/camera"
 import "render/imageCache"
 import "utility/soundCache"
 import "physics/physics"
+import "config"
 
 class("Marble").extends("LevelObject")
 
@@ -35,7 +36,7 @@ function Marble:update()
     local volume = math.min(math.max(0.05, 0.05 + 0.95 * (self.recentImpulses[1] - minImpulseForBumpSound) / (350 - minImpulseForBumpSound)), 1.0)
     local rate = math.min(math.max(0.70, 0.70 + 0.30 * (self.recentImpulses[1] - minImpulseForBumpSound) / (200 - minImpulseForBumpSound)), 1.0)
     self.groundBounceSound:stop()
-    self.groundBounceSound:setVolume(volume)
+    self.groundBounceSound:setVolume(config.SOUND_VOLUME * volume)
     self.groundBounceSound:setRate(rate)
     self.groundBounceSound:play(1)
   end
@@ -64,7 +65,7 @@ function Marble:update()
     targetVolume = 0.0
   end
   self.rollingSound:setRate(0.5 * targetRate + 0.5 * self.rollingSound:getRate())
-  self.rollingSound:setVolume(0.4 * targetVolume + 0.6 * self.rollingSound:getVolume())
+  self.rollingSound:setVolume(config.SOUND_VOLUME * (0.4 * targetVolume + 0.6 * self.rollingSound:getVolume()))
   for i = 2, #self.recentImpulses do
     self.recentImpulses[i] = self.recentImpulses[i - 1]
   end

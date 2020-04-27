@@ -8,7 +8,7 @@ import "utility/soundCache"
 
 class("MazeScene").extends(Scene)
 
-function MazeScene:init(levelData)
+function MazeScene:init(levelData, musicPlayer)
   MazeScene.super.init(self)
 
   self.levelData = levelData
@@ -17,6 +17,7 @@ function MazeScene:init(levelData)
   self.marble = nil
   self.isLoaded = false
   self.lastLoadedObjectIndex = 0
+  self.musicPlayer = musicPlayer
 
   -- Reset everything
   camera:reset()
@@ -62,6 +63,9 @@ function MazeScene:partialLoad()
       physics:sortSectors()
       self.isLoaded = true
       sceneTransition:transitionIn()
+      if self.musicPlayer then
+        self.musicPlayer:play(0)
+      end
     end
   end
 end

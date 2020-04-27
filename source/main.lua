@@ -3,14 +3,13 @@ import "scene/Scene"
 import "CoreLibs/keyboard"
 import "game/Game"
 import "level/editor/EditorScene"
-
-local LAUNCH_LEVEL_EDITOR = false
+import "config"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
 -- Set up the gane (globally accessible)
-if LAUNCH_LEVEL_EDITOR then
+if config.LAUNCH_LEVEL_EDITOR then
   Scene.setScene(EditorScene())
 else
   game = Game()
@@ -23,7 +22,9 @@ function playdate.update()
   	scene:update()
   	scene:draw()
   end
-  playdate.drawFPS(380, 10)
+  if config.SHOW_FRAMERATE then
+    playdate.drawFPS(380, 10)
+  end
 end
 
 -- Pass callbacks through to the scene

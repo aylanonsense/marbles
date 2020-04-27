@@ -10,7 +10,7 @@ import "CoreLibs/utilities/printer"
 
 class("DialogueScene").extends(Scene)
 
-function DialogueScene:init(convoData)
+function DialogueScene:init(convoData, musicPlayer)
   DialogueScene.super.init(self)
   self.dialogueBox = DialogueBox()
   self.location = Location(self:evalDialogueField(convoData.location))
@@ -41,6 +41,10 @@ function DialogueScene:init(convoData)
   self.waitingFor = "time"
   self.waitTime = sceneTransition.TRANSITION_IN_TIME + 0.75
   sceneTransition:transitionIn()
+  self.musicPlayer = musicPlayer
+  if self.musicPlayer then
+    self.musicPlayer:play(0)
+  end
 end
 
 function DialogueScene:update()

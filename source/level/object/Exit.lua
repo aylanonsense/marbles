@@ -4,6 +4,7 @@ import "render/camera"
 import "fonts/fonts"
 import "scene/time"
 import "utility/soundCache"
+import "config"
 
 local MIN_IMPULSE_TO_TRIGGER = 100
 
@@ -34,6 +35,7 @@ function Exit:init(x, y, exitId, icon)
   self.impulseFreezeTimer = 0.0
   self.impulseToTrigger = MIN_IMPULSE_TO_TRIGGER
   self.hitSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-exit-hit")
+  self.hitSound:setVolume(config.SOUND_VOLUME)
 end
 
 function Exit:update()

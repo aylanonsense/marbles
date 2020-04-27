@@ -3,6 +3,7 @@ import "CoreLibs/nineslice"
 import "fonts/fonts"
 import "scene/time"
 import "utility/soundCache"
+import "config"
 
 class("DialogueBox").extends()
 
@@ -28,6 +29,7 @@ function DialogueBox:init()
   local lineWidth, lineHeight = playdate.graphics.getTextSize("ABC")
   self.lineHeight = lineHeight
   self.textScrollSound = soundCache.createSoundEffectPlayer("sound/sfx/dialogue-loop")
+  self.textScrollSound:setVolume(config.SOUND_VOLUME)
 end
 
 function DialogueBox:update()
