@@ -16,6 +16,7 @@ function Marble:init(x, y)
   self.recentImpulses = { 0, 0, 0 }
   self.isGrounded = false
   self.framesSinceGrounded = 0
+  self.hitSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-hit")
   self.rollingSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-loop")
   self.rollingSound:setVolume(0)
   self.rollingSound:play(0)
@@ -25,9 +26,16 @@ function Marble:update()
   local vx = self.physObj.velX
   local vy = self.physObj.velY
   local speed = math.sqrt(vx * vx + vy * vy)
-	self.physObj.accX, self.physObj.accY = -physics.GRAVITY * camera.up.x, -physics.GRAVITY * camera.up.y
-  if self.recentImpulses[1] > 80 and self.recentImpulses[2] <= 0 and self.recentImpulses[3] <= 0 then
+  self.physObj.accX, self.physObj.accY = -physics.GRAVITY * camera.up.x, -physics.GRAVITY * camera.up.y
     -- Trigger a bump sound effect
+  local minImpulseForBumpSound = math.min(math.max(30, 30 + 40 * (speed / 300)), 70)
+  if self.recentImpulses[1] > minImpulseForBumpSound and self.recentImpulses[1] > self.recentImpulses[2] + minImpulseForBumpSound and self.recentImpulses[1] > self.recentImpulses[3] + minImpulseForBumpSound then
+    local volume = math.min(math.max(0.05, 0.05 + 0.95 * (self.recentImpulses[1] - minImpulseForBumpSound) / (350 - minImpulseForBumpSound)), 1.0)
+    local rate = math.min(math.max(0.70, 0.70 + 0.30 * (self.recentImpulses[1] - minImpulseForBumpSound) / (200 - minImpulseForBumpSound)), 1.0)
+    self.hitSound:stop()
+    self.hitSound:setVolume(volume)
+    self.hitSound:setRate(rate)
+    self.hitSound:play(1)
   end
   -- Figure out if the ball is grounded
   if not self.isGrounded and self.recentImpulses[1] > 0 and self.recentImpulses[2] > 0 and self.recentImpulses[3] > 0 then
