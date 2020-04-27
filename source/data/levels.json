@@ -169,6 +169,26 @@
             "editFile": "sandwichshop-toppings-edit.json",
             "name": "Sandwichshop - Toppings",
             "playFile": "sandwichshop-toppings-play.json"
+		},
+		{
+            "editFile": "festiball-1-edit.json",
+            "name": "Festiball - 1",
+            "playFile": "festiball-1-play.json"
+        },
+        {
+            "editFile": "festiball-2-edit.json",
+            "name": "Festiball - 2",
+            "playFile": "festiball-2-play.json"
+        },
+        {
+            "editFile": "festiball-3-edit.json",
+            "name": "Festiball - 3",
+            "playFile": "festiball-3-play.json"
+        },
+        {
+            "editFile": "festiball-4-edit.json",
+            "name": "Festiball - 4",
+            "playFile": "festiball-4-play.json"
         }
   ]
 }
