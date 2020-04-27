@@ -2,6 +2,11 @@
   "Prota": {
     "name": "Prota",
     "image": "/images/narrative/actors/prota.png",
+    "variants": {
+      "danger": "/images/narrative/actors/prota-danger.png",
+      "probation": "/images/narrative/actors/prota-probation.png",
+      "star": "/images/narrative/actors/prota-star.png"
+    },
     "facing": "right",
     "expressions": {
       "neutral": { "frame": 5 },

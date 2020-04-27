@@ -1,0 +1,90 @@
+{
+  "location": "SecurityCity",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Mayoress", "expression": "neutral", "side": "right" }
+  ],
+  "objects": [
+    "Minty"
+  ],
+  "script": [
+    { "actor": "Mayoress", "line": "Now... obviously, your answers were not exactly one for one with what I have here...", "expression": "thinking" },
+    { "actor": "Mayoress", "line": "So with a little bit of calculation, I've found that you're...", "expression": "thinking" },
+    { "actor": "Mayoress", "line": { "method": "getFinalSecurityCityLine" }, "expression": "shocked" },
+    {
+     "if": "failResult",
+     "then": [
+        { "actor": "Prota", "line": "...Is that good?", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Well, it's good in that you definitely belong here in Security City,", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh no. Does that mean I have to stay here?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Please, Mayoress, I really really really really need to find Minty.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Oh, no, Prota, this isn't a JAIL. You don't have to stay here.", "expression": "confused" },
+        { "actor": "Mayoress", "line": "Sure, we'll need to schedule you for an afternoon or two of remedial classes...", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "But until then, you just have to wear this!", "expression": "neutral" },
+        { "action": "set-actor-variant", "actor": "Prota", "variant": "danger" },
+        { "actor": "Prota", "line": "...", "expression": "neutral" },
+        { "actor": "Prota", "line": "Danger?!", "expression": "neutral"},
+        { "actor": "Mayoress", "line": "Yes, and a warning sign! You did very badly, Prota.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Very very badly.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "But! You'll still be able to enjoy the Festi-Ball! And that's pretty good, right?!", "expression": "happy" },
+        { "actor": "Prota", "line": "I'll take it. Thanks, Mayoress!", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Safety and Security are my twin passions!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "But I'm just happy to serve the people. And you're part of that.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Thanks. I guess I'll see you at the Festi-Ball?", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "That you will! Enjoy, Prota! And good luck!", "expression": "happy" }
+      ]
+    },
+    {
+     "if": "normalResult",
+     "then": [
+        { "actor": "Prota", "line": "Is that...good?", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Given the nature of your questions, I would say... it isn't good.", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "But perhaps it also... isn't bad.", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "So you can simply wear this.", "expression": "thinking" },
+        { "action": "set-actor-variant", "actor": "Prota", "variant": "probation" },
+        { "actor": "Prota", "line": "...", "expression": "neutral" },
+        { "actor": "Prota", "line": "On Probation?!", "expression": "shocked"},
+        { "actor": "Mayoress", "line": "Yes! And a traffic cone emoji! ", "expression": "happy" },
+        { "actor": "Prota", "line": "Do I really have to wear this?", "expression": "confused" },
+        { "actor": "Mayoress", "line": "Oh yes. For at least the next 24 hours. ", "expression": "neutral" },
+        { "actor": "Prota", "line": "Hm. But can I leave and go look for Minty now?", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "You can do anything you want! You're only on probation.", "expression": "happy" },
+        { "actor": "Mayoress", "line": "Just be sure not to break the law again, would you?", "expression": "neutral" },
+        { "actor": "Prota", "line": "I promise. Thanks for cutting me some slack, Mayoress.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Safety and Security are my twin passions!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "But I'm just happy to serve the people. And you're part of that.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Thanks. I guess I'll see you at the Festi-Ball?", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "That you will! Enjoy, Prota! And good luck!", "expression": "happy" }
+      ]
+    },
+     {
+     "if": "specialResult",
+     "then": [
+        { "actor": "Prota", "line": "Oooh! What do I win?", "expression": "happy" },
+        { "actor": "Mayoress", "line": "Win?", "expression": "shocked" },
+        { "actor": "Prota", "line": "Yeah! I won the test! What do I get?", "expression": "happy" },
+        { "actor": "Mayoress", "line": "It's a test, Prota, not a contest.", "expression": "confused" },
+        { "actor": "Mayoress", "line": "Though saying it now, the two words are very similar. But there are no prizes.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Oh well.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "...Though you do get this hat.", "expression": "neutral" },
+        { "actor": "Prota", "line": "A prize!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "No, it's not-- it's not a prize. It's an item I'm giving you in recognition of your results.", "expression": "neutral" },
+        { "actor": "Prota", "line": "That sounds like a prize.", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "I see how you might think that, but it isn't. It's more of a...reward.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Is it illegal to give prizes or something? What's going on?", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "No, it's just--nevermind. Have your prize. ", "expression": "neutral" },
+        { "action": "set-actor-variant", "actor": "Prota", "variant": "star" },
+        { "actor": "Prota", "line": "...", "expression": "neutral" },
+        { "actor": "Prota", "line": "Wow! Security STAR! That's a big step up from Ace! ", "expression": "happy" },
+        { "actor": "Mayoress", "line": "You gave me a lot to consider today, Prota. And for that I'm grateful.", "expression": "happy" },
+        { "actor": "Prota", "line": "Yay! And I guess I'm free to go find Minty then, right?", "expression": "happy" },
+        { "actor": "Mayoress", "line": "You are indeed!", "expression": "happy" },
+        { "actor": "Prota", "line": "Thanks, Mayoress! You're pretty great!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "Safety and Security are my twin passions!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "But I'm just happy to serve the people. And you're part of that.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Thanks. I guess I'll see you at the Festi-Ball?", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "That you will! Enjoy, Prota! And good luck!", "expression": "happy" }
+      ]
+    }
+  ]
+}

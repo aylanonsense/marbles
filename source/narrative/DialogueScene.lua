@@ -219,7 +219,7 @@ function DialogueScene:processDialogueAction(action)
     self.shownObject:slideOutOfView()
     self.waitingFor = "time"
     self.waitTime = 1.00
-  -- Unknown action, return false to indicate we weren't able to process it
+  -- Move an actor off-stage without replacing them
   elseif action.action == "dismiss-actor" then
     if action.side == "left" or action.side == "both" then
       if self.actorsOnStage.left then
@@ -235,6 +235,13 @@ function DialogueScene:processDialogueAction(action)
     end
     self.waitingFor = "time"
     self.waitTime = 1.00
+  -- Add an accessory or decoration to an actor for the rest of the playthrough
+  elseif action.action == "set-actor-variant" then
+    game:recordActorVariant(action.actor, action.variant)
+    if self.actorLookup[action.actor] then
+      self.actorLookup[action.actor]:setVariant(action.variant)
+    end
+  -- Unknown action, return false to indicate we weren't able to process it
   else
     return false
   end

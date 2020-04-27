@@ -1,0 +1,56 @@
+{
+  "location": "SecurityCity",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Mayoress", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": "failExit",
+      "then": [ 
+        { "actor": "Prota", "line": "You use your turn signal right after you turn! To say \"I did a nice turn\"!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "...", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "What?", "expression": "neutral" },
+        { "actor": "Prota", "line": "No?", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "No, certainly not Prota. That would be hugely unsafe. The answer is \"before\".", "expression": "confused" },
+        { "actor": "Prota", "line": "I don't drive! I kinda thought these would be questions about walking. ", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Well, perpaps we should move on to something a little...easier. ", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Prota: Hydroplaning can occur even when your car is going as slowly as..?", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "normalExit",
+      "then": [ 
+        { "actor": "Prota", "line": "I think you indicate the turn... right after brushing your teeth in the morning!", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Wow. That's...very early. ", "expression": "neutral" },
+        { "actor": "Prota", "line": "Gotta be safe!", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Are you assuming you're brushing your teeth in the car?", "expression": "thinking" },
+        { "actor": "Prota", "line": "Mayoress, that would be very unsafe!", "expression": "shocked" },
+        { "actor": "Mayoress", "line": "So you're...saying that.. It's the first thing you do when you get in the car.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Yes! Because you need to turn to get out of the driveway! And you need to indicate that.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Hmmm...", "expression": "thinking" },
+        { "actor": "Prota", "line": "You know I don't drive, right? ", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "No, but...technically... you're right. So I suppose I have to give that one to you.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yay!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "Next question. Hydroplaning can occur even when your car is going as slowly as..?", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "specialExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Okay I think I have an answer.", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Hm?", "expression": "neutral" },
+        { "actor": "Prota", "line": "It's a trick question. You don't use your turn signal, you turn on your hazards?", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "...It's absolutely not a trick question.", "expression": "neutral" },
+        { "actor": "Prota", "line": "If you turn your hazards on, you're always signalling a possible turn.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Or you're signalling no turn! Or you're signalling you can't turn! ", "expression": "shocked" },
+        { "actor": "Mayoress", "line": "What?", "expression": "confused" },
+        { "actor": "Prota", "line": "You can do anything with your hazards on! They just indicate: watch out!", "expression": "neutral" },
+        { "actor": "Prota", "line": "And that covers everything!", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "...That's very wrong, but your out-of-the-box thinking has indicated a flaw in my test.", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Which is technically an act of public service! So congratulations! Question two:", "expression": "happy" },
+        { "actor": "Mayoress", "line": "Hydroplaning can occur even when your car is going as slowly as..?", "expression": "neutral" }
+      ]
+    }
+  ]
+}

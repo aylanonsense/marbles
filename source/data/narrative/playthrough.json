@@ -26,29 +26,28 @@
     "skate-park": {
       "symbol": "4A",
       "label": "Skate Park",
-      "special": "safety-town",
+      "special": "security-city",
       "normal": "pickle-yard",
       "fail": "vintage-viper"
     },
     "sandwich-shop": {
       "symbol": "4B",
       "label": "Sandwich Shop",
-      "special": "safety-town",
+      "special": "security-city",
       "normal": "pickle-yard",
       "fail": "vintage-viper"
     },
     "daycare": {
       "symbol": "4C",
       "label": "Daycare",
-      "special": "safety-town",
+      "special": "security-city",
       "normal": "pickle-yard",
       "fail": "vintage-viper"
     },
 
-    "safety-town": {
+    "security-city": {
       "symbol": "5A",
-      "label": "Safety Town",
-      "isMissing": true,
+      "label": "Security City",
       "next": "ball-museum"
     },
     "pickle-yard": {

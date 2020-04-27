@@ -1,0 +1,57 @@
+{
+  "location": "SecurityCity",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Mayoress", "expression": "neutral", "side": "right" }
+  ],
+  "script": [
+    {
+      "if": "failExit",
+      "then": [ 
+        { "actor": "Prota", "line": "I got this: a hydroplane!", "expression": "shocked" },
+        { "actor": "Mayoress", "line": "Prota, you're supposed to be a Security Ace.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "What do you think a hydroplane is?", "expression": "confused" },
+        { "actor": "Prota", "line": "I'm not sure, but I think it's got pontoons.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "...Prota, you know I want you to go to the Festi-Ball right?", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "But that I need to administer this test because you jay-walked in front of me, The Mayoress?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yes.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "You understand I want you to do well, yes?", "expression": "neutral" },
+        { "actor": "Prota", "line": "So that was the wrong answer?", "expression": "confused" },
+        { "actor": "Mayoress", "line": "Very much.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Rats. ", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Let's do one more. To get your vehicle out of a skid, you should...", "expression": "thinking" }
+      ]
+    },
+    {
+      "if": "normalExit",
+      "then": [ 
+        { "actor": "Prota", "line": "The minimum speed at which cars hydroplane!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "Which is...", "expression": "confused" },
+        { "actor": "Prota", "line": "I guess we'll see!", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "You guess we'll see.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Prota, that's not the right answer. ", "expression": "thinking" },
+        { "actor": "Prota", "line": "I think technically it is.", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Hmmm...", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "I have to say. As the Mayoress, leader of Pomegranate Village, I despise this technicality.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "But as a demonic entity governed by contract and covenant...I love this tecnicality. ", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Let's give it to you!", "expression": "happy" },
+        { "actor": "Prota", "line": "Yay!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "Tell me: To get your vehicle out of a skid, you should...", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "specialExit",
+      "then": [ 
+        { "actor": "Prota", "line": "I think it's 300 furlongs per hour?", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "300 furlongs. I haven't heard that unit of measurement in...decades. Perhaps centuries.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Maybe I'm the one taking you on a safe drive-- down memory lane!", "expression": "happy" },
+        { "actor": "Prota", "line": "I'm joking, I know I'm too young to drive. Plese don't mark that as a mistake.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Well, you may be too young to drive, but you're not too young to answer correctly!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "300 furlongs is about 35 miles per hour and that's exactly right!", "expression": "happy" },
+        { "actor": "Prota", "line": "Woohoo!", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "Now let's move on to the final question!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "Tell me: To get your vehicle out of a skid, you should...", "expression": "happy" }
+      ]
+    }
+  ]
+}

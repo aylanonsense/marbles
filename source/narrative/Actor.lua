@@ -2,11 +2,10 @@ import "CoreLibs/object"
 import "CoreLibs/sprites"
 import "CoreLibs/animator"
 import "CoreLibs/easing"
+import "render/imageCache"
+import "utility/file"
 
-local actorsData = json.decodeFile("/data/narrative/actors.json")
-if not actorsData then
-  print("Failed to load actor data at /data/narrative/actors.json: the file may not exist or may contain invalid JSON")
-end
+local actorsData = loadJsonFile("/data/narrative/actors.json")
 
 class("Actor").extends()
 
@@ -17,18 +16,11 @@ function Actor:init(id)
   self.id = id
   self.name = actorsData[self.id].name
   self.facing = actorsData[self.id].facing
+  self.variant = game.playthrough.actorVariants[id]
   self.side = nil
   self.preferredSide = "left"
   self.expression = nil
-  local imagePath = actorsData[self.id].image
-  if imagePath then
-    self.imageTable = playdate.graphics.imagetable.new(imagePath)
-    self.sprite = playdate.graphics.sprite.new()
-    self.sprite:moveTo(-999, 154)
-    self.sprite:setCenter(0.5, 1.0)
-    self.sprite:setZIndex(100)
-    self.sprite:add()
-  end
+  self:reloadImage()
 end
 
 function Actor:update() end
@@ -77,13 +69,45 @@ function Actor:setExpression(expression)
     self.expression = expression
     if self.sprite then
       if actorsData[self.id].expressions[expression] then
-        local frame = actorsData[self.id].expressions[expression].frame
-        local image = self.imageTable:getImage(frame)
-        local flipped = ((self.side or self.preferredSide) == self.facing)
-        self.sprite:setImage(image, (flipped and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped))
+        self:setFrame(actorsData[self.id].expressions[expression].frame)
       else
         print("Actor " .. (self.name or "nil") .. " does not have a " .. (expression or "nil") .. " expression")
       end
     end
   end
+end
+
+function Actor:reloadImage()
+  local imagePath
+  if self.variant then
+    imagePath = actorsData[self.id].variants[self.variant]
+  else
+    imagePath = actorsData[self.id].image
+  end
+  if imagePath then
+    self.imageTable = imageCache.loadImageTable(imagePath)
+    print(imagePath)
+    print(self.imageTable)
+    if not self.sprite then
+      self.sprite = playdate.graphics.sprite.new()
+      self.sprite:moveTo(-999, 154)
+      self.sprite:setCenter(0.5, 1.0)
+      self.sprite:setZIndex(100)
+      self.sprite:add()
+    end
+  end
+end
+
+function Actor:setVariant(variant)
+  self.variant = variant
+  self:reloadImage()
+  if self.expression and actorsData[self.id].expressions[self.expression] then
+    self:setFrame(actorsData[self.id].expressions[self.expression].frame)
+  end
+end
+
+function Actor:setFrame(frame)
+  local image = self.imageTable:getImage(frame)
+  local flipped = ((self.side or self.preferredSide) == self.facing)
+  self.sprite:setImage(image, (flipped and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped))
 end

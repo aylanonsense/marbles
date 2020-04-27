@@ -19,6 +19,7 @@ function Game:init()
   -- Store the player's playthrough as a nice JSON object
   self.playthrough = {
     storyline = nil,
+    actorVariants = {},
     finishedStorylines = {}
   }
 
@@ -168,4 +169,8 @@ function Game:getStorylineResult()
   else
     return "special"
   end
+end
+
+function Game:recordActorVariant(actor, variant)
+  self.playthrough.actorVariants[actor] = variant
 end

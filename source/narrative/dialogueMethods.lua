@@ -113,6 +113,13 @@ function dialogueMethods.getFinalBallMuseumLine()
     game.playthrough.storyline.exits[3].finalText .. "!" -- e.g. "THE MOON!"
 end
 
+function dialogueMethods.getFinalSecurityCityLine()
+  return
+    game.playthrough.storyline.exits[1].finalText .. " " .. -- e.g. "HAZARDOUS,"
+    game.playthrough.storyline.exits[2].finalText .. " " .. -- e.g. "SAFETY"
+    game.playthrough.storyline.exits[3].finalText .. "!" -- e.g. "LEGEND!"
+end
+
 function dialogueMethods.getFinalDaycareRiddleLine1()
   return "WHEN " .. game.playthrough.storyline.exits[1].finalText .. "..." -- e.g. "WHEN THE THREADS OF FATE..."
 end

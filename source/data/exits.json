@@ -464,58 +464,67 @@
 
     {
       "id": "safetytown-1-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "After turning",
+      "score": 1,
+      "finalText": "A HAZARDOUS"
     },
     {
       "id": "safetytown-1-good",
-      "label": "Good",
-      "score": 3
+      "label": "After brushing your teeth",
+      "score": 3,
+      "finalText": "AN UNCERTAIN"
     },
     {
       "id": "safetytown-1-special",
-      "label": "Special",
-      "score": 5
+      "label": "Drive with hazards on",
+      "score": 5,
+      "finalText": "A CAUTIOUS"
     },
 
 
 
     {
       "id": "safetytown-2-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "A hydroplane",
+      "score": 1,
+      "finalText": "DANGER"
     },
     {
       "id": "safetytown-2-good",
-      "label": "Good",
-      "score": 3
+      "label": "The speed at which cars hydroplane",
+      "score": 3,
+      "finalText": "RISK"
     },
     {
       "id": "safetytown-2-special",
-      "label": "Special",
-      "score": 5
+      "label": "300 furlongs per hour",
+      "score": 5,
+      "finalText": "SAFETY"
     },
 
 
 
     {
       "id": "safetytown-3-bad",
-      "label": "Bad",
-      "score": 1
+      "label": "Not",
+      "score": 1,
+      "finalText": "ADEPT"
     },
     {
       "id": "safetytown-3-good",
-      "label": "Good",
-      "score": 3
+      "label": "Exit the vehicle",
+      "score": 3,
+      "finalText": "MASTER"
     },
     {
       "id": "safetytown-3-special",
-      "label": "Special",
-      "score": 5
+      "label": "Avoid driving",
+      "score": 5,
+      "finalText": "LEGEND"
     },
 
 
-    
+
     {
       "id": "ballmuseum-skeeball-bad",
       "label": "Hockey ball",

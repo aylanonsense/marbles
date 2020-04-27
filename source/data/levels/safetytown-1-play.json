@@ -1466,7 +1466,7 @@
 			"type":"Polygon"
 		},
 		 {
-			"exitId":"pickle-cups-special",
+			"exitId":"safetytown-1-special",
 			"icon":"Special",
 			"layer":1,
 			"type":"Exit",
@@ -1481,7 +1481,7 @@
 			"y":260
 		},
 		 {
-			"exitId":"pickle-cups-good",
+			"exitId":"safetytown-1-good",
 			"icon":"Good",
 			"layer":3,
 			"type":"Exit",
@@ -1661,7 +1661,7 @@
 			"y":190
 		},
 		 {
-			"exitId":"pickle-cups-bad",
+			"exitId":"safetytown-1-bad",
 			"icon":"Bad",
 			"layer":8,
 			"type":"Exit",

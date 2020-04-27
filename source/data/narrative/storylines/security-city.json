@@ -1,0 +1,39 @@
+{
+  "scenes": [
+    {
+      "dialogue": "security-city/SecurityCity_Intro",
+      "music": null
+    },
+    {
+      "maze": "safetytown-1",
+      "exits": [ "safetytown-1-special", "safetytown-1-good", "safetytown-1-bad" ],
+      "music": null
+    },
+    {
+      "dialogue": "security-city/SecurityCity_1_Question1",
+      "music": null
+    },
+    {
+      "maze": "safetytown-2",
+      "exits": [ "safetytown-2-special", "safetytown-2-good", "safetytown-2-bad" ],
+      "music": null
+    },
+    {
+      "dialogue": "security-city/SecurityCity_2_Question2",
+      "music": null
+    },
+    {
+      "maze": "safetytown-3",
+      "exits": [ "safetytown-3-special", "safetytown-3-good", "safetytown-3-bad" ],
+      "music": null
+    },
+    {
+      "dialogue": "security-city/SecurityCity_3_Question3",
+      "music": null
+    },
+    {
+      "dialogue": "security-city/SecurityCity_Resolution",
+      "music": null
+    }
+  ]
+}
