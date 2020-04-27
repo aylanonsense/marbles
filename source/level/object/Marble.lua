@@ -15,49 +15,46 @@ function Marble:init(x, y)
   self.imageWidth, self.imageHeight = self.image:getSize()
   self.recentImpulses = { 0, 0, 0 }
   self.isGrounded = false
-  self.rollSoundState = nil
-  self.rollStartSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-start")
-  self.rollLoopSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-loop")
-  self.rollEndSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-end")
-  self.rollStartSound:setFinishCallback(function()
-    if self.rollSoundState == 'start' then
-      self.rollSoundState = 'loop'
-      self.rollLoopSound:play(0)
-    end
-  end)
-  self.rollEndSound:setFinishCallback(function()
-    if self.rollSoundState == 'end' then
-      self.rollSoundState = nil
-    end
-  end)
+  self.framesSinceGrounded = 0
+  self.rollingSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-loop")
+  self.rollingSound:setVolume(0)
+  self.rollingSound:play(0)
 end
 
 function Marble:update()
+  local vx = self.physObj.velX
+  local vy = self.physObj.velY
+  local speed = math.sqrt(vx * vx + vy * vy)
 	self.physObj.accX, self.physObj.accY = -physics.GRAVITY * camera.up.x, -physics.GRAVITY * camera.up.y
   if self.recentImpulses[1] > 80 and self.recentImpulses[2] <= 0 and self.recentImpulses[3] <= 0 then
     -- Trigger a bump sound effect
   end
+  -- Figure out if the ball is grounded
   if not self.isGrounded and self.recentImpulses[1] > 0 and self.recentImpulses[2] > 0 and self.recentImpulses[3] > 0 then
     self.isGrounded = true
   elseif self.isGrounded and self.recentImpulses[1] <= 0 and self.recentImpulses[2] <= 0 then
     self.isGrounded = false
   end
-  local vx = self.physObj.velX
-  local vy = self.physObj.velY
-  local speed = math.sqrt(vx * vx + vy * vy)
-  -- Start the roll sound
-  if self.isGrounded and (not self.rollSoundState or self.rollSoundState == 'end') and speed > 25 then
-    self.rollSoundState = 'start'
-    self.rollEndSound:stop()
-    self.rollStartSound:play()
+  if self.isGrounded then
+    self.framesSinceGrounded = 0
+  else
+    self.framesSinceGrounded += 1
   end
-  -- Stop rolling if it lifts off the ground or slows down
-  if (not self.isGrounded or speed < 20) and (self.rollSoundState == 'start' or self.rollSoundState == 'loop') then
-    self.rollSoundState = 'end'
-    self.rollStartSound:stop()
-    self.rollLoopSound:stop()
-    self.rollEndSound:play()
+  -- Play the rolling sound at the right pitch and volume
+  local targetRate
+  if self.isGrounded or self.framesSinceGrounded > 8 then
+    targetRate = 1.0
+  else
+    targetRate = 1.30
   end
+  local targetVolume
+  if self.isGrounded then
+    targetVolume = math.min(math.max(0.00, 0.00 + 1.00 * (speed - 20) / 175), 1.00)
+  else
+    targetVolume = 0.0
+  end
+  self.rollingSound:setRate(0.5 * targetRate + 0.5 * self.rollingSound:getRate())
+  self.rollingSound:setVolume(0.4 * targetVolume + 0.6 * self.rollingSound:getVolume())
   for i = 2, #self.recentImpulses do
     self.recentImpulses[i] = self.recentImpulses[i - 1]
   end
