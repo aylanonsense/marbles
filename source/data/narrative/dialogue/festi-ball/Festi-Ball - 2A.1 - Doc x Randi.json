@@ -1,0 +1,73 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Randi", "expression": "neutral" },
+    { "actor": "Trashbot", "expression": "neutral" },
+    { "actor": "Goodbot", "expression": "neutral" },
+    { "actor": "Mintwo", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Doc", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "confused"}
+    { "action": "change-location", "location": "CatchMintyCin" },
+    { "action": "change-location", "location": "FestiBallRing" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "It worked! Aw Minty!", "expression": "happy" },
+    { "actor": "Doc", "line": "Yeah, of course it did. I make sandwiches all the time. Easy stuff-- even a doctor can do it!", "expression": "happy", "side": "right" },
+    { "actor": "Randi", "line": "All the same, that was some mighty impressive work!", "expression": "happy", "side": "right" },
+    { "actor": "Randi", "line": "You two make a real good team!", "expression": "happy" },
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "COMPLIMENT RECEIVED. AND APPRECIATED.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "I AM GOOD ROBOT?", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "THANK YOU. IN BESTING MY FLESH COUNTERPART, I FEEL... SATISFACTION. ", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "Randi", "line": "You're the best robot I ever made. Or met!", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "Yeah, that was some primo work! If you weren't already workin' for the Viper, I'd hire you myself!", "expression": "happy", "side": "right" },
+    { "actor": "Randi", "line": "Oh, no, I'm nobody's boss but my own! I made this buddy to help catch Minty! ", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "And Minty's been caught!", "expression": "happy" },
+    { "actor": "Randi", "line": "Which means if you're lookin' to hire, my client's a free agent!", "expression": "happy" },
+    { "actor": "Doc", "line": "No way! Well hey, in that case...", "expression": "shocked", "side": "right" },
+    { "actor": "Doc", "line": "If you need a job, Pal, there's one waitin' for you at Doc Sandwich!", "expression": "neutral" },
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "YES. I WILL UPDATE MY PROTOCOLS ACCORDINGLY.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "YES SOC DANDWICH. I WILL MAKE THE DANDWICHES! I AM A GOOD ROBOT!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "YES. CATCHING MINTY HAS ALLOWED ME TO SELF-ACTUALIZE. I WILL LEARN OF SANDWICHES.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "Doc", "line": "This is great! Randi, you wanna come with me? See your buddy's first night on the job?", "expression": "happy", "side": "right" },
+    { "actor": "Randi", "line": "I'd love to!", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "How about you Prota?", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "I'll come by the shop sometime! For now, I should get Minty back to my parents.", "expression": "happy" },
+    { "actor": "Doc", "line": "No problem! Catch you later, kid!", "expression": "happy" },
+    { "actor": "Randi", "line": "Happy trails!", "expression": "neutral", "side": "right" }
+  ]
+}

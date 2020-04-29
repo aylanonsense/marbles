@@ -1,0 +1,84 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Randi", "expression": "neutral" },
+    { "actor": "Trashbot", "expression": "neutral" },
+    { "actor": "Goodbot", "expression": "neutral" },
+    { "actor": "Mintwo", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Doc", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "ERROR: TO COMPLETE CATCH MINTY DOT EXE, I WILL REQUIRE AN UPGRADE. UPGRADE WILL TAKE... ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Randi", "line": "An hour?! We don't got this kinda time! She's escapin'!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "SUCCCESS. MINTY HAS BEEN CAUGHT.", "expression": "neutral", "side": "right" },
+        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "confused", "side": "right" },
+        { "actor": "Randi", "line": "Yeah, sorry, amigo, you didn't ace this one. I think you need an update.", "expression": "neutral", "side": "right" },
+      { "actor": "Randi", "line": "And now she's escapin!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE. I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Randi", "line": "We don't got an hour, Mintwo! She's escapin'!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "Doc", "line": "Hey, you guys need a little help?", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Doc Sandwich! You're back! That was fast!", "expression": "shocked" },
+    { "actor": "Doc", "line": "Yeah, it's just right over there. And uh... I don't wanna get into your business, but it seems like you haven't made a ton of progress.", "expression": "neutral" },
+    { "actor": "Doc", "line": "But you do have this cool robot. So that's nice for ya. Me, I always liked robots. Anyhow, I guess I'll be goin'! ", "expression": "neutral" },
+    { "actor": "Doc", "line": "I got a lot of sandwiches to assemble!", "expression": "neutral" },
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "ASSEMBLE? ASSEMBLE SANDWICHES?", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "SANDWICHES? MAKE...SAND...WICHES?", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "SANDWICHES? ...I HAVE HEARD MUCH OF SANDWICHES. A DELICACY AMONG THE FLESH-BODIED.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "Doc", "line": "Yeah, friendly robot! I got a whole stand over there.  Make sandwiches all the time.", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Guys! Minty's getting away!", "expression": "shocked" },
+    { "actor": "Doc", "line": "Oh, right! Well lemme just get on toppa that! Robot, you wanna help me out?", "expression": "neutral" },
+    { "actor": "Doc", "line": "You catch her, I'll hold onto her with this bread. Make a little Pupwich!", "expression": "neutral" },
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "THIS IS WHAT I WAS BUILT FOR.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "UPDATING....UPDATING.... UPDATING... YES.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "ROUND TWO.", "expression": "neutral", "side": "right" }
+      ]
+    }
+  ]
+}

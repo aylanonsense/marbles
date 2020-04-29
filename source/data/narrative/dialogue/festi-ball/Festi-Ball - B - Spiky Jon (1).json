@@ -1,0 +1,50 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "SpikyJon", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Okay. Okay, it's fine. I might be alone, but I can do this. I believe in myself.", "expression": "neutral" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "I've just gotta--", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "Prota! It's me! Your friend Spiky Jon! ", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Oh hey!", "expression": "shocked" },
+    { "actor": "SpikyJon", "line": "You helped me find my calling. And now I'm gonna help you catch Minty! WITH THIS!", "expression": "happy" },
+    {
+      "if": "TarotScoreisFail",
+      "then": [
+        { "actor": "Prota", "line": "A... baseball bat?! Uhh....", "expression": "shocked" },
+        { "actor": "SpikyJon", "line": "Don't worry! It's not to hit Minty with. ", "expression": "happy" },
+        { "actor": "SpikyJon", "line": "I took your advice! And I became a vigilante!", "expression": "happy" },
+        { "actor": "Prota", "line": "I took your advice! And I became a vigilante!", "expression": "confused" },
+        { "actor": "SpikyJon", "line": "I know! At the time, I told you it was a secret. But TA-DA! Secret revealed! Vigilante Jon!", "expression": "happy" },
+        { "actor": "Prota", "line": "Wow. And your weapon of choice is a...baseball bat?", "expression": "confused" },
+        { "actor": "SpikyJon", "line": "Don't think of it as a weapon. It's more of a... tool! Yeah!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "TarotScoreisNormal",
+      "then": [
+        { "actor": "Prota", "line": "A...giant mozzarella stick? Uhh...", "expression": "shocked" },
+        { "actor": "SpikyJon", "line": "Don't worry! As long as she doesn't eat it...", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "TarotScoreisSpecial",
+      "then": [
+        { "actor": "Prota", "line": "A...document tube? Uh...", "expression": "shocked" },
+        { "actor": "SpikyJon", "line": "It's a blueprint. You know, like an architect. But right now, the tube's more important!", "expression": "neutral" }
+      ]
+    },
+    { "actor": "SpikyJon", "line": "I'm gonna use it to vault over here and perform my own finishing move! It's called...", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "The Spiky Plex! ", "expression": "happy" },
+    { "actor": "Prota", "line": "Wow!", "expression": "shocked" },
+    { "actor": "SpikyJon", "line": "I know, it's probably ridiculous, right? Should I do something else? It's a really good move!", "expression": "confused" },
+    { "actor": "Prota", "line": "No no! Do it!", "expression": "neutral" },
+    { "actor": "Minty", "line": "Bark!", "expression": "neutral", "side": "right" }
+  ]
+}

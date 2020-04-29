@@ -1,0 +1,93 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "SpikyJon", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Teens", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked", "side": "right" },
+    { "action": "change-location", "location": "CatchMintyCin" },
+    { "action": "change-location", "location": "FestiBallRing" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "It worked! Aw Minty! You're back where you belong!", "expression": "happy" },
+    { "actor": "Teens", "line": "In the arms of a total nerd.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "...Just to check, you're using that affectionately at this point, right?", "expression": "thinking" },
+    { "actor": "Teens", "line": "Obviously.", "expression": "confused" },
+    { "actor": "SpikyJon", "line": "Did you see that?! That was my best Spiky Plex ever!", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "It was really cool. As expected.", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Yeah, we called it.", "expression": "confused" }, 
+    { "actor": "Prota", "line": "You really saved the day. ", "expression": "happy" },
+    { "actor": "SpikyJon", "line": "...huh. I guess I did.", "expression": "thinking", "side": "right" },
+    { "actor": "SpikyJon", "line": "All in a day's work for...", "expression": "happy" },
+  {
+      "if": "TarotScoreisFail",
+      "then": [
+        { "actor": "SpikyJon", "line": "Spiky Jon: MASKED VIGILANTE!", "expression": "happy" },
+        { "actor": "Prota", "line": "Mask?", "expression": "confused" },
+        { "actor": "SpikyJon", "line": "It hasn't arrived yet. But when it does, watch out, bad guys! ", "expression": "neutral" },
+            { "actor": "Teens", "line": "Whoa. You're a vigilante?", "expression": "happy", "side": "right" }
+      ]
+    },
+    {
+      "if": "TarotScoreisNormal",
+      "then": [
+        { "actor": "SpikyJon", "line": "Spiky Jon: COMPETIVE EATER!", "expression": "happy" },
+        { "actor": "Teens", "line": "Whoa. You're a competitive eater?", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "TarotScoreisSpecial",
+      "then": [
+        { "actor": "SpikyJon", "line": "Spiky Jon: ARCHITECT!", "expression": "happy" },
+        { "actor": "Teens", "line": "Whoa. You're an architect?", "expression": "confused", "side": "right" }
+      ]
+    },
+    { "actor": "SpikyJon", "line": "Well, yeah. What did you think?", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "We saw you practicing your moves at the skate park. ", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "We just assumed you were a pro wrestler. A really, really good one.", "expression": "confused" },
+    { "actor": "SpikyJon", "line": "Ha! Nah, that's just a silly hobby...", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "Well you're great at it. Maybe you should make it more than a hobby.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Yeah, maybe you should. I'm sure my Mom could help you.", "expression": "confused" },
+      {
+      "if": "TarotScoreisFail",
+      "then": [
+        { "actor": "Teens", "line": "Plus your name could be THE MASK OF MAYHEM!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "TarotScoreisNormal",
+      "then": [
+        { "actor": "Teens", "line": "Plus your name could be THE BIG APPETITE!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "TarotScoreisSpecial",
+      "then": [
+        { "actor": "Teens", "line": "Plus your name could be THE ARCHITECT OF DESTRUCTION!", "expression": "confused" }
+      ]
+    },
+    { "actor": "SpikyJon", "line": "Oh wow... WOW! I never thought of that. You really think I could do that?", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Hundo P.", "expression": "confused", "side": "right" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Hmmm... Well... if I was gonna do that, I'd probably need a new look.", "expression": "thinking", "side": "right" },
+    { "actor": "Teens", "line": "New look? Nah, your look's what caught our attention. ", "expression": "neutral", "side": "right" },
+   { "actor": "Teens", "line": "Before all this went down, I was going to ask you who did your spikes.", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "Oh! That's Bingo the Barber. She's got a stall set up just down there.", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "...Seriously?", "expression": "neutral", "side": "right" },
+    { "actor": "SpikyJon", "line": "Yeah! Heck, you could go right now.", "expression": "happy", "side": "right" },
+        { "actor": "Teens", "line": "Dope. Can you come with us? So she can get the look just right.", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Uh, sure! Yeah! Of course! Maybe you can help name my other moves, too!", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "Sweet.", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Nerd, you wanna join us?", "expression": "confused" },
+    { "actor": "Prota", "line": "I should probably take Minty to see my parents. But tomorrow I'll talk to Mom about that training!", "expression": "happy" },
+   { "actor": "Prota", "line": "You could all join her class if you want!", "expression": "happy" },
+   { "actor": "SpikyJon", "line": "That would be great!", "expression": "happy", "side": "right" },
+   { "actor": "Teens", "line": "Yeah, count us in.", "expression": "neutral", "side": "right" },
+   { "actor": "Prota", "line": "Perfect! See you then!", "expression": "happy" },
+   { "actor": "SpikyJon", "line": "Bye, Prota!", "expression": "happy", "side": "right" }
+  ]
+}

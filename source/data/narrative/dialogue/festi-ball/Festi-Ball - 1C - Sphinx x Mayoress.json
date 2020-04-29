@@ -1,0 +1,39 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Mayoress", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "YS", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "What the-- It didn't work!", "expression": "confused" },
+    { "actor": "Mayoress", "line": "Impossible! Minty must be so bereft of civic responsibility that it had no effect! ", "expression": "shocked", "side": "right" },
+    { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
+    { "actor": "Mayoress", "line": "She loves it! She embraces chaos!", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "I need to rethink my approach... How can I better convey the importance of safety..?", "expression": "thinking" },
+    { "actor": "Mayoress", "line": "I could bring her to Security City... But she'd only run away. Hmmm...", "expression": "thinking" },
+    { "actor": "YS", "line": "Greetings, Mother.", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "Yung Sphinx! Baby, what are you doing here? You're supposed to be in the ball pit!", "expression": "confused", "side": "right" },
+    { "actor": "YS", "line": "No pit of balls can contain me.", "expression": "neutral", "side": "right" },
+    { "actor": "YS", "line": "And I am here...to help!", "expression": "neutral" },
+    { "actor": "Mayoress", "line": "You're so cute. But it's okay, Mommy's got this one.", "expression": "happy", "side": "right" },
+    { "actor": "YS", "line": "It would appear, Mother, that you have got nothing. ", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "Yung Sphinx, at least call me \"Mom\" or something.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "\"Mummy\" would probably be cute.", "expression": "happy" },
+    { "actor": "Mayoress", "line": "That's what I said, \"Mommy\". ", "expression": "confused" },
+    { "actor": "Prota", "line": "No, I mean \"Mummy\". ", "expression": "neutral" },
+    { "actor": "Mayoress", "line": "I'm not hearing the difference. ", "expression": "neutral" },
+    { "actor": "Prota", "line": "I mean M-U-M-M-Y. Like with the bandages. ", "expression": "neutral" },
+    { "actor": "YS", "line": "Why would that be funny? ", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "...Nevermind, keep talking.", "expression": "neutral" },
+    { "actor": "YS", "line": "Mother, we can waste no more time. We must join forces and use our combined energies. ", "expression": "neutral" },
+    { "actor": "Mayoress", "line": "Aw! I would love that, Sphinx! Yes! Bonding time!", "expression": "neutral", "side": "right" },
+    { "actor": "YS", "line": "Shall we then?", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "line": "Bark, bark!", "expression": "happy", "side": "right" },
+    { "actor": "YS", "line": "Minty... Prepare yourself. For now, you face...", "expression": "neutral", "side": "right" },
+    { "actor": "YS", "line": "ANCIENT POWER!", "expression": "shocked" }
+  ]
+}

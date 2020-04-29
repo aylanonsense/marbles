@@ -1,0 +1,16 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Teens", "expression": "neutral", "right" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Teens", "line": "Whoa that's one tough dog. We just got dunked on!", "expression": "neutral" },
+    { "actor": "Prota", "line": "It's okay! You've got her on the ropes! I'll take it from here!", "expression": "neutral" },
+    { "actor": "Teens", "line": "You can do it, Prota! We believe in you!", "expression": "happy" },
+    { "actor": "Teens", "line": "Or something.", "expression": "neutral" }
+  ]
+}

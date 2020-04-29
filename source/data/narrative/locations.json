@@ -26,8 +26,11 @@
   "SafetyTown": {
     "image": "/images/narrative/locations/safety-town.png"
   },
-  "Festiball": {
-    "image": "/images/narrative/locations/festiball.png"
+  "FestiBall": {
+    "image": "/images/narrative/locations/festi-ball.png"
+  },
+  "FestiBallRing": {
+    "image": "/images/narrative/locations/debug.png"
   },
   "MarbelsLab": {
     "image": "/images/narrative/locations/marbels-lab.png"

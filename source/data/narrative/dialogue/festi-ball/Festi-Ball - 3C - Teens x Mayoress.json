@@ -1,0 +1,43 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Mayoress", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Teens", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "What the-- It didn't work!", "expression": "confused" },
+    { "actor": "Mayoress", "line": "Impossible! Minty must be so bereft of civic responsibility that it had no effect! ", "expression": "shocked", "side": "right" },
+    { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "Hey Prota. You still need help?", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Teens! You're back!", "expression": "shocked" },
+    { "actor": "Mayoress", "line": "Ah. Speaking of \"bereft of civic responsibility\"...", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Not so, Mayoress! We're here to lend a hand. ", "expression": "neutral", "side": "right" },
+     { "actor": "Teens", "line": "We stand behind the mayoral office 100%!", "expression": "happy" },
+    { "actor": "Prota", "line": "What? Shouldn't you... hate following the rules?", "expression": "confused" },
+    { "actor": "Teens", "line": "Oh, we do. It's for nerds.", "expression": "neutral" },
+    { "actor": "Teens", "line": "But we also think demons are dope.", "expression": "happy" },
+    { "actor": "Teens", "line": "Yeah, Mayoress, you're metal AF.", "expression": "confused" },
+    { "actor": "Mayoress", "line": "Language!", "expression": "shocked", "side": "right" },
+    { "actor": "Teens", "line": "Ugh, it means \"at fighting\". That's why we're here to help.", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "We went and got everything we need. Candles. Crystals. Chalk.", "expression": "confused" }, 
+    { "actor": "Prota", "line": "What are those for?", "expression": "confused" },
+    { "actor": "Teens", "line": "How do you not know about this? It's obviously so we can perform the Sacrament of Strength.", "expression": "happy", "side": "right" },
+    { "actor": "Mayoress", "line": "You know about that?!", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Duh. Sure, we skipped our mandated Security City courses...", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "But we loved our time at the Summoning Township.", "expression": "confused" },
+    { "actor": "Mayoress", "line": "...Very well. Prota: stand back.", "expression": "confused", "side": "right" },
+    { "actor": "Minty", "line": "Bark, bark?", "expression": "confused", "side": "right" },
+    { "actor": "Teens", "line": "Verus tempus est hic...", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Quod oriri et daemonium ...", "expression": "happy" },
+    { "actor": "Teens", "line": "Et hoc capite canem!!", "expression": "confused" },
+    { "actor": "Mayoress", "line": "Rrraaaggh! I am imbued with the power of community leadership! ", "expression": "shocked", "side": "right" },
+    { "actor": "Mayoress", "line": "MINTY...", "expression": "neutral" },
+    { "actor": "Minty", "line": "Bark?!", "expression": "shocked", "side": "right" },
+    { "actor": "Mayoress", "line": "You have engaged a power the likes of which you cannot understand...", "expression": "happy" },
+    { "actor": "Mayoress", "line": "EN GARDE!", "expression": "happy" }
+  ]
+}

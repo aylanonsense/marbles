@@ -1,0 +1,59 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Randi", "expression": "neutral" },
+    { "actor": "Trashbot", "expression": "neutral" },
+    { "actor": "Goodbot", "expression": "neutral" },
+    { "actor": "Mintwo", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Teens", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "ERROR: TO COMPLETE CATCH MINTY DOT EXE, I WILL REQUIRE AN UPGRADE. UPGRADE WILL TAKE... ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Randi", "line": "An hour?! We don't got this kinda time! She's escapin'!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "SUCCCESS. MINTY HAS BEEN CAUGHT.", "expression": "neutral", "side": "right" },
+        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "confused", "side": "right" },
+        { "actor": "Randi", "line": "Yeah, sorry, amigo, you didn't ace this one. I think you need an update.", "expression": "neutral", "side": "right" },
+      { "actor": "Randi", "line": "And now she's escapin!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE. I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Randi", "line": "We don't got an hour, Mintwo! She's escapin'!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "Teens", "line": "Uh....hey.", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Teens! You're back! Aaaah! I'm so excited!", "expression": "happy" },
+    { "actor": "Teens", "line": "Shh! Don't embarrass us in front of Randi.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Embarrass you? What? Randi's my friend!", "expression": "confused" },
+    { "actor": "Teens", "line": "...What? You're friends with Randi?", "expression": "happy" },
+    { "actor": "Teens", "line": "THE Vintage Viper?!", "expression": "confused" },
+    { "actor": "Teens", "line": "The coolest person in town?", "expression": "confused" },
+    { "actor": "Randi", "line": "...I'm standin' right here. I can hear you.", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Oh...uh... hi Randi!", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Yeah... hi.", "expression": "confused", "side": "right" },
+    { "actor": "Prota", "line": "You guys think Randi's the coolest person in town?", "expression": "confused" },
+    { "actor": "Teens", "line": "Duh. Randi's super dope. The Vintage Viper's got the best clothes. AND robots!", "expression": "happy", "side": "right" },
+    { "actor": "Randi", "line": "Aw heck, you kids are so sweet! Listen, my robot's mid-update... I don't suppose you'd want to lend a hand?", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Sorry, Randi! The Teens already tried to help, but--", "expression": "neutral" },
+    { "actor": "Teens", "line": "No no no no no! We can help!", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "We can totally help! Randi, you can trust us. We'll get it done!", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "Just watch! ", "expression": "confused", "side": "right" },
+    { "actor": "Randi", "line": "I'm watchin'! But I think you should let Prota help, too! She's pretty cool.", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "Totally agreed. Let's do this!", "expression": "confused", "side": "right" },
+    { "actor": "Prota", "line": "Yessss!", "expression": "happy" }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "SpikyJon", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Teens", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "SpikyJon", "line": "What the-- Minty reversed the Spiky Plex! I didn't... I didn't even think that was a thing!", "expression": "shocked", "side": "right" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Oh no! This is really bad news! Uh... uh...", "expression": "confused", "side": "right" },
+    { "actor": "Teens", "line": "Hey.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Teens! You're back!", "expression": "shocked" },
+    { "actor": "Teens", "line": "Yeah. That Spiky Plex was wack.", "expression": "neutral" },
+    { "actor": "Teens", "line": "Really bad.", "expression": "confused" },
+    { "actor": "Teens", "line": "Total nerd move.", "expression": "neutral" },
+    { "actor": "Prota", "line": "...Didn't you JUST say you learned empathy?", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "No, they're right. It was a total nerd move. I guess I should--", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Literally everyone knows the only way to do a Spiky Plex correctly is to believe in yourself.", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Yeah, that's like 101.", "expression": "confused", "side": "right" }, 
+    { "actor": "Prota", "line": "Oh! ", "expression": "shocked" },
+    { "actor": "Prota", "line": "Yeah, you know the Teens are right. You didn't have a lot of confidence going in.", "expression": "happy" },
+    { "actor": "SpikyJon", "line": "You could tell?", "expression": "confused", "side": "right" },
+    { "actor": "Teens", "line": "Duh. It was obvious.", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "So what do I do?!", "expression": "confused", "side": "right" },
+    { "actor": "Teens", "line": "You need to recognize that you're great.", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Your spikes are dope and I love your sunglasses. Vintage Viper?", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Uh...actually, yeah! They are!", "expression": "neutral", "side": "right" },
+    { "actor": "Teens", "line": "Knew it.", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "You know, you're actually one of the coolest people in town. You're like, super talented.", "expression": "confused" },
+    { "actor": "Teens", "line": "We all look up to you for different reasons, 'cause you do so many amazing things.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Yeah! I know we read your fortune, Spiky Jon, but... you can be anything you want to be.", "expression": "happy" },
+    { "actor": "Teens", "line": "The nerd's right. You can. You're both dope and you do dope things.", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "That's...thats so nice of you.", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "Nah. We're not nice. We're just telling the truth. Now let's see that Spiky Plex again.", "expression": "neutral", "side": "right" },
+    { "actor": "SpikyJon", "line": "Okay! Okay! 3...2...1...", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Here we gooooooo!!", "expression": "happy", "side": "right" }
+  ]
+}

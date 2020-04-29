@@ -1,0 +1,45 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Doc", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Ugh! She got out!", "expression": "neutral" },
+    { "actor": "Croco", "line": "And she's climbing to the top rope!", "expression": "shocked", "side": "right" },
+    { "action": "dismiss-actor", "side": "right"},
+    { "actor": "Prota", "line": "Not on my watch. I've gotta--", "expression": "neutral" },
+    { "action": "change-location", "location": "blackscreen" },
+    { "actor": "Doc", "line": "Oh, hey Prota!", "expression": "happy", "side": "right" },
+    { "action": "change-location", "location": "FestiBallRing" },
+    { "actor": "Prota", "line": "Doc Sandwich!", "expression": "shocked" },
+    { "actor": "Doc", "line": "That's me! Hey, I uh, just wanted to thank you! That sandwich you made? ", "expression": "happy" },
+    {
+      "if": "SandwichScoreisNormal",
+      "then": [
+        { "actor": "Doc", "line": "You're really onto somethin', kid! It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "SandwichScoreisSpecial",
+      "then": [
+        { "actor": "Doc", "line": "You're really onto somethin', kid! It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "SandwichScoreisFail",
+      "then": [
+        { "actor": "Doc", "line": "It was a bit of a mess, sure. But your creativity inspired me to make my Festi-Ball sub with the exact opposite flavour profile!", "expression": "happy" }
+      ]
+    },
+    { "actor": "Doc", "line": "It's been a huge hit! I sold outta the first round already! I gotta go back to the shop for more ingredients.", "expression": "happy" },
+    { "actor": "Prota", "line": "Wow that's great to hear. But I really gotta get Minty and--", "expression": "happy" },
+    { "actor": "Doc", "line": "Don't worry, Prota! I'm here to help!", "expression": "happy" },
+    { "actor": "Prota", "line": "What are you gonna do?", "expression": "happy" },
+    { "actor": "Doc", "line": "Eh, just trust me. I'm a doctor!", "expression": "happy" },
+    { "actor": "Minty", "line": "Bark!", "expression": "happy", "side": "right" }
+  ]
+}

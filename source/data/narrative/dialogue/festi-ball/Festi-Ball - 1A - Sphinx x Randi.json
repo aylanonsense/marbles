@@ -1,0 +1,85 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Randi", "expression": "neutral" },
+    { "actor": "Trashbot", "expression": "neutral" },
+    { "actor": "Goodbot", "expression": "neutral" },
+    { "actor": "Mintwo", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "YS", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "ERROR: TO COMPLETE CATCH MINTY DOT EXE, I WILL REQUIRE AN UPGRADE. UPGRADE WILL TAKE... ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Randi", "line": "An hour?! We don't got this kinda time! She's escapin'!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "SUCCCESS. MINTY HAS BEEN CAUGHT.", "expression": "neutral", "side": "right" },
+        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "confused", "side": "right" },
+        { "actor": "Randi", "line": "Yeah, sorry, amigo, you didn't ace this one. I think you need an update.", "expression": "neutral", "side": "right" },
+      { "actor": "Randi", "line": "And now she's escapin!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE. I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Randi", "line": "We don't got an hour, Mintwo! She's escapin'!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "YS", "line": "THERE IS NO ESCAPE FROM FATE.", "expression": "shocked", "side": "right" },
+    { "actor": "Prota", "line": "Yung Sphinx! You're back!", "expression": "shocked" },
+    { "actor": "YS", "line": "I am back. No updates will be necessary. ROBOT! Join with me. ", "expression": "neutral" },
+    { "actor": "YS", "line": "Together, we possess the powers of the technological and the cosmic.  ", "expression": "neutral" },
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "INITATIATING BATTLE FORMATION WITH THE YUNG SPHINX.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "SCANNING... HELMO, SMALL CAT. I WILL FIGHT WITH YOU.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "YES. GOOD. I WILL FIGHT ALONGSIDE YOU, STRANGE CREATURE.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "YS", "line": "Minty will submit to our tag team finisher....", "expression": "neutral", "side": "right" },
+    { "actor": "YS", "line": "FUTURE SHOCK!", "expression": "shocked" },
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked" },
+    { "actor": "YS", "line": "Minty's canine intellect will be no match for the combination of cerebral challenge and cosmic riddling!", "expression": "shocked" },
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "ENGAGE!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "ENGAGE!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "ENGAGE!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "Prota", "line": "Yessss!", "expression": "happy" },
+    { "actor": "YS", "line": "LET US PROCEED!", "expression": "shocked", "side": "right" },
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "YS", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "YS", "line": "Minty is a formidable opponent! I am defeated.", "expression": "neutral" },
+    { "actor": "YS", "line": "For now. But she is on the ropes. And you will capture her shortly.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Thanks, Sphinx! I'll take it from here!", "expression": "happy" }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "SpikyJon", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Doc", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "SpikyJon", "line": "What the-- Minty reversed the Spiky Plex! I didn't... I didn't even think that was a thing!", "expression": "shocked", "side": "right" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Oh no! This is really bad news! Uh... uh...", "expression": "confused", "side": "right" },
+    { "actor": "Doc", "line": "Hey Prota! Hey Spiky Jon. I'm back from the shop. You takin' a stab at catchin' Minty?", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Trying!", "expression": "confused" },
+    { "actor": "Doc", "line": "Cool! Well, I guess I'll head off. But uh... if you don't mind me sayin', Jon, your form could use a little work.", "expression": "happy" },
+    { "actor": "SpikyJon", "line": "My form? ", "expression": "confused", "side": "right" },
+    { "actor": "Doc", "line": "Yeah. I ain't a nosey nellie or nothin', but comin' back I noticed you weren't tuckin' your head in quite right.", "expression": "neutral", "side": "right" },
+    { "actor": "Doc", "line": "You do that, you're more likely to get a sprain than catch a dog.", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "Huh. You know a lot about wrestling?", "expression": "shocked", "side": "right" },
+    { "actor": "Doc", "line": "Eh, a bit. But I know a lot about sprains--After all, I'm a doctor. ", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Oh! Well, what if I bent just a little more?", "expression": "shocked", "side": "right" },
+    { "actor": "Doc", "line": "Yeah, that'd help. You really wanna engage your shoulders, tuck the neck, and launch yourself.", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "Get your form right, you can't miss!", "expression": "happy" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "Probably be even better if Prota helped you. I'd do it, but I got all these ingredients...", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "No! It's no problem! Let's do this, Jon!", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "I'm ready! 3...2...1!", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Let's gooooo!", "expression": "happy" }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "YS", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Ugh! She got out!", "expression": "neutral" },
+    { "actor": "Croco", "line": "And she's climbing to the top rope!", "expression": "shocked", "side": "right" },
+    { "action": "dismiss-actor", "side": "right"},
+    { "actor": "Prota", "line": "Not on my watch. I've gotta--", "expression": "neutral" },
+    { "action": "change-location", "location": "blackscreen" },
+    { "actor": "Prota", "line": "Uh... what?", "expression": "shocked" },
+    { "action": "change-location", "location": "FestiBallRing" },
+    { "actor": "YS", "line": "It is I.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Yung Sphinx?!", "expression": "confused" },
+    { "actor": "YS", "line": "The Young Sphinx.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Yung Sphinx, I need you to scootch over, I've gotta get Minty down right now, okay?", "expression": "neutral" },
+    { "actor": "YS", "line": "There will be no scootching.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Yung Sphinx--", "expression": "neutral" },
+    { "actor": "YS", "line": "For I come to convey a message. A message...about your future.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Yung Sphinx, I swear. ", "expression": "neutral" },
+    { "actor": "YS", "line": "You needn't. For it has been prophecied...", "expression": "neutral" },
+    { "actor": "YS", "line": "THAT MINTY WILL SLIP AND FALL FROM THE TOP ROPE.", "expression": "shocked" },
+    { "actor": "Prota", "line": "What are you talking about?! She's just gonna-- oh my gosh! She fell!", "expression": "shocked" },
+    { "actor": "Prota", "line": "How did you know?!", "expression": "confused" },
+    { "actor": "YS", "line": "I have unlocked the arcane wisdom known only to those who are schooled at home. ", "expression": "neutral" },
+    { "actor": "Prota", "line": "Wow! That's amazing!", "expression": "happy" },
+    { "actor": "YS", "line": "Yes. I am amazing. And you took time, at the daycare, to answer my riddles. For this I am grateful.", "expression": "neutral" },
+    { "actor": "YS", "line": "Thus, I will perform for you a second favour. I will capture your dog.", "expression": "neutral" },
+    { "actor": "Minty", "line": "Bark!", "expression": "neutral", "side": "right" },
+    { "actor": "YS", "line": "Minty...", "expression": "neutral", "side": "right" },
+    { "actor": "YS", "line": "RIDDLE ME THIS!", "expression": "shocked", "side": "right" }
+  ]
+}

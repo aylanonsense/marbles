@@ -1,0 +1,40 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Mayoress", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Doc", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "What the-- It didn't work!", "expression": "confused" },
+    { "actor": "Mayoress", "line": "Impossible! Minty must be so bereft of civic responsibility that it had no effect! ", "expression": "shocked", "side": "right" },
+    { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
+    { "actor": "Mayoress", "line": "She loves it! She embraces chaos!", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "I need to rethink my approach... How can I better convey the importance of safety..?", "expression": "thinking" },
+    { "actor": "Doc", "line": "Hey! You still tryin' to catch that dog?", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Doc Sandwich! You're back!", "expression": "neutral" },
+    { "actor": "Doc", "line": "Yeah, sorry, don't mind me. I'm just passin' through. Quickest way back to my stall.", "expression": "neutral" },
+    { "actor": "Mayoress", "line": "Doctor Sandwich! ", "expression": "shocked", "side": "right" },
+    { "actor": "Doc", "line": "Uh oh.", "expression": "shocked", "side": "right" },
+    { "actor": "Mayoress", "line": "You were due at Security City TWO WEEKS AGO! And you never showed!", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Oh my gosh! Doc Sandwich, did you commit a crime?", "expression": "shocked" },
+    { "actor": "Doc", "line": "I mean, I don't know...", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "Oh yes. Doctor Sandwich transgressed at the grocery store...", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "When he brought SIX ITEMS to the FIVES ITEMS OR FEWER CASH!", "expression": "shocked" },
+    { "actor": "Doc", "line": "Look, it was a loaf of bread, a slab o' ham, a head o' lettice, a jar o' mayo and two onions.", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "That is SIX ITEMS.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Were the two onions in one bag?", "expression": "thinking" },
+    { "actor": "Doc", "line": "Yes!", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "It's SIX ITEMS. And for your delinquency...there will be consequences.", "expression": "neutral", "side": "right" },
+    { "actor": "Doc", "line": "What, I gotta wear an onion hat or somethin'?", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "No. You must perform an act of community service...right now!", "expression": "happy", "side": "right" },
+    { "actor": "Mayoress", "line": "Catch that dog!", "expression": "neutral" },
+    { "actor": "Doc", "line": "What!", "expression": "shocked", "side": "right" },
+    { "actor": "Doc", "line": "Well, all right. Let's go, Minty. Round Two!", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "line": "Bark, bark!", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Yesss!", "expression": "happy" }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "SpikyJon", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Doc", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked", "side": "right" },
+    { "action": "change-location", "location": "CatchMintyCin" },
+    { "action": "change-location", "location": "FestiBallRing" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "It worked! Aw Minty! You're back!", "expression": "happy" },
+    { "actor": "SpikyJon", "line": "Wow! I feel great, too! I usually get a bit of a sore neck after I do that. ", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Thanks for the advice, Doc! ", "expression": "happy" },
+    { "actor": "Doc", "line": "Eh, no problem. Just happy to help. ", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "And for what it's worth, that was a real good move. You ever think about becoming a wrestler?", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "ALL. THE. TIME.", "expression": "shocked", "side": "right" },
+    { "actor": "Prota", "line": "What? You didn't mention that!", "expression": "confused" },
+    { "actor": "SpikyJon", "line": "Yeah, I'm kinda whimsical.", "expression": "neutral" },
+    { "actor": "Doc", "line": "Well, with skills like that you oughta do it! You got a real bright future, kid.", "expression": "neutral", "side": "right" },
+    { "actor": "SpikyJon", "line": "Maybe I do! But... I don't suppose you'd be willing to... coach me? You're pretty good at it.", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "Me? A coach?", "expression": "neutral", "side": "right" },
+    { "actor": "Doc", "line": "I don't know if I'd be any good...", "expression": "neutral" },
+    { "actor": "Prota", "line": "I think you'd be great, Doc! You coached me through making that sandwich!", "expression": "happy" },
+    { "actor": "Doc", "line": "Hm. Guess I did. Yeah, you know what? I'd love a little side gig. And wrestling's pretty fun, too!", "expression": "neutral" },
+    { "actor": "Doc", "line": "Sure, I'll be your coach!", "expression": "happy" },
+    { "actor": "Minty", "line": "Bark!", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "Anyhow, I gotta get back to my stall and get started on my next batch o' sandos.", "expression": "neutral" },
+    { "actor": "SpikyJon", "line": "Would you...maybe want some help with that? Little skill trade?", "expression": "neutral", "side": "right" },
+    { "actor": "Doc", "line": "Sure! That'd be great! Prota, you wanna come hang out?", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Maybe later. For now, I should get Minty back to my family.", "expression": "happy" },
+    { "actor": "Doc", "line": "Loud and clear! Have a great night!", "expression": "happy", "side": "right" },
+    { "actor": "SpikyJon", "line": "Yeah! Thanks for everything, Prota!", "expression": "happy", "side": "right" }
+  ]
+}

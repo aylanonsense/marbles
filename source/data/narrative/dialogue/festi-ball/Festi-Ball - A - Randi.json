@@ -1,0 +1,55 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Randi", "expression": "neutral" },
+    { "actor": "Trashbot", "expression": "neutral" },
+    { "actor": "Goodbot", "expression": "neutral" },
+    { "actor": "Mintwo", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Okay. Okay, it's fine. I might be alone, but I can do this. I believe in myself.", "expression": "neutral" },
+    { "actor": "Minty", "line": "Bark bark!", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "I've just gotta--", "expression": "neutral" },
+    { "actor": "Randi", "line": "Well paint me scaly an' call me a lizard! You think you're alone?!", "expression": "happy", "side": "right" },
+    { "actor": "Randi", "line": "You ain't never alone in Pomegranate Village! I mean, unless you want to be. Then you can be.", "expression": "happy" },
+    { "actor": "Randi", "line": "Pretty much what I'm sayin' is, you ain't alone right now. We're here to help!", "expression": "happy" },
+    { "actor": "Prota", "line": "We?", "expression": "confused" },
+    { "actor": "Randi", "line": "Yeah, you didn't think I came to this Festi-Ball alone, didja? ", "expression": "happy" },
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "HELLO PROTA. I HAVE ARRIVED TO ASSIST YOU IN CATCHING YOUR DOG.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "HENLO PERTA. I HAVE ARRIVED TO HELP CATCH MONTY!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisSpecial",
+      "then": [
+        { "actor": "Mintwo", "line": "GREETINGS. I AM PLEASED TO FINALLY MEET MY FLESHY COUNTERPART.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "Prota", "line": "Amazing!", "expression": "happy" },
+    {
+      "if": "ViperScoreisNormal",
+      "then": [
+        { "actor": "Goodbot", "line": "RUNNING PROTOCOL... CATCH MINTY DOT EXE", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": "ViperScoreisFail",
+      "then": [
+        { "actor": "Trashbot", "line": "RUNNING PROTOCOL... CARTCH MINDY DOT JPEG", "expression": "neutral", "side": "right" }
+      ]
+    },
+    { "actor": "Minty", "line": "Bark!", "expression": "neutral", "side": "right" }
+  ]
+}

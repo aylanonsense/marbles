@@ -1,0 +1,34 @@
+{
+  "location": "FestiBallRing",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Mayoress", "expression": "neutral" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Doc", "expression": "neutral" },
+    { "actor": "Croco", "expression": "neutral" }
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked" },
+    { "action": "change-location", "location": "CatchMintyCin" },
+    { "action": "change-location", "location": "FestiBallRing" },
+    { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },,
+    { "actor": "Prota", "line": "It worked! Aw Minty! You're back! That was great, Doc!", "expression": "happy" },
+    { "actor": "Doc", "line": "Eh, it wasn't nothin'.", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "No, Doctor. It was something. Something beautiful.", "expression": "neutral", "side": "right" },
+    { "actor": "Mayoress", "line": "It was your civic duty.", "expression": "happy" },
+    { "actor": "Doc", "line": "Nice.", "expression": "happy", "side": "right" },
+    { "actor": "Mayoress", "line": "And for your service, I will forgive your oniony crimes. ", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "Oh great! Much appreciated, Mayoress.", "expression": "happy", "side": "right" },
+    { "actor": "Mayoress", "line": "Under one condition.", "expression": "neutral", "side": "right" },
+    { "actor": "Doc", "line": "Condition?!", "expression": "confused", "side": "right" },
+    { "actor": "Mayoress", "line": "I get to be first in line for the next batch of sandwiches!", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Ha!", "expression": "happy" },
+    { "actor": "Doc", "line": "Yeah, I think that could be arranged.", "expression": "happy", "side": "right" },
+    { "actor": "Mayoress", "line": "It doesn't count as line-cutting if you make a reservation with the business.", "expression": "neutral", "side": "right" },
+    { "actor": "Doc", "line": "Hey, I'll allow it. Prota, you want in on this deal, too? I'll even throw one in for Minty!", "expression": "happy", "side": "right" },    
+    { "actor": "Prota", "line": "I'll take a rain check. I should get back to my parents now! But I'll see you both later?", "expression": "happy" },
+    { "actor": "Mayoress", "line": "That you will!", "expression": "happy", "side": "right" },
+    { "actor": "Doc", "line": "Yep! I'll catch you at the shop sometime.", "expression": "neutral", "side": "right" }
+  ]
+}

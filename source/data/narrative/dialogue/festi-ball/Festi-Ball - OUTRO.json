@@ -1,0 +1,36 @@
+{
+  "location": "FestiBall",
+  "actors": [
+    { "actor": "Prota", "expression": "confused", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Mom", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Dad", "expression": "neutral" },
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Hey Mom! Hey Dad!", "expression": "happy" },
+    { "actor": "Mom", "line": "Prota!", "expression": "shocked", "side": "right" },
+    { "actor": "Dad", "line": "Prota!", "expression": "shocked", "side": "right" },
+    { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
+    { "actor": "Mom", "line": "Prota, that was great! You really put the \"entertainment\" in \"sports entertainment\"!", "expression": "happy", "side": "right" },
+    { "actor": "Dad", "line": "It's true. Heck of a thing to watch. You and your friends really did something special.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Thanks! I couldn't have gotten Minty back without them.", "expression": "happy" },
+    { "actor": "Mom", "line": "She had us so worried.", "expression": "happy", "side": "right" },
+    { "actor": "Minty", "line": "Bark.", "expression": "happy", "side": "right" },
+    { "actor": "Dad", "line": "But with our little buddy back on her leash... What should we do now, Prota? ", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Hmm...", "expression": "thinking" },
+    { "actor": "Prota", "line": "...", "expression": "thinking" },
+    { "actor": "Prota", "line": "...", "expression": "confused" },
+    { "actor": "Prota", "line": "", "expression": "neutral" },
+    { "actor": "Prota", "line": "", "expression": "happy" },
+    { "actor": "Mom", "line": "Uh...Prota?", "expression": "confused", "side": "right" },
+    { "actor": "Dad", "line": "You okay there, bud?", "expression": "confused", "side": "right" },
+    { "actor": "Prota", "line": "Oh my gosh! I think it wore off!", "expression": "shocked" },
+    { "actor": "Mom", "line": "What wore off?", "expression": "confused" },
+    { "actor": "Prota", "line": "It's... a long story.", "expression": "neutral" },
+    { "actor": "Prota", "line": "And I'll tell you everything on the way home!", "expression": "happy" },
+    { "actor": "Prota", "line": "But for now, let's just enjoy the rest of the Festi-Ball.", "expression": "happy" },
+    { "actor": "Prota", "line": "I think we've earned it.", "expression": "happy" },
+    { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" }
+    ]
+}
