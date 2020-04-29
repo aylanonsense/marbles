@@ -5,7 +5,7 @@
     { "actor": "YS", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "YS", "line": "Minty is a formidable opponent! I am defeated.", "expression": "neutral" },
+    { "actor": "YS", "line": "Minty is a formidable opponent! I am defeated.", "expression": "neutral", "side": "right" },
     { "actor": "YS", "line": "For now. But she is on the ropes. And you will capture her shortly.", "expression": "neutral" },
     { "actor": "Prota", "line": "Thanks, Sphinx! I'll take it from here!", "expression": "happy" }
   ]

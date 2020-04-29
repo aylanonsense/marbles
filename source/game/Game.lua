@@ -86,7 +86,8 @@ function Game:playNextStorylineScene()
         end
       end)
     elseif config.SHOW_DEBUG_SCREENS and sceneData.dialogue then
-      Scene.setScene(DialogueSimulationScene(sceneData.dialogue), function(shouldPlayDialogue)
+      local dialogueFileName = self:getDialogueFileName(sceneData)
+      Scene.setScene(DialogueSimulationScene(dialogueFileName), function(shouldPlayDialogue)
         if shouldPlayDialogue then
           local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
           Scene.setScene(scene, advance)
@@ -144,7 +145,8 @@ function Game:createStorylineScene(storylineData, stage)
       musicPlayer:setVolume(config.MUSIC_VOLUME)
     end
     if sceneData.dialogue then
-      local dialogueData = loadJsonFile("/data/narrative/dialogue/" .. sceneData.dialogue .. ".json")
+      local dialogueFileName = self:getDialogueFileName(sceneData)
+      local dialogueData = loadJsonFile("/data/narrative/dialogue/" .. dialogueFileName .. ".json")
       return DialogueScene(dialogueData, musicPlayer)
     elseif sceneData.maze then
       local mazeData = loadJsonFile("/data/levels/" .. sceneData.maze .. "-play.json")
@@ -173,4 +175,28 @@ end
 
 function Game:recordActorVariant(actor, variant)
   self.playthrough.actorVariants[actor] = variant
+end
+
+function Game:playedThroughStoryline(storylineName)
+  for _, storyline in ipairs(self.playthrough.finishedStorylines) do
+    if storyline.name == storylineName then
+      return true
+    end
+  end
+  return false
+end
+
+function Game:getDialogueFileName(sceneData)
+  local dialogueFileName = sceneData.dialogue
+  -- For the festiball, process the file name as nested conditionals
+  while dialogueFileName and type(dialogueFileName) == "table" do
+    local obj = dialogueFileName
+    dialogueFileName = nil
+    for storylineName, result in pairs(obj) do
+      if self:playedThroughStoryline(storylineName) then
+        dialogueFileName = result
+      end
+    end
+  end
+  return dialogueFileName
 end

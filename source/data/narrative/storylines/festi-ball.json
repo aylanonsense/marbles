@@ -1,0 +1,88 @@
+{
+  "scenes": [
+    {
+      "dialogue": "festi-ball/FestiBall_i__Intro",
+      "music": "festi-ball-dialogue"
+    },
+
+
+
+    {
+      "dialogue": {
+        "daycare": "festi-ball/FestiBall_ii__1_Sphinx",
+        "sandwich-shop": "festi-ball/FestiBall_ii__2_Doc",
+        "skate-park": "festi-ball/FestiBall_ii__3_Teens"
+      },
+      "music": "festi-ball-dialogue"
+    },
+
+
+
+    {
+      "dialogue": {
+        "daycare": "festi-ball/FestiBall_iii__1.1_Sphinx",
+        "sandwich-shop": "festi-ball/FestiBall_iii__2.1_Doc",
+        "skate-park": "festi-ball/FestiBall_iii__3.1_Teens"
+      },
+      "music": "festi-ball-dialogue"
+    },
+    {
+      "dialogue": {
+        "vintage-viper": "festi-ball/FestiBall_iv__A_Randi",
+        "pickle-yard": "festi-ball/FestiBall_iv__B_Jon",
+        "security-city": "festi-ball/FestiBall_iv__C_Mayoress"
+      },
+      "music": "festi-ball-dialogue"
+    },
+
+
+
+    {
+      "dialogue": {
+        "daycare": {
+          "vintage-viper": "festi-ball/FestiBall_v__1A_Sphinx_x_Randi",
+          "pickle-yard": "festi-ball/FestiBall_v__1B_Sphinx_x_Jon",
+          "security-city": "festi-ball/FestiBall_v__1C_Sphinx_x_Mayoress"
+        },
+        "sandwich-shop": {
+          "vintage-viper": "festi-ball/FestiBall_v__2A_Doc_x_Randi",
+          "pickle-yard": "festi-ball/FestiBall_v__2B_Doc_x_Jon",
+          "security-city": "festi-ball/FestiBall_v__2C_Doc_x_Mayoress"
+        },
+        "skate-park": {
+          "vintage-viper": "festi-ball/FestiBall_v__3A_Teens_x_Randi",
+          "pickle-yard": "festi-ball/FestiBall_v__3B_Teens_x_Jon",
+          "security-city": "festi-ball/FestiBall_v__3C_Teens_x_Mayoress"
+        }
+      },
+      "music": "festi-ball-dialogue"
+    },
+
+
+
+    {
+      "dialogue": {
+        "daycare": {
+          "vintage-viper": "festi-ball/FestiBall_vi__1A.1_Sphinx_x_Randi",
+          "pickle-yard": "festi-ball/FestiBall_vi__1B.1_Sphinx_x_Jon",
+          "security-city": "festi-ball/FestiBall_vi__1C.1_Sphinx_x_Mayoress"
+        },
+        "sandwich-shop": {
+          "vintage-viper": "festi-ball/FestiBall_vi__2A.1_Doc_x_Randi",
+          "pickle-yard": "festi-ball/FestiBall_vi__2B.1_Doc_x_Jon",
+          "security-city": "festi-ball/FestiBall_vi__2C.1_Doc_x_Mayoress"
+        },
+        "skate-park": {
+          "vintage-viper": "festi-ball/FestiBall_vi__3A.1_Teens_x_Randi",
+          "pickle-yard": "festi-ball/FestiBall_vi__3B.1_Teens_x_Jon",
+          "security-city": "festi-ball/FestiBall_vi__3C.1_Teens_x_Mayoress"
+        }
+      },
+      "music": "festi-ball-dialogue"
+    },
+    {
+      "dialogue": "festi-ball/FestiBall_vii__Outro",
+      "music": "festi-ball-dialogue"
+    }
+  ]
+}

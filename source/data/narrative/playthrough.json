@@ -64,23 +64,29 @@
     "ball-museum": {
       "symbol": "6",
       "label": "Ball Museum",
+      "next": "festi-ball"
+    },
+
+    "festi-ball": {
+      "symbol": "7",
+      "label": "Festi-Ball",
       "special": "special-ending",
       "normal": "normal-ending",
       "fail": "fail-ending"
     },
 
     "special-ending": {
-      "symbol": "7A",
+      "symbol": "8A",
       "label": "Special Ending",
       "isMissing": true
     },
     "normal-ending": {
-      "symbol": "7B",
+      "symbol": "8B",
       "label": "Normal Ending",
       "isMissing": true
     },
     "fail-ending": {
-      "symbol": "7C",
+      "symbol": "8C",
       "label": "Fail Ending",
       "isMissing": true
     }
