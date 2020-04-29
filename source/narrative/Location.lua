@@ -1,5 +1,6 @@
 import "CoreLibs/object"
 import "utility/file"
+import "render/imageCache"
 
 local locationsData = loadJsonFile("/data/narrative/locations.json")
 
@@ -12,7 +13,7 @@ function Location:init(id)
   end
   local imagePath = locationsData[self.id].image
   if imagePath then
-    local image = playdate.graphics.image.new(imagePath)
+    local image = imageCache.loadImage(imagePath)
     self.sprite = playdate.graphics.sprite.new()
     self.sprite:setImage(image)
     self.sprite:moveTo(200, 120)

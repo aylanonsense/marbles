@@ -3,11 +3,9 @@ import "physics/PhysCircle"
 import "render/camera"
 import "scene/time"
 import "utility/math"
+import "render/imageCache"
 
 class("Booster").extends("LevelObject")
-
-local image = playdate.graphics.image.new("images/booster.png")
-local imageWidth, imageHeight = image:getSize()
 
 function Booster:init(x, y, rotation)
 	Booster.super.init(self, LevelObject.Type.Booster)
@@ -17,6 +15,7 @@ function Booster:init(x, y, rotation)
 	local angle = drawableAngleToTrigAngle(self.rotation)
 	self.launchX = math.cos(angle)
 	self.launchY = math.sin(angle)
+	self.image = imageCache.loadImage("images/booster.png")
 end
 
 function Booster:update()
@@ -27,7 +26,7 @@ function Booster:draw()
 	local x, y = self:getPosition()
 	x, y = camera.matrix:transformXY(x, y)
 	local scale = camera.scale
-	image:drawRotated(x, y, self.rotation - camera.rotation, scale)
+	self.image:drawRotated(x, y, self.rotation - camera.rotation, scale)
 end
 
 function Booster:preCollide(other, collision)

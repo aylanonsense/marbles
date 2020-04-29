@@ -2,6 +2,7 @@ import "CoreLibs/object"
 import "CoreLibs/sprites"
 import "CoreLibs/animator"
 import "CoreLibs/easing"
+import "render/imageCache"
 
 local objectsData = json.decodeFile("/data/narrative/objects.json")
 
@@ -10,7 +11,7 @@ class("ShownObject").extends()
 function ShownObject:init(id)
   self.id = id
   local imagePath = objectsData[self.id].image
-  local image = playdate.graphics.image.new(imagePath)
+  local image = imageCache.loadImage(imagePath)
   self.sprite = playdate.graphics.sprite.new()
   self.sprite:moveTo(200, -999)
   self.sprite:setZIndex(200)

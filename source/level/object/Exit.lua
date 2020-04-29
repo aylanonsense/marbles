@@ -5,6 +5,7 @@ import "fonts/fonts"
 import "scene/time"
 import "utility/soundCache"
 import "config"
+import "render/imageCache"
 
 local MIN_IMPULSE_TO_TRIGGER = 100
 
@@ -13,10 +14,6 @@ local exitLookup = {}
 for _, exitData in ipairs(exitsData) do
   exitLookup[exitData.id] = exitData
 end
-
-local imageTable = playdate.graphics.imagetable.new("images/lightbulbspecial.png")
-local imageTableBad = playdate.graphics.imagetable.new("images/lightbulbbad.png")
-local imageTableGood = playdate.graphics.imagetable.new("images/lightbulbgood.png")
 
 class("Exit").extends("LevelObject")
 
@@ -36,6 +33,9 @@ function Exit:init(x, y, exitId, icon)
   self.impulseToTrigger = MIN_IMPULSE_TO_TRIGGER
   self.hitSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-exit-hit")
   self.hitSound:setVolume(config.SOUND_VOLUME)
+  self.imageTable = imageCache.loadImageTable("images/lightbulbspecial.png")
+  self.imageTableBad = imageCache.loadImageTable("images/lightbulbbad.png")
+  self.imageTableGood = imageCache.loadImageTable("images/lightbulbgood.png")
 end
 
 function Exit:update()
@@ -51,12 +51,12 @@ function Exit:draw()
   local scale = camera.scale
 
   -- Draw the lightbulb
-  local image = imageTable[4 - self.health]
+  local image = self.imageTable[4 - self.health]
   if self.icon == "Bad" then
-    image = imageTableBad[4 - self.health]
+    image = self.imageTableBad[4 - self.health]
   end
   if self.icon == "Good" then
-    image = imageTableGood[4 - self.health]
+    image = self.imageTableGood[4 - self.health]
   end
   local imageWidth, imageHeight = image:getSize()
   image:drawScaled(x - scale * imageWidth / 2, y - scale * imageHeight / 2 + scale * 5, scale)

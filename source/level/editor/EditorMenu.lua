@@ -1,9 +1,8 @@
 import "CoreLibs/object"
 import "fonts/fonts"
+import "render/imageCache"
 
 class("EditorMenu").extends()
-
-EditorMenu.CursorImage = playdate.graphics.image.new("images/editor/menu-cursor.png")
 
 function EditorMenu:init(title, options)
 	EditorMenu.super.init(self)
@@ -12,6 +11,7 @@ function EditorMenu:init(title, options)
 	self.highlightedOptionIndex = 1
 	self.parentMenu = nil
 	self.childMenu = nil
+	self.cursorImage = imageCache.loadImage("images/editor/menu-cursor.png")
 end
 
 function EditorMenu:update()
@@ -25,7 +25,7 @@ function EditorMenu:draw()
 	if self.childMenu then
 		self.childMenu:draw(x, y)
 	else
-		local cursorWidth, cursorHeight = EditorMenu.CursorImage:getSize()
+		local cursorWidth, cursorHeight = self.cursorImage:getSize()
 		playdate.graphics.setFont(fonts.FullCircle)
 
 		-- Draw the menu title
@@ -53,7 +53,7 @@ function EditorMenu:draw()
 
 			-- Draw the cursor next to the selected option
 			if i == self.highlightedOptionIndex then
-				EditorMenu.CursorImage:drawAt(x, y - cursorHeight / 2 + textHeight / 2)
+				self.cursorImage:drawAt(x, y - cursorHeight / 2 + textHeight / 2)
 			end
 
 			y += textHeight + 2
