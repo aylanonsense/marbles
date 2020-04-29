@@ -2,19 +2,16 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "Randi", "expression": "neutral" },
     { "actor": "Trashbot", "expression": "neutral" },
     { "actor": "Goodbot", "expression": "neutral" },
     { "actor": "Mintwo", "expression": "neutral" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Doc", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "Oh my gosh!", "expression": "confused"}
-    { "action": "change-location", "location": "CatchMintyCin" },
-    { "action": "change-location", "location": "FestiBallRing" },
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "confused"},
+    { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty!", "expression": "happy" },
     { "actor": "Doc", "line": "Yeah, of course it did. I make sandwiches all the time. Easy stuff-- even a doctor can do it!", "expression": "happy", "side": "right" },

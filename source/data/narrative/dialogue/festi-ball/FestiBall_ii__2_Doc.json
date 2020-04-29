@@ -12,7 +12,7 @@
     { "actor": "Croco", "line": "And she's climbing to the top rope!", "expression": "shocked", "side": "right" },
     { "action": "dismiss-actor", "side": "right"},
     { "actor": "Prota", "line": "Not on my watch. I've gotta--", "expression": "neutral" },
-    { "action": "change-location", "location": "blackscreen" },
+    { "action": "change-location", "location": "BlackScreen" },
     { "actor": "Doc", "line": "Oh, hey Prota!", "expression": "happy", "side": "right" },
     { "action": "change-location", "location": "FestiBallRing" },
     { "actor": "Prota", "line": "Doc Sandwich!", "expression": "shocked" },

@@ -2,17 +2,14 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "SpikyJon", "expression": "neutral" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "YS", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "YS", "expression": "neutral" }
   ],
   "script": [
     { "actor": "SpikyJon", "line": "What! It worked! ", "expression": "shocked", "side": "right" },
     { "actor": "YS", "line": "As the prophecy foretold.", "expression": "neutral", "side": "right" },
-    { "action": "change-location", "location": "CatchMintyCin" },
-    { "action": "change-location", "location": "FestiBallRing" },
+    { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "Minty! What a day you've had! ", "expression": "happy" },
     { "actor": "Prota", "line": "But now you're back in my arms, right where you belong!", "expression": "happy" },

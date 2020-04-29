@@ -2,10 +2,9 @@
   "location": "FestiBall",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "Mom", "expression": "neutral", "side": "right" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Dad", "expression": "neutral" },
+    { "actor": "Dad", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Prota", "line": "Hey Mom! Hey Dad!", "expression": "happy" },

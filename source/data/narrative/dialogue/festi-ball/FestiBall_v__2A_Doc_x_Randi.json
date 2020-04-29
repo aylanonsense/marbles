@@ -2,14 +2,11 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "Randi", "expression": "neutral" },
     { "actor": "Trashbot", "expression": "neutral" },
     { "actor": "Goodbot", "expression": "neutral" },
     { "actor": "Mintwo", "expression": "neutral" },
-    { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Doc", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
     {

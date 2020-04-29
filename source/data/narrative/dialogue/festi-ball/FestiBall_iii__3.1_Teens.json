@@ -2,10 +2,7 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
-    { "actor": "Teens", "expression": "neutral", "right" },
-    { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Teens", "expression": "neutral", "side": "right" }
   ],
   "script": [
     { "actor": "Teens", "line": "Whoa that's one tough dog. We just got dunked on!", "expression": "neutral" },

@@ -2,10 +2,7 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
-    { "actor": "Doc", "expression": "neutral" },
-    { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Doc", "line": "Holy sando! That's one slippery pup!", "expression": "shocked" },

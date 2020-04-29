@@ -2,16 +2,13 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "SpikyJon", "expression": "neutral" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Doc", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked", "side": "right" },
-    { "action": "change-location", "location": "CatchMintyCin" },
-    { "action": "change-location", "location": "FestiBallRing" },
+    { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back!", "expression": "happy" },
     { "actor": "SpikyJon", "line": "Wow! I feel great, too! I usually get a bit of a sore neck after I do that. ", "expression": "happy", "side": "right" },

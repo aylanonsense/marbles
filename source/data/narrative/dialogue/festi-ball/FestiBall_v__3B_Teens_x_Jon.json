@@ -2,11 +2,9 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "SpikyJon", "expression": "neutral" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Teens", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Teens", "expression": "neutral" }
   ],
   "script": [
     { "actor": "SpikyJon", "line": "What the-- Minty reversed the Spiky Plex! I didn't... I didn't even think that was a thing!", "expression": "shocked", "side": "right" },

@@ -2,10 +2,7 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
-    { "actor": "YS", "expression": "neutral" },
-    { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "YS", "expression": "neutral" }
   ],
   "script": [
     { "actor": "YS", "line": "Minty is a formidable opponent! I am defeated.", "expression": "neutral" },

@@ -2,21 +2,18 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "Randi", "expression": "neutral" },
     { "actor": "Trashbot", "expression": "neutral" },
     { "actor": "Goodbot", "expression": "neutral" },
     { "actor": "Mintwo", "expression": "neutral" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "YS", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "YS", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Minty", "line": "Bark...? ", "expression": "confused", "side": "right" },
     { "actor": "YS", "line": "THE DOG IS BAFFLED! SEIZE HER, PROTA!", "expression": "shocked", "side": "right" },
     { "actor": "Minty", "line": "Bark?! ", "expression": "confused", "side": "right" },
-    { "action": "change-location", "location": "CatchMintyCin" },
-    { "action": "change-location", "location": "FestiBallRing" },
+    { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "...! ", "expression": "shocked", "side": "right" },
     { "actor": "Minty", "line": "Bark bark! ", "expression": "happy" },
     { "actor": "Prota", "line": "Minty! What the heck! You've been gone all day! ", "expression": "happy" },

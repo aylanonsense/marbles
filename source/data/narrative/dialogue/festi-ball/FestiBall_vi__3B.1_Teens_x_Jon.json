@@ -2,16 +2,13 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "SpikyJon", "expression": "neutral" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Teens", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Teens", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked", "side": "right" },
-    { "action": "change-location", "location": "CatchMintyCin" },
-    { "action": "change-location", "location": "FestiBallRing" },
+    { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back where you belong!", "expression": "happy" },
     { "actor": "Teens", "line": "In the arms of a total nerd.", "expression": "neutral", "side": "right" },
@@ -23,7 +20,7 @@
     { "actor": "Prota", "line": "You really saved the day. ", "expression": "happy" },
     { "actor": "SpikyJon", "line": "...huh. I guess I did.", "expression": "thinking", "side": "right" },
     { "actor": "SpikyJon", "line": "All in a day's work for...", "expression": "happy" },
-  {
+    {
       "if": "TarotScoreisFail",
       "then": [
         { "actor": "SpikyJon", "line": "Spiky Jon: MASKED VIGILANTE!", "expression": "happy" },
@@ -75,19 +72,19 @@
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "SpikyJon", "line": "Hmmm... Well... if I was gonna do that, I'd probably need a new look.", "expression": "thinking", "side": "right" },
     { "actor": "Teens", "line": "New look? Nah, your look's what caught our attention. ", "expression": "neutral", "side": "right" },
-   { "actor": "Teens", "line": "Before all this went down, I was going to ask you who did your spikes.", "expression": "neutral" },
+    { "actor": "Teens", "line": "Before all this went down, I was going to ask you who did your spikes.", "expression": "neutral" },
     { "actor": "SpikyJon", "line": "Oh! That's Bingo the Barber. She's got a stall set up just down there.", "expression": "happy", "side": "right" },
     { "actor": "Teens", "line": "...Seriously?", "expression": "neutral", "side": "right" },
     { "actor": "SpikyJon", "line": "Yeah! Heck, you could go right now.", "expression": "happy", "side": "right" },
-        { "actor": "Teens", "line": "Dope. Can you come with us? So she can get the look just right.", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "Dope. Can you come with us? So she can get the look just right.", "expression": "happy", "side": "right" },
     { "actor": "SpikyJon", "line": "Uh, sure! Yeah! Of course! Maybe you can help name my other moves, too!", "expression": "happy", "side": "right" },
     { "actor": "Teens", "line": "Sweet.", "expression": "neutral", "side": "right" },
     { "actor": "Teens", "line": "Nerd, you wanna join us?", "expression": "confused" },
     { "actor": "Prota", "line": "I should probably take Minty to see my parents. But tomorrow I'll talk to Mom about that training!", "expression": "happy" },
-   { "actor": "Prota", "line": "You could all join her class if you want!", "expression": "happy" },
-   { "actor": "SpikyJon", "line": "That would be great!", "expression": "happy", "side": "right" },
-   { "actor": "Teens", "line": "Yeah, count us in.", "expression": "neutral", "side": "right" },
-   { "actor": "Prota", "line": "Perfect! See you then!", "expression": "happy" },
-   { "actor": "SpikyJon", "line": "Bye, Prota!", "expression": "happy", "side": "right" }
+    { "actor": "Prota", "line": "You could all join her class if you want!", "expression": "happy" },
+    { "actor": "SpikyJon", "line": "That would be great!", "expression": "happy", "side": "right" },
+    { "actor": "Teens", "line": "Yeah, count us in.", "expression": "neutral", "side": "right" },
+    { "actor": "Prota", "line": "Perfect! See you then!", "expression": "happy" },
+    { "actor": "SpikyJon", "line": "Bye, Prota!", "expression": "happy", "side": "right" }
   ]
 }

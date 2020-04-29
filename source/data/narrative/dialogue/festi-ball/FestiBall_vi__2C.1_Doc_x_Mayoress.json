@@ -2,17 +2,14 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "Mayoress", "expression": "neutral" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Doc", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked" },
-    { "action": "change-location", "location": "CatchMintyCin" },
-    { "action": "change-location", "location": "FestiBallRing" },
-    { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },,
+    { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back! That was great, Doc!", "expression": "happy" },
     { "actor": "Doc", "line": "Eh, it wasn't nothin'.", "expression": "neutral", "side": "right" },
     { "actor": "Mayoress", "line": "No, Doctor. It was something. Something beautiful.", "expression": "neutral", "side": "right" },

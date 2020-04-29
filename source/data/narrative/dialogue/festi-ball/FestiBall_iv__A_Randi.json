@@ -7,8 +7,7 @@
     { "actor": "Trashbot", "expression": "neutral" },
     { "actor": "Goodbot", "expression": "neutral" },
     { "actor": "Mintwo", "expression": "neutral" },
-    { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Minty", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Prota", "line": "Okay. Okay, it's fine. I might be alone, but I can do this. I believe in myself.", "expression": "neutral" },

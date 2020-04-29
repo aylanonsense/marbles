@@ -2,11 +2,9 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "Mayoress", "expression": "neutral", "side": "right" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Doc", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Prota", "line": "What the-- It didn't work!", "expression": "confused" },

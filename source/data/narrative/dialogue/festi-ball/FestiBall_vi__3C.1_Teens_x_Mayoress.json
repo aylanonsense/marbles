@@ -2,16 +2,13 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "Mayoress", "expression": "neutral", "side": "right" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Teens", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Teens", "expression": "neutral" }
   ],
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked" },
-    { "action": "change-location", "location": "CatchMintyCin" },
-    { "action": "change-location", "location": "FestiBallRing" },
+    { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back!", "expression": "happy" },
     { "actor": "Prota", "line": "Mayoress... If you don't mind me saying... ", "expression": "shocked" },
@@ -42,11 +39,11 @@
     { "actor": "Mayoress", "line": "BBut for now, I suppose I should go back and tend to my mayoral duties...", "expression": "neutral", "side": "right" },
     { "actor": "Teens", "line": "And we're gonna head back to the skatepark. Festi-Ball's a total Snoozefest.", "expression": "neutral", "side": "right" },
     { "actor": "Prota", "line": "What? You just performed an arcane ritual on a demon to catch a dog in a pro wrestling ring.", "expression": "confused" },
-     { "actor": "Teens", "line": "Zzzz.", "expression": "happy" },
-     { "actor": "Teens", "line": "Yeah. Total yawn. We're out. Prota, you wanna come hang?", "expression": "neutral" },
-     { "actor": "Prota", "line": "Seriously?! With you?!", "expression": "shocked" },     
-     { "actor": "Prota", "line": "I-- No, I should probably head back and see my parents. ", "expression": "neutral" },
-     { "actor": "Teens", "line": "Cool. See you around.", "expression": "neutral" },
-     { "actor": "Mayoress", "line": "And I'll see you around, too, Prota! Take care and remember-- no jaywalking!", "expression": "happy" }
-    ]
+    { "actor": "Teens", "line": "Zzzz.", "expression": "happy" },
+    { "actor": "Teens", "line": "Yeah. Total yawn. We're out. Prota, you wanna come hang?", "expression": "neutral" },
+    { "actor": "Prota", "line": "Seriously?! With you?!", "expression": "shocked" },     
+    { "actor": "Prota", "line": "I-- No, I should probably head back and see my parents. ", "expression": "neutral" },
+    { "actor": "Teens", "line": "Cool. See you around.", "expression": "neutral" },
+    { "actor": "Mayoress", "line": "And I'll see you around, too, Prota! Take care and remember-- no jaywalking!", "expression": "happy" }
+  ]
 }

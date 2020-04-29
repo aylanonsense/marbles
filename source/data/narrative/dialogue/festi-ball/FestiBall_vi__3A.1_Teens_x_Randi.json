@@ -2,19 +2,16 @@
   "location": "FestiBallRing",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Narrator", "expression": "neutral" },
     { "actor": "Randi", "expression": "neutral" },
     { "actor": "Trashbot", "expression": "neutral" },
     { "actor": "Goodbot", "expression": "neutral" },
     { "actor": "Mintwo", "expression": "neutral" },
     { "actor": "Minty", "expression": "neutral" },
-    { "actor": "Teens", "expression": "neutral" },
-    { "actor": "Croco", "expression": "neutral" }
+    { "actor": "Teens", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "Oh my gosh!", "expression": "confused"}
-    { "action": "change-location", "location": "CatchMintyCin" },
-    { "action": "change-location", "location": "FestiBallRing" },
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "confused"},
+    { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back!", "expression": "happy" },
     { "actor": "Teens", "line": "We did it! Uh... uh..", "expression": "happy", "side": "right" },
@@ -34,7 +31,7 @@
     {
       "if": "ViperScoreisFail",
       "then": [
-        { "actor": "Trashbot", "line": "UPDATE FAILED. TRY AGAIN?", "expression": "neutral", "side": "right" },
+        { "actor": "Trashbot", "line": "UPDATE FAILED. TRY AGAIN?", "expression": "neutral", "side": "right" }
       ]
     },
     {
@@ -66,7 +63,7 @@
     {
       "if": "ViperScoreisFail",
       "then": [
-        { "actor": "Trashbot", "line": "GOODBYE PARTO! ", "expression": "neutral", "side": "right" },
+        { "actor": "Trashbot", "line": "GOODBYE PARTO! ", "expression": "neutral", "side": "right" }
       ]
     },
     {
