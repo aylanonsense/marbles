@@ -18,19 +18,19 @@
     { "actor": "Randi", "line": "All the same, that was some mighty impressive work!", "expression": "happy", "side": "right" },
     { "actor": "Randi", "line": "You two make a real good team!", "expression": "happy" },
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "COMPLIMENT RECEIVED. AND APPRECIATED.", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "I AM GOOD ROBOT?", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "COMPLIMENT RECEIVED. AND APPRECIATED.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "THANK YOU. IN BESTING MY FLESH COUNTERPART, I FEEL... SATISFACTION. ", "expression": "neutral", "side": "right" }
       ]
@@ -43,19 +43,19 @@
     { "actor": "Doc", "line": "No way! Well hey, in that case...", "expression": "shocked", "side": "right" },
     { "actor": "Doc", "line": "If you need a job, Pal, there's one waitin' for you at Doc Sandwich!", "expression": "neutral" },
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "YES. I WILL UPDATE MY PROTOCOLS ACCORDINGLY.", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "YES SOC DANDWICH. I WILL MAKE THE DANDWICHES! I AM A GOOD ROBOT!", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "YES. I WILL UPDATE MY PROTOCOLS ACCORDINGLY.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "YES. CATCHING MINTY HAS ALLOWED ME TO SELF-ACTUALIZE. I WILL LEARN OF SANDWICHES.", "expression": "neutral", "side": "right" }
       ]

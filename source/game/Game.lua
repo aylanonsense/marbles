@@ -177,10 +177,19 @@ function Game:recordActorVariant(actor, variant)
   self.playthrough.actorVariants[actor] = variant
 end
 
-function Game:playedThroughStoryline(storylineName)
+function Game:finishedStoryline(storylineName)
   for _, storyline in ipairs(self.playthrough.finishedStorylines) do
     if storyline.name == storylineName then
       return true
+    end
+  end
+  return false
+end
+
+function Game:finishedStorylineWithResult(storylineName, result)
+  for _, storyline in ipairs(self.playthrough.finishedStorylines) do
+    if storyline.name == storylineName then
+      return storyline.result == result
     end
   end
   return false
@@ -193,7 +202,7 @@ function Game:getDialogueFileName(sceneData)
     local obj = dialogueFileName
     dialogueFileName = nil
     for storylineName, result in pairs(obj) do
-      if self:playedThroughStoryline(storylineName) then
+      if self:finishedStoryline(storylineName) then
         dialogueFileName = result
       end
     end

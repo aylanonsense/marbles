@@ -15,7 +15,7 @@
     { "actor": "Prota", "line": { "method": "getFinalTarotLine" }, "expression": "happy" },
     { "actor": "SpikyJon", "line": "Wow...that's...not how I thought tarot cards worked.", "expression": "confused" },
     { "actor": "Prota", "line": "...", "expression": "neutral" },
-    { "actor": "Prota", "line": "AND I LOVE IT!", "expression": "happy" },
+    { "actor": "SpikyJon", "line": "AND I LOVE IT!", "expression": "happy" },
     {
       "if": "failResult",
       "then": [

@@ -13,7 +13,7 @@
     { "actor": "Prota", "line": "Oh hey!", "expression": "shocked" },
     { "actor": "SpikyJon", "line": "You helped me find my calling. And now I'm gonna help you catch Minty! WITH THIS!", "expression": "happy" },
     {
-      "if": "TarotScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "fail" ] },
       "then": [
         { "actor": "Prota", "line": "A... baseball bat?! Uhh....", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Don't worry! It's not to hit Minty with. ", "expression": "happy" },
@@ -25,14 +25,14 @@
       ]
     },
     {
-      "if": "TarotScoreisNormal",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "normal" ] },
       "then": [
         { "actor": "Prota", "line": "A...giant mozzarella stick? Uhh...", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "Don't worry! As long as she doesn't eat it...", "expression": "happy" }
       ]
     },
     {
-      "if": "TarotScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "special" ] },
       "then": [
         { "actor": "Prota", "line": "A...document tube? Uh...", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "It's a blueprint. You know, like an architect. But right now, the tube's more important!", "expression": "neutral" }

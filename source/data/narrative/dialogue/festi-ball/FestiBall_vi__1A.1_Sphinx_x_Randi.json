@@ -22,19 +22,19 @@
     { "actor": "Prota", "line": "And I've got all of you to thank for your help... ", "expression": "happy" },
     { "actor": "Randi", "line": "Aw heck, Prota. It weren't nothin'. ", "expression": "neutral", "side": "right" },
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "IT IS MY PURPOSE TO ASSIST. AND IT IS ALSO MY PLEASURE, PROTA.", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "I AM HERPY TO HALP.", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "IT IS MY PURPOSE TO ASSIST. AND IT IS ALSO MY PLEASURE, PROTA.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "IT WAS A PLEASURE TO BEST THE FLESH ME. I FEEL...VALIDATED.", "expression": "neutral", "side": "right" }
       ]
@@ -53,38 +53,38 @@
     { "actor": "YS", "line": "And I think...", "expression": "neutral" },
     { "actor": "YS", "line": "I WOULD BE DELIGHTED. THIS ROBOT UNDERSTANDS ME LIKE NONE OTHER!!", "expression": "shocked" },
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "YES. WE FUNCTION AT PEAK EFFICIENCY TOGETHER. ", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "YES. I LOVE THE SPINK.", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "YES. WE FUNCTION AT PEAK EFFICIENCY TOGETHER. ", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "YES. LIBERATED FROM MY SOFT, FURRY COUNTERPART, I SEE IN YOU A KINDRED SPIRIT, YUNG SPHINX.", "expression": "neutral", "side": "right" }
       ]
     },
     { "actor": "Randi", "line": "Aw, aren't you cute. Now who's up for sandwiches?", "expression": "happy", "side": "right" },
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "ME!", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "ME!", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "ME!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "ME!", "expression": "neutral", "side": "right" }
       ]

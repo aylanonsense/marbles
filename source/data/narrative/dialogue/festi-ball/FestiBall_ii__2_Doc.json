@@ -18,21 +18,21 @@
     { "actor": "Prota", "line": "Doc Sandwich!", "expression": "shocked" },
     { "actor": "Doc", "line": "That's me! Hey, I uh, just wanted to thank you! That sandwich you made? ", "expression": "happy" },
     {
-      "if": "SandwichScoreisNormal",
-      "then": [
-        { "actor": "Doc", "line": "You're really onto somethin', kid! It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
-      ]
-    },
-    {
-      "if": "SandwichScoreisSpecial",
-      "then": [
-        { "actor": "Doc", "line": "You're really onto somethin', kid! It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
-      ]
-    },
-    {
-      "if": "SandwichScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "sandwich-shop", "fail" ] },
       "then": [
         { "actor": "Doc", "line": "It was a bit of a mess, sure. But your creativity inspired me to make my Festi-Ball sub with the exact opposite flavour profile!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "sandwich-shop", "normal" ] },
+      "then": [
+        { "actor": "Doc", "line": "You're really onto somethin', kid! It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "sandwich-shop", "special" ] },
+      "then": [
+        { "actor": "Doc", "line": "You're really onto somethin', kid! It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
       ]
     },
     { "actor": "Doc", "line": "It's been a huge hit! I sold outta the first round already! I gotta go back to the shop for more ingredients.", "expression": "happy" },

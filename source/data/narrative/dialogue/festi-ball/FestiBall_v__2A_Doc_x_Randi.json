@@ -10,14 +10,7 @@
   ],
   "script": [
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "ERROR: TO COMPLETE CATCH MINTY DOT EXE, I WILL REQUIRE AN UPGRADE. UPGRADE WILL TAKE... ONE HOUR.", "expression": "neutral", "side": "right" },
-        { "actor": "Randi", "line": "An hour?! We don't got this kinda time! She's escapin'!", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "SUCCCESS. MINTY HAS BEEN CAUGHT.", "expression": "neutral", "side": "right" },
         { "actor": "Prota", "line": "What? No she hasn't.", "expression": "confused", "side": "right" },
@@ -26,7 +19,14 @@
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "ERROR: TO COMPLETE CATCH MINTY DOT EXE, I WILL REQUIRE AN UPGRADE. UPGRADE WILL TAKE... ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Randi", "line": "An hour?! We don't got this kinda time! She's escapin'!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE. I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
         { "actor": "Randi", "line": "We don't got an hour, Mintwo! She's escapin'!", "expression": "neutral", "side": "right" }
@@ -38,19 +38,19 @@
     { "actor": "Doc", "line": "But you do have this cool robot. So that's nice for ya. Me, I always liked robots. Anyhow, I guess I'll be goin'! ", "expression": "neutral" },
     { "actor": "Doc", "line": "I got a lot of sandwiches to assemble!", "expression": "neutral" },
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "ASSEMBLE? ASSEMBLE SANDWICHES?", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "SANDWICHES? MAKE...SAND...WICHES?", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "ASSEMBLE? ASSEMBLE SANDWICHES?", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "SANDWICHES? ...I HAVE HEARD MUCH OF SANDWICHES. A DELICACY AMONG THE FLESH-BODIED.", "expression": "neutral", "side": "right" }
       ]
@@ -60,19 +60,19 @@
     { "actor": "Doc", "line": "Oh, right! Well lemme just get on toppa that! Robot, you wanna help me out?", "expression": "neutral" },
     { "actor": "Doc", "line": "You catch her, I'll hold onto her with this bread. Make a little Pupwich!", "expression": "neutral" },
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "THIS IS WHAT I WAS BUILT FOR.", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "UPDATING....UPDATING.... UPDATING... YES.", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "THIS IS WHAT I WAS BUILT FOR.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "ROUND TWO.", "expression": "neutral", "side": "right" }
       ]

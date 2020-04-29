@@ -21,23 +21,23 @@
     { "actor": "SpikyJon", "line": "...huh. I guess I did.", "expression": "thinking", "side": "right" },
     { "actor": "SpikyJon", "line": "All in a day's work for...", "expression": "happy" },
     {
-      "if": "TarotScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "fail" ] },
       "then": [
         { "actor": "SpikyJon", "line": "Spiky Jon: MASKED VIGILANTE!", "expression": "happy" },
         { "actor": "Prota", "line": "Mask?", "expression": "confused" },
         { "actor": "SpikyJon", "line": "It hasn't arrived yet. But when it does, watch out, bad guys! ", "expression": "neutral" },
-            { "actor": "Teens", "line": "Whoa. You're a vigilante?", "expression": "happy", "side": "right" }
+        { "actor": "Teens", "line": "Whoa. You're a vigilante?", "expression": "happy", "side": "right" }
       ]
     },
     {
-      "if": "TarotScoreisNormal",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "normal" ] },
       "then": [
         { "actor": "SpikyJon", "line": "Spiky Jon: COMPETIVE EATER!", "expression": "happy" },
         { "actor": "Teens", "line": "Whoa. You're a competitive eater?", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "TarotScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "special" ] },
       "then": [
         { "actor": "SpikyJon", "line": "Spiky Jon: ARCHITECT!", "expression": "happy" },
         { "actor": "Teens", "line": "Whoa. You're an architect?", "expression": "confused", "side": "right" }
@@ -50,19 +50,19 @@
     { "actor": "Teens", "line": "Well you're great at it. Maybe you should make it more than a hobby.", "expression": "neutral", "side": "right" },
     { "actor": "Prota", "line": "Yeah, maybe you should. I'm sure my Mom could help you.", "expression": "confused" },
       {
-      "if": "TarotScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "fail" ] },
       "then": [
         { "actor": "Teens", "line": "Plus your name could be THE MASK OF MAYHEM!", "expression": "happy" }
       ]
     },
     {
-      "if": "TarotScoreisNormal",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "normal" ] },
       "then": [
         { "actor": "Teens", "line": "Plus your name could be THE BIG APPETITE!", "expression": "neutral" }
       ]
     },
     {
-      "if": "TarotScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "special" ] },
       "then": [
         { "actor": "Teens", "line": "Plus your name could be THE ARCHITECT OF DESTRUCTION!", "expression": "confused" }
       ]

@@ -27,6 +27,10 @@ function dialogueMethods.specialExit()
   return exitScore > 3
 end
 
+function dialogueMethods.finishedStorylineWithResult(storylineName, result)
+  return game:finishedStorylineWithResult(storylineName, result)
+end
+
 function dialogueMethods.failResult()
   return game:getStorylineResult() == "fail"
 end

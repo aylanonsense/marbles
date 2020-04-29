@@ -23,19 +23,19 @@
     { "actor": "Teens", "line": "The coolest person in town?", "expression": "confused" },
     { "actor": "Randi", "line": "Don't I know it! Anyhow, I guess--", "expression": "happy", "side": "right" },
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "UPDATE COMPLETE! SHALL I CATCH MINTY NOW?", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "UPDATE FAILED. TRY AGAIN?", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "UPDATE COMPLETE! SHALL I CATCH MINTY NOW?", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "UPGRADE COMPLETE. SHALL I CAPTURE THE SOFT MINTY?", "expression": "neutral", "side": "right" }
       ]
@@ -54,20 +54,20 @@
     { "actor": "Randi", "line": "No problem! Catch you later!", "expression": "neutral" },
     { "actor": "Teens", "line": "Bye Prota! And-- and thank you!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "Anytime!", "expression": "happy" },
-        {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "GOODBYE, PROTA. CONGRATULATIONS.", "expression": "neutral", "side": "right" }
-      ]
-    },
     {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "GOODBYE PARTO! ", "expression": "neutral", "side": "right" }
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "GOODBYE, PROTA. CONGRATULATIONS.", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "YOU HAVE DONE WELL, PROTA. AND FAREWELL, MINTY ONE. ", "expression": "neutral", "side": "right" }
       ]

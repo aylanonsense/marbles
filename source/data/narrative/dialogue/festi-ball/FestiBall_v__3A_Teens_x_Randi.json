@@ -10,14 +10,7 @@
   ],
   "script": [
     {
-      "if": "ViperScoreisNormal",
-      "then": [
-        { "actor": "Goodbot", "line": "ERROR: TO COMPLETE CATCH MINTY DOT EXE, I WILL REQUIRE AN UPGRADE. UPGRADE WILL TAKE... ONE HOUR.", "expression": "neutral", "side": "right" },
-        { "actor": "Randi", "line": "An hour?! We don't got this kinda time! She's escapin'!", "expression": "neutral", "side": "right" }
-      ]
-    },
-    {
-      "if": "ViperScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "SUCCCESS. MINTY HAS BEEN CAUGHT.", "expression": "neutral", "side": "right" },
         { "actor": "Prota", "line": "What? No she hasn't.", "expression": "confused", "side": "right" },
@@ -26,7 +19,14 @@
       ]
     },
     {
-      "if": "ViperScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "normal" ] },
+      "then": [
+        { "actor": "Goodbot", "line": "ERROR: TO COMPLETE CATCH MINTY DOT EXE, I WILL REQUIRE AN UPGRADE. UPGRADE WILL TAKE... ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Randi", "line": "An hour?! We don't got this kinda time! She's escapin'!", "expression": "neutral", "side": "right" }
+      ]
+    },
+    {
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
         { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE. I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
         { "actor": "Randi", "line": "We don't got an hour, Mintwo! She's escapin'!", "expression": "neutral", "side": "right" }

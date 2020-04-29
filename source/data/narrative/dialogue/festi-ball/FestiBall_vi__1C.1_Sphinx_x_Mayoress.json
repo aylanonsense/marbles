@@ -15,7 +15,7 @@
     { "actor": "Prota", "line": "Thanks to both of you! ", "expression": "happy" },
     { "actor": "Mayoress", "line": "No problem, Prota. As the mayor, it's my duty to help my citizenry.", "expression": "happy" },
     {
-      "if": "SecurityScoreisNormal",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "security-city", "fail" ] },
       "then": [
         { "actor": "Mayoress", "line": "Even the ones who aren't exactly Security Stars.", "expression": "happy" },
         { "actor": "Prota", "line": "Does that mean I can take this hat off now?", "expression": "happy" },
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "if": "SecurityScoreisFail",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "security-city", "normal" ] },
       "then": [
         { "actor": "Mayoress", "line": "Even the ones who aren't exactly Security Stars.", "expression": "happy" },
         { "actor": "Prota", "line": "Does that mean I can take this hat off now?", "expression": "happy" },
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "if": "SecurityScoreisSpecial",
+      "if": { "method": "finishedStorylineWithResult", "arguments": [ "security-city", "special" ] },
       "then": [
         { "actor": "Mayoress", "line": "Especially when they're Security Stars!", "expression": "happy" }
       ]

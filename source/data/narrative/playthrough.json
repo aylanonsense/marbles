@@ -26,44 +26,40 @@
     "skate-park": {
       "symbol": "4A",
       "label": "Skate Park",
-      "special": "security-city",
-      "normal": "pickle-yard",
-      "fail": "vintage-viper"
+      "next": "ball-museum"
     },
     "sandwich-shop": {
       "symbol": "4B",
       "label": "Sandwich Shop",
-      "special": "security-city",
-      "normal": "pickle-yard",
-      "fail": "vintage-viper"
+      "next": "ball-museum"
     },
     "daycare": {
       "symbol": "4C",
       "label": "Daycare",
+      "next": "ball-museum"
+    },
+
+    "ball-museum": {
+      "symbol": "5",
+      "label": "Ball Museum",
       "special": "security-city",
       "normal": "pickle-yard",
       "fail": "vintage-viper"
     },
 
     "security-city": {
-      "symbol": "5A",
+      "symbol": "6A",
       "label": "Security City",
-      "next": "ball-museum"
+      "next": "festi-ball"
     },
     "pickle-yard": {
-      "symbol": "5B",
+      "symbol": "6B",
       "label": "Pickle Yard",
-      "next": "ball-museum"
+      "next": "festi-ball"
     },
     "vintage-viper": {
-      "symbol": "5C",
-      "label": "Vintage Viper / Landfill",
-      "next": "ball-museum"
-    },
-
-    "ball-museum": {
-      "symbol": "6",
-      "label": "Ball Museum",
+      "symbol": "6C",
+      "label": "Vintage Viper",
       "next": "festi-ball"
     },
 
