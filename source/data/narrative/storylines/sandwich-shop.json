@@ -2,38 +2,38 @@
   "scenes": [
     {
       "dialogue": "sandwich-shop/DocSandwich_Intro",
-      "music": "sandwich-dialogue"
+      "music": "sandwich-shop-dialogue"
     },
     {
       "maze": "sandwichshop-protein",
       "exits": [ "sandwichshop-protein-special", "sandwichshop-protein-good", "sandwichshop-protein-bad" ],
-      "music": "sandwich-maze"
+      "music": "sandwich-shop-maze"
     },
     {
       "dialogue": "sandwich-shop/DocSandwich_1_Protein",
-      "music": "sandwich-dialogue"
+      "music": "sandwich-shop-dialogue"
     },
     {
       "maze": "sandwichshop-toppings",
       "exits": [ "sandwichshop-toppings-special", "sandwichshop-toppings-good", "sandwichshop-toppings-bad" ],
-      "music": "sandwich-maze"
+      "music": "sandwich-shop-maze"
     },
     {
       "dialogue": "sandwich-shop/DocSandwich_2_Veggie",
-      "music": "sandwich-dialogue"
+      "music": "sandwich-shop-dialogue"
     },
     {
       "maze": "sandwichshop-condiments",
       "exits": [ "sandwichshop-condiments-special", "sandwichshop-condiments-good", "sandwichshop-condiments-bad" ],
-      "music": "sandwich-maze"
+      "music": "sandwich-shop-maze"
     },
     {
       "dialogue": "sandwich-shop/DocSandwich_3_Condiment",
-      "music": "sandwich-dialogue"
+      "music": "sandwich-shop-dialogue"
     },
     {
       "dialogue": "sandwich-shop/DocSandwich_Resolution",
-      "music": "sandwich-dialogue"
+      "music": "sandwich-shop-dialogue"
     }
   ]
 }

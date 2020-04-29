@@ -2,42 +2,42 @@
   "scenes": [
     {
       "dialogue": "vintage-viper/VintageViper_Intro",
-      "music": "vintage-viper"
+      "music": "vintage-viper-dialogue"
     },
 
     {
       "maze": "viper-head",
       "exits": [ "viper-head-special", "viper-head-good", "viper-head-bad" ],
-      "music": "vintage-viper"
+      "music": "vintage-viper-maze"
     },
     {
       "dialogue": "vintage-viper/VintageViper_1_Head",
-      "music": "vintage-viper"
+      "music": "vintage-viper-dialogue"
     },
 
     {
       "maze": "viper-torso",
       "exits": [ "viper-torso-special", "viper-torso-good", "viper-torso-bad" ],
-      "music": "vintage-viper"
+      "music": "vintage-viper-maze"
     },
     {
       "dialogue": "vintage-viper/VintageViper_2_Torso",
-      "music": "vintage-viper"
+      "music": "vintage-viper-dialogue"
     },
 
     {
       "maze": "viper-legs",
       "exits": [ "viper-legs-special", "viper-legs-good", "viper-legs-bad" ],
-      "music": "vintage-viper"
+      "music": "vintage-viper-maze"
     },
     {
       "dialogue": "vintage-viper/VintageViper_3_Legs",
-      "music": "vintage-viper"
+      "music": "vintage-viper-dialogue"
     },
 
     {
       "dialogue": "vintage-viper/VintageViper_Resolution",
-      "music": "vintage-viper"
+      "music": "vintage-viper-dialogue"
     }
   ]
 }
