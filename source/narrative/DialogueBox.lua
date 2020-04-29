@@ -55,9 +55,10 @@ function DialogueBox:draw()
   if self.isVisible then
     local boxX, boxY = math.floor(self.x - self.width / 2), math.floor(self.y - self.height / 2)
     dialogueBoxImage:drawInRect(boxX, boxY, self.width, self.height)
-    local speakerBoxWidth, speakerBoxHeight = 63, 25
-    local speakerBoxX, speakerBoxY = boxX + ((self.speakerSide == "left") and 10 or (self.width - speakerBoxWidth - 10)), boxY - 10
-    local speakerNameX, speakerNameY = speakerBoxX + 10, speakerBoxY + 4
+    local speakerNameWidth, speakerNameHeight = playdate.graphics.getTextSize(self.speakerName or "")
+    local speakerBoxWidth, speakerBoxHeight = math.max(63, speakerNameWidth + 18), 28
+    local speakerBoxX, speakerBoxY = boxX + ((self.speakerSide == "left") and 35 or (self.width - speakerBoxWidth - 35)), boxY - 12
+    local speakerNameX, speakerNameY = speakerBoxX + 10, speakerBoxY + 5
     if self.speakerName then
       speakerBoxImage:drawInRect(speakerBoxX, speakerBoxY, speakerBoxWidth, speakerBoxHeight)
     end
