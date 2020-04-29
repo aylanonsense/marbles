@@ -86,8 +86,6 @@ function Actor:reloadImage()
   end
   if imagePath then
     self.imageTable = imageCache.loadImageTable(imagePath)
-    print(imagePath)
-    print(self.imageTable)
     if not self.sprite then
       self.sprite = playdate.graphics.sprite.new()
       self.sprite:moveTo(-999, 154)

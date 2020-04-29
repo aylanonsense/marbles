@@ -141,7 +141,7 @@ function Game:createStorylineScene(storylineData, stage)
     local musicPlayer
     if sceneData.music then
       musicPlayer = soundCache.createMusicPlayer("sound/music/" .. sceneData.music)
-      musicPlayer:setVolume(config.MUSIC_VOLUME * 0.8)
+      musicPlayer:setVolume(config.MUSIC_VOLUME)
     end
     if sceneData.dialogue then
       local dialogueData = loadJsonFile("/data/narrative/dialogue/" .. sceneData.dialogue .. ".json")

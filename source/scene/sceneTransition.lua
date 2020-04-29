@@ -1,4 +1,6 @@
+import "config"
 import "scene/time"
+import "utility/soundCache"
 
 sceneTransition = {
   TRANSITION_IN_TIME = 2.00,
@@ -11,6 +13,13 @@ sceneTransition = {
 function sceneTransition:update()
   if self.anim then
     self.time += time.dt
+    -- Fade out music
+    if self.anim == 'out' then
+      local volume = math.min(math.max(0, 1 - self.time / self.TRANSITION_OUT_TIME), 1) * config.MUSIC_VOLUME
+      for _, player in pairs(soundCache.musicPlayers) do
+        player:setVolume(volume)
+      end
+    end
     if (self.anim == 'in' and self.time >= self.TRANSITION_IN_TIME) or (self.anim == 'out' and self.time >= self.TRANSITION_OUT_TIME) then
       self.anim = nil
       self.time = 0.00
