@@ -1,16 +1,39 @@
 {
   "scenes": [
-    { "dialogue": "daycare/Daycare_Intro" },
-
-    { "maze": "daycare-1", "exits": [ "daycare-1-special", "daycare-1-good", "daycare-1-bad" ] },
-    { "dialogue": "daycare/Daycare_1_Riddle1" },
-
-    { "maze": "daycare-2", "exits": [ "daycare-2-special", "daycare-2-good", "daycare-2-bad" ] },
-    { "dialogue": "daycare/Daycare_2_Riddle2" },
-
-    { "maze": "daycare-3", "exits": [ "daycare-3-special", "daycare-3-good", "daycare-3-bad" ] },
-    { "dialogue": "daycare/Daycare_3_Riddle3" },
-
-    { "dialogue": "daycare/Daycare_Resolution" }
+    {
+      "dialogue": "daycare/Daycare_Intro",
+      "music": "daycare-dialogue"
+    },
+    {
+      "maze": "daycare-1",
+      "exits": [ "daycare-1-special", "daycare-1-good", "daycare-1-bad" ],
+      "music": "daycare-maze"
+    },
+    {
+      "dialogue": "daycare/Daycare_1_Riddle1",
+      "music": "daycare-dialogue"
+    },
+    {
+      "maze": "daycare-2",
+      "exits": [ "daycare-2-special", "daycare-2-good", "daycare-2-bad" ],
+      "music": "daycare-maze"
+    },
+    {
+      "dialogue": "daycare/Daycare_2_Riddle2",
+      "music": "daycare-dialogue"
+    },
+    {
+      "maze": "daycare-3",
+      "exits": [ "daycare-3-special", "daycare-3-good", "daycare-3-bad" ],
+      "music": "daycare-maze"
+    },
+    {
+      "dialogue": "daycare/Daycare_3_Riddle3",
+      "music": "daycare-dialogue"
+    },
+    {
+      "dialogue": "daycare/Daycare_Resolution",
+      "music": "daycare-dialogue"
+    }
   ]
 }

@@ -4,7 +4,6 @@
       "dialogue": "pickle-yard/PickleYard_Intro",
       "music": "pickle-yard-dialogue"
     },
-
     {
       "maze": "pickle-star",
       "exits": [ "pickle-star-special", "pickle-star-good", "pickle-star-bad" ],
@@ -14,7 +13,6 @@
       "dialogue": "pickle-yard/PickleYard_1_Star",
       "music": "pickle-yard-dialogue"
     },
-
     {
       "maze": "pickle-death",
       "exits": [ "pickle-death-special", "pickle-death-good", "pickle-death-bad" ],
@@ -24,7 +22,6 @@
       "dialogue": "pickle-yard/PickleYard_2_Death",
       "music": "pickle-yard-dialogue"
     },
-
     {
       "maze": "pickle-tower",
       "exits": [ "pickle-tower-special", "pickle-tower-good", "pickle-tower-bad" ],
@@ -34,7 +31,6 @@
       "dialogue": "pickle-yard/PickleYard_3_Tower",
       "music": "pickle-yard-dialogue"
     },
-
     {
       "dialogue": "pickle-yard/PickleYard_Resolution",
       "music": "pickle-yard-dialogue"

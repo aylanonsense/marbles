@@ -1,16 +1,39 @@
 {
   "scenes": [
-    { "dialogue": "library/Library_Intro" },
-
-    { "maze": "library-1", "exits": [ "library-1-special", "library-1-good", "library-1-bad" ] },
-    { "dialogue": "library/Library_1_Paper" },
-
-    { "maze": "library-2", "exits": [ "library-2-special", "library-2-good", "library-2-bad" ] },
-    { "dialogue": "library/Library_2_Words" },
-
-    { "maze": "library-3", "exits": [ "library-3-special", "library-3-good", "library-3-bad" ] },
-    { "dialogue": "library/Library_3_Picture" },
-
-    { "dialogue": "library/Library_Resolution" }
+    {
+      "dialogue": "library/Library_Intro",
+      "music": "library-dialogue"
+    },
+    {
+      "maze": "library-1",
+      "exits": [ "library-1-special", "library-1-good", "library-1-bad" ],
+      "music": "library-maze"
+    },
+    {
+      "dialogue": "library/Library_1_Paper",
+      "music": "library-dialogue"
+    },
+    {
+      "maze": "library-2",
+      "exits": [ "library-2-special", "library-2-good", "library-2-bad" ],
+      "music": "library-maze"
+    },
+    {
+      "dialogue": "library/Library_2_Words",
+      "music": "library-dialogue"
+    },
+    {
+      "maze": "library-3",
+      "exits": [ "library-3-special", "library-3-good", "library-3-bad" ],
+      "music": "library-maze"
+    },
+    {
+      "dialogue": "library/Library_3_Picture",
+      "music": "library-dialogue"
+    },
+    {
+      "dialogue": "library/Library_Resolution",
+      "music": "library-dialogue"
+    }
   ]
 }
