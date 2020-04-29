@@ -24,7 +24,7 @@
     { "actor": "Prota", "line": "\"Ticketing is largely a form of hidden taxation...\"", "expression": "thinking" },
     { "actor": "Prota", "line": "\"Incarceration is not proven to reduce recidivism...\"", "expression": "thinking" },
     { "actor": "Prota", "line": "...\"Preparedness.\"", "expression": "thinking" },
-    { "actor": "Prota", "line": "I think that's it?", "expression": "confuseed" },
+    { "actor": "Prota", "line": "I think that's it?", "expression": "confused" },
     { "actor": "Mayoress", "line": "Well... you got three right.", "expression": "happy" },
     { "actor": "Prota", "line": "Yesss!", "expression": "happy" },
     { "actor": "Mayoress", "line": "Out of thirty.", "expression": "neutral" },

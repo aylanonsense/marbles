@@ -7,15 +7,15 @@ import "config"
 
 class("DialogueBox").extends()
 
-local dialogueBoxImage = playdate.graphics.nineSlice.new("/images/narrative/dialogue-box.png", 27, 27, 3, 3)
+local dialogueBoxImage = playdate.graphics.nineSlice.new("/images/narrative/dialogue-box.png", 19, 19, 3, 3)
 local speakerBoxImage = playdate.graphics.nineSlice.new("/images/narrative/speaker-box.png", 10, 10, 1, 1)
-local dialogueBoxFont = fonts.FullCircle
+local dialogueBoxFont = fonts.MarbleBasic
 
 function DialogueBox:init()
   self.x = 200
-  self.y = 194
-  self.width = 388 -- should be 3n + 1
-  self.height = 79 -- should be 3n + 1
+  self.y = 196
+  self.width = 399 -- should be 3n
+  self.height = 89 -- should be 3n - 1
   self.maxTextWidth = self.width - 40
   self.speakerName = nil
   self.speakerSide = "left"
@@ -56,8 +56,8 @@ function DialogueBox:draw()
     local boxX, boxY = math.floor(self.x - self.width / 2), math.floor(self.y - self.height / 2)
     dialogueBoxImage:drawInRect(boxX, boxY, self.width, self.height)
     local speakerNameWidth, speakerNameHeight = playdate.graphics.getTextSize(self.speakerName or "")
-    local speakerBoxWidth, speakerBoxHeight = math.max(63, speakerNameWidth + 18), 28
-    local speakerBoxX, speakerBoxY = boxX + ((self.speakerSide == "left") and 35 or (self.width - speakerBoxWidth - 35)), boxY - 12
+    local speakerBoxWidth, speakerBoxHeight = math.max(63, speakerNameWidth + 18), speakerNameHeight + 12
+    local speakerBoxX, speakerBoxY = boxX + ((self.speakerSide == "left") and 35 or (self.width - speakerBoxWidth - 35)), boxY - 15
     local speakerNameX, speakerNameY = speakerBoxX + 10, speakerBoxY + 5
     if self.speakerName then
       speakerBoxImage:drawInRect(speakerBoxX, speakerBoxY, speakerBoxWidth, speakerBoxHeight)
@@ -72,7 +72,7 @@ function DialogueBox:draw()
     -- Draw the lines of dialogue
     if self.textLines then
       local charactersLeft = self.numCharactersShown
-      local lineX, lineY = boxX + 20, boxY + 20
+      local lineX, lineY = boxX + 20, boxY + 17
       for _, line in ipairs(self.textLines) do
         if charactersLeft >= #line then
           playdate.graphics.drawText(line, lineX, lineY)
