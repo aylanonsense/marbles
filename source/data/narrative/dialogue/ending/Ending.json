@@ -1,0 +1,60 @@
+{
+  "location": "BlackScreen",
+  "actors": [
+    { "actor": "Marbels", "expression": "confused" },
+    { "actor": "Minty", "expression": "neutral" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Prota", "expression": "confused" },
+    { "actor": "Mom", "expression": "neutral" },
+    { "actor": "Dad", "expression": "neutral" },
+    { "actor": "???", "expression": "neutral" }
+  ],
+  "script": [
+    {
+      "if": "failPlaythrough",
+      "then": [
+        { "actor": "Marbels", "line": "Well! What a day! At least that's all behind us now...", "expression": "happy", "side": "right" },
+        { "action": "play-cinematic", "cinematic": "MarbelsYarn" },
+        { "actor": "Marbels", "line": "We can finally be alone!", "expression": "happy" },
+        { "actor": "Marbels", "line": "But... what's that?", "expression": "shocked" },
+        { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "left" },
+        { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
+        { "actor": "Narrator", "line": "LOST YOUR MARBLES 2: MINT-O-SHOCK", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "normalPlaythrough",
+      "then": [
+        { "actor": "Dad", "line": "Morning Prota! I made breakfast!", "expression": "happy", "side": "right" },
+        { "actor": "Mom", "line": "And it's your favourite!", "expression": "happy", "side": "right" },
+        { "actor": "Prota", "line": "Ooh! Good morning tacos?", "expression": "happy", "side": "left" },
+        { "actor": "Dad", "line": "Yep! Have a seat.", "expression": "neutral", "side": "right" },
+        { "actor": "Prota", "line": "Great! I'll just--hey.", "expression": "happy" },
+        { "actor": "Mom", "line": "Hm?", "expression": "neutral", "side": "right" },
+        { "actor": "Prota", "line": "Where's Minty?", "expression": "confused" },
+        { "actor": "Dad", "line": "Minty? She's right...", "expression": "neutral", "side": "right" },
+        { "actor": "Mom", "line": "Oh no.", "expression": "neutral", "side": "right" },
+        { "action": "play-cinematic", "cinematic": "MintyBoat" },
+        { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
+        { "actor": "Narrator", "line": "LOST YOUR MARBLES COUNTRY:", "expression": "neutral" },
+        { "actor": "Narrator", "line": "MINTY IN THE CITY", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "specialPlaythrough",
+      "then": [
+        { "actor": "???", "line": "Yes, yes... everything went according to plan.", "expression": "neutral", "side": "left" },
+        { "actor": "???", "line": "The Festi-Ball went off without a hitch. No ball of yarn in sight.", "expression": "neutral", "side": "left" },
+        { "actor": "???", "line": "You were right. It was...too colourful for this world.", "expression": "neutral", "side": "left" },
+        { "actor": "???", "line": "Oho?", "expression": "neutral", "side": "left" },
+        { "actor": "Minty", "line": "", "expression": "neutral", "side": "right" },
+        { "actor": "Minty", "line": "Well, we'll have to look into that for next time...", "expression": "neutral", "side": "right" },
+        { "actor": "Minty", "line": "Madam President.", "expression": "neutral", "side": "right" },
+        { "actor": "Minty", "line": "", "expression": "happy", "side": "right" },
+        { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
+        { "actor": "Narrator", "line": "LOST YOUR MARBLES PRESENTS:", "expression": "neutral" },
+        { "actor": "Narrator", "line": "MINTY GEAR SOLID", "expression": "neutral" }
+      ]
+    }
+  ]
+}

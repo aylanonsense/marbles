@@ -161,9 +161,34 @@ end
 
 function Game:getStorylineResult()
   local averageScore = 0
-  for _, exit in ipairs(game.playthrough.storyline.exits) do
-    averageScore += (exit.score or 3) / #game.playthrough.storyline.exits
+  for _, exit in ipairs(self.playthrough.storyline.exits) do
+    averageScore += (exit.score or 3) / #self.playthrough.storyline.exits
   end
+  if averageScore < 1.9 then
+    return "fail"
+  elseif averageScore < 3.9 then
+    return "normal"
+  else
+    return "special"
+  end
+end
+
+function Game:getPlaythroughResult()
+  local averageScore = 0
+  local numScoringStorylines = 0
+  for _, storyline in ipairs(self.playthrough.finishedStorylines) do
+    if storyline.result then
+      numScoringStorylines += 1
+      if storyline.result == "fail" then
+        averageScore += 1
+      elseif storyline.result == "special" then
+        averageScore += 5
+      else
+        averageScore += 3
+      end
+    end
+  end
+  averageScore = averageScore / (numScoringStorylines or 1)
   if averageScore < 1.9 then
     return "fail"
   elseif averageScore < 3.9 then

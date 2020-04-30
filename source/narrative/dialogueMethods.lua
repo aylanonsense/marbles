@@ -27,6 +27,18 @@ function dialogueMethods.specialExit()
   return exitScore > 3
 end
 
+function dialogueMethods.failPlaythrough()
+  return game:getPlaythroughResult() == "fail"
+end
+
+function dialogueMethods.normalPlaythrough()
+  return game:getPlaythroughResult() == "normal"
+end
+
+function dialogueMethods.specialPlaythrough()
+  return game:getPlaythroughResult() == "special"
+end
+
 function dialogueMethods.finishedStorylineWithResult(storylineName, result)
   return game:finishedStorylineWithResult(storylineName, result)
 end

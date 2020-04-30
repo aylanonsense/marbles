@@ -5,14 +5,18 @@
       "symbol": "1",
       "label": "Prota's Home",
       "isMissing": true,
-      "next": "marbels-lab"
+      "special": "marbels-lab",
+      "normal": "marbels-lab",
+      "fail": "marbels-lab"
     },
 
     "marbels-lab": {
       "symbol": "2",
       "label": "Marbel's Lab",
       "isMissing": true,
-      "next": "library"
+      "special": "library",
+      "normal": "library",
+      "fail": "library"
     },
 
     "library": {
@@ -26,17 +30,23 @@
     "skate-park": {
       "symbol": "4A",
       "label": "Skate Park",
-      "next": "ball-museum"
+      "special": "ball-museum",
+      "normal": "ball-museum",
+      "fail": "ball-museum"
     },
     "sandwich-shop": {
       "symbol": "4B",
       "label": "Sandwich Shop",
-      "next": "ball-museum"
+      "special": "ball-museum",
+      "normal": "ball-museum",
+      "fail": "ball-museum"
     },
     "daycare": {
       "symbol": "4C",
       "label": "Daycare",
-      "next": "ball-museum"
+      "special": "ball-museum",
+      "normal": "ball-museum",
+      "fail": "ball-museum"
     },
 
     "ball-museum": {
@@ -50,41 +60,36 @@
     "security-city": {
       "symbol": "6A",
       "label": "Security City",
-      "next": "festi-ball"
+      "special": "festi-ball",
+      "normal": "festi-ball",
+      "fail": "festi-ball"
     },
     "pickle-yard": {
       "symbol": "6B",
       "label": "Pickle Yard",
-      "next": "festi-ball"
+      "special": "festi-ball",
+      "normal": "festi-ball",
+      "fail": "festi-ball"
     },
     "vintage-viper": {
       "symbol": "6C",
       "label": "Vintage Viper",
-      "next": "festi-ball"
+      "special": "festi-ball",
+      "normal": "festi-ball",
+      "fail": "festi-ball"
     },
 
     "festi-ball": {
       "symbol": "7",
       "label": "Festi-Ball",
-      "special": "special-ending",
-      "normal": "normal-ending",
-      "fail": "fail-ending"
+      "special": "ending",
+      "normal": "ending",
+      "fail": "ending"
     },
 
-    "special-ending": {
-      "symbol": "8A",
-      "label": "Special Ending",
-      "isMissing": true
-    },
-    "normal-ending": {
-      "symbol": "8B",
-      "label": "Normal Ending",
-      "isMissing": true
-    },
-    "fail-ending": {
-      "symbol": "8C",
-      "label": "Fail Ending",
-      "isMissing": true
+    "ending": {
+      "symbol": "8",
+      "label": "Ending"
     }
   }
 }
