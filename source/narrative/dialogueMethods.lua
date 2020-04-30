@@ -8,10 +8,6 @@ function dialogueMethods.lastExitWas(exitId)
   return game.playthrough.storyline.exits[#game.playthrough.storyline.exits].id == exitId
 end
 
-function dialogueMethods.lastStorylineWas(storylineName)
-  return game.playthrough.finishedStorylines[#game.playthrough.finishedStorylines].name == storylineName
-end
-
 function dialogueMethods.failExit()
   local exitScore = game.playthrough.storyline.exits[#game.playthrough.storyline.exits].score
   return exitScore < 3
@@ -37,6 +33,10 @@ end
 
 function dialogueMethods.specialPlaythrough()
   return game:getPlaythroughResult() == "special"
+end
+
+function dialogueMethods.finishedStoryline(storylineName)
+  return game:finishedStoryline(storylineName)
 end
 
 function dialogueMethods.finishedStorylineWithResult(storylineName, result)
