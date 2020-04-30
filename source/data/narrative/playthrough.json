@@ -5,9 +5,7 @@
       "symbol": "1",
       "label": "Prota's Home",
       "isMissing": true,
-      "special": "marbels-lab",
-      "normal": "marbels-lab",
-      "fail": "marbels-lab"
+      "next": "marbels-lab"
     },
 
     "marbels-lab": {
@@ -82,9 +80,7 @@
     "festi-ball": {
       "symbol": "7",
       "label": "Festi-Ball",
-      "special": "ending",
-      "normal": "ending",
-      "fail": "ending"
+      "next": "ending"
     },
 
     "ending": {

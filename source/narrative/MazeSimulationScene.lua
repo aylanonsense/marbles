@@ -21,7 +21,7 @@ function MazeSimulationScene:init(mazeName, exits)
       for _, exitData in ipairs(exitsData.exits) do
         if exitData.id == exitId then
           table.insert(options, {
-            text = "Skip with " .. exitData.label .. " (" .. (exitData.score < 2 and "fail" or (exitData.score > 4 and "special" or "normal")) .. ")",
+            text = "Skip with " .. exitData.label .. (exitData.score and (" (" .. (exitData.score < 2 and "fail" or (exitData.score > 4 and "special" or "normal")) .. ")") or ""),
             selected = function()
               self:endScene(false, exitData)
             end

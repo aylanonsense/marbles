@@ -712,38 +712,23 @@
       "score": 5
     },
 
+
+
     {
       "id": "festiball-1-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-
-
-
-  {
+      "label": "Exit"
+    },
+    {
       "id": "festiball-2-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-
-
-
-  {
+      "label": "Exit"
+    },
+    {
       "id": "festiball-3-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  },
-
-
-  
-  {
+      "label": "Exit"
+    },
+    {
       "id": "festiball-4-good",
-      "label": "Good",
-      "sandwichText": "",
-      "sandwichScore": 3
-  }
+      "label": "Exit"
+    }
   ]
 }

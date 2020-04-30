@@ -4,9 +4,11 @@
       "dialogue": "festi-ball/FestiBall_i__Intro",
       "music": "festi-ball-dialogue"
     },
-
-
-
+    {
+      "maze": "festiball-1",
+      "exits": [ "festiball-1-good" ],
+      "music": "festi-ball-maze"
+    },
     {
       "dialogue": {
         "daycare": "festi-ball/FestiBall_ii__1_Sphinx",
@@ -15,9 +17,11 @@
       },
       "music": "festi-ball-dialogue"
     },
-
-
-
+    {
+      "maze": "festiball-2",
+      "exits": [ "festiball-2-good" ],
+      "music": "festi-ball-maze"
+    },
     {
       "dialogue": {
         "daycare": "festi-ball/FestiBall_iii__1.1_Sphinx",
@@ -34,9 +38,11 @@
       },
       "music": "festi-ball-dialogue"
     },
-
-
-
+    {
+      "maze": "festiball-3",
+      "exits": [ "festiball-3-good" ],
+      "music": "festi-ball-maze"
+    },
     {
       "dialogue": {
         "daycare": {
@@ -57,9 +63,11 @@
       },
       "music": "festi-ball-dialogue"
     },
-
-
-
+    {
+      "maze": "festiball-4",
+      "exits": [ "festiball-4-good" ],
+      "music": "festi-ball-maze"
+    },
     {
       "dialogue": {
         "daycare": {
