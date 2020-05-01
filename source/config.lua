@@ -1,7 +1,7 @@
 config = {
   LAUNCH_LEVEL_EDITOR = false,
   SHOW_DEBUG_SCREENS = true,
-  SHOW_FRAMERATE = true,
+  SHOW_DIAGNOSTIC_STATS = true,
   MUSIC_VOLUME = 0.6,
   SOUND_VOLUME = 0.8
 }

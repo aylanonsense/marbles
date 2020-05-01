@@ -1,5 +1,6 @@
 import "scene/time"
 import "utility/table"
+import "utility/diagnosticStats"
 
 local MAX_MOVEMENT_PER_FRAME = 8.9
 
@@ -24,6 +25,8 @@ function physics:reset()
 end
 
 function physics:update()
+	diagnosticStats.dynamicPhysicsObjects = #self.balls + #self.dynamicObjects
+	diagnosticStats.staticPhysicsObjects = #self.staticObjects
 	-- Figure out the max ball speed
 	local maxBallSpeedSquared = 0
 	for _, ball in ipairs(self.balls) do
@@ -69,6 +72,7 @@ function physics:update()
 				for _, obj in ipairs(self.dynamicObjects) do
 					if obj.isEnabled then
 						local collision = obj:checkForCollisionWithBall(ball)
+						diagnosticStats.collisionChecks += 1
 						if collision then
 							-- There was a collision!
 							if self.onCollideCallback then
@@ -102,6 +106,7 @@ function physics:update()
 								for _, obj in ipairs(self.staticObjectsBySector[sectorX][sectorY]) do
 									if obj.isEnabled then
 										local collision = obj:checkForCollisionWithBall(ball)
+										diagnosticStats.collisionChecks += 1
 										if collision then
 											-- There was a collision!
 											if self.onCollideCallback then
@@ -128,6 +133,7 @@ function physics:update()
 					local ball2 = self.balls[j]
 					if ball2.isEnabled then
 						local collision = ball1:checkForCollisionWithBall(ball2)
+						diagnosticStats.collisionChecks += 1
 						if collision then
 							-- There was a collision!
 							if self.onCollideCallback then

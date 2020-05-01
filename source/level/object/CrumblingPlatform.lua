@@ -4,6 +4,7 @@ import "physics/PhysLine"
 import "render/camera"
 import "render/imageCache"
 import "scene/time"
+import "utility/diagnosticStats"
 
 class("CrumblingPlatform").extends("LevelObject")
 
@@ -44,6 +45,7 @@ function CrumblingPlatform:draw()
     frame = math.min(4, 4 - math.floor(3 * self.crumbleTime / CRUMBLE_TIME))
   end
   self.image[frame]:drawRotated(x, y, -camera.rotation, scale)
+  diagnosticStats.transformedImagesDrawn += 1
 end
 
 function CrumblingPlatform:preCollide(other, collision)

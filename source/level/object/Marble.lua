@@ -5,6 +5,7 @@ import "render/imageCache"
 import "utility/soundCache"
 import "physics/physics"
 import "config"
+import "utility/diagnosticStats"
 
 class("Marble").extends("LevelObject")
 
@@ -76,7 +77,8 @@ function Marble:draw()
 	local x, y = self:getPosition()
 	x, y = camera.matrix:transformXY(x, y)
 	local scale = camera.scale
-	self.image:drawScaled(x - scale * self.imageWidth / 2, y - scale * self.imageHeight / 2, scale)
+  self.image:drawScaled(x - scale * self.imageWidth / 2, y - scale * self.imageHeight / 2, scale)
+  diagnosticStats.untransformedImagesDrawn += 1
 end
 
 function Marble:onCollide(other, collision, isObjectA)

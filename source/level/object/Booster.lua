@@ -4,6 +4,7 @@ import "render/camera"
 import "scene/time"
 import "utility/math"
 import "render/imageCache"
+import "utility/diagnosticStats"
 
 class("Booster").extends("LevelObject")
 
@@ -27,6 +28,7 @@ function Booster:draw()
 	x, y = camera.matrix:transformXY(x, y)
 	local scale = camera.scale
 	self.image:drawRotated(x, y, self.rotation - camera.rotation, scale)
+	diagnosticStats.transformedImagesDrawn += 1
 end
 
 function Booster:preCollide(other, collision)

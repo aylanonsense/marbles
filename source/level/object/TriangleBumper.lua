@@ -4,6 +4,7 @@ import "physics/PhysLine"
 import "render/camera"
 import "render/imageCache"
 import "scene/time"
+import "utility/diagnosticStats"
 
 class("TriangleBumper").extends("LevelObject")
 
@@ -51,6 +52,7 @@ function TriangleBumper:draw()
     rotation -= 90
   end
   self.image:drawRotated(x, y, rotation, scale, scale)
+  diagnosticStats.transformedImagesDrawn += 1
 end
 
 function TriangleBumper:addPhysicsObject(physObj)

@@ -5,6 +5,8 @@ import "physics/physics"
 import "level/object/levelObjectByType"
 import "level/object/Marble"
 import "utility/soundCache"
+import "utility/diagnosticStats"
+import "config"
 
 class("MazeScene").extends(Scene)
 
@@ -130,6 +132,9 @@ function MazeScene:draw()
     end
   end
   sceneTransition:draw()
+  if config.SHOW_DIAGNOSTIC_STATS then
+    diagnosticStats:render()
+  end
 end
 
 function MazeScene:onCollide(collision)

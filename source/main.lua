@@ -4,6 +4,7 @@ import "CoreLibs/keyboard"
 import "game/Game"
 import "level/editor/EditorScene"
 import "config"
+import "utility/diagnosticStats"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
@@ -18,12 +19,10 @@ end
 -- Update the scene
 function playdate.update()
 	time:advance(1 / 20)
+  diagnosticStats:update()
   if scene then
   	scene:update()
   	scene:draw()
-  end
-  if config.SHOW_FRAMERATE then
-    playdate.drawFPS(380, 10)
   end
 end
 

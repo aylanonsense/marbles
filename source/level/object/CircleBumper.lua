@@ -3,6 +3,7 @@ import "physics/PhysCircle"
 import "render/camera"
 import "render/imageCache"
 import "scene/time"
+import "utility/diagnosticStats"
 
 class("CircleBumper").extends("LevelObject")
 
@@ -18,6 +19,7 @@ function CircleBumper:draw()
   local scale = camera.scale
   local rotation = -camera.rotation
   self.image:drawRotated(x, y, rotation, scale, scale)
+  diagnosticStats.transformedImagesDrawn += 1
 end
 
 function CircleBumper:addPhysicsObject(physObj)

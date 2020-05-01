@@ -3,6 +3,7 @@ import "level/object/Polygon"
 import "render/camera"
 import "render/patterns"
 import "physics/physObjectByType"
+import "utility/diagnosticStats"
 
 class("WorldBoundary").extends("Polygon")
 
@@ -21,6 +22,7 @@ function WorldBoundary:draw()
 		-- Fill in the polygon
 		playdate.graphics.setColor(playdate.graphics.kColorWhite)
 		playdate.graphics.fillPolygon(table.unpack(self.perspectiveFillCoordinates))
+		diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates
 	end
 
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
@@ -33,9 +35,11 @@ function WorldBoundary:draw()
 			local x2, y2 = camera.matrix:transformXY(self.lineCoordinates[i + 2], self.lineCoordinates[i + 3])
 			playdate.graphics.drawLine(x1, y1, x2, y2)
 		end
+		diagnosticStats.polygonPointsDrawn += #self.lineCoordinates
 	elseif self.fillCoordinates and #self.fillCoordinates > 0 then
 		-- Draw the outline as a polygon
 		playdate.graphics.drawPolygon(table.unpack(self.perspectiveFillCoordinates))
+		diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates
 	end
 end
 

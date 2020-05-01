@@ -2,6 +2,7 @@ import "level/object/LevelObject"
 import "physics/PhysBall"
 import "render/camera"
 import "render/imageCache"
+import "utility/diagnosticStats"
 
 class("BigBall").extends("LevelObject")
 
@@ -22,7 +23,8 @@ function BigBall:draw()
 	local x, y = self:getPosition()
 	x, y = camera.matrix:transformXY(x, y)
 	local scale = camera.scale
-	self.image:drawScaled(x - scale * self.imageWidth / 2, y - scale * self.imageHeight / 2, scale)
+  self.image:drawScaled(x - scale * self.imageWidth / 2, y - scale * self.imageHeight / 2, scale)
+  diagnosticStats.untransformedImagesDrawn += 1
 end
 
 function BigBall:serialize()

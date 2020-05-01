@@ -6,6 +6,7 @@ import "scene/time"
 import "utility/soundCache"
 import "config"
 import "render/imageCache"
+import "utility/diagnosticStats"
 
 local MIN_IMPULSE_TO_TRIGGER = 100
 
@@ -60,6 +61,7 @@ function Exit:draw()
   end
   local imageWidth, imageHeight = image:getSize()
   image:drawScaled(x - scale * imageWidth / 2, y - scale * imageHeight / 2 + scale * 5, scale)
+  diagnosticStats.untransformedImagesDrawn += 1
 
   -- Draw the label
   if self.health < 3 then

@@ -1,6 +1,7 @@
 import "level/object/LevelObject"
 import "render/camera"
 import "render/imageCache"
+import "utility/diagnosticStats"
 
 class("Decoration").extends("LevelObject")
 
@@ -30,6 +31,7 @@ function Decoration:draw()
   x, y = camera.matrix:transformXY(x, y)
   local scale = camera.scale
   self.image:drawRotated(x, y, self.rotation - camera.rotation, scale)
+  diagnosticStats.transformedImagesDrawn += 1
 end
 
 function Decoration:getPosition()
