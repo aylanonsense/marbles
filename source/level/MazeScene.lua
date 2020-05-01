@@ -133,7 +133,7 @@ function MazeScene:draw()
   end
   sceneTransition:draw()
   if config.SHOW_DIAGNOSTIC_STATS then
-    diagnosticStats:render()
+    diagnosticStats:draw()
   end
 end
 

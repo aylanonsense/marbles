@@ -5,6 +5,7 @@ import "physics/physics"
 import "level/object/levelObjectByType"
 import "level/object/Marble"
 import "utility/soundCache"
+import "utility/diagnosticStats"
 
 class("EditorTestLevelScene").extends(Scene)
 
@@ -59,6 +60,7 @@ function EditorTestLevelScene:init(levelInfo, nextScene, storyline)
 end
 
 function EditorTestLevelScene:update()
+	diagnosticStats:update()
 	-- Update the physics engine
 	physics:update()
 
@@ -107,6 +109,7 @@ function EditorTestLevelScene:draw()
 	for _, obj in ipairs(self.objects) do
 		obj:draw()
 	end
+	diagnosticStats:draw()
 end
 
 function EditorTestLevelScene:onCollide(collision)

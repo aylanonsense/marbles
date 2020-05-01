@@ -18,7 +18,7 @@ function diagnosticStats:update()
   self.polygonPointsDrawn = 0
 end
 
-function diagnosticStats:render()
+function diagnosticStats:draw()
   playdate.graphics.setFont(fonts.FullCircle)
   playdate.drawFPS(250+48, 182-175)
   local stats = {
