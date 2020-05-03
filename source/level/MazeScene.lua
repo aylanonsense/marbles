@@ -104,7 +104,43 @@ function MazeScene:update()
 
     -- Rotating the crank rotates the camera
     local crankChange = playdate.getCrankChange()
-    camera.rotation = math.min(math.max(-45, camera.rotation + crankChange / 2), 45)
+    local crankRotation = playdate.getCrankPosition()
+    local minAngle = 3
+    local maxAngle = 80
+    local maxBufferAngle = 115
+    local idealCameraRotation
+    if crankRotation <= minAngle then
+      idealCameraRotation = 0
+    elseif crankRotation <= maxAngle then
+      idealCameraRotation = 45 * (crankRotation - minAngle) / (maxAngle - minAngle)
+    elseif crankRotation <= maxBufferAngle then
+      idealCameraRotation = 45
+    elseif crankRotation <= 180 - minAngle then
+      idealCameraRotation = 45 * (1 - (crankRotation - maxBufferAngle) / (180 - minAngle - maxBufferAngle))
+    elseif crankRotation >= 360 - minAngle then
+      idealCameraRotation = 0
+    elseif crankRotation >= 360 - maxAngle then
+      idealCameraRotation = -45 * (1 - (crankRotation - 360 + maxAngle) / (360 - minAngle - 360 + maxAngle))
+    elseif crankRotation >= 360 - maxBufferAngle then
+      idealCameraRotation = -45
+    elseif crankRotation >= 180 + minAngle then
+      idealCameraRotation = -45 * (crankRotation - 180 - minAngle) / (360 - maxBufferAngle - 180 - minAngle)
+    else
+      idealCameraRotation = 0
+    end
+    local cameraRotationDiff = math.abs(camera.rotation - idealCameraRotation)
+    if cameraRotationDiff < 0.5 then
+      -- Don't do anything, to prevent flickering rotation
+    elseif cameraRotationDiff < 1 then
+      camera.rotation = idealCameraRotation
+    else
+      change = math.min(math.max(1, 0.75 * cameraRotationDiff), 15)
+      if camera.rotation < idealCameraRotation then
+        camera.rotation += change
+      else
+        camera.rotation -= change
+      end
+    end
 
     -- Move the camera to be looking at the ball
     camera.x, camera.y = self.marble:getPosition()

@@ -3,8 +3,8 @@ import "scene/time"
 import "utility/soundCache"
 
 sceneTransition = {
-  TRANSITION_IN_TIME = 2.00,
-  TRANSITION_OUT_TIME = 2.00,
+  TRANSITION_IN_TIME = (config.QUICKER_SCENE_TRANSITIONS and 0.25 or 1.75),
+  TRANSITION_OUT_TIME = (config.QUICKER_SCENE_TRANSITIONS and 0.25 or 1.75),
   anim = nil,
   time = 0.00,
   callback = nil
