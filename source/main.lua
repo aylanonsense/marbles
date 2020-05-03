@@ -5,6 +5,7 @@ import "game/Game"
 import "level/editor/EditorScene"
 import "config"
 import "utility/diagnosticStats"
+import "CoreLibs/timer"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
@@ -24,6 +25,7 @@ function playdate.update()
   	scene:update()
   	scene:draw()
   end
+  playdate.timer.updateTimers()
 end
 
 -- Pass callbacks through to the scene

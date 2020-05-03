@@ -7,6 +7,7 @@ import "level/object/Marble"
 import "utility/soundCache"
 import "utility/diagnosticStats"
 import "config"
+import "CoreLibs/ui"
 
 class("MazeScene").extends(Scene)
 
@@ -32,6 +33,9 @@ function MazeScene:init(levelData, musicPlayer)
     self:onCollide(collision)
   end)
   sceneTransition:hold()
+
+  -- Reset the crank animation
+  playdate.ui.crankIndicator:reset()
 end
 
 function MazeScene:partialLoad()
@@ -130,6 +134,10 @@ function MazeScene:draw()
     for _, obj in ipairs(self.objects) do
       obj:draw()
     end
+  end
+  -- Draw the crank hint indicator
+  if playdate.isCrankDocked() then
+    playdate.ui.crankIndicator:update()
   end
   sceneTransition:draw()
   if config.SHOW_DIAGNOSTIC_STATS then
