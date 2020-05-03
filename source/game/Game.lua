@@ -5,6 +5,7 @@ import "level/MazeScene"
 import "narrative/StorylineSimulationScene"
 import "narrative/DialogueSimulationScene"
 import "narrative/MazeSimulationScene"
+import "game/TitleScreenScene"
 import "render/imageCache"
 import "utility/soundCache"
 import "config"
@@ -16,14 +17,31 @@ function Game:init()
   self.playthroughData = loadJsonFile("/data/narrative/playthrough.json")
   self.storylineData = nil
 
-  -- Store the player's playthrough as a nice JSON object
+  -- Get save data
+  local saveData = playdate.datastore.read("lost-your-marbles-save-data")
+  self.playthrough = nil
+
+  -- Open the title screen
+  Scene.setScene(TitleScreenScene(saveData ~= nil), function(option)
+    if option == "CONTINUE" then
+      self:continueGame(saveData)
+    else
+      self:startNewGame()
+    end
+  end)
+end
+
+function Game:continueGame(saveData)
+  self.playthrough = saveData
+  self:resumeCurrentStoryline()
+end
+
+function Game:startNewGame()
   self.playthrough = {
     storyline = nil,
     actorVariants = {},
     finishedStorylines = {}
   }
-
-  -- Kick off the first storyline
   self:startStoryline(self.playthroughData.start)
 end
 
@@ -37,6 +55,7 @@ function Game:startStoryline(storylineName)
 end
 
 function Game:resumeCurrentStoryline()
+
   local storylineName = self.playthrough.storyline.name
   local branchingData = self.playthroughData.storylines[storylineName]
   -- Load storyline data (a list of scenes)
@@ -64,10 +83,12 @@ function Game:advanceCurrentStoryline()
   soundCache.stopAllSoundEffects()
   soundCache.stopAllMusic()
   self.playthrough.storyline.stage += 1
+  -- Save the data
   self:playNextStorylineScene()
 end
 
 function Game:playNextStorylineScene()
+  playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
   local advance = function(exit)
     if exit then
       self:recordExitTaken(exit)
