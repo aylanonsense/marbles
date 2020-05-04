@@ -55,10 +55,10 @@ end
 function Actor:slideOffStage()
   if self.sprite then
     local startX = 200 + 100 * ((self.side == "left") and -1 or 1)
-    local endX = 200 + 300 * ((self.side == "left") and -1 or 1)
+    local endX = 200 + 380 * ((self.side == "left") and -1 or 1)
     local y = 154
     local path = playdate.geometry.lineSegment.new(startX, y, endX, y)
-    local animator = playdate.graphics.animator.new(1000, path, playdate.easingFunctions.outCubic)
+    local animator = playdate.graphics.animator.new(1200, path, playdate.easingFunctions.outCubic)
     self.sprite:setAnimator(animator)
     self.side = nil
   end
