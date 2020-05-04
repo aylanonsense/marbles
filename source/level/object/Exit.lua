@@ -8,7 +8,7 @@ import "config"
 import "render/imageCache"
 import "utility/diagnosticStats"
 
-local MIN_IMPULSE_TO_TRIGGER = 100
+local MIN_IMPULSE_TO_TRIGGER = 60
 
 local exitsData = json.decodeFile("/data/exits.json").exits
 local exitLookup = {}
@@ -20,7 +20,7 @@ class("Exit").extends("LevelObject")
 
 function Exit:init(x, y, exitId, icon)
   Exit.super.init(self, LevelObject.Type.Exit)
-  self.physCircle = self:addPhysicsObject(PhysCircle(x, y, 14))
+  self.physCircle = self:addPhysicsObject(PhysCircle(x, y, 18))
   self.health = 3
   self.icon = icon
   if exitLookup[exitId] then
@@ -34,16 +34,26 @@ function Exit:init(x, y, exitId, icon)
   self.impulseToTrigger = MIN_IMPULSE_TO_TRIGGER
   self.hitSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-exit-hit")
   self.hitSound:setVolume(config.SOUND_VOLUME)
-  self.imageTable = imageCache.loadImageTable("images/lightbulbspecial.png")
-  self.imageTableBad = imageCache.loadImageTable("images/lightbulbbad.png")
-  self.imageTableGood = imageCache.loadImageTable("images/lightbulbgood.png")
+  local score = exitLookup[self.exitId].score
+  if score < 2 then
+    self.imageTable = imageCache.loadImageTable("images/level/objects/exit/moon-exit.png")
+    self.numDestroyedFrames = 8
+  elseif score > 4 then
+    self.imageTable = imageCache.loadImageTable("images/level/objects/exit/sun-exit.png")
+    self.numDestroyedFrames = 6
+  else
+    self.imageTable = imageCache.loadImageTable("images/level/objects/exit/star-exit.png")
+    self.numDestroyedFrames = 8
+  end
+  self.animationFrame = 0
 end
 
 function Exit:update()
   self.impulseFreezeTimer = math.max(0, self.impulseFreezeTimer - time.dt)
   if self.impulseFreezeTimer <= 0 then
-    self.impulseToTrigger = math.max(MIN_IMPULSE_TO_TRIGGER, self.impulseToTrigger - 100 * time.dt)
+    self.impulseToTrigger = math.max(MIN_IMPULSE_TO_TRIGGER, self.impulseToTrigger - 200 * time.dt)
   end
+  self.animationFrame += 1
 end
 
 function Exit:draw()
@@ -52,12 +62,19 @@ function Exit:draw()
   local scale = camera.scale
 
   -- Draw the lightbulb
-  local image = self.imageTable[4 - self.health]
-  if self.icon == "Bad" then
-    image = self.imageTableBad[4 - self.health]
-  end
-  if self.icon == "Good" then
-    image = self.imageTableGood[4 - self.health]
+  local image
+  if self.health >= 3 then
+    image = self.imageTable[(self.animationFrame % 24 < 12) and 1 or 2]
+  elseif self.health >= 2 then
+    image = self.imageTable[math.min(3 + math.floor(self.animationFrame / 3), 6)]
+  elseif self.health >= 1 then
+    image = self.imageTable[math.min(7 + math.floor(self.animationFrame / 3), 10)]
+  else
+    if self.animationFrame < 9 then
+      image = self.imageTable[math.min(11 + math.floor(self.animationFrame / 3), 13)]
+    else
+      image = self.imageTable[14 + math.floor(self.animationFrame / 3) % self.numDestroyedFrames]
+    end
   end
   local imageWidth, imageHeight = image:getSize()
   image:drawScaled(x - scale * imageWidth / 2, y - scale * imageHeight / 2 + scale * 5, scale)
@@ -65,7 +82,7 @@ function Exit:draw()
 
   -- Draw the label
   if self.health < 3 then
-    playdate.graphics.setFont(fonts.FullCircle)
+    playdate.graphics.setFont(fonts.MarbleBasic)
     local labelWidth, labelHeight = playdate.graphics.getTextSize(self.label)
     local labelX, labelY = x - labelWidth / 2, y + 30 * scale
     playdate.graphics.setColor(playdate.graphics.kColorWhite)
@@ -76,21 +93,25 @@ function Exit:draw()
 end
 
 function Exit:preCollide(other, collision)
-  self.impulseFreezeTimer = 0.50
-  if self.health > 0 and not self.isInvincible and collision.impulse >= self.impulseToTrigger then
-    self.impulseToTrigger = collision.impulse + 200
-    collision.impulse += 100
-    collision.tag = 'exit-trigger'
-    self.health -= 1
-    self.hitSound:play(1)
-    if scene.triggerExitHit then
-      scene:triggerExitHit(exitLookup[self.exitId], self)
-    end
-    if self.health <= 0 then
-      if scene.triggerExitTaken then
-        scene:triggerExitTaken(exitLookup[self.exitId], self)
+  if self.health <= 0 then
+    return false
+  else
+    self.impulseFreezeTimer = 0.50
+    if not self.isInvincible and collision.impulse >= self.impulseToTrigger then
+      self.impulseToTrigger = collision.impulse + 200
+      collision.impulse += 100
+      collision.tag = 'exit-trigger'
+      self.animationFrame = 0
+      self.health -= 1
+      self.hitSound:play(1)
+      if scene.triggerExitHit then
+        scene:triggerExitHit(exitLookup[self.exitId], self, collision)
       end
-      self:despawn()
+      if self.health <= 0 then
+        if scene.triggerExitTaken then
+          scene:triggerExitTaken(exitLookup[self.exitId], self, collision)
+        end
+      end
     end
   end
 end

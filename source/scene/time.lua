@@ -6,10 +6,10 @@ time = {
 
 function time:advance(dt)
 	if self.timescale < self.targetTimescale then
-		self.timescale = math.min(self.timescale + 0.75 * dt, self.targetTimescale)
+		self.timescale = math.min(self.timescale + 0.5 * dt, self.targetTimescale)
 	end
 	if self.timescale > self.targetTimescale then
-		self.timescale = math.min(self.timescale - 1.5 * dt, self.targetTimescale)
+		self.timescale = math.max(self.timescale - 1.5 * dt, self.targetTimescale)
 	end
 	self.dt = dt * self.timescale
 end

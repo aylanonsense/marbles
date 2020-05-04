@@ -6,6 +6,7 @@ import "level/editor/EditorScene"
 import "config"
 import "utility/diagnosticStats"
 import "CoreLibs/timer"
+import "effect/effects"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
@@ -20,12 +21,17 @@ end
 -- Update the scene
 function playdate.update()
 	time:advance(1 / 20)
+  effects:update()
   diagnosticStats:update()
   if scene then
-  	scene:update()
+    if effects.freezeFrames <= 0 then
+      scene:update()
+    end
   	scene:draw()
   end
-  playdate.timer.updateTimers()
+  if effects.freezeFrames <= 0 then
+    playdate.timer.updateTimers()
+  end
 end
 
 -- Pass callbacks through to the scene

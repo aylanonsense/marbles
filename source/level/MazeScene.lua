@@ -8,6 +8,8 @@ import "utility/soundCache"
 import "utility/diagnosticStats"
 import "config"
 import "CoreLibs/ui"
+import "scene/time"
+import "effect/effects"
 
 class("MazeScene").extends(Scene)
 
@@ -21,6 +23,10 @@ function MazeScene:init(levelData, musicPlayer)
   self.isLoaded = false
   self.lastLoadedObjectIndex = 0
   self.musicPlayer = musicPlayer
+  self.slowtimeFramesLeft = 0
+  self.isCameraLocked = false
+  self.framesUntilTransitionOut = 0
+  self.finalExitData = nil
 
   -- Reset everything
   camera:reset()
@@ -77,6 +83,12 @@ function MazeScene:partialLoad()
 end
 
 function MazeScene:update()
+  if self.slowtimeFramesLeft > 0 then
+    self.slowtimeFramesLeft -= 1
+    if self.slowtimeFramesLeft <= 0 then
+      time:transitionTimeScale(1.00)
+    end
+  end
   if not self.isLoaded then
     for i = 1, 2 do
       self:partialLoad()
@@ -143,13 +155,26 @@ function MazeScene:update()
     end
 
     -- Move the camera to be looking at the ball
-    camera.x, camera.y = self.marble:getPosition()
-    camera:recalculatePerspective()
+    if not self.isCameraLocked then
+      camera.x, camera.y = self.marble:getPosition()
+    end
+  end
+  if self.framesUntilTransitionOut > 0 then
+    self.framesUntilTransitionOut -= 1
+    if self.framesUntilTransitionOut <= 0 then
+      sceneTransition:transitionOut(function()
+        soundCache:stopAllSoundEffects()
+        self:endScene(exitData)
+      end)
+    end
   end
   sceneTransition:update()
 end
 
 function MazeScene:draw()
+  camera.x += effects.screenShakeX
+  camera.y += effects.screenShakeY
+  camera:recalculatePerspective()
   if self.isLoaded then
     -- Clear the screen
     playdate.graphics.clear()
@@ -179,6 +204,8 @@ function MazeScene:draw()
   if config.SHOW_DIAGNOSTIC_STATS then
     diagnosticStats:draw()
   end
+  camera.x -= effects.screenShakeX
+  camera.y -= effects.screenShakeY
 end
 
 function MazeScene:onCollide(collision)
@@ -193,17 +220,32 @@ function MazeScene:onCollide(collision)
   end
 end
 
-function MazeScene:triggerExitHit(exitData, exit)
+function MazeScene:triggerExitHit(exitData, exit, collision)
+  if exit.health >= 2 then
+    time:setTimescale(0.07)
+    self.slowtimeFramesLeft = 45
+    effects:freeze(4)
+    effects:shake(2, collision.normalX, collision.normalY)
+  elseif exit.health >= 1 then
+    time:setTimescale(0.25)
+    self.slowtimeFramesLeft = 3
+    effects:freeze(4)
+    effects:shake(2, collision.normalX, collision.normalY)
+  else
+    time:setTimescale(0.15)
+    self.slowtimeFramesLeft = 25
+    self.isCameraLocked = true
+    effects:freeze(5)
+    effects:shake(4, collision.normalX, collision.normalY)
+  end
 end
 
-function MazeScene:triggerExitTaken(exitData, exit)
+function MazeScene:triggerExitTaken(exitData, exit, collision)
   for _, obj in ipairs(self.objects) do
     if obj.type == LevelObject.Type.Exit then
       obj.isInvincible = true
     end
   end
-  sceneTransition:transitionOut(function()
-    soundCache:stopAllSoundEffects()
-    self:endScene(exitData)
-  end)
+  self.finalExitData = exitData
+  self.framesUntilTransitionOut = 105
 end
