@@ -34,7 +34,7 @@ function Marble:update()
     -- Trigger a bump sound effect
   local minImpulseForBumpSound = math.min(math.max(30, 30 + 40 * (speed / 300)), 70)
   if self.recentImpulses[1] > minImpulseForBumpSound and self.recentImpulses[1] > self.recentImpulses[2] + minImpulseForBumpSound and self.recentImpulses[1] > self.recentImpulses[3] + minImpulseForBumpSound and self.framesOfSilence <= 0 then
-    local volume = math.min(math.max(0.05, 0.05 + 0.95 * (self.recentImpulses[1] - minImpulseForBumpSound) / (350 - minImpulseForBumpSound)), 1.0)
+    local volume = 0.5 * math.min(math.max(0.05, 0.05 + 0.95 * (self.recentImpulses[1] - minImpulseForBumpSound) / (350 - minImpulseForBumpSound)), 1.0)
     local rate = math.min(math.max(0.70, 0.70 + 0.30 * (self.recentImpulses[1] - minImpulseForBumpSound) / (200 - minImpulseForBumpSound)), 1.0)
     self.groundBounceSound:stop()
     self.groundBounceSound:setVolume(config.SOUND_VOLUME * volume)
