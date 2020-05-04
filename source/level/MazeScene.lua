@@ -222,14 +222,14 @@ end
 
 function MazeScene:triggerExitHit(exitData, exit, collision)
   if exit.health >= 2 then
-    time:setTimescale(0.07)
+    time:setTimescale(0.03)
     self.slowtimeFramesLeft = 45
-    effects:freeze(4)
+    effects:freeze(5)
     effects:shake(2, collision.normalX, collision.normalY)
   elseif exit.health >= 1 then
     time:setTimescale(0.25)
     self.slowtimeFramesLeft = 3
-    effects:freeze(4)
+    effects:freeze(3)
     effects:shake(2, collision.normalX, collision.normalY)
   else
     time:setTimescale(0.15)

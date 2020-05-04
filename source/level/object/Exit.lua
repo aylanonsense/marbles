@@ -34,6 +34,7 @@ function Exit:init(x, y, exitId, icon)
   self.impulseToTrigger = MIN_IMPULSE_TO_TRIGGER
   self.hitSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-exit-hit")
   self.hitSound:setVolume(config.SOUND_VOLUME)
+  self.popLinesImage = imageCache.loadImage("images/level/objects/exit/exit-pop-lines.png")
   local score = exitLookup[self.exitId].score
   if score < 2 then
     self.imageTable = imageCache.loadImageTable("images/level/objects/exit/moon-exit.png")
@@ -53,10 +54,10 @@ function Exit:update()
   if self.impulseFreezeTimer <= 0 then
     self.impulseToTrigger = math.max(MIN_IMPULSE_TO_TRIGGER, self.impulseToTrigger - 200 * time.dt)
   end
-  self.animationFrame += 1
 end
 
 function Exit:draw()
+  self.animationFrame += 1
   local x, y = self:getPosition()
   x, y = camera.matrix:transformXY(x, y)
   local scale = camera.scale
@@ -66,12 +67,12 @@ function Exit:draw()
   if self.health >= 3 then
     image = self.imageTable[(self.animationFrame % 24 < 12) and 1 or 2]
   elseif self.health >= 2 then
-    image = self.imageTable[math.min(3 + math.floor(self.animationFrame / 3), 6)]
+    image = self.imageTable[math.min(3 + math.floor(self.animationFrame / 2), 6)]
   elseif self.health >= 1 then
-    image = self.imageTable[math.min(7 + math.floor(self.animationFrame / 3), 10)]
+    image = self.imageTable[math.min(7 + math.floor(self.animationFrame / 2), 10)]
   else
-    if self.animationFrame < 9 then
-      image = self.imageTable[math.min(11 + math.floor(self.animationFrame / 3), 13)]
+    if self.animationFrame < 6 then
+      image = self.imageTable[math.min(11 + math.floor(self.animationFrame / 2), 13)]
     else
       image = self.imageTable[14 + math.floor(self.animationFrame / 3) % self.numDestroyedFrames]
     end
@@ -84,10 +85,15 @@ function Exit:draw()
   if self.health < 3 then
     playdate.graphics.setFont(fonts.MarbleBasic)
     local labelWidth, labelHeight = playdate.graphics.getTextSize(self.label)
-    local labelX, labelY = x - labelWidth / 2, y + 30 * scale
+    local labelX, labelY = x - labelWidth / 2, y + 33 * scale
+    -- Draw some pop lines after the exit is first hit
     playdate.graphics.setColor(playdate.graphics.kColorWhite)
-    playdate.graphics.fillRect(labelX - 2, labelY - 1, labelWidth + 4, labelHeight + 2)
+    playdate.graphics.fillRect(labelX + 1, labelY + 1, labelWidth - 2, labelHeight - 2)
     playdate.graphics.setColor(playdate.graphics.kColorBlack)
+    if self.health >= 2 and self.animationFrame < 15 then
+      local imageWidth, imageHeight = self.popLinesImage:getSize()
+      self.popLinesImage:drawScaled(labelX + labelWidth / 2 - scale * imageWidth / 2, labelY - 23 * scale, scale)
+    end
     playdate.graphics.drawText(self.label, labelX, labelY)
   end
 end
