@@ -30,23 +30,74 @@
 			"points": [
 				 {
 					"isSolid":true,
-					"x":2800,
+					"x":2120,
 					"y":-1230
 				},
 				 {
 					"isSolid":true,
-					"x":2800,
+					"x":2130,
 					"y":550
 				},
 				 {
 					"isSolid":true,
-					"x":-1240,
+					"x":-960,
 					"y":550
 				},
 				 {
 					"isSolid":true,
-					"x":-1240,
+					"x":-960,
 					"y":-1230
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"Black",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":-1,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":1690,
+					"y":0
+				},
+				 {
+					"isSolid":false,
+					"x":1690,
+					"y":50
+				},
+				 {
+					"isSolid":false,
+					"x":1700,
+					"y":50
+				},
+				 {
+					"isSolid":false,
+					"x":1700,
+					"y":0
 				}
 			],
 			"type":"Polygon"
@@ -86,33 +137,84 @@
 			"points": [
 				 {
 					"isSolid":true,
-					"x":-850,
+					"x":-570,
 					"y":-170
 				},
 				 {
 					"isSolid":true,
-					"x":-870,
+					"x":-590,
 					"y":-170
 				},
 				 {
 					"isSolid":true,
-					"x":-870,
+					"x":-590,
 					"y":-130
 				},
 				 {
 					"isSolid":true,
-					"x":-750,
+					"x":-470,
 					"y":-130
 				},
 				 {
 					"isSolid":true,
-					"x":-750,
+					"x":-470,
 					"y":-140
 				}
 			],
 			"type":"Polygon"
 		},
 		 {
+			"fillPattern":"Black",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":-1,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":1840,
+					"y":-80
+				},
+				 {
+					"isSolid":false,
+					"x":1840,
+					"y":-30
+				},
+				 {
+					"isSolid":false,
+					"x":1850,
+					"y":-30
+				},
+				 {
+					"isSolid":false,
+					"x":1850,
+					"y":-80
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
 			"fillPattern":"LightGrey",
 			"isSolid":true,
 			"isVisible":true,
@@ -142,76 +244,6 @@
 					"isSolid":true,
 					"isVisible":true,
 					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":true,
-					"x":2080,
-					"y":-80
-				},
-				 {
-					"isSolid":true,
-					"x":2150,
-					"y":-80
-				},
-				 {
-					"isSolid":true,
-					"x":2150,
-					"y":-120
-				},
-				 {
-					"isSolid":true,
-					"x":2140,
-					"y":-120
-				},
-				 {
-					"isSolid":true,
-					"x":2080,
-					"y":-90
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LightGrey",
-			"isSolid":true,
-			"isVisible":true,
-			"lines": [
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-60
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-60
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
 				},
 				 {
 					"isSolid":true,
@@ -222,43 +254,33 @@
 			"points": [
 				 {
 					"isSolid":true,
-					"x":600,
-					"y":150
-				},
-				 {
-					"isSolid":true,
-					"x":660,
-					"y":90
-				},
-				 {
-					"isSolid":true,
-					"x":660,
+					"x":1570,
 					"y":20
 				},
 				 {
 					"isSolid":true,
-					"x":690,
+					"x":1560,
 					"y":20
 				},
 				 {
 					"isSolid":true,
-					"x":690,
-					"y":90
+					"x":1510,
+					"y":50
 				},
 				 {
 					"isSolid":true,
-					"x":750,
-					"y":150
+					"x":1510,
+					"y":60
 				},
 				 {
 					"isSolid":true,
-					"x":750,
-					"y":160
+					"x":1620,
+					"y":60
 				},
 				 {
 					"isSolid":true,
-					"x":600,
-					"y":160
+					"x":1620,
+					"y":50
 				}
 			],
 			"type":"Polygon"
@@ -302,315 +324,84 @@
 			"points": [
 				 {
 					"isSolid":true,
-					"x":1390,
+					"x":1190,
 					"y":-10
 				},
 				 {
 					"isSolid":true,
-					"x":1390,
+					"x":1190,
 					"y":-20
 				},
 				 {
 					"isSolid":true,
-					"x":1320,
+					"x":1120,
 					"y":-90
 				},
 				 {
 					"isSolid":true,
-					"x":1290,
+					"x":1090,
 					"y":-90
 				},
 				 {
 					"isSolid":true,
-					"x":1220,
+					"x":1020,
 					"y":-20
 				},
 				 {
 					"isSolid":true,
-					"x":1220,
+					"x":1020,
 					"y":-10
 				}
 			],
 			"type":"Polygon"
 		},
 		 {
-			"fillPattern":"DarkGray",
-			"isSolid":false,
+			"fillPattern":"LightGrey",
+			"isSolid":true,
 			"isVisible":true,
 			"layer":1,
 			"lines": [
 				 {
-					"isSolid":false,
+					"isSolid":true,
 					"isVisible":true,
 					"radius":0
 				},
 				 {
-					"isSolid":false,
+					"isSolid":true,
 					"isVisible":true,
 					"radius":0
 				},
 				 {
-					"isSolid":false,
+					"isSolid":true,
 					"isVisible":true,
 					"radius":0
 				},
 				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
+					"isSolid":true,
 					"isVisible":true,
 					"radius":0
 				}
 			],
 			"points": [
 				 {
-					"isSolid":false,
-					"x":-250,
-					"y":-580
+					"isSolid":true,
+					"x":1670,
+					"y":0
 				},
 				 {
-					"isSolid":false,
-					"x":-230,
-					"y":-600
+					"isSolid":true,
+					"x":1670,
+					"y":20
 				},
 				 {
-					"isSolid":false,
-					"x":-160,
-					"y":-600
+					"isSolid":true,
+					"x":1870,
+					"y":-80
 				},
 				 {
-					"isSolid":false,
-					"x":-140,
-					"y":-580
-				},
-				 {
-					"isSolid":false,
-					"x":-130,
-					"y":-580
-				},
-				 {
-					"isSolid":false,
-					"x":-10,
-					"y":-470
-				},
-				 {
-					"isSolid":false,
-					"x":-10,
-					"y":-450
-				},
-				 {
-					"isSolid":false,
-					"x":-570,
-					"y":-450
-				},
-				 {
-					"isSolid":false,
-					"x":-570,
-					"y":-470
-				},
-				 {
-					"isSolid":false,
-					"x":-450,
-					"y":-580
-				},
-				 {
-					"isSolid":false,
-					"x":-440,
-					"y":-580
-				},
-				 {
-					"isSolid":false,
-					"x":-420,
-					"y":-600
-				},
-				 {
-					"isSolid":false,
-					"x":-350,
-					"y":-600
-				},
-				 {
-					"isSolid":false,
-					"x":-330,
-					"y":-580
-				},
-				 {
-					"isSolid":false,
-					"x":-320,
-					"y":-570
-				},
-				 {
-					"isSolid":false,
-					"x":-260,
-					"y":-570
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"DarkerGray",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":1,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":65
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":85
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":65
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":-10,
-					"y":-450
-				},
-				 {
-					"isSolid":false,
-					"x":-80,
-					"y":-420
-				},
-				 {
-					"isSolid":false,
-					"x":-110,
-					"y":-380
-				},
-				 {
-					"isSolid":false,
-					"x":-200,
-					"y":-390
-				},
-				 {
-					"isSolid":false,
-					"x":-230,
-					"y":-390
-				},
-				 {
-					"isSolid":false,
-					"x":-350,
-					"y":-390
-				},
-				 {
-					"isSolid":false,
-					"x":-380,
-					"y":-390
-				},
-				 {
-					"isSolid":false,
-					"x":-470,
-					"y":-380
-				},
-				 {
-					"isSolid":false,
-					"x":-490,
-					"y":-420
-				},
-				 {
-					"isSolid":false,
-					"x":-570,
-					"y":-450
+					"isSolid":true,
+					"x":1870,
+					"y":-100
 				}
 			],
 			"type":"Polygon"
@@ -620,6 +411,76 @@
 			"isVisible":true,
 			"layer":1,
 			"lines": [
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":-80
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":-80
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
 				 {
 					"isSolid":true,
 					"isVisible":true,
@@ -728,81 +589,6 @@
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-141
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-141
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-91
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-60
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-60
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-91
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
 					"radius":0
 				},
 				 {
@@ -844,31 +630,6 @@
 					"isSolid":true,
 					"isVisible":true,
 					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-80
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-80
 				},
 				 {
 					"isSolid":true,
@@ -879,12 +640,82 @@
 			"points": [
 				 {
 					"isSolid":true,
-					"x":-870,
+					"x":2040,
+					"y":-310
+				},
+				 {
+					"isSolid":true,
+					"x":2010,
+					"y":-310
+				},
+				 {
+					"isSolid":true,
+					"x":2010,
+					"y":-340
+				},
+				 {
+					"isSolid":true,
+					"x":2420,
+					"y":-340
+				},
+				 {
+					"isSolid":true,
+					"x":2420,
+					"y":550
+				},
+				 {
+					"isSolid":true,
+					"x":-1300,
+					"y":550
+				},
+				 {
+					"isSolid":true,
+					"x":-1300,
+					"y":-470
+				},
+				 {
+					"isSolid":true,
+					"x":-830,
+					"y":-470
+				},
+				 {
+					"isSolid":true,
+					"x":-830,
+					"y":-440
+				},
+				 {
+					"isSolid":true,
+					"x":-850,
+					"y":-440
+				},
+				 {
+					"isSolid":true,
+					"x":-850,
 					"y":-170
 				},
 				 {
 					"isSolid":true,
-					"x":-870,
+					"x":-770,
+					"y":-90
+				},
+				 {
+					"isSolid":true,
+					"x":-700,
+					"y":-90
+				},
+				 {
+					"isSolid":true,
+					"x":-620,
+					"y":-170
+				},
+				 {
+					"isSolid":true,
+					"x":-590,
+					"y":-170
+				},
+				 {
+					"isSolid":true,
+					"x":-590,
 					"y":-140
 				},
 				 {
@@ -959,932 +790,910 @@
 				},
 				 {
 					"isSolid":true,
-					"x":880,
+					"x":680,
 					"y":150
 				},
 				 {
 					"isSolid":true,
-					"x":980,
+					"x":780,
 					"y":50
 				},
 				 {
 					"isSolid":true,
-					"x":980,
+					"x":780,
 					"y":-20
 				},
 				 {
 					"isSolid":true,
-					"x":980,
+					"x":780,
 					"y":-20
 				},
 				 {
 					"isSolid":true,
-					"x":1580,
+					"x":1190,
 					"y":-20
 				},
 				 {
 					"isSolid":true,
-					"x":1580,
-					"y":40
+					"x":1410,
+					"y":50
 				},
 				 {
 					"isSolid":true,
-					"x":1720,
-					"y":180
+					"x":1710,
+					"y":50
 				},
 				 {
 					"isSolid":true,
-					"x":1840,
-					"y":180
-				},
-				 {
-					"isSolid":true,
-					"x":1980,
-					"y":40
-				},
-				 {
-					"isSolid":true,
-					"x":1980,
-					"y":-90
-				},
-				 {
-					"isSolid":true,
-					"x":2180,
-					"y":-90
-				},
-				 {
-					"isSolid":true,
-					"x":2180,
-					"y":-60
-				},
-				 {
-					"isSolid":true,
-					"x":2270,
+					"x":1710,
 					"y":30
 				},
 				 {
 					"isSolid":true,
-					"x":2400,
+					"x":1750,
 					"y":30
 				},
 				 {
 					"isSolid":true,
-					"x":2460,
+					"x":1750,
+					"y":10
+				},
+				 {
+					"isSolid":true,
+					"x":1790,
+					"y":10
+				},
+				 {
+					"isSolid":true,
+					"x":1790,
+					"y":-10
+				},
+				 {
+					"isSolid":true,
+					"x":1830,
+					"y":-10
+				},
+				 {
+					"isSolid":true,
+					"x":1830,
 					"y":-30
 				},
 				 {
 					"isSolid":true,
-					"x":2460,
-					"y":-90
-				},
-				 {
-					"isSolid":true,
-					"x":2490,
-					"y":-90
-				},
-				 {
-					"isSolid":true,
-					"x":2490,
+					"x":2040,
 					"y":-30
-				},
-				 {
-					"isSolid":true,
-					"x":2550,
-					"y":30
-				},
-				 {
-					"isSolid":true,
-					"x":2690,
-					"y":30
-				},
-				 {
-					"isSolid":true,
-					"x":2780,
-					"y":-60
-				},
-				 {
-					"isSolid":true,
-					"x":2780,
-					"y":-250
-				},
-				 {
-					"isSolid":true,
-					"x":2750,
-					"y":-250
-				},
-				 {
-					"isSolid":true,
-					"x":2750,
-					"y":-280
-				},
-				 {
-					"isSolid":true,
-					"x":3090,
-					"y":-280
-				},
-				 {
-					"isSolid":true,
-					"x":3090,
-					"y":550
-				},
-				 {
-					"isSolid":true,
-					"x":-1580,
-					"y":550
-				},
-				 {
-					"isSolid":true,
-					"x":-1580,
-					"y":-470
-				},
-				 {
-					"isSolid":true,
-					"x":-1110,
-					"y":-470
-				},
-				 {
-					"isSolid":true,
-					"x":-1110,
-					"y":-440
-				},
-				 {
-					"isSolid":true,
-					"x":-1130,
-					"y":-440
-				},
-				 {
-					"isSolid":true,
-					"x":-1130,
-					"y":-170
-				},
-				 {
-					"isSolid":true,
-					"x":-1050,
-					"y":-90
-				},
-				 {
-					"isSolid":true,
-					"x":-980,
-					"y":-90
-				},
-				 {
-					"isSolid":true,
-					"x":-900,
-					"y":-170
 				}
 			],
 			"type":"Polygon"
 		},
 		 {
-			"fillPattern":"LightGrey",
-			"isSolid":true,
-			"isVisible":false,
+			"fillPattern":"DarkGray",
+			"isSolid":false,
+			"isVisible":true,
 			"layer":1,
 			"lines": [
 				 {
-					"isSolid":true,
+					"isSolid":false,
 					"isVisible":true,
 					"radius":0
 				},
 				 {
-					"isSolid":true,
+					"isSolid":false,
 					"isVisible":true,
 					"radius":0
 				},
 				 {
-					"isSolid":true,
+					"isSolid":false,
 					"isVisible":true,
 					"radius":0
 				},
 				 {
-					"isSolid":true,
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
 					"isVisible":true,
 					"radius":0
 				}
 			],
 			"points": [
 				 {
-					"isSolid":true,
+					"isSolid":false,
+					"x":30,
+					"y":-580
+				},
+				 {
+					"isSolid":false,
+					"x":50,
+					"y":-600
+				},
+				 {
+					"isSolid":false,
+					"x":120,
+					"y":-600
+				},
+				 {
+					"isSolid":false,
+					"x":140,
+					"y":-580
+				},
+				 {
+					"isSolid":false,
+					"x":150,
+					"y":-580
+				},
+				 {
+					"isSolid":false,
+					"x":270,
+					"y":-470
+				},
+				 {
+					"isSolid":false,
+					"x":270,
+					"y":-450
+				},
+				 {
+					"isSolid":false,
+					"x":-290,
+					"y":-450
+				},
+				 {
+					"isSolid":false,
+					"x":-290,
+					"y":-470
+				},
+				 {
+					"isSolid":false,
+					"x":-170,
+					"y":-580
+				},
+				 {
+					"isSolid":false,
+					"x":-160,
+					"y":-580
+				},
+				 {
+					"isSolid":false,
+					"x":-140,
+					"y":-600
+				},
+				 {
+					"isSolid":false,
 					"x":-70,
-					"y":-180
-				},
-				 {
-					"isSolid":true,
-					"x":-100,
-					"y":-120
-				},
-				 {
-					"isSolid":true,
-					"x":0,
-					"y":-120
-				},
-				 {
-					"isSolid":true,
-					"x":-30,
-					"y":-180
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"Black",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":1,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
+					"y":-600
 				},
 				 {
 					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":1060,
-					"y":-40
-				},
-				 {
-					"isSolid":false,
-					"x":1060,
-					"y":-20
-				},
-				 {
-					"isSolid":false,
-					"x":1070,
-					"y":-20
-				},
-				 {
-					"isSolid":false,
-					"x":1070,
-					"y":-40
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"Black",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":1,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":1160,
-					"y":-40
-				},
-				 {
-					"isSolid":false,
-					"x":1160,
-					"y":-20
-				},
-				 {
-					"isSolid":false,
-					"x":1170,
-					"y":-20
-				},
-				 {
-					"isSolid":false,
-					"x":1170,
-					"y":-40
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LightGrey",
-			"isSolid":true,
-			"isVisible":true,
-			"layer":1,
-			"lines": [
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":true,
-					"x":1040,
-					"y":-60
-				},
-				 {
-					"isSolid":true,
-					"x":1040,
-					"y":-40
-				},
-				 {
-					"isSolid":true,
-					"x":1190,
-					"y":-40
-				},
-				 {
-					"isSolid":true,
-					"x":1190,
-					"y":-60
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":-460,
-					"y":-460
-				},
-				 {
-					"isSolid":false,
-					"x":-420,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-400,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-440,
-					"y":-460
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":true,
-			"isVisible":false,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":true,
-					"x":-190,
-					"y":-480
-				},
-				 {
-					"isSolid":true,
-					"x":-250,
+					"x":-50,
 					"y":-580
-				},
-				 {
-					"isSolid":true,
-					"x":-230,
-					"y":-600
-				},
-				 {
-					"isSolid":true,
-					"x":-160,
-					"y":-600
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":-300,
-					"y":-460
-				},
-				 {
-					"isSolid":false,
-					"x":-300,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-280,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-280,
-					"y":-460
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":true,
-			"isVisible":false,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":true,
-					"x":-330,
-					"y":-580
-				},
-				 {
-					"isSolid":true,
-					"x":-400,
-					"y":-480
-				},
-				 {
-					"isSolid":true,
-					"x":-420,
-					"y":-600
-				},
-				 {
-					"isSolid":true,
-					"x":-350,
-					"y":-600
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":-220,
-					"y":-460
-				},
-				 {
-					"isSolid":false,
-					"x":-240,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-220,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-200,
-					"y":-460
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":-530,
-					"y":-460
-				},
-				 {
-					"isSolid":false,
-					"x":-470,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-450,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-510,
-					"y":-460
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":true,
-			"isVisible":false,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":true,
-					"x":-100,
-					"y":-410
-				},
-				 {
-					"isSolid":true,
-					"x":-470,
-					"y":-410
-				},
-				 {
-					"isSolid":true,
-					"x":-570,
-					"y":-470
-				},
-				 {
-					"isSolid":true,
-					"x":-440,
-					"y":-480
-				},
-				 {
-					"isSolid":true,
-					"x":-440,
-					"y":-440
-				},
-				 {
-					"isSolid":true,
-					"x":-140,
-					"y":-440
-				},
-				 {
-					"isSolid":true,
-					"x":-140,
-					"y":-480
-				},
-				 {
-					"isSolid":true,
-					"x":-10,
-					"y":-470
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":-380,
-					"y":-460
-				},
-				 {
-					"isSolid":false,
-					"x":-360,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-340,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-360,
-					"y":-460
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":-140,
-					"y":-460
-				},
-				 {
-					"isSolid":false,
-					"x":-180,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-160,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-120,
-					"y":-460
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillPattern":"LighterGrey",
-			"isSolid":false,
-			"isVisible":true,
-			"layer":2,
-			"lines": [
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":0
-				}
-			],
-			"points": [
-				 {
-					"isSolid":false,
-					"x":-60,
-					"y":-460
-				},
-				 {
-					"isSolid":false,
-					"x":-130,
-					"y":-560
-				},
-				 {
-					"isSolid":false,
-					"x":-110,
-					"y":-560
 				},
 				 {
 					"isSolid":false,
 					"x":-40,
+					"y":-570
+				},
+				 {
+					"isSolid":false,
+					"x":20,
+					"y":-570
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"DarkerGray",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":1,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":65
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":85
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":65
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":270,
+					"y":-450
+				},
+				 {
+					"isSolid":false,
+					"x":200,
+					"y":-420
+				},
+				 {
+					"isSolid":false,
+					"x":170,
+					"y":-380
+				},
+				 {
+					"isSolid":false,
+					"x":80,
+					"y":-390
+				},
+				 {
+					"isSolid":false,
+					"x":50,
+					"y":-390
+				},
+				 {
+					"isSolid":false,
+					"x":-70,
+					"y":-390
+				},
+				 {
+					"isSolid":false,
+					"x":-100,
+					"y":-390
+				},
+				 {
+					"isSolid":false,
+					"x":-190,
+					"y":-380
+				},
+				 {
+					"isSolid":false,
+					"x":-210,
+					"y":-420
+				},
+				 {
+					"isSolid":false,
+					"x":-290,
+					"y":-450
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"LightGrey",
+			"isSolid":true,
+			"isVisible":true,
+			"layer":1,
+			"lines": [
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":true,
+					"x":840,
+					"y":-60
+				},
+				 {
+					"isSolid":true,
+					"x":840,
+					"y":-40
+				},
+				 {
+					"isSolid":true,
+					"x":990,
+					"y":-40
+				},
+				 {
+					"isSolid":true,
+					"x":990,
+					"y":-60
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"Black",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":1,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":960,
+					"y":-40
+				},
+				 {
+					"isSolid":false,
+					"x":960,
+					"y":-20
+				},
+				 {
+					"isSolid":false,
+					"x":970,
+					"y":-20
+				},
+				 {
+					"isSolid":false,
+					"x":970,
+					"y":-40
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"Black",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":1,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":860,
+					"y":-40
+				},
+				 {
+					"isSolid":false,
+					"x":860,
+					"y":-20
+				},
+				 {
+					"isSolid":false,
+					"x":870,
+					"y":-20
+				},
+				 {
+					"isSolid":false,
+					"x":870,
+					"y":-40
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"LighterGrey",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":2,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":-250,
 					"y":-460
+				},
+				 {
+					"isSolid":false,
+					"x":-190,
+					"y":-560
+				},
+				 {
+					"isSolid":false,
+					"x":-170,
+					"y":-560
+				},
+				 {
+					"isSolid":false,
+					"x":-230,
+					"y":-460
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"LighterGrey",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":2,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":220,
+					"y":-460
+				},
+				 {
+					"isSolid":false,
+					"x":150,
+					"y":-560
+				},
+				 {
+					"isSolid":false,
+					"x":170,
+					"y":-560
+				},
+				 {
+					"isSolid":false,
+					"x":240,
+					"y":-460
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"LighterGrey",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":2,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":-100,
+					"y":-460
+				},
+				 {
+					"isSolid":false,
+					"x":-80,
+					"y":-560
+				},
+				 {
+					"isSolid":false,
+					"x":-60,
+					"y":-560
+				},
+				 {
+					"isSolid":false,
+					"x":-80,
+					"y":-460
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"LighterGrey",
+			"isSolid":true,
+			"isVisible":false,
+			"layer":2,
+			"lines": [
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":true,
+					"x":90,
+					"y":-480
+				},
+				 {
+					"isSolid":true,
+					"x":30,
+					"y":-580
+				},
+				 {
+					"isSolid":true,
+					"x":50,
+					"y":-600
+				},
+				 {
+					"isSolid":true,
+					"x":120,
+					"y":-600
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"LighterGrey",
+			"isSolid":true,
+			"isVisible":false,
+			"layer":2,
+			"lines": [
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":true,
+					"x":-50,
+					"y":-580
+				},
+				 {
+					"isSolid":true,
+					"x":-120,
+					"y":-480
+				},
+				 {
+					"isSolid":true,
+					"x":-140,
+					"y":-600
+				},
+				 {
+					"isSolid":true,
+					"x":-70,
+					"y":-600
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"LighterGrey",
+			"isSolid":false,
+			"isVisible":true,
+			"layer":2,
+			"lines": [
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":false,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":false,
+					"x":60,
+					"y":-460
+				},
+				 {
+					"isSolid":false,
+					"x":40,
+					"y":-560
+				},
+				 {
+					"isSolid":false,
+					"x":60,
+					"y":-560
+				},
+				 {
+					"isSolid":false,
+					"x":80,
+					"y":-460
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillPattern":"LighterGrey",
+			"isSolid":true,
+			"isVisible":false,
+			"layer":2,
+			"lines": [
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				},
+				 {
+					"isSolid":true,
+					"isVisible":true,
+					"radius":0
+				}
+			],
+			"points": [
+				 {
+					"isSolid":true,
+					"x":180,
+					"y":-410
+				},
+				 {
+					"isSolid":true,
+					"x":-190,
+					"y":-410
+				},
+				 {
+					"isSolid":true,
+					"x":-290,
+					"y":-470
+				},
+				 {
+					"isSolid":true,
+					"x":-160,
+					"y":-480
+				},
+				 {
+					"isSolid":true,
+					"x":-160,
+					"y":-440
+				},
+				 {
+					"isSolid":true,
+					"x":140,
+					"y":-440
+				},
+				 {
+					"isSolid":true,
+					"x":140,
+					"y":-480
+				},
+				 {
+					"isSolid":true,
+					"x":270,
+					"y":-470
 				}
 			],
 			"type":"Polygon"
@@ -1896,7 +1705,7 @@
 			"layer":-1,
 			"rotation":0,
 			"type":"Decoration",
-			"x":-980,
+			"x":-700,
 			"y":-360
 		},
 		 {
@@ -1904,16 +1713,8 @@
 			"layer":-1,
 			"rotation":0,
 			"type":"Decoration",
-			"x":1760,
-			"y":-190
-		},
-		 {
-			"imageName":"fluffy-cloud",
-			"layer":-1,
-			"rotation":0,
-			"type":"Decoration",
-			"x":770,
-			"y":-170
+			"x":750,
+			"y":-230
 		},
 		 {
 			"imageName":"fluffy-cloud",
@@ -1924,51 +1725,35 @@
 			"y":-140
 		},
 		 {
-			"imageName":"fluffy-cloud",
-			"layer":-1,
-			"rotation":0,
-			"type":"Decoration",
-			"x":2360,
-			"y":-240
-		},
-		 {
 			"layer":-1,
 			"rotation":0,
 			"type":"Booster",
-			"x":-290,
+			"x":-10,
 			"y":-460
-		},
-		 {
-			"exitId":"skatepark-tour-bad",
-			"icon":"Bad",
-			"layer":5,
-			"type":"Exit",
-			"x":1305,
-			"y":-180
-		},
-		 {
-			"imageName":"sandwich-sign",
-			"layer":5,
-			"rotation":0,
-			"type":"Decoration",
-			"x":-50,
-			"y":-160
 		},
 		 {
 			"exitId":"skatepark-tour-good",
 			"icon":"Good",
 			"layer":5,
 			"type":"Exit",
-			"x":2475,
-			"y":-160
+			"x":1925,
+			"y":-110
+		},
+		 {
+			"exitId":"skatepark-tour-bad",
+			"icon":"Bad",
+			"layer":5,
+			"type":"Exit",
+			"x":1105,
+			"y":-200
 		},
 		 {
 			"exitId":"skatepark-tour-special",
 			"icon":"Special",
 			"layer":5,
 			"type":"Exit",
-			"x":-290,
-			"y":-730
+			"x":-10,
+			"y":-695
 		}
 	],
 	"spawn": {

@@ -579,11 +579,6 @@
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-80
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
 					"radius":0
 				},
 				 {
@@ -781,11 +776,6 @@
 				 {
 					"isSolid":true,
 					"x":-1440,
-					"y":460
-				},
-				 {
-					"isSolid":true,
-					"x":-1360,
 					"y":540
 				},
 				 {
