@@ -76,13 +76,6 @@
 			"type":"Polygon"
 		},
 		 {
-			"layer":-2,
-			"rotation":0,
-			"type":"Booster",
-			"x":0,
-			"y":155
-		},
-		 {
 			"fillPattern":"White",
 			"isSolid":false,
 			"layer":-1,
@@ -95,28 +88,10 @@
 			"fillPattern":"White",
 			"isSolid":false,
 			"layer":-1,
-			"radius":20,
-			"type":"Circle",
-			"x":-130,
-			"y":200
-		},
-		 {
-			"fillPattern":"White",
-			"isSolid":false,
-			"layer":-1,
 			"radius":30,
 			"type":"Circle",
 			"x":0,
 			"y":160
-		},
-		 {
-			"fillPattern":"White",
-			"isSolid":false,
-			"layer":-1,
-			"radius":20,
-			"type":"Circle",
-			"x":-120,
-			"y":40
 		},
 		 {
 			"fillPattern":"White",
@@ -135,6 +110,24 @@
 			"type":"Circle",
 			"x":-50,
 			"y":100
+		},
+		 {
+			"fillPattern":"White",
+			"isSolid":false,
+			"layer":-1,
+			"radius":20,
+			"type":"Circle",
+			"x":-120,
+			"y":40
+		},
+		 {
+			"fillPattern":"White",
+			"isSolid":false,
+			"layer":-1,
+			"radius":20,
+			"type":"Circle",
+			"x":-130,
+			"y":200
 		},
 		 {
 			"fillPattern":"White",
@@ -324,8 +317,8 @@
 			"layer":1,
 			"rotation":0,
 			"type":"Booster",
-			"x":110,
-			"y":65
+			"x":0,
+			"y":155
 		},
 		 {
 			"layer":1,
@@ -333,6 +326,13 @@
 			"type":"Booster",
 			"x":-110,
 			"y":115
+		},
+		 {
+			"layer":1,
+			"rotation":0,
+			"type":"Booster",
+			"x":110,
+			"y":65
 		},
 		 {
 			"fillCoordinates": [
@@ -785,6 +785,14 @@
 			"type":"Polygon"
 		},
 		 {
+			"exitId":"sandwichshop-toppings-bad",
+			"icon":"Bad",
+			"layer":5,
+			"type":"Exit",
+			"x":-100,
+			"y":-90
+		},
+		 {
 			"exitId":"sandwichshop-toppings-good",
 			"icon":"Good",
 			"layer":5,
@@ -799,14 +807,6 @@
 			"type":"Exit",
 			"x":0,
 			"y":-101
-		},
-		 {
-			"exitId":"sandwichshop-toppings-bad",
-			"icon":"Bad",
-			"layer":5,
-			"type":"Exit",
-			"x":-100,
-			"y":-90
 		}
 	],
 	"spawn": {

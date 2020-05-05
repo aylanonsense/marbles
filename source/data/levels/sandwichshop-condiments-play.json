@@ -773,10 +773,10 @@
 		},
 		 {
 			"layer":-1,
-			"rotation":45,
+			"rotation":90,
 			"type":"Booster",
-			"x":65,
-			"y":-85
+			"x":835,
+			"y":95
 		},
 		 {
 			"fillPattern":"Black",
@@ -985,6 +985,34 @@
 			"layer":-1,
 			"rotation":90,
 			"type":"Booster",
+			"x":605,
+			"y":95
+		},
+		 {
+			"layer":-1,
+			"rotation":0,
+			"type":"Booster",
+			"x":1145,
+			"y":75
+		},
+		 {
+			"layer":-1,
+			"rotation":90,
+			"type":"Booster",
+			"x":135,
+			"y":95
+		},
+		 {
+			"layer":-1,
+			"rotation":45,
+			"type":"Booster",
+			"x":65,
+			"y":-85
+		},
+		 {
+			"layer":-1,
+			"rotation":90,
+			"type":"Booster",
 			"x":1035,
 			"y":95
 		},
@@ -999,36 +1027,8 @@
 			"layer":-1,
 			"rotation":90,
 			"type":"Booster",
-			"x":135,
-			"y":95
-		},
-		 {
-			"layer":-1,
-			"rotation":90,
-			"type":"Booster",
 			"x":365,
 			"y":95
-		},
-		 {
-			"layer":-1,
-			"rotation":90,
-			"type":"Booster",
-			"x":605,
-			"y":95
-		},
-		 {
-			"layer":-1,
-			"rotation":90,
-			"type":"Booster",
-			"x":835,
-			"y":95
-		},
-		 {
-			"layer":-1,
-			"rotation":0,
-			"type":"Booster",
-			"x":1145,
-			"y":75
 		},
 		 {
 			"fillPattern":"White",
@@ -2016,143 +2016,6 @@
 		},
 		 {
 			"fillCoordinates": [
-				1100,
-				-330,
-				1100,
-				-290,
-				980,
-				-290,
-				980,
-				-330
-			],
-			"fillPattern":"DarkGray",
-			"layer":4,
-			"linesAndArcs": [
-				 {
-					"sectors": [
-						21,
-						-7,
-						21,
-						-6,
-						22,
-						-7,
-						22,
-						-6
-					],
-					"type":"PhysLine",
-					"x":1100,
-					"x2":1100,
-					"y":-330,
-					"y2":-290
-				},
-				 {
-					"sectors": [
-						19,
-						-7,
-						19,
-						-6,
-						20,
-						-7,
-						20,
-						-6,
-						21,
-						-7,
-						21,
-						-6,
-						22,
-						-7,
-						22,
-						-6
-					],
-					"type":"PhysLine",
-					"x":1100,
-					"x2":980,
-					"y":-290,
-					"y2":-290
-				},
-				 {
-					"sectors": [
-						19,
-						-7,
-						19,
-						-6
-					],
-					"type":"PhysLine",
-					"x":980,
-					"x2":980,
-					"y":-290,
-					"y2":-330
-				},
-				 {
-					"sectors": [
-						19,
-						-7,
-						20,
-						-7,
-						21,
-						-7,
-						22,
-						-7
-					],
-					"type":"PhysLine",
-					"x":980,
-					"x2":1100,
-					"y":-330,
-					"y2":-330
-				}
-			],
-			"points": [
-				 {
-					"sectors": [
-						21,
-						-7,
-						22,
-						-7
-					],
-					"type":"PhysPoint",
-					"x":1100,
-					"y":-330
-				},
-				 {
-					"sectors": [
-						21,
-						-7,
-						21,
-						-6,
-						22,
-						-7,
-						22,
-						-6
-					],
-					"type":"PhysPoint",
-					"x":1100,
-					"y":-290
-				},
-				 {
-					"sectors": [
-						19,
-						-7,
-						19,
-						-6
-					],
-					"type":"PhysPoint",
-					"x":980,
-					"y":-290
-				},
-				 {
-					"sectors": [
-						19,
-						-7
-					],
-					"type":"PhysPoint",
-					"x":980,
-					"y":-330
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
 				40,
 				-110,
 				30,
@@ -2185,24 +2048,6 @@
 				0
 			],
 			"fillPattern":"Black",
-			"layer":4,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				120,
-				-140,
-				50,
-				-100,
-				90,
-				-60,
-				130,
-				-130
-			],
 			"layer":4,
 			"linesAndArcs": [
 			],
@@ -2353,6 +2198,161 @@
 					"type":"PhysPoint",
 					"x":1200,
 					"y":-230
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				120,
+				-140,
+				50,
+				-100,
+				90,
+				-60,
+				130,
+				-130
+			],
+			"layer":4,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				1100,
+				-330,
+				1100,
+				-290,
+				980,
+				-290,
+				980,
+				-330
+			],
+			"fillPattern":"DarkGray",
+			"layer":4,
+			"linesAndArcs": [
+				 {
+					"sectors": [
+						21,
+						-7,
+						21,
+						-6,
+						22,
+						-7,
+						22,
+						-6
+					],
+					"type":"PhysLine",
+					"x":1100,
+					"x2":1100,
+					"y":-330,
+					"y2":-290
+				},
+				 {
+					"sectors": [
+						19,
+						-7,
+						19,
+						-6,
+						20,
+						-7,
+						20,
+						-6,
+						21,
+						-7,
+						21,
+						-6,
+						22,
+						-7,
+						22,
+						-6
+					],
+					"type":"PhysLine",
+					"x":1100,
+					"x2":980,
+					"y":-290,
+					"y2":-290
+				},
+				 {
+					"sectors": [
+						19,
+						-7,
+						19,
+						-6
+					],
+					"type":"PhysLine",
+					"x":980,
+					"x2":980,
+					"y":-290,
+					"y2":-330
+				},
+				 {
+					"sectors": [
+						19,
+						-7,
+						20,
+						-7,
+						21,
+						-7,
+						22,
+						-7
+					],
+					"type":"PhysLine",
+					"x":980,
+					"x2":1100,
+					"y":-330,
+					"y2":-330
+				}
+			],
+			"points": [
+				 {
+					"sectors": [
+						21,
+						-7,
+						22,
+						-7
+					],
+					"type":"PhysPoint",
+					"x":1100,
+					"y":-330
+				},
+				 {
+					"sectors": [
+						21,
+						-7,
+						21,
+						-6,
+						22,
+						-7,
+						22,
+						-6
+					],
+					"type":"PhysPoint",
+					"x":1100,
+					"y":-290
+				},
+				 {
+					"sectors": [
+						19,
+						-7,
+						19,
+						-6
+					],
+					"type":"PhysPoint",
+					"x":980,
+					"y":-290
+				},
+				 {
+					"sectors": [
+						19,
+						-7
+					],
+					"type":"PhysPoint",
+					"x":980,
+					"y":-330
 				}
 			],
 			"type":"Polygon"

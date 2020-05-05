@@ -169,18 +169,18 @@
 			"layer":-1,
 			"radius":20,
 			"type":"Circle",
-			"x":-50,
-			"y":100
+			"x":-130,
+			"y":200
 		},
 		 {
 			"fillPattern":"White",
 			"isSolid":false,
 			"isVisible":true,
 			"layer":-1,
-			"radius":20,
+			"radius":30,
 			"type":"Circle",
-			"x":-120,
-			"y":40
+			"x":50,
+			"y":80
 		},
 		 {
 			"fillPattern":"White",
@@ -207,10 +207,10 @@
 			"isSolid":false,
 			"isVisible":true,
 			"layer":-1,
-			"radius":30,
+			"radius":20,
 			"type":"Circle",
-			"x":50,
-			"y":80
+			"x":-50,
+			"y":100
 		},
 		 {
 			"fillPattern":"White",
@@ -219,8 +219,8 @@
 			"layer":-1,
 			"radius":20,
 			"type":"Circle",
-			"x":-130,
-			"y":200
+			"x":-120,
+			"y":40
 		},
 		 {
 			"fillPattern":"LightGrey",
@@ -380,7 +380,7 @@
 	],
 	"objects": [
 		 {
-			"layer":-2,
+			"layer":1,
 			"rotation":0,
 			"type":"Booster",
 			"x":0,
