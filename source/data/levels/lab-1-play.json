@@ -757,7 +757,7 @@
 			"type":"WorldBoundary"
 		},
 		 {
-			"exitId":"pickle-cups-good",
+			"exitId":"lab-1-good",
 			"icon":"Good",
 			"layer":8,
 			"type":"Exit",

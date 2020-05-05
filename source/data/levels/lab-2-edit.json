@@ -10,37 +10,27 @@
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":0
+					"radius":-114
 				},
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-52
+					"radius":-69
 				},
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-37
+					"radius":-83
 				},
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-39
+					"radius":-20
 				},
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-30
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-37
-				},
-				 {
-					"isSolid":true,
-					"isVisible":true,
-					"radius":-30
+					"radius":-36
 				},
 				 {
 					"isSolid":true,
@@ -65,44 +55,34 @@
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-61
+					"radius":-54
 				}
 			],
 			"points": [
 				 {
 					"isSolid":true,
 					"x":-80,
-					"y":60
-				},
-				 {
-					"isSolid":true,
-					"x":-20,
-					"y":60
-				},
-				 {
-					"isSolid":true,
-					"x":50,
-					"y":40
-				},
-				 {
-					"isSolid":true,
-					"x":100,
 					"y":50
 				},
 				 {
 					"isSolid":true,
-					"x":150,
-					"y":30
+					"x":0,
+					"y":45
+				},
+				 {
+					"isSolid":true,
+					"x":95,
+					"y":65
 				},
 				 {
 					"isSolid":true,
 					"x":180,
-					"y":0
+					"y":-15
 				},
 				 {
 					"isSolid":true,
 					"x":170,
-					"y":-50
+					"y":-40
 				},
 				 {
 					"isSolid":true,
@@ -141,7 +121,7 @@
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-16
+					"radius":-21
 				},
 				 {
 					"isSolid":false,
@@ -166,12 +146,12 @@
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-39
+					"radius":-37
 				},
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-74
+					"radius":-75
 				},
 				 {
 					"isSolid":false,
@@ -188,7 +168,7 @@
 				 {
 					"isSolid":false,
 					"x":-80,
-					"y":50
+					"y":40
 				},
 				 {
 					"isSolid":false,
@@ -218,7 +198,7 @@
 				 {
 					"isSolid":false,
 					"x":20,
-					"y":70
+					"y":75
 				},
 				 {
 					"isSolid":false,
@@ -227,7 +207,7 @@
 				},
 				 {
 					"isSolid":false,
-					"x":50,
+					"x":0,
 					"y":40
 				}
 			],
@@ -242,37 +222,27 @@
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":0
+					"radius":-114
 				},
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-52
+					"radius":-69
 				},
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-37
+					"radius":-83
 				},
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-39
+					"radius":-20
 				},
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-30
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":-37
-				},
-				 {
-					"isSolid":false,
-					"isVisible":true,
-					"radius":-30
+					"radius":-36
 				},
 				 {
 					"isSolid":false,
@@ -297,44 +267,34 @@
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-61
+					"radius":-54
 				}
 			],
 			"points": [
 				 {
 					"isSolid":false,
 					"x":-80,
-					"y":60
-				},
-				 {
-					"isSolid":false,
-					"x":-20,
-					"y":60
-				},
-				 {
-					"isSolid":false,
-					"x":50,
-					"y":40
-				},
-				 {
-					"isSolid":false,
-					"x":100,
 					"y":50
 				},
 				 {
 					"isSolid":false,
-					"x":150,
-					"y":30
+					"x":0,
+					"y":45
+				},
+				 {
+					"isSolid":false,
+					"x":95,
+					"y":65
 				},
 				 {
 					"isSolid":false,
 					"x":180,
-					"y":0
+					"y":-15
 				},
 				 {
 					"isSolid":false,
 					"x":170,
-					"y":-50
+					"y":-40
 				},
 				 {
 					"isSolid":false,
@@ -367,24 +327,24 @@
 	],
 	"objects": [
 		 {
-			"exitId":"pickle-cups-good",
+			"exitId":"lab-2-good",
 			"icon":"Good",
 			"layer":8,
 			"type":"Exit",
-			"x":-90,
+			"x":-40,
 			"y":-10
 		},
 		 {
-			"exitId":"pickle-cups-bad",
+			"exitId":"lab-2-bad",
 			"icon":"Bad",
 			"layer":8,
 			"type":"Exit",
-			"x":120,
-			"y":-50
+			"x":70,
+			"y":-35
 		}
 	],
 	"spawn": {
-		"x":100,
-		"y":-90
+		"x":55,
+		"y":-105
 	}
 }
