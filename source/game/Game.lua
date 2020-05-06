@@ -2,6 +2,7 @@ import "CoreLibs/object"
 import "utility/file"
 import "narrative/DialogueScene"
 import "level/MazeScene"
+import "game/CreditsScene"
 import "narrative/StorylineSimulationScene"
 import "narrative/DialogueSimulationScene"
 import "narrative/MazeSimulationScene"
@@ -18,11 +19,15 @@ function Game:init()
   self.storylineData = nil
 
   -- Get save data
-  local saveData = playdate.datastore.read("lost-your-marbles-save-data")
   self.playthrough = nil
 
   -- Open the title screen
-  Scene.setScene(TitleScreenScene(saveData ~= nil), function(option)
+  self:showTitleScreen()
+end
+
+function Game:showTitleScreen()
+  local saveData = playdate.datastore.read("lost-your-marbles-save-data")
+  Scene.setScene(TitleScreenScene(saveData ~= nil and not saveData.isComplete), function(option)
     if option == "CONTINUE" then
       self:continueGame(saveData)
     else
@@ -38,6 +43,7 @@ end
 
 function Game:startNewGame()
   self.playthrough = {
+    isComplete = false,
     storyline = nil,
     actorVariants = {},
     finishedStorylines = {}
@@ -55,7 +61,6 @@ function Game:startStoryline(storylineName)
 end
 
 function Game:resumeCurrentStoryline()
-
   local storylineName = self.playthrough.storyline.name
   local branchingData = self.playthroughData.storylines[storylineName]
   -- Load storyline data (a list of scenes)
@@ -152,7 +157,9 @@ function Game:finishCurrentStorylineAndStartNextOne(result)
   if nextStorylineName then
     self:startStoryline(nextStorylineName)
   else
-    print("The game is over!! This is where the credits would play")
+    self.playthrough.isComplete = true
+    playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
+    self:showTitleScreen()
   end
 end
 
@@ -172,6 +179,8 @@ function Game:createStorylineScene(storylineData, stage)
     elseif sceneData.maze then
       local mazeData = loadJsonFile("/data/levels/" .. sceneData.maze .. "-play.json")
       return MazeScene(mazeData, musicPlayer)
+    elseif sceneData.credits then
+      return CreditsScene()
     end
   end
 end

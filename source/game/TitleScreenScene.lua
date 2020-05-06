@@ -27,6 +27,7 @@ function TitleScreenScene:init(canContinue)
     }
   end
   self.hasChosenOption = false
+  sceneTransition:transitionIn()
 end
 
 function TitleScreenScene:update()

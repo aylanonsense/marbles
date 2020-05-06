@@ -78,11 +78,17 @@
     "festi-ball": {
       "symbol": "7",
       "label": "Festi-Ball",
+      "next": "credits"
+    },
+
+    "credits": {
+      "symbol": "8",
+      "label": "Credits",
       "next": "ending"
     },
 
     "ending": {
-      "symbol": "8",
+      "symbol": "9",
       "label": "Ending"
     }
   }
