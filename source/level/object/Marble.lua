@@ -15,6 +15,8 @@ function Marble:init(x, y)
 	self.physObj.restitution = 1.0
   self.image = imageCache.loadImage("images/marble.png")
   self.imageWidth, self.imageHeight = self.image:getSize()
+  self.popLinesImage = imageCache.loadImage("images/marble-pop-lines.png")
+  self.popLinesImageWidth, self.popLinesImageHeight = self.popLinesImage:getSize()
   self.recentImpulses = { 0, 0, 0 }
   self.isGrounded = false
   self.framesSinceGrounded = 0
@@ -23,14 +25,32 @@ function Marble:init(x, y)
   self.rollingSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-roll-loop")
   self.rollingSound:setVolume(0)
   self.rollingSound:play(0)
+  self.antiGravityFrames = 55
+  self.framesUntilSpawn = 55
+  self.popLineFrames = 0
+  self.spawnX, self.spawnY = self:getPosition()
 end
 
 function Marble:update()
   self.framesOfSilence = math.max(0, self.framesOfSilence - 1)
+  self.antiGravityFrames = math.max(0, self.antiGravityFrames - 1)
+  self.popLineFrames = math.max(0, self.popLineFrames - 1)
+  -- Apply gravity
   local vx = self.physObj.velX
   local vy = self.physObj.velY
   local speed = math.sqrt(vx * vx + vy * vy)
-  self.physObj.accX, self.physObj.accY = -physics.GRAVITY * camera.up.x, -physics.GRAVITY * camera.up.y
+  if self.framesUntilSpawn <= 0 and self.antiGravityFrames <= 0 then
+    self.physObj.accX, self.physObj.accY = -physics.GRAVITY * camera.up.x, -physics.GRAVITY * camera.up.y
+  end
+  if self.framesUntilSpawn > 0 then
+    self.physObj.velX = 0
+    self.physObj.velY = 0
+    self.framesUntilSpawn -= 1
+    if self.framesUntilSpawn <= 0 then
+      self.physObj.velY = -50
+      self.popLineFrames = 10
+    end
+  end
     -- Trigger a bump sound effect
   local minImpulseForBumpSound = math.min(math.max(30, 30 + 40 * (speed / 300)), 70)
   if self.recentImpulses[1] > minImpulseForBumpSound and self.recentImpulses[1] > self.recentImpulses[2] + minImpulseForBumpSound and self.recentImpulses[1] > self.recentImpulses[3] + minImpulseForBumpSound and self.framesOfSilence <= 0 then
@@ -74,11 +94,18 @@ function Marble:update()
 end
 
 function Marble:draw()
-	local x, y = self:getPosition()
-	x, y = camera.matrix:transformXY(x, y)
-	local scale = camera.scale
-  self.image:drawScaled(x - scale * self.imageWidth / 2, y - scale * self.imageHeight / 2, scale)
-  diagnosticStats.untransformedImagesDrawn += 1
+  if self.framesUntilSpawn <= 0 then
+    local scale = camera.scale
+    if self.popLineFrames > 0 then
+      local x, y = camera.matrix:transformXY(self.spawnX, self.spawnY)
+      self.popLinesImage:drawScaled(x - scale * self.popLinesImageWidth / 2, y - scale * self.popLinesImageHeight / 2, scale)
+      diagnosticStats.untransformedImagesDrawn += 1
+    end
+    local x, y = self:getPosition()
+    x, y = camera.matrix:transformXY(x, y)
+    self.image:drawScaled(x - scale * self.imageWidth / 2, y - scale * self.imageHeight / 2, scale)
+    diagnosticStats.untransformedImagesDrawn += 1
+  end
 end
 
 function Marble:onCollide(other, collision, isObjectA)

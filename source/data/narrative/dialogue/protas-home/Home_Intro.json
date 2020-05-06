@@ -14,7 +14,7 @@
     { "actor": "Narrator", "line": "Fun! Sandwiches! Pro wrestling! Robots! Skating! Karaoke! And much, much more!", "expression": "neutral" },
     { "actor": "Narrator", "line": "Every year, citizens spend the days before the Fest-Ball getting ready for the big event. ", "expression": "neutral" },
     { "actor": "Narrator", "line": "And now we join one such citizen, Prota, who's got big plans for tonight!", "expression": "neutral" },
-    { "change-location": "ProtasHome"},
+    { "action": "change-location", "location": "ProtasHome" },
     { "actor": "Prota", "line": "Mom! Mom?", "expression": "shocked", "side": "left" },
     { "actor": "Prota", "line": "Mooooooooom?", "expression": "neutral" },
     { "actor": "Mom", "line": "What's wrong, Prota? Have you walked Minty yet?", "expression": "neutral", "side": "right" },

@@ -1,5 +1,5 @@
 {
-  "location": "Lab",
+  "location": "MarbelsLab",
   "actors": [
     { "actor": "Prota", "expression": "neutral" },
     { "actor": "Narrator", "expression": "neutral" },

@@ -1,5 +1,5 @@
 {
-  "location": "Lab",
+  "location": "MarbelsLab",
   "actors": [
     { "actor": "Prota", "expression": "neutral", "side": "left" },
     { "actor": "Narrator", "expression": "neutral" },
@@ -16,7 +16,7 @@
     { "actor": "Marbels", "line": "Now. How about you answer this question.", "expression": "neutral" },
     { "actor": "Marbels", "line": "Prota, what is the annual rainfall, in cubic hectares, of Crabapple Valley?", "expression": "neutral" },
     { "actor": "Prota", "line": "Oh! Uh...", "expression": "shocked" },
-    { "actor": "Prota", "line": "Okay, well... if you take the...first part of the equation and...uh...", "expression": "thinkinh" },
+    { "actor": "Prota", "line": "Okay, well... if you take the...first part of the equation and...uh...", "expression": "thinking" },
     { "actor": "Marbels", "line": "Pretty challenging, isn't it?", "expression": "happy" },
     { "actor": "Prota", "line": "Yeah, I've never really been good at this kind of thing. ", "expression": "confused" },
     { "actor": "Marbels", "line": "Well. Let's turn the Marbelizer on. ", "expression": "neutral" },

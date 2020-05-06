@@ -590,19 +590,19 @@
 
     {
         "id": "lab-1-bad",
-        "label": "Bad",
+        "label": "The Festi-Ball!",
         "finalText": "",
         "score": 1
     },
     {
         "id": "lab-1-good",
-        "label": "Good",
+        "label": "The Festi-Ball!",
         "finalText": "",
         "score": 3
     },
     {
         "id": "lab-1-special",
-        "label": "Special",
+        "label": "The Festi-Ball!",
         "finalText": "",
         "score": 5
     },
@@ -611,19 +611,19 @@
 
     {
         "id": "lab-2-bad",
-        "label": "Bad",
+        "label": "Trick question!",
         "finalText": "",
         "score": 1
     },
     {
         "id": "lab-2-good",
-        "label": "Good",
+        "label": "9,230,343",
         "finalText": "",
         "score": 3
     },
     {
         "id": "lab-2-special",
-        "label": "Special",
+        "label": "9,230,343",
         "finalText": "",
         "score": 5
     },
@@ -632,19 +632,19 @@
     
     {
         "id": "lab-3-bad",
-        "label": "Bad",
+        "label": "Uhh...",
         "finalText": "",
         "score": 1
     },
     {
         "id": "lab-3-good",
-        "label": "Good",
+        "label": "Hmm...",
         "finalText": "",
         "score": 3
     },
     {
         "id": "lab-3-special",
-        "label": "Special",
+        "label": "Err...",
         "finalText": "",
         "score": 5
     },

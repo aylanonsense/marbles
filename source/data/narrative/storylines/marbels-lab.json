@@ -1,0 +1,35 @@
+{
+  "scenes": [
+    {
+      "dialogue": "marbels-lab/Lab_Intro",
+      "music": "marbels-lab-dialogue"
+    },
+    {
+      "maze": "lab-1",
+      "exits": [ "lab-1-good" ],
+      "music": "marbels-lab-maze"
+    },
+    {
+      "dialogue": "marbels-lab/Lab_1_EasyQ",
+      "music": "marbels-lab-dialogue"
+    },
+    {
+      "maze": "lab-2",
+      "exits": [ "lab-2-good", "lab-2-bad" ],
+      "music": "marbels-lab-maze"
+    },
+    {
+      "dialogue": "marbels-lab/Lab_2_HardQ",
+      "music": "marbels-lab-dialogue"
+    },
+    {
+      "maze": "lab-3",
+      "exits": [ "lab-3-good", "lab-3-bad" ],
+      "music": "marbels-lab-maze"
+    },
+    {
+      "dialogue": "marbels-lab/Lab_Resolution",
+      "music": "marbels-lab-dialogue"
+    }
+  ]
+}

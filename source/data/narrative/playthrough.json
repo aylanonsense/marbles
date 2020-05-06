@@ -4,14 +4,12 @@
     "protas-home": {
       "symbol": "1",
       "label": "Prota's Home",
-      "isMissing": true,
       "next": "marbels-lab"
     },
 
     "marbels-lab": {
       "symbol": "2",
       "label": "Marbel's Lab",
-      "isMissing": true,
       "special": "library",
       "normal": "library",
       "fail": "library"

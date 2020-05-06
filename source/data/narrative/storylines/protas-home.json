@@ -1,0 +1,8 @@
+{
+  "scenes": [
+    {
+      "dialogue": "protas-home/Home_Intro",
+      "music": "protas-home-dialogue"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "location": "Lab",
+  "location": "MarbelsLab",
   "actors": [
     { "actor": "Prota", "expression": "neutral", "side": "left" },
     { "actor": "Narrator", "expression": "neutral" },
@@ -46,8 +46,8 @@
         { "action": "dismiss-actor", "side": "left"},
         { "actor": "Minty", "line": "!!!", "expression": "shocked", "side": "right" },
         { "action": "dismiss-actor", "side": "right"},
-        { "action": "change-location", "side": "marbelsmintyCIN"},
-        { "action": "change-location", "side": "blackscreen"},
+        { "action": "play-cinematic", "cinematic": "MarbelsMinty"},
+        { "action": "change-location", "location": "BlackScreen"},
         { "actor": "Narrator", "line": "(CRRRAAAASSSSHHH! BARK BARK! HISSS! BARK! GRRR! MEOW MEOW! HISS! BARK!)", "expression": "neutral" },
         { "actor": "Prota", "line": "Oh no! The Marbelizer!", "expression": "shocked", "side": "left" },
         { "action": "dismiss-actor", "side": "left"},
@@ -55,7 +55,7 @@
         { "actor": "Besto", "line": "MINTY NOOOOO! DON'T--....run away.", "expression": "shocked", "side": "right" },
         { "action": "dismiss-actor", "side": "right"},
         { "actor": "Narrator", "line": "(SMASH!)", "expression": "neutral" },
-        { "action": "change-location", "side": "Lab"},
+        { "action": "change-location", "location": "MarbelsLab"},
         { "actor": "Prota", "line": "...", "expression": "shocked", "side": "left" },
         { "actor": "Besto", "line": "...", "expression": "shocked", "side": "right" },
         { "actor": "Marbels", "line": "Oh goodness.", "expression": "shocked", "side": "right" },

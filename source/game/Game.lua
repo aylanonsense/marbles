@@ -66,7 +66,7 @@ function Game:resumeCurrentStoryline()
   end
 
   -- Play the first storyline scene, unless we choose to skip it and simulate the results instead
-  if config.SHOW_DEBUG_SCREENS then
+  if config.SHOW_DEBUG_SKIP_SCREENS then
     Scene.setScene(StorylineSimulationScene(branchingData, self.playthroughData), function(shouldPlayStoryline, result)
       if shouldPlayStoryline then
         self:playNextStorylineScene()
@@ -97,7 +97,7 @@ function Game:playNextStorylineScene()
   end
   local sceneData = self.storylineData.scenes[self.playthrough.storyline.stage]
   if sceneData then
-    if config.SHOW_DEBUG_SCREENS and sceneData.maze then
+    if config.SHOW_DEBUG_SKIP_SCREENS and sceneData.maze then
       Scene.setScene(MazeSimulationScene(sceneData.maze, sceneData.exits), function(shouldPlayMaze, exit)
         if shouldPlayMaze then
           local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
@@ -106,7 +106,7 @@ function Game:playNextStorylineScene()
           advance(exit)
         end
       end)
-    elseif config.SHOW_DEBUG_SCREENS and sceneData.dialogue then
+    elseif config.SHOW_DEBUG_SKIP_SCREENS and sceneData.dialogue then
       local dialogueFileName = self:getDialogueFileName(sceneData)
       Scene.setScene(DialogueSimulationScene(dialogueFileName), function(shouldPlayDialogue)
         if shouldPlayDialogue then

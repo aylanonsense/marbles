@@ -13,6 +13,8 @@ import "effect/effects"
 
 class("MazeScene").extends(Scene)
 
+local hasPlayedAMazeBefore = false
+
 function MazeScene:init(levelData, musicPlayer)
   MazeScene.super.init(self)
 
@@ -27,6 +29,8 @@ function MazeScene:init(levelData, musicPlayer)
   self.isCameraLocked = false
   self.framesUntilTransitionOut = 0
   self.finalExitData = nil
+  self.hideCrankIndicatorFrames = hasPlayedAMazeBefore and 110 or 200
+  hasPlayedAMazeBefore = true
 
   -- Reset everything
   camera:reset()
@@ -83,6 +87,7 @@ function MazeScene:partialLoad()
 end
 
 function MazeScene:update()
+  self.hideCrankIndicatorFrames = math.max(0, self.hideCrankIndicatorFrames - 1)
   if self.slowtimeFramesLeft > 0 then
     self.slowtimeFramesLeft -= 1
     if self.slowtimeFramesLeft <= 0 then
@@ -164,7 +169,7 @@ function MazeScene:update()
     if self.framesUntilTransitionOut <= 0 then
       sceneTransition:transitionOut(function()
         soundCache:stopAllSoundEffects()
-        self:endScene(exitData)
+        self:endScene(self.finalExitData)
       end)
     end
   end
@@ -197,7 +202,7 @@ function MazeScene:draw()
     end
   end
   -- Draw the crank hint indicator
-  if playdate.isCrankDocked() then
+  if playdate.isCrankDocked() and self.hideCrankIndicatorFrames <= 0 and not self.finalExitData then
     playdate.ui.crankIndicator:update()
   end
   sceneTransition:draw()
