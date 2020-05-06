@@ -28,5 +28,8 @@
   },
   "SpecialPoster": {
     "image": "/images/narrative/objects/special-poster.png"
+  },
+  "Marbelizer": {
+    "image": "/images/narrative/objects/marbelizer.png"
   }
 }

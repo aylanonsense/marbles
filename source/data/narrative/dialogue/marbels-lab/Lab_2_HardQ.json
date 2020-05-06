@@ -1,0 +1,75 @@
+{
+  "location": "Lab",
+  "actors": [
+    { "actor": "Prota", "expression": "neutral", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Besto", "expression": "neutral" },
+    { "actor": "Marbels", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "expression": "neutral" }
+  ],
+  "objects": [
+    "Marbelizer"
+  ],
+  "script": [
+    {
+      "if": "failExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Uhh...uhhh... it's a trick question?",  "expression": "confused" },
+        { "actor": "Prota", "line": "Rain never falls in cubes! It falls in drops! So the answer is zero!",  "expression": "confused" },
+        { "actor": "Marbels", "line": "What?! No! That's-- that's not right at all.", "expression": "shocked" },
+        { "actor": "Marbels", "line": "Hmmm. Well. Perhaps I've got more work left than I realized. I certainly can't show this at the Festi-Ball!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Does that mean I can't help you tonight?", "expression": "confused" },
+        { "actor": "Marbels", "line": "Perhaps. But it also means you've gotten the any% speedrun record for shortest internship!", "expression": "neutral" },
+        { "actor": "Prota", "line": "...", "expression": "neutral" },
+        { "actor": "Prota", "line": "What?", "expression": "confused" },
+        { "actor": "Marbels", "line": "Roll the credits!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "normalExit",
+      "then": [ 
+        { "actor": "Prota", "line": "Hmmmm....I think it's...", "expression": "thinking" },
+        { "actor": "Prota", "line": "9,230,343! ", "expression": "happy" },
+        { "actor": "Prota", "line": "What--whoa! Whoa, I definitely didn't know that before.", "expression": "shocked" },
+        { "actor": "Marbels", "line": "Of course you didn't! But your mind was able to parse a thousand little decisions with great confidence.", "expression": "happy" },
+        { "actor": "Marbels", "line": "And finally arrive at an answer. You see, it only draws from your own considerations.", "expression": "happy" },
+        { "actor": "Marbels", "line": "But it knows to discard what it doesn't need, use what it does, and produce an answer you'd never have gotten to alone.", "expression": "happy" },
+        { "actor": "Prota", "line": "That's amazing! Marbels, you're a genius! And--and now so am I!", "expression": "shocked" },
+        { "actor": "Marbels", "line": "Exactly, Prota! We are all--", "expression": "happy" },
+        { "actor": "Besto", "line": "Prota, look out! Minty wanted to come in and--", "expression": "shocked", "side": "right" },
+        { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
+        { "actor": "Prota", "line": "Aw hey, Minty! Did you have a fun walk with Besto?", "expression": "happy" },
+        { "actor": "Minty", "line": "Bark bark!", "expression": "happy" },
+        { "actor": "Minty", "line": "...Bark?!", "expression": "shocked" },
+        { "action": "dismiss-actor", "side": "right"},
+        { "actor": "Marbels", "line": "!!!", "expression": "shocked", "side": "left" },
+        { "action": "dismiss-actor", "side": "left"},
+        { "actor": "Minty", "line": "!!!", "expression": "shocked", "side": "right" },
+        { "action": "dismiss-actor", "side": "right"},
+        { "action": "change-location", "side": "marbelsmintyCIN"},
+        { "action": "change-location", "side": "blackscreen"},
+        { "actor": "Narrator", "line": "(CRRRAAAASSSSHHH! BARK BARK! HISSS! BARK! GRRR! MEOW MEOW! HISS! BARK!)", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh no! The Marbelizer!", "expression": "shocked", "side": "left" },
+        { "action": "dismiss-actor", "side": "left"},
+        { "actor": "Narrator", "line": "(ZZZZAP!)", "expression": "neutral" },
+        { "actor": "Besto", "line": "MINTY NOOOOO! DON'T--....run away.", "expression": "shocked", "side": "right" },
+        { "action": "dismiss-actor", "side": "right"},
+        { "actor": "Narrator", "line": "(SMASH!)", "expression": "neutral" },
+        { "action": "change-location", "side": "Lab"},
+        { "actor": "Prota", "line": "...", "expression": "shocked", "side": "left" },
+        { "actor": "Besto", "line": "...", "expression": "shocked", "side": "right" },
+        { "actor": "Marbels", "line": "Oh goodness.", "expression": "shocked", "side": "right" },
+        { "actor": "Marbels", "line": "Oh goodness.", "expression": "shocked" },
+        { "actor": "Marbels", "line": "Is everyone all right? ", "expression": "shocked" },
+        { "actor": "Marbels", "line": "What in blazes was that beast doing in here?!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Uhh....She might be my dog. And it's possible I brought her from home?", "expression": "neutral" },
+        { "actor": "Marbels", "line": "Well, I-- Oh no! No no no, the Marbelizer!", "expression": "shocked", "side": "right" },
+        { "actor": "Marbels", "line": "She knocked my water jug right into the works.", "expression": "shocked", "side": "right" },
+        { "actor": "Marbels", "line": "Prota, you seem dazed...", "expression": "shocked" },
+        { "actor": "Prota", "line": "I think... I think I got zapped. I--my head feels... a little fuzzy.", "expression": "confused" },
+        { "actor": "Marbels", "line": "Oh dear. Well. First, disconnect yourself. And now... let me ask you a question.", "expression": "neutral"},
+        { "actor": "Marbels", "line": "Prota, what colour is an orange?", "expression": "neutral"}
+      ]
+    }
+  ]
+}

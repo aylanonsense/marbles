@@ -1,0 +1,29 @@
+{
+  "location": "Lab",
+  "actors": [
+    { "actor": "Prota", "expression": "neutral", "side": "left" },
+    { "actor": "Narrator", "expression": "neutral" },
+    { "actor": "Besto", "expression": "neutral" },
+    { "actor": "Marbels", "expression": "neutral", "side": "right" },
+    { "actor": "Minty", "expression": "neutral" }
+  ],
+  "objects": [
+    "Marbelizer"
+  ],
+  "script": [
+    { "actor": "Prota", "line": "Easy: it's the Festi-Ball. But I already knew that.", "expression": "neutral" },
+    { "actor": "Marbels", "line": "Yes! That was simply to test. I haven't actually turned the Marbelizer on yet, you see.", "expression": "happy" },
+    { "actor": "Marbels", "line": "Now. How about you answer this question.", "expression": "neutral" },
+    { "actor": "Marbels", "line": "Prota, what is the annual rainfall, in cubic hectares, of Crabapple Valley?", "expression": "neutral" },
+    { "actor": "Prota", "line": "Oh! Uh...", "expression": "shocked" },
+    { "actor": "Prota", "line": "Okay, well... if you take the...first part of the equation and...uh...", "expression": "thinkinh" },
+    { "actor": "Marbels", "line": "Pretty challenging, isn't it?", "expression": "happy" },
+    { "actor": "Prota", "line": "Yeah, I've never really been good at this kind of thing. ", "expression": "confused" },
+    { "actor": "Marbels", "line": "Well. Let's turn the Marbelizer on. ", "expression": "neutral" },
+    { "action": "show-object", "object": "Marbelizer" },
+    { "actor": "Prota", "line": "Whoa! I felt that!", "expression": "shocked" },
+    { "action": "hide-object", "object": "Marbelizer" },
+    { "actor": "Marbels", "line": "Good. Now let me ask you again:", "expression": "happy" },
+    { "actor": "Marbels", "line": "Prota, what is the annual rainfall, in cubic hectares, of Crabapple Valley?", "expression": "neutral" }
+  ]
+}
