@@ -26,14 +26,15 @@
   },
   "Besto": {
     "name": "Besto",
-    "image": "/images/narrative/actors/debug.png",
+    "image": "/images/narrative/actors/besto.png",
     "facing": "left",
     "expressions": {
-      "neutral": { "frame": 1 },
-      "happy": { "frame": 1 },
-      "thinking": { "frame": 1 },
-      "confused": { "frame": 1 },
-      "shocked": { "frame": 1 }
+      "neutral-hands": { "frame": 1 },
+      "neutral": { "frame": 2 },
+      "happy": { "frame": 3 },
+      "thinking": { "frame": 4 },
+      "confused": { "frame": 5 },
+      "shocked": { "frame": 6 }
     }
   },
   "Doc": {
@@ -114,22 +115,22 @@
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },
-      "happy": { "frame": 1 },
-      "thinking": { "frame": 1 },
-      "confused": { "frame": 1 },
-      "shocked": { "frame": 1 }
+      "happy": { "frame": 2 },
+      "thinking": { "frame": 3 },
+      "shocked": { "frame": 4 },
+      "confused": { "frame": 5 }
     }
   },
   "Mom": {
     "name": "Mom",
-    "image": "/images/narrative/actors/debug.png",
+    "image": "/images/narrative/actors/mom.png",
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },
-      "happy": { "frame": 1 },
-      "thinking": { "frame": 1 },
-      "confused": { "frame": 1 },
-      "shocked": { "frame": 1 }
+      "happy": { "frame": 2 },
+      "shocked": { "frame": 3 },
+      "thinking": { "frame": 4 },
+      "confused": { "frame": 5 }
     }
   },
   "YS": {
@@ -158,26 +159,26 @@
   },
   "Croco": {
     "name": "Croco",
-    "image": "/images/narrative/actors/debug.png",
+    "image": "/images/narrative/actors/croco.png",
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },
-      "happy": { "frame": 1 },
-      "thinking": { "frame": 1 },
-      "confused": { "frame": 1 },
-      "shocked": { "frame": 1 }
+      "happy": { "frame": 2 },
+      "confused": { "frame": 3 },
+      "thinking": { "frame": 4 },
+      "shocked": { "frame": 5 }
     }
   },
   "Mayoress": {
     "name": "Mayoress",
-    "image": "/images/narrative/actors/debug.png",
+    "image": "/images/narrative/actors/mayoress.png",
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },
-      "happy": { "frame": 1 },
-      "thinking": { "frame": 1 },
-      "confused": { "frame": 1 },
-      "shocked": { "frame": 1 }
+      "confused": { "frame": 2 },
+      "happy": { "frame": 3 },
+      "thinking": { "frame": 4 },
+      "shocked": { "frame": 5 }
     }
   },
   "???": {
