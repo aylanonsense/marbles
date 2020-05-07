@@ -36,7 +36,7 @@ function Exit:init(x, y, exitId, icon)
   self.hitSound:setVolume(config.SOUND_VOLUME)
   self.popLinesImage = imageCache.loadImage("images/level/objects/exit/exit-pop-lines.png")
   local score = exitLookup[self.exitId].score
-  if score < 2 then
+  if score == nil or score < 2 then
     self.imageTable = imageCache.loadImageTable("images/level/objects/exit/moon-exit.png")
     self.numDestroyedFrames = 8
   elseif score > 4 then

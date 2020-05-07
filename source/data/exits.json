@@ -716,19 +716,23 @@
 
     {
       "id": "festiball-1-good",
-      "label": "Exit"
+      "label": "Exit",
+      "score": 3
     },
     {
       "id": "festiball-2-good",
-      "label": "Exit"
+      "label": "Exit",
+      "score": 3
     },
     {
       "id": "festiball-3-good",
-      "label": "Exit"
+      "label": "Exit",
+      "score": 3
     },
     {
       "id": "festiball-4-good",
-      "label": "Exit"
+      "label": "Exit",
+      "score": 3
     }
   ]
 }
