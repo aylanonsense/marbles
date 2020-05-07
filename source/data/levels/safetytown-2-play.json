@@ -2787,16 +2787,16 @@
 		},
 		 {
 			"layer":4,
-			"rotation":-44,
+			"rotation":45,
 			"type":"Booster",
-			"x":250,
+			"x":-250,
 			"y":100
 		},
 		 {
 			"layer":4,
-			"rotation":45,
+			"rotation":-44,
 			"type":"Booster",
-			"x":-250,
+			"x":250,
 			"y":100
 		},
 		 {
@@ -2810,22 +2810,14 @@
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
-			"x":0,
-			"y":170
+			"x":-160,
+			"y":250
 		},
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
-			"x":160,
-			"y":90
-		},
-		 {
-			"exitId":"safetytown-2-bad",
-			"icon":"Bad",
-			"layer":6,
-			"type":"Exit",
-			"x":80,
-			"y":270
+			"x":120,
+			"y":50
 		},
 		 {
 			"layer":6,
@@ -2836,14 +2828,8 @@
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
-			"x":-40,
-			"y":-30
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":80,
-			"y":10
+			"x":0,
+			"y":170
 		},
 		 {
 			"layer":6,
@@ -2854,8 +2840,8 @@
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
-			"x":-160,
-			"y":250
+			"x":-120,
+			"y":50
 		},
 		 {
 			"layer":6,
@@ -2864,32 +2850,10 @@
 			"y":170
 		},
 		 {
-			"exitId":"safetytown-2-good",
-			"icon":"Good",
-			"layer":6,
-			"type":"Exit",
-			"x":-80,
-			"y":190
-		},
-		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
 			"x":120,
-			"y":50
-		},
-		 {
-			"exitId":"safetytown-2-special",
-			"icon":"Special",
-			"layer":6,
-			"type":"Exit",
-			"x":0,
-			"y":110
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":-120,
-			"y":50
+			"y":130
 		},
 		 {
 			"layer":6,
@@ -2900,8 +2864,44 @@
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
-			"x":120,
-			"y":130
+			"x":160,
+			"y":90
+		},
+		 {
+			"layer":6,
+			"type":"CrumblingPlatform",
+			"x":80,
+			"y":10
+		},
+		 {
+			"layer":6,
+			"type":"CrumblingPlatform",
+			"x":-40,
+			"y":-30
+		},
+		 {
+			"exitId":"safetytown-2-bad",
+			"icon":"Bad",
+			"layer":7,
+			"type":"Exit",
+			"x":80,
+			"y":270
+		},
+		 {
+			"exitId":"safetytown-2-good",
+			"icon":"Good",
+			"layer":7,
+			"type":"Exit",
+			"x":-80,
+			"y":190
+		},
+		 {
+			"exitId":"safetytown-2-special",
+			"icon":"Special",
+			"layer":7,
+			"type":"Exit",
+			"x":0,
+			"y":110
 		}
 	],
 	"spawn": {

@@ -2,6 +2,25 @@
 	"objects": [
 		 {
 			"fillCoordinates": [
+				60,
+				160,
+				60,
+				270,
+				170,
+				270,
+				170,
+				160
+			],
+			"fillPattern":"LighterGrey",
+			"layer":-2,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
 				-160,
 				60,
 				-160,
@@ -40,17 +59,175 @@
 		},
 		 {
 			"fillCoordinates": [
-				60,
-				160,
-				60,
-				270,
-				170,
-				270,
-				170,
-				160
+				0,
+				70,
+				0,
+				110,
+				40,
+				110,
+				40,
+				70
 			],
-			"fillPattern":"LighterGrey",
-			"layer":-2,
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"layer":-1,
+			"type":"CrumblingPlatform",
+			"x":210,
+			"y":270
+		},
+		 {
+			"fillCoordinates": [
+				50,
+				70,
+				50,
+				110,
+				90,
+				110,
+				90,
+				70
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				120,
+				220,
+				120,
+				260,
+				160,
+				260,
+				160,
+				220
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				70,
+				170,
+				70,
+				210,
+				110,
+				210,
+				110,
+				170
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				120,
+				170,
+				120,
+				210,
+				160,
+				210,
+				160,
+				170
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				10,
+				-40,
+				10,
+				0,
+				50,
+				0,
+				50,
+				-40
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				-40,
+				-90,
+				-40,
+				-50,
+				0,
+				-50,
+				0,
+				-90
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				70,
+				220,
+				70,
+				260,
+				110,
+				260,
+				110,
+				220
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				10,
+				-90,
+				10,
+				-50,
+				50,
+				-50,
+				50,
+				-90
+			],
+			"fillPattern":"White",
+			"layer":-1,
 			"linesAndArcs": [
 			],
 			"points": [
@@ -79,214 +256,18 @@
 		 {
 			"layer":-1,
 			"type":"CrumblingPlatform",
-			"x":210,
-			"y":270
-		},
-		 {
-			"fillCoordinates": [
-				-50,
-				70,
-				-50,
-				110,
-				-10,
-				110,
-				-10,
-				70
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				-150,
-				70,
-				-150,
-				110,
-				-110,
-				110,
-				-110,
-				70
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				100,
-				70,
-				100,
-				110,
-				140,
-				110,
-				140,
-				70
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				-100,
-				70,
-				-100,
-				110,
-				-60,
-				110,
-				-60,
-				70
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				-40,
-				-40,
-				-40,
-				0,
-				0,
-				0,
-				0,
-				-40
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				-40,
-				-90,
-				-40,
-				-50,
-				0,
-				-50,
-				0,
-				-90
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				10,
-				-90,
-				10,
-				-50,
-				50,
-				-50,
-				50,
-				-90
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				0,
-				70,
-				0,
-				110,
-				40,
-				110,
-				40,
-				70
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				70,
-				220,
-				70,
-				260,
-				110,
-				260,
-				110,
-				220
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"layer":-1,
-			"type":"CrumblingPlatform",
 			"x":-210,
 			"y":270
 		},
 		 {
 			"fillCoordinates": [
-				10,
-				-40,
-				10,
-				0,
-				50,
-				0,
-				50,
-				-40
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				50,
+				100,
 				70,
-				50,
+				100,
 				110,
-				90,
+				140,
 				110,
-				90,
+				140,
 				70
 			],
 			"fillPattern":"White",
@@ -299,14 +280,14 @@
 		},
 		 {
 			"fillCoordinates": [
+				-50,
 				70,
-				170,
-				70,
-				210,
+				-50,
 				110,
-				210,
+				-10,
 				110,
-				170
+				-10,
+				70
 			],
 			"fillPattern":"White",
 			"layer":-1,
@@ -318,14 +299,14 @@
 		},
 		 {
 			"fillCoordinates": [
-				120,
-				220,
-				120,
-				260,
-				160,
-				260,
-				160,
-				220
+				-40,
+				-40,
+				-40,
+				0,
+				0,
+				0,
+				0,
+				-40
 			],
 			"fillPattern":"White",
 			"layer":-1,
@@ -337,14 +318,33 @@
 		},
 		 {
 			"fillCoordinates": [
-				120,
-				170,
-				120,
-				210,
-				160,
-				210,
-				160,
-				170
+				-150,
+				70,
+				-150,
+				110,
+				-110,
+				110,
+				-110,
+				70
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				-100,
+				70,
+				-100,
+				110,
+				-60,
+				110,
+				-60,
+				70
 			],
 			"fillPattern":"White",
 			"layer":-1,
@@ -1032,351 +1032,6 @@
 		},
 		 {
 			"fillCoordinates": [
-				-490,
-				360,
-				-490,
-				610,
-				508,
-				610,
-				508,
-				360
-			],
-			"linesAndArcs": [
-				 {
-					"sectors": [
-						-11,
-						6,
-						-11,
-						7,
-						-11,
-						8,
-						-11,
-						9,
-						-11,
-						10,
-						-11,
-						11,
-						-11,
-						12,
-						-10,
-						6,
-						-10,
-						7,
-						-10,
-						8,
-						-10,
-						9,
-						-10,
-						10,
-						-10,
-						11,
-						-10,
-						12
-					],
-					"type":"PhysLine",
-					"x":-490,
-					"x2":-490,
-					"y":610,
-					"y2":360
-				},
-				 {
-					"sectors": [
-						-11,
-						11,
-						-11,
-						12,
-						-10,
-						11,
-						-10,
-						12,
-						-9,
-						11,
-						-9,
-						12,
-						-8,
-						11,
-						-8,
-						12,
-						-7,
-						11,
-						-7,
-						12,
-						-6,
-						11,
-						-6,
-						12,
-						-5,
-						11,
-						-5,
-						12,
-						-4,
-						11,
-						-4,
-						12,
-						-3,
-						11,
-						-3,
-						12,
-						-2,
-						11,
-						-2,
-						12,
-						-1,
-						11,
-						-1,
-						12,
-						0,
-						11,
-						0,
-						12,
-						1,
-						11,
-						1,
-						12,
-						2,
-						11,
-						2,
-						12,
-						3,
-						11,
-						3,
-						12,
-						4,
-						11,
-						4,
-						12,
-						5,
-						11,
-						5,
-						12,
-						6,
-						11,
-						6,
-						12,
-						7,
-						11,
-						7,
-						12,
-						8,
-						11,
-						8,
-						12,
-						9,
-						11,
-						9,
-						12,
-						10,
-						11,
-						10,
-						12
-					],
-					"type":"PhysLine",
-					"x":508,
-					"x2":-490,
-					"y":610,
-					"y2":610
-				},
-				 {
-					"sectors": [
-						9,
-						6,
-						9,
-						7,
-						9,
-						8,
-						9,
-						9,
-						9,
-						10,
-						9,
-						11,
-						9,
-						12,
-						10,
-						6,
-						10,
-						7,
-						10,
-						8,
-						10,
-						9,
-						10,
-						10,
-						10,
-						11,
-						10,
-						12
-					],
-					"type":"PhysLine",
-					"x":508,
-					"x2":508,
-					"y":360,
-					"y2":610
-				},
-				 {
-					"sectors": [
-						-11,
-						6,
-						-11,
-						7,
-						-10,
-						6,
-						-10,
-						7,
-						-9,
-						6,
-						-9,
-						7,
-						-8,
-						6,
-						-8,
-						7,
-						-7,
-						6,
-						-7,
-						7,
-						-6,
-						6,
-						-6,
-						7,
-						-5,
-						6,
-						-5,
-						7,
-						-4,
-						6,
-						-4,
-						7,
-						-3,
-						6,
-						-3,
-						7,
-						-2,
-						6,
-						-2,
-						7,
-						-1,
-						6,
-						-1,
-						7,
-						0,
-						6,
-						0,
-						7,
-						1,
-						6,
-						1,
-						7,
-						2,
-						6,
-						2,
-						7,
-						3,
-						6,
-						3,
-						7,
-						4,
-						6,
-						4,
-						7,
-						5,
-						6,
-						5,
-						7,
-						6,
-						6,
-						6,
-						7,
-						7,
-						6,
-						7,
-						7,
-						8,
-						6,
-						8,
-						7,
-						9,
-						6,
-						9,
-						7,
-						10,
-						6,
-						10,
-						7
-					],
-					"type":"PhysLine",
-					"x":-490,
-					"x2":508,
-					"y":360,
-					"y2":360
-				}
-			],
-			"points": [
-				 {
-					"sectors": [
-						-11,
-						6,
-						-11,
-						7,
-						-10,
-						6,
-						-10,
-						7
-					],
-					"type":"PhysPoint",
-					"x":-490,
-					"y":360
-				},
-				 {
-					"sectors": [
-						-11,
-						11,
-						-11,
-						12,
-						-10,
-						11,
-						-10,
-						12
-					],
-					"type":"PhysPoint",
-					"x":-490,
-					"y":610
-				},
-				 {
-					"sectors": [
-						9,
-						11,
-						9,
-						12,
-						10,
-						11,
-						10,
-						12
-					],
-					"type":"PhysPoint",
-					"x":508,
-					"y":610
-				},
-				 {
-					"sectors": [
-						9,
-						6,
-						9,
-						7,
-						10,
-						6,
-						10,
-						7
-					],
-					"type":"PhysPoint",
-					"x":508,
-					"y":360
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
 				240,
 				360,
 				240,
@@ -1466,6 +1121,351 @@
 			"type":"Polygon"
 		},
 		 {
+			"fillCoordinates": [
+				-490,
+				360,
+				-490,
+				610,
+				508,
+				610,
+				508,
+				360
+			],
+			"linesAndArcs": [
+				 {
+					"sectors": [
+						-11,
+						6,
+						-11,
+						7,
+						-11,
+						8,
+						-11,
+						9,
+						-11,
+						10,
+						-11,
+						11,
+						-11,
+						12,
+						-10,
+						6,
+						-10,
+						7,
+						-10,
+						8,
+						-10,
+						9,
+						-10,
+						10,
+						-10,
+						11,
+						-10,
+						12
+					],
+					"type":"PhysLine",
+					"x":-490,
+					"x2":-490,
+					"y":610,
+					"y2":360
+				},
+				 {
+					"sectors": [
+						-11,
+						11,
+						-11,
+						12,
+						-10,
+						11,
+						-10,
+						12,
+						-9,
+						11,
+						-9,
+						12,
+						-8,
+						11,
+						-8,
+						12,
+						-7,
+						11,
+						-7,
+						12,
+						-6,
+						11,
+						-6,
+						12,
+						-5,
+						11,
+						-5,
+						12,
+						-4,
+						11,
+						-4,
+						12,
+						-3,
+						11,
+						-3,
+						12,
+						-2,
+						11,
+						-2,
+						12,
+						-1,
+						11,
+						-1,
+						12,
+						0,
+						11,
+						0,
+						12,
+						1,
+						11,
+						1,
+						12,
+						2,
+						11,
+						2,
+						12,
+						3,
+						11,
+						3,
+						12,
+						4,
+						11,
+						4,
+						12,
+						5,
+						11,
+						5,
+						12,
+						6,
+						11,
+						6,
+						12,
+						7,
+						11,
+						7,
+						12,
+						8,
+						11,
+						8,
+						12,
+						9,
+						11,
+						9,
+						12,
+						10,
+						11,
+						10,
+						12
+					],
+					"type":"PhysLine",
+					"x":508,
+					"x2":-490,
+					"y":610,
+					"y2":610
+				},
+				 {
+					"sectors": [
+						9,
+						6,
+						9,
+						7,
+						9,
+						8,
+						9,
+						9,
+						9,
+						10,
+						9,
+						11,
+						9,
+						12,
+						10,
+						6,
+						10,
+						7,
+						10,
+						8,
+						10,
+						9,
+						10,
+						10,
+						10,
+						11,
+						10,
+						12
+					],
+					"type":"PhysLine",
+					"x":508,
+					"x2":508,
+					"y":360,
+					"y2":610
+				},
+				 {
+					"sectors": [
+						-11,
+						6,
+						-11,
+						7,
+						-10,
+						6,
+						-10,
+						7,
+						-9,
+						6,
+						-9,
+						7,
+						-8,
+						6,
+						-8,
+						7,
+						-7,
+						6,
+						-7,
+						7,
+						-6,
+						6,
+						-6,
+						7,
+						-5,
+						6,
+						-5,
+						7,
+						-4,
+						6,
+						-4,
+						7,
+						-3,
+						6,
+						-3,
+						7,
+						-2,
+						6,
+						-2,
+						7,
+						-1,
+						6,
+						-1,
+						7,
+						0,
+						6,
+						0,
+						7,
+						1,
+						6,
+						1,
+						7,
+						2,
+						6,
+						2,
+						7,
+						3,
+						6,
+						3,
+						7,
+						4,
+						6,
+						4,
+						7,
+						5,
+						6,
+						5,
+						7,
+						6,
+						6,
+						6,
+						7,
+						7,
+						6,
+						7,
+						7,
+						8,
+						6,
+						8,
+						7,
+						9,
+						6,
+						9,
+						7,
+						10,
+						6,
+						10,
+						7
+					],
+					"type":"PhysLine",
+					"x":-490,
+					"x2":508,
+					"y":360,
+					"y2":360
+				}
+			],
+			"points": [
+				 {
+					"sectors": [
+						-11,
+						6,
+						-11,
+						7,
+						-10,
+						6,
+						-10,
+						7
+					],
+					"type":"PhysPoint",
+					"x":-490,
+					"y":360
+				},
+				 {
+					"sectors": [
+						-11,
+						11,
+						-11,
+						12,
+						-10,
+						11,
+						-10,
+						12
+					],
+					"type":"PhysPoint",
+					"x":-490,
+					"y":610
+				},
+				 {
+					"sectors": [
+						9,
+						11,
+						9,
+						12,
+						10,
+						11,
+						10,
+						12
+					],
+					"type":"PhysPoint",
+					"x":508,
+					"y":610
+				},
+				 {
+					"sectors": [
+						9,
+						6,
+						9,
+						7,
+						10,
+						6,
+						10,
+						7
+					],
+					"type":"PhysPoint",
+					"x":508,
+					"y":360
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
 			"layer":3,
 			"radius":10,
 			"type":"Circle",
@@ -1476,15 +1476,8 @@
 			"layer":4,
 			"rotation":0,
 			"type":"Booster",
-			"x":120,
-			"y":90
-		},
-		 {
-			"layer":4,
-			"rotation":0,
-			"type":"Booster",
-			"x":-80,
-			"y":90
+			"x":-20,
+			"y":-20
 		},
 		 {
 			"layer":4,
@@ -1495,10 +1488,17 @@
 		},
 		 {
 			"layer":4,
+			"rotation":-44,
+			"type":"Booster",
+			"x":250,
+			"y":30
+		},
+		 {
+			"layer":4,
 			"rotation":0,
 			"type":"Booster",
-			"x":30,
-			"y":-20
+			"x":120,
+			"y":90
 		},
 		 {
 			"layer":4,
@@ -1518,15 +1518,27 @@
 			"layer":4,
 			"rotation":0,
 			"type":"Booster",
-			"x":-20,
+			"x":30,
 			"y":-20
 		},
 		 {
 			"layer":4,
-			"rotation":-44,
+			"rotation":0,
 			"type":"Booster",
-			"x":250,
-			"y":30
+			"x":-80,
+			"y":90
+		},
+		 {
+			"layer":6,
+			"type":"CrumblingPlatform",
+			"x":-30,
+			"y":90
+		},
+		 {
+			"layer":6,
+			"type":"CrumblingPlatform",
+			"x":120,
+			"y":90
 		},
 		 {
 			"layer":6,
@@ -1537,35 +1549,13 @@
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
-			"x":120,
+			"x":70,
 			"y":90
-		},
-		 {
-			"exitId":"safetytown-1-bad",
-			"icon":"Bad",
-			"layer":6,
-			"type":"Exit",
-			"x":95,
-			"y":40
 		},
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
 			"x":-20,
-			"y":-20
-		},
-		 {
-			"exitId":"safetytown-1-good",
-			"icon":"Good",
-			"layer":6,
-			"type":"Exit",
-			"x":0,
-			"y":-150
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":30,
 			"y":-20
 		},
 		 {
@@ -1577,22 +1567,20 @@
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
-			"x":70,
+			"x":-130,
 			"y":90
 		},
 		 {
 			"layer":6,
 			"type":"CrumblingPlatform",
-			"x":-30,
-			"y":90
+			"x":30,
+			"y":-70
 		},
 		 {
-			"exitId":"safetytown-1-special",
-			"icon":"Special",
 			"layer":6,
-			"type":"Exit",
-			"x":-130,
-			"y":-190
+			"type":"CrumblingPlatform",
+			"x":30,
+			"y":-20
 		},
 		 {
 			"layer":6,
@@ -1601,16 +1589,28 @@
 			"y":90
 		},
 		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":30,
-			"y":-70
+			"exitId":"safetytown-1-bad",
+			"icon":"Bad",
+			"layer":8,
+			"type":"Exit",
+			"x":95,
+			"y":40
 		},
 		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
+			"exitId":"safetytown-1-good",
+			"icon":"Good",
+			"layer":8,
+			"type":"Exit",
+			"x":0,
+			"y":-150
+		},
+		 {
+			"exitId":"safetytown-1-special",
+			"icon":"Special",
+			"layer":8,
+			"type":"Exit",
 			"x":-130,
-			"y":90
+			"y":-190
 		}
 	],
 	"spawn": {
