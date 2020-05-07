@@ -88,7 +88,7 @@ function Exit:draw()
     local labelX, labelY = x - labelWidth / 2, y + 38 * scale
     -- Draw some pop lines after the exit is first hit
     playdate.graphics.setColor(playdate.graphics.kColorWhite)
-    playdate.graphics.fillRect(labelX + 1, labelY + 1, labelWidth - 2, labelHeight - 2)
+    playdate.graphics.fillRect(labelX, labelY, labelWidth, labelHeight)
     playdate.graphics.setColor(playdate.graphics.kColorBlack)
     if self.health >= 2 and self.animationFrame < 15 then
       local imageWidth, imageHeight = self.popLinesImage:getSize()
