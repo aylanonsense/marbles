@@ -7,7 +7,8 @@
     {
       "maze": "festiball-1",
       "exits": [ "festiball-1-good" ],
-      "music": "festi-ball-maze"
+      "music": "festi-ball-maze",
+      "prompt": "She's right there!"
     },
     {
       "dialogue": {
@@ -20,7 +21,8 @@
     {
       "maze": "festiball-2",
       "exits": [ "festiball-2-good" ],
-      "music": "festi-ball-maze"
+      "music": "festi-ball-maze",
+      "prompt": "Let's try this again!"
     },
     {
       "dialogue": {
@@ -41,7 +43,8 @@
     {
       "maze": "festiball-3",
       "exits": [ "festiball-3-good" ],
-      "music": "festi-ball-maze"
+      "music": "festi-ball-maze",
+      "prompt": "Third time's the charm!"
     },
     {
       "dialogue": {
@@ -66,7 +69,8 @@
     {
       "maze": "festiball-4",
       "exits": [ "festiball-4-good" ],
-      "music": "festi-ball-maze"
+      "music": "festi-ball-maze",
+      "prompt": "Come onnnnnnn!"
     },
     {
       "dialogue": {

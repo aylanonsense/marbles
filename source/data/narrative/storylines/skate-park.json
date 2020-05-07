@@ -7,7 +7,8 @@
     {
       "maze": "skatepark-jump",
       "exits": [ "skatepark-jump-special", "skatepark-jump-good", "skatepark-jump-bad" ],
-      "music": "skate-park-maze"
+      "music": "skate-park-maze",
+      "prompt": "Do a board trick!"
     },
     {
       "dialogue": "skate-park/Skatepark_1_Flip",
@@ -16,7 +17,8 @@
     {
       "maze": "skatepark-halfpipe",
       "exits": [ "skatepark-halfpipe-special", "skatepark-halfpipe-good", "skatepark-halfpipe-bad" ],
-      "music": "skate-park-maze"
+      "music": "skate-park-maze",
+      "prompt": "Do a grind trick!"
     },
     {
       "dialogue": "skate-park/Skatepark_2_Grind",
@@ -25,7 +27,8 @@
     {
       "maze": "skatepark-tour",
       "exits": [ "skatepark-tour-special", "skatepark-tour-good", "skatepark-tour-bad" ],
-      "music": "skate-park-maze"
+      "music": "skate-park-maze",
+      "prompt": "Do a grab trick!"
     },
     {
       "dialogue": "skate-park/Skatepark_3_Grab",

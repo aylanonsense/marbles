@@ -7,7 +7,8 @@
     {
       "maze": "daycare-1",
       "exits": [ "daycare-1-special", "daycare-1-good", "daycare-1-bad" ],
-      "music": "daycare-maze"
+      "music": "daycare-maze",
+      "prompt": "Short, tall, oldest of all?"
     },
     {
       "dialogue": "daycare/Daycare_1_Riddle1",
@@ -16,7 +17,8 @@
     {
       "maze": "daycare-2",
       "exits": [ "daycare-2-special", "daycare-2-good", "daycare-2-bad" ],
-      "music": "daycare-maze"
+      "music": "daycare-maze",
+      "prompt": "No light, shine bright, squint at might?"
     },
     {
       "dialogue": "daycare/Daycare_2_Riddle2",
@@ -25,7 +27,8 @@
     {
       "maze": "daycare-3",
       "exits": [ "daycare-3-special", "daycare-3-good", "daycare-3-bad" ],
-      "music": "daycare-maze"
+      "music": "daycare-maze",
+      "prompt": "Round shape, smooth edges?"
     },
     {
       "dialogue": "daycare/Daycare_3_Riddle3",

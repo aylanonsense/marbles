@@ -7,7 +7,8 @@
     {
       "maze": "lab-1",
       "exits": [ "lab-1-good" ],
-      "music": "marbels-lab-maze"
+      "music": "marbels-lab-maze",
+      "prompt": "What's happening tonight?"
     },
     {
       "dialogue": "marbels-lab/Lab_1_EasyQ",
@@ -16,7 +17,8 @@
     {
       "maze": "lab-2",
       "exits": [ "lab-2-good", "lab-2-bad" ],
-      "music": "marbels-lab-maze"
+      "music": "marbels-lab-maze",
+      "prompt": "What's C. Valley's annual rainfall?"
     },
     {
       "dialogue": "marbels-lab/Lab_2_HardQ",
@@ -25,7 +27,8 @@
     {
       "maze": "lab-3",
       "exits": [ "lab-3-good", "lab-3-bad" ],
-      "music": "marbels-lab-maze"
+      "music": "marbels-lab-maze",
+      "prompt": "What color is an orange?"
     },
     {
       "dialogue": "marbels-lab/Lab_Resolution",

@@ -4,37 +4,36 @@
       "dialogue": "vintage-viper/VintageViper_Intro",
       "music": "vintage-viper-dialogue"
     },
-
     {
       "maze": "viper-head",
       "exits": [ "viper-head-special", "viper-head-good", "viper-head-bad" ],
-      "music": "vintage-viper-maze"
+      "music": "vintage-viper-maze",
+      "prompt": "Pick a robot head!"
     },
     {
       "dialogue": "vintage-viper/VintageViper_1_Head",
       "music": "vintage-viper-dialogue"
     },
-
     {
       "maze": "viper-torso",
       "exits": [ "viper-torso-special", "viper-torso-good", "viper-torso-bad" ],
-      "music": "vintage-viper-maze"
+      "music": "vintage-viper-maze",
+      "prompt": "Pick a robot torso!"
     },
     {
       "dialogue": "vintage-viper/VintageViper_2_Torso",
       "music": "vintage-viper-dialogue"
     },
-
     {
       "maze": "viper-legs",
       "exits": [ "viper-legs-special", "viper-legs-good", "viper-legs-bad" ],
-      "music": "vintage-viper-maze"
+      "music": "vintage-viper-maze",
+      "prompt": "Pick robot legs!"
     },
     {
       "dialogue": "vintage-viper/VintageViper_3_Legs",
       "music": "vintage-viper-dialogue"
     },
-
     {
       "dialogue": "vintage-viper/VintageViper_Resolution",
       "music": "vintage-viper-dialogue"

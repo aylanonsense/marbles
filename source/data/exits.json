@@ -128,19 +128,19 @@
 
     {
       "id": "pickle-star-good",
-      "label": "Starfish",
+      "label": "Sea",
       "score": 3,
       "tarotText": "STARFISH"
     },
     {
       "id": "pickle-star-bad",
-      "label": "Supernova",
+      "label": "Big Bang",
       "score": 1,
       "tarotText": "SUPERNOVA"
     },
     {
       "id": "pickle-star-special",
-      "label": "Superstar",
+      "label": "Stardom",
       "score": 5,
       "tarotText": "SUPERSTAR"
     },
@@ -149,19 +149,19 @@
 
     {
       "id": "pickle-tower-good",
-      "label": "Hungry",
+      "label": "Demolish",
       "score": 3,
       "tarotText": "HUNGRY"
     },
     {
       "id": "pickle-tower-bad",
-      "label": "Watchful",
+      "label": "Watch",
       "score": 1,
       "tarotText": "WATCHFUL"
     },
     {
       "id": "pickle-tower-special",
-      "label": "Scheming",
+      "label": "Build",
       "score": 5,
       "tarotText": "SCHEMING"
     },
@@ -170,19 +170,19 @@
 
     {
       "id": "pickle-death-good",
-      "label": "Death-dealing",
+      "label": "End",
       "score": 3,
       "tarotText": "DEATH-DEALING"
     },
     {
       "id": "pickle-death-bad",
-      "label": "Death-defying",
+      "label": "Fear",
       "score": 1,
       "tarotText": "DEATH-DEFYING"
     },
     {
       "id": "pickle-death-special",
-      "label": "Death-proof",
+      "label": "Immortal",
       "score": 5,
       "tarotText": "DEATH-PROOF"
     },
@@ -218,13 +218,13 @@
     },
     {
       "id": "viper-torso-bad",
-      "label": "Fish bones",
+      "label": "Bones",
       "score": 1,
       "robotText": "BONES"
     },
     {
       "id": "viper-torso-special",
-      "label": "Toy dog torso",
+      "label": "Toy Torso",
       "score": 5,
       "robotText": "DOGGY"
     },
@@ -233,19 +233,19 @@
 
     {
       "id": "viper-legs-good",
-      "label": "Golf cart",
+      "label": "Golf Cart",
       "score": 3,
       "robotText": "GOLF CART"
     },
     {
       "id": "viper-legs-bad",
-      "label": "Old boot",
+      "label": "Old Boot",
       "score": 1,
       "robotText": "BOOT"
     },
     {
       "id": "viper-legs-special",
-      "label": "Toy dog legs",
+      "label": "Toy Legs",
       "score": 5,
       "robotText": "DOGGO"
     },
@@ -254,19 +254,19 @@
 
     {
       "id": "viper-head-good",
-      "label": "LDC screen",
+      "label": "screen",
       "score": 3,
       "robotText": "SMART"
     },
     {
       "id": "viper-head-bad",
-      "label": "Tin can",
+      "label": "Tin Can",
       "score": 1,
       "robotText": "TIN"
     },
     {
       "id": "viper-head-special",
-      "label": "Toy dog head",
+      "label": "Toy Head",
       "score": 5,
       "robotText": "DOG"
     },
@@ -275,19 +275,19 @@
 
     {
       "id": "skatepark-halfpipe-bad",
-      "label": "5-0 butt grind",
+      "label": "Butt Grind",
       "score": 1,
       "finalText": "VOMIT FACE EMOJI"
     },
     {
       "id": "skatepark-halfpipe-good",
-      "label": "Wagging Tailslide",
+      "label": "Tailslide",
       "score": 3,
       "finalText": "BABY EMOJI"
     },
     {
       "id": "skatepark-halfpipe-special",
-      "label": "Corkscrew phoenix grind",
+      "label": "Phoenix Grind",
       "score": 5,
       "finalText": "COOL SHADES EMOJI"
     },
@@ -296,19 +296,19 @@
 
     {
       "id": "skatepark-tour-bad",
-      "label": "Armbar deckbreaker",
+      "label": "Deckbreaker",
       "score": 1,
       "finalText": "PERSON PUTTING THINGS IN TRASH EMOJI"
     },
     {
       "id": "skatepark-tour-good",
-      "label": "Puppyhana",
+      "label": "Benihana",
       "score": 3,
       "finalText": "MINTY EMOJI"
     },
     {
       "id": "skatepark-tour-special",
-      "label": "Parachute drop",
+      "label": "Parachute Drop",
       "score": 5,
       "finalText": "CRYSTAL BALL EMOJI"
     },
@@ -317,19 +317,19 @@
 
     {
       "id": "skatepark-jump-bad",
-      "label": "No-board 360 faceplant",
+      "label": "Face Plant",
       "score": 1,
       "finalText": "THUMBS DOWN EMOJI"
     },
     {
       "id": "skatepark-jump-good",
-      "label": "Pup shove-it",
+      "label": "Pop Shove-It",
       "score": 3,
       "finalText": "THUMBS UP EMOJI"
     },
     {
       "id": "skatepark-jump-special",
-      "label": "Varial neckflip ",
+      "label": "Neckflip",
       "score": 5,
       "finalText": "OK HAND EMOJI"
     },
@@ -338,13 +338,13 @@
 
     {
       "id": "library-1-bad",
-      "label": "Parchment",
+      "label": "Ancient Scroll",
       "score": 1,
       "posterText": "OLD-TIMEY"
     },
     {
       "id": "library-1-good",
-      "label": "Doc Sandwich Wrapper",
+      "label": "Sandwich Wrapper",
       "score": 3,
       "posterText": "GREASY"
     },
@@ -359,7 +359,7 @@
 
     {
       "id": "library-2-bad",
-      "label": "Help!",
+      "label": "HELP!",
       "score": 1,
       "posterText": "SIMPLE"
     },
@@ -371,7 +371,7 @@
     },
     {
       "id": "library-2-special",
-      "label": "Have you seen this dog",
+      "label": "Have you seen this dog!",
       "score": 5,
       "posterText": "LOUD"
     },
@@ -386,7 +386,7 @@
     },
     {
       "id": "library-3-good",
-      "label": "Zoomed in",
+      "label": "Zoomed-in",
       "score": 3,
       "posterText": "SOME DOG'S EYES"
     },
@@ -401,19 +401,19 @@
 
     {
       "id": "daycare-1-bad",
-      "label": "Aged string cheese",
+      "label": "Old String Cheese",
       "score": 1,
       "finalText": "A FEAST"
     },
     {
       "id": "daycare-1-good",
-      "label": "A tree planted by a happy child",
+      "label": "A Tree",
       "score": 3,
       "finalText": "YOUR ROOTS"
     },
     {
       "id": "daycare-1-special",
-      "label": "The threads of fate",
+      "label": "Threads",
       "score": 5,
       "finalText": "THE THREADS OF FATE"
     },
@@ -422,19 +422,19 @@
 
     {
       "id": "daycare-2-bad",
-      "label": "A flashlight",
+      "label": "Flashlight",
       "score": 1,
       "finalText": "THE LIGHT"
     },
     {
       "id": "daycare-2-good",
-      "label": "The eyes of a parent looking at their child",
+      "label": "Eyes",
       "score": 3,
       "finalText": "YOUR LOVED ONES"
     },
     {
       "id": "daycare-2-special",
-      "label": "The colors of an ancient rainbow reverberating through time and space",
+      "label": "Rainbow",
       "score": 5,
       "finalText": "THE COLORS OF THE ANCIENT RAINBOW"
     },
@@ -449,13 +449,13 @@
     },
     {
       "id": "daycare-3-good",
-      "label": "A newborn baby full of warmth and potential",
+      "label": "Baby",
       "score": 3,
       "finalText": "NEW LIFE"
     },
     {
       "id": "daycare-3-special",
-      "label": "Celestial bodies locked in an endless dance",
+      "label": "Dance",
       "score": 5,
       "finalText": "THE ETERNAL DANCE OF CELESTIAL BODIES"
     },
@@ -464,19 +464,19 @@
 
     {
       "id": "safetytown-1-bad",
-      "label": "After turning",
+      "label": "After",
       "score": 1,
       "finalText": "A HAZARDOUS"
     },
     {
       "id": "safetytown-1-good",
-      "label": "After brushing your teeth",
+      "label": "Very Early",
       "score": 3,
       "finalText": "AN UNCERTAIN"
     },
     {
       "id": "safetytown-1-special",
-      "label": "Drive with hazards on",
+      "label": "Always",
       "score": 5,
       "finalText": "A CAUTIOUS"
     },
@@ -485,19 +485,19 @@
 
     {
       "id": "safetytown-2-bad",
-      "label": "A hydroplane",
+      "label": "A Hydroplane",
       "score": 1,
       "finalText": "DANGER"
     },
     {
       "id": "safetytown-2-good",
-      "label": "The speed at which cars hydroplane",
+      "label": "The Right Speed",
       "score": 3,
       "finalText": "RISK"
     },
     {
       "id": "safetytown-2-special",
-      "label": "300 furlongs per hour",
+      "label": "300 FPH",
       "score": 5,
       "finalText": "SAFETY"
     },
@@ -512,13 +512,13 @@
     },
     {
       "id": "safetytown-3-good",
-      "label": "Exit the vehicle",
+      "label": "Exit",
       "score": 3,
       "finalText": "MASTER"
     },
     {
       "id": "safetytown-3-special",
-      "label": "Avoid driving",
+      "label": "Avoid",
       "score": 5,
       "finalText": "LEGEND"
     },
@@ -527,19 +527,19 @@
 
     {
       "id": "ballmuseum-skeeball-bad",
-      "label": "Hockey ball",
+      "label": "Hockey Ball",
       "finalText": "A HOCKEY BALL",
       "score": 1
     },
     {
         "id": "ballmuseum-skeeball-good",
-        "label": "8-ball",
+        "label": "8-Ball",
         "finalText": "AN 8-BALL",
         "score": 3
     },
     {
         "id": "ballmuseum-skeeball-special",
-        "label": "Hamster ball",
+        "label": "Hamster Ball",
         "finalText": "A HAMSTER BALL",
         "score": 5
     },
@@ -548,7 +548,7 @@
 
     {
         "id": "ballmuseum-pinball-bad",
-        "label": "Ice cream ball",
+        "label": "Ice Cream Ball",
         "finalText": "AN ICE CREAM BALL",
         "score": 1
     },
@@ -560,7 +560,7 @@
     },
     {
         "id": "ballmuseum-pinball-special",
-        "label": "Pizza ball",
+        "label": "Pizza Ball",
         "finalText": "A PIZZA BALL",
         "score": 5
     },
@@ -569,19 +569,19 @@
 
     {
         "id": "ballmuseum-pool-bad",
-        "label": "The moon",
+        "label": "The Moon",
         "finalText": "THE MOON",
         "score": 1
     },
     {
         "id": "ballmuseum-pool-good",
-        "label": "Puffer fish",
+        "label": "Puffer Fish",
         "finalText": "A PUFFER FISH",
         "score": 3
     },
     {
         "id": "ballmuseum-pool-special",
-        "label": "A cat",
+        "label": "Cat",
         "finalText": "A CAT",
         "score": 5
     },
@@ -674,7 +674,7 @@
 
     {
       "id": "sandwichshop-protein-bad",
-      "label": "Protein powder",
+      "label": "Protein Powder",
       "finalText": "MUSCLE-BUILDER",
       "score": 1
     },
@@ -701,7 +701,7 @@
     },
     {
       "id": "sandwichshop-toppings-good",
-      "label": "Cauliflour",
+      "label": "Cauliflower",
       "finalText": "A CRUNCHY",
       "score": 3
     },
@@ -716,22 +716,22 @@
 
     {
       "id": "festiball-1-good",
-      "label": "Exit",
+      "label": "Catch Minty",
       "score": 3
     },
     {
       "id": "festiball-2-good",
-      "label": "Exit",
+      "label": "Catch Minty!",
       "score": 3
     },
     {
       "id": "festiball-3-good",
-      "label": "Exit",
+      "label": "Catch Minty!!!!",
       "score": 3
     },
     {
       "id": "festiball-4-good",
-      "label": "Exit",
+      "label": "CATCH! MINTY!!!!",
       "score": 3
     }
   ]

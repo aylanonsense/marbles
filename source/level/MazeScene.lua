@@ -10,12 +10,13 @@ import "config"
 import "CoreLibs/ui"
 import "scene/time"
 import "effect/effects"
+import "fonts/fonts"
 
 class("MazeScene").extends(Scene)
 
 local hasPlayedAMazeBefore = false
 
-function MazeScene:init(levelData, musicPlayer)
+function MazeScene:init(levelData, prompt, musicPlayer)
   MazeScene.super.init(self)
 
   self.levelData = levelData
@@ -29,7 +30,13 @@ function MazeScene:init(levelData, musicPlayer)
   self.isCameraLocked = false
   self.framesUntilTransitionOut = 0
   self.finalExitData = nil
+  self.prompt = prompt
+  if self.prompt then
+    playdate.graphics.setFont(fonts.MarbleBasic)
+    self.promptWidth, self.promptHeight = playdate.graphics.getTextSize(self.prompt)
+  end
   self.hideCrankIndicatorFrames = hasPlayedAMazeBefore and 110 or 200
+
   hasPlayedAMazeBefore = true
 
   -- Reset everything
@@ -177,6 +184,7 @@ function MazeScene:update()
 end
 
 function MazeScene:draw()
+  playdate.graphics.setDrawOffset(0, 20)
   camera.x += effects.screenShakeX
   camera.y += effects.screenShakeY
   camera:recalculatePerspective()
@@ -204,6 +212,12 @@ function MazeScene:draw()
   -- Draw the crank hint indicator
   if playdate.isCrankDocked() and self.hideCrankIndicatorFrames <= 0 and not self.finalExitData then
     playdate.ui.crankIndicator:update()
+  end
+  playdate.graphics.setDrawOffset(0, 0)
+  if self.prompt then
+    playdate.graphics.setColor(playdate.graphics.kColorWhite)
+    playdate.graphics.fillRect(0, 0, 400, self.promptHeight + 7)
+    playdate.graphics.drawText(self.prompt, 200 - self.promptWidth / 2, 5)
   end
   sceneTransition:draw()
   if config.SHOW_DIAGNOSTIC_STATS then

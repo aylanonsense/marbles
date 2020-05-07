@@ -7,7 +7,8 @@
     {
       "maze": "ballmuseum-skeeball",
       "exits": [ "ballmuseum-skeeball-special", "ballmuseum-skeeball-good", "ballmuseum-skeeball-bad" ],
-      "music": "ball-museum-maze"
+      "music": "ball-museum-maze",
+      "prompt": "Pick a sports ball!"
     },
     {
       "dialogue": "ball-museum/Museum_1_Sports",
@@ -16,7 +17,8 @@
     {
       "maze": "ballmuseum-pinball",
       "exits": [ "ballmuseum-pinball-special", "ballmuseum-pinball-good", "ballmuseum-pinball-bad" ],
-      "music": "ball-museum-maze"
+      "music": "ball-museum-maze",
+      "prompt": "Pick a food ball!"
     },
     {
       "dialogue": "ball-museum/Museum_2_Food",
@@ -25,7 +27,8 @@
     {
       "maze": "ballmuseum-pool",
       "exits": [ "ballmuseum-pool-special", "ballmuseum-pool-good", "ballmuseum-pool-bad" ],
-      "music": "ball-museum-maze"
+      "music": "ball-museum-maze",
+      "prompt": "Pick a nature ball!"
     },
     {
       "dialogue": "ball-museum/Museum_3_Nature",

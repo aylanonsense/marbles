@@ -7,7 +7,8 @@
     {
       "maze": "sandwichshop-protein",
       "exits": [ "sandwichshop-protein-special", "sandwichshop-protein-good", "sandwichshop-protein-bad" ],
-      "music": "sandwich-shop-maze"
+      "music": "sandwich-shop-maze",
+      "prompt": "Choose a protein!"
     },
     {
       "dialogue": "sandwich-shop/DocSandwich_1_Protein",
@@ -16,7 +17,8 @@
     {
       "maze": "sandwichshop-toppings",
       "exits": [ "sandwichshop-toppings-special", "sandwichshop-toppings-good", "sandwichshop-toppings-bad" ],
-      "music": "sandwich-shop-maze"
+      "music": "sandwich-shop-maze",
+      "prompt": "Choose a topping!"
     },
     {
       "dialogue": "sandwich-shop/DocSandwich_2_Veggie",
@@ -25,7 +27,8 @@
     {
       "maze": "sandwichshop-condiments",
       "exits": [ "sandwichshop-condiments-special", "sandwichshop-condiments-good", "sandwichshop-condiments-bad" ],
-      "music": "sandwich-shop-maze"
+      "music": "sandwich-shop-maze",
+      "prompt": "Choose a condiment!"
     },
     {
       "dialogue": "sandwich-shop/DocSandwich_3_Condiment",

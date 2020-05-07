@@ -64,11 +64,7 @@ function Game:resumeCurrentStoryline()
   local storylineName = self.playthrough.storyline.name
   local branchingData = self.playthroughData.storylines[storylineName]
   -- Load storyline data (a list of scenes)
-  if branchingData.isMissing then
-    self.storylineData = loadJsonFile("/data/narrative/storylines/missing.json")
-  else
-    self.storylineData = loadJsonFile("/data/narrative/storylines/" .. storylineName .. ".json")
-  end
+  self.storylineData = loadJsonFile("/data/narrative/storylines/" .. storylineName .. ".json")
 
   -- Play the first storyline scene, unless we choose to skip it and simulate the results instead
   if config.SHOW_DEBUG_SKIP_SCREENS then
@@ -178,7 +174,7 @@ function Game:createStorylineScene(storylineData, stage)
       return DialogueScene(dialogueData, musicPlayer)
     elseif sceneData.maze then
       local mazeData = loadJsonFile("/data/levels/" .. sceneData.maze .. "-play.json")
-      return MazeScene(mazeData, musicPlayer)
+      return MazeScene(mazeData, sceneData.prompt, musicPlayer)
     elseif sceneData.credits then
       return CreditsScene()
     end

@@ -85,7 +85,7 @@ function Exit:draw()
   if self.health < 3 then
     playdate.graphics.setFont(fonts.MarbleBasic)
     local labelWidth, labelHeight = playdate.graphics.getTextSize(self.label)
-    local labelX, labelY = x - labelWidth / 2, y + 33 * scale
+    local labelX, labelY = x - labelWidth / 2, y + 38 * scale
     -- Draw some pop lines after the exit is first hit
     playdate.graphics.setColor(playdate.graphics.kColorWhite)
     playdate.graphics.fillRect(labelX + 1, labelY + 1, labelWidth - 2, labelHeight - 2)

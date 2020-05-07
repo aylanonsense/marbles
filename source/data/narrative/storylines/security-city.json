@@ -7,7 +7,8 @@
     {
       "maze": "safetytown-1",
       "exits": [ "safetytown-1-special", "safetytown-1-good", "safetytown-1-bad" ],
-      "music": "security-city-maze"
+      "music": "security-city-maze",
+      "prompt": "Use turn signal how early?"
     },
     {
       "dialogue": "security-city/SecurityCity_1_Question1",
@@ -16,7 +17,8 @@
     {
       "maze": "safetytown-2",
       "exits": [ "safetytown-2-special", "safetytown-2-good", "safetytown-2-bad" ],
-      "music": "security-city-maze"
+      "music": "security-city-maze",
+      "prompt": "Hydroplaning happens as slow as?"
     },
     {
       "dialogue": "security-city/SecurityCity_2_Question2",
@@ -25,7 +27,8 @@
     {
       "maze": "safetytown-3",
       "exits": [ "safetytown-3-special", "safetytown-3-good", "safetytown-3-bad" ],
-      "music": "security-city-maze"
+      "music": "security-city-maze",
+      "prompt": "To get vehicle out of skid, you should?"
     },
     {
       "dialogue": "security-city/SecurityCity_3_Question3",
