@@ -26,25 +26,27 @@ end
 
 function WorldMapScene:update()
   self.frames += 1
+  local framesPerReveal = (playdate.buttonIsPressed(playdate.kButtonA) or playdate.buttonIsPressed(playdate.kButtonB)) and 4 or 16
   if self.numThingsDrawn <= 0 then
-    if self.frames > 40 then
+    if self.frames > 80 then
       self.numThingsDrawn += 1
       self.frames = 0
     end
-  elseif self.frames > 15 then
+  elseif self.frames > framesPerReveal then
     self.numThingsDrawn += 1
     self.frames = 0
   end
-  if not self.isEndingScene and self.numThingsDrawn > math.floor(#self.pathData / 2) + 4 then
+  if not self.isEndingScene and self.numThingsDrawn > math.floor(#self.pathData / 2) + 5 then
     self.isEndingScene = true
-    -- TODO end scene
+    sceneTransition:transitionOut(function()
+      self:endScene()
+    end)
   end
   sceneTransition:update()
 end
 
 function WorldMapScene:draw()
   self.worldMapImage:draw(0, 0)
-  sceneTransition:draw()
   for i = 1, #self.pathData, 2 do
     local x = self.pathData[i]
     local y = self.pathData[i + 1]
@@ -56,4 +58,9 @@ function WorldMapScene:draw()
       self.dotImage:draw(x - self.dotImageWidth / 2, y - self.dotImageHeight / 2)
     end
   end
+  sceneTransition:draw()
+end
+
+function WorldMapScene.hasTransition(fromLocation, toLocation)
+  return travelPathData[fromLocation] and travelPathData[fromLocation][toLocation]
 end

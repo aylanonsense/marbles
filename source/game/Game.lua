@@ -152,7 +152,17 @@ end
 function Game:finishCurrentStorylineAndStartNextOne(result)
   local nextStorylineName = self:finishCurrentStoryline(result)
   if nextStorylineName then
-    self:startStoryline(nextStorylineName)
+    local prevStorylineName
+    if #self.playthrough.finishedStorylines > 0 then
+      prevStorylineName = self.playthrough.finishedStorylines[#self.playthrough.finishedStorylines].name
+    end
+    if not config.SKIP_WORLD_TRANSITIONS and prevStorylineName and WorldMapScene.hasTransition(prevStorylineName, nextStorylineName) then
+      Scene.setScene(WorldMapScene(prevStorylineName, nextStorylineName), function()
+        self:startStoryline(nextStorylineName)
+      end)
+    else
+      self:startStoryline(nextStorylineName)
+    end
   else
     self.playthrough.isComplete = true
     playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
