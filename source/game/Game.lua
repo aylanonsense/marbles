@@ -187,9 +187,37 @@ function Game:createStorylineScene(storylineData, stage)
       local mazeData = loadJsonFile("/data/levels/" .. sceneData.maze .. "-play.json")
       return MazeScene(mazeData, sceneData.prompt, musicPlayer)
     elseif sceneData.credits then
-      return CreditsScene()
+      local unlocks = self:calculateUnlocks()
+      return CreditsScene(unlocks)
     end
   end
+end
+
+function Game:calculateUnlocks()
+  -- Retrieves saved unlock data
+  local unlockData = playdate.datastore.read("lost-your-marbles-unlock-data")
+  if not unlockData then
+    unlockData = {
+      counter = 0,
+      storylinesPlayed = {
+        credits = {},
+        endings = {}
+      }
+    }
+  end
+  unlockData.counter += 1
+  -- Record unlocks
+  for _, storyline in ipairs(self.playthrough.finishedStorylines) do
+    if not unlockData.storylinesPlayed[storyline.name] then
+      unlockData.storylinesPlayed[storyline.name] = {}
+    end
+    unlockData.storylinesPlayed[storyline.name][storyline.result or "finished"] = unlockData.counter
+  end
+  unlockData.storylinesPlayed["credits"].finished = unlockData.counter
+  unlockData.storylinesPlayed["endings"][self:getPlaythroughResult()] = unlockData.counter
+  -- Save the unlock data
+  playdate.datastore.write(unlockData, "lost-your-marbles-unlock-data", true)
+  return unlockData
 end
 
 function Game:recordExitTaken(exit)

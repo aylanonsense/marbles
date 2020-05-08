@@ -10,9 +10,7 @@
     "marbels-lab": {
       "symbol": "2",
       "label": "Marbel's Lab",
-      "special": "library",
-      "normal": "library",
-      "fail": "library"
+      "next": "library"
     },
 
     "library": {

@@ -31,7 +31,7 @@ function TitleScreenScene:init(canContinue)
   self.canContinue = canContinue
   self.hasChosenOption = false
   self.isDisplayingWarning = false
-  self.framesUntilActive = 50
+  self.framesUntilActive = config.SKIP_SCENE_TRANSITIONS and 0 or 50
   sceneTransition:transitionIn()
 end
 
