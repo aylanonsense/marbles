@@ -527,39 +527,18 @@
 
     {
       "id": "ballmuseum-skeeball-bad",
-      "label": "Hockey Ball",
-      "finalText": "A HOCKEY BALL",
+      "label": "Ice Cream Ball",
+      "finalText": "AN ICE CREAM BALL",
       "score": 1
     },
     {
         "id": "ballmuseum-skeeball-good",
-        "label": "8-Ball",
-        "finalText": "AN 8-BALL",
-        "score": 3
-    },
-    {
-        "id": "ballmuseum-skeeball-special",
-        "label": "Hamster Ball",
-        "finalText": "A HAMSTER BALL",
-        "score": 5
-    },
-
-
-
-    {
-        "id": "ballmuseum-pinball-bad",
-        "label": "Ice Cream Ball",
-        "finalText": "AN ICE CREAM BALL",
-        "score": 1
-    },
-    {
-        "id": "ballmuseum-pinball-good",
         "label": "Pomegranate",
         "finalText": "A POMEGRANATE",
         "score": 3
     },
     {
-        "id": "ballmuseum-pinball-special",
+        "id": "ballmuseum-skeeball-special",
         "label": "Pizza Ball",
         "finalText": "A PIZZA BALL",
         "score": 5
@@ -568,21 +547,42 @@
 
 
     {
-        "id": "ballmuseum-pool-bad",
+        "id": "ballmuseum-pinball-bad",
         "label": "The Moon",
         "finalText": "THE MOON",
         "score": 1
     },
     {
-        "id": "ballmuseum-pool-good",
+        "id": "ballmuseum-pinball-good",
         "label": "Puffer Fish",
         "finalText": "A PUFFER FISH",
         "score": 3
     },
     {
-        "id": "ballmuseum-pool-special",
+        "id": "ballmuseum-pinball-special",
         "label": "Cat",
         "finalText": "A CAT",
+        "score": 5
+    },
+
+
+
+    {
+        "id": "ballmuseum-pool-bad",
+        "label": "Hockey Ball",
+        "finalText": "A HOCKEY BALL",
+        "score": 1
+    },
+    {
+        "id": "ballmuseum-pool-good",
+        "label": "8-Ball",
+        "finalText": "AN 8-BALL",
+        "score": 3
+    },
+    {
+        "id": "ballmuseum-pool-special",
+        "label": "Hamster Ball",
+        "finalText": "A HAMSTER BALL",
         "score": 5
     },
 
