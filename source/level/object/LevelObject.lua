@@ -38,6 +38,10 @@ function LevelObject:onDespawn() end
 
 function LevelObject:despawn()
 	self.waitingToDespawn = true
+	self:clearPhysObjects()
+end
+
+function LevelObject:clearPhysObjects()
 	for _, physObj in ipairs(self.physObjects) do
 		physObj:remove()
 	end

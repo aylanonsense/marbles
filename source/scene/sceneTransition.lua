@@ -10,6 +10,11 @@ sceneTransition = {
   callback = nil
 }
 
+local transitionInSound = playdate.sound.sampleplayer.new(playdate.sound.sample.new("sound/sfx/transition-in"))
+transitionInSound:setVolume(config.SOUND_VOLUME)
+local transitionOutSound = playdate.sound.sampleplayer.new(playdate.sound.sample.new("sound/sfx/transition-out"))
+transitionOutSound:setVolume(config.SOUND_VOLUME)
+
 function sceneTransition:update()
   if self.anim then
     self.time += time.dt
@@ -58,12 +63,18 @@ function sceneTransition:transitionIn(callback)
   self.anim = 'in'
   self.time = 0.00
   self.callback = callback
+  if not config.SKIP_SCENE_TRANSITIONS then
+    transitionInSound:play(1)
+  end
 end
 
 function sceneTransition:transitionOut(callback)
   self.anim = 'out'
   self.time = 0.00
   self.callback = callback
+  if not config.SKIP_SCENE_TRANSITIONS then
+    transitionOutSound:play(1)
+  end
 end
 
 function sceneTransition:hold()

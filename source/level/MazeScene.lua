@@ -11,6 +11,7 @@ import "CoreLibs/ui"
 import "scene/time"
 import "effect/effects"
 import "fonts/fonts"
+import "level/object/Booster"
 
 class("MazeScene").extends(Scene)
 
@@ -94,6 +95,7 @@ function MazeScene:partialLoad()
 end
 
 function MazeScene:update()
+  Booster.updateSoundCombo()
   self.hideCrankIndicatorFrames = math.max(0, self.hideCrankIndicatorFrames - 1)
   if self.slowtimeFramesLeft > 0 then
     self.slowtimeFramesLeft -= 1
@@ -175,7 +177,7 @@ function MazeScene:update()
     self.framesUntilTransitionOut -= 1
     if self.framesUntilTransitionOut <= 0 then
       sceneTransition:transitionOut(function()
-        soundCache:stopAllSoundEffects()
+        soundCache.stopAllSoundEffects()
         self:endScene(self.finalExitData)
       end)
     end

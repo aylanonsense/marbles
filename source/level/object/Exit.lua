@@ -32,8 +32,14 @@ function Exit:init(x, y, exitId, icon)
   self.isInvincible = false
   self.impulseFreezeTimer = 0.0
   self.impulseToTrigger = MIN_IMPULSE_TO_TRIGGER
-  self.hitSound = soundCache.createSoundEffectPlayer("sound/sfx/marble-exit-hit")
-  self.hitSound:setVolume(config.SOUND_VOLUME)
+  self.hitSounds = {
+    soundCache.createSoundEffectPlayer("sound/sfx/exit-hit-1"),
+    soundCache.createSoundEffectPlayer("sound/sfx/exit-hit-2"),
+    soundCache.createSoundEffectPlayer("sound/sfx/exit-hit-3")
+  }
+  self.hitSounds[1]:setVolume(config.SOUND_VOLUME)
+  self.hitSounds[2]:setVolume(config.SOUND_VOLUME)
+  self.hitSounds[3]:setVolume(config.SOUND_VOLUME)
   self.popLinesImage = imageCache.loadImage("images/level/objects/exit/exit-pop-lines.png")
   local score = exitLookup[self.exitId].score
   if score == nil or score < 2 then
@@ -108,8 +114,8 @@ function Exit:preCollide(other, collision)
       collision.impulse += 100
       collision.tag = 'exit-trigger'
       self.animationFrame = 0
+      self.hitSounds[4 - self.health]:play(1)
       self.health -= 1
-      self.hitSound:play(1)
       if scene.triggerExitHit then
         scene:triggerExitHit(exitLookup[self.exitId], self, collision)
       end

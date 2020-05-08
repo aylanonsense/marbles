@@ -5,8 +5,22 @@ import "scene/time"
 import "utility/math"
 import "render/imageCache"
 import "utility/diagnosticStats"
+import "utility/soundCache"
+import "config"
 
 class("Booster").extends("LevelObject")
+
+local numRecentBoosts = 0
+local framesUntilBoostReset = 0
+
+function Booster.updateSoundCombo()
+	if framesUntilBoostReset > 0 then
+		framesUntilBoostReset -= 1
+		if framesUntilBoostReset <= 0 then
+			numRecentBoosts = 0
+		end
+	end
+end
 
 function Booster:init(x, y, rotation)
 	Booster.super.init(self, LevelObject.Type.Booster)
@@ -17,6 +31,8 @@ function Booster:init(x, y, rotation)
 	self.launchX = math.cos(angle)
 	self.launchY = math.sin(angle)
 	self.image = imageCache.loadImage("images/booster.png")
+  self.boostSound = soundCache.createSoundEffectPlayer("sound/sfx/booster")
+	self.boostSound:setVolume(config.SOUND_VOLUME * 0.3)
 end
 
 function Booster:update()
@@ -35,6 +51,11 @@ function Booster:preCollide(other, collision)
 	if self.cooldown <= 0 then
 		self.cooldown = 0.25
 		other:setVelocity(375 * self.launchX, 375 * self.launchY)
+
+		self.boostSound:setRate(math.min(0.9 + 0.05 * numRecentBoosts, 1.2))
+		self.boostSound:play(1)
+		numRecentBoosts += 1
+		framesUntilBoostReset = 20
 	end
 	return false
 end

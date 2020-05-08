@@ -109,7 +109,7 @@ function Marble:draw()
 end
 
 function Marble:onCollide(other, collision, isObjectA)
-  if collision.tag == 'exit-trigger' then
+  if collision.tag then
     self.framesOfSilence = 5
   end
   self.recentImpulses[1] = math.max(self.recentImpulses[1], collision.impulse)
