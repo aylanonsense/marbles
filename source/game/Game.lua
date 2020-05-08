@@ -188,7 +188,7 @@ function Game:createStorylineScene(storylineData, stage)
       return MazeScene(mazeData, sceneData.prompt, musicPlayer)
     elseif sceneData.credits then
       local unlocks = self:calculateUnlocks()
-      return CreditsScene(unlocks)
+      return CreditsScene(unlocks, musicPlayer)
     end
   end
 end

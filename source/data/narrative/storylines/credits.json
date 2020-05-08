@@ -1,7 +1,8 @@
 {
   "scenes": [
     {
-      "credits": true
+      "credits": true,
+      "music": "credits"
     }
   ]
 }

@@ -8,7 +8,7 @@ import "scene/time"
 
 class("CreditsScene").extends(Scene)
 
-function CreditsScene:init(unlocks)
+function CreditsScene:init(unlocks, musicPlayer)
   CreditsScene.super.init(self)
   self.checkboxImage = imageCache.loadImageTable("images/checkbox.png")
   self.checkboxImageWidth, self.checkboxImageHeight = self.checkboxImage:getSize()
@@ -16,6 +16,7 @@ function CreditsScene:init(unlocks)
   self.isEndingScene = false
   self.unlocksCounter = unlocks.counter
   self.canEndScene = false
+  self.musicPlayer = musicPlayer
   self.unlocks = {
     { name = "Prota's Home", unlocks = unlocks.storylinesPlayed["protas-home"], possibilities = { "finished" } },
     { name = "Marbel's Lab", unlocks = unlocks.storylinesPlayed["marbels-lab"], possibilities = { "finished", "secret" } },
@@ -81,6 +82,7 @@ function CreditsScene:init(unlocks)
     }
   }
   sceneTransition:transitionIn()
+  self.musicPlayer:play(1)
 end
 
 function CreditsScene:update()
