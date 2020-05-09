@@ -35,12 +35,12 @@
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-37
+					"radius":-43
 				},
 				 {
 					"isSolid":true,
 					"isVisible":true,
-					"radius":-52
+					"radius":-45
 				},
 				 {
 					"isSolid":true,
@@ -106,7 +106,7 @@
 				},
 				 {
 					"isSolid":true,
-					"x":-35,
+					"x":-25,
 					"y":25
 				},
 				 {
@@ -428,12 +428,12 @@
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-37
+					"radius":-43
 				},
 				 {
 					"isSolid":false,
 					"isVisible":true,
-					"radius":-52
+					"radius":-45
 				},
 				 {
 					"isSolid":false,
@@ -499,7 +499,7 @@
 				},
 				 {
 					"isSolid":false,
-					"x":-35,
+					"x":-25,
 					"y":25
 				},
 				 {
@@ -550,7 +550,7 @@
 			"icon":"Bad",
 			"layer":8,
 			"type":"Exit",
-			"x":-60,
+			"x":-50,
 			"y":-25
 		}
 	],
