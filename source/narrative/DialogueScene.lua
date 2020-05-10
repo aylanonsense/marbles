@@ -3,9 +3,11 @@ import "narrative/Actor"
 import "narrative/DialogueBox"
 import "narrative/Location"
 import "narrative/ShownObject"
+import "narrative/Cinematic"
 import "narrative/dialogueMethods"
 import "scene/time"
 import "scene/sceneTransition"
+import "utility/file"
 
 class("DialogueScene").extends(Scene)
 
@@ -13,6 +15,7 @@ function DialogueScene:init(convoData, musicPlayer)
   DialogueScene.super.init(self)
   self.dialogueBox = DialogueBox()
   self.location = Location(self:evalDialogueField(convoData.location))
+  self.cinematic = nil
   self.shownObject = nil
   -- Create the actors and slide them onto stage
   self.actorLookup = {}
@@ -83,6 +86,10 @@ function DialogueScene:update()
     if playdate.buttonJustPressed(playdate.kButtonA) then
       self:processNextDialogueAction()
     end
+  elseif self.waitingFor == "cinematic" then
+    if not self.cinematic or (self.cinematic:readyToMoveOn() and playdate.buttonJustPressed(playdate.kButtonA)) then
+      self:processNextDialogueAction()
+    end
   end
   if self.location then
     self.location:update()
@@ -93,6 +100,9 @@ function DialogueScene:update()
   if self.shownObject then
     self.shownObject:update()
   end
+  if self.cinematic then
+    self.cinematic:update()
+  end
   self.dialogueBox:update()
   sceneTransition:update()
 end
@@ -102,11 +112,14 @@ function DialogueScene:draw()
   if self.location then
     self.location:draw()
   end
+  if self.cinematic then
+    self.cinematic:draw()
+  end
   for _, actor in pairs(self.actorLookup) do
     actor:draw()
   end
   if self.shownObject then
-    self.shownObject:update()
+    self.shownObject:draw()
   end
   self.dialogueBox:draw()
   sceneTransition:draw()
@@ -151,6 +164,9 @@ function DialogueScene:transitionOut(secretExit)
     self.location:remove()
     if self.shownObject then
       self.shownObject:remove()
+    end
+    if self.cinematic then
+      self.cinematic:remove()
     end
     self:endScene(nil, secretExit)
   end)
@@ -261,6 +277,33 @@ function DialogueScene:processDialogueAction(action)
     if self.actorLookup[action.actor] then
       self.actorLookup[action.actor]:setVariant(action.variant)
     end
+  elseif action.action == "play-cinematic" then
+    if self.cinematic then
+      self.cinematic:remove()
+    end
+    self.dialogueBox:hide()
+    self.cinematic = Cinematic(action.cinematic)
+    if self.cinematic.isValid then
+      self.waitingFor = "cinematic"
+    else
+      self.cinematic:remove()
+      self.cinematic = nil
+      self.waitingFor = "time"
+      self.waitTime = 0
+    end
+  elseif action.action == "advance-cinematic" then
+    self.dialogueBox:hide()
+    self.cinematic:advance()
+    self.waitingFor = "cinematic"
+  elseif action.action == "dismiss-cinematic" then
+    if self.cinematic then
+      self.cinematic:remove()
+    end
+    self.cinematic = nil
+    self.dialogueBox:clear()
+    self.dialogueBox:show()
+    self.waitingFor = "time"
+    self.waitTime = 0.0
   elseif action.action == "roll-credits" then
     self:transitionOut(true)
   -- Unknown action, return false to indicate we weren't able to process it

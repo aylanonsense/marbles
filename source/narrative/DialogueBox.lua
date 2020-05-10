@@ -100,6 +100,10 @@ function DialogueBox:show()
   self.isVisible = true
 end
 
+function DialogueBox:hide()
+  self.isVisible = false
+end
+
 function DialogueBox:showDialogue(name, text, side, pitch)
   self.text = text
   self.framesUntilNextCharacterShown = 0

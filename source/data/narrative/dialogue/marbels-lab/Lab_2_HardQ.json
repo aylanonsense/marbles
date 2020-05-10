@@ -48,6 +48,7 @@
         { "actor": "Minty", "line": "!!!", "expression": "shocked", "side": "right" },
         { "action": "dismiss-actor", "side": "right"},
         { "action": "play-cinematic", "cinematic": "MarbelsMinty"},
+        { "action": "dismiss-cinematic" },
         { "action": "change-location", "location": "BlackScreen"},
         { "actor": "Narrator", "line": "(CRRRAAAASSSSHHH! BARK BARK! HISSS! BARK! GRRR! MEOW MEOW! HISS! BARK!)", "expression": "neutral" },
         { "actor": "Prota", "line": "Oh no! The Marbelizer!", "expression": "shocked", "side": "left" },
