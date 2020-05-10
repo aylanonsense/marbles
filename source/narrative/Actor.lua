@@ -2,6 +2,7 @@ import "CoreLibs/object"
 import "CoreLibs/sprites"
 import "CoreLibs/animator"
 import "CoreLibs/easing"
+import "CoreLibs/graphics"
 import "render/imageCache"
 import "utility/file"
 
@@ -16,10 +17,13 @@ function Actor:init(id)
   self.id = id
   self.name = actorsData[self.id].name
   self.facing = actorsData[self.id].facing
+  self.pitch = actorsData[self.id].pitch
   self.variant = game.playthrough.actorVariants[id]
   self.side = nil
   self.preferredSide = "left"
   self.expression = nil
+  self.isTalking = true
+  self.frame = 1
   self:reloadImage()
 end
 
@@ -42,7 +46,7 @@ function Actor:slideOnStage(side)
     local flipped = (side == self.facing)
     local startX = 200 + 300 * ((side == "left") and -1 or 1)
     local endX = 200 + 100 * ((side == "left") and -1 or 1)
-    local y = 154
+    local y = self.isTalking and 154 or 160
     local path = playdate.geometry.lineSegment.new(startX, y, endX, y)
     local animator = playdate.graphics.animator.new(1000, path, playdate.easingFunctions.outCubic)
     self.sprite:setAnimator(animator)
@@ -54,9 +58,9 @@ end
 
 function Actor:slideOffStage()
   if self.sprite then
+    local x, y = self.sprite:getPosition()
     local startX = 200 + 100 * ((self.side == "left") and -1 or 1)
     local endX = 200 + 380 * ((self.side == "left") and -1 or 1)
-    local y = 154
     local path = playdate.geometry.lineSegment.new(startX, y, endX, y)
     local animator = playdate.graphics.animator.new(1200, path, playdate.easingFunctions.outCubic)
     self.sprite:setAnimator(animator)
@@ -69,9 +73,28 @@ function Actor:setExpression(expression)
     self.expression = expression
     if self.sprite then
       if actorsData[self.id].expressions[expression] then
-        self:setFrame(actorsData[self.id].expressions[expression].frame)
+        self.frame = actorsData[self.id].expressions[self.expression].frame
+        self:setImage(self.frame, self.isTalking)
       else
         print("Actor " .. (self.name or "nil") .. " does not have a " .. (expression or "nil") .. " expression")
+      end
+    end
+  end
+end
+
+function Actor:setIsTalking(isTalking)
+  if self.isTalking ~= isTalking then
+    self.isTalking = isTalking
+    self:setImage(self.frame, self.isTalking)
+    if self.side then
+      if self.sprite then
+        local startX, y = self.sprite:getPosition()
+        local startY = self.isTalking and 160 or 154
+        local endY = self.isTalking and 154 or 160
+        local endX = 200 + 100 * ((self.side == "left") and -1 or 1)
+        local path = playdate.geometry.lineSegment.new(startX, startY, endX, endY)
+        local animator = playdate.graphics.animator.new(600, path, playdate.easingFunctions.outCubic)
+        self.sprite:setAnimator(animator)
       end
     end
   end
@@ -86,6 +109,10 @@ function Actor:reloadImage()
   end
   if imagePath then
     self.imageTable = imageCache.loadImageTable(imagePath)
+    self.fadedImageTable = {}
+    for i = 1, #self.imageTable do
+      self.fadedImageTable[i] = self.imageTable[i]:invertedImage():blendWithImage(self.imageTable[i], 0.1, playdate.graphics.image.kDitherTypeBayer4x4)
+    end
     if not self.sprite then
       self.sprite = playdate.graphics.sprite.new()
       self.sprite:moveTo(-999, 154)
@@ -99,13 +126,20 @@ end
 function Actor:setVariant(variant)
   self.variant = variant
   self:reloadImage()
-  if self.expression and actorsData[self.id].expressions[self.expression] then
-    self:setFrame(actorsData[self.id].expressions[self.expression].frame)
-  end
+  self:setImage(self.frame, self.isTalking)
 end
 
-function Actor:setFrame(frame)
-  local image = self.imageTable:getImage(frame)
-  local flipped = ((self.side or self.preferredSide) == self.facing)
-  self.sprite:setImage(image, (flipped and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped))
+function Actor:setImage(frame, isFaded)
+  if self.sprite then
+    local flipped = ((self.side or self.preferredSide) == self.facing)
+    local image
+    if not self.isTalking then
+      image = self.fadedImageTable[frame]
+    else
+      image = self.imageTable[frame]
+    end
+    if image then
+      self.sprite:setImage(image, (flipped and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped))
+    end
+  end
 end

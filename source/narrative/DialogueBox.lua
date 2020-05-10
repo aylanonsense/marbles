@@ -89,11 +89,18 @@ function DialogueBox:draw()
   end
 end
 
+function DialogueBox:clear()
+  self.speakerName = nil
+  self.textLines = nil
+  self.numCharactersShown = 0
+  self.framesUntilNextCharacterShown = 0
+end
+
 function DialogueBox:show()
   self.isVisible = true
 end
 
-function DialogueBox:showDialogue(name, text, side)
+function DialogueBox:showDialogue(name, text, side, pitch)
   self.text = text
   self.framesUntilNextCharacterShown = 0
   self.numCharactersShown = 0
@@ -126,6 +133,9 @@ function DialogueBox:showDialogue(name, text, side)
   end
   if #line > 0 then
     table.insert(self.textLines, line)
+  end
+  if pitch then
+    self.textScrollSound:setRate(pitch)
   end
   self.textScrollSound:play(0)
 end

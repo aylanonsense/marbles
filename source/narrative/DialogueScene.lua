@@ -6,7 +6,6 @@ import "narrative/ShownObject"
 import "narrative/dialogueMethods"
 import "scene/time"
 import "scene/sceneTransition"
-import "CoreLibs/utilities/printer"
 
 class("DialogueScene").extends(Scene)
 
@@ -22,8 +21,7 @@ function DialogueScene:init(convoData, musicPlayer)
     local actorId = self:evalDialogueField(actorData.actor)
     if actorId ~= "Narrator" then
       if not actorId then
-        print("Falsey actor id while evaluating dialogue actors")
-        printT(actorData)
+        print("Falsey actor id " .. actorId .. " while evaluating dialogue actors")
       end
       local actor = self:addOrFindActor(actorId)
       local expression = self:evalDialogueField(actorData.expression)
@@ -80,6 +78,10 @@ function DialogueScene:update()
       elseif self.dialogueBox:isDoneShowingDialogue() then
         self:processNextDialogueAction()
       end
+    end
+  elseif self.waitingFor == "button-press" then
+    if playdate.buttonJustPressed(playdate.kButtonA) then
+      self:processNextDialogueAction()
     end
   end
   if self.location then
@@ -179,6 +181,12 @@ function DialogueScene:processDialogueAction(action)
     local actorName = self:evalDialogueField(action.actor)
     if not actorName or actorName == "Narrator" then
       self.dialogueBox:showDialogue(null, line, null)
+      if self.actorsOnStage.left then
+        self.actorsOnStage.left:setIsTalking(false)
+      end
+      if self.actorsOnStage.right then
+        self.actorsOnStage.right:setIsTalking(false)
+      end
     else
       local actor = self:addOrFindActor(actorName)
       local side = self:evalDialogueField(action.side) or actor.side or actor.preferredSide
@@ -191,14 +199,22 @@ function DialogueScene:processDialogueAction(action)
         end
       end
       actor:setExpression(self:evalDialogueField(action.expression))
+      local otherSide = (side == "left") and "right" or "left"
+      if self.actorsOnStage[otherSide] then
+        self.actorsOnStage[otherSide]:setIsTalking(false)
+      end
       if self.actorsOnStage[side] ~= actor then
         if self.actorsOnStage[side] then
+          self.actorsOnStage[side]:setIsTalking(false)
           self.actorsOnStage[side]:slideOffStage()
         end
         self.actorsOnStage[side] = actor
+        self.actorsOnStage[side]:setIsTalking(true)
         actor:slideOnStage(side)
+      else
+        self.actorsOnStage[side]:setIsTalking(true)
       end
-      self.dialogueBox:showDialogue(actor.name, line, actor.side)
+      self.dialogueBox:showDialogue(actor.name, line, actor.side, actor.pitch)
     end
     self.waitingFor = "dialogue-box"
   -- Change the location
@@ -207,8 +223,8 @@ function DialogueScene:processDialogueAction(action)
       self.location:remove()
     end
     self.location = Location(self:evalDialogueField(action.location))
-    self.waitingFor = "time"
-    self.waitTime = 1.00
+    self.dialogueBox:clear()
+    self.waitingFor = "button-press"
   -- Show an object
   elseif action.action == "show-object" then
     if self.shownObject then
