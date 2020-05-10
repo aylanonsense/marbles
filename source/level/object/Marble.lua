@@ -28,10 +28,19 @@ function Marble:init(x, y)
   self.antiGravityFrames = 55
   self.framesUntilSpawn = 55
   self.popLineFrames = 0
+  self.framesSinceLastCollision = 0
   self.spawnX, self.spawnY = self:getPosition()
 end
 
 function Marble:update()
+  self.framesSinceLastCollision += 1
+  if self.framesSinceLastCollision > 600 then
+    self:setPosition(self.spawnX, self.spawnY)
+    self.physObj.velX = 0
+    self.physObj.velY = -50
+    self.popLineFrames = 10
+    self.framesSinceLastCollision = 0
+  end
   self.framesOfSilence = math.max(0, self.framesOfSilence - 1)
   self.antiGravityFrames = math.max(0, self.antiGravityFrames - 1)
   self.popLineFrames = math.max(0, self.popLineFrames - 1)
@@ -106,6 +115,10 @@ function Marble:draw()
     self.image:drawScaled(x - scale * self.imageWidth / 2, y - scale * self.imageHeight / 2, scale)
     diagnosticStats.untransformedImagesDrawn += 1
   end
+end
+
+function Marble:preCollide(other, collision, isObjectA)
+  self.framesSinceLastCollision = 0
 end
 
 function Marble:onCollide(other, collision, isObjectA)
