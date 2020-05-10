@@ -1,0 +1,54 @@
+{
+  "title": "Lost Your Marbles OST",
+  "artist": "Neha Patel",
+  "tracks": [
+    {
+      "title": "Prota's Home",
+      "filename": "protas-home-dialogue"
+    },
+    {
+      "title": "Marbel's Lab",
+      "filename": "marbels-lab-dialogue"
+    },
+    {
+      "title": "Library",
+      "filename": "library-dialogue"
+    },
+    {
+      "title": "Skate Park",
+      "filename": "skate-park-dialogue"
+    },
+    {
+      "title": "Sandwich Shop",
+      "filename": "sandwich-shop-dialogue"
+    },
+    {
+      "title": "Daycare",
+      "filename": "daycare-dialogue"
+    },
+    {
+      "title": "Ball Museum",
+      "filename": "ball-museum-dialogue"
+    },
+    {
+      "title": "Security City",
+      "filename": "security-city-dialogue"
+    },
+    {
+      "title": "Pickle Yard",
+      "filename": "pickle-yard-dialogue"
+    },
+    {
+      "title": "Vintage Viper",
+      "filename": "vintage-viper-dialogue"
+    },
+    {
+      "title": "Festi-Ball",
+      "filename": "festi-ball-dialogue"
+    },
+    {
+      "title": "Credits",
+      "filename": "credits"
+    }
+  ]
+}

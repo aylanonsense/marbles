@@ -3,3 +3,4 @@ author=Sweet Baby Inc.
 description=Rip the lid off of your dome and play for all the marbles!
 bundleID=com.sweetbabyinc.lostyourmarbles
 imagePath=images/launcher
+musicPath=sound/music
