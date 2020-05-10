@@ -91,11 +91,15 @@ end
 
 function Game:playNextStorylineScene()
   playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
-  local advance = function(exit)
-    if exit then
-      self:recordExitTaken(exit)
+  local advance = function(exit, secretExit)
+    if secretExit then
+      self:finishCurrentStorylineAndStartNextOne("secret")
+    else
+      if exit then
+        self:recordExitTaken(exit)
+      end
+      self:advanceCurrentStoryline()
     end
-    self:advanceCurrentStoryline()
   end
   local sceneData = self.storylineData.scenes[self.playthrough.storyline.stage]
   if sceneData then
@@ -151,7 +155,7 @@ end
 
 function Game:finishCurrentStorylineAndStartNextOne(result)
   local nextStorylineName = self:finishCurrentStoryline(result)
-  if nextStorylineName then
+  if nextStorylineName and (nextStorylineName ~= "ending" or #self.playthrough.finishedStorylines > 5) then
     local prevStorylineName
     if #self.playthrough.finishedStorylines > 0 then
       prevStorylineName = self.playthrough.finishedStorylines[#self.playthrough.finishedStorylines].name
@@ -214,7 +218,9 @@ function Game:calculateUnlocks()
     unlockData.storylinesPlayed[storyline.name][storyline.result or "finished"] = unlockData.counter
   end
   unlockData.storylinesPlayed["credits"].finished = unlockData.counter
-  unlockData.storylinesPlayed["endings"][self:getPlaythroughResult()] = unlockData.counter
+  if #self.playthrough.finishedStorylines > 5 then
+    unlockData.storylinesPlayed["endings"][self:getPlaythroughResult()] = unlockData.counter
+  end
   -- Save the unlock data
   playdate.datastore.write(unlockData, "lost-your-marbles-unlock-data", true)
   return unlockData

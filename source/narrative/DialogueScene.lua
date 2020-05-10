@@ -127,18 +127,7 @@ function DialogueScene:processNextDialogueAction()
     if #self.scripts > 0 then
       self:processNextDialogueAction()
     else
-      self.waitingFor = nil
-      sceneTransition:transitionOut(function()
-        for _, actor in pairs(self.actorLookup) do
-          actor:remove()
-        end
-        self.dialogueBox:remove()
-        self.location:remove()
-        if self.shownObject then
-          self.shownObject:remove()
-        end
-        self:endScene()
-      end)
+      self:transitionOut()
     end
   else
     local script = self.scripts[#self.scripts]
@@ -148,6 +137,21 @@ function DialogueScene:processNextDialogueAction()
       self:processNextDialogueAction()
     end
   end
+end
+
+function DialogueScene:transitionOut(secretExit)
+  self.waitingFor = nil
+  sceneTransition:transitionOut(function()
+    for _, actor in pairs(self.actorLookup) do
+      actor:remove()
+    end
+    self.dialogueBox:remove()
+    self.location:remove()
+    if self.shownObject then
+      self.shownObject:remove()
+    end
+    self:endScene(nil, secretExit)
+  end)
 end
 
 function DialogueScene:processDialogueAction(action)
@@ -241,6 +245,8 @@ function DialogueScene:processDialogueAction(action)
     if self.actorLookup[action.actor] then
       self.actorLookup[action.actor]:setVariant(action.variant)
     end
+  elseif action.action == "roll-credits" then
+    self:transitionOut(true)
   -- Unknown action, return false to indicate we weren't able to process it
   else
     return false

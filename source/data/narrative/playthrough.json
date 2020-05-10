@@ -10,7 +10,8 @@
     "marbels-lab": {
       "symbol": "2",
       "label": "Marbel's Lab",
-      "next": "library"
+      "next": "library",
+      "secret": "credits"
     },
 
     "library": {

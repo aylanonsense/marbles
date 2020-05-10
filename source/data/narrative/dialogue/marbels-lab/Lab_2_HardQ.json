@@ -22,7 +22,8 @@
         { "actor": "Marbels", "line": "Perhaps. But it also means you've gotten the any% speedrun record for shortest internship!", "expression": "neutral" },
         { "actor": "Prota", "line": "...", "expression": "neutral" },
         { "actor": "Prota", "line": "What?", "expression": "confused" },
-        { "actor": "Marbels", "line": "Roll the credits!", "expression": "happy" }
+        { "actor": "Marbels", "line": "Roll the credits!", "expression": "happy" },
+        { "action": "roll-credits" }
       ]
     },
     {
