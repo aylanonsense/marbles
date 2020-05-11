@@ -1,5 +1,5 @@
 {
-  "location": "park",
+  "location": "Park",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
     { "actor": "Narrator", "expression": "neutral" },
@@ -28,7 +28,7 @@
     { "actor": "Narrator", "line": "And so, Prota curls up on the grass for a perfectly well-advised nap.", "expression": "neutral" },
     { "actor": "Narrator", "line": "(For two and a half hours.)", "expression": "neutral" },
     { "actor": "Narrator", "line": "And night begins to fall on Pomegranate Village... as the Festi-Ball begins!", "expression": "neutral" },
-    { "action": "change-location", "location": "park" },
+    { "action": "change-location", "location": "Park" },
   { "actor": "Prota", "line": "*yawn* ", "expression": "neutral", "side": "left" },
     { "actor": "Prota", "line": "Ah! I feel so rested. Time to--uh oh. ", "expression": "happy" },
     { "actor": "Prota", "line": "Oh no! I overslept! Augh!  It's so unlike me!", "expression": "shocked" },

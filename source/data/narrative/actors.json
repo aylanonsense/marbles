@@ -41,7 +41,6 @@
     "name": "Doc",
     "image": "/images/narrative/actors/doc.png",
     "facing": "left",
-    "pitch": 0.7,
     "expressions": {
       "neutral": { "frame": 1 },
       "happy": { "frame": 1 },
@@ -54,7 +53,6 @@
     "name": "Randi",
     "image": "/images/narrative/actors/randi.png",
     "facing": "left",
-    "pitch": 1.1,
     "expressions": {
       "neutral": { "frame": 3 },
       "happy": { "frame": 4 },
@@ -79,7 +77,6 @@
     "name": "Minty",
     "image": "/images/narrative/actors/minty.png",
     "facing": "left",
-    "pitch": 0.8,
     "expressions": {
       "neutral": { "frame": 1 },
       "happy": { "frame": 2 },
@@ -89,7 +86,7 @@
     }
   },
   "Trashbot": {
-    "name": "Trashbot",
+    "name": "DOGFINDER 2000",
     "image": "/images/narrative/actors/trashbot.png",
     "facing": "left",
     "expressions": {
@@ -97,7 +94,7 @@
     }
   },
   "Goodbot": {
-    "name": "Goodbot",
+    "name": "MINTYFINDER 3000",
     "image": "/images/narrative/actors/goodbot.png",
     "facing": "left",
     "expressions": {
@@ -105,7 +102,7 @@
     }
   },
   "Mintwo": {
-    "name": "Mintwo",
+    "name": "MINTWO",
     "image": "/images/narrative/actors/mintwo.png",
     "facing": "left",
     "expressions": {
@@ -115,7 +112,6 @@
   "Dad": {
     "name": "Dad",
     "image": "/images/narrative/actors/dad.png",
-    "pitch": 0.9,
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },
@@ -128,7 +124,6 @@
   "Mom": {
     "name": "Mom",
     "image": "/images/narrative/actors/mom.png",
-    "pitch": 1,
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },
@@ -141,7 +136,6 @@
   "YS": {
     "name": "Yung Sphinx",
     "image": "/images/narrative/actors/ys.png",
-    "pitch": 1.25,
     "facing": "left",
     "expressions": {
       "neutral": { "frame": 1 },
@@ -191,7 +185,6 @@
     "name": "???",
     "image": "/images/narrative/actors/silhouette.png",
     "facing": "left",
-    "pitch": 0.8,
     "expressions": {
       "neutral": { "frame": 1 },
       "happy": { "frame": 1 },

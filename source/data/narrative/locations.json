@@ -40,5 +40,8 @@
   },
   "SecurityCity": {
     "image": "/images/narrative/locations/security-city.png"
+  },
+  "Park": {
+    "image": "/images/narrative/locations/debug.png"
   }
 }
