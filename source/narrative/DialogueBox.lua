@@ -2,6 +2,7 @@ import "CoreLibs/object"
 import "CoreLibs/nineslice"
 import "fonts/fonts"
 import "scene/time"
+import "render/imageCache"
 import "utility/soundCache"
 import "config"
 
@@ -24,12 +25,14 @@ function DialogueBox:init()
   self.isVisible = false
   self.numCharactersShown = 0
   self.framesUntilNextCharacterShown = 0
+  self.waitingForInputFrames = 0
   -- Calculate the font line height
   playdate.graphics.setFont(dialogueBoxFont)
   local lineWidth, lineHeight = playdate.graphics.getTextSize("ABC")
   self.lineHeight = lineHeight
   self.textScrollSound = soundCache.createSoundEffectPlayer("sound/sfx/dialogue-loop")
   self.textScrollSound:setVolume(config.SOUND_VOLUME)
+  self.AButtonImage = imageCache.loadImage("images/a-button")
 end
 
 function DialogueBox:update()
@@ -46,8 +49,14 @@ function DialogueBox:update()
         self.numCharactersShown += 1
       end
     end
-  elseif self.textScrollSound:isPlaying() then
-    self.textScrollSound:stop()
+    self.waitingForInputFrames = 0
+  else
+    if self.textLines then
+      self.waitingForInputFrames += 1
+    end
+    if self.textScrollSound:isPlaying() then
+      self.textScrollSound:stop()
+    end
   end
 end
 
@@ -86,6 +95,9 @@ function DialogueBox:draw()
       end
     end
     playdate.graphics.setImageDrawMode(playdate.graphics.kDrawModeCopy)
+    if self.waitingForInputFrames % 60 > 30 then
+      self.AButtonImage:draw(372, 214)
+    end
   end
 end
 
@@ -94,14 +106,17 @@ function DialogueBox:clear()
   self.textLines = nil
   self.numCharactersShown = 0
   self.framesUntilNextCharacterShown = 0
+  self.waitingForInputFrames = 0
 end
 
 function DialogueBox:show()
   self.isVisible = true
+  self.waitingForInputFrames = 0
 end
 
 function DialogueBox:hide()
   self.isVisible = false
+  self.waitingForInputFrames = 0
 end
 
 function DialogueBox:showDialogue(name, text, side, pitch)
@@ -111,6 +126,7 @@ function DialogueBox:showDialogue(name, text, side, pitch)
   self.isVisible = true
   self.speakerName = name
   self.speakerSide = side
+  self.waitingForInputFrames = 0
   -- Break up the text into lines
   playdate.graphics.setFont(dialogueBoxFont)
   self.textLines = {}

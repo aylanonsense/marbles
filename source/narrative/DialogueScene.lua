@@ -75,6 +75,11 @@ function DialogueScene:update()
     end
   -- Wait for the dialogue box text to crawl and then for the player to press a button
   elseif self.waitingFor == "dialogue-box" then
+    if playdate.buttonIsPressed(playdate.kButtonB) then
+      if self.dialogueBox:canSkipTextCrawl() then
+        self.dialogueBox:skipTextCrawl()
+      end
+    end
     if playdate.buttonJustPressed(playdate.kButtonA) then
       if self.dialogueBox:canSkipTextCrawl() then
         self.dialogueBox:skipTextCrawl()

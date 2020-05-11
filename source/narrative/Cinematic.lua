@@ -16,6 +16,7 @@ function Cinematic:init(id)
     self.isValid = true
   end
   self.id = id
+  self.waitingForInputFrames = 0
   if self.isValid then
     self.data = cinematicsData[self.id]
     self.imageTable = imageCache.loadImageTable(self.data.image)
@@ -30,10 +31,26 @@ function Cinematic:init(id)
     self.isInRepeatSection = not self.data.sequences[self.sequenceNum].playOnce
     self.step = self:getCurrentStep()
     self:refreshSpriteImage()
+    self.AButtonImage = imageCache.loadImage("images/a-button")
+    self.AButtonSprite = playdate.graphics.sprite.new()
+    self.AButtonSprite:setZIndex(400)
+    self.AButtonSprite:moveTo(372, 214)
+    self.AButtonSprite:add()
+    self.AButtonSprite:setImage(self.AButtonImage)
   end
 end
 
 function Cinematic:update()
+  if self:readyToMoveOn() then
+    self.waitingForInputFrames += 1
+  else
+    self.waitingForInputFrames = 0
+  end
+  if self.waitingForInputFrames % 60 == 30 then
+    self.AButtonSprite:setVisible(true)
+  elseif self.waitingForInputFrames % 60 == 0 then
+    self.AButtonSprite:setVisible(false)
+  end
   self.frame += 1
   self.framesOfSequence += 1
   if self.step.duration and self.frame > self.step.duration then
@@ -65,6 +82,7 @@ end
 
 function Cinematic:draw()
   self.sprite:update()
+  self.AButtonSprite:update()
 end
 
 function Cinematic:remove()

@@ -1,5 +1,3 @@
-import "CoreLibs/utilities/printer"
-
 dialogueMethods = {}
 
 function dialogueMethods.getStorylineName()
@@ -11,13 +9,11 @@ function dialogueMethods.lastExitWas(exitId)
 end
 
 function dialogueMethods.failExit()
-  printT(game.playthrough)
   local exitScore = game.playthrough.storyline.exits[#game.playthrough.storyline.exits].score
   return exitScore < 3
 end
 
 function dialogueMethods.normalExit()
-  printT(game.playthrough)
   local exitScore = game.playthrough.storyline.exits[#game.playthrough.storyline.exits].score
   return exitScore == 3
 end
