@@ -9,6 +9,7 @@
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt", "side": "left" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "action": "dismiss-cinematic" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back!", "expression": "happy" },
     { "actor": "SpikyJon", "line": "Wow! I feel great, too! I usually get a bit of a sore neck after I do that. ", "expression": "happy", "side": "right" },

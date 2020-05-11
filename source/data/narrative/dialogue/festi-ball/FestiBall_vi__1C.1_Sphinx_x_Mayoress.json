@@ -11,6 +11,7 @@
     { "actor": "Prota", "line": "Yaaaay!", "expression": "happy" },
     { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "action": "dismiss-cinematic" },
     { "actor": "Prota", "line": "Minty's back in my arms where she belongs! ", "expression": "happy" },
     { "actor": "Prota", "line": "Thanks to both of you! ", "expression": "happy" },
     { "actor": "Mayoress", "line": "No problem, Prota. As the mayor, it's my duty to help my citizenry.", "expression": "happy" },

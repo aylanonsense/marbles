@@ -9,6 +9,7 @@
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "action": "dismiss-cinematic" },
     { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back! That was great, Doc!", "expression": "happy" },
     { "actor": "Doc", "line": "Eh, it wasn't nothin'.", "expression": "neutral", "side": "right" },

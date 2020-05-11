@@ -10,6 +10,7 @@
     { "actor": "SpikyJon", "line": "What! It worked! ", "expression": "shocked", "side": "right" },
     { "actor": "YS", "line": "As the prophecy foretold.", "expression": "neutral", "side": "right" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "action": "dismiss-cinematic" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "Minty! What a day you've had! ", "expression": "happy" },
     { "actor": "Prota", "line": "But now you're back in my arms, right where you belong!", "expression": "happy" },

@@ -9,6 +9,7 @@
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt", "side": "left" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "action": "dismiss-cinematic" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back where you belong!", "expression": "happy" },
     { "actor": "Teens", "line": "In the arms of a total nerd.", "expression": "neutral", "side": "right" },

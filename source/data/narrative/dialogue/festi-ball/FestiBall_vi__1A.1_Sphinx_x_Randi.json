@@ -14,6 +14,7 @@
     { "actor": "YS", "line": "THE DOG IS BAFFLED! SEIZE HER, PROTA!", "expression": "shocked", "side": "right" },
     { "actor": "Minty", "line": "Bark?! ", "expression": "confused", "side": "right" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "action": "dismiss-cinematic" },
     { "actor": "Minty", "line": "...! ", "expression": "shocked", "side": "right" },
     { "actor": "Minty", "line": "Bark bark! ", "expression": "happy" },
     { "actor": "Prota", "line": "Minty! What the heck! You've been gone all day! ", "expression": "annoyed" },

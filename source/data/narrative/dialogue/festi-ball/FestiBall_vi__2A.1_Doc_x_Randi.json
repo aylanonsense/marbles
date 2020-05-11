@@ -12,6 +12,7 @@
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt"},
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "action": "dismiss-cinematic" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty!", "expression": "happy" },
     { "actor": "Doc", "line": "Yeah, of course it did. I make sandwiches all the time. Easy stuff-- even a doctor can do it!", "expression": "happy", "side": "right" },

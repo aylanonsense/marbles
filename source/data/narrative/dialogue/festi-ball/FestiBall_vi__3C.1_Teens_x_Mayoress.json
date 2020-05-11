@@ -9,6 +9,7 @@
   "script": [
     { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
+    { "action": "dismiss-cinematic" },
     { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back!", "expression": "happy" },
     { "actor": "Prota", "line": "Mayoress... If you don't mind me saying... ", "expression": "neutral pensive" },

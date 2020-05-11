@@ -12,5 +12,16 @@
         ]
       }
     ]
+  },
+  "CatchMinty": {
+    "image": "/images/narrative/cinematics/catch-minty.png",
+    "sequences": [
+      {
+        "minWatchTime": 30,
+        "repeat": [
+          { "frame": 1 }
+        ]
+      }
+    ]
   }
 }
