@@ -28,6 +28,9 @@ end
 
 function Game:showTitleScreen()
   local saveData = playdate.datastore.read("lost-your-marbles-save-data")
+  local musicPlayer = soundCache.createMusicPlayer("sound/music/title")
+  musicPlayer:setVolume(config.MUSIC_VOLUME)
+  musicPlayer:play(0)
   Scene.setScene(TitleScreenScene(saveData ~= nil and not saveData.isComplete), function(option)
     if option == "CONTINUE" then
       self:continueGame(saveData)

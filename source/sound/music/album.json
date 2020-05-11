@@ -3,6 +3,10 @@
   "artist": "Neha Patel",
   "tracks": [
     {
+      "title": "Title",
+      "filename": "title"
+    },
+    {
       "title": "Prota's Home",
       "filename": "protas-home-dialogue"
     },
