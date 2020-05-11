@@ -7,7 +7,7 @@
     { "actor": "Teens", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "What the-- It didn't work!", "expression": "confused" },
+    { "actor": "Prota", "line": "What the-- It didn't work!", "expression": "aggravated" },
     { "actor": "Mayoress", "line": "Impossible! Minty must be so bereft of civic responsibility that it had no effect! ", "expression": "shocked", "side": "right" },
     { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
     { "actor": "Teens", "line": "Hey Prota. You still need help?", "expression": "neutral", "side": "right" },
@@ -15,7 +15,7 @@
     { "actor": "Mayoress", "line": "Ah. Speaking of \"bereft of civic responsibility\"...", "expression": "neutral", "side": "right" },
     { "actor": "Teens", "line": "Not so, Mayoress! We're here to lend a hand. ", "expression": "neutral", "side": "right" },
     { "actor": "Teens", "line": "We stand behind the mayoral office 100%!", "expression": "happy" },
-    { "actor": "Prota", "line": "What? Shouldn't you... hate following the rules?", "expression": "confused" },
+    { "actor": "Prota", "line": "What? Shouldn't you... hate following the rules?", "expression": "shocked alt" },
     { "actor": "Teens", "line": "Oh, we do. It's for nerds.", "expression": "neutral" },
     { "actor": "Teens", "line": "But we also think demons are dope.", "expression": "happy" },
     { "actor": "Teens", "line": "Yeah, Mayoress, you're metal AF.", "expression": "confused" },

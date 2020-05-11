@@ -13,7 +13,7 @@
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "SUCCCESS. MINTY HAS BEEN CAUGHT.", "expression": "neutral", "side": "right" },
-        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "confused", "side": "right" },
+        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "aggravated", "side": "left" },
         { "actor": "Randi", "line": "Yeah, sorry, amigo, you didn't ace this one. I think you need an update.", "expression": "neutral", "side": "right" },
       { "actor": "Randi", "line": "And now she's escapin!", "expression": "neutral" }
       ]
@@ -28,12 +28,13 @@
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
-        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE. I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE.", "expression": "neutral", "side": "right" },
+        { "actor": "Mintwo", "line": "I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
         { "actor": "Randi", "line": "We don't got an hour, Mintwo! She's escapin'!", "expression": "neutral", "side": "right" }
       ]
     },
     { "actor": "Teens", "line": "Uh....hey.", "expression": "happy", "side": "right" },
-    { "actor": "Prota", "line": "Teens! You're back! Aaaah! I'm so excited!", "expression": "happy" },
+    { "actor": "Prota", "line": "Teens! You're back! Aaaah! I'm so excited!", "expression": "happy thumbs up" },
     { "actor": "Teens", "line": "Shh! Don't embarrass us in front of Randi.", "expression": "neutral" },
     { "actor": "Prota", "line": "Embarrass you? What? Randi's my friend!", "expression": "confused" },
     { "actor": "Teens", "line": "...What? You're friends with Randi?", "expression": "happy" },
@@ -44,8 +45,9 @@
     { "actor": "Teens", "line": "Yeah... hi.", "expression": "confused", "side": "right" },
     { "actor": "Prota", "line": "You guys think Randi's the coolest person in town?", "expression": "confused" },
     { "actor": "Teens", "line": "Duh. Randi's super dope. The Vintage Viper's got the best clothes. AND robots!", "expression": "happy", "side": "right" },
-    { "actor": "Randi", "line": "Aw heck, you kids are so sweet! Listen, my robot's mid-update... I don't suppose you'd want to lend a hand?", "expression": "happy", "side": "right" },
-    { "actor": "Prota", "line": "Sorry, Randi! The Teens already tried to help, but--", "expression": "neutral" },
+    { "actor": "Randi", "line": "Aw heck, you kids are so sweet! ", "expression": "happy", "side": "right" },
+    { "actor": "Randi", "line": "Listen, my robot's mid-update... I don't suppose you'd want to lend a hand?", "expression": "happy", "side": "right" },
+    { "actor": "Prota", "line": "Sorry, Randi! The Teens already tried to help, but--", "expression": "neutral pensive" },
     { "actor": "Teens", "line": "No no no no no! We can help!", "expression": "neutral", "side": "right" },
     { "actor": "Teens", "line": "We can totally help! Randi, you can trust us. We'll get it done!", "expression": "happy", "side": "right" },
     { "actor": "Teens", "line": "Just watch! ", "expression": "confused", "side": "right" },
