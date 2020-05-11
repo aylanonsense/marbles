@@ -50,6 +50,7 @@
         { "action": "change-location", "location": "VintageViper" },
         { "actor": "Randi", "line": "All right! Pleased to announce she's ready for action! I give you...", "expression": "happy" }
       ]
-    }
+    },
+    { "action": "stream-next-dialogue" }
   ]
 }

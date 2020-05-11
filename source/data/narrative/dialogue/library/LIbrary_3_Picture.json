@@ -16,7 +16,7 @@
         { "actor": "Prota", "line": "All of Minty's angles are her best.", "expression": "happy" },
         { "actor": "Besto", "line": "...", "expression": "neutral" },
         { "actor": "Besto", "line": "Yeah, this is her butt though.", "expression": "neutral" },
-        { "actor": "happy thumbs up", "line": "And what a butt it is!", "expression": "shocked" },
+        { "actor": "Prota", "line": "And what a butt it is!", "expression": "shocked" },
         { "actor": "Besto", "line": "Okay, well... Time to print! Let's do this.", "expression": "thinking" }
       ]
     },
@@ -52,6 +52,7 @@
         { "actor": "Prota", "line": "Oh no! I didn't even think about dognapping! We gotta hurry.", "expression": "shocked" },
         { "actor": "Besto", "line": "Definitely. Let's print it!", "expression": "shocked" }
       ]
-    }
+    },
+    { "action": "stream-next-dialogue" }
   ]
 }

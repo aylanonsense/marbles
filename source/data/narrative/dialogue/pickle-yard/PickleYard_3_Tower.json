@@ -57,6 +57,7 @@
         { "actor": "SpikyJon", "line": "But I suppose we've gotta look at how all the pieces fit together right?", "expression": "neutral" },
         { "actor": "Prota", "line": "Uh...right! Which means...", "expression": "thinking" }
       ]
-    }
+    },
+    { "action": "stream-next-dialogue" }
   ]
 }

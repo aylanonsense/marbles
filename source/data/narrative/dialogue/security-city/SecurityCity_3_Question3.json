@@ -51,6 +51,7 @@
         { "actor": "Prota", "line": "Yessss!", "expression": "happy" },
         { "actor": "Mayoress", "line": "Let's see your score!", "expression": "happy" }
       ]
-    }
+    },
+    { "action": "stream-next-dialogue" }
   ]
 }

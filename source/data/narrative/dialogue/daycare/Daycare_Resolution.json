@@ -2,11 +2,11 @@
   "location": "Daycare",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
-    { "actor": "Dad", "expression": "neutral", "side": "right" },
-    { "actor": "YS", "expression": "neutral" }
+    { "actor": "Dad", "expression": "neutral" },
+    { "actor": "YS", "expression": "neutral", "side": "right" }
   ],
   "script": [
-    { "actor": "Dad", "line": "Hey guys, you having fun in--What the?!", "expression": "neutral" },
+    { "actor": "Dad", "line": "Hey guys, you having fun in--What the?!", "expression": "neutral", "side": "right" },
     { "actor": "Dad", "line": "Yung Sphinx?!", "expression": "confused" },
     { "actor": "Dad", "line": "Yung Sphinx, we've talked about this! Go back to your house. You don't even go here.", "expression": "neutral" },
     { "actor": "YS", "line": "Yet my superior home-schooled intellect drew me to this den of fools.", "expression": "neutral", "side": "right" },

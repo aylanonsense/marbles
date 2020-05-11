@@ -41,14 +41,14 @@ function Actor:remove()
   end
 end
 
-function Actor:slideOnStage(side)
+function Actor:slideOnStage(side, instantly)
   if self.sprite then
     local flipped = (side == self.facing)
     local startX = 200 + 300 * ((side == "left") and -1 or 1)
     local endX = 200 + 100 * ((side == "left") and -1 or 1)
     local y = self.isTalking and 154 or 160
     local path = playdate.geometry.lineSegment.new(startX, y, endX, y)
-    local animator = playdate.graphics.animator.new(1000, path, playdate.easingFunctions.outCubic)
+    local animator = playdate.graphics.animator.new(instantly and 0 or 1000, path, playdate.easingFunctions.outCubic)
     self.sprite:setAnimator(animator)
     self.sprite:setImageFlip(flipped and playdate.graphics.kImageFlippedX or playdate.graphics.kImageUnflipped)
     self.side = side
@@ -56,13 +56,13 @@ function Actor:slideOnStage(side)
   end
 end
 
-function Actor:slideOffStage()
+function Actor:slideOffStage(instantly)
   if self.sprite then
     local x, y = self.sprite:getPosition()
     local startX = 200 + 100 * ((self.side == "left") and -1 or 1)
     local endX = 200 + 380 * ((self.side == "left") and -1 or 1)
     local path = playdate.geometry.lineSegment.new(startX, y, endX, y)
-    local animator = playdate.graphics.animator.new(1200, path, playdate.easingFunctions.outCubic)
+    local animator = playdate.graphics.animator.new(instantly and 0 or 1200, path, playdate.easingFunctions.outCubic)
     self.sprite:setAnimator(animator)
     self.side = nil
   end
@@ -82,7 +82,7 @@ function Actor:setExpression(expression)
   end
 end
 
-function Actor:setIsTalking(isTalking)
+function Actor:setIsTalking(isTalking, instantly)
   if self.isTalking ~= isTalking then
     self.isTalking = isTalking
     self:setImage(self.frame, self.isTalking)
@@ -93,7 +93,7 @@ function Actor:setIsTalking(isTalking)
         local endY = self.isTalking and 154 or 160
         local endX = 200 + 100 * ((self.side == "left") and -1 or 1)
         local path = playdate.geometry.lineSegment.new(startX, startY, endX, endY)
-        local animator = playdate.graphics.animator.new(600, path, playdate.easingFunctions.outCubic)
+        local animator = playdate.graphics.animator.new(instantly and 0 or 600, path, playdate.easingFunctions.outCubic)
         self.sprite:setAnimator(animator)
       end
     end

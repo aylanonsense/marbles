@@ -42,6 +42,7 @@
         { "actor": "Prota", "line": "Yesss! It's Minty-findin' time!", "expression": "happy" },
         { "actor": "YS", "line": "Your prophecy is...", "expression": "neutral" }
       ]
-    }
+    },
+    { "action": "stream-next-dialogue" }
   ]
 }

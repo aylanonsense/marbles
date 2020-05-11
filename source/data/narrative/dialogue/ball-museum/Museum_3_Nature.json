@@ -58,6 +58,7 @@
         { "actor": "Prota", "line": "Thanks, Croco!", "expression": "happy" },
         { "actor": "Croco", "line": "Now let's see what we've got!", "expression": "happy" }
       ]
-    }
+    },
+    { "action": "stream-next-dialogue" }
   ]
 }

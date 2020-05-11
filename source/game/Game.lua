@@ -84,24 +84,26 @@ function Game:resumeCurrentStoryline()
   end
 end
 
-function Game:advanceCurrentStoryline()
+function Game:advanceCurrentStoryline(startSceneInstantly)
   soundCache.stopAllSoundEffects()
-  soundCache.stopAllMusic()
+  if not startSceneInstantly then
+    soundCache.stopAllMusic()
+  end
   self.playthrough.storyline.stage += 1
   -- Save the data
-  self:playNextStorylineScene()
+  self:playNextStorylineScene(startSceneInstantly)
 end
 
-function Game:playNextStorylineScene()
+function Game:playNextStorylineScene(startSceneInstantly)
   playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
-  local advance = function(exit, secretExit)
+  local advance = function(exit, secretExit, startNextSceneInstantly)
     if secretExit then
       self:finishCurrentStorylineAndStartNextOne("secret")
     else
       if exit then
         self:recordExitTaken(exit)
       end
-      self:advanceCurrentStoryline()
+      self:advanceCurrentStoryline(startNextSceneInstantly)
     end
   end
   local sceneData = self.storylineData.scenes[self.playthrough.storyline.stage]
@@ -109,7 +111,7 @@ function Game:playNextStorylineScene()
     if config.SHOW_DEBUG_SKIP_SCREENS and sceneData.maze then
       Scene.setScene(MazeSimulationScene(sceneData.maze, sceneData.exits), function(shouldPlayMaze, exit)
         if shouldPlayMaze then
-          local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
+          local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage, startSceneInstantly)
           Scene.setScene(scene, advance)
         else
           advance(exit)
@@ -119,14 +121,14 @@ function Game:playNextStorylineScene()
       local dialogueFileName = self:getDialogueFileName(sceneData)
       Scene.setScene(DialogueSimulationScene(dialogueFileName), function(shouldPlayDialogue)
         if shouldPlayDialogue then
-          local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
+          local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage, startSceneInstantly)
           Scene.setScene(scene, advance)
         else
           advance()
         end
       end)
     else
-      local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage)
+      local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage, startSceneInstantly)
       Scene.setScene(scene, advance)
     end
   else
@@ -177,7 +179,7 @@ function Game:finishCurrentStorylineAndStartNextOne(result)
   end
 end
 
-function Game:createStorylineScene(storylineData, stage)
+function Game:createStorylineScene(storylineData, stage, startSceneInstantly)
   -- Create a scene from an individual storyline item (a dialogue or a maze)
   local sceneData = storylineData.scenes[stage]
   if sceneData then
@@ -189,10 +191,10 @@ function Game:createStorylineScene(storylineData, stage)
     if sceneData.dialogue then
       local dialogueFileName = self:getDialogueFileName(sceneData)
       local dialogueData = loadJsonFile("/data/narrative/dialogue/" .. dialogueFileName .. ".json")
-      return DialogueScene(dialogueData, musicPlayer)
+      return DialogueScene(dialogueData, musicPlayer, startSceneInstantly)
     elseif sceneData.maze then
       local mazeData = loadJsonFile("/data/levels/" .. sceneData.maze .. "-play.json")
-      return MazeScene(mazeData, sceneData.prompt, musicPlayer)
+      return MazeScene(mazeData, sceneData.prompt, musicPlayer, startSceneInstantly)
     elseif sceneData.credits then
       local unlocks = self:calculateUnlocks()
       return CreditsScene(unlocks, musicPlayer)

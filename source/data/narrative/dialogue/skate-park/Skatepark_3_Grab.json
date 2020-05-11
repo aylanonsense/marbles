@@ -45,6 +45,7 @@
         { "actor": "Prota", "line": "And am I information-about-Minty-worthy?", "expression": "confused" },
         { "actor": "Teens", "line": "Maybe. Depends on your rating. ", "expression": "happy" }
       ]
-    }
+    },
+    { "action": "stream-next-dialogue" }
   ]
 }

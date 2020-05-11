@@ -11,7 +11,7 @@ import "utility/file"
 
 class("DialogueScene").extends(Scene)
 
-function DialogueScene:init(convoData, musicPlayer)
+function DialogueScene:init(convoData, musicPlayer, startInstantly)
   DialogueScene.super.init(self)
   self.dialogueBox = DialogueBox()
   self.location = Location(self:evalDialogueField(convoData.location))
@@ -39,9 +39,27 @@ function DialogueScene:init(convoData, musicPlayer)
   self.scripts = { convoData.script }
   self.scriptIndexes = { 0 }
   -- Wait for a bit before beginning the script
-  self.waitingFor = "time"
-  self.waitTime = sceneTransition.TRANSITION_IN_TIME + 0.75
-  sceneTransition:transitionIn()
+  if startInstantly then
+    self.waitingFor = nil
+    self.waitTime = 0.00
+    self.hasBegunScene = true
+    for _, actor in pairs(self.actorLookup) do
+      if actor.startingSide then
+        if self.actorsOnStage[actor.startingSide] then
+          self.actorsOnStage[actor.startingSide]:slideOffStage(startInstantly)
+        end
+        actor:slideOnStage(actor.startingSide, startInstantly)
+        self.actorsOnStage[actor.startingSide] = actor
+        actor.startingSide = nil
+      end
+    end
+    self.dialogueBox:show()
+    self:processNextDialogueAction(true)
+  else
+    self.waitingFor = "time"
+    self.waitTime = sceneTransition.TRANSITION_IN_TIME + 0.75
+    sceneTransition:transitionIn()
+  end
   self.musicPlayer = musicPlayer
   if self.musicPlayer then
     self.musicPlayer:play(0)
@@ -137,7 +155,7 @@ function DialogueScene:addOrFindActor(id)
   return self.actorLookup[id]
 end
 
-function DialogueScene:processNextDialogueAction()
+function DialogueScene:processNextDialogueAction(instantly)
   self.scriptIndexes[#self.scriptIndexes] += 1
   -- We have reached the end of the current script
   if self.scriptIndexes[#self.scriptIndexes] > #(self.scripts[#self.scripts]) then
@@ -152,7 +170,7 @@ function DialogueScene:processNextDialogueAction()
   else
     local script = self.scripts[#self.scripts]
     local index = self.scriptIndexes[#self.scriptIndexes]
-    if not self:processDialogueAction(script[index]) then
+    if not self:processDialogueAction(script[index], instantly) then
       -- If we weren't able to process the action, just try the next one immediately
       self:processNextDialogueAction()
     end
@@ -162,22 +180,26 @@ end
 function DialogueScene:transitionOut(secretExit)
   self.waitingFor = nil
   sceneTransition:transitionOut(function()
-    for _, actor in pairs(self.actorLookup) do
-      actor:remove()
-    end
-    self.dialogueBox:remove()
-    self.location:remove()
-    if self.shownObject then
-      self.shownObject:remove()
-    end
-    if self.cinematic then
-      self.cinematic:remove()
-    end
-    self:endScene(nil, secretExit)
+    self:close(secretExit, false)
   end)
 end
 
-function DialogueScene:processDialogueAction(action)
+function DialogueScene:close(secretExit, startNextSceneInstantly)
+  for _, actor in pairs(self.actorLookup) do
+    actor:remove()
+  end
+  self.dialogueBox:remove()
+  self.location:remove()
+  if self.shownObject then
+    self.shownObject:remove()
+  end
+  if self.cinematic then
+    self.cinematic:remove()
+  end
+  self:endScene(nil, secretExit, startNextSceneInstantly)
+end
+
+function DialogueScene:processDialogueAction(action, instantly)
   if not action or action.skip then
     return false
   end
@@ -203,10 +225,10 @@ function DialogueScene:processDialogueAction(action)
     if not actorName or actorName == "Narrator" then
       self.dialogueBox:showDialogue(null, line, null)
       if self.actorsOnStage.left then
-        self.actorsOnStage.left:setIsTalking(false)
+        self.actorsOnStage.left:setIsTalking(false, instantly)
       end
       if self.actorsOnStage.right then
-        self.actorsOnStage.right:setIsTalking(false)
+        self.actorsOnStage.right:setIsTalking(false, instantly)
       end
     else
       local actor = self:addOrFindActor(actorName)
@@ -222,18 +244,18 @@ function DialogueScene:processDialogueAction(action)
       actor:setExpression(self:evalDialogueField(action.expression))
       local otherSide = (side == "left") and "right" or "left"
       if self.actorsOnStage[otherSide] then
-        self.actorsOnStage[otherSide]:setIsTalking(false)
+        self.actorsOnStage[otherSide]:setIsTalking(false, instantly)
       end
       if self.actorsOnStage[side] ~= actor then
         if self.actorsOnStage[side] then
-          self.actorsOnStage[side]:setIsTalking(false)
+          self.actorsOnStage[side]:setIsTalking(false, instantly)
           self.actorsOnStage[side]:slideOffStage()
         end
         self.actorsOnStage[side] = actor
-        self.actorsOnStage[side]:setIsTalking(true)
+        self.actorsOnStage[side]:setIsTalking(true, instantly)
         actor:slideOnStage(side)
       else
-        self.actorsOnStage[side]:setIsTalking(true)
+        self.actorsOnStage[side]:setIsTalking(true, instantly)
       end
       self.dialogueBox:showDialogue(actor.name, line, actor.side, actor.pitch)
     end
@@ -309,6 +331,8 @@ function DialogueScene:processDialogueAction(action)
     self.dialogueBox:show()
     self.waitingFor = "time"
     self.waitTime = 0.0
+  elseif action.action == "stream-next-dialogue" then
+    self:close(nil, true)
   elseif action.action == "roll-credits" then
     self:transitionOut(true)
   -- Unknown action, return false to indicate we weren't able to process it

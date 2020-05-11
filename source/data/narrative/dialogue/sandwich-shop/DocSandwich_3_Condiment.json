@@ -45,6 +45,7 @@
         { "actor": "Prota", "line": "I do! Thanks, Doc! ", "expression": "happy" },
         { "actor": "Doc", "line": "No problem! Let's take a look at your sandwich!", "expression": "happy" }
       ]
-    }
+    },
+    { "action": "stream-next-dialogue" }
   ]
 }
