@@ -8,13 +8,13 @@
     {
       "if": "failExit",
       "then": [ 
-        { "actor": "Prota", "line": "I've got it! I rememeber!",  "expression": "shocked" },
-        { "actor": "Prota", "line": "She'll want protein powder! Minty Muscles we call her.",  "expression": "happy" },
+        { "actor": "Prota", "line": "I've got it! I rememeber!",  "expression": "shocked alt" },
+        { "actor": "Prota", "line": "She'll want protein powder! Minty Muscles we call her.",  "expression": "happy thumbs up" },
         { "actor": "Doc", "line": "Minty Muscles! Huh. Does she work out?", "expression": "confused" },
-        { "actor": "Prota", "line": "Well, she's definitely doing a lot of running today.", "expression": "neutral" },
-        { "actor": "Doc", "line": "Well okay! And hey, I'm no dietician! Just a GP. So let's do this.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Well, she's definitely doing a lot of running today.", "expression": "neutral pensive" },
+        { "actor": "Doc", "line": "Well okay! And hey, I'm no dietician! Just a GP.", "expression": "neutral" },
         { "actor": "Prota", "line": "Perfect! Let's do it!",  "expression": "happy" },
-        { "actor": "Doc", "line": "Now, if she's health-conscious, I bet she's gonna want veggies on that, right?", "expression": "happy" },
+        { "actor": "Doc", "line": "Now, if she's health-conscious, I bet she's gonna want good toppings on that, right?", "expression": "happy" },
         { "actor": "Prota", "line": "Definitely.", "expression": "neutral" },
         { "actor": "Doc", "line": "What'll she have?", "expression": "neutral" }
       ]
@@ -23,24 +23,24 @@
       "if": "normalExit",
       "then": [ 
         { "actor": "Prota", "line": "Okay! Gimme the ostrich patty!", "expression": "happy" },
-        { "actor": "Prota", "line": "Minty will have no birds but the biggest.", "expression": "happy" },
+        { "actor": "Prota", "line": "Minty will have no birds but the biggest.", "expression": "happy thumbs up" },
         { "actor": "Doc", "line": "Wow, little dog, big taste. Love it.", "expression": "happy" },
         { "actor": "Doc", "line": "You know what they say! It's not the size of the bird...", "expression": "neutral" },
-        { "actor": "Prota", "line": "It's how you eat it!", "expression": "happy" },
+        { "actor": "Prota", "line": "It's how you eat it!", "expression": "Neutral thumbs up" },
         { "actor": "Doc", "line": "They do say that, don't they? All right, let's slap that on...", "expression": "happy" },
-        { "actor": "Doc", "line": "Done! Next up, let's get her some veggies. ", "expression": "happy" }
+        { "actor": "Doc", "line": "Done! Next up, let's get her some fun toppings.", "expression": "happy" }
       ]
     },
     {
       "if": "specialExit",
       "then": [ 
-        { "actor": "Prota", "line": "Hmmm... I think she'd go for ham!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Hmmm... I think she'd go for ham!", "expression": "thinking alt" },
         { "actor": "Prota", "line": "She can't get enough of the classics.", "expression": "happy" },
         { "actor": "Doc", "line": "Oh, sorry, we don't carry Ham Classic anymore. We've only got New Ham.", "expression": "thinking" },
-        { "actor": "Doc", "line": "And Ham Zero.", "expression": "happy" },
+        { "actor": "Doc", "line": "And Ham Zero. Is that cool?", "expression": "happy" },
         { "actor": "Prota", "line": "... Is this a joke?", "expression": "confused" },
         { "actor": "Doc", "line": "I guess not much of one. Ha!", "expression": "happy" },
-        { "actor": "Doc", "line": "Up next, veggies! What'll Minty munch on?", "expression": "happy" }
+        { "actor": "Doc", "line": "Up next, toppings! What'll Minty munch on?", "expression": "happy" }
       ]
     }
   ]

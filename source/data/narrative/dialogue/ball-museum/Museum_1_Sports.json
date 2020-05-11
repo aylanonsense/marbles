@@ -13,13 +13,15 @@
         { "actor": "Croco", "line": "That works! I used to play ball hockey with my brothers and sisters.", "expression": "thinking" },
         { "actor": "Prota", "line": "Ball hockey?", "expression": "confused" },
         { "actor": "Croco", "line": "Yeah.", "expression": "neutral" },
-        { "actor": "Prota", "line": "On ice?", "expression": "confused" },
+        { "actor": "Prota", "line": "On ice?", "expression": "shocked alt" },
         { "actor": "Croco", "line": "On ice? No, just... on the floor. With a ball. Ice hockey uses a puck.", "expression": "confused" },
+        { "actor": "Prota", "line": "Oh, well that's the kind I mean! The flat-on-the-sides ball.", "expression": "neutral thumbs up" },
         { "actor": "Croco", "line": "Again, that's a puck.", "expression": "confused" },
-        { "actor": "Prota", "line": "Pretty sure it's a hockey ball.", "expression": "thinking" },
+        { "actor": "Prota", "line": "Pretty sure it's a hockey ball.", "expression": "thinking alt" },
         { "actor": "Croco", "line": "It is not.", "expression": "neutral" },
-        { "actor": "Prota", "line": "How about we go with my thing?", "expression": "neutral" },
-        { "actor": "Croco", "line": "You think we should put a puck in the window display at the World's Most Colourful Ball of Yarn and BALL MUSEUM.", "expression": "confused" },
+        { "actor": "Prota", "line": "How about we go with my thing?", "expression": "neutral pensive" },
+        { "actor": "Croco", "line": "You think we should put a puck... ", "expression": "confused" },
+        { "actor": "Croco", "line": "...in the window display at the World's Most Colourful Ball of Yarn and BALL MUSEUM.", "expression": "confused" },
         { "actor": "Prota", "line": "A hockey ball, yeah!", "expression": "neutral" },
         { "actor": "Croco", "line": "...", "expression": "neutral" },
         { "actor": "Croco", "line": "You're the boss! Next up: Food balls! What'll make Minty's mouth water?", "expression": "happy" }
@@ -33,7 +35,7 @@
         { "actor": "Croco", "line": "All signs point to yes!", "expression": "happy" },
         { "actor": "Prota", "line": "Perfect!", "expression": "happy" },
         { "actor": "Croco", "line": "You don't think it's a little bit... firm for Minty's little mouth?", "expression": "thinking" },
-        { "actor": "Prota", "line": "Mouth? You don't play pool with your mouth, Croco. Hahaha!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Mouth? You don't play pool with your mouth, Croco. Hahaha!", "expression": "confused" },
         { "actor": "Croco", "line": "Oh. Well, uh...", "expression": "confused" },
         { "actor": "Croco", "line": "I guess you're right! ", "expression": "happy" },
         { "actor": "Prota", "line": "Next up: Let's get the food ball! What would Minty find most compelling?", "expression": "happy" }
@@ -51,7 +53,7 @@
         { "actor": "Croco", "line": "Hmmm.", "expression": "thinking" },
         { "actor": "Croco", "line": "I've never thought of it that way! ", "expression": "shocked" },
         { "actor": "Croco", "line": "Plus, I bet Minty would love to chase a hamster ball!", "expression": "happy" },
-        { "actor": "Prota", "line": "And the hamster would get a great workout! It's win-win!", "expression": "happy" },
+        { "actor": "Prota", "line": "And the hamster would get a great workout! It's win-win!", "expression": "happy thumbs up" },
         { "actor": "Croco", "line": "Perfect. I love it. This'll attract the crowds AND Minty.", "expression": "happy" },
         { "actor": "Croco", "line": "Let's do the food ball next!", "expression": "happy" }
       ]

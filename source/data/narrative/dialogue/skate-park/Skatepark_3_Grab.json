@@ -8,16 +8,16 @@
     {
       "if": "failExit",
       "then": [ 
-        { "actor": "Prota", "line": "Uh...oops?", "expression": "confused" },
+        { "actor": "Prota", "line": "Uh...nailed it?", "expression": "shocked" },
         { "actor": "Teens", "line": "Did you just break your board in mid-air?", "expression": "neutral" },
-        { "actor": "Prota", "line": "Would you believe it died of old age?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Would you believe it died of old age?", "expression": "thinking alt" },
         { "actor": "Teens", "line": "No.", "expression": "confused" },
-        { "actor": "Prota", "line": "Then yeah I broke it.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Then yeah I broke it.", "expression": "neutral pensive" },
         { "actor": "Teens", "line": "Hm. Well, destruction of property is pretty cool...", "expression": "confused" },
         { "actor": "Prota", "line": "Oh yeah?", "expression": "happy" },
         { "actor": "Teens", "line": "Sure. If it's dismantling oppressive structures.", "expression": "confused" },
         { "actor": "Teens", "line": "Not wrecking a perfectly good board with a wack trick.", "expression": "neutral" },
-        { "actor": "Prota", "line": "So you're not gonna tell me about Minty?", "expression": "neutral" },
+        { "actor": "Prota", "line": "So you're not gonna tell me about Minty?", "expression": "annoyed" },
         { "actor": "Teens", "line": "Well, let's see your rating.", "expression": "neutral" }
       ]
     },
@@ -27,10 +27,10 @@
         { "actor": "Prota", "line": "And I call that one the Puppyhana! ", "expression": "happy" },
         { "actor": "Teens", "line": "It's a decent move.", "expression": "confused" },
         { "actor": "Teens", "line": "Yeah. I didn't hate it either.", "expression": "happy" },
-        { "actor": "Prota", "line": "Thanks! It's a tribute to Minty. Who I really need to find.", "expression": "happy" },
+        { "actor": "Prota", "line": "Thanks! It's a tribute to Minty. Who I really need to find.", "expression": "happy thumbs up" },
         { "actor": "Prota", "line": "So if you can just tell me...", "expression": "neutral" },
         { "actor": "Teens", "line": "Not yet.", "expression": "neutral" },
-        { "actor": "Prota", "line": "But I did all the tricks!", "expression": "confused" },
+        { "actor": "Prota", "line": "But I did all the tricks!", "expression": "aggravated" },
         { "actor": "Teens", "line": "Yeah, but we still haven't give you your rating.", "expression": "neutral" }
       ]
     },
@@ -42,7 +42,7 @@
         { "actor": "Prota", "line": "Uh, why else would that move be called the \"Parachute Drop\"?", "expression": "happy" },
         { "actor": "Teens", "line": "Wow.", "expression": "confused" },
         { "actor": "Teens", "line": "Yeah. That's wow-worthy.", "expression": "neutral" },
-        { "actor": "Prota", "line": "And am I information-about-Minty-worthy?", "expression": "happy" },
+        { "actor": "Prota", "line": "And am I information-about-Minty-worthy?", "expression": "confused" },
         { "actor": "Teens", "line": "Maybe. Depends on your rating. ", "expression": "happy" }
       ]
     }

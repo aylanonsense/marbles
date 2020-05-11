@@ -7,7 +7,7 @@
     { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked" },
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark! Bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back! That was great, Doc!", "expression": "happy" },
@@ -20,7 +20,7 @@
     { "actor": "Mayoress", "line": "Under one condition.", "expression": "neutral", "side": "right" },
     { "actor": "Doc", "line": "Condition?!", "expression": "confused", "side": "right" },
     { "actor": "Mayoress", "line": "I get to be first in line for the next batch of sandwiches!", "expression": "happy", "side": "right" },
-    { "actor": "Prota", "line": "Ha!", "expression": "happy" },
+    { "actor": "Prota", "line": "Ha!", "expression": "happy thumbs up" },
     { "actor": "Doc", "line": "Yeah, I think that could be arranged.", "expression": "happy", "side": "right" },
     { "actor": "Mayoress", "line": "It doesn't count as line-cutting if you make a reservation with the business.", "expression": "neutral", "side": "right" },
     { "actor": "Doc", "line": "Hey, I'll allow it. Prota, you want in on this deal, too? I'll even throw one in for Minty!", "expression": "happy", "side": "right" },    

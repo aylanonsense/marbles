@@ -9,7 +9,7 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "viper-legs-bad" ] },
       "then": [ 
-        { "actor": "Prota", "line": "Well... I'm not sure what you had in mind for legs, but... I hope this'll do.",  "expression": "neutral" },
+        { "actor": "Prota", "line": "Well... I'm not sure what you had in mind for legs, but... I hope this'll do.",  "expression": "neutral pensive" },
         { "actor": "Randi", "line": "Hm. I'll say it's not exactly what I had in mind...", "expression": "confused" },
         { "actor": "Randi", "line": "But it's better than a kick in the pants!", "expression": "happy" },
         { "actor": "Prota", "line": "Perfect! That's the last piece then, right?", "expression": "neutral" },
@@ -40,10 +40,11 @@
         { "actor": "Prota", "line": "Here you go, Randi! Think you can work with this?",  "expression": "happy" },
         { "actor": "Randi", "line": "Whoa!", "expression": "shocked" },
         { "actor": "Prota", "line": "What?", "expression": "thinking" },
-        { "actor": "Randi", "line": "You got Minty on the brain, dontcha?", "expression": "neutral" },
+        { "actor": "Randi", "line": "You really got Minty on the brain, dontcha'?", "expression": "neutral" },
         { "actor": "Prota", "line": "Why do you say that?", "expression": "confused" },
         { "actor": "Randi", "line": "I mean...", "expression": "thinking" },
-        { "actor": "Randi", "line": "Oh, it's fine! Let's just get this thing made. I'll need a couple minutes to get 'er goin, but just hang tight.", "expression": "happy" },
+        { "actor": "Randi", "line": "Oh, it's fine! Let's just get this thing made.", "expression": "happy" },
+        { "actor": "Randi", "line": "I'll need a couple minutes to get 'er goin, but just hang tight.", "expression": "happy" },
         { "action": "change-location", "location": "BlackScreen" },
         { "actor": "Narrator", "line": "Several minutes later...", "expression": "neutral" },
         { "action": "change-location", "location": "VintageViper" },

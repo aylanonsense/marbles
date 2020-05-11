@@ -11,10 +11,10 @@
         { "actor": "Prota", "line": "...Ow.", "expression": "neutral" },
         { "actor": "Teens", "line": "What do you call that one, nerd?", "expression": "confused" },
         { "actor": "Prota", "line": "A... no-board...360...faceplant?", "expression": "thinking" },
-        { "actor": "Prota", "line": "Kinda cool, right?", "expression": "neutral" },
-        { "actor": "Teens", "line": "We may value inclusivity, but there's a line.", "expression": "confused" },
-        { "actor": "Teens", "line": "That line is garbo flips.", "expression": "neutral" },
-        { "actor": "Prota", "line": "Well-- well I'll just show you something else then!", "expression": "neutral" }
+        { "actor": "Prota", "line": "Kinda cool, right?", "expression": "thinking alt" },
+        { "actor": "Teens", "line": "Look, we actually do try to be accepting, but there's a line.", "expression": "confused" },
+        { "actor": "Teens", "line": "And that line is garbo flips.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Well-- well I'll just show you something else then!", "expression": "shocked alt" }
       ]
     },
     {
@@ -22,17 +22,17 @@
       "then": [ 
         { "actor": "Prota", "line": "Ha! I call that one the Pup Shove-It!", "expression": "happy" },
         { "actor": "Teens", "line": "Nice. ", "expression": "happy" },
-        { "actor": "Prota", "line": "Wait, really? You liked that?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Wait, really? You liked that?", "expression": "shocked alt" },
         { "actor": "Teens", "line": "It was okay.", "expression": "neutral" },
         { "actor": "Teens", "line": "Which is more than we expected from you.", "expression": "confused" },
         { "actor": "Teens", "line": "Show us something else.", "expression": "happy" },
-        { "actor": "Prota", "line": "Can do!", "expression": "happy" }
+        { "actor": "Prota", "line": "Can do!", "expression": "happy thumbs up" }
       ]
     },
     {
       "if": "specialExit",
       "then": [ 
-        { "actor": "Prota", "line": "Oof! How was...that?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oof! How was...that?", "expression": "neutral pensive" },
         { "actor": "Teens", "line": "Was that a varial neckflip?", "expression": "neutral" },
         { "actor": "Teens", "line": "I think it was.", "expression": "confused" },
         { "actor": "Teens", "line": "I didn't think anybody could pull that off.", "expression": "happy" },

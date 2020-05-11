@@ -8,7 +8,7 @@
       "maze": "pickle-star",
       "exits": [ "pickle-star-special", "pickle-star-good", "pickle-star-bad" ],
       "music": "pickle-yard-maze",
-      "prompt": "What is Spiky Jon's past?"
+      "prompt": "Interpret Spiky Jon's past?"
     },
     {
       "dialogue": "pickle-yard/PickleYard_1_Star",
@@ -18,7 +18,7 @@
       "maze": "pickle-death",
       "exits": [ "pickle-death-special", "pickle-death-good", "pickle-death-bad" ],
       "music": "pickle-yard-maze",
-      "prompt": "What is Spiky Jon's present?"
+      "prompt": "Interpret Spiky Jon's present?"
     },
     {
       "dialogue": "pickle-yard/PickleYard_2_Death",
@@ -28,7 +28,7 @@
       "maze": "pickle-tower",
       "exits": [ "pickle-tower-special", "pickle-tower-good", "pickle-tower-bad" ],
       "music": "pickle-yard-maze",
-      "prompt": "What is Spiky Jon's future?"
+      "prompt": "Interpret Spiky Jon's future?"
     },
     {
       "dialogue": "pickle-yard/PickleYard_3_Tower",

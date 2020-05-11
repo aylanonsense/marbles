@@ -7,17 +7,17 @@
     { "actor": "Teens", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked", "side": "right" },
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt", "side": "left" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back where you belong!", "expression": "happy" },
     { "actor": "Teens", "line": "In the arms of a total nerd.", "expression": "neutral", "side": "right" },
-    { "actor": "Prota", "line": "...Just to check, you're using that affectionately at this point, right?", "expression": "thinking" },
+    { "actor": "Prota", "line": "...Just to check, you're using that affectionately at this point, right?", "expression": "confused" },
     { "actor": "Teens", "line": "Obviously.", "expression": "confused" },
     { "actor": "SpikyJon", "line": "Did you see that?! That was my best Spiky Plex ever!", "expression": "happy", "side": "right" },
     { "actor": "Teens", "line": "It was really cool. As expected.", "expression": "neutral", "side": "right" },
     { "actor": "Teens", "line": "Yeah, we called it.", "expression": "confused" }, 
-    { "actor": "Prota", "line": "You really saved the day. ", "expression": "happy" },
+    { "actor": "Prota", "line": "You really saved the day. ", "expression": "happy thumbs up" },
     { "actor": "SpikyJon", "line": "...huh. I guess I did.", "expression": "thinking", "side": "right" },
     { "actor": "SpikyJon", "line": "All in a day's work for...", "expression": "happy" },
     {
@@ -48,7 +48,7 @@
     { "actor": "Teens", "line": "We just assumed you were a pro wrestler. A really, really good one.", "expression": "confused" },
     { "actor": "SpikyJon", "line": "Ha! Nah, that's just a silly hobby...", "expression": "happy", "side": "right" },
     { "actor": "Teens", "line": "Well you're great at it. Maybe you should make it more than a hobby.", "expression": "neutral", "side": "right" },
-    { "actor": "Prota", "line": "Yeah, maybe you should. I'm sure my Mom could help you.", "expression": "confused" },
+    { "actor": "Prota", "line": "Yeah, maybe you should. I'm sure my Mom could help you.", "expression": "neutral thumbs up" },
       {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "pickle-yard", "fail" ] },
       "then": [
@@ -81,7 +81,7 @@
     { "actor": "Teens", "line": "Sweet.", "expression": "neutral", "side": "right" },
     { "actor": "Teens", "line": "Nerd, you wanna join us?", "expression": "confused" },
     { "actor": "Prota", "line": "I should probably take Minty to see my parents. But tomorrow I'll talk to Mom about that training!", "expression": "happy" },
-    { "actor": "Prota", "line": "You could all join her class if you want!", "expression": "happy" },
+    { "actor": "Prota", "line": "You could all join her class if you want!", "expression": "happy thumbs up" },
     { "actor": "SpikyJon", "line": "That would be great!", "expression": "happy", "side": "right" },
     { "actor": "Teens", "line": "Yeah, count us in.", "expression": "neutral", "side": "right" },
     { "actor": "Prota", "line": "Perfect! See you then!", "expression": "happy" },

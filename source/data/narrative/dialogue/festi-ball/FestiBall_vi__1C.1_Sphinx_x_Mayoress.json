@@ -18,18 +18,18 @@
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "security-city", "fail" ] },
       "then": [
         { "actor": "Mayoress", "line": "Even the ones who aren't exactly Security Stars.", "expression": "happy" },
-        { "actor": "Prota", "line": "Does that mean I can take this hat off now?", "expression": "happy" },
+        { "actor": "Prota", "line": "Does that mean I can take this hat off now?", "expression": "thinking alt" },
         { "actor": "Mayoress", "line": "No! ", "expression": "happy" },
-        { "actor": "Prota", "line": "That's fair.", "expression": "neutral" }
+        { "actor": "Prota", "line": "That's fair.", "expression": "annoyed" }
       ]
     },
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "security-city", "normal" ] },
       "then": [
         { "actor": "Mayoress", "line": "Even the ones who aren't exactly Security Stars.", "expression": "happy" },
-        { "actor": "Prota", "line": "Does that mean I can take this hat off now?", "expression": "happy" },
+        { "actor": "Prota", "line": "Does that mean I can take this hat off now?", "expression": "thinking alt" },
         { "actor": "Mayoress", "line": "No! ", "expression": "happy" },
-        { "actor": "Prota", "line": "That's fair.", "expression": "neutral" }
+        { "actor": "Prota", "line": "That's fair.", "expression": "annoyed" }
       ]
     },
     {
@@ -39,18 +39,19 @@
       ]
     },
     { "actor": "Prota", "line": "Well thanks so much for your help catching Minty.", "expression": "happy" },
-    { "actor": "Mayoress", "line": "Our pleasure! I've been so busy with mayoral duties lately that spending some quality time with Sphinx is a treat!", "expression": "happy" },
+    { "actor": "Mayoress", "line": "Our pleasure!", "expression": "happy" },
+    { "actor": "Mayoress", "line": "I've been so busy with mayoral duties lately that spending some quality time with Sphinx is a treat!", "expression": "happy" },
     { "actor": "Mayoress", "line": "I've barely had enough time to get on with homeschooling!", "expression": "happy" },
     { "actor": "YS", "line": "I have found ways of filling the time.", "expression": "neutral", "side": "right" },
     { "actor": "Mayoress", "line": "Oh, I bet you have! You're Mommy's clever little kitten.", "expression": "happy", "side": "right" },
     { "actor": "YS", "line": "Yes, I am.", "expression": "neutral", "side": "right" },
-    { "actor": "Mayoress", "line": "Well, with all that figured out, I think it's time we went and enjoyed the Festi-Ball, don't you think?", "expression": "happy", "side": "right" },
+    { "actor": "Mayoress", "line": "With all that figured out, I think it's time we went and enjoyed the Festi-Ball, don't you think?", "expression": "happy", "side": "right" },
     { "actor": "YS", "line": "Yes. In my future I see... soda. And a corned dog. ", "expression": "neutral", "side": "right" },
     { "actor": "Mayoress", "line": "Oh, do you?", "expression": "happy", "side": "right" },
     { "actor": "YS", "line": "...And a funnel cake?", "expression": "neutral", "side": "right" },
     { "actor": "Mayoress", "line": "You know what, kitten? I think that prophecy might just come true.", "expression": "happy", "side": "right" },
     { "actor": "Mayoress", "line": "Prota, would you like to join us?", "expression": "happy" },
-    { "actor": "Prota", "line": "I'd better head off and see my parents! But I'm sure I'll see you soon! ", "expression": "happy" },
+    { "actor": "Prota", "line": "I'd better head off and see my parents! But I'm sure I'll see you soon! ", "expression": "happy thumbs up" },
     { "actor": "Mayoress", "line": "Oh, you will. Take care, Prota! ", "expression": "happy" },
     { "actor": "YS", "line": "Yes. Be well. ", "expression": "neutral", "side": "right" }
   ]

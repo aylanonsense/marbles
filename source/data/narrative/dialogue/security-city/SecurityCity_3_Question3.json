@@ -10,7 +10,7 @@
       "then": [ 
         { "actor": "Prota", "line": "Not!", "expression": "neutral" },
         { "actor": "Mayoress", "line": "...Not? Not what?", "expression": "confused" },
-        { "actor": "Prota", "line": "Why get your vehicle OUT of a skid! Drifting is the coolest part of driving!", "expression": "happy" },
+        { "actor": "Prota", "line": "Why get your vehicle OUT of a skid! Drifting is the coolest part of driving!", "expression": "happy thumbs up" },
         { "actor": "Mayoress", "line": "...", "expression": "confused" },
         { "actor": "Prota", "line": "Right?", "expression": "happy" },
         { "actor": "Prota", "line": "Right? It's pretty cool!", "expression": "happy" },
@@ -28,12 +28,12 @@
         { "actor": "Prota", "line": "Yeah! Roll out. Shoulder roll, probably.", "expression": "happy" },
         { "actor": "Mayoress", "line": "You realize this is a test about safety, yes?", "expression": "neutral" },
         { "actor": "Mayoress", "line": "And that it's extremely dangerous to exit your vehicle at any time on the road?", "expression": "neutral" },
-        { "actor": "Prota", "line": "But... I have a technicality.", "expression": "happy" },
+        { "actor": "Prota", "line": "But... I have a technicality.", "expression": "neutral pensive" },
         { "actor": "Mayoress", "line": "Go on...", "expression": "neutral" },
         { "actor": "Prota", "line": "You said: \"Road safety is everyone's safety. Everything on the road is a vehicle.\"", "expression": "neutral" },
         { "actor": "Prota", "line": "Which means I'm a vehicle. So when I roll out... the vehicle that is me...is out of the skid.", "expression": "neutral" },
         { "actor": "Mayoress", "line": "...While the...let's say \"container vehicle\" careens into a tree?", "expression": "neutral" },
-        { "actor": "Prota", "line": "Win some, lose some. But I got this vehicle out of the skid!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Win some, lose some. But I got this vehicle out of the skid!", "expression": "neutral thumbs up" },
         { "actor": "Mayoress", "line": "Well... fair enough. I suppose it's time to tally the score.", "expression": "neutral" }
       ]
     },
@@ -44,7 +44,7 @@
         { "actor": "Mayoress", "line": "Choose not to drive?", "expression": "confused" },
         { "actor": "Prota", "line": "Yeah. It's safest not to drive! Don't drive, avoid the problem.", "expression": "happy" },
         { "actor": "Mayoress", "line": "Does that seem like the best course of action to you, Prota?", "expression": "neutral" },
-        { "actor": "Prota", "line": "I mean, if preparedness is the best way not to lose my dog...", "expression": "neutral" },
+        { "actor": "Prota", "line": "I mean, if preparedness is the best way not to lose my dog...", "expression": "annoyed" },
         { "actor": "Mayoress", "line": "...", "expression": "neutral" },
         { "actor": "Mayoress", "line": "...", "expression": "thinking" },
         { "actor": "Mayoress", "line": "Well, Prota, perhaps you really do have a good grasp of road safety.", "expression": "happy" },

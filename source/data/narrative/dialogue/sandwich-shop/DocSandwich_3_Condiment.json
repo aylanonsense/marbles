@@ -9,7 +9,7 @@
       "if": "failExit",
       "then": [ 
         { "actor": "Prota", "line": "Hmmm... ",  "expression": "thinking" },
-        { "actor": "Prota", "line": "Hot wax should seal this sandwich up right!",  "expression": "happy" },
+        { "actor": "Prota", "line": "Hot wax should seal this sandwich up right!",  "expression": "neutral" },
         { "actor": "Doc", "line": "Hot wax, huh? Welll...", "expression": "thinking" },
         { "actor": "Doc", "line": "Submarines do need to be waterproof! Let's do it.", "expression": "happy" },
         { "actor": "Prota", "line": "Yesss! That's everything, right?", "expression": "happy" },
@@ -20,7 +20,7 @@
     {
       "if": "normalExit",
       "then": [ 
-        { "actor": "Prota", "line": "Let's have guava jelly! A taste of the islands for Minty!", "expression": "happy" },
+        { "actor": "Prota", "line": "Let's have guava jelly! A taste of the islands for Minty!", "expression": "happy thumbs up" },
         { "actor": "Doc", "line": "Ha! Jamaican me hungry with your condiment selection!", "expression": "happy" },
         { "actor": "Doc", "line": "You get it? Jamaica's an island. ", "expression": "happy" },
         { "actor": "Doc", "line": "So. Figured that might be a fun joke to make. ", "expression": "neutral" },
@@ -39,7 +39,7 @@
         { "actor": "Doc", "line": "Well, let's see... ", "expression": "thinking" },
         { "actor": "Doc", "line": "You got sandwiches. You can dip fries in it. Goes great on elote!", "expression": "thinking" },
         { "actor": "Doc", "line": "There's deviled eggs. Potato salad. Spread it on the outside of a grilled cheese...", "expression": "thinking" },
-        { "actor": "Prota", "line": "Wow! Those are a lot of uses.", "expression": "confused" },
+        { "actor": "Prota", "line": "Wow! Those are a lot of uses.", "expression": "shocked alt" },
         { "actor": "Doc", "line": "Yeah! There's lots you can do with mayo. It's, uh, not particularly funny, but...", "expression": "neutral" },
         { "actor": "Doc", "line": "Sometimes it's just about conveyin' information, you know?", "expression": "happy" },
         { "actor": "Prota", "line": "I do! Thanks, Doc! ", "expression": "happy" },

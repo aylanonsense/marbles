@@ -1,5 +1,5 @@
 {
-  "location": "VintageViper",
+  "location": "PickleYard",
   "actors": [
     { "actor": "Prota", "expression": "confused", "side": "left" },
     { "actor": "Randi", "expression": "neutral", "side": "right" },
@@ -7,52 +7,35 @@
     { "actor": "Narrator", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "(rummage rummage rummage)", "expression": "confused" },
     { "actor": "Randi", "line": "Prota! What brings you all the way out here to my landfill? Shoppin' for some vintage threads?", "expression": "thinking" },
-    { "actor": "Prota", "line": "Oh, hey Randi! I'm looking for my dog, Minty. I think she came this way.", "expression": "neutral" },
-    {
-      "if": { "method": "finishedStoryline", "arguments": [ "sandwich-shop" ] },
-      "then": [
-        { "actor": "Prota", "line": "You wouldn't happen to have seen a dog carrying a sandwich, would you?", "expression": "neutral" },
-        { "actor": "Randi", "line": "Well, I saw a dog. But what she was carryin'... that weren't no sandwich. That there was a crime against nature.", "expression": "thinking" },
-        { "actor": "Prota", "line": "...Ha ha, yeah. Whoever made it must have been pretty confused!", "expression": "happy" },
-        { "actor": "SpikyJon", "line": "Well, the bad news is, after I saw her, I lost track of her too!", "expression": "neutral" }
-      ]
-    },
-    {
-      "if": { "method": "finishedStoryline", "arguments": [ "daycare" ] },
-      "then": [
-        { "actor": "Prota", "line": "Or at least that's what the riddle said. I think.", "expression": "confused" },
-        { "actor": "Randi", "line": "Well, the riddle weren't wrong! I did see your dog. But she booked it outta here in a hurry! I lost sight of her.", "expression": "thinking" }
-      ]
-    },
-    {
-      "if": { "method": "finishedStoryline", "arguments": [ "skate-park" ] },
-      "then": [
-        { "actor": "Prota", "line": "The teens at the skate park said maybe I should put myself in the trash, so here I am!", "expression": "shocked" },
-        { "actor": "Randi", "line": "Hold on one gosh darn minute, they said that to you?", "expression": "shocked" },
-        { "actor": "Prota", "line": "Yeah, they're pretty helpful once you get to know 'em.", "expression": "happy" },
-        { "actor": "SpikyJon", "line": "Well listen. I got good news and bad news for ya, Prota. Good news, I saw your dog. Bad news, I lost track of the ol' girl.", "expression": "neutral" }
-      ]
-    },
-    { "actor": "Prota", "line": "Oh no. You don't think she's still here, do you? Maybe you could help me look?", "expression": "shocked" },
-    { "actor": "Randi", "line": "I'd be delighted to, Prota! 'Cept I think you're goin' about whole thing all wrong.", "expression": "happy" },
-    { "actor": "Prota", "line": "Really?", "expression": "confused" },
-    { "actor": "Randi", "line": "Yeah! Look at you. You're comin' to the landfill, sniffin' around for a little dog. Like lookin' for a needle in a haystack! That's crazy!", "expression": "happy" },
+    { "actor": "Prota", "line": "Oh, hey Randi! I'm looking for my dog, Minty. She ran away this morning.", "expression": "neutral" },
+    { "actor": "Prota", "line": "I was hoping maybe you'd spotted her?", "expression": "neutral pensive" },
+    { "actor": "Randi", "line": "Hmmm... Nah, I'm afraid I ain't seen hide nor hair o' the ol' girl.", "expression": "thinking" },
+    { "actor": "Prota", "line": "Okay. Well, I guess I'll keep looking then. Thanks anyway.", "expression": "neutral" },
+    { "actor": "Randi", "line": "Now hang on a second there, Prota! Just 'cause I ain't seen your dog, don't mean I can't help!", "expression": "happy" },
+    { "actor": "Randi", "line": "Cause if I'm bein' truthful, I think you're goin' 'bout this dog-findin' thing all wrong!", "expression": "happy" },
+    { "actor": "Prota", "line": "...Really?", "expression": "confused" },
+    { "actor": "Randi", "line": "Yeah! Look at you. You're comin' to the landfill, sniffin' around for a little dog.", "expression": "happy" },
+    { "actor": "Randi", "line": "Like lookin' for a needle in a haystack! That's crazy!", "expression": "happy" },
     { "actor": "Randi", "line": "You can't expect to find Minty if you're just gonna use those fleshy little orbs you call eyes!", "expression": "neutral" },
-    { "actor": "Prota", "line": "Pardon me?", "expression": "confused" },
-    { "actor": "Randi", "line": "I know, I know, Vintage Viper like me s'posed to be old-fashioned, real traditional, and reverent towards our soft mortal bodies.", "expression": "happy" },
-    { "actor": "Randi", "line": "But welcome to the future, Prota! Everything's smart now. And if you want to really look for your dog, you need help.", "expression": "happy" },
+    { "actor": "Prota", "line": "Pardon me?", "expression": "annoyed" },
+    { "actor": "Randi", "line": "I know, I know, Vintage Viper like me s'posed to be old-fashioned, real traditional...", "expression": "happy" },
+    { "actor": "Randi", "line": "...and reverent towards our soft mortal bodies.", "expression": "happy" },
+    { "actor": "Randi", "line": "But welcome to the future, Prota! ", "expression": "happy" },
+    { "actor": "Randi", "line": "Everything's smart now. And if you want to really look for your dog, you need help.", "expression": "happy" },
     { "actor": "Randi", "line": "You need...", "expression": "happy" },
     { "actor": "Randi", "line": "ROBOT EYES.", "expression": "neutral" },
-    { "actor": "Prota", "line": "...", "expression": "neutral" },
+    { "actor": "Prota", "line": "...", "expression": "thinking" },
     { "actor": "Randi", "line": "...", "expression": "neutral" },
     { "actor": "Randi", "line": "I said \"You need ROBOT EYES.\"", "expression": "neutral" },
     { "actor": "Prota", "line": "No, I heard you.", "expression": "neutral" },
-    { "actor": "Randi", "line": "Well fortunately for you, Prota, the landfill's got everything you need to build the coolest, most tricked-out, kickbuttenest robot the world's ever seen.", "expression": "happy" },
-    { "actor": "Randi", "line": "You just need to go out and find a head, a body, and some legs, and I'll help you build the Minty-Finder 3000.", "expression": "happy" },
-    { "actor": "Randi", "line": "With futuristic laser eyes on our side, we'll track that dog down in two shakes of a robot lamb's metal tail.", "expression": "happy" },
-    { "actor": "Prota", "line": "Hmmm. That would be nice. Can't say I've had the best luck with new inventions today, but...", "expression": "thinking" },
-    { "actor": "Prota", "line": "I'll start looking right away! And you know what they say: always dive in head first!", "expression": "happy" }
+    { "actor": "Randi", "line": "Well fortunately for you, Prota, the landfill's got everything you need!", "expression": "happy" },
+    { "actor": "Randi", "line": "Here you can build the coolest, most tricked-out, kickbuttenest robot the world's ever seen.", "expression": "happy" },
+    { "actor": "Randi", "line": "You just need to go out and find a head, a body, and some legs. and I'll help you build the Minty-Finder 3000.", "expression": "happy" },
+    { "actor": "Randi", "line": "And I'll help you build the Minty-Finder 3000.", "expression": "happy" },
+    { "actor": "Randi", "line": "With futuristic laser eyes on our side...", "expression": "neutral" },
+    { "actor": "Randi", "line": "...we'll track that dog down in two shakes of a robot lamb's metal tail.", "expression": "happy" },
+    { "actor": "Prota", "line": "Hmmm. That would be nice. Can't say I've had the best luck with new inventions today, but...", "expression": "thinking alt" },
+    { "actor": "Prota", "line": "I'll start looking right away! You know what they say: always dive in head first!", "expression": "happy" }
   ]
 }

@@ -8,26 +8,26 @@
     { "actor": "Croco", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "Ugh! She got out!", "expression": "neutral" },
+    { "actor": "Prota", "line": "Ugh! She got out!", "expression": "aggravated" },
     { "actor": "Croco", "line": "And she's climbing to the top rope!", "expression": "shocked", "side": "right" },
     { "action": "dismiss-actor", "side": "right"},
-    { "actor": "Prota", "line": "Not on my watch. I've gotta--", "expression": "neutral" },
-    { "action": "change-location", "location": "BlackScreen" },
+    { "actor": "Prota", "line": "Not on my watch. I've gotta--", "expression": "annoyed" },
     { "actor": "Teens", "line": "Hey nerd.", "expression": "neutral", "side": "right" },
-    { "action": "change-location", "location": "FestiBallRing" },
-    { "actor": "Prota", "line": "Teens?!", "expression": "shocked" },
+    { "actor": "Prota", "line": "Teens?!", "expression": "shocked alt" },
     { "actor": "Teens", "line": "Yeah whatever, don't make a big thing out of it.", "expression": "neutral" },
     { "actor": "Teens", "line": "We're here to help you.", "expression": "neutral" },
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "skate-park", "fail" ] },
       "then": [
-        { "actor": "Teens", "line": "After your faceplant at the park, we...kinda felt bad for you. Turns out we're, like, super empathetic.", "expression": "confused" }
+        { "actor": "Teens", "line": "After your faceplant at the park, we...kinda felt bad for you.", "expression": "confused" },
+        { "actor": "Teens", "line": "Turns out we're, like, super empathetic.", "expression": "happy" }
       ]
     },
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "skate-park", "normal" ] },
       "then": [
-        { "actor": "Teens", "line": "First we thought \"Hey we should steal that nerd's great dog\" but turns out we're like... really empathetic. ", "expression": "neutral" }
+        { "actor": "Teens", "line": "First we thought \"Hey we should steal that nerd's great dog\".", "expression": "neutral" },
+        { "actor": "Teens", "line": "But turns out we're like... really empathetic. ", "expression": "happy" }
       ]
     },
     {

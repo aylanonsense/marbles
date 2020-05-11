@@ -15,7 +15,7 @@
     { "actor": "YS", "line": "I will wait.", "expression": "neutral" },
     { "actor": "Dad", "line": "...Go home.", "expression": "neutral", "side": "right" },
     { "actor": "YS", "line": "I will return from whence I came, once the prophecy has been given.", "expression": "neutral", "side": "right" },
-    { "actor": "Prota", "line": "Dad, I really need this prophecy. Yung Sphinx knows where Minty is!", "expression": "neutral" },
+    { "actor": "Prota", "line": "Dad, I really need this prophecy. Yung Sphinx knows where Minty is!", "expression": "shocked alt" },
     { "actor": "Dad", "line": "Fine. ONE prophecy and then you have to go or I'm calling your Mom.", "expression": "neutral", "side": "right" },
     { "actor": "YS", "line": "Do not call the Mother. Lest she confiscate my Book of Riddles.", "expression": "neutral", "side": "right" },
     { "actor": "YS", "line": "I will give you the prophecy.", "expression": "neutral" },
@@ -23,7 +23,7 @@
     { "actor": "YS", "line": { "method": "getFinalDaycareRiddleLine1" }, "expression": "shocked", "side": "right" },
     { "actor": "YS", "line": { "method": "getFinalDaycareRiddleLine2" }, "expression": "shocked" },
     { "actor": "YS", "line": { "method": "getFinalDaycareRiddleLine3" }, "expression": "shocked" },
-    { "actor": "Prota", "line": "Uhh...Okay? What does that mean for where Minty is? I'm--", "expression": "confused" },
+    { "actor": "Prota", "line": "Uhh...Okay? What does that mean for where Minty is? I'm--", "expression": "annoyed" },
     { "actor": "YS", "line": "ASK NO MORE OF ME. I DEPART. FAREWELL PROTA AND PROTA'S PROGENITOR.", "expression": "shocked" },
     { "actor": "YS", "line": "I WILL RETURN.", "expression": "shocked" },
     { "actor": "Dad", "line": "Please don't! ", "expression": "neutral", "side": "right" },
@@ -33,15 +33,15 @@
       "then": [
         { "actor": "Prota", "line": "Huh... What do you think it means?", "expression": "thinking" },
         { "actor": "Dad", "line": "Um...nothing? It's not a real prophecy?", "expression": "confused", "side": "right" },
-        { "actor": "Prota", "line": "Wait, I've got it!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Wait, I've got it!", "expression": "shocked alt" },
         { "actor": "Dad", "line": "Doubtful.", "expression": "neutral" },
         { "actor": "Prota", "line": "No! I do! Think: it's not about what the prophecy says, it's about what the prophecy IS. ", "expression": "neutral" },
         { "actor": "Dad", "line": "Which is..?", "expression": "neutral" },
         { "actor": "Prota", "line": "A prophecy delivered by the riddles of the Sphinx! Where are sphinxes from?", "expression": "shocked" },
         { "actor": "Dad", "line": "I don't think Minty's in Egypt.", "expression": "neutral" },
-        { "actor": "Prota", "line": "No, but sphinxes are from the past. Back in time. Where do you go to travel back in time?", "expression": "thinking" },
+        { "actor": "Prota", "line": "No, but sphinxes are from the past. Back in time. Where do you go to travel back in time?", "expression": "neutral pensive" },
         { "actor": "Dad", "line": "Marbels lab?", "expression": "confused" },
-        { "actor": "Prota", "line": "A museum! And there's only one museum in town! THE BALL MUSEUM!", "expression": "happy" },
+        { "actor": "Prota", "line": "A museum! And there's only one museum in town! THE BALL MUSEUM!", "expression": "happy thumbs up" },
         { "actor": "Dad", "line": "Prota, I'm not sure that logic is sound.", "expression": "neutral" },
         { "actor": "Dad", "line": "But if you're covering the whole town looking for Minty, I guess it can't hurt to check there!", "expression": "neutral" }
       ]
@@ -49,7 +49,7 @@
     {
       "if": "normalResult",
       "then": [
-        { "actor": "Prota", "line": "I think... I think it means I'm gonna find Minty in a place where she finds joy.", "expression": "thinking" },
+        { "actor": "Prota", "line": "I think... I think it means I'm gonna find Minty in a place where she finds joy.", "expression": "thinking alt" },
         { "actor": "Dad", "line": "...You got that from the prophecy?", "expression": "confused", "side": "right" },
         { "actor": "Prota", "line": "Yeah. Yeah I think I did. And I think it means I need to go to the Ball Museum.", "expression": "thinking" },
         { "actor": "Dad", "line": "Really.", "expression": "neutral" },
@@ -61,25 +61,27 @@
     {
       "if": "specialResult",
       "then": [
-        { "actor": "Prota", "line": "I think I get it! The cosmic spheres. The shape of the earth! The eternal perception of a floating eye!", "expression": "shocked" },
-        { "actor": "Prota", "line": "What do they all have in common?", "expression": "neutral" },
+        { "actor": "Prota", "line": "I think I get it! The cosmic spheres. The shape of the earth! The eternal perception of a floating eye!", "expression": "shocked alt" },
+        { "actor": "Prota", "line": "What do they all have in common?", "expression": "thinking alt" },
         { "actor": "Dad", "line": "They're all...weird?", "expression": "neutral", "side": "right" },
         { "actor": "Prota", "line": "They're all balls! Yung Sphinx is trying to tell me Minty's at the Ball Museum!", "expression": "neutral" },
-        { "actor": "Prota", "line": "It makes perfect sense?", "expression": "happy" },
+        { "actor": "Prota", "line": "It makes perfect sense!", "expression": "happy" },
         { "actor": "Dad", "line": "It makes PERFECT sense?", "expression": "thinking" },
         { "actor": "Prota", "line": "It makes perfect sense.", "expression": "neutral" },
         { "actor": "Dad", "line": "Well...okay I guess? Maybe I'm too old for this stuff. ", "expression": "neutral" }
       ]
     },
     { "actor": "Prota", "line": "I'm gonna head to the Ball Museum, Dad. You good watching the kids?", "expression": "neutral" },
-    { "actor": "Dad", "line": "Of course! And I'm sure you'll find Minty soon. She's wily, but you're good at these kinds of things. ", "expression": "happy" },
-    { "actor": "Prota", "line": "Thanks, Dad. I was a little nervous to tell you about it, but... I had to put Minty first.", "expression": "neutral" },
+    { "actor": "Dad", "line": "Of course! And I'm sure you'll find Minty soon. ", "expression": "neutral" },
+    { "actor": "Dad", "line": " She's wily, but you're good at these kinds of things. ", "expression": "happy" },
+    { "actor": "Prota", "line": "Thanks, Dad. I was a little nervous to tell you about it, but... I had to put Minty first.", "expression": "neutral pensive" },
     { "actor": "Dad", "line": "Aw, don't worry, Prota. I know Minty. It's not your fault.", "expression": "happy" },
-    { "actor": "Dad", "line": "And honestly, I'm proud you're working so hard to get her back. This was supposed to be a big day for you.", "expression": "happy" },
-    { "actor": "Prota", "line": "Yeah. Hope it still can be.", "expression": "thinking" },
+    { "actor": "Dad", "line": "And honestly, I'm proud you're working so hard to get her back.", "expression": "happy" },
+    { "actor": "Dad", "line": "This was supposed to be a big day for you.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Yeah. Hope it still can be.", "expression": "thinking alt" },
     { "actor": "Dad", "line": "I'm sure it will. I'll let your Mom know you're looking for Minty. Just in case.", "expression": "happy" },
     { "actor": "Prota", "line": "Okay. I guess I'll see you at the Festi-Ball?", "expression": "neutral" },
     { "actor": "Dad", "line": "Definitely. Love you.", "expression": "happy" },
-    { "actor": "Prota", "line": "Love you too.", "expression": "neutral" }
+    { "actor": "Prota", "line": "Love you too.", "expression": "happy" }
   ]
 }

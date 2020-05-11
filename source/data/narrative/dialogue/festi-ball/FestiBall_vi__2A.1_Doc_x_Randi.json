@@ -10,7 +10,7 @@
     { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "Oh my gosh!", "expression": "confused"},
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt"},
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty!", "expression": "happy" },
@@ -63,7 +63,7 @@
     { "actor": "Doc", "line": "This is great! Randi, you wanna come with me? See your buddy's first night on the job?", "expression": "happy", "side": "right" },
     { "actor": "Randi", "line": "I'd love to!", "expression": "happy", "side": "right" },
     { "actor": "Doc", "line": "How about you Prota?", "expression": "happy", "side": "right" },
-    { "actor": "Prota", "line": "I'll come by the shop sometime! For now, I should get Minty back to my parents.", "expression": "happy" },
+    { "actor": "Prota", "line": "I'll come by the shop sometime! For now, I should get Minty back to my parents.", "expression": "happy thumbs up" },
     { "actor": "Doc", "line": "No problem! Catch you later, kid!", "expression": "happy" },
     { "actor": "Randi", "line": "Happy trails!", "expression": "neutral", "side": "right" }
   ]

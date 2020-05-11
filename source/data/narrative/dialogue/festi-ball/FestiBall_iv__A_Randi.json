@@ -10,13 +10,13 @@
     { "actor": "Minty", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "Okay. Okay, it's fine. I might be alone, but I can do this. I believe in myself.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Okay. Okay, it's fine. I might be alone, but I can do this. I believe in myself.", "expression": "annoyed" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "neutral", "side": "right" },
-    { "actor": "Prota", "line": "I've just gotta--", "expression": "neutral" },
+    { "actor": "Prota", "line": "I've just gotta--", "expression": "confused" },
     { "actor": "Randi", "line": "Well paint me scaly an' call me a lizard! You think you're alone?!", "expression": "happy", "side": "right" },
     { "actor": "Randi", "line": "You ain't never alone in Pomegranate Village! I mean, unless you want to be. Then you can be.", "expression": "happy" },
     { "actor": "Randi", "line": "Pretty much what I'm sayin' is, you ain't alone right now. We're here to help!", "expression": "happy" },
-    { "actor": "Prota", "line": "We?", "expression": "confused" },
+    { "actor": "Prota", "line": "We?", "expression": "shocked alt" },
     { "actor": "Randi", "line": "Yeah, you didn't think I came to this Festi-Ball alone, didja? ", "expression": "happy" },
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },

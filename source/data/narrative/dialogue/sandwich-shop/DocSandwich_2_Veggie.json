@@ -10,7 +10,7 @@
       "then": [ 
         { "actor": "Prota", "line": "Minty likes a challenge. Gimme the cactus.",  "expression": "confused" },
         { "actor": "Doc", "line": "Really? I mean, this cactus is kinda just a plant I got, it's not really meant for sandwiches...", "expression": "confused" },
-        { "actor": "Prota", "line": "No, I think it's what she usually gets.", "expression": "thinking" },
+        { "actor": "Prota", "line": "No, I think it's what she usually gets.", "expression": "neutral" },
         { "actor": "Doc", "line": "I mean, if you say so! Guess it'll help her stay sharp!", "expression": "happy" },
         { "actor": "Prota", "line": "Ha! Definitely! It's a perfectly good thing to put in this sandwich.", "expression": "happy" },
         { "actor": "Doc", "line": "Co-signed!", "expression": "happy" },
@@ -22,7 +22,7 @@
       "then": [ 
         { "actor": "Prota", "line": "One order of cauli-flower to give my border collie power!", "expression": "happy" },
         { "actor": "Doc", "line": "Wait, is Minty a border collie? Maybe I been picturin' the wrong dog...", "expression": "shocked" },
-        { "actor": "Prota", "line": "Oh, uh... no. No, it just-- cauli-flower was the best rhyme.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh, uh... no. No, it just-- cauli-flower was the best rhyme.", "expression": "neutral pensive" },
         { "actor": "Prota", "line": "I like word games a lot! ", "expression": "happy" },
         { "actor": "Doc", "line": "Ha! Me too, Prota. Me too. ", "expression": "happy" },
         { "actor": "Doc", "line": "So I guess all I need now is your choice of condi-minty!", "expression": "neutral" },

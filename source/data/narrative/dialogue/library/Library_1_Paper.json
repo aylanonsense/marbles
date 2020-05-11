@@ -9,15 +9,15 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "library-1-bad" ] },
       "then": [ 
-        { "actor": "Prota", "line": "I found...this.",  "expression": "confused" },
+        { "actor": "Prota", "line": "I found...this.",  "expression": "neutral pensive" },
         { "actor": "Besto", "line": "Whoa. This looks ancient.", "expression": "confused" },
-        { "actor": "Prota", "line": "Yeah, well finding paper would be a lot easier at Paperclips!!", "expression": "neutral" },
-        { "actor": "Prota", "line": "Plus: it's really going to stand out! Ye Olde Minty has gone Ye Olde Missing!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yeah, well maybe we would've had a better selection at Paperclips!", "expression": "annoyed" },
+        { "actor": "Prota", "line": "Plus: it's really going to stand out! Ye Olde Minty has gone Ye Olde Missing!", "expression": "neutral thumbs up" },
         { "actor": "Besto", "line": "Hm. I just hope this stuff holds up in the photocopier!", "expression": "neutral" },
         { "actor": "Besto", "line": "Anyhow, we'll work with what we've got...I guess.", "expression": "neutral" },
         { "actor": "Prota", "line": "Perfect!", "expression": "happy" },
         { "actor": "Besto", "line": "...", "expression": "thinking" },
-        { "actor": "Prota", "line": "What?", "expression": "neutral" },
+        { "actor": "Prota", "line": "What?", "expression": "confused" },
         { "actor": "Besto", "line": "It looks like it's supposed to be read by a town crier. Or like it contains a spell.", "expression": "neutral" },
         { "actor": "Prota", "line": "... Are you gonna be stuck on this?", "expression": "neutral" },
         { "actor": "Besto", "line": "No. No, it's fine. Let's move on to the message. What do you want to write on it?", "expression": "neutral" }
@@ -26,15 +26,15 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "library-1-good" ] },
       "then": [
-        { "actor": "Prota", "line": "Well... I... found this?",  "expression": "neutral" },
+        { "actor": "Prota", "line": "Well... I... found this?",  "expression": "neutral pensive" },
         { "actor": "Besto", "line": "Is that... an old sandwich wrapper? ", "expression": "confused" },
-        { "actor": "Prota", "line": "Yep! From our very own Doc Sandwich! Doc Sandwich: Eat!", "expression": "happy" },
+        { "actor": "Prota", "line": "Yep! From our very own Doc Sandwich! Doc Sandwich: Eat!", "expression": "happy thumbs up" },
         { "actor": "Besto", "line": "I love that slogan.", "expression": "neutral" },
         { "actor": "Besto", "line": "But I'm not sure I love the wrapper. It's...kinda greasy.", "expression": "thinking" },
         { "actor": "Prota", "line": "Hmmm...", "expression": "thinking" },
-        { "actor": "Prota", "line": "Maybe the grease will catch the light? And the spots will really make it stand out!", "expression": "happy" },
+        { "actor": "neutral pensive", "line": "Maybe the grease will catch the light? And the spots will really make it stand out!", "expression": "happy" },
         { "actor": "Besto", "line": "...I don't know...", "expression": "thinking" },
-        { "actor": "Prota", "line": "Well this would have been a lot easier if we just went to Paperclips!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Well this would have been a lot easier if we just went to Paperclips!", "expression": "annoyed" },
         { "actor": "Besto", "line": "Okay, okay. We'll use it. But what do you want to write on it?", "expression": "neutral" }
       ]
     },
@@ -45,8 +45,8 @@
         { "actor": "Besto", "line": "Oh wow... This is really good stuff.", "expression": "shocked" },
         { "actor": "Prota", "line": "Yeah I kinda just want to keep touching it.", "expression": "happy" },
         { "actor": "Besto", "line": "Same. Is this ASMR?", "expression": "thinking" },
-        { "actor": "Prota", "line": "Uh, if you mean \"A Sure-fire Minty Rescuer!\" then yeah, it's definitely ASMR.", "expression": "happy" },
-        { "actor": "Besto", "line": "Hm.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Uh, if you mean \"A Sure-fire Minty Rescuer!\" then yeah, it's definitely ASMR.", "expression": "happy thumbs up" },
+        { "actor": "Besto", "line": "Hm. I didn't NOT mean that.", "expression": "neutral" },
         { "actor": "Besto", "line": "Anyway, I dig it. Great paper to find a great dog.", "expression": "happy" },
         { "actor": "Besto", "line": "But the real question is: what do you want to write on it?", "expression": "happy" }
       ]

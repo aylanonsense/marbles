@@ -11,14 +11,14 @@
       "then": [ 
         { "actor": "Prota", "line": "Okay, Prota, let's see what you brought me!",  "expression": "happy" },
         { "actor": "Randi", "line": "Eeeek! What-- oh. Oh, they're just fish bones. Prota, you did me quite a fright.", "expression": "shocked" },
-        { "actor": "Prota", "line": "Yep! Pretty cool, right?", "expression": "happy" },
+        { "actor": "Prota", "line": "Yep! Pretty cool, right?", "expression": "happy thumbs up" },
         { "actor": "Randi", "line": "It's pretty somethin', I'll tell you that much.", "expression": "neutral" },
         { "actor": "Randi", "line": "Though I suppose usin' this... we might just be makin' ourselves a cyborg!", "expression": "confused" },
-        { "actor": "Prota", "line": "A cyborg?!", "expression": "shocked" },
-        { "actor": "Randi", "line": "Yeah, you know. It's short for \"cybernetic organism\". Pairin' the organic with the robotic. A cyborg!", "expression": "neutral" },
+        { "actor": "Prota", "line": "A cyborg?!", "expression": "shocked alt" },
+        { "actor": "Randi", "line": "Yeah, y'know. It's short for \"cybernetic organism\". Pairin' the organic with the robotic. A cyborg!", "expression": "neutral" },
         { "actor": "Prota", "line": "How are cyborgs at finding lost dogs?", "expression": "confused" },
         { "actor": "Randi", "line": "Well I'm pleased to say they're unrelentingly good. So I think we can move on to the legs now!", "expression": "happy" },
-        { "actor": "Prota", "line": "I'll get it done!", "expression": "neutral" }
+        { "actor": "Prota", "line": "I'll get it done!", "expression": "happy thumbs up" }
       ]
     },
     {
@@ -27,14 +27,15 @@
         { "actor": "Prota", "line": "I think I found just the thing!",  "expression": "happy" },
         { "actor": "Randi", "line": "Well I'll be darned! That's a nice lookin' fridge you found there.", "expression": "happy" },
         { "actor": "Randi", "line": "Smooth, sleek, stainless steel. And probably full of electronics I can repurpose.", "expression": "thinking" },
-        { "actor": "Prota", "line": "So it'll work?", "expression": "happy" },
+        { "actor": "Prota", "line": "So it'll work?", "expression": "neutral pensive" },
         { "actor": "Randi", "line": "Not only will it find your dog, it'll keep your lemonade cool all summer long! Good find, Prota.", "expression": "happy" },
-        { "actor": "Prota", "line": "Thanks, Randi! What's next on the list again?", "expression": "happy" },
+        { "actor": "Prota", "line": "Thanks, Randi! What's next on the list again?", "expression": "neutral" },
         { "actor": "Randi", "line": "Well that would be legs, Prota.", "expression": "happy" },
         { "actor": "Prota", "line": "Oh! Well I mean, we just need to find Minty. We can probably do that without legs, right?", "expression": "neutral" },
         { "actor": "Randi", "line": "Hmmm...", "expression": "thinking" },
-        { "actor": "Randi", "line": "Well, all I know is I don't have legs... and I lost Minty, just the same as you! Probably shouldn't take the risk.", "expression": "neutral" },
-        { "actor": "Randi", "line": "Okay, Randi! I'll see what I can find out there.", "expression": "happy" }
+        { "actor": "Randi", "line": "Well, all I know is I don't have legs... ", "expression": "neutral" },
+        { "actor": "Randi", "line": "And I can't find Minty, just the same as you! Probably shouldn't take the risk.", "expression": "neutral" },
+        { "actor": "Randi", "line": "Okay, Randi! I'll see what I can find out there.", "expression": "happy thumbs up" }
       ]
     },
     {
@@ -43,11 +44,11 @@
         { "actor": "Randi", "line": "What the-- where'd you find that?",  "expression": "shocked" },
         { "actor": "Prota", "line": "Oh, do you like it?", "expression": "happy" },
         { "actor": "Randi", "line": "I mean I sure do, but it's ain't exactly what I was expecting...", "expression": "confused" },
-        { "actor": "Prota", "line": "But it'll still work right? I'm a little worried.", "expression": "neutral" },
+        { "actor": "Prota", "line": "But it'll still work right? I'm a little worried.", "expression": "shocked alt" },
         { "actor": "Randi", "line": "Hey, you came to the Vintage Viper. You know our motto, don't you?", "expression": "happy" },
         { "actor": "Prota", "line": "Yep! \"Don't worry! Everything works!\"", "expression": "happy" },
         { "actor": "Randi", "line": "That's right! Now you get out there and fetch this sleek little body a nice pair of legs, huh?", "expression": "happy" },
-        { "actor": "Prota", "line": "Aye-aye, Cap'n!", "expression": "happy" }
+        { "actor": "Prota", "line": "Aye-aye, Cap'n!", "expression": "happy thumbs up" }
       ]
     }
   ]

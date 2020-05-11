@@ -13,21 +13,28 @@
     {
       "if": "failPlaythrough",
       "then": [
+        { "action": "change-location", "location": "MarbelsLab"},
         { "actor": "Marbels", "line": "Well! What a day! At least that's all behind us now...", "expression": "happy", "side": "right" },
         { "action": "play-cinematic", "cinematic": "MarbelsYarn" },
         { "actor": "Marbels", "line": "We can finally be alone!", "expression": "happy" },
-        { "actor": "Marbels", "line": "But... what's that?", "expression": "shocked" },
+        { "actor": "Marbels", "line": "But... what's that?", "expression": "thinking" },
+        { "action": "change-location", "location": "BlackScreen"},
+        { "actor": "Narrator", "line": "(CRASH!)", "expression": "neutral" },
         { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "left" },
+        { "actor": "Marbels", "line": "!!!", "expression": "shocked" },
+        { "action": "dismiss-actor", "side": "right"},
         { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
-        { "actor": "Narrator", "line": "LOST YOUR MARBLES 2: MINT-O-SHOCK", "expression": "neutral" }
+        { "actor": "Narrator", "line": "LOST YOUR MARBLES 2:", "expression": "neutral" },
+        { "actor": "Narrator", "line": "MINTY'S ISLAND", "expression": "neutral" }
       ]
     },
     {
       "if": "normalPlaythrough",
       "then": [
+        { "action": "change-location", "location": "ProtasHome"},
         { "actor": "Dad", "line": "Morning Prota! I made breakfast!", "expression": "happy", "side": "right" },
         { "actor": "Mom", "line": "And it's your favourite!", "expression": "happy", "side": "right" },
-        { "actor": "Prota", "line": "Ooh! Good morning tacos?", "expression": "happy", "side": "left" },
+        { "actor": "Prota", "line": "Ooh! Good morning tacos?", "expression": "shocked alt", "side": "left" },
         { "actor": "Dad", "line": "Yep! Have a seat.", "expression": "neutral", "side": "right" },
         { "actor": "Prota", "line": "Great! I'll just--hey.", "expression": "happy" },
         { "actor": "Mom", "line": "Hm?", "expression": "neutral", "side": "right" },

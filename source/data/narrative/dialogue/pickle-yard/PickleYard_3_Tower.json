@@ -5,7 +5,7 @@
     { "actor": "SpikyJon", "expression": "neutral", "side": "right" },
     { "actor": "Narrator", "expression": "neutral" }
   ],
-  "objects": [
+    "objects": [
     "TarotDeck",
     "MozzStack",
     "Pamphlet"
@@ -36,9 +36,9 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "pickle-tower-good" ] },
       "then": [
-        { "actor": "Prota", "line": "I think it means you'll spend your days destroying great towers!",  "expression": "shocked" },
+        { "actor": "Prota", "line": "I think it means you'll spend your days destroying great towers!",  "expression": "thinking alt" },
         { "actor": "SpikyJon", "line": "Oh no! That's a terrible future for an architect!", "expression": "shocked" },
-        { "actor": "Prota", "line": "Unless it means you're destroying towers so you can build even better ones!", "expression": "happy" },
+        { "actor": "Prota", "line": "Unless it means you're destroying towers so you can build even better ones!", "expression": "neutral thumbs up" },
         { "actor": "SpikyJon", "line": "Oh. True...", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "UNLESS!", "expression": "shocked" },
         { "actor": "SpikyJon", "line": "What if I'm destroying towers... of mozzarella sticks and marinara?!", "expression": "shocked" },
@@ -52,7 +52,7 @@
     {
       "if": { "method": "lastExitWas", "arguments": [ "pickle-tower-special" ] },
       "then": [ 
-        { "actor": "Prota", "line": "This means you'll spend your days building great towers!",  "expression": "neutral" },
+        { "actor": "Prota", "line": "This means you'll spend your days building great towers!",  "expression": "neutral thumbs up" },
         { "actor": "SpikyJon", "line": "Hm! That definitely sounds like architecture to me...", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "But I suppose we've gotta look at how all the pieces fit together right?", "expression": "neutral" },
         { "actor": "Prota", "line": "Uh...right! Which means...", "expression": "thinking" }

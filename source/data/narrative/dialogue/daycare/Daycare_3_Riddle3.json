@@ -10,10 +10,10 @@
       "if": "failExit",
       "then": [ 
         { "actor": "Prota", "line": "Okay this one I definitely know.",  "expression": "happy" },
-        { "actor": "Prota", "line": "It's butts!",  "expression": "happy" },
+        { "actor": "Prota", "line": "It's my dad's head! My mom says it's smooth as a baby's bottom!",  "expression": "happy thumbs up" },
         { "actor": "YS", "line": "For the third piece of your prophecy, you have chosen to submit...", "expression": "neutral" },
-        { "actor": "YS", "line": "Butts.", "expression": "neutral" },
-        { "actor": "Prota", "line": "Yeah, you finally gave me a riddle I can understand!", "expression": "happy" },
+        { "actor": "YS", "line": "Your father's bare scalp.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I mean it sounds weird when you say it like that, but yes! That's the one!", "expression": "happy" },
         { "actor": "YS", "line": "...Very well. If this is your final answer, the work is done.", "expression": "neutral" },
         { "actor": "YS", "line": "Your prophecy is...", "expression": "neutral" },
         { "actor": "Prota", "line": "Oooh, I can't wait!", "expression": "happy" }
@@ -24,7 +24,7 @@
       "then": [
         { "actor": "Prota", "line": "Okay this one must be...",  "expression": "thinking" },
         { "actor": "Prota", "line": "I know! A newborn baby! Full of warm and potential and chubby little elbows and knees.", "expression": "happy" },
-        { "actor": "Prota", "line": "No edges on a baby!", "expression": "happy" },
+        { "actor": "Prota", "line": "No edges on a baby!", "expression": "happy thumbs up" },
         { "actor": "YS", "line": "Your answer of \"A newborn baby\" has been acknowledged.", "expression": "neutral" },
         { "actor": "YS", "line": "The prophecy is complete. Are you ready to hear it?", "expression": "neutral" },
         { "actor": "Prota", "line": "I've never been more ready! Minty here I come!", "expression": "happy" },
@@ -35,7 +35,7 @@
       "if": "specialExit",
       "then": [
         { "actor": "Prota", "line": "Get ready, pal! I've got this one...on LOCK.",  "expression": "happy" },
-        { "actor": "Prota", "line": "Because the answer is celestial bodies locked in their endless dance! Boom!", "expression": "happy" },
+        { "actor": "Prota", "line": "Because the answer is celestial bodies locked in their endless dance! Boom!", "expression": "happy thumbs up" },
         { "actor": "Prota", "line": "Just call me Queen Riddle!", "expression": "neutral" },
         { "actor": "YS", "line": "I will not call you by this name.", "expression": "neutral" },
         { "actor": "YS", "line": "But I will acknowledge your response. And allow it to complete the prophecy.", "expression": "neutral" },

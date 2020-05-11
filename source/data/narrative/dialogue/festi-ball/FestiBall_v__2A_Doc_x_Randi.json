@@ -13,7 +13,7 @@
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "SUCCCESS. MINTY HAS BEEN CAUGHT.", "expression": "neutral", "side": "right" },
-        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "confused", "side": "right" },
+        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "annoyed", "side": "left" },
         { "actor": "Randi", "line": "Yeah, sorry, amigo, you didn't ace this one. I think you need an update.", "expression": "neutral", "side": "right" },
       { "actor": "Randi", "line": "And now she's escapin!", "expression": "neutral" }
       ]
@@ -28,19 +28,22 @@
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
-        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE. I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE.", "expression": "neutral", "side": "right" },
+        { "actor": "Mintwo", "line": "I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
         { "actor": "Randi", "line": "We don't got an hour, Mintwo! She's escapin'!", "expression": "neutral", "side": "right" }
       ]
     },
     { "actor": "Doc", "line": "Hey, you guys need a little help?", "expression": "neutral", "side": "right" },
-    { "actor": "Prota", "line": "Doc Sandwich! You're back! That was fast!", "expression": "shocked" },
-    { "actor": "Doc", "line": "Yeah, it's just right over there. And uh... I don't wanna get into your business, but it seems like you haven't made a ton of progress.", "expression": "neutral" },
-    { "actor": "Doc", "line": "But you do have this cool robot. So that's nice for ya. Me, I always liked robots. Anyhow, I guess I'll be goin'! ", "expression": "neutral" },
+    { "actor": "Prota", "line": "Doc Sandwich! You're back! That was fast!", "expression": "shocked alt" },
+    { "actor": "Doc", "line": "Yeah, it's just right over there. ", "expression": "neutral" },
+    { "actor": "Doc", "line": "And uh... I don't wanna get into your business, but it seems like you haven't made a ton of progress.", "expression": "neutral" },
+    { "actor": "Doc", "line": "But you do have this cool robot. So that's nice for ya. Me, I always liked robots. ", "expression": "neutral" },
+    { "actor": "Doc", "line": "Anyhow, I guess I'll be goin'! ", "expression": "neutral" },
     { "actor": "Doc", "line": "I got a lot of sandwiches to assemble!", "expression": "neutral" },
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
-        { "actor": "Trashbot", "line": "SANDWICHES? MAKE...SAND...WICHES?", "expression": "neutral", "side": "right" }
+        { "actor": "Trashbot", "line": "SANDWICHES? MAKE...SAND...WITCHES?", "expression": "neutral", "side": "right" }
       ]
     },
     {
@@ -56,7 +59,7 @@
       ]
     },
     { "actor": "Doc", "line": "Yeah, friendly robot! I got a whole stand over there.  Make sandwiches all the time.", "expression": "happy", "side": "right" },
-    { "actor": "Prota", "line": "Guys! Minty's getting away!", "expression": "shocked" },
+    { "actor": "Prota", "line": "Guys! Minty's getting away!", "expression": "aggravated" },
     { "actor": "Doc", "line": "Oh, right! Well lemme just get on toppa that! Robot, you wanna help me out?", "expression": "neutral" },
     { "actor": "Doc", "line": "You catch her, I'll hold onto her with this bread. Make a little Pupwich!", "expression": "neutral" },
     {

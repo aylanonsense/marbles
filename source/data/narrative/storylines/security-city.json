@@ -8,7 +8,7 @@
       "maze": "safetytown-1",
       "exits": [ "safetytown-1-special", "safetytown-1-good", "safetytown-1-bad" ],
       "music": "security-city-maze",
-      "prompt": "Use turn signal how early?"
+      "prompt": "When to use a turn signal?"
     },
     {
       "dialogue": "security-city/SecurityCity_1_Question1",
@@ -28,7 +28,7 @@
       "maze": "safetytown-3",
       "exits": [ "safetytown-3-special", "safetytown-3-good", "safetytown-3-bad" ],
       "music": "security-city-maze",
-      "prompt": "To get vehicle out of skid, you should?"
+      "prompt": "To get out of a skid, you should...?"
     },
     {
       "dialogue": "security-city/SecurityCity_3_Question3",

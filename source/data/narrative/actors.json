@@ -10,18 +10,18 @@
     "facing": "right",
     "expressions": {
       "neutral": { "frame": 1 },
-      "neutral-pensive": { "frame": 2 },
-      "neutral-thumbs-up": { "frame": 3 },
-      "happy-thumbs-up": { "frame": 4 },
-      "happy": { "frame": 5 },
+      "neutral pensive": { "frame": 2 },
+      "neutral thumbs up": { "frame": 3 },
+      "happy thumbs up": { "frame": 4 },
+      "happy ": { "frame": 5 },
       "thinking": { "frame": 6 },
-      "thinking-alt": { "frame": 7 },
+      "thinking alt": { "frame": 7 },
       "confused": { "frame": 8 },
       "shocked": { "frame": 9 },
-      "shocked-alt": { "frame": 10 },
+      "shocked alt": { "frame": 10 },
       "annoyed": { "frame": 11 },
       "aggravated": { "frame": 12 },
-      "neutral-not-talking": { "frame": 13 }
+      "neutral not talking": { "frame": 13 }
     }
   },
   "Besto": {

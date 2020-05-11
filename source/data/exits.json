@@ -218,7 +218,7 @@
     },
     {
       "id": "viper-torso-bad",
-      "label": "Bones",
+      "label": "Fish Bones",
       "score": 1,
       "robotText": "BONES"
     },
@@ -254,7 +254,7 @@
 
     {
       "id": "viper-head-good",
-      "label": "screen",
+      "label": "LCD Screen",
       "score": 3,
       "robotText": "SMART"
     },
@@ -317,19 +317,19 @@
 
     {
       "id": "skatepark-jump-bad",
-      "label": "Face Plant",
+      "label": "Faceplant",
       "score": 1,
       "finalText": "THUMBS DOWN EMOJI"
     },
     {
       "id": "skatepark-jump-good",
-      "label": "Pop Shove-It",
+      "label": "Pop shove-it",
       "score": 3,
       "finalText": "THUMBS UP EMOJI"
     },
     {
       "id": "skatepark-jump-special",
-      "label": "Neckflip",
+      "label": "Neckflip ",
       "score": 5,
       "finalText": "OK HAND EMOJI"
     },
@@ -338,7 +338,7 @@
 
     {
       "id": "library-1-bad",
-      "label": "Ancient Scroll",
+      "label": "Parchment",
       "score": 1,
       "posterText": "OLD-TIMEY"
     },
@@ -365,13 +365,13 @@
     },
     {
       "id": "library-2-good",
-      "label": "Is this you?",
+      "label": "Is This You?",
       "score": 3,
       "posterText": "FOCUSED"
     },
     {
       "id": "library-2-special",
-      "label": "Have you seen this dog!",
+      "label": "Have You Seen This Dog!",
       "score": 5,
       "posterText": "LOUD"
     },
@@ -386,7 +386,7 @@
     },
     {
       "id": "library-3-good",
-      "label": "Zoomed-in",
+      "label": "Zoomed In",
       "score": 3,
       "posterText": "SOME DOG'S EYES"
     },
@@ -401,7 +401,7 @@
 
     {
       "id": "daycare-1-bad",
-      "label": "Old String Cheese",
+      "label": "String Cheese",
       "score": 1,
       "finalText": "A FEAST"
     },
@@ -443,9 +443,9 @@
 
     {
       "id": "daycare-3-bad",
-      "label": "Butts",
+      "label": "Dad's Head",
       "score": 1,
-      "finalText": "BUTTS"
+      "finalText": "DAD'S HEAD"
     },
     {
       "id": "daycare-3-good",
@@ -485,7 +485,7 @@
 
     {
       "id": "safetytown-2-bad",
-      "label": "A Hydroplane",
+      "label": "Hydroplane",
       "score": 1,
       "finalText": "DANGER"
     },
@@ -590,19 +590,19 @@
 
     {
         "id": "lab-1-bad",
-        "label": "The Festi-Ball!",
+        "label": "Festi-Ball",
         "finalText": "",
         "score": 1
     },
     {
         "id": "lab-1-good",
-        "label": "The Festi-Ball!",
+        "label": "Festi-Ball",
         "finalText": "",
         "score": 3
     },
     {
         "id": "lab-1-special",
-        "label": "The Festi-Ball!",
+        "label": "Festi-Ball",
         "finalText": "",
         "score": 5
     },
@@ -653,13 +653,13 @@
 
     {
       "id": "sandwichshop-condiments-bad",
-      "label": "Hot wax",
+      "label": "Hot Wax",
       "finalText": "CANDLE-STYLE",
       "score": 1
     },
     {
       "id": "sandwichshop-condiments-good",
-      "label": "Guava jelly",
+      "label": "Guava Jelly",
       "finalText": "ON ISLAND TIME",
       "score": 3
     },
@@ -726,12 +726,12 @@
     },
     {
       "id": "festiball-3-good",
-      "label": "Catch Minty!!!!",
+      "label": "Catch! Minty!",
       "score": 3
     },
     {
       "id": "festiball-4-good",
-      "label": "CATCH! MINTY!!!!",
+      "label": "CATCH!!! MINTY!!!",
       "score": 3
     }
   ]

@@ -14,8 +14,9 @@
         { "actor": "Randi", "line": "Uh.... this is a tin can.", "expression": "confused" },
         { "actor": "Prota", "line": "That's right! A tin CAN be a robot's head, if you use it right! ...Right?", "expression": "happy" },
         { "actor": "Randi", "line": "You know what, Prota, I like your ingenuity. Reminds me of a young me.", "expression": "happy" },
-        { "actor": "Randi", "line": "I'll see what magic I can work with this. In the mean time, you should get back out there and see what you can find for the torso.", "expression": "neutral" },
-        { "actor": "Prota", "line": "I'm on it, Randi!", "expression": "neutral" }
+        { "actor": "Randi", "line": "I'll see what magic I can work with this.", "expression": "neutral" },
+        { "actor": "Randi", "line": "In the mean time, you should get back out there and see what you can find for the torso.", "expression": "neutral" },
+        { "actor": "Prota", "line": "I'm on it, Randi!", "expression": "neutral thumbs up" }
       ]
     },
     {
@@ -30,7 +31,7 @@
         { "actor": "Prota", "line": "Perfect! Wow, thanks Randi. I never would have thought to do this.", "expression": "happy" },
         { "actor": "Randi", "line": "No problem, Prota. It's part of being in a community. We help each other out.", "expression": "happy" },
         { "actor": "Randi", "line": "Now, you should head back out there and see if we can't find this thing a body!", "expression": "neutral" },
-        { "actor": "Prota", "line": "I'm on it!", "expression": "happy" }
+        { "actor": "Prota", "line": "I'm on it!", "expression": "happy thumbs up" }
       ]
     },
     {
@@ -43,7 +44,7 @@
         { "actor": "Prota", "line": "Familiar? What do you mean?", "expression": "confused" },
         { "actor": "Randi", "line": "Oh, it's probably nothin'! Let's keep on building this thing, shall we?", "expression": "happy" },
         { "actor": "Randi", "line": "What you need next is a torso for this thing! Make it a good one!", "expression": "happy" },
-        { "actor": "Prota", "line": "I'm on it!", "expression": "happy" }
+        { "actor": "Prota", "line": "I'm on it!", "expression": "happy thumbs up" }
       ]
     }
   ]

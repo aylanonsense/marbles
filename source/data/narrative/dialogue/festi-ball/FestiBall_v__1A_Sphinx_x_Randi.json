@@ -14,7 +14,7 @@
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [
         { "actor": "Trashbot", "line": "SUCCCESS. MINTY HAS BEEN CAUGHT.", "expression": "neutral", "side": "right" },
-        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "confused", "side": "right" },
+        { "actor": "Prota", "line": "What? No she hasn't.", "expression": "annoyed", "side": "left" },
         { "actor": "Randi", "line": "Yeah, sorry, amigo, you didn't ace this one. I think you need an update.", "expression": "neutral", "side": "right" },
         { "actor": "Randi", "line": "And now she's escapin!", "expression": "neutral" }
       ]
@@ -29,12 +29,13 @@
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "special" ] },
       "then": [
-        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE. I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
+        { "actor": "Mintwo", "line": "FASCINATING. THE FLESH MINTY IS IMPRESSIVE.", "expression": "neutral", "side": "right" },
+        { "actor": "Mintwo", "line": "I WILL EVOLVE MY TACTICS ACCORDINGLY AND RE-ENGAGE IN ONE HOUR.", "expression": "neutral", "side": "right" },
         { "actor": "Randi", "line": "We don't got an hour, Mintwo! She's escapin'!", "expression": "neutral", "side": "right" }
       ]
     },
     { "actor": "YS", "line": "THERE IS NO ESCAPE FROM FATE.", "expression": "shocked", "side": "right" },
-    { "actor": "Prota", "line": "Yung Sphinx! You're back!", "expression": "shocked" },
+    { "actor": "Prota", "line": "Yung Sphinx! You're back!", "expression": "shocked alt" },
     { "actor": "YS", "line": "I am back. No updates will be necessary. ROBOT! Join with me. ", "expression": "neutral" },
     { "actor": "YS", "line": "Together, we possess the powers of the technological and the cosmic.  ", "expression": "neutral" },
     {
@@ -57,8 +58,8 @@
     },
     { "actor": "YS", "line": "Minty will submit to our tag team finisher....", "expression": "neutral", "side": "right" },
     { "actor": "YS", "line": "FUTURE SHOCK!", "expression": "shocked" },
-    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked" },
-    { "actor": "YS", "line": "Minty's canine intellect will be no match for the combination of cerebral challenge and cosmic riddling!", "expression": "shocked" },
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt" },
+    { "actor": "YS", "line": "Minty's intellect will be no match for the combination of cerebral challenge and cosmic riddling!", "expression": "shocked" },
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "vintage-viper", "fail" ] },
       "then": [

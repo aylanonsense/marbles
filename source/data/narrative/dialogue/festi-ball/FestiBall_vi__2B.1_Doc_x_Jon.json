@@ -7,7 +7,7 @@
     { "actor": "Doc", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked", "side": "right" },
+    { "actor": "Prota", "line": "Oh my gosh!", "expression": "shocked alt", "side": "left" },
     { "action": "play-cinematic", "cinematic": "CatchMinty" },
     { "actor": "Minty", "line": "Bark bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "It worked! Aw Minty! You're back!", "expression": "happy" },
@@ -22,7 +22,7 @@
     { "actor": "SpikyJon", "line": "Maybe I do! But... I don't suppose you'd be willing to... coach me? You're pretty good at it.", "expression": "happy", "side": "right" },
     { "actor": "Doc", "line": "Me? A coach?", "expression": "neutral", "side": "right" },
     { "actor": "Doc", "line": "I don't know if I'd be any good...", "expression": "neutral" },
-    { "actor": "Prota", "line": "I think you'd be great, Doc! You coached me through making that sandwich!", "expression": "happy" },
+    { "actor": "Prota", "line": "I think you'd be great, Doc! You coached me through making that sandwich!", "expression": "happy thumbs up" },
     { "actor": "Doc", "line": "Hm. Guess I did. Yeah, you know what? I'd love a little side gig. And wrestling's pretty fun, too!", "expression": "neutral" },
     { "actor": "Doc", "line": "Sure, I'll be your coach!", "expression": "happy" },
     { "actor": "Minty", "line": "Bark!", "expression": "happy", "side": "right" },

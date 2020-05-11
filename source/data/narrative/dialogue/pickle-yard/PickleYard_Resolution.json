@@ -11,11 +11,11 @@
     "Pamphlet"
   ],
   "script": [
-    { "actor": "Prota", "line": "If we put the STAR, DEATH and TOWER cards together... you're a...", "expression": "happy" },
+    { "actor": "Prota", "line": "If we put the STAR, DEATH and TOWER cards together... you're a...", "expression": "neutral" },
     { "actor": "Prota", "line": { "method": "getFinalTarotLine" }, "expression": "happy" },
     { "actor": "SpikyJon", "line": "Wow...that's...not how I thought tarot cards worked.", "expression": "confused" },
     { "actor": "Prota", "line": "...", "expression": "neutral" },
-    { "actor": "SpikyJon", "line": "AND I LOVE IT!", "expression": "happy" },
+    { "actor": "Prota", "line": "AND I LOVE IT!", "expression": "happy" },
     {
       "if": "failResult",
       "then": [
@@ -25,7 +25,7 @@
         { "actor": "SpikyJon", "line": "But there's something else... a calling I've always felt, since I was nothing more than a sprout...", "expression": "shocked" },
         { "actor": "Prota", "line": "What is it?", "expression": "confused" },
         { "actor": "SpikyJon", "line": "I... can't say. It's a secret. But you'll see, Prota...", "expression": "neutral" },
-        { "actor": "Doc", "line": "Or, if all goes to plan, you won't see. Hahaha! (wink)", "expression": "neutral" },
+        { "actor": "SpikyJon", "line": "Or, if all goes to plan, you won't see. Hahaha! (wink)", "expression": "neutral" },
         { "actor": "Prota", "line": "...", "expression": "confused" }
       ]
     },
@@ -43,22 +43,23 @@
         { "actor": "SpikyJon", "line": "It's also about dipping everything in water so it slides down your throat easier!", "expression": "happy" },
         { "actor": "Prota", "line": "Hmm. Sounds... mushy?", "expression": "neutral" },
         { "actor": "Prota", "line": "It is the life we choose when we take our vows. And I'm ready.", "expression": "neutral" },
-        { "actor": "Prota", "line": "Okay...", "expression": "neutral" }
+        { "actor": "Prota", "line": "Okay...", "expression": "neutral thumbs up" }
       ]
     },
     {
       "if": "specialResult",
       "then": [
-        { "actor": "SpikyJon", "line": "I've been feeling like my degree didn't mean anything. Who needs another architect, you know? People ask.", "expression": "neutral" },
+        { "actor": "SpikyJon", "line": "I've been feeling like my degree didn't mean anything.", "expression": "neutral" },
+        { "actor": "SpikyJon", "line": "Who needs another architect, you know? People ask.", "expression": "neutral" },
         { "actor": "Prota", "line": "People ask that?", "expression": "confused" },
         { "actor": "SpikyJon", "line": "But it's always been my passion. No matter how silly a degree it is, it's what I love.", "expression": "happy" },
         { "actor": "SpikyJon", "line": "And today, you've helped me turn my guilty pleasure... into a destiny I can't wait to fulfill.", "expression": "happy" },
         { "actor": "Prota", "line": "Do people not like architects?", "expression": "confused" },
         { "actor": "SpikyJon", "line": "Ha! You've got a lot to learn about the world, Prota.", "expression": "happy" },
-        { "actor": "Prota", "line": "...Okay.", "expression": "confused" }
+        { "actor": "Prota", "line": "...Okay.", "expression": "annoyed" }
       ]
     },
-    { "actor": "Prota", "line": "Well, I'd better go find Minty. Although I'm not sure where to go. Kind of at a dead end here.", "expression": "neutral" },
+    { "actor": "Prota", "line": "Well, I'd better go find Minty. Although I'm not sure where to go. Kind of at a dead end here.", "expression": "thinking alt" },
     { "actor": "SpikyJon", "line": "Why don't we ask the cards?", "expression": "happy" },
     { "action": "show-object", "object": "TarotDeck" },
     { "actor": "Prota", "line": "Good idea!", "expression": "happy" },
@@ -67,12 +68,13 @@
     { "action": "hide-object" },
     { "actor": "Prota", "line": "...!", "expression": "shocked" },
     { "action": "show-object", "object": "Pamphlet" },
-    { "actor": "Prota", "line": "Wait-- How'd this get into the deck? It's just a pamphlet for The Ball Museum.", "expression": "confused" },
+    { "actor": "Prota", "line": "Wait-- How'd this get into the deck? It's just a pamphlet for the Festi-Ball.", "expression": "confused" },
     { "actor": "SpikyJon", "line": "Hmm, I don't...Oh wow, you don't think... It's telling you where to go!", "expression": "confused" },
     { "action": "hide-object" },
-    { "actor": "Prota", "line": "You're right! The Ball Museum! Minty's a dog!", "expression": "shocked" },
-    { "actor": "Prota", "line": "She LOVES museums!", "expression": "happy" },
-    { "actor": "Prota", "line": "Thanks, Spiky Jon! This has been really fun! Enjoy the rest of your mozzarella sticks!", "expression": "happy" },
+    { "actor": "Prota", "line": "Interesting...I mean, it IS almost time to get ready and head over...", "expression": "thinking" },
+    { "actor": "Prota", "line": "Maybe it's telling me to stay the course and I'll find Minty at the Festi-Ball?", "expression": "happy" },
+    { "actor": "SpikyJon", "line": "I'd buy that! Fate works in mysterious ways.", "expression": "happy" },
+    { "actor": "Prota", "line": "In that case, maybe I'll start making my way over. Enjoy the rest of your mozzarella sticks!", "expression": "happy" },
     {
       "if": "failResult",
       "then": [
@@ -91,7 +93,7 @@
         { "actor": "SpikyJon", "line": "Thanks! Maybe I'll try to build something with 'em.", "expression": "happy" }
       ]
     },
-    { "actor": "Prota", "line": "Follow your destiny!", "expression": "happy" }
+    { "actor": "Prota", "line": "Follow your destiny!", "expression": "happy thumbs up" }
   ]
 }
 
