@@ -186,7 +186,9 @@ function MazeScene:update()
 end
 
 function MazeScene:draw()
-  playdate.graphics.setDrawOffset(0, 20)
+  if not config.BACKWARDS_COMPATIBILITY_MODE then
+    playdate.graphics.setDrawOffset(0, 20)
+  end
   camera.x += effects.screenShakeX
   camera.y += effects.screenShakeY
   camera:recalculatePerspective()
@@ -215,7 +217,9 @@ function MazeScene:draw()
   if playdate.isCrankDocked() and self.hideCrankIndicatorFrames <= 0 and not self.finalExitData then
     playdate.ui.crankIndicator:update()
   end
-  playdate.graphics.setDrawOffset(0, 0)
+  if not config.BACKWARDS_COMPATIBILITY_MODE then
+    playdate.graphics.setDrawOffset(0, 0)
+  end
   if self.prompt then
     playdate.graphics.setColor(playdate.graphics.kColorWhite)
     playdate.graphics.fillRect(0, 0, 400, self.promptHeight + 7)
