@@ -32,7 +32,7 @@
         { "actor": "Besto", "line": "I love that slogan.", "expression": "neutral" },
         { "actor": "Besto", "line": "But I'm not sure I love the wrapper. It's...kinda greasy.", "expression": "thinking" },
         { "actor": "Prota", "line": "Hmmm...", "expression": "thinking" },
-        { "actor": "neutral pensive", "line": "Maybe the grease will catch the light? And the spots will really make it stand out!", "expression": "happy" },
+        { "actor": "Prota", "line": "Maybe the grease will catch the light? And the spots will really make it stand out!", "expression": "neutral pensive" },
         { "actor": "Besto", "line": "...I don't know...", "expression": "thinking" },
         { "actor": "Prota", "line": "Well this would have been a lot easier if we just went to Paperclips!", "expression": "annoyed" },
         { "actor": "Besto", "line": "Okay, okay. We'll use it. But what do you want to write on it?", "expression": "neutral" }
