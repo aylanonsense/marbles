@@ -10,6 +10,7 @@ class("TitleScreenScene").extends(Scene)
 function TitleScreenScene:init(canContinue)
   TitleScreenScene.super.init(self)
   self.backgroundImage = imageCache.loadImage("images/title/title-bg.png")
+  self.sweetBabyLogoImage = imageCache.loadImage("images/sweet-baby-logo.png")
   self.selectionBackgroundImage = imageCache.loadImage("images/title/selection-bg.png")
   self.selectionBackgroundImageWidth, self.selectionBackgroundImageHeight = self.selectionBackgroundImage:getSize()
   self.warningImage = imageCache.loadImage("images/title/warning.png")
@@ -31,11 +32,18 @@ function TitleScreenScene:init(canContinue)
   self.canContinue = canContinue
   self.hasChosenOption = false
   self.isDisplayingWarning = false
-  self.framesUntilActive = config.SKIP_SCENE_TRANSITIONS and 0 or 50
-  sceneTransition:transitionIn()
+  self.logoFrames = (config.SKIP_LOGO and 1 or 110)
+  self.framesUntilActive = self.logoFrames + (config.SKIP_SCENE_TRANSITIONS and 0 or 50)
+  sceneTransition:hold()
 end
 
 function TitleScreenScene:update()
+  if self.logoFrames > 0 then
+    self.logoFrames -= 1
+    if self.logoFrames <= 0 then
+      sceneTransition:transitionIn()
+    end
+  end
   self.framesUntilActive = math.max(0, self.framesUntilActive - 1)
   self.cursorBlinkFrames = (self.cursorBlinkFrames + 1) % (self.hasChosenOption and 6 or 48)
   sceneTransition:update()
@@ -60,6 +68,9 @@ function TitleScreenScene:draw()
     self.warningImage:draw(200 - self.warningImageWidth / 2, 120 - self.warningImageHeight / 2)
   end
   sceneTransition:draw()
+  if 15 < self.logoFrames and self.logoFrames < 95 then
+    self.sweetBabyLogoImage:draw(30, 65)
+  end
 end
 
 function TitleScreenScene:upButtonDown()
