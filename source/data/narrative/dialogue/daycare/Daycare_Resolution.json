@@ -28,6 +28,7 @@
     { "actor": "YS", "line": "I WILL RETURN.", "expression": "shocked" },
     { "actor": "Dad", "line": "Please don't! ", "expression": "neutral", "side": "right" },
     { "actor": "YS", "line": "FAREWELL!", "expression": "neutral", "side": "right" },
+    { "action": "dismiss-actor", "side": "right"},
     {
       "if": "failResult",
       "then": [

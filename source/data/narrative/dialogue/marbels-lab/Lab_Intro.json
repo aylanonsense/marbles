@@ -66,7 +66,8 @@
     { "actor": "Prota", "line": "I...uh...I actually can't imagine that.", "expression": "confused" },
     { "actor": "Marbels", "line": "Well, you needn't! Because the MARBELIZER IS HERE!", "expression": "happy" },
     { "actor": "Marbels", "line": "Come! Come. Let me show you how it works.", "expression": "happy" },
-    { "actor": "Marbels", "line": "Here. Simply affix this sticker to your left temple... And stand within range. You should feel a slight buzzing.", "expression": "neutral" },
+    { "actor": "Marbels", "line": "Here. Simply affix this sticker to your left temple... And stand within range.", "expression": "neutral" },
+    { "actor": "Marbels", "line": "You should feel a slight buzzing.", "expression": "neutral" },
     { "actor": "Prota", "line": "I...I do!", "expression": "shocked" },
     { "actor": "Marbels", "line": "Brilliant. Now. Let's try it out, shall we? Let's start with a very simple question.", "expression": "happy" },
     { "actor": "Marbels", "line": "Prota, tell me. Which event is happening tonight?", "expression": "neutral" }

@@ -106,7 +106,6 @@
         { "actor": "Prota", "line": "But--", "expression": "annoyed" },
         { "actor": "Mayoress", "line": "Prota, I just watched you jay walk. You didn't even look at the light!", "expression": "neutral" },
         { "actor": "Prota", "line": "What? Oh no, I didn't even notice!", "expression": "neutral" },
-        { "actor": "Mayoress", "line": "Here I am just coming for a mayoral visit to the World's Most Colourful Ball of Yarn and Ball Museum...", "expression": "neutral" },
         { "actor": "Mayoress", "line": "Here I am on a mayoral visit to the World's Most Colourful Ball of Yarn and Ball Museum...", "expression": "neutral" },
         { "actor": "Mayoress", "line": "Checking in on my constituents on the day of the Festi-Ball...", "expression": "neutral" },
         { "actor": "Mayoress", "line": "And all I find is sweet young Prota, ball-ing out of control and breaking the law!", "expression": "neutral" },

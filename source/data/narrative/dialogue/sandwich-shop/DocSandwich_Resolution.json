@@ -32,7 +32,7 @@
     { "actor": "Prota", "line": "Nope. This one's all Minty. I guess I'll just take it and--", "expression": "neutral" },
     { "actor": "Doc", "line": "Prota! Look over there! The door!", "expression": "shocked" },
     { "actor": "Prota", "line": "What's--! Minty?! Minty, it's you!", "expression": "shocked alt" },
-    { "actor": "Minty", "line": "Woof!", "expression": "happy", "side": "right" },
+    { "actor": "Minty", "line": "Bark!", "expression": "happy", "side": "right" },
     { "actor": "Prota", "line": "Minty, I'm so glad to see you! Come here, girl! I've got a sandwich for--", "expression": "happy" },
     { "actor": "Minty", "line": "(MUNCH)", "expression": "happy" },
     { "action": "hide-object" },

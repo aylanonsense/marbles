@@ -70,7 +70,7 @@
         { "actor": "SpikyJon", "line": "Now come on! This next one is the biggie: my future. What card do I get?", "expression": "Happy" },
         { "action": "hide-object" },
         { "actor": "Prota", "line": "You get... THE TOWER!", "expression": "happy" },
-        { "actor": "Prota", "line": "The TOWER? Tell me more, my tarot-reading friend.", "expression": "confused" }
+        { "actor": "SpikyJon", "line": "The TOWER? Tell me more, my tarot-reading friend.", "expression": "confused" }
       ]
     }
   ]

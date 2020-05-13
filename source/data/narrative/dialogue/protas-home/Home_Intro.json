@@ -13,7 +13,7 @@
     { "actor": "Narrator", "line": "...instituted by the town's famed BALL MUSEUM.", "expression": "neutral" },
     { "actor": "Narrator", "line": "Under the watchful eye of Pomegranate's Mayoress, the people come together for a night of...", "expression": "neutral" },
     { "actor": "Narrator", "line": "Fun! Sandwiches! Pro wrestling! Robots! Skating! Karaoke! And much, much more!", "expression": "neutral" },
-    { "actor": "Narrator", "line": "Every year, citizens spend the days before the Fest-Ball getting ready for the big event. ", "expression": "neutral" },
+    { "actor": "Narrator", "line": "Every year, citizens spend the days before the Festi-Ball getting ready for the big event. ", "expression": "neutral" },
     { "actor": "Narrator", "line": "And now we join one such citizen, Prota, who's got big plans for tonight!", "expression": "neutral" },
     { "action": "change-location", "location": "ProtasHome" },
     { "actor": "Prota", "line": "Mom! Mom?", "expression": "annoyed", "side": "left" },

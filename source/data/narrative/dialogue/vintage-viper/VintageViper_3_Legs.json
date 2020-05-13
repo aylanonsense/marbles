@@ -45,9 +45,8 @@
         { "actor": "Randi", "line": "I mean...", "expression": "thinking" },
         { "actor": "Randi", "line": "Oh, it's fine! Let's just get this thing made.", "expression": "happy" },
         { "actor": "Randi", "line": "I'll need a couple minutes to get 'er goin, but just hang tight.", "expression": "happy" },
-        { "action": "change-location", "location": "BlackScreen" },
+        { "action": "dismiss-actor", "side": "right" },
         { "actor": "Narrator", "line": "Several minutes later...", "expression": "neutral" },
-        { "action": "change-location", "location": "VintageViper" },
         { "actor": "Randi", "line": "All right! Pleased to announce she's ready for action! I give you...", "expression": "happy" }
       ]
     },

@@ -31,7 +31,7 @@
     { "actor": "Prota", "line": "No, I heard you.", "expression": "neutral" },
     { "actor": "Randi", "line": "Well fortunately for you, Prota, the landfill's got everything you need!", "expression": "happy" },
     { "actor": "Randi", "line": "Here you can build the coolest, most tricked-out, kickbuttenest robot the world's ever seen.", "expression": "happy" },
-    { "actor": "Randi", "line": "You just need to go out and find a head, a body, and some legs. and I'll help you build the Minty-Finder 3000.", "expression": "happy" },
+    { "actor": "Randi", "line": "You just need to go out and find a head, a body, and some legs...", "expression": "happy" },
     { "actor": "Randi", "line": "And I'll help you build the Minty-Finder 3000.", "expression": "happy" },
     { "actor": "Randi", "line": "With futuristic laser eyes on our side...", "expression": "neutral" },
     { "actor": "Randi", "line": "...we'll track that dog down in two shakes of a robot lamb's metal tail.", "expression": "happy" },

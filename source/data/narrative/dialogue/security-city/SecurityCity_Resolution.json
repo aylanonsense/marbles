@@ -27,11 +27,7 @@
         { "actor": "Mayoress", "line": "Yes, and a warning sign! You did very badly, Prota.", "expression": "neutral" },
         { "actor": "Mayoress", "line": "Very very badly.", "expression": "neutral" },
         { "actor": "Mayoress", "line": "But! You'll still be able to enjoy the Festi-Ball! And that's pretty good, right?!", "expression": "happy" },
-        { "actor": "Prota", "line": "I'll take it. Thanks, Mayoress!", "expression": "neutral thumbs up" },
-        { "actor": "Mayoress", "line": "Safety and Security are my twin passions!", "expression": "happy" },
-        { "actor": "Mayoress", "line": "But I'm just happy to serve the people. And you're part of that.", "expression": "thinking" },
-        { "actor": "Prota", "line": "Thanks. I guess I'll see you at the Festi-Ball?", "expression": "neutral" },
-        { "actor": "Mayoress", "line": "That you will! Enjoy, Prota! And good luck!", "expression": "happy" }
+        { "actor": "Prota", "line": "I'll take it. Thanks, Mayoress!", "expression": "neutral thumbs up" }
       ]
     },
     {
@@ -50,11 +46,7 @@
         { "actor": "Prota", "line": "Hm. But can I leave and go look for Minty now?", "expression": "neutral pensive" },
         { "actor": "Mayoress", "line": "You can do anything you want! You're only on probation.", "expression": "happy" },
         { "actor": "Mayoress", "line": "Just be sure not to break the law again, would you?", "expression": "neutral" },
-        { "actor": "Prota", "line": "I promise. Thanks for cutting me some slack, Mayoress.", "expression": "neutral" },
-        { "actor": "Mayoress", "line": "Safety and Security are my twin passions!", "expression": "happy" },
-        { "actor": "Mayoress", "line": "But I'm just happy to serve the people. And you're part of that.", "expression": "thinking" },
-        { "actor": "Prota", "line": "Thanks. I guess I'll see you at the Festi-Ball?", "expression": "neutral" },
-        { "actor": "Mayoress", "line": "That you will! Enjoy, Prota! And good luck!", "expression": "happy" }
+        { "actor": "Prota", "line": "I promise. Thanks for cutting me some slack, Mayoress.", "expression": "neutral" }
       ]
     },
      {
@@ -79,12 +71,27 @@
         { "actor": "Mayoress", "line": "You gave me a lot to consider today, Prota. And for that I'm grateful.", "expression": "happy" },
         { "actor": "Prota", "line": "Yay! And I guess I'm free to go find Minty then, right?", "expression": "happy" },
         { "actor": "Mayoress", "line": "You are indeed!", "expression": "happy" },
-        { "actor": "Prota", "line": "Thanks, Mayoress! You're pretty great!", "expression": "happy" },
+        { "actor": "Prota", "line": "Thanks, Mayoress! You're pretty great!", "expression": "happy" }
+      ]
+    },
         { "actor": "Mayoress", "line": "Safety and Security are my twin passions!", "expression": "happy" },
         { "actor": "Mayoress", "line": "But I'm just happy to serve the people. And you're part of that.", "expression": "thinking" },
-        { "actor": "Prota", "line": "Thanks. I guess I'll see you at the Festi-Ball?", "expression": "neutral" },
-        { "actor": "Mayoress", "line": "That you will! Enjoy, Prota! And good luck!", "expression": "neutral thumbs up" }
-      ]
-    }
+        { "actor": "Prota", "line": "Thanks.", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "...", "expression": "happy" },
+        { "actor": "Prota", "line": "...", "expression": "neutral" },
+        { "actor": "Mayoress", "line": "I've noticed you aren't leaving. ", "expression": "neutral" },
+        { "actor": "Prota", "line": "Well, I'm kind of... not sure where to go next. To find Minty, I mean.", "expression": "neutral pensive" },
+        { "actor": "Prota", "line": "She's probably not still outside the Ball Museum...", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Is Minty...fond of museums?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Croco and I managed to lure her with some cool balls...", "expression": "neutral pensive" },
+        { "actor": "Mayoress", "line": "I see. Well, perhaps if she enjoys \"cool balls\", she may enjoy other ball-themed events?", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Perhaps you'll find her cavorting at the Festi-Ball?", "expression": "happy" },
+        { "actor": "Prota", "line": "Oh, never! Minty's housebroken.", "expression": "shocked" },
+        { "actor": "Mayoress", "line": "...", "expression": "thinking" },
+        { "actor": "Prota", "line": "But you're right! I'll head over there right away!", "expression": "thinking" },
+        { "actor": "Mayoress", "line": "Well, don't--", "expression": "neutral" },
+        { "actor": "Prota", "line": "Don't worry, Mayoress! I'll be sure to cross at the light this time!", "expression": "happy" },
+        { "actor": "Mayoress", "line": "I know, but--!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Bye!!", "expression": "happy" }
   ]
 }

@@ -19,7 +19,7 @@
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "sandwich-shop", "fail" ] },
       "then": [
         { "actor": "Doc", "line": "It was a bit of a mess, sure. ", "expression": "thinking" },
-        { "actor": "Doc", "line": "But your creativity inspired me to make my Festi-Ball sub with the exact opposite flavour profile!", "expression": "happy" }
+        { "actor": "Doc", "line": "But you inspired me to make my Festi-Ball sub with the exact opposite flavour profile!", "expression": "happy" }
       ]
     },
     {
@@ -32,10 +32,12 @@
     {
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "sandwich-shop", "special" ] },
       "then": [
-        { "actor": "Doc", "line": "You're really onto somethin', kid! It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
+        { "actor": "Doc", "line": "You're really onto somethin', kid!", "expression": "happy" },
+        { "actor": "Doc", "line": "It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
       ]
     },
-    { "actor": "Doc", "line": "It's been a huge hit! I sold outta the first round already! I gotta go back to the shop for more ingredients.", "expression": "happy" },
+    { "actor": "Doc", "line": "It's been a huge hit!", "expression": "happy" },
+    { "actor": "Doc", "line": "I sold outta the first round already! I gotta go back to the shop for more ingredients.", "expression": "happy" },
     { "actor": "Prota", "line": "Wow that's great to hear. But I really gotta get Minty and--", "expression": "happy" },
     { "actor": "Doc", "line": "Don't worry, Prota! I'm here to help!", "expression": "happy" },
     { "actor": "Prota", "line": "What are you gonna do?", "expression": "confused" },

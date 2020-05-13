@@ -96,7 +96,7 @@
     { "actor": "Randi", "line": "Off? What? Prota, you're thinkin' way too small right now!", "expression": "confused"},
     { "actor": "Randi", "line": "You belong at the Small Museum! For small thinkin'!", "expression": "confused"},
     { "actor": "Prota", "line": "...", "expression": "confused" },
-    { "actor": "Randi", "line": "The Ball Museum's not the only place you can find a ball today. .", "expression": "happy"},
+    { "actor": "Randi", "line": "The Ball Museum's not the only place you can find a ball today.", "expression": "happy"},
     { "actor": "Randi", "line": "The Festi-Ball's got all kinds on display.", "expression": "happy"},
     { "actor": "Randi", "line": "And unlike the Museum, the Festi-Ball's a place where you can actually play with 'em.", "expression": "happy"},
     { "actor": "Randi", "line": "So if I were a lil' doggie, I'd be gittin' along to the Fest-Ball!", "expression": "happy"},
@@ -147,6 +147,12 @@
     },
     {
       "if": "normalResult",
+      "then": [
+        { "actor": "Randi", "line": "Course you will, Prota! And it's lookin' like I might even bring a little robo-date with me!", "expression": "happy" }
+      ]
+    },
+    {
+      "if": "specialResult",
       "then": [
         { "actor": "Randi", "line": "Heck yeah you will, Prota! Me an' my little robo-dog, too!", "expression": "happy" }
       ]

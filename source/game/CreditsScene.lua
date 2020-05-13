@@ -67,13 +67,13 @@ function CreditsScene:init(unlocks, musicPlayer)
     },
     {
       "EDITING",
-      "Sean Hannegan"
+      "Sean Hennegan"
     },
     {
       "SPECIAL THANKS",
       "Felix Kramer",
       "Pelo Brisson-Tsavoussis",
-      "Hanny duong",
+      "Hanny Duong",
       "The cast of Ball Review",
       "Stacey D'Souza",
       "RC Woodmass",

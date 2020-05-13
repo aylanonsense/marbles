@@ -38,6 +38,6 @@
     { "actor": "Doc", "line": "For a kid as nice as you, it'd be my pleasure. 'Cept I don't exactly remember her order. Do you?", "expression": "neutral" },
     { "actor": "Prota", "line": "Hmmm... I think so.", "expression": "thinking alt" },
     { "actor": "Doc", "line": "Perfect! I'll start it out on our classic Doc Sandwich bread...", "expression": "happy" },
-    { "happy": "Doc", "line": "And now let's throw on some protein. What do you think Minty'll go for?", "expression": "happy" }
+    { "actor": "Doc", "line": "And now let's throw on some protein. What do you think Minty'll go for?", "expression": "happy" }
   ]
 }
