@@ -82,9 +82,6 @@ function CreditsScene:init(unlocks, musicPlayer)
     },
     {
       "MARBLE-OUS!"
-    },
-    {
-      "THE END...?"
     }
   }
   sceneTransition:transitionIn()
@@ -109,10 +106,20 @@ function CreditsScene:draw()
       playdate.graphics.drawText(text, 200 - textWidth / 2, y)
       y += textHeight
     end
-    y += 50
+    y += 46
   end
-  self:drawUnlocks(80, math.max(14, y))
-  self.canEndScene = y < -10
+  y = self:drawUnlocks(80, y)
+  y += 46
+  playdate.graphics.setFont(fonts.MarbleHeading)
+  local textWidth, textHeight = playdate.graphics.getTextSize("THE END...?")
+  playdate.graphics.drawText("THE END...?", 200 - textWidth / 2, y)
+  y += textHeight
+  if y < -20 and not self.isEndingScene then
+    self.isEndingScene = true
+    sceneTransition:transitionOut(function()
+      self:endScene()
+    end)
+  end
   -- If we've scrolled to the end, move on to the next scene
   playdate.graphics.setImageDrawMode(playdate.graphics.kDrawModeCopy)
   sceneTransition:draw()
