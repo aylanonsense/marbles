@@ -23,5 +23,30 @@
         ]
       }
     ]
+  },
+  "MintyBoat": {
+    "image": "/images/narrative/cinematics/minty-boat.png",
+    "sequences": [
+      {
+        "minWatchTime": 10,
+        "repeat": [
+          { "frame": 1 }
+        ]
+      }
+    ]
+  },
+  "FestiBall": {
+    "image": "/images/narrative/cinematics/festi-ball.png",
+    "sequences": [
+      {
+        "minWatchTime": 60,
+        "playOnce": [
+          { "frame": 1, "duration": 30 }
+        ],
+        "repeat": [
+          { "frame": 2 }
+        ]
+      }
+    ]
   }
 }

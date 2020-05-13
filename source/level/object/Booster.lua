@@ -30,7 +30,7 @@ function Booster:init(x, y, rotation)
 	local angle = drawableAngleToTrigAngle(self.rotation)
 	self.launchX = math.cos(angle)
 	self.launchY = math.sin(angle)
-	self.image = imageCache.loadImage("images/booster.png")
+	self.image = imageCache.loadImage("images/level/objects/booster.png")
   self.boostSound = soundCache.createSoundEffectPlayer("sound/sfx/booster")
 	self.boostSound:setVolume(config.SOUND_VOLUME * 0.3)
 end
