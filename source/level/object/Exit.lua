@@ -42,15 +42,25 @@ function Exit:init(x, y, exitId, icon)
   self.hitSounds[3]:setVolume(config.SOUND_VOLUME)
   self.popLinesImage = imageCache.loadImage("images/level/objects/exit/exit-pop-lines.png")
   local score = exitLookup[self.exitId].score
-  if score == nil or score < 2 then
+  local icon = exitLookup[self.exitId].icon
+  if icon == nil then
+    if score == nil or score > 4 then
+      icon = "star"
+    elseif score < 2 then
+      icon = "moon"
+    else
+      icon = "sun"
+    end
+  end
+  if icon == "moon" then
     self.imageTable = imageCache.loadImageTable("images/level/objects/exit/moon-exit.png")
     self.numDestroyedFrames = 8
-  elseif score > 4 then
+  elseif icon == "sun" then
     self.imageTable = imageCache.loadImageTable("images/level/objects/exit/sun-exit.png")
-    self.numDestroyedFrames = 6
+    self.numDestroyedFrames = 8
   else
     self.imageTable = imageCache.loadImageTable("images/level/objects/exit/star-exit.png")
-    self.numDestroyedFrames = 8
+    self.numDestroyedFrames = 6
   end
   self.animationFrame = 0
 end

@@ -592,19 +592,22 @@
         "id": "lab-1-bad",
         "label": "Festi-Ball",
         "finalText": "",
-        "score": 1
+        "score": 1,
+        "icon": "star"
     },
     {
         "id": "lab-1-good",
         "label": "Festi-Ball",
         "finalText": "",
-        "score": 3
+        "score": 3,
+        "icon": "star"
     },
     {
         "id": "lab-1-special",
         "label": "Festi-Ball",
         "finalText": "",
-        "score": 5
+        "score": 5,
+        "icon": "star"
     },
 
 
@@ -613,19 +616,22 @@
         "id": "lab-2-bad",
         "label": "Trick question!",
         "finalText": "",
-        "score": 1
+        "score": 1,
+        "icon": "moon"
     },
     {
         "id": "lab-2-good",
         "label": "9,230,343",
         "finalText": "",
-        "score": 3
+        "score": 3,
+        "icon": "star"
     },
     {
         "id": "lab-2-special",
         "label": "9,230,343",
         "finalText": "",
-        "score": 5
+        "score": 5,
+        "icon": "star"
     },
 
 
@@ -717,22 +723,26 @@
     {
       "id": "festiball-1-good",
       "label": "Catch Minty",
-      "score": 3
+      "score": 3,
+      "icon": "star"
     },
     {
       "id": "festiball-2-good",
       "label": "Catch Minty!",
-      "score": 3
+      "score": 3,
+      "icon": "star"
     },
     {
       "id": "festiball-3-good",
       "label": "Catch! Minty!",
-      "score": 3
+      "score": 3,
+      "icon": "star"
     },
     {
       "id": "festiball-4-good",
       "label": "CATCH!!! MINTY!!!",
-      "score": 3
+      "score": 3,
+      "icon": "star"
     }
   ]
 }
