@@ -144,7 +144,8 @@ function Game:finishCurrentStoryline(result)
   self.playthrough.storyline = nil
   table.insert(self.playthrough.finishedStorylines, {
     name = storyline.name,
-    result = result
+    result = result,
+    exits = storyline.exits
   })
 
   -- Stop all sounds and clear all caches
@@ -250,26 +251,38 @@ function Game:getStorylineResult()
 end
 
 function Game:getPlaythroughResult()
-  local averageScore = 0
-  local numScoringStorylines = 0
+  -- print("Playthrough results:")
+  local averageExitScore = 0
+  local numExitsTaken = 0
   for _, storyline in ipairs(self.playthrough.finishedStorylines) do
-    if storyline.result then
-      numScoringStorylines += 1
-      if storyline.result == "fail" then
-        averageScore += 1
-      elseif storyline.result == "special" then
-        averageScore += 5
-      else
-        averageScore += 3
+    if storyline.name == "library"
+        or storyline.name == "skate-park"
+        or storyline.name == "sandwich-shop"
+        or storyline.name == "daycare"
+        or storyline.name == "ball-museum"
+        or storyline.name == "security-city"
+        or storyline.name == "pickle-yard"
+        or storyline.name == "vintage-viper" then
+      -- print("  " .. storyline.name)
+      for _, exit in ipairs(storyline.exits) do
+        -- print("    " .. exit.label .. " +" .. exit.score)
+        if exit.score then
+          numExitsTaken += 1
+          averageExitScore += exit.score
+        end
       end
     end
   end
-  averageScore = averageScore / (numScoringStorylines or 1)
-  if averageScore < 1.9 then
+  averageExitScore = averageExitScore / math.max(numExitsTaken, 1)
+  -- print("  Average score: " .. averageExitScore)
+  if averageExitScore < 3.5 then
+    -- print("  Result: fail ending")
     return "fail"
-  elseif averageScore < 3.9 then
+  elseif averageExitScore < 4.95 then
+    -- print("  Result: normal ending")
     return "normal"
   else
+    -- print("  Result: special ending")
     return "special"
   end
 end
