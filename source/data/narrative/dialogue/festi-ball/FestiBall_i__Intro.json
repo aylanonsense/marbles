@@ -100,6 +100,7 @@
     { "actor": "Besto", "line": "This is gonna be rad.", "expression": "neutral", "side": "right" },
     { "actor": "Mom", "line": "And here...we...BALL!", "expression": "happy", "side": "right" },
     { "action": "play-cinematic", "cinematic": "FestiBall" },
+    { "action": "advance-cinematic" },
     { "action": "dismiss-cinematic" },
     { "actor": "Croco", "line": "What the--", "expression": "confused", "side": "right" },
     { "actor": "Besto", "line": "That's no ball...", "expression": "shocked", "side": "right" },

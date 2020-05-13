@@ -305,32 +305,40 @@ function DialogueScene:processDialogueAction(action, instantly)
       self.actorLookup[action.actor]:setVariant(action.variant)
     end
   elseif action.action == "play-cinematic" then
-    if self.cinematic then
-      self.cinematic:remove()
-    end
-    self.dialogueBox:hide()
-    self.cinematic = Cinematic(action.cinematic)
-    if self.cinematic.isValid then
-      self.waitingFor = "cinematic"
-    else
-      self.cinematic:remove()
-      self.cinematic = nil
-      self.waitingFor = "time"
-      self.waitTime = 0
-    end
+    self.waitingFor = nil
+    sceneTransition:transitionOut(function()
+      if self.cinematic then
+        self.cinematic:remove()
+      end
+      self.dialogueBox:hide()
+      self.cinematic = Cinematic(action.cinematic)
+      if self.cinematic.isValid then
+        self.waitingFor = "cinematic"
+      else
+        self.cinematic:remove()
+        self.cinematic = nil
+        self.waitingFor = "time"
+        self.waitTime = 0
+      end
+      sceneTransition:transitionIn()
+    end)
   elseif action.action == "advance-cinematic" then
     self.dialogueBox:hide()
     self.cinematic:advance()
     self.waitingFor = "cinematic"
   elseif action.action == "dismiss-cinematic" then
-    if self.cinematic then
-      self.cinematic:remove()
-    end
-    self.cinematic = nil
-    self.dialogueBox:clear()
-    self.dialogueBox:show()
-    self.waitingFor = "time"
-    self.waitTime = 0.0
+    self.waitingFor = nil
+    sceneTransition:transitionOut(function()
+      if self.cinematic then
+        self.cinematic:remove()
+      end
+      self.cinematic = nil
+      self.dialogueBox:clear()
+      self.dialogueBox:show()
+      self.waitingFor = "time"
+      self.waitTime = sceneTransition.TRANSITION_IN_TIME + 0.1
+      sceneTransition:transitionIn()
+    end)
   elseif action.action == "stream-next-dialogue" then
     self:close(nil, true)
   elseif action.action == "roll-credits" then

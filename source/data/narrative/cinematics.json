@@ -39,10 +39,13 @@
     "image": "/images/narrative/cinematics/festi-ball.png",
     "sequences": [
       {
-        "minWatchTime": 60,
-        "playOnce": [
-          { "frame": 1, "duration": 30 }
-        ],
+        "minWatchTime": 30,
+        "repeat": [
+          { "frame": 1 }
+        ]
+      },
+      {
+        "minWatchTime": 30,
         "repeat": [
           { "frame": 2 }
         ]

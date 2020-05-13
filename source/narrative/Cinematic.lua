@@ -3,6 +3,7 @@ import "CoreLibs/sprites"
 import "CoreLibs/graphics"
 import "render/imageCache"
 import "utility/file"
+import "scene/sceneTransition"
 
 local cinematicsData = loadJsonFile("/data/narrative/cinematics.json")
 
@@ -77,7 +78,7 @@ function Cinematic:advance()
 end
 
 function Cinematic:readyToMoveOn()
-  return self.framesOfSequence > self.data.sequences[self.sequenceNum].minWatchTime
+  return self.framesOfSequence > self.data.sequences[self.sequenceNum].minWatchTime + ((self.sequenceNum == 1) and sceneTransition.TRANSITION_IN_TIME or 0)
 end
 
 function Cinematic:draw()
