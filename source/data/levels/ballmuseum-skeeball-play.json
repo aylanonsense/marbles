@@ -12,178 +12,6 @@
 			"linesAndArcs": [
 				 {
 					"sectors": [
-						7,
-						4,
-						7,
-						5,
-						8,
-						4,
-						8,
-						5,
-						9,
-						4,
-						9,
-						5
-					],
-					"type":"PhysLine",
-					"x":450,
-					"x2":390,
-					"y":230,
-					"y2":290
-				},
-				 {
-					"sectors": [
-						8,
-						3,
-						8,
-						4,
-						9,
-						3,
-						9,
-						4
-					],
-					"type":"PhysLine",
-					"x":420,
-					"x2":450,
-					"y":200,
-					"y2":230
-				},
-				 {
-					"sectors": [
-						7,
-						3,
-						7,
-						4,
-						8,
-						3,
-						8,
-						4
-					],
-					"type":"PhysLine",
-					"x":410,
-					"x2":420,
-					"y":210,
-					"y2":200
-				},
-				 {
-					"sectors": [
-						7,
-						3,
-						7,
-						4,
-						8,
-						3,
-						8,
-						4
-					],
-					"type":"PhysLine",
-					"x":430,
-					"x2":410,
-					"y":230,
-					"y2":210
-				},
-				 {
-					"sectors": [
-						7,
-						4,
-						7,
-						5,
-						8,
-						4,
-						8,
-						5
-					],
-					"type":"PhysLine",
-					"x":380,
-					"x2":430,
-					"y":280,
-					"y2":230
-				},
-				 {
-					"sectors": [
-						7,
-						5
-					],
-					"type":"PhysLine",
-					"x":390,
-					"x2":380,
-					"y":290,
-					"y2":280
-				}
-			],
-			"points": [
-				 {
-					"sectors": [
-						7,
-						5
-					],
-					"type":"PhysPoint",
-					"x":390,
-					"y":290
-				},
-				 {
-					"sectors": [
-						8,
-						4,
-						9,
-						4
-					],
-					"type":"PhysPoint",
-					"x":450,
-					"y":230
-				},
-				 {
-					"sectors": [
-						8,
-						3,
-						8,
-						4
-					],
-					"type":"PhysPoint",
-					"x":420,
-					"y":200
-				},
-				 {
-					"sectors": [
-						7,
-						3,
-						7,
-						4,
-						8,
-						3,
-						8,
-						4
-					],
-					"type":"PhysPoint",
-					"x":410,
-					"y":210
-				},
-				 {
-					"sectors": [
-						8,
-						4
-					],
-					"type":"PhysPoint",
-					"x":430,
-					"y":230
-				},
-				 {
-					"sectors": [
-						7,
-						5
-					],
-					"type":"PhysPoint",
-					"x":380,
-					"y":280
-				}
-			],
-			"type":"Polygon"
-		},
-		 {
-			"layer":-1,
-			"linesAndArcs": [
-				 {
-					"sectors": [
 						9,
 						2,
 						9,
@@ -367,6 +195,178 @@
 					"type":"PhysPoint",
 					"x":460,
 					"y":200
+				}
+			],
+			"type":"Polygon"
+		},
+		 {
+			"layer":-1,
+			"linesAndArcs": [
+				 {
+					"sectors": [
+						7,
+						4,
+						7,
+						5,
+						8,
+						4,
+						8,
+						5,
+						9,
+						4,
+						9,
+						5
+					],
+					"type":"PhysLine",
+					"x":450,
+					"x2":390,
+					"y":230,
+					"y2":290
+				},
+				 {
+					"sectors": [
+						8,
+						3,
+						8,
+						4,
+						9,
+						3,
+						9,
+						4
+					],
+					"type":"PhysLine",
+					"x":420,
+					"x2":450,
+					"y":200,
+					"y2":230
+				},
+				 {
+					"sectors": [
+						7,
+						3,
+						7,
+						4,
+						8,
+						3,
+						8,
+						4
+					],
+					"type":"PhysLine",
+					"x":410,
+					"x2":420,
+					"y":210,
+					"y2":200
+				},
+				 {
+					"sectors": [
+						7,
+						3,
+						7,
+						4,
+						8,
+						3,
+						8,
+						4
+					],
+					"type":"PhysLine",
+					"x":430,
+					"x2":410,
+					"y":230,
+					"y2":210
+				},
+				 {
+					"sectors": [
+						7,
+						4,
+						7,
+						5,
+						8,
+						4,
+						8,
+						5
+					],
+					"type":"PhysLine",
+					"x":380,
+					"x2":430,
+					"y":280,
+					"y2":230
+				},
+				 {
+					"sectors": [
+						7,
+						5
+					],
+					"type":"PhysLine",
+					"x":390,
+					"x2":380,
+					"y":290,
+					"y2":280
+				}
+			],
+			"points": [
+				 {
+					"sectors": [
+						7,
+						5
+					],
+					"type":"PhysPoint",
+					"x":390,
+					"y":290
+				},
+				 {
+					"sectors": [
+						8,
+						4,
+						9,
+						4
+					],
+					"type":"PhysPoint",
+					"x":450,
+					"y":230
+				},
+				 {
+					"sectors": [
+						8,
+						3,
+						8,
+						4
+					],
+					"type":"PhysPoint",
+					"x":420,
+					"y":200
+				},
+				 {
+					"sectors": [
+						7,
+						3,
+						7,
+						4,
+						8,
+						3,
+						8,
+						4
+					],
+					"type":"PhysPoint",
+					"x":410,
+					"y":210
+				},
+				 {
+					"sectors": [
+						8,
+						4
+					],
+					"type":"PhysPoint",
+					"x":430,
+					"y":230
+				},
+				 {
+					"sectors": [
+						7,
+						5
+					],
+					"type":"PhysPoint",
+					"x":380,
+					"y":280
 				}
 			],
 			"type":"Polygon"
@@ -1788,6 +1788,82 @@
 		},
 		 {
 			"fillCoordinates": [
+				510,
+				150,
+				550,
+				110,
+				530,
+				90,
+				490,
+				130
+			],
+			"fillPattern":"LightGrey",
+			"layer":3,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				340,
+				320,
+				400,
+				260,
+				380,
+				240,
+				320,
+				300
+			],
+			"fillPattern":"LightGrey",
+			"layer":3,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				420,
+				570,
+				460,
+				570,
+				460,
+				550,
+				420,
+				550
+			],
+			"fillPattern":"LightGrey",
+			"layer":3,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				430,
+				230,
+				480,
+				180,
+				460,
+				160,
+				410,
+				210
+			],
+			"fillPattern":"LightGrey",
+			"layer":3,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
 				190,
 				310,
 				190,
@@ -1830,44 +1906,6 @@
 		},
 		 {
 			"fillCoordinates": [
-				420,
-				570,
-				460,
-				570,
-				460,
-				550,
-				420,
-				550
-			],
-			"fillPattern":"LightGrey",
-			"layer":3,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				340,
-				320,
-				400,
-				260,
-				380,
-				240,
-				320,
-				300
-			],
-			"fillPattern":"LightGrey",
-			"layer":3,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
 				-820,
 				990,
 				930,
@@ -1878,44 +1916,6 @@
 				570
 			],
 			"fillPattern":"LighterGrey",
-			"layer":3,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				430,
-				230,
-				480,
-				180,
-				460,
-				160,
-				410,
-				210
-			],
-			"fillPattern":"LightGrey",
-			"layer":3,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				510,
-				150,
-				550,
-				110,
-				530,
-				90,
-				490,
-				130
-			],
-			"fillPattern":"LightGrey",
 			"layer":3,
 			"linesAndArcs": [
 			],
@@ -1993,16 +1993,16 @@
 			"y":220
 		},
 		 {
-			"exitId":"ballmuseum-skeeball-special",
-			"icon":"Special",
+			"exitId":"ballmuseum-skeeball-good",
+			"icon":"Good",
 			"layer":8,
 			"type":"Exit",
 			"x":500,
 			"y":80
 		},
 		 {
-			"exitId":"ballmuseum-skeeball-good",
-			"icon":"Good",
+			"exitId":"ballmuseum-skeeball-special",
+			"icon":"Special",
 			"layer":8,
 			"type":"Exit",
 			"x":420,
