@@ -7,6 +7,7 @@ import "render/imageCache"
 import "utility/diagnosticStats"
 import "utility/soundCache"
 import "config"
+import "effect/effects"
 
 class("Booster").extends("LevelObject")
 
@@ -30,20 +31,28 @@ function Booster:init(x, y, rotation)
 	local angle = drawableAngleToTrigAngle(self.rotation)
 	self.launchX = math.cos(angle)
 	self.launchY = math.sin(angle)
-	self.image = imageCache.loadImage("images/level/objects/booster.png")
+	self.imageTable = imageCache.loadImageTable("images/level/objects/booster.png")
   self.boostSound = soundCache.createSoundEffectPlayer("sound/sfx/booster")
 	self.boostSound:setVolume(config.SOUND_VOLUME * 0.3)
+	self.highlightFrames = 0
 end
 
 function Booster:update()
 	self.cooldown = math.max(0, self.cooldown - time.dt)
+	self.highlightFrames = math.max(0, self.highlightFrames - 1)
 end
 
 function Booster:draw()
 	local x, y = self:getPosition()
 	x, y = camera.matrix:transformXY(x, y)
 	local scale = camera.scale
-	self.image:drawRotated(x, y, self.rotation - camera.rotation, scale)
+	local frame
+	if self.highlightFrames <= 0 then
+		frame = 1
+	else
+		frame = math.max(2, 4 - math.floor((self.highlightFrames - 1) / 2))
+	end
+	self.imageTable[frame]:drawRotated(x, y, self.rotation - camera.rotation, scale)
 	diagnosticStats.transformedImagesDrawn += 1
 end
 
@@ -56,6 +65,8 @@ function Booster:preCollide(other, collision)
 		self.boostSound:play(1)
 		numRecentBoosts += 1
 		framesUntilBoostReset = 20
+		self.highlightFrames = 7
+		effects:shake(3, -self.launchX, -self.launchY)
 	end
 	return false
 end
