@@ -1,6 +1,6 @@
 {
   "MarbelsMinty": {
-    "image": "/images/narrative/cinematics/marbles-minty.png",
+    "image": "/images/narrative/cinematics/marbels-minty.png",
     "sequences": [
       {
         "minWatchTime": 30,
@@ -48,6 +48,17 @@
         "minWatchTime": 30,
         "repeat": [
           { "frame": 2 }
+        ]
+      }
+    ]
+  },
+  "MarbelsYarn": {
+    "image": "/images/narrative/cinematics/marbels-yarn.png",
+    "sequences": [
+      {
+        "minWatchTime": 30,
+        "repeat": [
+          { "frame": 1 }
         ]
       }
     ]
