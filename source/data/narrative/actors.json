@@ -82,7 +82,8 @@
       "happy": { "frame": 2 },
       "thinking": { "frame": 3 },
       "confused": { "frame": 4 },
-      "shocked": { "frame": 5 }
+      "shocked": { "frame": 5 },
+      "wink": { "frame": 6 }
     }
   },
   "Trashbot": {
