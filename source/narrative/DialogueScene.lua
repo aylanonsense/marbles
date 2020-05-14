@@ -8,6 +8,7 @@ import "narrative/dialogueMethods"
 import "scene/time"
 import "scene/sceneTransition"
 import "utility/file"
+import "render/imageCache"
 
 class("DialogueScene").extends(Scene)
 
@@ -17,6 +18,8 @@ function DialogueScene:init(convoData, musicPlayer, startInstantly)
   self.location = Location(self:evalDialogueField(convoData.location))
   self.cinematic = nil
   self.shownObject = nil
+  self.cartoonCircleImage = nil
+  self.cartoonCircleFrame = nil
   -- Create the actors and slide them onto stage
   self.actorLookup = {}
   self.actorsOnStage = { left = nil, right = nil }
@@ -67,6 +70,20 @@ function DialogueScene:init(convoData, musicPlayer, startInstantly)
 end
 
 function DialogueScene:update()
+  if self.cartoonCircleAnim then
+    if self.cartoonCircleAnim == "opening" and self.cartoonCircleAnimTime < 0.35 then
+      self.cartoonCircleAnimTime += time.dt
+      self.cartoonCircleFrame  = 6 - math.min(math.max(1, math.floor(1 + 5 * self.cartoonCircleAnimTime / 0.35)), 5)
+    elseif self.cartoonCircleAnim == "closing" and self.cartoonCircleAnimTime < 4 then
+      self.cartoonCircleAnimTime += time.dt
+      self.cartoonCircleFrame = math.min(math.max(1, math.floor(1 + 5 * self.cartoonCircleAnimTime / 4)), 5)
+    else
+      if self.cartoonCircleAnim == "opening" then
+        self.cartoonCircleFrame = nil
+      end
+      self.cartoonCircleAnim = nil
+    end
+  end
   -- Wait a certain amount of time before proceeding
   if self.waitingFor == "time" then
     self.waitTime -= time.dt
@@ -145,6 +162,9 @@ function DialogueScene:draw()
     self.shownObject:draw()
   end
   self.dialogueBox:draw()
+  if self.cartoonCircleImage and self.cartoonCircleFrame then
+    self.cartoonCircleImage[self.cartoonCircleFrame]:draw(0, 0)
+  end
   sceneTransition:draw()
 end
 
@@ -341,6 +361,22 @@ function DialogueScene:processDialogueAction(action, instantly)
     end, true)
   elseif action.action == "stream-next-dialogue" then
     self:close(nil, true)
+  elseif action.action == "close-circle" then
+    if not self.cartoonCircleImage then
+      self.cartoonCircleImage = imageCache.loadImageTable("images/narrative/cartoon-circle.png")
+    end
+    self.waitingFor = "time"
+    self.waitTime = 6.25
+    self.cartoonCircleAnim = "closing"
+    self.cartoonCircleAnimTime = 0.0
+  elseif action.action == "open-circle" then
+    if not self.cartoonCircleImage then
+      self.cartoonCircleImage = imageCache.loadImageTable("images/narrative/cartoon-circle.png")
+    end
+    self.waitingFor = "time"
+    self.waitTime = 1.25
+    self.cartoonCircleAnim = "opening"
+    self.cartoonCircleAnimTime = 0.0
   elseif action.action == "roll-credits" then
     self:transitionOut(true)
   -- Unknown action, return false to indicate we weren't able to process it
