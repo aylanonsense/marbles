@@ -35,6 +35,10 @@ function dialogueMethods.specialPlaythrough()
   return game:getPlaythroughResult() == "special"
 end
 
+function dialogueMethods.completePlaythrough()
+  return game:getPlaythroughResult() == "complete"
+end
+
 function dialogueMethods.finishedStoryline(storylineName)
   return game:finishedStoryline(storylineName)
 end

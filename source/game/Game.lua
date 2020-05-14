@@ -225,7 +225,7 @@ function Game:calculateUnlocks()
   end
   unlockData.storylinesPlayed["credits"].finished = unlockData.counter
   if #self.playthrough.finishedStorylines > 5 then
-    unlockData.storylinesPlayed["endings"][self:getPlaythroughResult()] = unlockData.counter
+    unlockData.storylinesPlayed["endings"][self:getPlaythroughResult(unlockData)] = unlockData.counter
   end
   -- Save the unlock data
   playdate.datastore.write(unlockData, "lost-your-marbles-unlock-data", true)
@@ -250,7 +250,18 @@ function Game:getStorylineResult()
   end
 end
 
-function Game:getPlaythroughResult()
+function Game:getPlaythroughResult(unlockData)
+  local numUnlocks = 0
+  if not unlockData then
+    unlockData = playdate.datastore.read("lost-your-marbles-unlock-data")
+  end
+  if unlockData then
+    for _, storyline in pairs(unlockData.storylinesPlayed) do
+      for result, _ in pairs(storyline) do
+        numUnlocks += 1
+      end
+    end
+  end
   -- print("Playthrough results:")
   local averageExitScore = 0
   local numExitsTaken = 0
@@ -275,7 +286,10 @@ function Game:getPlaythroughResult()
   end
   averageExitScore = averageExitScore / math.max(numExitsTaken, 1)
   -- print("  Average score: " .. averageExitScore)
-  if averageExitScore < 3.5 then
+  if numUnlocks >= 35 then
+    -- print("  Result: complete ending")
+    return "complete"
+  elseif averageExitScore < 3.5 then
     -- print("  Result: fail ending")
     return "fail"
   elseif averageExitScore < 4.95 then
