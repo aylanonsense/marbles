@@ -35,7 +35,7 @@
         { "actor": "Minty", "line": "Bark bark!", "expression": "confused", "side": "left" },
         { "actor": "Marbels", "line": "!!!", "expression": "shocked" },
         { "action": "dismiss-actor", "side": "right"},
-        { "actor": "Marbels", "line": "", "expression": "wink" },
+        { "actor": "Minty", "line": "", "expression": "wink" },
         { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
         { "actor": "Narrator", "line": "LOST YOUR MARBLES 2:", "expression": "neutral" },
         { "actor": "Narrator", "line": "MINTY'S ISLAND", "expression": "neutral" }
