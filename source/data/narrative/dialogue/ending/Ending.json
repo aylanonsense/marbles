@@ -57,7 +57,7 @@
         { "actor": "Minty", "line": "", "expression": "neutral", "side": "right" },
         { "actor": "Minty", "line": "Well, we'll have to look into that for next time...", "expression": "neutral", "side": "right" },
         { "actor": "Minty", "line": "Madam President.", "expression": "neutral", "side": "right" },
-        { "actor": "Minty", "line": "", "expression": "happy", "side": "right" },
+        { "actor": "Minty", "line": "", "expression": "wink", "side": "right" },
         { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
         { "actor": "Narrator", "line": "LOST YOUR MARBLES PRESENTS:", "expression": "neutral" },
         { "actor": "Narrator", "line": "MINTY GEAR SOLID", "expression": "neutral" }

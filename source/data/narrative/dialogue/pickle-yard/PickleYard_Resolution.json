@@ -42,7 +42,7 @@
         { "actor": "SpikyJon", "line": "For now. But the journey is a long one, Prota. Competitive eating isn't just about consuming food.", "expression": "thinking" },
         { "actor": "SpikyJon", "line": "It's also about dipping everything in water so it slides down your throat easier!", "expression": "happy" },
         { "actor": "Prota", "line": "Hmm. Sounds... mushy?", "expression": "neutral" },
-        { "actor": "Prota", "line": "It is the life we choose when we take our vows. And I'm ready.", "expression": "neutral" },
+        { "actor": "SpikyJon", "line": "It is the life we choose when we take our vows. And I'm ready.", "expression": "neutral" },
         { "actor": "Prota", "line": "Okay...", "expression": "neutral thumbs up" }
       ]
     },

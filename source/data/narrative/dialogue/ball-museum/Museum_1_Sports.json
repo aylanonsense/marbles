@@ -35,7 +35,7 @@
         { "actor": "Croco", "line": "All signs point to yes!", "expression": "happy" },
         { "actor": "Prota", "line": "Perfect!", "expression": "happy" },
         { "actor": "Croco", "line": "You don't think it's a little bit... firm for Minty's little mouth?", "expression": "thinking" },
-        { "actor": "Prota", "line": "Mouth? You don't play pool with your mouth, Croco. Hahaha!", "expression": "confused" },
+        { "actor": "Prota", "line": "Mouth? You don't play pool with your mouth, Croco. Hahaha!", "expression": "happy" },
         { "actor": "Croco", "line": "Oh. Well, uh...", "expression": "confused" },
         { "actor": "Croco", "line": "I guess you're right! ", "expression": "happy" },
         { "actor": "Prota", "line": "Next up: Let's get the food ball! What would Minty find most compelling?", "expression": "happy" }

@@ -99,7 +99,7 @@
     { "actor": "Randi", "line": "The Ball Museum's not the only place you can find a ball today.", "expression": "happy"},
     { "actor": "Randi", "line": "The Festi-Ball's got all kinds on display.", "expression": "happy"},
     { "actor": "Randi", "line": "And unlike the Museum, the Festi-Ball's a place where you can actually play with 'em.", "expression": "happy"},
-    { "actor": "Randi", "line": "So if I were a lil' doggie, I'd be gittin' along to the Fest-Ball!", "expression": "happy"},
+    { "actor": "Randi", "line": "So if I were a lil' doggie, I'd be gittin' along to the Festi-Ball!", "expression": "happy"},
     { "actor": "Prota", "line": "Oh! It's true! Croco did say they'd have a display... And Minty loves playing fetch!", "expression": "shocked alt" },
     { "actor": "Prota", "line": "If she's over there, she's probably in heaven right now!", "expression": "shocked alt" },
     {
@@ -116,7 +116,7 @@
         { "actor": "Prota", "line": "I'm scared that you know that, but happy it's true!", "expression": "neutral" }
       ]
     },
-    { "actor": "Randi", "line": "Well if Minty's at the Fest-Ball, I guess you'd best be gettin' along, litte Prota!", "expression": "happy", "side": "right" },
+    { "actor": "Randi", "line": "Well if Minty's at the Festi-Ball, I guess you'd best be gettin' along, litte Prota!", "expression": "happy", "side": "right" },
     {
       "if": "failResult",
       "then": [
