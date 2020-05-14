@@ -7,6 +7,7 @@ sceneTransition = {
   TRANSITION_OUT_TIME = (config.SKIP_SCENE_TRANSITIONS and 0.01 or 1.85),
   anim = nil,
   time = 0.00,
+  keepMusicPlaying = false,
   callback = nil
 }
 
@@ -20,9 +21,11 @@ function sceneTransition:update()
     self.time += time.dt
     -- Fade out music
     if self.anim == 'out' then
-      local volume = math.min(math.max(0, 1 - self.time / self.TRANSITION_OUT_TIME), 1) * config.MUSIC_VOLUME
-      for _, player in pairs(soundCache.musicPlayers) do
-        player:setVolume(volume)
+      if not self.keepMusicPlaying then
+        local volume = math.min(math.max(0, 1 - self.time / self.TRANSITION_OUT_TIME), 1) * config.MUSIC_VOLUME
+        for _, player in pairs(soundCache.musicPlayers) do
+          player:setVolume(volume)
+        end
       end
     end
     if (self.anim == 'in' and self.time >= self.TRANSITION_IN_TIME) or (self.anim == 'out' and self.time >= self.TRANSITION_OUT_TIME) then
@@ -68,10 +71,11 @@ function sceneTransition:transitionIn(callback)
   end
 end
 
-function sceneTransition:transitionOut(callback)
+function sceneTransition:transitionOut(callback, keepMusicPlaying)
   self.anim = 'out'
   self.time = 0.00
   self.callback = callback
+  self.keepMusicPlaying = keepMusicPlaying or false
   if not config.SKIP_SCENE_TRANSITIONS then
     transitionOutSound:play(1)
   end

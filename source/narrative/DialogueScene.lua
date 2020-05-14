@@ -321,7 +321,7 @@ function DialogueScene:processDialogueAction(action, instantly)
         self.waitTime = 0
       end
       sceneTransition:transitionIn()
-    end)
+    end, true)
   elseif action.action == "advance-cinematic" then
     self.dialogueBox:hide()
     self.cinematic:advance()
@@ -338,7 +338,7 @@ function DialogueScene:processDialogueAction(action, instantly)
       self.waitingFor = "time"
       self.waitTime = sceneTransition.TRANSITION_IN_TIME + 0.1
       sceneTransition:transitionIn()
-    end)
+    end, true)
   elseif action.action == "stream-next-dialogue" then
     self:close(nil, true)
   elseif action.action == "roll-credits" then
