@@ -30,7 +30,6 @@
         { "actor": "Marbels", "line": "We can finally be alone!", "expression": "happy" },
         { "actor": "Marbels", "line": "But... what's that?", "expression": "thinking" },
         { "action": "dismiss-cinematic" },
-        { "action": "change-location", "location": "BlackScreen"},
         { "actor": "Narrator", "line": "(CRASH!)", "expression": "neutral" },
         { "actor": "Minty", "line": "Bark bark!", "expression": "confused", "side": "left" },
         { "actor": "Marbels", "line": "!!!", "expression": "shocked" },
