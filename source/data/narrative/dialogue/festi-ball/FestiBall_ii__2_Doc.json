@@ -33,7 +33,7 @@
       "if": { "method": "finishedStorylineWithResult", "arguments": [ "sandwich-shop", "special" ] },
       "then": [
         { "actor": "Doc", "line": "You're really onto somethin', kid!", "expression": "happy" },
-        { "actor": "Doc", "line": "It inspired me to make my Fest-Ball sub with all the same ingredients!", "expression": "happy" }
+        { "actor": "Doc", "line": "It inspired me to make my Festi-Ball sub with all the same ingredients!", "expression": "happy" }
       ]
     },
     { "actor": "Doc", "line": "It's been a huge hit!", "expression": "happy" },

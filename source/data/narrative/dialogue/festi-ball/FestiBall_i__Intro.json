@@ -33,7 +33,7 @@
     { "actor": "Prota", "line": "Ah! I feel so rested. Time to--uh oh. ", "expression": "happy" },
     { "actor": "Prota", "line": "Oh no! I overslept! Augh!  It's so unlike me!", "expression": "shocked" },
     { "actor": "Prota", "line": "No one could've seen this coming. ", "expression": "shocked" },
-    { "actor": "Prota", "line": "I'd better get to the Fest-Ball!", "expression": "neutral" },
+    { "actor": "Prota", "line": "I'd better get to the Festi-Ball!", "expression": "neutral" },
    { "action": "dismiss-actor", "side": "left" },
     { "action": "change-location", "location": "FestiBall" },
     { "actor": "Prota", "line": "Okay, I'm fine. I can still find Minty in the crowds. I've just gotta--", "expression": "neutral", "side": "left" },

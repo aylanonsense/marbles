@@ -28,7 +28,7 @@
       "maze": "lab-3",
       "exits": [ "lab-3-good", "lab-3-bad" ],
       "music": "marbels-lab-maze",
-      "prompt": "What color is an orange?"
+      "prompt": "What colour is an orange?"
     },
     {
       "dialogue": "marbels-lab/Lab_Resolution",

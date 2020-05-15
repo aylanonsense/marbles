@@ -57,7 +57,7 @@
         { "actor": "Prota", "line": "Most of the time!", "expression": "happy" },
         { "actor": "Prota", "line": "But... you must already know that. Because you saw her.", "expression": "thinking alt" },
         { "actor": "Teens", "line": "For sure, for sure.", "expression": "neutral" },
-        { "actor": "Prota", "line": "Yeah, for sure. Just go to the museum. She's definitely there.", "expression": "happy" }
+        { "actor": "Teens", "line": "Yeah, for sure. Just go to the museum. She's definitely there.", "expression": "happy" }
       ]
     },
     {
