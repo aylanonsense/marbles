@@ -2,7 +2,6 @@ import "scene/time"
 import "scene/Scene"
 import "CoreLibs/keyboard"
 import "game/Game"
-import "level/editor/EditorScene"
 import "config"
 import "utility/diagnosticStats"
 import "CoreLibs/timer"
@@ -12,11 +11,7 @@ import "effect/effects"
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
 -- Set up the gane (globally accessible)
-if config.LAUNCH_LEVEL_EDITOR then
-  Scene.setScene(EditorScene())
-else
-  game = Game()
-end
+game = Game()
 
 -- Update the scene
 function playdate.update()

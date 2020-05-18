@@ -111,7 +111,10 @@ function Actor:reloadImage()
     self.imageTable = imageCache.loadImageTable(imagePath)
     self.fadedImageTable = {}
     for i = 1, #self.imageTable do
-      self.fadedImageTable[i] = self.imageTable[i]:invertedImage():blendWithImage(self.imageTable[i], 0.1, playdate.graphics.image.kDitherTypeBayer4x4)
+      -- local image = self.imageTable[i]:invertedImage()
+      -- image = image:blendWithImage(self.imageTable[i], 0.1, playdate.graphics.image.kDitherTypeBayer4x4)
+      -- self.fadedImageTable[i] = image
+      self.fadedImageTable[i] = self.imageTable[i]
     end
     if not self.sprite then
       self.sprite = playdate.graphics.sprite.new()

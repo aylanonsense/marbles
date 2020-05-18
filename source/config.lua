@@ -1,5 +1,4 @@
 config = {
-  LAUNCH_LEVEL_EDITOR = false,
   SHOW_DEBUG_SKIP_SCREENS = true,
   SHOW_DIAGNOSTIC_STATS = false,
   MUSIC_VOLUME = 0.13,
