@@ -36,7 +36,7 @@ function MazeScene:init(levelData, prompt, musicPlayer)
     playdate.graphics.setFont(fonts.MarbleBasic)
     self.promptWidth, self.promptHeight = playdate.graphics.getTextSize(self.prompt)
   end
-  self.hideCrankIndicatorFrames = hasPlayedAMazeBefore and 110 or 200
+  self.hideCrankIndicatorFrames = hasPlayedAMazeBefore and 200 or 110
 
   hasPlayedAMazeBefore = true
 
@@ -132,30 +132,24 @@ function MazeScene:update()
     local crankChange = playdate.getCrankChange()
     local crankRotation = playdate.getCrankPosition()
     local minAngle = 3
-    local maxAngle = 80
-    local maxBufferAngle = 115
+    local maxAngle = 85
+    local maxBufferAngle = 120
     local idealCameraRotation
-    if crankRotation <= minAngle then
+    if crankRotation <= minAngle or crankRotation >= 360 - minAngle then
       idealCameraRotation = 0
     elseif crankRotation <= maxAngle then
       idealCameraRotation = 45 * (crankRotation - minAngle) / (maxAngle - minAngle)
-    elseif crankRotation <= maxBufferAngle then
-      idealCameraRotation = 45
-    elseif crankRotation <= 180 - minAngle then
-      idealCameraRotation = 45 * (1 - (crankRotation - maxBufferAngle) / (180 - minAngle - maxBufferAngle))
-    elseif crankRotation >= 360 - minAngle then
-      idealCameraRotation = 0
     elseif crankRotation >= 360 - maxAngle then
       idealCameraRotation = -45 * (1 - (crankRotation - 360 + maxAngle) / (360 - minAngle - 360 + maxAngle))
+    elseif crankRotation <= maxBufferAngle then
+      idealCameraRotation = 45
     elseif crankRotation >= 360 - maxBufferAngle then
       idealCameraRotation = -45
-    elseif crankRotation >= 180 + minAngle then
-      idealCameraRotation = -45 * (crankRotation - 180 - minAngle) / (360 - maxBufferAngle - 180 - minAngle)
     else
-      idealCameraRotation = 0
+      idealCameraRotation = camera.rotation > 0 and 45 or -45
     end
     local cameraRotationDiff = math.abs(camera.rotation - idealCameraRotation)
-    if cameraRotationDiff < 0.5 then
+    if cameraRotationDiff < 0.5 and idealCameraRotation < 45 and idealCameraRotation > -45 then
       -- Don't do anything, to prevent flickering rotation
     elseif cameraRotationDiff < 1 then
       camera.rotation = idealCameraRotation
