@@ -53,7 +53,7 @@ function MazeScene:init(levelData, prompt, musicPlayer)
   sceneTransition:hold()
 
   -- Reset the crank animation
-  playdate.ui.crankIndicator:reset()
+  playdate.ui.crankIndicator:start()
 end
 
 function MazeScene:partialLoad()
@@ -214,11 +214,11 @@ function MazeScene:draw()
     end
   end
   -- Draw the crank hint indicator
-  if playdate.isCrankDocked() and self.hideCrankIndicatorFrames <= 0 and not self.finalExitData then
-    playdate.ui.crankIndicator:update()
-  end
   if not config.BACKWARDS_COMPATIBILITY_MODE then
     playdate.graphics.setDrawOffset(0, 0)
+  end
+  if playdate.isCrankDocked() and self.hideCrankIndicatorFrames <= 0 and not self.finalExitData then
+    playdate.ui.crankIndicator:update()
   end
   if self.prompt then
     playdate.graphics.setColor(playdate.graphics.kColorWhite)
