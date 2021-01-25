@@ -81,8 +81,38 @@ function EditorTestLevelScene:update()
 	end
 
 	-- Rotating the crank rotates the camera
-	local crankChange = playdate.getCrankChange()
-	camera.rotation = math.min(math.max(-45, camera.rotation + crankChange / 2), 45)
+    local crankChange = playdate.getCrankChange()
+    local crankRotation = playdate.getCrankPosition()
+    local minAngle = 3
+    local maxAngle = 85
+    local maxBufferAngle = 120
+    local idealCameraRotation
+    if crankRotation <= minAngle or crankRotation >= 360 - minAngle then
+      idealCameraRotation = 0
+    elseif crankRotation <= maxAngle then
+      idealCameraRotation = 45 * (crankRotation - minAngle) / (maxAngle - minAngle)
+    elseif crankRotation >= 360 - maxAngle then
+      idealCameraRotation = -45 * (1 - (crankRotation - 360 + maxAngle) / (360 - minAngle - 360 + maxAngle))
+    elseif crankRotation <= maxBufferAngle then
+      idealCameraRotation = 45
+    elseif crankRotation >= 360 - maxBufferAngle then
+      idealCameraRotation = -45
+    else
+      idealCameraRotation = camera.rotation > 0 and 45 or -45
+    end
+    local cameraRotationDiff = math.abs(camera.rotation - idealCameraRotation)
+    if cameraRotationDiff < 0.5 and idealCameraRotation < 45 and idealCameraRotation > -45 then
+      -- Don't do anything, to prevent flickering rotation
+    elseif cameraRotationDiff < 1 then
+      camera.rotation = idealCameraRotation
+    else
+      change = math.min(math.max(1, 0.75 * cameraRotationDiff), 15)
+      if camera.rotation < idealCameraRotation then
+        camera.rotation += change
+      else
+        camera.rotation -= change
+      end
+    end
 
 	-- Move the camera to be looking at the ball
 	camera.x, camera.y = self.marble:getPosition()

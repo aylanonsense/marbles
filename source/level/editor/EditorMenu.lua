@@ -53,7 +53,7 @@ function EditorMenu:draw()
 
 			-- Draw the cursor next to the selected option
 			if i == self.highlightedOptionIndex then
-				self.cursorImage:drawAt(x, y - cursorHeight / 2 + textHeight / 2)
+				self.cursorImage:draw(x, y - cursorHeight / 2 + textHeight / 2)
 			end
 
 			y += textHeight + 2
