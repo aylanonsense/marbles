@@ -6,24 +6,37 @@
     { "actor": "Narrator", "expression": "neutral" }
   ],
   "objects": [
-    "BadPoster",
-    "GoodPoster",
-    "SpecialPoster"
+    "WrapperIsthisZoomPoster",
+    "ScrollHaveyouButtPoster",
+    "ScrollHaveyouPerfectPoster",
+    "ScrollHaveyouZoomPoster",
+    "ScrollHelpButtPoster",
+    "ScrollHelpPerfectPoster",
+    "ScrollHelpZoomPoster",
+    "ScrollIsthisButtPoster",
+    "ScrollIsthisPerfectPoster",
+    "ScrollIsthisZoomPoster",
+    "ThickHaveyouButtPoster",
+    "ThickHaveyouPerfectPoster",
+    "ThickHaveyouZoomPoster",
+    "ThickHelpButtPoster",
+    "ThickHelpPerfectPoster",
+    "ThickHelpZoomPoster",
+    "ThickIsthisButtPoster",
+    "ThickIsthisPerfectPoster",
+    "ThickIsthisZoomPoster",
+    "WrapperHaveyouButtPoster",
+    "WrapperHaveyouPerfectPoster",
+    "WrapperHaveyouZoomPoster",
+    "WrapperHelpButtPoster",
+    "WrapperHelpPerfectPoster",
+    "WrapperHelpZoomPoster",
+    "WrapperIsthisButtPoster",
+    "WrapperIsthisPerfectPoster"
   ],
- "script": [
+  "script": [
     { "actor": "Besto", "line": "Aaaaand... here we go!", "expression": "neutral" },
-    {
-      "if": "failResult",
-      "then": { "action": "show-object", "object": "BadPoster" }
-    },
-    {
-      "if": "normalResult",
-      "then": { "action": "show-object", "object": "GoodPoster" }
-    },
-    {
-      "if": "specialResult",
-      "then": { "action": "show-object", "object": "SpecialPoster" }
-    },
+    { "action": "show-object", "object": { "method": "getLibraryPosterImage" } },
     { "actor": "Besto", "line": { "method": "getFinalLibraryPosterLine" }, "expression": "neutral" },
     { "actor": "Besto", "line": "What do you think?", "expression": "happy" },
     { "actor": "Prota", "line": "I think it's gonna get me my dog back!", "expression": "happy" },

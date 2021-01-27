@@ -151,3 +151,10 @@ end
 function dialogueMethods.getFinalDaycareRiddleLine3()
   return "... " .. game.playthrough.storyline.exits[3].finalText .. " SHALL COME TO PASS!" -- e.g. "... NEW LIFE SHALL COME TO PASS!"
 end
+
+function dialogueMethods.getLibraryPosterImage()
+  return 
+    game.playthrough.storyline.exits[1].imageName .. -- e.g. "Thick"
+    game.playthrough.storyline.exits[2].imageName .. -- e.g. "Isthis"
+    game.playthrough.storyline.exits[3].imageName .. "Poster" -- e.g. "ButtPoster"
+end

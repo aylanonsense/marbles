@@ -20,16 +20,88 @@
   "Pamphlet": {
     "image": "/images/narrative/objects/pamphlet.png"
   },
-  "BadPoster": {
-    "image": "/images/narrative/objects/bad-poster.png"
-  },
-  "GoodPoster": {
-    "image": "/images/narrative/objects/good-poster.png"
-  },
-  "SpecialPoster": {
-    "image": "/images/narrative/objects/special-poster.png"
-  },
   "Marbelizer": {
     "image": "/images/narrative/objects/marbelizer.png"
+  },
+  "WrapperIsthisZoomPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-isthis-zoom.png"
+  },
+  "ScrollHaveyouButtPoster": {
+    "image": "/images/narrative/objects/poster/scroll-haveyou-butt.png"
+  },
+  "ScrollHaveyouPerfectPoster": {
+    "image": "/images/narrative/objects/poster/scroll-haveyou-perfect.png"
+  },
+  "ScrollHaveyouZoomPoster": {
+    "image": "/images/narrative/objects/poster/scroll-haveyou-zoom.png"
+  },
+  "ScrollHelpButtPoster": {
+    "image": "/images/narrative/objects/poster/scroll-help-butt.png"
+  },
+  "ScrollHelpPerfectPoster": {
+    "image": "/images/narrative/objects/poster/scroll-help-perfect.png"
+  },
+  "ScrollHelpZoomPoster": {
+    "image": "/images/narrative/objects/poster/scroll-help-zoom.png"
+  },
+  "ScrollIsthisButtPoster": {
+    "image": "/images/narrative/objects/poster/scroll-isthis-butt.png"
+  },
+  "ScrollIsthisPerfectPoster": {
+    "image": "/images/narrative/objects/poster/scroll-isthis-perfect.png"
+  },
+  "ScrollIsthisZoomPoster": {
+    "image": "/images/narrative/objects/poster/scroll-isthis-zoom.png"
+  },
+  "ThickHaveyouButtPoster": {
+    "image": "/images/narrative/objects/poster/thick-haveyou-butt.png"
+  },
+  "ThickHaveyouPerfectPoster": {
+    "image": "/images/narrative/objects/poster/thick-haveyou-perfect.png"
+  },
+  "ThickHaveyouZoomPoster": {
+    "image": "/images/narrative/objects/poster/thick-haveyou-zoom.png"
+  },
+  "ThickHelpButtPoster": {
+    "image": "/images/narrative/objects/poster/thick-help-butt.png"
+  },
+  "ThickHelpPerfectPoster": {
+    "image": "/images/narrative/objects/poster/thick-help-perfect.png"
+  },
+  "ThickHelpZoomPoster": {
+    "image": "/images/narrative/objects/poster/thick-help-zoom.png"
+  },
+  "ThickIsthisButtPoster": {
+    "image": "/images/narrative/objects/poster/thick-isthis-butt.png"
+  },
+  "ThickIsthisPerfectPoster": {
+    "image": "/images/narrative/objects/poster/thick-isthis-perfect.png"
+  },
+  "ThickIsthisZoomPoster": {
+    "image": "/images/narrative/objects/poster/thick-isthis-zoom.png"
+  },
+  "WrapperHaveyouButtPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-haveyou-butt.png"
+  },
+  "WrapperHaveyouPerfectPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-haveyou-perfect.png"
+  },
+  "WrapperHaveyouZoomPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-haveyou-zoom.png"
+  },
+  "WrapperHelpButtPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-help-butt.png"
+  },
+  "WrapperHelpPerfectPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-help-perfect.png"
+  },
+  "WrapperHelpZoomPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-help-zoom.png"
+  },
+  "WrapperIsthisButtPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-isthis-butt.png"
+  },
+  "WrapperIsthisPerfectPoster": {
+    "image": "/images/narrative/objects/poster/wrapper-isthis-perfect.png"
   }
 }
