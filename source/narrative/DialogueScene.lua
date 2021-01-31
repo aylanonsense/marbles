@@ -9,6 +9,8 @@ import "scene/time"
 import "scene/sceneTransition"
 import "utility/file"
 import "render/imageCache"
+import "utility/soundCache"
+import "config"
 
 class("DialogueScene").extends(Scene)
 
@@ -288,6 +290,14 @@ function DialogueScene:processDialogueAction(action, instantly)
     self.location = Location(self:evalDialogueField(action.location))
     self.dialogueBox:clear()
     self.waitingFor = "button-press"
+  elseif action.action == "play-music" then
+    if self.musicPlayer then
+      self.musicPlayer:stop()
+    end
+    self.musicPlayer = soundCache.createMusicPlayer("sound/music/" .. self:evalDialogueField(action.music))
+    self.musicPlayer:setVolume(config.MUSIC_VOLUME)
+    self.musicPlayer:play(0)
+    self.waitTime = 0.01
   -- Show an object
   elseif action.action == "show-object" then
     if self.shownObject then

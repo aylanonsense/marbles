@@ -86,6 +86,7 @@
         { "actor": "Mayoress", "line": "The Festi-Ball Rap! Take it away, Mom!", "expression": "neutral" },
         { "actor": "Mom", "line": "Happy to!", "expression": "neutral", "side": "left"  },
         { "actor": "Mom", "line": "(ahem)", "expression": "neutral" },
+        { "action": "play-music", "music": "rap"},
         { "actor": "Mom", "line": "Shout-out, wrestling fans, you're gonna love this bookin'!", "expression": "happy" },
         { "actor": "Mom", "line": "Cause it's time to smell what The Mom's got cookin'!", "expression": "happy" },
         { "actor": "Mom", "line": "Imma suplex these beats, and then I'll piledrive the track!", "expression": "happy" },
