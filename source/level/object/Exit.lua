@@ -37,6 +37,7 @@ function Exit:init(x, y, exitId, icon)
     soundCache.createSoundEffectPlayer("sound/sfx/exit-hit-2"),
     soundCache.createSoundEffectPlayer("sound/sfx/exit-hit-3")
   }
+  self.shards = {}
   self.hitSounds[1]:setVolume(config.SOUND_VOLUME)
   self.hitSounds[2]:setVolume(config.SOUND_VOLUME)
   self.hitSounds[3]:setVolume(config.SOUND_VOLUME)
@@ -52,15 +53,16 @@ function Exit:init(x, y, exitId, icon)
       icon = "sun"
     end
   end
+  self.shardImageTable = imageCache.loadImageTable("images/level/objects/shard.png")
   if icon == "moon" then
     self.imageTable = imageCache.loadImageTable("images/level/objects/exit/moon-exit.png")
     self.numDestroyedFrames = 8
   elseif icon == "sun" then
     self.imageTable = imageCache.loadImageTable("images/level/objects/exit/sun-exit.png")
-    self.numDestroyedFrames = 8
+    self.numDestroyedFrames = 6
   else
     self.imageTable = imageCache.loadImageTable("images/level/objects/exit/star-exit.png")
-    self.numDestroyedFrames = 6
+    self.numDestroyedFrames = 8
   end
   self.animationFrame = 0
 end
@@ -70,6 +72,16 @@ function Exit:update()
   if self.impulseFreezeTimer <= 0 then
     self.impulseToTrigger = math.max(MIN_IMPULSE_TO_TRIGGER, self.impulseToTrigger - 200 * time.dt)
   end
+  for i = 1, #self.shards do
+    if self.shards[i].size > 0 then
+      self.shards[i].vx *= 0.85
+      self.shards[i].vy *= 0.85
+      self.shards[i].x += self.shards[i].vx / 20
+      self.shards[i].y += self.shards[i].vy / 20
+      self.shards[i].rotation += self.shards[i].vr
+      self.shards[i].size = math.max(0, self.shards[i].size - 0.03)
+    end
+  end
 end
 
 function Exit:draw()
@@ -77,6 +89,16 @@ function Exit:draw()
   local x, y = self:getPosition()
   x, y = camera.matrix:transformXY(x, y)
   local scale = camera.scale
+
+  -- Draw shards
+  local shardImageWidth, shardImageHeight = self.shardImageTable[1]:getSize()
+  for i = 1, #self.shards do
+    if self.shards[i].size > 0 then
+      local shardImage = self.shardImageTable[1]
+      local xShard, yShard = camera.matrix:transformXY(self.shards[i].x, self.shards[i].y)
+      shardImage:drawRotated(xShard - scale * shardImageWidth / 2, yShard - scale * shardImageHeight / 2 + scale * 5, self.shards[i].rotation - camera.rotation, scale * self.shards[i].size)
+    end
+  end
 
   -- Draw the lightbulb
   local image
@@ -126,6 +148,35 @@ function Exit:preCollide(other, collision)
       self.animationFrame = 0
       self.hitSounds[4 - self.health]:play(1)
       self.health -= 1
+      local x, y = self:getPosition()
+      if #self.shards == 0 then
+        for i = 1, 7 do
+          self.shards[i] = {}
+        end
+      end
+      for i = 1, #self.shards do
+        local speed
+        local normalX
+        local normalY
+        if i < 3 then
+          speed = 550
+          normalX = (0.2 + 0.8 * math.random()) * collision.normalX
+          normalY = (0.2 + 0.8 * math.random()) * collision.normalY
+          self.shards[i].x = x - 40 * normalX
+          self.shards[i].y = y - 40 * normalY
+        else
+          speed = 300
+          normalX = -1.0 + 2.0 * math.random()
+          normalY = -1.0 + 2.0 * math.random()
+          self.shards[i].x = x
+          self.shards[i].y = y
+        end
+        self.shards[i].vx = -speed * normalX
+        self.shards[i].vy = -speed * normalY
+        self.shards[i].vr = math.random(-15, 15)
+        self.shards[i].rotation = 0
+        self.shards[i].size = 0.5 + 0.5 * math.random()
+      end
       if scene.triggerExitHit then
         scene:triggerExitHit(exitLookup[self.exitId], self, collision)
       end
