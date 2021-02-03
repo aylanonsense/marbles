@@ -150,6 +150,10 @@ function CreditsScene:drawUnlocks(x, y)
     playdate.graphics.drawText(hasPlayedStoryline and storyline.name or "???", x, y)
     y += 16
   end
+  y += 16
+  local playtimeText = time.playtime.hours .. " : " .. (time.playtime.minutes < 10 and "0" or "") .. time.playtime.minutes .. " : " .. (time.playtime.seconds < 10 and "0" or "") .. (math.floor(100 * time.playtime.seconds) / 100)
+  playdate.graphics.drawText(playtimeText, x + 60, y)
+  y += 16
   return y
 end
 

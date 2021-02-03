@@ -3,6 +3,7 @@ import "utility/file"
 import "narrative/DialogueScene"
 import "level/MazeScene"
 import "game/CreditsScene"
+import "scene/time"
 import "narrative/StorylineSimulationScene"
 import "narrative/DialogueSimulationScene"
 import "narrative/MazeSimulationScene"
@@ -42,6 +43,12 @@ end
 
 function Game:continueGame(saveData)
   self.playthrough = saveData
+  time.playtime.paused = false
+  if self.playthrough.playtime ~= nil then
+    time.playtime.seconds = self.playthrough.playtime.seconds
+    time.playtime.minutes = self.playthrough.playtime.minutes
+    time.playtime.hours = self.playthrough.playtime.hours
+  end
   self:resumeCurrentStoryline()
 end
 
@@ -49,9 +56,18 @@ function Game:startNewGame()
   self.playthrough = {
     isComplete = false,
     storyline = nil,
+    playtime = {
+      seconds = 0.0,
+      minutes = 0,
+      hours = 0
+    },
     actorVariants = {},
     finishedStorylines = {}
   }
+  time.playtime.paused = false
+  time.playtime.seconds = 0.0
+  time.playtime.minutes = 0
+  time.playtime.hours = 0
   self:startStoryline(self.playthroughData.start)
 end
 
@@ -95,6 +111,9 @@ function Game:advanceCurrentStoryline(startSceneInstantly)
 end
 
 function Game:playNextStorylineScene(startSceneInstantly)
+  self.playthrough.playtime.seconds = time.playtime.seconds
+  self.playthrough.playtime.minutes = time.playtime.minutes
+  self.playthrough.playtime.hours = time.playtime.hours
   playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
   local advance = function(exit, secretExit, startNextSceneInstantly)
     if secretExit then
@@ -175,6 +194,9 @@ function Game:finishCurrentStorylineAndStartNextOne(result)
     end
   else
     self.playthrough.isComplete = true
+    self.playthrough.playtime.seconds = time.playtime.seconds
+    self.playthrough.playtime.minutes = time.playtime.minutes
+    self.playthrough.playtime.hours = time.playtime.hours
     playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
     self:showTitleScreen()
   end
@@ -198,6 +220,7 @@ function Game:createStorylineScene(storylineData, stage, startSceneInstantly)
       return MazeScene(mazeData, sceneData.prompt, musicPlayer, startSceneInstantly)
     elseif sceneData.credits then
       local unlocks = self:calculateUnlocks()
+      time.playtime.paused = true
       return CreditsScene(unlocks, musicPlayer)
     end
   end
