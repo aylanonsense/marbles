@@ -83,6 +83,7 @@ function EditorTestLevelScene:update()
 	-- Rotating the crank rotates the camera
     local crankChange = playdate.getCrankChange()
     local crankRotation = playdate.getCrankPosition()
+    crankRotation = (crankRotation + 180) % 360
     local minAngle = 3
     local maxAngle = 85
     local maxBufferAngle = 120
@@ -97,8 +98,12 @@ function EditorTestLevelScene:update()
       idealCameraRotation = 45
     elseif crankRotation >= 360 - maxBufferAngle then
       idealCameraRotation = -45
+    elseif camera.rotation > 25 then
+      idealCameraRotation = 45
+    elseif camera.rotation < -25 then
+      idealCameraRotation = -45
     else
-      idealCameraRotation = camera.rotation > 0 and 45 or -45
+      idealCameraRotation = camera.rotation
     end
     local cameraRotationDiff = math.abs(camera.rotation - idealCameraRotation)
     if cameraRotationDiff < 0.5 and idealCameraRotation < 45 and idealCameraRotation > -45 then
