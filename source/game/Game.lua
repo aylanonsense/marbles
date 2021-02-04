@@ -305,11 +305,21 @@ function Game:getPlaythroughResult(unlockData)
           averageExitScore += exit.score
         end
       end
+      if #storyline.exits == 0 then
+        numExitsTaken += 3
+        if storyline.result == "fail" then
+          averageExitScore += 3
+        elseif storyline.result == "special" then
+          averageExitScore += 15
+        else
+          averageExitScore += 9
+        end
+      end
     end
   end
   averageExitScore = averageExitScore / math.max(numExitsTaken, 1)
   -- print("  Average score: " .. averageExitScore)
-  if numUnlocks >= 35 then
+  if numUnlocks >= 32 then
     -- print("  Result: complete ending")
     return "complete"
   elseif averageExitScore < 3.5 then
