@@ -102,6 +102,9 @@ function TitleScreenScene:AButtonDown()
       self.cursorBlinkFrames = 0
       self.isDisplayingWarning = false
       sceneTransition:transitionOut(function()
+        soundCache.stopAllSoundEffects()
+        soundCache.stopAllMusic()
+        soundCache.clearCache()
         self:endScene(self.options[self.selectionIndex])
       end)
     end
