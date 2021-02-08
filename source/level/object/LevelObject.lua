@@ -30,6 +30,11 @@ function LevelObject:update() end
 
 function LevelObject:draw() end
 
+function LevelObject:isOnScreen()
+  local x, y = self:getPosition()
+  return camera.x - 300 < x and x < camera.x + 300 and camera.y - 250 < y and y < camera.y + 250
+end
+
 function LevelObject:preCollide(other, collision, isObjectA) end
 
 function LevelObject:onCollide(other, collision, isObjectA) end

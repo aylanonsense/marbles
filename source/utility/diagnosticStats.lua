@@ -2,6 +2,7 @@ import "fonts/fonts"
 
 diagnosticStats = {
   collisionChecks = 0,
+  physicsSteps = 0,
   dynamicPhysicsObjects = 0,
   staticPhysicsObjects = 0,
   untransformedImagesDrawn = 0,
@@ -11,6 +12,7 @@ diagnosticStats = {
 
 function diagnosticStats:update()
   self.collisionChecks = 0
+  self.physicsSteps = 0
   self.dynamicPhysicsObjects = 0
   self.staticPhysicsObjects = 0
   self.untransformedImagesDrawn = 0
@@ -23,6 +25,7 @@ function diagnosticStats:draw()
   playdate.drawFPS(250+48, 182-175)
   local stats = {
     "fps: ",
+    "steps:" .. self.physicsSteps,
     "checks: " .. self.collisionChecks,
     "physobjs: " .. (self.dynamicPhysicsObjects + self.staticPhysicsObjects) .. " (" .. self.dynamicPhysicsObjects .. ")",
     "polypts: " .. self.polygonPointsDrawn,

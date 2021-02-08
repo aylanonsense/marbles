@@ -209,7 +209,9 @@ function MazeScene:draw()
 
     -- Draw all level objects
     for _, obj in ipairs(self.objects) do
-      obj:draw()
+      if obj:isOnScreen() then
+        obj:draw()
+      end
     end
   end
   -- Draw the crank hint indicator

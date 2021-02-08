@@ -51,6 +51,7 @@ function physics:update()
 	-- Calculate the number of physics steps we need to perform
 	local numSteps = math.max(1, math.ceil((maxSpeed * time.dt) / MAX_MOVEMENT_PER_FRAME))
 	local dt = time.dt / numSteps
+	diagnosticStats.physicsSteps = numSteps
 	for step = 1, numSteps do
 		-- Move all dynamic physics objects and balls
 		for _, obj in ipairs(self.dynamicObjects) do

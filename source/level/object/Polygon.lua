@@ -9,6 +9,10 @@ class("Polygon").extends("LevelObject")
 
 function Polygon:init(physPoints, physLinesAndArcs, fillCoordinates, lineCoordinates, moveX, moveY)
 	Polygon.super.init(self, LevelObject.Type.Polygon)
+	self.minX = 9999
+	self.maxX = -9999
+	self.minY = 9999
+	self.maxY = -9999
 	self.physPoints = physPoints
 	for _, point in ipairs(self.physPoints) do
 		self:addPhysicsObject(point)
@@ -18,7 +22,23 @@ function Polygon:init(physPoints, physLinesAndArcs, fillCoordinates, lineCoordin
 		self:addPhysicsObject(lineOrArc)
 	end
 	self.fillCoordinates = fillCoordinates
+	if self.fillCoordinates then
+		for i = 1, #self.fillCoordinates, 2 do
+			self.minX = math.min(self.minX, self.fillCoordinates[i])
+			self.maxX = math.max(self.maxX, self.fillCoordinates[i])
+			self.minY = math.min(self.minY, self.fillCoordinates[i + 1])
+			self.maxY = math.max(self.maxY, self.fillCoordinates[i + 1])
+		end
+	end
 	self.lineCoordinates = lineCoordinates
+	if self.lineCoordinates then
+		for i = 1, #self.lineCoordinates, 2 do
+			self.minX = math.min(self.minX, self.lineCoordinates[i])
+			self.maxX = math.max(self.maxX, self.lineCoordinates[i])
+			self.minY = math.min(self.minY, self.lineCoordinates[i + 1])
+			self.maxY = math.max(self.maxY, self.lineCoordinates[i + 1])
+		end
+	end
 	self.perspectiveFillCoordinates = {}
 	self.fillPattern = 'Grey'
 	self.moveX = moveX or 0
@@ -76,17 +96,25 @@ function Polygon:update()
 end
 
 function Polygon:draw()
+	local minX = 99999
+	local maxX = -99999
+	local minY = 99999
+	local maxY = -99999
 	if self.fillCoordinates and #self.fillCoordinates > 0 then
 		for i = 1, #self.fillCoordinates, 2 do
 			local x, y = camera.matrix:transformXY(self.fillCoordinates[i], self.fillCoordinates[i + 1])
 			self.perspectiveFillCoordinates[i] = x
 			self.perspectiveFillCoordinates[i + 1] = y
+			minX = math.min(minX, x)
+			maxX = math.max(maxX, x)
+			minY = math.min(minY, y)
+			maxY = math.max(maxY, y)
 		end
-		if self.fillPattern ~= 'Transparent' then
+		if self.fillPattern ~= 'Transparent' and minX < 420 and maxX > -20 and minY < 260 and maxY > -20 then
 			-- Fill in the polygon
 			playdate.graphics.setPattern(patterns[self.fillPattern])
 			playdate.graphics.fillPolygon(table.unpack(self.perspectiveFillCoordinates))
-			diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates
+			diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates / 2
 		end
 	end
 
@@ -98,14 +126,20 @@ function Polygon:draw()
 		for i = 1, #self.lineCoordinates, 4 do
 			local x1, y1 = camera.matrix:transformXY(self.lineCoordinates[i], self.lineCoordinates[i + 1])
 			local x2, y2 = camera.matrix:transformXY(self.lineCoordinates[i + 2], self.lineCoordinates[i + 3])
-			playdate.graphics.drawLine(x1, y1, x2, y2)
+			if math.min(x1, x2) < 410 and math.max(x1, x2) > -10 and math.min(y1, y2) < 250 and math.max(y1, y2) > -10 then
+				playdate.graphics.drawLine(x1, y1, x2, y2)
+				diagnosticStats.polygonPointsDrawn += 2
+			end
 		end
-		diagnosticStats.polygonPointsDrawn += #self.lineCoordinates
-	elseif self.fillCoordinates and #self.fillCoordinates > 0 then
+	elseif self.fillCoordinates and #self.fillCoordinates > 0 and minX < 420 and maxX > -20 and minY < 260 and maxY > -20 then
 		-- Draw the outline as a polygon
 		playdate.graphics.drawPolygon(table.unpack(self.perspectiveFillCoordinates))
-		diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates
+		diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates / 2
 	end
+end
+
+function Polygon:isOnScreen()
+  return camera.x + 220 > self.minX and camera.x - 220 < self.maxX and camera.y + 220 > self.minY and camera.y - 220 < self.maxY
 end
 
 function Polygon:setPosition(x, y)

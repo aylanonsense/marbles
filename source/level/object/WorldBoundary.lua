@@ -22,7 +22,7 @@ function WorldBoundary:draw()
 		-- Fill in the polygon
 		playdate.graphics.setColor(playdate.graphics.kColorWhite)
 		playdate.graphics.fillPolygon(table.unpack(self.perspectiveFillCoordinates))
-		diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates
+		diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates / 2
 	end
 
 	playdate.graphics.setColor(playdate.graphics.kColorBlack)
@@ -33,14 +33,20 @@ function WorldBoundary:draw()
 		for i = 1, #self.lineCoordinates, 4 do
 			local x1, y1 = camera.matrix:transformXY(self.lineCoordinates[i], self.lineCoordinates[i + 1])
 			local x2, y2 = camera.matrix:transformXY(self.lineCoordinates[i + 2], self.lineCoordinates[i + 3])
-			playdate.graphics.drawLine(x1, y1, x2, y2)
+			if math.min(x1, x2) < 410 and math.max(x1, x2) > -10 and math.min(y1, y2) < 250 and math.max(y1, y2) > -10 then
+				playdate.graphics.drawLine(x1, y1, x2, y2)
+				diagnosticStats.polygonPointsDrawn += 2
+			end
 		end
-		diagnosticStats.polygonPointsDrawn += #self.lineCoordinates
 	elseif self.fillCoordinates and #self.fillCoordinates > 0 then
 		-- Draw the outline as a polygon
 		playdate.graphics.drawPolygon(table.unpack(self.perspectiveFillCoordinates))
-		diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates
+		diagnosticStats.polygonPointsDrawn += #self.perspectiveFillCoordinates / 2
 	end
+end
+
+function WorldBoundary:isOnScreen()
+	return true
 end
 
 function WorldBoundary.deserialize(data)

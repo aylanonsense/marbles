@@ -97,6 +97,7 @@ function Exit:draw()
       local shardImage = self.shardImageTable[1]
       local xShard, yShard = camera.matrix:transformXY(self.shards[i].x, self.shards[i].y)
       shardImage:drawRotated(xShard - scale * shardImageWidth / 2, yShard - scale * shardImageHeight / 2 + scale * 5, self.shards[i].rotation - camera.rotation, scale * self.shards[i].size)
+      diagnosticStats.transformedImagesDrawn += 1
     end
   end
 
@@ -131,6 +132,7 @@ function Exit:draw()
     if self.health >= 2 and self.animationFrame < 15 then
       local imageWidth, imageHeight = self.popLinesImage:getSize()
       self.popLinesImage:drawScaled(labelX + labelWidth / 2 - scale * imageWidth / 2, labelY - 23 * scale, scale)
+      diagnosticStats.untransformedImagesDrawn += 1
     end
     playdate.graphics.drawText(self.label, labelX, labelY)
   end
