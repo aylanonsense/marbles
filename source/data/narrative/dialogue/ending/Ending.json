@@ -18,31 +18,14 @@
     { "actor": "Randi", "expression": "neutral" },
     { "actor": "Mayoress", "expression": "neutral" },
     { "actor": "Narrator", "expression": "neutral" },
-    { "actor": "???", "expression": "neutral" }
+    { "actor": "???", "expression": "neutral" },
+    { "actor": "Coffinator", "expression": "neutral" }
   ],
   "script": [
     {
-      "if": "failPlaythrough",
+      "if": "ending1",
       "then": [
-        { "action": "change-location", "location": "MarbelsLab"},
-        { "actor": "Marbels", "line": "Well! What a day! At least that's all behind us now...", "expression": "happy", "side": "right" },
-        { "action": "play-cinematic", "cinematic": "MarbelsYarn" },
-        { "actor": "Marbels", "line": "We can finally be alone!", "expression": "happy" },
-        { "actor": "Marbels", "line": "But... what's that?", "expression": "thinking" },
-        { "action": "dismiss-cinematic" },
-        { "actor": "Narrator", "line": "(CRASH!)", "expression": "neutral" },
-        { "actor": "Minty", "line": "Bark bark!", "expression": "confused", "side": "left" },
-        { "actor": "Marbels", "line": "!!!", "expression": "shocked" },
-        { "action": "dismiss-actor", "side": "right"},
-        { "actor": "Minty", "line": "", "expression": "wink" },
-        { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
-        { "actor": "Narrator", "line": "LOST YOUR MARBLES 2:", "expression": "neutral" },
-        { "actor": "Narrator", "line": "MINTY'S ISLAND", "expression": "neutral" }
-      ]
-    },
-    {
-      "if": "normalPlaythrough",
-      "then": [
+        { "action": "play-music", "music": "protas-home-dialogue" },
         { "action": "change-location", "location": "ProtasHome"},
         { "actor": "Dad", "line": "Morning Prota! I made breakfast!", "expression": "happy", "side": "right" },
         { "actor": "Mom", "line": "And it's your favourite!", "expression": "happy", "side": "right" },
@@ -55,13 +38,189 @@
         { "actor": "Mom", "line": "Oh no.", "expression": "neutral", "side": "right" },
         { "action": "play-cinematic", "cinematic": "MintyBoat" },
         { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
-        { "actor": "Narrator", "line": "LOST YOUR MARBLES COUNTRY:", "expression": "neutral" },
-        { "actor": "Narrator", "line": "MINTY IN THE CITY", "expression": "neutral" }
+        { "actor": "Narrator", "line": "LOST YOUR MARBLES COUNTRY: MINTY IN THE CITY", "expression": "neutral" }
       ]
     },
     {
-      "if": "specialPlaythrough",
+      "if": "ending2",
       "then": [
+        { "action": "play-music", "music": "ball-museum-dialogue" },
+        { "action": "change-location", "location": "Museum"},
+        { "actor": "Narrator", "line": "Later, at the ball museum...", "expression": "neutral" },
+        { "action": "add-actor", "actor": "Croco", "expression": "neutral", "side": "right" },
+        { "actor": "Prota", "line": "Hey Croco! I'm finally here to enjoy the Ball Museum for real! ", "expression": "happy", "side": "left" },
+        { "actor": "Prota", "line": "One ticket, please!", "expression": "happy thumbs up", "side": "left" },
+        { "actor": "Croco", "line": "Oh gosh, Prota, I wish I could!", "expression": "shocked" },
+        { "actor": "Prota", "line": "Well, wish no more! The dream is real. One ticket please!", "expression": "neutral thumbs up" },
+        { "actor": "Croco", "line": "No, I mean... I can't. We're temporarily closed! ", "expression": "neutral" },
+        { "actor": "Croco", "line": "Turns out the World's Most Colourful Ball of Yarn really IS missing!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Oh no! It didn't turn up after the Festi-Ball?", "expression": "shocked" },
+        { "actor": "Croco", "line": "Nope. Seems like it was taken even before Minty got up on that podium.", "expression": "neutral" },
+        { "actor": "Croco", "line": "And now my bosses are really worried it's gone for good! They're out searching.", "expression": "neutral" },
+        { "actor": "Croco", "line": "So we're closed for business! I'm just here in case somebody turns up with it.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Hmm. Well I've got some good news for you!", "expression": "thinking" },
+        { "actor": "Croco", "line": "Do you know where it is?!", "expression": "shocked" },
+        { "actor": "Prota", "line": "No idea! But don't worry...", "expression": "happy" },
+        { "actor": "Prota", "line": "DETECTIVE PROTA IS ON THE CASE!", "expression": "happy thumbs up" },
+        { "actor": "Narrator", "line": "MINTY AND PROTA WILL RETURN IN...", "expression": "neutral" },
+        { "actor": "Narrator", "line": "DETECTIVE PROTA: THE HOUND OF THE BALL-SKERVILLES", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "ending3",
+      "then": [
+        { "action": "play-music", "music": "festi-ball-dialogue" },
+        { "action": "change-location", "location": "Park"},
+        { "action": "add-actor", "actor": "Besto", "expression": "neutral", "side": "right", "skipWait": true },
+        { "action": "add-actor", "actor": "Prota", "expression": "neutral", "side": "left" },
+        { "actor": "Besto", "line": "So I guess all's well that ends well.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yep! Minty's home, the Marbelizer's wearing off and I'm having a picnic with my best friend!", "expression": "happy" },
+        { "actor": "Prota", "line": "It's been a pretty big adventure.", "expression": "happy" },
+        { "actor": "Besto", "line": "Yeah, I meant to ask. Where'd you end up looking?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Me? I was all over town! Minty really knows how to move.", "expression": "neutral" },
+        { "actor": "Prota", "line": "What about you? I didn't get a chance to ask, but I guess you had some adventures on your own?", "expression": "thinking" },
+        { "actor": "Besto", "line": "I mean, I guess...", "expression": "thinking" },
+        { "actor": "Besto", "line": "I checked out the dentist's office... Swung by the ice cream place...", "expression": "neutral" },
+        { "actor": "Besto", "line": "Went by the pet store, but they hadn't seen her, so I popped back to the library just in case...", "expression": "thinking" },
+        { "actor": "Besto", "line": "I thought you might have already done the Pickle Yard so I tried Parvati's Fine Wine & Dine...", "expression": "thinking" },
+        { "actor": "Prota", "line": "Wow you really--", "expression": "neutral" },
+        { "actor": "Besto", "line": "After that I went to Gooshy for Sushi for lunch.", "expression": "neutral" },
+        { "actor": "Prota", "line": "That was all BEFORE LUNCH?!", "expression": "shocked alt" },
+        { "actor": "Besto", "line": "Yeah, but while I was there, I ended up chatting to this group of art dealers from out of town.", "expression": "neutral" },
+        { "actor": "Besto", "line": "They were looking for a getaway driver, so I told them I'd love to help. They seemed really nice!", "expression": "neutral" },
+        { "actor": "Besto", "line": "Gonna meet up with 'em next week! They promised me a cut of the profits.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Why would art \"dealers\" need a getaway driver..?", "expression": "thinking" },
+        { "actor": "Besto", "line": "Hm. I don't know. Guess we'll find out!", "expression": "neutral-hands" },
+        { "actor": "Narrator", "line": "BESTO WILL RETURN IN...", "expression": "neutral" },
+        { "actor": "Narrator", "line": "REEL STEAL", "expression": "neutral" },
+        { "actor": "Prota", "line": "Wait, what?", "expression": "confused" }
+      ]
+    },
+    {
+      "if": "ending4",
+      "then": [
+        { "action": "play-music", "music": "marbels-lab-dialogue" },
+        { "action": "change-location", "location": "MarbelsLab"},
+        { "actor": "Marbels", "line": "Well, I suppose I can call the Marbelizer a success!", "expression": "neutral", "side": "right" },
+        { "actor": "Marbels", "line": "Sort of.", "expression": "neutral" },
+        { "actor": "Marbels", "line": "But I believe the error lies not in the device...", "expression": "neutral" },
+        { "actor": "Marbels", "line": "But in the user. Prota was perhaps not an ideal candidate for our accidental test run.", "expression": "neutral" },
+        { "actor": "Marbels", "line": "And certainly Minty didn't help matters.", "expression": "neutral" },
+        { "actor": "Marbels", "line": "Yes! Yes, I think the Marbelizer is good after all. And perhaps I can improve it if I test it on...", "expression": "happy" },
+        { "actor": "Marbels", "line": "A much LARGER sample size.", "expression": "happy" },
+        { "actor": "Marbels", "line": "BESTO! PROTA! COME HERE!", "expression": "happy" },
+        { "actor": "Prota", "line": "Hey! What's up?", "expression": "happy", "side": "left" },
+        { "actor": "Besto", "line": "Need something?", "expression": "neutral", "side": "left" },
+        { "actor": "Marbels", "line": "Yes. I want you to start setting up the 3-D printers. ", "expression": "thinking" },
+        { "actor": "Marbels", "line": "We're going GLOBAL!", "expression": "happy" },
+        { "actor": "Narrator", "line": "PROFESSOR MARBELS WILL RETURN IN...", "expression": "neutral" },
+        { "actor": "Narrator", "line": "IT'S A MARB MARB MARB MARB WORLD", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "ending5",
+      "then": [
+        { "action": "play-music", "music": "marbels-lab-dialogue" },
+        { "action": "change-location", "location": "MarbelsLab"},
+        { "actor": "Marbels", "line": "Well! What a day! At least that's all behind us now...", "expression": "happy", "side": "right" },
+        { "action": "play-cinematic", "cinematic": "MarbelsYarn" },
+        { "actor": "Marbels", "line": "We can finally be alone!", "expression": "happy" },
+        { "actor": "Marbels", "line": "But... what's that?", "expression": "thinking" },
+        { "action": "dismiss-cinematic" },
+        { "actor": "Narrator", "line": "(CRASH!)", "expression": "neutral" },
+        { "actor": "Minty", "line": "Bark bark!", "expression": "confused", "side": "left" },
+        { "actor": "Marbels", "line": "!!!", "expression": "shocked" },
+        { "action": "dismiss-actor", "side": "right"},
+        { "actor": "Minty", "line": "", "expression": "wink" },
+        { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
+        { "actor": "Narrator", "line": "LOST YOUR MARBLES 2: MINTY'S ISLAND", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "ending6",
+      "then": [
+        { "action": "play-music", "music": "festi-ball-dialogue" },
+        { "action": "change-location", "location": "Park"},
+        { "action": "add-actor", "actor": "Marbels", "expression": "neutral", "side": "right", "skipWait": true },
+        { "action": "add-actor", "actor": "Prota", "expression": "neutral", "side": "left" },
+        { "actor": "Prota", "line": "Okay, professor Marbels! It's Day two of my internship!", "expression": "thinking" },
+        { "actor": "Prota", "line": "I'm ready for my review!", "expression": "happy" },
+        { "actor": "Marbels", "line": "You want a review?", "expression": "neutral" },
+        { "actor": "Prota", "line": "Yep!", "expression": "happy" },
+        { "actor": "Marbels", "line": "On day two of the internship.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Mm-hm! Hit me. I'd love to know how I could improve.", "expression": "happy" },
+        { "actor": "Marbels", "line": "...", "expression": "neutral" },
+        { "actor": "Marbels", "line": "Prota, you understand that on your first day, you brought your dog to work...", "expression": "neutral" },
+        { "actor": "Marbels", "line": "Broke my most valuable machinery, left the lab early to FIND the dog you lost...", "expression": "neutral" },
+        { "actor": "Marbels", "line": "And then never returned or so much as called me, before I finally spotted you at the Festi-Ball...", "expression": "neutral" },
+        { "actor": "Marbels", "line": "STILL without Minty but clearly under the Marbelizer's influence...", "expression": "neutral" },
+        { "actor": "Marbels", "line": "Which led to you interrupting the Festi-Ball's ceremonies for a wrestling-match-slash-dog-catch?", "expression": "neutral" },
+        { "actor": "Marbels", "line": "And now you're back here today, thirty minutes late, and what you'd like is a review.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Again, I'd love any advice on ways to improve.", "expression": "happy thumbs up" },
+        { "actor": "Marbels", "line": "...", "expression": "neutral" },
+        { "actor": "Marbels", "line": "Well, I do have one piece of advice:", "expression": "thinking" },
+        { "actor": "Marbels", "line": "Never change!", "expression": "happy" },
+        { "actor": "Narrator", "line": "PROTA WILL RETURN IN...", "expression": "neutral" },
+        { "actor": "Narrator", "line": "LOST YOUR MARBLES TWO : LOST YOUR MARBELS TOO!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "ending7",
+      "then": [
+        { "action": "play-music", "music": "festi-ball-dialogue" },
+        { "action": "change-location", "location": "FestiBall"},
+        { "action": "add-actor", "actor": "Minty", "expression": "neutral", "side": "right", "skipWait": true },
+        { "action": "add-actor", "actor": "Prota", "expression": "neutral", "side": "left" },
+        { "actor": "Prota", "line": "Okay, Minty! It's Day two of my internship!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Whatever happens, I CANNOT mess this up.", "expression": "happy" },
+        { "actor": "Prota", "line": "Marbels asked me to find contractors to repair the damage SOMEDOGGY did to the lab...", "expression": "annoyed" },
+        { "actor": "Minty", "line": "Bark bark!", "expression": "happy" },
+        { "actor": "Prota", "line": "No, Minty, you can't help.", "expression": "happy" },
+        { "actor": "Minty", "line": "Bark.", "expression": "neutral" },
+        { "actor": "Prota", "line": "Because look what happened LAST time I brought you with me!", "expression": "neutral" },
+        { "actor": "Minty", "line": "Bark! Bark! Bark!", "expression": "neutral" },
+        { "actor": "Prota", "line": "No, this time will NOT be different. I just need to find those contractors and--", "expression": "neutral" },
+        { "actor": "Minty", "line": "BARK!!", "expression": "neutral" },
+        { "actor": "Prota", "line": "No, Minty, I sincerely doubt you \"know a guy\". ", "expression": "confused" },
+        { "actor": "Minty", "line": "Bark bark bark! Bark! Bark! Grrr! Bark bark!", "expression": "neutral" },
+        { "actor": "Prota", "line": "Okay, fine, I'll talk to your guy, but... no funny business, okay?", "expression": "annoyed" },
+        { "actor": "Minty", "line": "Bark!", "expression": "happy" },
+        { "actor": "Prota", "line": "Okay then! I'll follow your lead!", "expression": "happy" },
+        { "actor": "Narrator", "line": "PROTA AND MINTY WILL RETURN IN...", "expression": "neutral" },
+        { "actor": "Narrator", "line": "RECOMMENDATION DOG!!", "expression": "neutral" }
+      ]
+    },
+    {
+      "if": "ending8",
+      "then": [
+        { "action": "play-music", "music": "protas-home-dialogue" },
+        { "action": "change-location", "location": "ProtasHome"},
+        { "action": "add-actor", "actor": "Mom", "expression": "neutral", "side": "right", "skipWait": true },
+        { "action": "add-actor", "actor": "Prota", "expression": "neutral", "side": "left" },
+        { "actor": "Prota", "line": "Hey Mom! Now that the Festi-Ball's done, when's your next big match?", "expression": "happy" },
+        { "actor": "Mom", "line": "My NEXT big match?", "expression": "confused" },
+        { "actor": "Mom", "line": "Oh, honey, I can't move on to my next big match until I finish this one!", "expression": "happy" },
+        { "actor": "Prota", "line": "...what?", "expression": "confused" },
+        { "actor": "Mom", "line": "You know how it works. Sure, I took the Coffinator down once...", "expression": "happy" },
+        { "actor": "Mom", "line": "But you know his whole deal. He always come back for another round!", "expression": "happy" },
+        { "actor": "Mom", "line": "And because you and Minty interrupted the show...it's technically still going.", "expression": "happy" },
+        { "actor": "Prota", "line": "Haha, okay, but that's a technicality, right? There's no way it could actually--", "expression": "happy" },
+        { "actor": "Mom", "line": "Sweetie, the rules of wrestling are very serious. We pros always uphold them.", "expression": "happy" },
+        { "actor": "Mom", "line": "At any time Coffinator could show up for a rematch, armed with only his muscles and his weird puns.", "expression": "neutral" },
+        { "actor": "Mom", "line": "And I'll give him what he wants! Just gotta keep my head on a swivel. You never know...", "expression": "neutral" },
+        { "actor": "Prota", "line": "He's a HUGE guy! Where could he possibly be hiding?", "expression": "shocked" },
+        { "actor": "???", "line": "Fascinating question..." },
+        { "actor": "Coffinator", "line": "Why don't you CASKET again? If it's answers you're after, I've got a LATTE!", "expression": "neutral", "side": "left" },
+        { "actor": "Mom", "line": "Sorry, Prota. Mommy's gotta go to work.", "expression": "happy" },
+        { "actor": "Narrator", "line": "PROTA'S MOM WILL RETURN IN...", "expression": "neutral" },
+        { "actor": "Narrator", "line": "WRESTLE-MOM-IA : COFF IT UP", "expression": "neutral" },
+        { "actor": "Prota", "line": "I don't think I understand his gimmick.", "expression": "confused", "side": "left" }
+      ]
+    },
+    {
+      "if": "ending9",
+      "then": [
+        { "action": "play-music", "music": "skate-park-dialogue" },
         { "actor": "???", "line": "Yes, yes... everything went according to plan.", "expression": "neutral", "side": "left" },
         { "actor": "???", "line": "The Festi-Ball went off without a hitch. No ball of yarn in sight.", "expression": "neutral", "side": "left" },
         { "actor": "???", "line": "You were right. It was...too colourful for this world.", "expression": "neutral", "side": "left" },
@@ -71,8 +230,7 @@
         { "actor": "Minty", "line": "Madam President.", "expression": "neutral", "side": "right" },
         { "actor": "Minty", "line": "", "expression": "wink", "side": "right" },
         { "actor": "Narrator", "line": "MINTY WILL RETURN IN....", "expression": "neutral" },
-        { "actor": "Narrator", "line": "LOST YOUR MARBLES PRESENTS:", "expression": "neutral" },
-        { "actor": "Narrator", "line": "MINTY GEAR SOLID", "expression": "neutral" }
+        { "actor": "Narrator", "line": "LOST YOUR MARBLES PRESENTS: MINTY GEAR SOLID", "expression": "neutral" }
       ]
     },
     {
@@ -85,8 +243,8 @@
         { "actor": "Mayoress", "line": "And thus, without further ado... I invite our talented emcee to begin our closing ceremony...", "expression": "happy" },
         { "actor": "Mayoress", "line": "The Festi-Ball Rap! Take it away, Mom!", "expression": "neutral" },
         { "actor": "Mom", "line": "Happy to!", "expression": "neutral", "side": "left"  },
-        { "actor": "Mom", "line": "(ahem)", "expression": "neutral" },
         { "action": "play-music", "music": "rap"},
+        { "actor": "Mom", "line": "(ahem)", "expression": "neutral" },
         { "actor": "Mom", "line": "Shout-out, wrestling fans, you're gonna love this bookin'!", "expression": "happy" },
         { "actor": "Mom", "line": "Cause it's time to smell what The Mom's got cookin'!", "expression": "happy" },
         { "actor": "Mom", "line": "Imma suplex these beats, and then I'll piledrive the track!", "expression": "happy" },

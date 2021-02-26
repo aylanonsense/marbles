@@ -31,7 +31,7 @@ function DialogueBox:init()
   local lineWidth, lineHeight = playdate.graphics.getTextSize("ABC")
   self.lineHeight = lineHeight
   self.textScrollSound = soundCache.createSoundEffectPlayer("sound/sfx/dialogue-loop")
-  self.textScrollSound:setVolume(config.SOUND_VOLUME)
+  self.textScrollSound:setVolume(0.3 * config.SOUND_VOLUME)
   self.AButtonImage = imageCache.loadImage("images/a-button")
 end
 

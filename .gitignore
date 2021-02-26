@@ -1,5 +1,6 @@
 # Ignore build files
-build.pdx
+*.pdx
+*.zip
 
 # Ignore silly Mac files
 .DS_Store

@@ -30,7 +30,7 @@ function CreditsScene:init(unlocks, musicPlayer)
     { name = "Vintage Viper", unlocks = unlocks.storylinesPlayed["vintage-viper"], possibilities = { "fail", "normal", "special" } },
     { name = "Festi-Ball", unlocks = unlocks.storylinesPlayed["festi-ball"], possibilities = { "finished" } },
     { name = "Credits", unlocks = unlocks.storylinesPlayed["credits"], possibilities = { "finished" } },
-    { name = "Endings", unlocks = unlocks.storylinesPlayed["endings"], possibilities = { "fail", "normal", "special" } }
+    { name = "Endings", unlocks = unlocks.storylinesPlayed["endings"], possibilities = { "ending1", "ending2", "ending3", "ending4", "ending5", "ending6", "ending7", "ending8", "ending9", "complete" } }
   }
   self.credits = {
     {
@@ -77,6 +77,7 @@ function CreditsScene:init(unlocks, musicPlayer)
       "The cast of Ball Review",
       "Stacey D'Souza",
       "RC Woodmass",
+      "Charlie and Nora Bedard",
       "Our families and pets",
       "... and you!"
     },
@@ -142,7 +143,7 @@ function CreditsScene:drawUnlocks(x, y)
       else
         frame = 1
       end
-      self.checkboxImage[frame]:draw(x + 180 + 17 * (i - 1) - self.checkboxImageWidth / 2, math.floor(y + 4 - self.checkboxImageHeight / 2))
+      self.checkboxImage[frame]:draw(x + 180 + 16 * ((i - 1) % 5) - self.checkboxImageWidth / 2, math.floor(y + 16 * math.floor((i - 1) / 5) + 4 - self.checkboxImageHeight / 2))
       if hasGottenResult then
         hasPlayedStoryline = true
       end
@@ -150,7 +151,7 @@ function CreditsScene:drawUnlocks(x, y)
     playdate.graphics.drawText(hasPlayedStoryline and storyline.name or "???", x, y)
     y += 16
   end
-  y += 16
+  y += 32
   local playtimeText = time.playtime.hours .. " : " .. (time.playtime.minutes < 10 and "0" or "") .. time.playtime.minutes .. " : " .. (time.playtime.seconds < 10 and "0" or "") .. (math.floor(100 * time.playtime.seconds) / 100)
   playdate.graphics.drawText(playtimeText, x + 60, y)
   y += 16

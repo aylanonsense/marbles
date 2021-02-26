@@ -23,16 +23,40 @@ function dialogueMethods.specialExit()
   return exitScore > 3
 end
 
-function dialogueMethods.failPlaythrough()
-  return game:getPlaythroughResult() == "fail"
+function dialogueMethods.ending1()
+  return game:getPlaythroughResult() == "ending1"
 end
 
-function dialogueMethods.normalPlaythrough()
-  return game:getPlaythroughResult() == "normal"
+function dialogueMethods.ending2()
+  return game:getPlaythroughResult() == "ending2"
 end
 
-function dialogueMethods.specialPlaythrough()
-  return game:getPlaythroughResult() == "special"
+function dialogueMethods.ending3()
+  return game:getPlaythroughResult() == "ending3"
+end
+
+function dialogueMethods.ending4()
+  return game:getPlaythroughResult() == "ending4"
+end
+
+function dialogueMethods.ending5()
+  return game:getPlaythroughResult() == "ending5"
+end
+
+function dialogueMethods.ending6()
+  return game:getPlaythroughResult() == "ending6"
+end
+
+function dialogueMethods.ending7()
+  return game:getPlaythroughResult() == "ending7"
+end
+
+function dialogueMethods.ending8()
+  return game:getPlaythroughResult() == "ending8"
+end
+
+function dialogueMethods.ending9()
+  return game:getPlaythroughResult() == "ending9"
 end
 
 function dialogueMethods.completePlaythrough()

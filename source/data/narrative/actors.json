@@ -205,5 +205,13 @@
       "thinking": { "frame": 4 },
       "confused": { "frame": 5 }
     }
+  },
+  "Coffinator": {
+    "name": "The Coffinator",
+    "image": "/images/narrative/actors/coffinator.png",
+    "facing": "right",
+    "expressions": {
+      "neutral": { "frame": 1 }
+    }
   }
 }

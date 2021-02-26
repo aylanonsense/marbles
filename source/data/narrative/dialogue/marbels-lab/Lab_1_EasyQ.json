@@ -23,7 +23,10 @@
     { "action": "show-object", "object": "Marbelizer" },
     { "actor": "Prota", "line": "Whoa! I felt that!", "expression": "shocked alt" },
     { "action": "hide-object", "object": "Marbelizer" },
-    { "actor": "Marbels", "line": "Good. Now let me ask you again:", "expression": "happy" },
+    { "actor": "Marbels", "line": "Good. Now let's try again.",  "expression": "neutral"  },
+    { "actor": "Marbels", "line": "And make sure to only use the bottom half of the crank!",  "expression": "neutral"  },
+    { "actor": "Prota", "line": "..........Okay!", "expression": "shocked" },
+    { "actor": "Marbels", "line": "So, let me ask you again:", "expression": "happy" },
     { "actor": "Marbels", "line": "Prota, what is the annual rainfall, in cubic hectares, of Crabapple Valley?", "expression": "neutral" }
   ]
 }

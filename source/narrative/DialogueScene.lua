@@ -282,6 +282,27 @@ function DialogueScene:processDialogueAction(action, instantly)
       self.dialogueBox:showDialogue(actor.name, line, actor.side, actor.pitch)
     end
     self.waitingFor = "dialogue-box"
+  -- Say a dialogue line
+  elseif action.action == "add-actor" then
+    local actorName = self:evalDialogueField(action.actor)
+    local actor = self:addOrFindActor(actorName)
+    local side = self:evalDialogueField(action.side) or actor.side or actor.preferredSide
+    actor:setExpression(self:evalDialogueField(action.expression))
+    if self.actorsOnStage[side] ~= actor then
+      if self.actorsOnStage[side] then
+        self.actorsOnStage[side]:setIsTalking(false, instantly)
+        self.actorsOnStage[side]:slideOffStage()
+      end
+      self.actorsOnStage[side] = actor
+      actor:slideOnStage(side)
+    end
+    self.dialogueBox:clear()
+    self.waitingFor = "time"
+    if action.skipWait then
+      self.waitTime = 0.01
+    else
+      self.waitTime = 1.00
+    end
   -- Change the location
   elseif action.action == "change-location" then
     if self.location then
@@ -297,6 +318,7 @@ function DialogueScene:processDialogueAction(action, instantly)
     self.musicPlayer = soundCache.createMusicPlayer("sound/music/" .. self:evalDialogueField(action.music))
     self.musicPlayer:setVolume(config.MUSIC_VOLUME)
     self.musicPlayer:play(0)
+    self.waitingFor = "time"
     self.waitTime = 0.01
   -- Show an object
   elseif action.action == "show-object" then

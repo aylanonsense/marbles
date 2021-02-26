@@ -285,52 +285,26 @@ function Game:getPlaythroughResult(unlockData)
       end
     end
   end
-  -- print("Playthrough results:")
-  local averageExitScore = 0
-  local numExitsTaken = 0
-  for _, storyline in ipairs(self.playthrough.finishedStorylines) do
-    if storyline.name == "library"
-        or storyline.name == "skate-park"
-        or storyline.name == "sandwich-shop"
-        or storyline.name == "daycare"
-        or storyline.name == "ball-museum"
-        or storyline.name == "security-city"
-        or storyline.name == "pickle-yard"
-        or storyline.name == "vintage-viper" then
-      -- print("  " .. storyline.name)
-      for _, exit in ipairs(storyline.exits) do
-        -- print("    " .. exit.label .. " +" .. exit.score)
-        if exit.score then
-          numExitsTaken += 1
-          averageExitScore += exit.score
-        end
-      end
-      if #storyline.exits == 0 then
-        numExitsTaken += 3
-        if storyline.result == "fail" then
-          averageExitScore += 3
-        elseif storyline.result == "special" then
-          averageExitScore += 15
-        else
-          averageExitScore += 9
-        end
-      end
-    end
-  end
-  averageExitScore = averageExitScore / math.max(numExitsTaken, 1)
-  -- print("  Average score: " .. averageExitScore)
-  if numUnlocks >= 32 then
-    -- print("  Result: complete ending")
+  if numUnlocks >= 38 then
     return "complete"
-  elseif averageExitScore < 3.5 then
-    -- print("  Result: fail ending")
-    return "fail"
-  elseif averageExitScore < 4.95 then
-    -- print("  Result: normal ending")
-    return "normal"
-  else
-    -- print("  Result: special ending")
-    return "special"
+  elseif self:finishedStoryline("daycare") and self:finishedStoryline("vintage-viper") then
+    return "ending1"
+  elseif self:finishedStoryline("daycare") and self:finishedStoryline("pickle-yard") then
+    return "ending2"
+  elseif self:finishedStoryline("daycare") and self:finishedStoryline("security-city") then
+    return "ending3"
+  elseif self:finishedStoryline("sandwich-shop") and self:finishedStoryline("vintage-viper") then
+    return "ending4"
+  elseif self:finishedStoryline("sandwich-shop") and self:finishedStoryline("pickle-yard") then
+    return "ending5"
+  elseif self:finishedStoryline("sandwich-shop") and self:finishedStoryline("security-city") then
+    return "ending6"
+  elseif self:finishedStoryline("skate-park") and self:finishedStoryline("vintage-viper") then
+    return "ending7"
+  elseif self:finishedStoryline("skate-park") and self:finishedStoryline("pickle-yard") then
+    return "ending8"
+  elseif self:finishedStoryline("skate-park") and self:finishedStoryline("security-city") then
+    return "ending9"
   end
 end
 

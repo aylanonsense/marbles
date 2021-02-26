@@ -8,17 +8,17 @@ import "CoreLibs/timer"
 import "effect/effects"
 
 -- TODO: remove this import before final build
-import "level/editor/EditorScene"
+-- import "level/editor/EditorScene"
 
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
 -- Set up the gane (globally accessible)
-if config.LAUNCH_LEVEL_EDITOR then
-  Scene.setScene(EditorScene())
-else
+-- if config.LAUNCH_LEVEL_EDITOR then
+--   Scene.setScene(EditorScene())
+-- else
   game = Game()
-end
+-- end
 
 -- Update the scene
 function playdate.update()

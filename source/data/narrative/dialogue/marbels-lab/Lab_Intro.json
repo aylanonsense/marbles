@@ -69,7 +69,10 @@
     { "actor": "Marbels", "line": "Here. Simply affix this sticker to your left temple... And stand within range.", "expression": "neutral" },
     { "actor": "Marbels", "line": "You should feel a slight buzzing.", "expression": "neutral" },
     { "actor": "Prota", "line": "I...I do!", "expression": "shocked" },
-    { "actor": "Marbels", "line": "Brilliant. Now. Let's try it out, shall we? Let's start with a very simple question.", "expression": "happy" },
+    { "actor": "Marbels", "line": "Brilliant. Now. Let's try it out, shall we?", "expression": "happy" },
+    { "actor": "Marbels", "line": "Oh - and make sure to use the CRANK or else it won't work!", "expression": "shocked" },
+   { "actor": "Prota", "line": "What?", "expression": "neutral" },
+    { "actor": "Marbels", "line": "Nothing! Now - let's start with a simple question:", "expression": "happy" },
     { "actor": "Marbels", "line": "Prota, tell me. Which event is happening tonight?", "expression": "neutral" }
   ]
 }
