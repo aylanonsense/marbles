@@ -19,7 +19,7 @@
     { "actor": "Prota", "line": "Haha oh right! You wiped out in the laptop aisle in front of all the new trainees!", "expression": "happy" },
     { "actor": "Prota", "line": "And you had-- was it a milkshake in your hand?", "expression": "thinking alt" },
     { "actor": "Besto", "line": "...We can't do this right now. ", "expression": "neutral" },
-    { "actor": "Prota", "line": "Fine, right, okay. So what should we do?", "expression": "listening" },
+    { "actor": "Prota", "line": "Fine, right, okay. So what should we do?", "expression": "thinking" },
     { "actor": "Besto", "line": "YOU should get some paper, pick a great picture of Minty, and decide what to write on it.", "expression": "neutral" },
     { "actor": "Besto", "line": "And I'll stand over here eating this bag of Drifties.", "expression": "happy" },
     { "actor": "Prota", "line": "You're not gonna help me?", "expression": "shocked alt" },

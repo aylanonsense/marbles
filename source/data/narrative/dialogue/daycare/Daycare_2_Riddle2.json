@@ -12,7 +12,7 @@
         { "actor": "Prota", "line": "I know! You're a flashlight!",  "expression": "happy thumbs up" },
         { "actor": "YS", "line": "I think you will find that I said \"With no light...\"", "expression": "neutral" },
         { "actor": "Prota", "line": "Exactly! That's when you need a flash light the most! When there's no light.", "expression": "thinking alt" },
-        { "actor": "Prota", "line": "...Right?", "expression": "listening" },
+        { "actor": "Prota", "line": "...Right?", "expression": "thinking" },
         { "actor": "YS", "line": "Hmm.", "expression": "neutral" },
         { "actor": "YS", "line": "I acknowledge your answer. The prophecy grows clearer.", "expression": "neutral" },
         { "actor": "Prota", "line": "Can you just tell me where Minty is?", "expression": "annoyed" },
@@ -31,7 +31,7 @@
         { "actor": "YS", "line": "And that you must squint your eyes before their might?", "expression": "neutral" },
         { "actor": "Prota", "line": "Maybe? Yung Sphinx, I really need to find Minty.", "expression": "shocked alt" },
         { "actor": "YS", "line": "Your answer is acknowledged. The prophecy grows.", "expression": "neutral" },
-        { "actor": "Prota", "line": "Okay...", "expression": "listening" },
+        { "actor": "Prota", "line": "Okay...", "expression": "thinking" },
         { "actor": "YS", "line": "The roundness of my shape...is only equalled by the smoothness of my edges. ", "expression": "neutral" },
         { "actor": "YS", "line": "WHAT AM I?!", "expression": "shocked" }
       ]

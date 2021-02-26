@@ -182,3 +182,17 @@ function dialogueMethods.getLibraryPosterImage()
     game.playthrough.storyline.exits[2].imageName .. -- e.g. "Isthis"
     game.playthrough.storyline.exits[3].imageName .. "Poster" -- e.g. "ButtPoster"
 end
+
+function dialogueMethods.getLibraryPosterImageFromPreviousStoryline()
+  for _, storyline in ipairs(game.playthrough.finishedStorylines) do
+    if storyline.name == "library" then
+      if storyline.exits and #storyline.exits > 0 then
+        return 
+          storyline.exits[1].imageName .. -- e.g. "Thick"
+          storyline.exits[2].imageName .. -- e.g. "Isthis"
+          storyline.exits[3].imageName .. "Poster" -- e.g. "ButtPoster"
+      end
+    end
+  end
+  return "ThickIsthisButtPoster"
+end

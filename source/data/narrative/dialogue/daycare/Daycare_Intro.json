@@ -6,9 +6,33 @@
     { "actor": "YS", "expression": "neutral" }
   ],
   "objects": [
-    "BadPoster",
-    "GoodPoster",
-    "SpecialPoster"
+    "WrapperIsthisZoomPoster",
+    "ScrollHaveyouButtPoster",
+    "ScrollHaveyouPerfectPoster",
+    "ScrollHaveyouZoomPoster",
+    "ScrollHelpButtPoster",
+    "ScrollHelpPerfectPoster",
+    "ScrollHelpZoomPoster",
+    "ScrollIsthisButtPoster",
+    "ScrollIsthisPerfectPoster",
+    "ScrollIsthisZoomPoster",
+    "ThickHaveyouButtPoster",
+    "ThickHaveyouPerfectPoster",
+    "ThickHaveyouZoomPoster",
+    "ThickHelpButtPoster",
+    "ThickHelpPerfectPoster",
+    "ThickHelpZoomPoster",
+    "ThickIsthisButtPoster",
+    "ThickIsthisPerfectPoster",
+    "ThickIsthisZoomPoster",
+    "WrapperHaveyouButtPoster",
+    "WrapperHaveyouPerfectPoster",
+    "WrapperHaveyouZoomPoster",
+    "WrapperHelpButtPoster",
+    "WrapperHelpPerfectPoster",
+    "WrapperHelpZoomPoster",
+    "WrapperIsthisButtPoster",
+    "WrapperIsthisPerfectPoster"
   ],
   "script": [
     { "actor": "Dad", "line": "Prota?! What are you doing here?", "expression": "shocked" },
@@ -32,18 +56,7 @@
     { "action": "dismiss-actor", "side": "right"},
     { "actor": "Prota", "line": "Okay!", "expression": "neutral thumbs up" },
     { "actor": "Prota", "line": "Sounds like a yes to me. Hey kids! Have you seen this dog?", "expression": "neutral" },
-    {
-      "if": { "method": "failResultInPreviousStoryline", "arguments": [ "library" ] },
-      "then": { "action": "show-object", "object": "BadPoster" }
-    },
-    {
-      "if": { "method": "normalResultInPreviousStoryline", "arguments": [ "library" ] },
-      "then": { "action": "show-object", "object": "GoodPoster" }
-    },
-    {
-      "if": { "method": "specialResultInPreviousStoryline", "arguments": [ "library" ] },
-      "then": { "action": "show-object", "object": "SpecialPoster" }
-    },
+    { "action": "show-object", "object": { "method": "getLibraryPosterImageFromPreviousStoryline" } },
     { "actor": "Prota", "line": "...Anyone?", "expression": "neutral" },
     { "action": "hide-object" },
     { "actor": "YS", "line": "I know where the minted one is.", "expression": "neutral", "side": "right" },
