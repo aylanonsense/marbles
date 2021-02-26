@@ -139,8 +139,8 @@
     {
       "if": "ending6",
       "then": [
-        { "action": "play-music", "music": "festi-ball-dialogue" },
-        { "action": "change-location", "location": "Park"},
+        { "action": "play-music", "music": "marbels-lab-dialogue" },
+        { "action": "change-location", "location": "MarbelsLab"},
         { "action": "add-actor", "actor": "Marbels", "expression": "neutral", "side": "right", "skipWait": true },
         { "action": "add-actor", "actor": "Prota", "expression": "neutral", "side": "left" },
         { "actor": "Prota", "line": "Okay, professor Marbels! It's Day two of my internship!", "expression": "thinking" },
