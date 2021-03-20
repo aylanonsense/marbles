@@ -2,44 +2,6 @@
 	"objects": [
 		 {
 			"fillCoordinates": [
-				60,
-				160,
-				60,
-				270,
-				170,
-				270,
-				170,
-				160
-			],
-			"fillPattern":"LighterGrey",
-			"layer":-2,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				-160,
-				60,
-				-160,
-				120,
-				150,
-				120,
-				150,
-				60
-			],
-			"fillPattern":"LighterGrey",
-			"layer":-2,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
 				-50,
 				-100,
 				-50,
@@ -49,7 +11,6 @@
 				60,
 				-100
 			],
-			"fillPattern":"LighterGrey",
 			"layer":-2,
 			"linesAndArcs": [
 			],
@@ -59,178 +20,196 @@
 		},
 		 {
 			"fillCoordinates": [
-				0,
+				60,
+				160,
+				60,
+				270,
+				170,
+				270,
+				170,
+				160
+			],
+			"layer":-2,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				-110,
+				60,
+				-110,
+				110,
+				110,
+				110,
+				110,
+				60
+			],
+			"layer":-2,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				-100,
 				70,
-				0,
-				110,
-				40,
-				110,
-				40,
+				-100,
+				100,
+				100,
+				100,
+				100,
 				70
 			],
-			"fillPattern":"White",
+			"fillPattern":"LighterGrey",
 			"layer":-1,
 			"linesAndArcs": [
+				 {
+					"sectors": [
+						-3,
+						1,
+						-3,
+						2,
+						-2,
+						1,
+						-2,
+						2
+					],
+					"type":"PhysLine",
+					"x":-100,
+					"x2":-100,
+					"y":100,
+					"y2":70
+				},
+				 {
+					"sectors": [
+						-3,
+						1,
+						-3,
+						2,
+						-2,
+						1,
+						-2,
+						2,
+						-1,
+						1,
+						-1,
+						2,
+						0,
+						1,
+						0,
+						2,
+						1,
+						1,
+						1,
+						2,
+						2,
+						1,
+						2,
+						2
+					],
+					"type":"PhysLine",
+					"x":100,
+					"x2":-100,
+					"y":100,
+					"y2":100
+				},
+				 {
+					"sectors": [
+						1,
+						1,
+						1,
+						2,
+						2,
+						1,
+						2,
+						2
+					],
+					"type":"PhysLine",
+					"x":100,
+					"x2":100,
+					"y":70,
+					"y2":100
+				},
+				 {
+					"sectors": [
+						-3,
+						1,
+						-2,
+						1,
+						-1,
+						1,
+						0,
+						1,
+						1,
+						1,
+						2,
+						1
+					],
+					"type":"PhysLine",
+					"x":-100,
+					"x2":100,
+					"y":70,
+					"y2":70
+				}
 			],
 			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"layer":-1,
-			"type":"CrumblingPlatform",
-			"x":210,
-			"y":270
-		},
-		 {
-			"fillCoordinates": [
-				50,
-				70,
-				50,
-				110,
-				90,
-				110,
-				90,
-				70
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				120,
-				220,
-				120,
-				260,
-				160,
-				260,
-				160,
-				220
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				70,
-				170,
-				70,
-				210,
-				110,
-				210,
-				110,
-				170
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				120,
-				170,
-				120,
-				210,
-				160,
-				210,
-				160,
-				170
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				10,
-				-40,
-				10,
-				0,
-				50,
-				0,
-				50,
-				-40
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				-40,
-				-90,
-				-40,
-				-50,
-				0,
-				-50,
-				0,
-				-90
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				70,
-				220,
-				70,
-				260,
-				110,
-				260,
-				110,
-				220
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				10,
-				-90,
-				10,
-				-50,
-				50,
-				-50,
-				50,
-				-90
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
+				 {
+					"sectors": [
+						-3,
+						1,
+						-2,
+						1
+					],
+					"type":"PhysPoint",
+					"x":-100,
+					"y":70
+				},
+				 {
+					"sectors": [
+						-3,
+						1,
+						-3,
+						2,
+						-2,
+						1,
+						-2,
+						2
+					],
+					"type":"PhysPoint",
+					"x":-100,
+					"y":100
+				},
+				 {
+					"sectors": [
+						1,
+						1,
+						1,
+						2,
+						2,
+						1,
+						2,
+						2
+					],
+					"type":"PhysPoint",
+					"x":100,
+					"y":100
+				},
+				 {
+					"sectors": [
+						1,
+						1,
+						2,
+						1
+					],
+					"type":"PhysPoint",
+					"x":100,
+					"y":70
+				}
 			],
 			"type":"Polygon"
 		},
@@ -245,7 +224,6 @@
 				-40,
 				130
 			],
-			"fillPattern":"LighterGrey",
 			"layer":-1,
 			"linesAndArcs": [
 			],
@@ -254,21 +232,15 @@
 			"type":"Polygon"
 		},
 		 {
-			"layer":-1,
-			"type":"CrumblingPlatform",
-			"x":-210,
-			"y":270
-		},
-		 {
 			"fillCoordinates": [
-				100,
-				70,
-				100,
-				110,
-				140,
-				110,
-				140,
-				70
+				10,
+				-90,
+				10,
+				-50,
+				50,
+				-50,
+				50,
+				-90
 			],
 			"fillPattern":"White",
 			"layer":-1,
@@ -280,14 +252,109 @@
 		},
 		 {
 			"fillCoordinates": [
-				-50,
 				70,
+				170,
+				70,
+				210,
+				110,
+				210,
+				110,
+				170
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				-40,
+				-90,
+				-40,
 				-50,
+				0,
+				-50,
+				0,
+				-90
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				10,
+				-40,
+				10,
+				0,
+				50,
+				0,
+				50,
+				-40
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				70,
+				220,
+				70,
+				260,
 				110,
-				-10,
+				260,
 				110,
-				-10,
-				70
+				220
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				120,
+				170,
+				120,
+				210,
+				160,
+				210,
+				160,
+				170
+			],
+			"fillPattern":"White",
+			"layer":-1,
+			"linesAndArcs": [
+			],
+			"points": [
+			],
+			"type":"Polygon"
+		},
+		 {
+			"fillCoordinates": [
+				120,
+				220,
+				120,
+				260,
+				160,
+				260,
+				160,
+				220
 			],
 			"fillPattern":"White",
 			"layer":-1,
@@ -307,44 +374,6 @@
 				0,
 				0,
 				-40
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				-150,
-				70,
-				-150,
-				110,
-				-110,
-				110,
-				-110,
-				70
-			],
-			"fillPattern":"White",
-			"layer":-1,
-			"linesAndArcs": [
-			],
-			"points": [
-			],
-			"type":"Polygon"
-		},
-		 {
-			"fillCoordinates": [
-				-100,
-				70,
-				-100,
-				110,
-				-60,
-				110,
-				-60,
-				70
 			],
 			"fillPattern":"White",
 			"layer":-1,
@@ -1466,6 +1495,7 @@
 			"type":"Polygon"
 		},
 		 {
+			"fillPattern":"LighterGrey",
 			"layer":3,
 			"radius":10,
 			"type":"Circle",
@@ -1474,17 +1504,10 @@
 		},
 		 {
 			"layer":4,
-			"rotation":0,
+			"rotation":45,
 			"type":"Booster",
-			"x":-20,
-			"y":-20
-		},
-		 {
-			"layer":4,
-			"rotation":0,
-			"type":"Booster",
-			"x":-130,
-			"y":90
+			"x":-250,
+			"y":30
 		},
 		 {
 			"layer":4,
@@ -1497,27 +1520,6 @@
 			"layer":4,
 			"rotation":0,
 			"type":"Booster",
-			"x":120,
-			"y":90
-		},
-		 {
-			"layer":4,
-			"rotation":0,
-			"type":"Booster",
-			"x":70,
-			"y":90
-		},
-		 {
-			"layer":4,
-			"rotation":45,
-			"type":"Booster",
-			"x":-250,
-			"y":30
-		},
-		 {
-			"layer":4,
-			"rotation":0,
-			"type":"Booster",
 			"x":30,
 			"y":-20
 		},
@@ -1525,68 +1527,22 @@
 			"layer":4,
 			"rotation":0,
 			"type":"Booster",
-			"x":-80,
-			"y":90
+			"x":130,
+			"y":60
 		},
 		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":-30,
-			"y":90
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":120,
-			"y":90
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":20,
-			"y":90
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":70,
-			"y":90
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
+			"layer":4,
+			"rotation":0,
+			"type":"Booster",
 			"x":-20,
 			"y":-20
 		},
 		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":-20,
-			"y":-70
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
+			"layer":4,
+			"rotation":0,
+			"type":"Booster",
 			"x":-130,
-			"y":90
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":30,
-			"y":-70
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":30,
-			"y":-20
-		},
-		 {
-			"layer":6,
-			"type":"CrumblingPlatform",
-			"x":-80,
-			"y":90
+			"y":60
 		},
 		 {
 			"exitId":"safetytown-1-bad",
@@ -1594,15 +1550,7 @@
 			"layer":8,
 			"type":"Exit",
 			"x":95,
-			"y":40
-		},
-		 {
-			"exitId":"safetytown-1-good",
-			"icon":"Good",
-			"layer":8,
-			"type":"Exit",
-			"x":0,
-			"y":-150
+			"y":-10
 		},
 		 {
 			"exitId":"safetytown-1-special",
@@ -1611,6 +1559,14 @@
 			"type":"Exit",
 			"x":-130,
 			"y":-190
+		},
+		 {
+			"exitId":"safetytown-1-good",
+			"icon":"Good",
+			"layer":8,
+			"type":"Exit",
+			"x":0,
+			"y":-150
 		}
 	],
 	"spawn": {
