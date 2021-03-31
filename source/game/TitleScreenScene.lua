@@ -32,7 +32,7 @@ function TitleScreenScene:init(canContinue)
   self.canContinue = canContinue
   self.hasChosenOption = false
   self.isDisplayingWarning = false
-  self.logoFrames = (config.SKIP_LOGO and 1 or 110)
+  self.logoFrames = (config.DEBUG_MODE_ENABLED and 1 or 110)
   self.framesUntilActive = self.logoFrames + (config.DEBUG_MODE_ENABLED and 0 or 50)
   sceneTransition:hold()
 end
