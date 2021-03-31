@@ -22,6 +22,7 @@ function MazeScene:init(levelData, prompt, musicPlayer)
 
   self.levelData = levelData
   self.objects = {}
+  self.drawOffset = 0
   self.blankLoadFrames = 64
   self.worldBoundary = nil
   self.marble = nil
@@ -192,6 +193,7 @@ function MazeScene:update()
 end
 
 function MazeScene:draw()
+  self.drawOffset = (self.drawOffset + 1) % 3
   if not config.BACKWARDS_COMPATIBILITY_MODE then
     playdate.graphics.setDrawOffset(0, 20)
   end
@@ -215,9 +217,11 @@ function MazeScene:draw()
     end
 
     -- Draw all level objects
+    local drawOffset = self.drawOffset
     for _, obj in ipairs(self.objects) do
+      drawOffset += 1
       if obj:isOnScreen() then
-        obj:draw()
+        obj:draw(drawOffset % 3 > 0)
       end
     end
   end

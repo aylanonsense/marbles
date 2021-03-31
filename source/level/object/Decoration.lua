@@ -20,18 +20,29 @@ function Decoration:init(x, y, imageName, rotation)
   Decoration.super.init(self, LevelObject.Type.Decoration)
   self.x = x
   self.y = y
+  self.lastDrawnRotation = nil
   self.rotation = rotation or 0
   self.imageName = imageName or DECO_IMAGE_NAMES[1]
   self.image = imageCache.loadImage("images/level/decoration/" .. self.imageName .. ".png")
   self.imageWidth, self.imageHeight = self.image:getSize()
+  self.rotatedImage = playdate.graphics.image.new(1.4 * self.imageWidth, 1.4 * self.imageHeight)
 end
 
-function Decoration:draw()
+function Decoration:draw(skipRegeneratingImages)
   local x, y = self:getPosition()
   x, y = camera.matrix:transformXY(x, y)
   local scale = camera.scale
-  self.image:drawRotated(x, y, self.rotation - camera.rotation, scale)
-  diagnosticStats.transformedImagesDrawn += 1
+  local image = self.rotatedImage
+	if not skipRegeneratingImages and self.lastDrawnRotation ~= self.rotation - camera.rotation then
+    self.lastDrawnRotation = self.rotation - camera.rotation
+		self.rotatedImage:clear(playdate.graphics.kColorClear)
+		playdate.graphics.pushContext(self.rotatedImage)
+		self.image:drawRotated(self.rotatedImage.width / 2, self.rotatedImage.height / 2, self.rotation - camera.rotation, scale)
+		diagnosticStats.transformedImagesDrawn += 1
+    playdate.graphics.popContext()
+	end
+	image:draw(x - image.width / 2, y - image.height / 2)
+	diagnosticStats.untransformedImagesDrawn += 1
 end
 
 function Decoration:getPosition()

@@ -27,6 +27,8 @@ function Booster:init(x, y, rotation)
 	Booster.super.init(self, LevelObject.Type.Booster)
 	self.physCircle = self:addPhysicsObject(PhysCircle(x, y, 10))
 	self.cooldown = 0
+	self.lastDrawnRotation = nil
+	self.lastDrawnFrame = nil
 	self.rotation = rotation
 	local angle = drawableAngleToTrigAngle(self.rotation)
 	self.launchX = math.cos(angle)
@@ -35,6 +37,8 @@ function Booster:init(x, y, rotation)
 	self.boostSound = soundCache.createSoundEffectPlayer("sound/sfx/booster")
 	self.boostSound:setVolume(config.SOUND_VOLUME * 0.3)
 	self.highlightFrames = 0
+	local imageWidth, imageHeight = self.imageTable[1]:getSize()
+	self.image = playdate.graphics.image.new(imageWidth, imageHeight)
 end
 
 function Booster:update()
@@ -42,7 +46,7 @@ function Booster:update()
 	self.highlightFrames = math.max(0, self.highlightFrames - 1)
 end
 
-function Booster:draw()
+function Booster:draw(skipRegeneratingImages)
 	local x, y = self:getPosition()
 	x, y = camera.matrix:transformXY(x, y)
 	local scale = camera.scale
@@ -52,8 +56,18 @@ function Booster:draw()
 	else
 		frame = math.max(2, 4 - math.floor((self.highlightFrames - 1) / 2))
 	end
-	self.imageTable[frame]:drawRotated(x, y, self.rotation - camera.rotation, scale)
-	diagnosticStats.transformedImagesDrawn += 1
+	local image = self.image
+	if not skipRegeneratingImages and (self.lastDrawnRotation ~= self.rotation - camera.rotation or self.lastDrawnFrame ~= frame) then
+		self.lastDrawnRotation = self.rotation - camera.rotation
+		self.lastDrawnFrame = frame
+		self.image:clear(playdate.graphics.kColorClear)
+		playdate.graphics.pushContext(self.image)
+		self.imageTable[frame]:drawRotated(self.image.width / 2, self.image.height / 2, self.rotation - camera.rotation, scale)
+		diagnosticStats.transformedImagesDrawn += 1
+		playdate.graphics.popContext()
+	end
+	image:draw(x - self.image.width / 2, y - self.image.height / 2)
+	diagnosticStats.untransformedImagesDrawn += 1
 end
 
 function Booster:preCollide(other, collision)
