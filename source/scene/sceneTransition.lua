@@ -3,8 +3,6 @@ import "scene/time"
 import "utility/soundCache"
 
 sceneTransition = {
-  TRANSITION_IN_TIME = (config.SKIP_SCENE_TRANSITIONS and 0.01 or 1.85),
-  TRANSITION_OUT_TIME = (config.SKIP_SCENE_TRANSITIONS and 0.01 or 1.85),
   anim = nil,
   time = 0.00,
   keepMusicPlaying = false,
@@ -16,19 +14,27 @@ transitionInSound:setVolume(config.SOUND_VOLUME)
 local transitionOutSound = playdate.sound.sampleplayer.new(playdate.sound.sample.new("sound/sfx/transition-out"))
 transitionOutSound:setVolume(config.SOUND_VOLUME)
 
+function sceneTransition.getTransitionInTime()
+  return config.DEBUG_MODE_ENABLED and 0.01 or 1.85
+end
+
+function sceneTransition.getTransitionOutTime()
+  return config.DEBUG_MODE_ENABLED and 0.01 or 1.85
+end
+
 function sceneTransition:update()
   if self.anim then
     self.time += time.dt
     -- Fade out music
     if self.anim == 'out' then
       if not self.keepMusicPlaying then
-        local volume = math.min(math.max(0, 1 - self.time / self.TRANSITION_OUT_TIME), 1) * config.MUSIC_VOLUME
+        local volume = math.min(math.max(0, 1 - self.time / sceneTransition.getTransitionOutTime()), 1) * config.MUSIC_VOLUME
         for _, player in pairs(soundCache.musicPlayers) do
           player:setVolume(volume)
         end
       end
     end
-    if (self.anim == 'in' and self.time >= self.TRANSITION_IN_TIME) or (self.anim == 'out' and self.time >= self.TRANSITION_OUT_TIME) then
+    if (self.anim == 'in' and self.time >= sceneTransition.getTransitionInTime()) or (self.anim == 'out' and self.time >= sceneTransition.getTransitionOutTime()) then
       self.anim = nil
       self.time = 0.00
       local callback = self.callback
@@ -47,9 +53,9 @@ function sceneTransition:draw()
     local height = 40
     local t
     if self.anim == 'in' then
-      t = self.time / self.TRANSITION_IN_TIME
+      t = self.time / sceneTransition.getTransitionInTime()
     else
-      t = 1 - self.time / self.TRANSITION_OUT_TIME
+      t = 1 - self.time / sceneTransition.getTransitionOutTime()
     end
     for y = 0, 240, height do
       local width = 400 * (1 - t)
@@ -66,7 +72,7 @@ function sceneTransition:transitionIn(callback)
   self.anim = 'in'
   self.time = 0.00
   self.callback = callback
-  if not config.SKIP_SCENE_TRANSITIONS then
+  if not config.DEBUG_MODE_ENABLED then
     transitionInSound:play(1)
   end
 end
@@ -76,7 +82,7 @@ function sceneTransition:transitionOut(callback, keepMusicPlaying)
   self.time = 0.00
   self.callback = callback
   self.keepMusicPlaying = keepMusicPlaying or false
-  if not config.SKIP_SCENE_TRANSITIONS then
+  if not config.DEBUG_MODE_ENABLED then
     transitionOutSound:play(1)
   end
 end

@@ -1,11 +1,11 @@
+local allowDebugMode = false
+
 config = {
-  SHOW_DEBUG_SKIP_SCREENS = false,
-  SHOW_DIAGNOSTIC_STATS = false,
+  ALLOW_DEBUG_MODE = allowDebugMode,
+  DEBUG_MODE_ENABLED = allowDebugMode,
   MUSIC_VOLUME = 0.7,
   SOUND_VOLUME = 1.0,
-  SKIP_LOGO = false,
-  SKIP_SCENE_TRANSITIONS = false,
-  SKIP_WORLD_TRANSITIONS = false,
+  SKIP_LOGO = true,
   BACKWARDS_COMPATIBILITY_MODE = false,
   LAUNCH_LEVEL_EDITOR = false
 }

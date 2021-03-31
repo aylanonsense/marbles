@@ -24,6 +24,11 @@ function Game:init()
   self.playthrough = nil
 
   -- Open the title screen
+  if config.ALLOW_DEBUG_MODE then
+    playdate.getSystemMenu():addCheckmarkMenuItem("Debug", config.DEBUG_MODE_ENABLED, function(value)
+      config.DEBUG_MODE_ENABLED = value
+    end)
+  end
   self:showTitleScreen()
 end
 
@@ -89,7 +94,7 @@ function Game:resumeCurrentStoryline()
   self.storylineData = loadJsonFile("/data/narrative/storylines/" .. storylineName .. ".json")
 
   -- Play the first storyline scene, unless we choose to skip it and simulate the results instead
-  if config.SHOW_DEBUG_SKIP_SCREENS then
+  if config.DEBUG_MODE_ENABLED then
     Scene.setScene(StorylineSimulationScene(branchingData, self.playthroughData), function(shouldPlayStoryline, result)
       if shouldPlayStoryline then
         self:playNextStorylineScene()
@@ -119,6 +124,11 @@ function Game:playNextStorylineScene(startSceneInstantly)
   playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
   local advance = function(exit, secretExit, startNextSceneInstantly, returnToTitle)
     playdate.getSystemMenu():removeAllMenuItems()
+    if config.ALLOW_DEBUG_MODE then
+      playdate.getSystemMenu():addCheckmarkMenuItem("Debug", config.DEBUG_MODE_ENABLED, function(value)
+        config.DEBUG_MODE_ENABLED = value
+      end)
+    end
     if returnToTitle then
       self:showTitleScreen()
     elseif secretExit then
@@ -132,7 +142,7 @@ function Game:playNextStorylineScene(startSceneInstantly)
   end
   local sceneData = self.storylineData.scenes[self.playthrough.storyline.stage]
   if sceneData then
-    if config.SHOW_DEBUG_SKIP_SCREENS and sceneData.maze then
+    if config.DEBUG_MODE_ENABLED and sceneData.maze then
       Scene.setScene(MazeSimulationScene(sceneData.maze, sceneData.exits), function(shouldPlayMaze, exit)
         if shouldPlayMaze then
           local scene = self:createStorylineScene(self.storylineData, self.playthrough.storyline.stage, startSceneInstantly)
@@ -141,7 +151,7 @@ function Game:playNextStorylineScene(startSceneInstantly)
           advance(exit)
         end
       end)
-    elseif config.SHOW_DEBUG_SKIP_SCREENS and sceneData.dialogue then
+    elseif config.DEBUG_MODE_ENABLED and sceneData.dialogue then
       local dialogueFileName = self:getDialogueFileName(sceneData)
       Scene.setScene(DialogueSimulationScene(dialogueFileName), function(shouldPlayDialogue)
         if shouldPlayDialogue then
@@ -190,7 +200,7 @@ function Game:finishCurrentStorylineAndStartNextOne(result)
     if #self.playthrough.finishedStorylines > 0 then
       prevStorylineName = self.playthrough.finishedStorylines[#self.playthrough.finishedStorylines].name
     end
-    if not config.SKIP_WORLD_TRANSITIONS and prevStorylineName and WorldMapScene.hasTransition(prevStorylineName, nextStorylineName) then
+    if not config.DEBUG_MODE_ENABLED and prevStorylineName and WorldMapScene.hasTransition(prevStorylineName, nextStorylineName) then
       Scene.setScene(WorldMapScene(prevStorylineName, nextStorylineName), function()
         self:startStoryline(nextStorylineName)
       end)

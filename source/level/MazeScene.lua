@@ -231,7 +231,7 @@ function MazeScene:draw()
     playdate.graphics.drawText(self.prompt, 200 - self.promptWidth / 2, 5)
   end
   sceneTransition:draw()
-  if config.SHOW_DIAGNOSTIC_STATS then
+  if config.DEBUG_MODE_ENABLED then
     diagnosticStats:draw()
   end
   camera.x -= effects.screenShakeX

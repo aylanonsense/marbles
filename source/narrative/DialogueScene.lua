@@ -62,7 +62,7 @@ function DialogueScene:init(convoData, musicPlayer, startInstantly)
     self:processNextDialogueAction(true)
   else
     self.waitingFor = "time"
-    self.waitTime = sceneTransition.TRANSITION_IN_TIME + 0.75
+    self.waitTime = sceneTransition.getTransitionInTime() + 0.75
     sceneTransition:transitionIn()
   end
   self.musicPlayer = musicPlayer
@@ -397,7 +397,7 @@ function DialogueScene:processDialogueAction(action, instantly)
       self.dialogueBox:clear()
       self.dialogueBox:show()
       self.waitingFor = "time"
-      self.waitTime = sceneTransition.TRANSITION_IN_TIME + 0.1
+      self.waitTime = sceneTransition.getTransitionInTime() + 0.1
       sceneTransition:transitionIn()
     end, true)
   elseif action.action == "stream-next-dialogue" then

@@ -78,7 +78,7 @@ function Cinematic:advance()
 end
 
 function Cinematic:readyToMoveOn()
-  return self.framesOfSequence > self.data.sequences[self.sequenceNum].minWatchTime + ((self.sequenceNum == 1) and sceneTransition.TRANSITION_IN_TIME or 0)
+  return self.framesOfSequence > self.data.sequences[self.sequenceNum].minWatchTime + ((self.sequenceNum == 1) and sceneTransition.getTransitionInTime() or 0)
 end
 
 function Cinematic:draw()
