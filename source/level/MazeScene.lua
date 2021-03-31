@@ -22,6 +22,7 @@ function MazeScene:init(levelData, prompt, musicPlayer)
 
   self.levelData = levelData
   self.objects = {}
+  self.blankLoadFrames = 64
   self.worldBoundary = nil
   self.marble = nil
   self.isLoaded = false
@@ -86,6 +87,8 @@ function MazeScene:partialLoad()
       if not wasInserted then
         table.insert(self.objects, self.marble)
       end
+    elseif self.blankLoadFrames > 0 then
+      self.blankLoadFrames -= 1
     else
       -- And finally sort the physics sectors
       physics:sortSectors()
