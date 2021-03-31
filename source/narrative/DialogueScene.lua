@@ -69,6 +69,11 @@ function DialogueScene:init(convoData, musicPlayer, startInstantly)
   if self.musicPlayer then
     self.musicPlayer:play(0)
   end
+
+  playdate.getSystemMenu():addMenuItem("title screen", function()
+    self:cleanUp()
+    self:endScene(nil, nil, nil, true)
+  end)
 end
 
 function DialogueScene:update()
@@ -206,7 +211,7 @@ function DialogueScene:transitionOut(secretExit)
   end)
 end
 
-function DialogueScene:close(secretExit, startNextSceneInstantly)
+function DialogueScene:cleanUp()
   for _, actor in pairs(self.actorLookup) do
     actor:remove()
   end
@@ -218,6 +223,10 @@ function DialogueScene:close(secretExit, startNextSceneInstantly)
   if self.cinematic then
     self.cinematic:remove()
   end
+end
+
+function DialogueScene:close(secretExit, startNextSceneInstantly)
+  self:cleanUp()
   self:endScene(nil, secretExit, startNextSceneInstantly)
 end
 

@@ -54,6 +54,10 @@ function MazeScene:init(levelData, prompt, musicPlayer)
 
   -- Reset the crank animation
   playdate.ui.crankIndicator:start()
+
+  playdate.getSystemMenu():addMenuItem("title screen", function()
+    self:endScene(nil, nil, nil, true)
+  end)
 end
 
 function MazeScene:partialLoad()

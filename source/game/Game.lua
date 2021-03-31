@@ -28,6 +28,8 @@ function Game:init()
 end
 
 function Game:showTitleScreen()
+  soundCache.stopAllSoundEffects()
+  soundCache.stopAllMusic()
   local saveData = playdate.datastore.read("lost-your-marbles-save-data")
   local musicPlayer = soundCache.createMusicPlayer("sound/music/title")
   musicPlayer:setVolume(config.MUSIC_VOLUME)
@@ -115,8 +117,11 @@ function Game:playNextStorylineScene(startSceneInstantly)
   self.playthrough.playtime.minutes = time.playtime.minutes
   self.playthrough.playtime.hours = time.playtime.hours
   playdate.datastore.write(self.playthrough, "lost-your-marbles-save-data", true)
-  local advance = function(exit, secretExit, startNextSceneInstantly)
-    if secretExit then
+  local advance = function(exit, secretExit, startNextSceneInstantly, returnToTitle)
+    playdate.getSystemMenu():removeAllMenuItems()
+    if returnToTitle then
+      self:showTitleScreen()
+    elseif secretExit then
       self:finishCurrentStorylineAndStartNextOne("secret")
     else
       if exit then

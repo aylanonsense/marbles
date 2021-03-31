@@ -13,7 +13,7 @@ import "effect/effects"
 -- Set default drawing options
 playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
 
--- Set up the gane (globally accessible)
+-- Set up the game (globally accessible)
 -- if config.LAUNCH_LEVEL_EDITOR then
 --   Scene.setScene(EditorScene())
 -- else

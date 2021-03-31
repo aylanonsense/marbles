@@ -52,6 +52,8 @@ end
 function TitleScreenScene:draw()
   self.backgroundImage:draw(0, 0)
   self.selectionBackgroundImage:draw(200 - self.selectionBackgroundImageWidth / 2, 170)
+  playdate.graphics.setFont(fonts.MarbleMini)
+  playdate.graphics.drawText("v"..playdate.metadata.version.."-"..playdate.metadata.buildNumber, 3, 225)
   playdate.graphics.setFont(fonts.MarbleHeading)
   local y = 200 - 10 * #self.options
   for i, option in ipairs(self.options) do

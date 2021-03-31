@@ -32,7 +32,7 @@ function Booster:init(x, y, rotation)
 	self.launchX = math.cos(angle)
 	self.launchY = math.sin(angle)
 	self.imageTable = imageCache.loadImageTable("images/level/objects/booster.png")
-  self.boostSound = soundCache.createSoundEffectPlayer("sound/sfx/booster")
+	self.boostSound = soundCache.createSoundEffectPlayer("sound/sfx/booster")
 	self.boostSound:setVolume(config.SOUND_VOLUME * 0.3)
 	self.highlightFrames = 0
 end
