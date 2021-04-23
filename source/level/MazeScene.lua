@@ -193,7 +193,7 @@ function MazeScene:update()
 end
 
 function MazeScene:draw()
-  self.drawOffset = (self.drawOffset + 1) % 3
+  self.drawOffset = (self.drawOffset + 1) % 2
   if not config.BACKWARDS_COMPATIBILITY_MODE then
     playdate.graphics.setDrawOffset(0, 20)
   end
@@ -221,7 +221,7 @@ function MazeScene:draw()
     for _, obj in ipairs(self.objects) do
       drawOffset += 1
       if obj:isOnScreen() then
-        obj:draw(drawOffset % 3 > 0)
+        obj:draw(drawOffset % 2 > 0)
       end
     end
   end

@@ -20,9 +20,18 @@ playdate.graphics.setBackgroundColor(playdate.graphics.kColorWhite)
   game = Game()
 -- end
 
+local prevTime = playdate.getCurrentTimeMilliseconds()
+
 -- Update the scene
 function playdate.update()
-	time:advance(1 / 20)
+  local currTime = playdate.getCurrentTimeMilliseconds()
+  local dt
+  if config.FRAME_RATE_INDEPENDENT then
+    dt = ((currTime - prevTime) / 1000)
+  else
+    dt = 1 / 30
+  end
+  time:advance(dt)
   effects:update()
   diagnosticStats:update()
   if scene then
@@ -34,6 +43,7 @@ function playdate.update()
   if effects.freezeFrames <= 0 then
     playdate.timer.updateTimers()
   end
+  prevTime = currTime
 end
 
 -- Pass callbacks through to the scene

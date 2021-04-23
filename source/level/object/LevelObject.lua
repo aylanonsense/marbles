@@ -105,6 +105,8 @@ function LevelObject:setVelocity(x, y)
 	for _, physObj in ipairs(self.physObjects) do
 		physObj.velX = x
 		physObj.velY = y
+		physObj.prevVelX = physObj.velX
+		physObj.prevVelY = physObj.velY
 	end
 end
 
@@ -112,6 +114,8 @@ function LevelObject:scaleVelocity(n)
 	for _, physObj in ipairs(self.physObjects) do
 		physObj.velX *= n
 		physObj.velY *= n
+		physObj.prevVelX = physObj.velX
+		physObj.prevVelY = physObj.velY
 	end
 end
 

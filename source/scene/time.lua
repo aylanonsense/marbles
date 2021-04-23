@@ -11,6 +11,7 @@ time = {
 }
 
 function time:advance(dt)
+	dt *= 1.5
 	if not self.playtime.paused then
 		self.playtime.seconds += dt
 		if self.playtime.seconds >= 60.0 then

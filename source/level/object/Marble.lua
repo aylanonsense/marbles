@@ -38,6 +38,8 @@ function Marble:update()
     self:setPosition(self.spawnX, self.spawnY)
     self.physObj.velX = 0
     self.physObj.velY = -50
+    self.physObj.prevVelX = 0
+    self.physObj.prevVelY = -50
     self.popLineFrames = 10
     self.framesSinceLastCollision = 0
   end
@@ -54,6 +56,8 @@ function Marble:update()
   if self.framesUntilSpawn > 0 then
     self.physObj.velX = 0
     self.physObj.velY = 0
+    self.physObj.prevVelX = 0
+    self.physObj.prevVelY = 0
     self.framesUntilSpawn -= 1
     if self.framesUntilSpawn <= 0 then
       self.physObj.velY = -50

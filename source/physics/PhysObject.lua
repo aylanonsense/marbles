@@ -19,6 +19,8 @@ function PhysObject:init(type, x, y)
 	self.y = y
 	self.velX = 0
 	self.velY = 0
+	self.prevVelX = 0
+	self.prevVelY = 0
 	self.accX = 0
 	self.accY = 0
 	self.mass = 0 -- 0 means immovable (infinite mass)
@@ -30,13 +32,15 @@ function PhysObject:init(type, x, y)
 end
 
 function PhysObject:applyAcceleration(dt)
-	self.velX += 0.5 * self.accX * dt * dt
-	self.velY += 0.5 * self.accY * dt * dt
+	self.prevVelX = self.velX
+	self.prevVelY = self.velY
+	self.velX += 0.5 * self.accX * dt * (1 / 20)
+	self.velY += 0.5 * self.accY * dt * (1 / 20)
 end
 
 function PhysObject:applyVelocity(dt)
-	self.x += self.velX * dt
-	self.y += self.velY * dt
+	self.x += (self.velX + self.prevVelX) / 2 * dt
+	self.y += (self.velY + self.prevVelY) / 2 * dt
 end
 
 function PhysObject:enforceMaxSpeed()

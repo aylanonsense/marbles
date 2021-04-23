@@ -60,6 +60,10 @@ function Collision:updateVelocities()
 		a.velY -= self.impulse * self.normalY * aInverseMass
 		b.velX += self.impulse * self.normalX * bInverseMass
 		b.velY += self.impulse * self.normalY * bInverseMass
+		a.prevVelX = a.velX
+		a.prevVelY = a.velY
+		b.prevVelX = b.velX
+		b.prevVelY = b.velY
 	end
 end
 
