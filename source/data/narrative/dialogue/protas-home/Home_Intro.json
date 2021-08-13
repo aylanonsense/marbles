@@ -8,7 +8,7 @@
     { "actor": "Minty", "expression": "neutral" }
   ],
   "script": [
-    { "actor": "Narrator", "line": "Welcome to POMEGRANATE VILLLAGE! A bustling island town getting ready for a big day.", "expression": "neutral" },
+    { "actor": "Narrator", "line": "Welcome to POMEGRANATE VILLAGE! A bustling island town getting ready for a big day.", "expression": "neutral" },
     { "actor": "Narrator", "line": "Today is the FESTI-BALL, an annual celebration of community...", "expression": "neutral" },
     { "actor": "Narrator", "line": "...instituted by the town's famed BALL MUSEUM.", "expression": "neutral" },
     { "actor": "Narrator", "line": "Under the watchful eye of Pomegranate's Mayoress, the people come together for a night of...", "expression": "neutral" },

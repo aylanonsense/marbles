@@ -1,3 +1,5 @@
+print("Lost Your Marbles v"..playdate.metadata.version)
+
 import "scene/time"
 import "scene/Scene"
 import "CoreLibs/keyboard"
